@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'ABCGaisyr-Regular';
+    src: url('./fonts/ABCGaisyr-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'ABCGaisyr-Book';
+    src: url('./fonts/ABCGaisyr-Book.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'OldLondon';
+    src: url('./fonts/OldLondon.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'GTAmericaBold';
+    src: url('./fonts/GTAmericaBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'GTAmericaBold';
+    src: url('./fonts/GT-America-Bold.ttf') format('truetype');
+  } 
+  
+  @font-face {
+    font-family: 'GTAmericaRegular';
+    src: url('./fonts/GTAmericaRegular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'GTAmericaLight';
+    src: url('./fonts/GTAmericaLight.ttf') format('truetype');
+  }
+
+

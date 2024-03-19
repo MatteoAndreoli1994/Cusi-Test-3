@@ -1,0 +1,661 @@
+import React, { useState, useRef } from 'react';
+import styled from 'styled-components';
+import Maison1 from "../../assets/maison1.jpg"
+import Maison2 from "../../assets/maison2.jpg"
+
+import emailjs from "@emailjs/browser";
+import { BarLoader, ClipLoader } from 'react-spinners';
+
+const SubscribeButton = styled.button`
+  background-color: black;
+  color: white;
+  padding: 18px;
+  border: 1px solid #000;
+  width: 28%;
+  cursor: pointer;
+  font-size: 13px;
+
+  margin: 5% auto 0;
+  display: flex; /* Use flex container */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 60px;
+
+  text-align: center;
+`;
+
+
+const Container = styled.div`
+  margin-top:120px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom:120px;
+
+
+`;
+  const Box = styled.div`
+
+display: flex;
+flex-direction: row;
+width: 85%;
+
+margin-bottom:2%;
+margin-top:2%;
+
+align-items:center;
+
+margin-top:3%;
+
+
+`;
+const DivImmagine = styled.div`
+
+width:50%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background-color:blue;
+
+
+
+`;
+const Descrizione = styled.p`
+width:100%;
+
+font-family: 'ABCGaisyr-Book';
+font-size: 20px; 
+margin-top:0;
+margin-bottom:1%;
+font-weight: normal; 
+
+`;
+const TitoloStoryBoard = styled.p`
+  width: 100%;
+
+  font-family: 'ABCGaisyr-Regular';
+  font-size: 36px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:1%;
+`;
+const DivInfo = styled.div`
+
+width:50%;
+height:100%;
+align-items:center;
+
+justify-content:center;
+
+
+
+display:flex;
+flex-direction: column;
+
+
+
+
+
+`;
+
+const Maison2Img = styled.img`
+width:100%;
+
+
+`;
+const Titolo = styled.h1`
+margin-top:4%;
+margin-bottom:1%;
+`;
+
+const Introduzione = styled.p`
+width:50%;
+text-align: center;
+margin-top:0;
+margin-bottom:3%;
+
+`;
+
+const FormContainer = styled.div`
+  width: 60%;
+
+  padding: 20px;
+
+  border-radius: 10px;
+  margin: 20px auto;
+
+
+
+  @media(max-width: 1200px){
+    width:75%;
+  }
+
+`;
+
+const Title = styled.h2`
+  margin-bottom: 20px;
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Aumenta la distanza tra le checkbox */
+  margin-top:2%;
+  
+`;
+
+const Checkbox = styled.input`
+  position: relative;
+  width: 2em;
+  height: 2em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-right:10px;
+
+
+  &:checked {
+    background-color: transparent;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      height: 70%;
+      background-color: black;
+      border-radius: 50%;
+    }
+  }
+`;
+const Checkbox2 = styled.input`
+  position: relative;
+  width: 2em;
+  height: 2em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0; /* Angoli di 90% non arrotondati */
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-right:30px;
+
+  &:checked {
+    &::before {
+      content: '✔'; /* Simbolo di spunta nera */
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2em;
+      color: black;
+    }
+  }
+`;
+
+
+
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+
+`;
+const CheckboxLabel2 = styled.label`
+  display: flex;
+  align-items: center;
+
+  margin-top:2%;
+`;
+const FlexContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+`;
+const DivInserimento = styled.div`
+
+  display:flex;
+  width:60%;
+  height:100%;
+  flex-direction:column;
+
+  margin-left:23%;
+
+
+`;
+
+const Subtitle = styled.div`
+
+  display:flex;
+  width:36%;
+  height:100%;
+  flex-direction:column;
+
+  align-items:center;
+  tex-align:center;
+  justify-content:center;
+
+
+`;
+
+const InputLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+  width:50%;
+
+  span {
+    font-size: 16px; // Modifica la grandezza del font del sottotitolo qui
+  }
+
+`;
+const InputLabelSolo = styled.label`
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+  width:100%;
+
+  span {
+    font-size: 16px; // Modifica la grandezza del font del sottotitolo qui
+  }
+
+
+`;
+
+const Input = styled.input`
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 14px;
+  padding-bottom: 3px; /* Aggiungi spazio per separare la linea dal testo */
+  outline: none; /* Disattiva l'outline */
+  width: 100%; /* Occupa il 50% della larghezza del FormContainer */
+  font-size: 16px; // Modifica la grandezza del font qui
+
+`;
+const InputSelect = styled.select`
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 14px;
+  padding-bottom: 3px;
+  outline: none;
+  width: 100%;
+  border-radius: 0; /* Rimuovi i bordi arrotondati */
+  appearance: none; /* Nasconde la freccia della selezione predefinita */
+  background-color: transparent; /* Imposta lo sfondo trasparente */
+
+  /* Personalizza il caret (la freccia sulla sinistra) */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 20px; /* Spazio per la freccia */
+
+  option[value="Cusi Montenapoleone"] {
+    font-family: 'GTAmericaLight';
+  }
+
+
+`;
+
+//FONT
+const ABC = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 40px; 
+margin-bottom: 0;
+
+
+`;
+const AbcGrassetto = styled.p`
+font-family: 'ABCGaisyr-Regular';
+font-size: 20px; 
+margin-bottom: 0;
+
+
+`;
+
+const GtaRegular = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+width:33%;
+text-align: center;
+margin-top:2px;
+@media(max-width: 1200px){
+  width:50%;
+}
+
+
+`;
+const GtaRegular16 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+
+
+
+`;
+const GtaLight = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-top:1%;
+margin-bottom:2%;
+
+
+`;
+const GtaLightCenter = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-top:1%;
+margin-bottom:2%;
+
+text-align:center;
+
+
+`;
+const GtaLightCentered = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-top:0;
+margin-bottom:0;
+
+`;
+
+
+const Boutiques = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOptionNewsletter, setSelectedOptionNewsletter] = useState(null);
+  const [selectedBoutique, setSelectedBoutique] = useState('');
+
+  const handleBoutiqueChange = (event) => {
+    setSelectedBoutique(event.target.value);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_i20lvko",
+        "template_d5ye4wj",
+        form.current,
+        "rvcubz2OA8D2-5HVf"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+
+  const handleCheckboxChange = (option) => {
+    setSelectedOption(option);
+  };
+  const handleCheckboxChangeNewsletter = (checked) => {
+    setSelectedOptionNewsletter(checked);
+
+  };
+  
+  const [loading, setLoading] = useState(false);
+const [sent, setSent] = useState(false);
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Imposta lo stato di caricamento su true
+  setLoading(true);
+
+  // Simula una richiesta asincrona
+  setTimeout(() => {
+    // Imposta lo stato di caricamento su false
+    setLoading(false);
+
+    // Imposta lo stato "sent" su true
+    setSent(true);
+  }, 2000); // 2000 millisecondi = 2 secondi
+};
+
+
+  
+  
+
+  
+
+
+
+
+  
+
+
+
+
+  return (
+    <>
+<Container>
+  <ABC>Boutiques</ABC>
+  <GtaRegular>We would be delighted to welcome you so that you may discover 
+  and try on your favorite creations.
+  </GtaRegular>
+  <Box>
+    <DivImmagine>
+      <Maison2Img src={Maison2}/>
+
+    </DivImmagine>
+
+    <DivInfo>
+      <DivInserimento>
+
+        <TitoloStoryBoard>Milano</TitoloStoryBoard>
+        <Descrizione>Via Montenapoleone 21/A, 20121, Italy</Descrizione>
+        <Descrizione></Descrizione>    <Descrizione></Descrizione>
+        <AbcGrassetto>Monday - Saturday</AbcGrassetto>
+        <Descrizione>10:30-13:30</Descrizione>
+        <Descrizione>15:00-19:00</Descrizione>
+        <Descrizione></Descrizione>    <Descrizione></Descrizione>
+        <AbcGrassetto>Contact Us</AbcGrassetto>
+        <Descrizione>(+39) 0276014323 </Descrizione>
+
+      </DivInserimento>
+
+
+
+        
+
+    </DivInfo>
+
+  </Box>
+
+  <Box>
+    <DivImmagine>
+      <Maison2Img src={Maison1}/>
+
+    </DivImmagine>
+
+    <DivInfo>
+    <DivInserimento>
+      <TitoloStoryBoard>Portofino</TitoloStoryBoard>
+      <Descrizione>Calata Marconi 14, 16034 Italy</Descrizione>
+      <Descrizione></Descrizione>    <Descrizione></Descrizione>
+      <AbcGrassetto>Monday - Saturday</AbcGrassetto>
+      <Descrizione>10:30-13:30</Descrizione>
+      <Descrizione>15:00-19:00</Descrizione>
+      <Descrizione></Descrizione>    <Descrizione></Descrizione>
+      <AbcGrassetto>Contact Us</AbcGrassetto>
+      <Descrizione>(+39) 0373214621 </Descrizione>
+    </DivInserimento>
+
+        
+
+    </DivInfo>
+
+  </Box>
+
+  <ABC>Book an appointment</ABC>
+  <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
+and on Saturdays from 9 am to 5 pm. 
+  </GtaLightCenter>
+</Subtitle>
+
+
+
+
+  <FormContainer>
+  <form ref={form} onSubmit={sendEmail}>
+      <span><GtaLight> Title*</GtaLight></span>
+
+      <CheckboxContainer>
+        <CheckboxLabel>
+          <Checkbox
+            type="checkbox"
+            checked={selectedOption === 'Mr.'}
+            onChange={() => handleCheckboxChange('Mr.')}
+          />
+
+
+          <span><GtaLight>Mr.</GtaLight></span>
+        </CheckboxLabel>
+        <CheckboxLabel>
+          <Checkbox
+            type="checkbox"
+            checked={selectedOption === 'Miss, Mrs, Ms'}
+            onChange={() => handleCheckboxChange('Miss, Mrs, Ms')}
+          />
+
+          <span><GtaLight> Miss, Mrs, Ms </GtaLight></span>
+        </CheckboxLabel>
+        <CheckboxLabel>
+          <Checkbox
+            type="checkbox"
+            checked={selectedOption === "I'd rather not say"}
+            onChange={() => handleCheckboxChange("I'd rather not say")}
+          />
+
+          <span><GtaLight> I'd rather not say </GtaLight></span>
+        </CheckboxLabel>
+
+        <Input type="hidden" name="user_title" value={selectedOption} />
+      </CheckboxContainer>
+
+
+      {/* Altre parti del form possono essere aggiunte qui */}
+
+      <FlexContainer>
+        <InputLabel>
+          <span><GtaLight> First Name* </GtaLight></span>
+          <Input type="text" name="user_name" />
+        </InputLabel>
+        <InputLabel>
+          <span><GtaLight> Last Name* </GtaLight></span>
+          <Input type="text" name="user_lastname"/>
+        </InputLabel>
+      </FlexContainer>
+
+      <FlexContainer>
+        <InputLabel>
+          <span> <GtaLight> E-mail* </GtaLight></span>
+          <Input type="email" name="user_email" />
+        </InputLabel>
+        <InputLabel>
+          <span> <GtaLight> Phone Number* </GtaLight></span>
+          <Input type="tel" name="user_phonenumber"/>
+        </InputLabel>
+      </FlexContainer>
+
+      <FlexContainer>
+        <InputLabelSolo>
+          <span><GtaLight> Select Boutique* </GtaLight></span>
+          <InputSelect
+            type="text"
+            name="user_boutiques"
+            value={selectedBoutique}
+            onChange={handleBoutiqueChange}
+          >
+            <option value="Cusi Montenapoleone"><GtaLight>Cusi Montenapoleone</GtaLight></option>
+
+            <option value="Cusi Portofino"><GtaLight> Cusi Portofino </GtaLight></option>
+          </InputSelect>
+        </InputLabelSolo>
+
+      </FlexContainer>
+
+      <FlexContainer>
+        <InputLabel>
+          <span><GtaLight> Appointment Date* </GtaLight></span>
+          <Input type="date" name="user_date"/>
+        </InputLabel>
+        <InputLabel>
+          <span> <GtaLight>Time*</GtaLight></span>
+          <Input type="time" name="user_dateh"/>
+        </InputLabel>
+      </FlexContainer>
+
+      <FlexContainer>
+        <InputLabelSolo>
+          <span ><GtaLight> Message* </GtaLight></span>
+          <Input type="text" name="message" />
+        </InputLabelSolo>
+
+      </FlexContainer>
+
+      <CheckboxContainer>
+        <CheckboxLabel2>
+        <Checkbox2
+        type="checkbox"
+        checked={selectedOptionNewsletter === true}
+        onChange={(event) => handleCheckboxChangeNewsletter(event.target.checked)}
+        />
+
+          <span> <GtaLightCentered> Be the first to hear about new arrivals from our special events, and other news from the world of Cusi. </GtaLightCentered></span>
+          <Input type="hidden" name="user_newsletter" value={selectedOptionNewsletter} />
+        </CheckboxLabel2>
+
+      </CheckboxContainer>
+
+      <SubscribeButton type="submit" onClick={handleSubmit} disabled={loading}>
+        {loading ? (
+          <ClipLoader color={'#fff'} loading={loading} size={20} />
+        ) : sent ? (
+          <GtaRegular16> SENT </GtaRegular16>
+        ) : (
+          <GtaRegular16> BOOK </GtaRegular16>
+        )}
+      </SubscribeButton>
+
+
+
+
+
+
+    </form>
+    </FormContainer>
+
+
+
+
+
+</Container>
+
+    </>
+  );
+};
+
+export default Boutiques;

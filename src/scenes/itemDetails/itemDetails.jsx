@@ -1,0 +1,446 @@
+import { Box, Button, IconButton, Typography } from "@mui/material";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Item from "../../components/Item";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { shades } from "../../theme";
+import { addToCart } from "../../state";
+import { useDispatch } from "react-redux";
+import styled from 'styled-components';
+
+const ItemDetails = () => {
+  const dispatch = useDispatch();
+  const { itemId } = useParams();
+  const [value, setValue] = useState("description");
+  const [count, setCount] = useState(1);
+  const [item, setItem] = useState(null);
+  const [items, setItems] = useState([]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  // Funzione per formattare il prezzo
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
+  };
+
+  const handleAddToCart = () => {
+    // Verifica se l'elemento è già presente nel carrello
+    const isItemInCart = items.some(cartItem => cartItem.id === item.id);
+
+    if (!isItemInCart) {
+      // Se l'elemento non è presente nel carrello, aggiungilo
+      dispatch(addToCart({ item: { ...item, count } }));
+    } else {
+      // Se l'elemento è già presente nel carrello, gestisci l'azione di conseguenza
+      console.log('L\'elemento è già presente nel carrello.');
+      // Puoi mostrare un messaggio all'utente o eseguire altre azioni necessarie.
+    }
+  };
+
+  async function getItem() {
+    const item = await fetch(
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemJson = await item.json();
+    setItem(itemJson.data);
+  }
+
+  async function getItems() {
+    const items = await fetch(
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemsJson = await items.json();
+    setItems(itemsJson.data);
+  }
+
+  useEffect(() => {
+    getItem();
+    getItems();
+  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleButtonClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClick = (value) => {
+    setCount(value); // Aggiorna il valore
+    setSelectedOption(value); // Aggiorna il valore selezionato
+    setIsOpen(false); // Chiudi la finestra di scelta
+  };
+
+
+
+  const Container = styled.div`
+  min-height: 100vh;
+  margin-top:10%;
+
+
+justify-content:center;
+display:flex;
+  `;
+
+  const Bottoni = styled.div`
+    display:flex;
+    flex-direction:column;
+
+    margin-top:10%;
+
+    width:70%;
+  `;
+
+
+
+  const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra l'immagine sia verticalmente che orizzontalmente */
+
+  width: 50%;
+  justify-content: flex-start;
+
+
+  flex-direction:column;
+`;
+
+const Image = styled.img`
+  width: 70%; /* Larghezza al 50% rispetto al container */
+  height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
+  object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
+  margin-bottom:3%;
+`;
+
+const ItemContainer = styled.div`
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
+
+
+  const TypographyCollection = styled.p`
+  font-size:20px;
+  color:gray;
+  margin-bottom: 2%;
+  margin-top: 20%;
+
+
+
+  
+  `;
+  const ButtonBlack = styled(Button)`
+
+
+  && {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: ${shades.primary[300]}; /* Cambia il colore a tuo piacimento */
+    }
+  }
+`;
+
+const ButtonWhite = styled(Button)`
+  && {
+    background-color: white;
+    color: black;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+`;
+
+  const TypographyName = styled.p`
+  font-size:35px;
+  margin-top: 0;
+
+  font-weight: 600;
+  margin-bottom: 3%;
+  `;
+  const DescripionDiv = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+
+
+width:50%;
+
+  `;
+
+  const Info = styled.div`
+  display:flex;
+  flex-direction:column;
+  width:70%;
+
+
+
+  `;
+
+  const TypographyDescrizioneProdotto = styled.p`
+  font-size:18px;
+  margin-top: 0;
+  margin-bottom: 4%;
+
+
+  `;
+
+  const TypographyPrice = styled.p`
+  font-size:30px;
+  margin-top: 0;
+
+  font-weight: 600
+
+  `;
+
+  const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+
+  width:40%;
+
+`;
+
+const DropdownButton = styled.button`
+  background-color: transparent;
+  width:100%;
+  color: gray;
+  padding: 24px;
+  border: 1px solid black; /* Aggiunto il bordo nero */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px; /* Modifica la grandezza del testo all'interno del pulsante */
+  font-weight: 300; /* Puoi modificare il peso del testo se necessario */
+`;
+
+const Arrow = styled.span`
+  margin-left: 40px;
+  color: black; /* Aggiunto il colore nero per il triangolo */
+`;
+
+const DropdownContent = styled.div`
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid black; /* Aggiunto il bordo nero */
+  width:100%;
+  margin-top: -1px; /* Rimuove la distanza tra DropdownButton e DropdownContent */
+`;
+
+const DropdownOption = styled.div`
+  padding: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid black; /* Aggiunto il bordo nero al fondo di ogni elemento */
+  
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &:last-child {
+    border-bottom: none; /* Rimuove il bordo inferiore all'ultimo elemento della lista */
+  }
+`;
+
+const PlaceholderOption = styled.div`
+  padding: 10px;
+  color: gray;
+
+  
+`;
+//FONT
+const ABC = styled.p`
+font-family: 'ABCGaisyr-Regular';
+font-size: 32px; 
+margin-bottom: 0;
+margin-top: 0;
+
+`;
+
+const GtaRegular = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+margin-bottom: 0;
+margin-top: 0;
+
+
+`;
+const GtaLight = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 0;
+margin-top: 0;
+
+
+`;
+const ABC24 = styled.p`
+font-family: 'ABCGaisyr-Regular';
+font-size: 24px; 
+margin-bottom: 0;
+margin-top: 5%;
+
+`;
+
+const GtaLightLightInfo = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+`;
+  
+
+  return (
+    <Container width="100%" m="80px auto">
+      
+      <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
+        {/* IMAGES */}
+        <ImageContainer>
+          <Image
+            alt={item?.name}
+            width="100%"
+            height="100%"
+            src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+            style={{ objectFit: "contain" }}
+          />
+          <Image
+            alt={item?.name}
+            width="100%"
+            height="100%"
+            src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+            style={{ objectFit: "contain" }}
+          />
+        </ImageContainer>
+
+        {/* ACTIONS */}
+        <DescripionDiv>
+
+
+          <Info>
+          <TypographyCollection><GtaRegular>{item?.attributes?.collection}</GtaRegular></TypographyCollection>
+            <TypographyName><ABC> {item?.attributes?.name} </ABC> </TypographyName>
+
+        {/* INFO PRODOTTO */}
+            <TypographyDescrizioneProdotto>
+              <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+
+            </TypographyDescrizioneProdotto>
+
+            <TypographyPrice><ABC24>  {formatPrice(item?.attributes?.price)} </ABC24></TypographyPrice>
+        {/* END:INFO PRODOTTO */}
+
+        {/* SIZE E QUANTITY */}
+
+            <TypographyDescrizioneProdotto>
+            <GtaRegular>Quantity</GtaRegular> 
+            </TypographyDescrizioneProdotto>
+
+
+
+            <DropdownContainer>
+              <DropdownButton onClick={handleButtonClick}>
+                <span>{selectedOption || '1'}</span>
+                <Arrow>&#9660;</Arrow>
+              </DropdownButton>
+              
+              <DropdownContent isOpen={isOpen}>
+                <DropdownOption onClick={() => handleOptionClick(1)}>1</DropdownOption>
+                <DropdownOption onClick={() => handleOptionClick(2)}>2</DropdownOption>
+                <DropdownOption onClick={() => handleOptionClick(3)}>3</DropdownOption>
+                {/* Aggiungi altre opzioni secondo necessità */}
+              </DropdownContent>
+            </DropdownContainer>
+
+
+
+
+
+
+          </Info>
+
+
+
+
+          <Bottoni>
+
+
+
+
+
+
+            <ButtonBlack
+              sx={{
+                backgroundColor: "black",
+                color: "white",
+                borderRadius: 0,
+                minWidth: "100%",
+                padding: "20px 40px",
+                m: "20px 0",
+              }}
+              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+            >
+              <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
+            </ButtonBlack>
+
+            <ButtonWhite
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: 0,
+                minWidth: "100%",
+                padding: "20px 40px",
+                m: "20px 0",
+              }}
+              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+            >
+              <GtaRegular> ORDER BY PHONE </GtaRegular>
+            </ButtonWhite>
+
+            <ButtonWhite
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: 0,
+                minWidth: "100%",
+                padding: "20px 40px",
+                m: "20px 0",
+              }}
+              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+            >
+              <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
+            </ButtonWhite>
+
+
+
+          </Bottoni>
+
+          
+        </DescripionDiv>
+      </ItemContainer>
+
+
+
+
+    </Container>
+  );
+};
+
+export default ItemDetails;
