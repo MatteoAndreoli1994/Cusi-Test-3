@@ -28,8 +28,8 @@ const MaisonCusi = () => {
     flex-direction: column;
     width: 100%;
     align-items:center;
-    background-color:red;
 
+    overflow:hidden;
   `;
 
   const DivBacheca = styled.div`
@@ -53,7 +53,28 @@ margin-top:1%;
 
 @media(max-width: 680px){
   flex-direction: column;
-  background-color:green;
+
+
+    height: auto;
+
+}
+
+
+`;
+const Boxstoryboard4 = styled.div`
+
+display: flex;
+flex-direction: row;
+width: 90%;
+height: 70vh;
+margin-top:1%;
+
+@media(max-width: 680px){
+  flex-direction: column-reverse;
+
+
+    height: auto;
+
 }
 
 
@@ -65,6 +86,35 @@ flex-direction: row;
 width: 90%;
 height: 60vh;
 margin-top:1%;
+
+@media(max-width: 680px){
+  flex-direction: column;
+
+
+    height: auto;
+
+}
+
+
+
+
+`;
+const Boxstoryboard3 = styled.div`
+
+display: flex;
+flex-direction: row;
+width: 90%;
+height: 60vh;
+margin-top:1%;
+
+@media(max-width: 680px){
+  flex-direction: column-reverse;
+
+
+    height: auto;
+
+}
+
 
 
 
@@ -79,7 +129,11 @@ width: 100%;
 
 
 align-items:center;
+
+text-align: center; /* Centra il testo all'interno del div */
 margin-bottom:5%;
+margin-top:2%;
+
 `;
 
 const Quote = styled.div`
@@ -97,10 +151,7 @@ justify-content:center;
 
 `;
 
-const Titolo = styled.h1`
-margin-top:4%;
-margin-bottom:1%;
-`;
+
 
 const Introduzione = styled.p`
 width:60%;
@@ -109,6 +160,12 @@ margin-top:1%;
 margin-bottom:3%;
 font-family: 'GTAmericaLight';
 font-size:16px;
+
+@media(max-width: 680px){
+  font-size:14px; 
+  width:80%;
+  margin-bottom:6%;
+}
 
 
 `;
@@ -143,6 +200,12 @@ justify-content:center;
 
 
 
+@media(max-width:680px){
+  width:100%;
+  height:auto;
+}
+
+
 `;
 const DivImmagine2 = styled.div`
 
@@ -164,21 +227,27 @@ justify-content:center;
 display:flex;
 flex-direction: column;
 
+overflow:hidden;
+
+@media(max-width: 680px){
+  width:100%;
+  height:auto;
+  margin-top:4%;
+}
 
 
+
 `;
-const Descrizione = styled.p`
-width:75%;
-font-size:16px;
-`;
-const TitoloStoryBoard = styled.h1`
-width:75%;
-`;
+
 //FONT
 const ABC = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
 margin-bottom: 0;
+
+@media(max-width:680px){
+  font-size: 35px; 
+}
 
 
 `;
@@ -189,6 +258,12 @@ margin-bottom: 0;
 margin-top: 0;
 width:75%;
 
+@media(max-width:680px){
+  font-size: 21px; 
+
+  width:90%;
+}
+
 `;
 
 const Description = styled.p`
@@ -198,6 +273,11 @@ margin-bottom: 0;
 width:75%;
 font-weight: 200;
 
+@media(max-width:680px){
+  font-size: 14px; 
+  width:90%;
+}
+
 `;
 const DescriptionLight = styled.p`
 font-family: 'GTAmericaLight';
@@ -205,6 +285,11 @@ font-size: 12px;
 margin-bottom: 0;
 width:75%;
 font-weight: 200;
+
+@media(max-width:680px){
+  display:none;
+  width:90%;
+}
 
 `;
 const Description2 = styled.p`
@@ -214,6 +299,14 @@ margin-bottom: 0;
 margin-top: 4%;
 width:60%;
 font-weight: 200;
+
+@media(max-width:680px){
+  font-size: 14px; 
+
+  text-align:left;
+  width:90%;
+  
+}
 
 `;
 
@@ -225,6 +318,13 @@ text-align: center;
 margin-bottom:4%;
 margin-top:3%;
 
+@media(max-width: 680px){
+  width:80%;
+  font-size: 17px; 
+}
+
+
+
 `;
 const Light16 = styled.p`
 font-family: 'GTAmericaLight';
@@ -232,6 +332,12 @@ font-size: 16px;
 width:60%;
 text-align: center;
 margin-bottom:4%;
+
+
+@media(max-width:680px){
+  width:80%;
+  font-size: 14px; 
+}
 
 `;
 
@@ -242,6 +348,12 @@ margin-bottom: 0;
 margin-top: 7%;
 
 
+@media(max-width:680px){
+  font-size: 21px; 
+
+  width:70%;
+
+}
 `;
 
   return (
@@ -250,7 +362,7 @@ margin-top: 7%;
     <DivBacheca>
 
         <ABC>Maison Cusi</ABC>
-        <Light16>La storica gioielleria fondata nel 1886 da Annibale Cusi ha segnato l’inizio di un’epoca che dura da cinque <br/> generazioni;
+        <Light16>La storica gioielleria fondata nel 1886 da Annibale Cusi ha segnato l’inizio di un’epoca che dura da cinque generazioni
            durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
         </Light16>
 
@@ -267,7 +379,7 @@ margin-top: 7%;
 
     <Boxstoryboard>
         <DivImmagine>
-        <img src={AnnibaleCusi} />
+        <img src={AnnibaleCusi} style={{ width: "80%", height: 'auto' }} />
 
         </DivImmagine>
 
@@ -298,7 +410,7 @@ margin-top: 7%;
     <Boxstoryboard2>
     <DivImmagine >
     <img src={SpillaDelPozzo} style={{ width: '70%', height: "auto" }} />
-</DivImmagine>
+    </DivImmagine>
 
 
         <DivInfo>
@@ -319,7 +431,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
     </Boxstoryboard2>
 
-    <Boxstoryboard>
+    <Boxstoryboard3>
 
         <DivInfo>
         <ABC24>1906</ABC24> 
@@ -342,15 +454,15 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         </DivInfo>
 
         <DivImmagine>
-        <img src={CollierMariaStuarda} />
+        <img src={CollierMariaStuarda} style={{ width: '70%', height: "auto" }}/>
 
         </DivImmagine>
 
-    </Boxstoryboard>
+    </Boxstoryboard3>
 
     <Boxstoryboard>
         <DivImmagine>
-        <img src={ViaClerici} />
+        <img src={ViaClerici} style={{ width: '70%', height: "auto" }}/>
 
         </DivImmagine>
 
@@ -374,7 +486,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
     </Boxstoryboard>
 
-    <Boxstoryboard>
+    <Boxstoryboard4>
 
 
         <DivInfo>
@@ -401,17 +513,17 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
         <DivImmagine>
-        <img src={RinaldoCusi} />
+        <img src={RinaldoCusi} style={{ width: '70%', height: "auto" }} />
 
         </DivImmagine>
 
 
-    </Boxstoryboard>
+    </Boxstoryboard4>
 
     <Boxstoryboard>
 
         <DivImmagine>
-        <img src={RobertoCusi} />
+        <img src={RobertoCusi} style={{ width: '70%', height: "auto" }}/>
 
         </DivImmagine>
 
@@ -447,7 +559,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
         </Introduzione>
 
-        <ImmagineFamiglia src={GiorgioCusi} />
+        <ImmagineFamiglia src={GiorgioCusi}  style={{ width: '70%', height: "auto" }}/>
 
         <Description2>
         Oggi la tradizione della famiglia prosegue grazie all’impegno e la passione di Giorgio Nicola Cusi, della moglie Roberta Cusi e dei figli Alessia e Alessandro.
