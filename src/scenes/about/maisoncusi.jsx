@@ -304,7 +304,7 @@ font-weight: 200;
   font-size: 14px; 
 
   text-align:left;
-  width:90%;
+  width:80%;
   
 }
 
