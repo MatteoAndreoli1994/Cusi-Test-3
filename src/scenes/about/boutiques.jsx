@@ -390,6 +390,7 @@ const InputSelect = styled.select`
   background-color: transparent; /* Imposta lo sfondo trasparente */
   color:black;
   font-family: 'GTAmericaLight';
+  padding-left: 0; /* Imposta il padding sinistro a zero */
 
   /* Personalizza il caret (la freccia sulla sinistra) */
   background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
