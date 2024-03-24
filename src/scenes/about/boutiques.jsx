@@ -11,7 +11,8 @@ const SubscribeButton = styled.button`
   color: white;
   padding: 18px;
   border: 1px solid #000;
-  width: 28%;
+  width: 120px;
+
   cursor: pointer;
   font-size: 13px;
 
@@ -19,9 +20,10 @@ const SubscribeButton = styled.button`
   display: flex; /* Use flex container */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
-  height: 60px;
+  height: 30px;
 
   text-align: center;
+
 `;
 
 
@@ -49,6 +51,14 @@ align-items:center;
 margin-top:3%;
 
 
+@media(max-width:680px){
+  flex-direction: column;
+  align-items:flex-start;
+
+
+}
+
+
 `;
 const DivImmagine = styled.div`
 
@@ -58,10 +68,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-background-color:blue;
 
 
 
+@media(max-width:680px){
+  width:100%;
+}
 `;
 const Descrizione = styled.p`
 width:100%;
@@ -72,6 +84,10 @@ margin-top:0;
 margin-bottom:1%;
 font-weight: normal; 
 
+@media(max-width:680px){
+  font-size: 17.5px; 
+}
+
 `;
 const TitoloStoryBoard = styled.p`
   width: 100%;
@@ -81,6 +97,11 @@ const TitoloStoryBoard = styled.p`
   align-items: center;
   justify-content: center;
   margin-bottom:1%;
+
+  @media(max-width:680px){
+    font-size: 31.5px;
+
+  }
 `;
 const DivInfo = styled.div`
 
@@ -95,6 +116,10 @@ justify-content:center;
 display:flex;
 flex-direction: column;
 
+@media(max-width: 680px){
+  width: 100%;
+}
+
 
 
 
@@ -104,7 +129,9 @@ flex-direction: column;
 const Maison2Img = styled.img`
 width:100%;
 
+@media(max-width:680px){
 
+}
 `;
 const Titolo = styled.h1`
 margin-top:4%;
@@ -133,6 +160,10 @@ const FormContainer = styled.div`
     width:75%;
   }
 
+  @media(max-width: 680px){
+    width:90%;
+  }
+
 `;
 
 const Title = styled.h2`
@@ -144,7 +175,17 @@ const CheckboxContainer = styled.div`
   flex-direction: row;
   gap: 20px; /* Aumenta la distanza tra le checkbox */
   margin-top:2%;
+
+  width:100%;
+  height:100%;
+
+
   
+  @media(max-width: 680px){
+    margin-top:6%;
+    margin-bottom:6%;
+
+  }
 `;
 
 const Checkbox = styled.input`
@@ -185,18 +226,21 @@ const Checkbox2 = styled.input`
   height: 2em;
   background-color: white;
   border: 1px solid black;
-  border-radius: 0; /* Angoli di 90% non arrotondati */
   vertical-align: middle;
   appearance: none;
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
-  margin-right:30px;
+  padding: 0; /* Rimuovi il padding */
+  margin-top: 13px; /* Rimuovi il margin */
+
+  margin-right:10px;
+  margin-left:0px;
 
   &:checked {
     &::before {
-      content: '✔'; /* Simbolo di spunta nera */
-      display: block;
+      content: '✔';
+      display: flex;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -205,7 +249,14 @@ const Checkbox2 = styled.input`
       color: black;
     }
   }
+
+  @media (max-width: 680px) {
+    width: 2em;
+    height: 2em;
+  }
 `;
+
+
 
 
 
@@ -217,10 +268,27 @@ const CheckboxLabel = styled.label`
 `;
 const CheckboxLabel2 = styled.label`
   display: flex;
-  align-items: center;
+  width: 100%;
 
-  margin-top:2%;
+  height:100%;
+
+
+
+
+
+
 `;
+const DivCheckBox = styled.div`
+
+  height: 20px; /* Altezza desiderata */
+  width:40px;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: left; /* Centra orizzontalmente */
+
+`;
+
+
 const FlexContainer = styled.div`
   display: flex;
   gap: 20px;
@@ -237,6 +305,11 @@ const DivInserimento = styled.div`
   margin-left:23%;
 
 
+  @media(max-width: 680px){
+    width:100%;
+    margin-left:0;
+  }
+
 `;
 
 const Subtitle = styled.div`
@@ -250,6 +323,11 @@ const Subtitle = styled.div`
   tex-align:center;
   justify-content:center;
 
+
+  @media(max-width: 680px){
+    width:90%;
+
+  }
 
 `;
 
@@ -288,6 +366,10 @@ const Input = styled.input`
   width: 100%; /* Occupa il 50% della larghezza del FormContainer */
   font-size: 16px; // Modifica la grandezza del font qui
 
+  @media(max-width:680px){
+    font-size: 14px; 
+  }
+
 `;
 const InputSelect = styled.select`
   border: none;
@@ -319,12 +401,20 @@ font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
 margin-bottom: 0;
 
+@media(max-width:680px){
+  font-size: 35px; 
+}
+
 
 `;
 const AbcGrassetto = styled.p`
 font-family: 'ABCGaisyr-Regular';
-font-size: 20px; 
+font-size: 17.5px; 
 margin-bottom: 0;
+
+@media(max-width:680px){
+  font-size: 15.6px; 
+}
 
 
 `;
@@ -335,15 +425,27 @@ font-size: 16px;
 width:33%;
 text-align: center;
 margin-top:2px;
+
 @media(max-width: 1200px){
   width:50%;
 }
+
+@media(max-width: 680px){
+  font-size: 14px;
+  width:80%;
+
+}
+
 
 
 `;
 const GtaRegular16 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
+
+@media(max-width:680px){
+  font-size: 14px; 
+}
 
 
 
@@ -353,6 +455,10 @@ font-family: 'GTAmericaLight';
 font-size: 16px;
 margin-top:1%;
 margin-bottom:2%;
+
+@media(max-width:680px){
+  font-size: 14px; 
+}
 
 
 `;
@@ -364,6 +470,10 @@ margin-bottom:2%;
 
 text-align:center;
 
+@media(max-width:680px){
+  font-size: 14px; 
+}
+
 
 `;
 const GtaLightCentered = styled.p`
@@ -371,6 +481,15 @@ font-family: 'GTAmericaLight';
 font-size: 16px;
 margin-top:0;
 margin-bottom:0;
+
+
+
+@media(max-width:680px){
+  font-size: 11px; 
+  margin-top:0;
+  width:100%;
+  
+}
 
 `;
 
@@ -540,7 +659,7 @@ and on Saturdays from 9 am to 5 pm.
             onChange={() => handleCheckboxChange('Miss, Mrs, Ms')}
           />
 
-          <span><GtaLight> Miss, Mrs, Ms </GtaLight></span>
+          <span><GtaLight> Miss</GtaLight></span>
         </CheckboxLabel>
         <CheckboxLabel>
           <Checkbox
@@ -618,11 +737,15 @@ and on Saturdays from 9 am to 5 pm.
 
       <CheckboxContainer>
         <CheckboxLabel2>
-        <Checkbox2
-        type="checkbox"
-        checked={selectedOptionNewsletter === true}
-        onChange={(event) => handleCheckboxChangeNewsletter(event.target.checked)}
-        />
+        <DivCheckBox>
+          <Checkbox2
+          type="checkbox"
+          checked={selectedOptionNewsletter === true}
+          onChange={(event) => handleCheckboxChangeNewsletter(event.target.checked)}
+          />
+        </DivCheckBox>
+
+
 
           <span> <GtaLightCentered> Be the first to hear about new arrivals from our special events, and other news from the world of Cusi. </GtaLightCentered></span>
           <Input type="hidden" name="user_newsletter" value={selectedOptionNewsletter} />
