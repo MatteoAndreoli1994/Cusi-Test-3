@@ -233,6 +233,7 @@ const Checkbox2 = styled.input`
   cursor: pointer;
   padding: 0; /* Rimuovi il padding */
   margin-top: 13px; /* Rimuovi il margin */
+  border-radius: 0; /* Rimuovi i bordi arrotondati */
 
   margin-right:10px;
   margin-left:0px;
@@ -366,6 +367,7 @@ const Input = styled.input`
   outline: none; /* Disattiva l'outline */
   width: 100%; /* Occupa il 50% della larghezza del FormContainer */
   font-size: 16px; // Modifica la grandezza del font qui
+  background-color:white;
 
   @media(max-width:680px){
     font-size: 14px; 
