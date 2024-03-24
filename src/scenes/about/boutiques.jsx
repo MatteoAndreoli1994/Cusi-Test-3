@@ -370,7 +370,7 @@ const Input = styled.input`
   background-color:white;
   color:black;
   font-family: 'GTAmericaLight';
-
+  padding-left: 0; /* Imposta il padding sinistro a zero */
 
 
   @media(max-width:680px){
@@ -388,6 +388,8 @@ const InputSelect = styled.select`
   border-radius: 0; /* Rimuovi i bordi arrotondati */
   appearance: none; /* Nasconde la freccia della selezione predefinita */
   background-color: transparent; /* Imposta lo sfondo trasparente */
+  color:black;
+  font-family: 'GTAmericaLight';
 
   /* Personalizza il caret (la freccia sulla sinistra) */
   background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
@@ -718,7 +720,7 @@ and on Saturdays from 9 am to 5 pm.
           >
             <option value="Cusi Montenapoleone"><GtaLight>Cusi Montenapoleone</GtaLight></option>
 
-            <option value="Cusi Portofino"><GtaLight> Cusi Portofino </GtaLight></option>
+            <option value="Cusi Portofino"><GtaLight>Cusi Portofino </GtaLight></option>
           </InputSelect>
         </InputLabelSolo>
 
