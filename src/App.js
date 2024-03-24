@@ -25,6 +25,7 @@ import Footer from "./scenes/global/Footer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import styled from 'styled-components';
 
+
 // apollo client
 const client = new ApolloClient({
   uri: 'https://prized-horses-45ff95e916.strapiapp.com/graphql',
@@ -73,6 +74,9 @@ function App() {
 
   return (
     <div className="app">
+
+
+
       <BrowserRouter>
         <ApolloProvider client={client}>
           <Navbar />
