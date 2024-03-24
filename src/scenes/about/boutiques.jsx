@@ -92,7 +92,7 @@ font-weight: normal;
 const TitoloStoryBoard = styled.p`
   width: 100%;
 
-  font-family: 'ABCGaisyr-Regular';
+  font-family: 'ABCGaisyr-Book';
   font-size: 36px;
   align-items: center;
   justify-content: center;
