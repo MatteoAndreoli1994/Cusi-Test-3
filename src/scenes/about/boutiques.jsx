@@ -326,7 +326,7 @@ const Subtitle = styled.div`
 
 
   @media(max-width: 680px){
-    width:90%;
+    width:80%;
 
   }
 
@@ -368,6 +368,10 @@ const Input = styled.input`
   width: 100%; /* Occupa il 50% della larghezza del FormContainer */
   font-size: 16px; // Modifica la grandezza del font qui
   background-color:white;
+  color:black;
+  font-family: 'GTAmericaLight';
+
+
 
   @media(max-width:680px){
     font-size: 14px; 
