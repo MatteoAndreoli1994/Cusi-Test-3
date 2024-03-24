@@ -580,6 +580,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <Container>
   <ABC>Boutiques</ABC>
   <GtaRegular>We would be delighted to welcome you so that you may discover 
