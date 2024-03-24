@@ -360,6 +360,7 @@ const InputLabelSolo = styled.label`
 const Input = styled.input`
   border: none;
   border-bottom: 1px solid black;
+  border-radius: 0; /* Rimuovi i bordi arrotondati */
   margin-top: 14px;
   padding-bottom: 3px; /* Aggiungi spazio per separare la linea dal testo */
   outline: none; /* Disattiva l'outline */
@@ -391,6 +392,7 @@ const InputSelect = styled.select`
   option[value="Cusi Montenapoleone"] {
     font-family: 'GTAmericaLight';
   }
+
 
 
 `;
