@@ -86,11 +86,12 @@ const ItemDetails = () => {
 
   const Container = styled.div`
   min-height: 100vh;
-  margin-top:10%;
+  margin-top:120px;
 
 
-justify-content:center;
-display:flex;
+  justify-content:center;
+  display:flex;
+
   `;
 
   const Bottoni = styled.div`
@@ -100,6 +101,7 @@ display:flex;
     margin-top:10%;
 
     width:70%;
+
   `;
 
 
@@ -114,6 +116,14 @@ display:flex;
 
 
   flex-direction:column;
+
+
+
+
+  @media(max-width: 680px){
+    width: 100%;
+
+  }
 `;
 
 const Image = styled.img`
@@ -121,6 +131,27 @@ const Image = styled.img`
   height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
   object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
   margin-bottom:3%;
+  
+
+  @media(max-width: 680px){
+    margin-top: 2%;
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
+
+const Image2 = styled.img`
+  width: 70%; /* Larghezza al 50% rispetto al container */
+  height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
+  object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
+  margin-bottom:3%;
+
+
+  @media(max-width: 680px){
+    display: none;
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -128,6 +159,11 @@ const ItemContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+
+
+  @media(max-width: 680px){
+    flex-direction: column;
+  }
 `;
 
 
@@ -138,11 +174,21 @@ const ItemContainer = styled.div`
   margin-top: 20%;
 
 
-
+  @media(max-width: 680px){
+    font-size:17.5px;
+  }
   
   `;
-  const ButtonBlack = styled(Button)`
-
+  
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonBlack = styled(Button)`
+  background-color: black;
+  color: white;
+  border-radius: 0;
+  min-width: 100%;
+  padding: 20px 40px;
+  margin: 20px 0;
+  cursor: pointer;
 
   && {
     transition: background-color 0.3s ease;
@@ -173,6 +219,11 @@ const ButtonWhite = styled(Button)`
 
   font-weight: 600;
   margin-bottom: 3%;
+
+
+  @media(max-width: 680px){
+    font-size:30px;
+  }
   `;
   const DescripionDiv = styled.div`
   display:flex;
@@ -181,7 +232,12 @@ const ButtonWhite = styled(Button)`
 
 
 
-width:50%;
+  width:50%;
+
+
+  @media (max-width: 680px){
+    width:100%;
+  }
 
   `;
 
@@ -199,6 +255,10 @@ width:50%;
   margin-top: 0;
   margin-bottom: 4%;
 
+  @media(max-width: 680px){
+    font-size:16px;
+  }
+
 
   `;
 
@@ -207,6 +267,10 @@ width:50%;
   margin-top: 0;
 
   font-weight: 600
+
+  @media(max-width: 680px){
+    font-size:26px;
+  }
 
   `;
 
@@ -229,6 +293,10 @@ const DropdownButton = styled.button`
   justify-content: space-between;
   font-size: 15px; /* Modifica la grandezza del testo all'interno del pulsante */
   font-weight: 300; /* Puoi modificare il peso del testo se necessario */
+
+  @media(max-width: 680px){
+    font-size:14px;
+  }
 `;
 
 const Arrow = styled.span`
@@ -276,6 +344,10 @@ font-size: 32px;
 margin-bottom: 0;
 margin-top: 0;
 
+@media(max-width: 680px){
+  font-size:28px;
+}
+
 `;
 
 const GtaRegular = styled.p`
@@ -283,6 +355,10 @@ font-family: 'GTAmericaRegular';
 font-size: 16px;
 margin-bottom: 0;
 margin-top: 0;
+
+@media(max-width: 680px){
+  font-size:14px;
+}
 
 
 `;
@@ -293,6 +369,11 @@ margin-bottom: 0;
 margin-top: 0;
 
 
+@media(max-width: 680px){
+  font-size:14px;
+}
+
+
 `;
 const ABC24 = styled.p`
 font-family: 'ABCGaisyr-Regular';
@@ -300,11 +381,19 @@ font-size: 24px;
 margin-bottom: 0;
 margin-top: 5%;
 
+@media(max-width: 680px){
+  font-size:21px;
+}
+
 `;
 
 const GtaLightLightInfo = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
+
+@media(max-width: 680px){
+  font-size:14px;
+}
 `;
   
 
@@ -321,7 +410,7 @@ font-size: 16px;
             src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             style={{ objectFit: "contain" }}
           />
-          <Image
+          <Image2
             alt={item?.name}
             width="100%"
             height="100%"
