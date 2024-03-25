@@ -102,6 +102,11 @@ const ItemDetails = () => {
 
     width:70%;
 
+
+    @media(max-width: 680px){
+      width:90%;
+    }
+
   `;
 
 
@@ -192,15 +197,30 @@ const ButtonBlack = styled(Button)`
 
   && {
     transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+
 
     &:hover {
       background-color: ${shades.primary[300]}; /* Cambia il colore a tuo piacimento */
     }
   }
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+      margin-bottom: 8px;
+    }
+  }
+
+  
 `;
 
 const ButtonWhite = styled(Button)`
+
+
   && {
+    margin-bottom: 20px;
+    margin-top: 20px;
     background-color: white;
     color: black;
     border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
@@ -210,6 +230,15 @@ const ButtonWhite = styled(Button)`
     background-color: black;
     color: white;
     border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
   }
 `;
 
@@ -247,6 +276,11 @@ const ButtonWhite = styled(Button)`
   width:70%;
 
 
+
+
+  @media(max-width: 680px){
+    width: 90%;
+  }
 
   `;
 
@@ -482,7 +516,7 @@ font-size: 16px;
                 borderRadius: 0,
                 minWidth: "100%",
                 padding: "20px 40px",
-                m: "20px 0",
+
               }}
               onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
             >
@@ -496,7 +530,7 @@ font-size: 16px;
                 borderRadius: 0,
                 minWidth: "100%",
                 padding: "20px 40px",
-                m: "20px 0",
+
               }}
               onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
             >
@@ -510,7 +544,7 @@ font-size: 16px;
                 borderRadius: 0,
                 minWidth: "100%",
                 padding: "20px 40px",
-                m: "20px 0",
+
               }}
               onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
             >
