@@ -25,173 +25,6 @@ import collana2_navbar from '../../assets/collana2_navbar.jpg';
 import orecchini_navbar from '../../assets/orecchini_navbar.jpg';
 import maison_navbar from '../../assets/maison2.jpg';
 
-function Navbar() {
-  
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
-
-
-
-  const [isHovered, setIsHovered] = useState(false);
-  const [isHoveredCollections, setIsHoveredCollections] = useState(false);
-  const [isHoveredAbout, setIsHoveredAbout] = useState(false);
-
-  const [showCollectionInfo, setshowCollectionInfo] = useState(false);
-  const [showShopInfo, setshowShopInfo] = useState(false);
-  const [showHighJewellery, setShowHighJewellery] = useState(false);
-  const [showAboutInfo, setshowAboutInfo] = useState(false);
-
-  const [selectedCollection, setSelectedCollection] = useState([]);
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-
-  // Aggiungi un listener per rilevare i cambiamenti nella dimensione della finestra
-  useEffect(() => {
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-      if (window.innerWidth > 768) {
-        setIsFilterVisible(false);
-      }
-    }, 200); // Ritardo di 200 millisecondi
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleFilterClick = () => {
-    setIsFilterVisible(!isFilterVisible);
-  };
-
-
-
-
-  const handleShopClick = () => {
-    setIsHovered(false)
-    setIsFilterVisible(false)
-    navigate('/shopRings');
-  };
-
-  const handleShopClickEarrings = () => {
-    setIsHovered(false)
-    setIsFilterVisible(false)
-    navigate('/shopEarrings');
-  };
-  const handleShowCollection = () => {
-    setshowCollectionInfo(prevState => !prevState);
-    setshowShopInfo(false);
-    setshowAboutInfo(false);
-  };
-
-  const handleShowShopInfo = () => {
-    setshowCollectionInfo(false);
-    setshowAboutInfo(false);
-    setshowShopInfo(prevState => !prevState);
-  };
-  const handleShowAboutInfo = () => {
-    setshowCollectionInfo(false);
-    setshowAboutInfo(prevState => !prevState);
-    setshowShopInfo(false);
-  };
-
-
-
-  const handleShopClickNecklaces = () => {
-    setIsHovered(false)
-    setIsFilterVisible(false)
-    navigate('/shopNecklaces');
-  };
-
-  const handleShopClickBracelets = () => {
-    setIsHovered(false)
-    setIsFilterVisible(false)
-    navigate('/shopBracelets');
-  };
-
-  const handleShopClickBollywood = () => {
-    setIsHoveredCollections(false)
-    setIsFilterVisible(false)
-    navigate('/shopBollywood');
-  };
-
-  const handleShopClickFleurie = () => {
-    setIsHoveredCollections(false)
-    setIsFilterVisible(false)
-    navigate('/shopFleurie');
-  };
-  const handleShopClickTycoon = () => {
-    setIsHoveredCollections(false)
-    setIsFilterVisible(false)
-    navigate('/shopTycoon');
-  };
-  const handleShopClickUrania = () => {
-    setIsHoveredCollections(false)
-    setIsFilterVisible(false)
-    navigate('/shopUrania');
-  };
-  const handleShopClickZingara = () => {
-    setIsHoveredCollections(false)
-    setIsFilterVisible(false)
-    navigate('/shopZingara');
-  };
-
-
-  const handleMaisonCusi = () => {
-    setIsHoveredAbout(false)
-    setIsFilterVisible(false)
-    navigate('/maisoncusi');
-  };
-  const handleBoutiques = () => {
-    setIsHoveredAbout(false)
-    setIsFilterVisible(false)
-    navigate('/boutiques');
-  };
-  const handleCustomerService = () => {
-    setIsHoveredAbout(false)
-    setIsFilterVisible(false)
-    navigate('/customerservice');
-  };
-  const handleContactUs = () => {
-    setIsHoveredAbout(false)
-    setIsFilterVisible(false)
-    navigate('/contactus');
-  };
-
-  const handleHamburgerClick = () => {
-    // Azione per mostrare il menu hamburger
-    // Implementa la tua logica qui
-  };
-
-
-
-  const handleCheckboxChangeCollection = (Collection) => {
-    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
-    if (selectedCollection.includes(Collection)) {
-      setSelectedCollection(selectedCollection.filter((m) => m !== Collection));
-
-      
-    } else {
-      setSelectedCollection([...selectedCollection, Collection]);
-
-    }
-  };
-  
-  
-const Checkbox = ({ label, onChange, checked, ...props }) => (
-  <CheckboxContainer>
-    <UnstyledCheckbox
-      {...props}
-      checked={checked}
-      onChange={onChange}
-    />
-    <CheckboxText>{label}</CheckboxText>
-  </CheckboxContainer>
-);
-
 const Container = styled.div`
 display: flex;
 align-items: center;
@@ -440,20 +273,22 @@ const slideAnimation = keyframes`
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
   position: fixed;
-  left: -100%;
+
   bottom: 0;
   width: 80%;
   height: 100%;
   background-color: white;
   z-index: 99;
 
-  animation: ${slideAnimation} 0.5s forwards;
+  left: ${({ open }) => (open ? '0%' : '-90%')};
+  transition: left 0.5s ease;
 
 
   
 
 
 `;
+
 
 const BoxMenuMobile = styled(Box)`
 display: none;
@@ -600,6 +435,156 @@ width: 100%;
 `;
 
 
+function Navbar() {
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+
+
+
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveredCollections, setIsHoveredCollections] = useState(false);
+  const [isHoveredAbout, setIsHoveredAbout] = useState(false);
+
+  const [showCollectionInfo, setshowCollectionInfo] = useState(false);
+  const [showShopInfo, setshowShopInfo] = useState(false);
+  const [showHighJewellery, setShowHighJewellery] = useState(false);
+  const [showAboutInfo, setshowAboutInfo] = useState(false);
+
+  const [selectedCollection, setSelectedCollection] = useState([]);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+
+
+  // Aggiungi un listener per rilevare i cambiamenti nella dimensione della finestra
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth > 768) {
+        setIsFilterVisible(false);
+      }
+    }, 200); // Ritardo di 200 millisecondi
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleFilterClick = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
+
+
+
+  const handleShopClick = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    navigate('/shopRings');
+  };
+
+  const handleShopClickEarrings = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    navigate('/shopEarrings');
+  };
+  const handleShowCollection = () => {
+    setshowCollectionInfo(prevState => !prevState);
+    setshowShopInfo(false);
+    setshowAboutInfo(false);
+  };
+
+  const handleShowShopInfo = () => {
+    setshowCollectionInfo(false);
+    setshowAboutInfo(false);
+    setshowShopInfo(prevState => !prevState);
+  };
+  const handleShowAboutInfo = () => {
+    setshowCollectionInfo(false);
+    setshowAboutInfo(prevState => !prevState);
+    setshowShopInfo(false);
+  };
+
+
+
+  const handleShopClickNecklaces = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    navigate('/shopNecklaces');
+  };
+
+  const handleShopClickBracelets = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    navigate('/shopBracelets');
+  };
+
+  const handleShopClickBollywood = () => {
+    setIsHoveredCollections(false)
+    setIsFilterVisible(false)
+    navigate('/shopBollywood');
+  };
+
+  const handleShopClickFleurie = () => {
+    setIsHoveredCollections(false)
+    setIsFilterVisible(false)
+    navigate('/shopFleurie');
+  };
+  const handleShopClickTycoon = () => {
+    setIsHoveredCollections(false)
+    setIsFilterVisible(false)
+    navigate('/shopTycoon');
+  };
+  const handleShopClickUrania = () => {
+    setIsHoveredCollections(false)
+    setIsFilterVisible(false)
+    navigate('/shopUrania');
+  };
+  const handleShopClickZingara = () => {
+    setIsHoveredCollections(false)
+    setIsFilterVisible(false)
+    navigate('/shopZingara');
+  };
+
+
+  const handleMaisonCusi = () => {
+    setIsHoveredAbout(false)
+    setIsFilterVisible(false)
+    navigate('/maisoncusi');
+  };
+  const handleBoutiques = () => {
+    setIsHoveredAbout(false)
+    setIsFilterVisible(false)
+    navigate('/boutiques');
+  };
+  const handleCustomerService = () => {
+    setIsHoveredAbout(false)
+    setIsFilterVisible(false)
+    navigate('/customerservice');
+  };
+  const handleContactUs = () => {
+    setIsHoveredAbout(false)
+    setIsFilterVisible(false)
+    navigate('/contactus');
+  };
+
+
+  
+
+
+
+
+
 
 
 
@@ -611,7 +596,8 @@ width: 100%;
     <BigContainer     
     onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); }}>
     {/*HAMBURGER MENU OPENED*/ }
-    <DivCarrello display={isFilterVisible ? "flex" : "none"} animate={isFilterVisible} >
+
+    <DivCarrello open={isFilterVisible} >
           <ContainerFiltri>
 
           <FilterButton onClick={handleShowShopInfo}>
