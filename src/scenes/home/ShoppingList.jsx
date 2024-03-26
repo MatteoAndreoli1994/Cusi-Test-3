@@ -109,7 +109,7 @@ const ShoppingList = () => {
 
       @media(max-width: 680px){
         width:20%;
-        padding: 12px 40px;
+        padding: 8px 40px;
 
         &:not(:last-child) {
           margin-right: 1.5%;
@@ -299,6 +299,12 @@ ${DivImmagineCategoria2}:hover & {
   &:hover {
     background-color: #333;
   }
+
+
+  @media(max-width: 680px){
+    top: 80%;
+    padding: 10px 12.5px;
+  }
 `;
 const Info = styled.div`
   position: absolute;
@@ -311,6 +317,12 @@ const Info = styled.div`
   cursor: pointer;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 680px){
+    top: 65%;
+    left: 7%;
+  }
+
 `;
 //FONT
 const ABC = styled.p`
@@ -322,7 +334,7 @@ text-align: center;
 margin-top:0;
 
 @media(max-width: 680px){
-  font-size: 35px; 
+  font-size: 30px; 
 }
 `;
 const Gta = styled.p`
@@ -361,7 +373,7 @@ const GtaRegularShadow = styled.p`
   }
 
   @media (max-width: 680px){
-    font-size: 9px; 
+    font-size: 9.5px; 
   }
 `;
 
@@ -493,7 +505,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
     <Container
 
     >
-      <ABC variant="h3" textAlign="center">
+      <ABC  textAlign="center">
         Curated Pieces
       </ABC>
       <Gta>Soon-to-be staples in your rotation</Gta>
@@ -568,7 +580,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" effect="blur" />
 
                   {/* Aggiungi il tuo div qui */}
-                  <Info><GtaRegularShadow>Rare Diamonds & gemstones with <br></br> unique settings.</GtaRegularShadow></Info>
+                  <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2> SHOP EARRINGS </GtaRegular2></ShopButton>
 
                   </DivImmagineCategoria2>
@@ -666,7 +678,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
 
 
                       {/* Aggiungi il tuo div qui */}
-                      <Info><GtaRegularShadow>Rare Diamonds & gemstones with <br></br> unique settings.</GtaRegularShadow></Info>
+                      <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                       <ShopButton><GtaRegular2> SHOP BRACELETS </GtaRegular2></ShopButton>
 
                     </DivImmagineCategoria2>
@@ -741,7 +753,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                       <LazyLoadedCategory src={necklacesCategory} alt="Categoria earrings" effect="blur" />
 
                         {/* Aggiungi il tuo div qui */}
-                        <Info><GtaRegularShadow>Rare Diamonds & gemstones with <br></br> unique settings.</GtaRegularShadow></Info>
+                        <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
                         <ShopButton><GtaRegular2> SHOP NECKLACES </GtaRegular2></ShopButton>
 
                       </DivImmagineCategoria2>
@@ -817,7 +829,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
 
                         <LazyLoadedCategory src={ringsCategory} alt="Categoria earrings" effect="blur" />
                         {/* Aggiungi il tuo div qui */}
-                        <Info><GtaRegularShadow>Rare Diamonds & gemstones with <br></br> unique settings.</GtaRegularShadow></Info>
+                        <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                         <ShopButton><GtaRegular2> SHOP RINGS </GtaRegular2></ShopButton>
 
                       </DivImmagineCategoria2>
