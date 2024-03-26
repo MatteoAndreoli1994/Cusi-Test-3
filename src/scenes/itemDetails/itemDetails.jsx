@@ -70,6 +70,7 @@ const ItemDetails = () => {
   }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [isOpen, setIsOpen] = useState(false);
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleButtonClick = () => {
@@ -330,6 +331,7 @@ const DropdownButton = styled.button`
 
   @media(max-width: 680px){
     font-size:14px;
+    padding: 14px;
   }
 `;
 
@@ -363,6 +365,12 @@ const DropdownOption = styled.div`
   &:last-child {
     border-bottom: none; /* Rimuove il bordo inferiore all'ultimo elemento della lista */
   }
+
+
+  @media(max-width: 680px){
+    padding: 14px;
+  }
+
 `;
 
 const PlaceholderOption = styled.div`
@@ -373,7 +381,7 @@ const PlaceholderOption = styled.div`
 `;
 //FONT
 const ABC = styled.p`
-font-family: 'ABCGaisyr-Regular';
+font-family: 'ABCGaisyr-Book';
 font-size: 32px; 
 margin-bottom: 0;
 margin-top: 0;
@@ -432,7 +440,7 @@ font-size: 16px;
   
 
   return (
-    <Container width="100%" m="80px auto">
+    <Container width="100%" m="80px auto" >
       
       <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
         {/* IMAGES */}

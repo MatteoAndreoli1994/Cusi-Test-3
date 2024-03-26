@@ -71,14 +71,7 @@ const Ul = styled.ul`
 `;
 // Altri import
 
-const slideIn = keyframes`
-  from {
-    left: -50%;
-  }
-  to {
-    left: 0;
-  }
-`;
+
 
 const BoxSinistra = styled.div`
     margin-right: auto;
@@ -266,9 +259,7 @@ display: none;
   
 }
 `;
-const slideAnimation = keyframes`
-    100% { left: 0; }
-`;
+
 
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
@@ -456,11 +447,7 @@ function Navbar() {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
 
 
 
@@ -792,12 +779,36 @@ function Navbar() {
 
           <BoxMobileDestra>
 
-              <IconButton
-                onClick={() => dispatch(setIsCartOpen({}))}
-                sx={{ color: "black" }}
-              >
-                <ShoppingBagOutlined />
-              </IconButton>
+          <Badge
+            badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
+            color="secondary"
+            invisible={cart.length === 0}
+            sx={{
+              "& .MuiBadge-badge": {
+                right: 6,
+                top: 8,
+                padding: "0 4px",
+                height: "20px", // Imposta un'altezza fissa
+                width: "20px", // Imposta una larghezza fissa uguale all'altezza
+                borderRadius: "50%", // Imposta il valore di borderRadius per rendere il badge rotondo
+
+                fontSize: "8px", // Riduci la dimensione del font del badge
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontFamily: "Arial, sans-serif",
+              },
+            }}
+          >
+            <IconButton
+              onClick={() => dispatch(setIsCartOpen({}))}
+              sx={{ color: "black" }}
+            >
+              <ShoppingBagOutlined />
+            </IconButton>
+          </Badge>
+              
+              
 
           </BoxMobileDestra>
 
