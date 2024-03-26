@@ -433,18 +433,22 @@ display: none;
   
 }
 `;
+const slideAnimation = keyframes`
+    100% { left: 0; }
+`;
 
 //CONTENUTO MENU LATERALE
-const DivCarrello = styled(Box)`
+const DivCarrello =  styled(Box)`
   position: fixed;
-  left: ${props => props.isVisible ? '0%' : '-100%'};
+  left: -100%;
   bottom: 0;
   width: 80%;
   height: 100%;
   background-color: white;
   z-index: 99;
 
-  transition: left 3s; /* Animazione della transizione di left */
+  animation: ${slideAnimation} 0.5s forwards;
+
 
   
 
@@ -607,7 +611,7 @@ width: 100%;
     <BigContainer     
     onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); }}>
     {/*HAMBURGER MENU OPENED*/ }
-    <DivCarrello isVisible={isFilterVisible}>
+    <DivCarrello display={isFilterVisible ? "flex" : "none"} animate={isFilterVisible} >
           <ContainerFiltri>
 
           <FilterButton onClick={handleShowShopInfo}>
