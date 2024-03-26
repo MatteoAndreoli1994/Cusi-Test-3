@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import logo from '../../assets/logo.png';
 import anelloimage from '../../assets/anello 1.jpg';
 import add from '../../assets/add.png';
@@ -236,6 +236,16 @@ const Ul = styled.ul`
 
   width:100%;
 `;
+// Altri import
+
+const slideIn = keyframes`
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0;
+  }
+`;
 
 const BoxSinistra = styled.div`
     margin-right: auto;
@@ -426,18 +436,25 @@ display: none;
 
 //CONTENUTO MENU LATERALE
 const DivCarrello = styled(Box)`
-
   position: fixed;
-  left: ${({ isCartOpen }) => (isCartOpen ? '-30%' : '0%')};
+  left: ${props => props.isVisible ? '0%' : '-100%'};
   bottom: 0;
   width: 80%;
   height: 100%;
   background-color: white;
-  transition: right 1s ease-in-out; /* Animazione della transizione */
+  z-index: 99;
+
+  transition: left 3s; /* Animazione della transizione di left */
+
   
+
+
 `;
+
 const BoxMenuMobile = styled(Box)`
 display: none;
+
+
 @media (max-width: 768px) {
 
   display: flex;
@@ -587,24 +604,10 @@ width: 100%;
 
 
   return (
-<BigContainer     
-onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); }}>
-{/*HAMBURGER MENU OPENED*/ }
-      <BoxMenuMobile 
-        display={isFilterVisible ? "block" : "none"}
-        backgroundColor="rgba(0, 0, 0, 0.4)"
-        position="fixed"
-        zIndex={10}
-        width="70%"  // Cambiato da 100% a 70%
-        height="100%"
-        right="0"    // Cambiato da left a right
-        top="0"
-        overflow="auto"
-        onClick={handleFilterClick}
-      >
-
-
-        <DivCarrello display={isFilterVisible ? "block" : "none"} onClick={(e) => e.stopPropagation()}>
+    <BigContainer     
+    onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); }}>
+    {/*HAMBURGER MENU OPENED*/ }
+    <DivCarrello isVisible={isFilterVisible}>
           <ContainerFiltri>
 
           <FilterButton onClick={handleShowShopInfo}>
@@ -683,10 +686,27 @@ onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIs
 
 
           </ContainerFiltri>
-        </DivCarrello>
+    </DivCarrello>
+
+      <BoxMenuMobile 
+        display={isFilterVisible ? "flex" : "none"}
+        backgroundColor="rgba(0, 0, 0, 0.4)"
+        position="fixed"
+        zIndex={10}
+        width="100%"  // Cambiato da 100% a 70%
+        height="100%"
+        right="0"    // Cambiato da left a right
+        top="0"
+        overflow="auto"
+        onClick={handleFilterClick}
+      >
+
+
+
 
 
       </BoxMenuMobile>
+
   {/*HAMBURGER MENU CLOSED*/ }
 
 
