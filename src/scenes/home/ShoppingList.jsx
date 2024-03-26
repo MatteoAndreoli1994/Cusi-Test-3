@@ -134,7 +134,7 @@ const ShoppingList = () => {
 
 
     @media(max-width: 680px){
-      margin-bottom:8%;
+      margin-bottom:4%;
 
     }
     `;
@@ -150,18 +150,19 @@ const ShoppingList = () => {
 
 
 
-      margin-top:1%;
-      @media(max-width: 680px){
-        margin-top:3%;
-      }
+    margin-top:1%;
+
+    @media(max-width: 680px){
+
+      width: 93%;
+      margin-bottom: 10%;
+    }
     `;
 
     const ItemDiv = styled.div`
     display:flex;
     height:100%;
     width:100%;
-
-
 
     `;
 
@@ -187,19 +188,6 @@ const ShoppingList = () => {
 
   `;
 
-  const DivImmagineCategoria = styled.div`
-  display:flex;
-  width: 33%;
-  height: 70vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  margin-top:1%;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`;
 
   const DivImmaginiProdotti = styled.div`
   display:flex;
@@ -211,9 +199,12 @@ const ShoppingList = () => {
   margin-right:0.5%;
   margin-top:1%;
 
+
+
   @media(max-width:680px){
     width: 50%;
-
+    margin-left:0.5%;
+    margin-right:0.5%;
   }
   
   
@@ -267,40 +258,27 @@ justify-content:center;
 `;
 
 const DivImmagineCategoria2 = styled.div`
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+position: relative;
+display: flex;
+width: 100%;
+height: 100%;
+overflow: hidden;
 
 `;
   
-  const ImmagineCategoria = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1s ease-in-out;
-    transform-origin: center center;
-    
 
-  
-    ${DivImmagineCategoria2}:hover & {
-      transform: scale(1.2);
-    }
-  `;
+const LazyLoadedCategory = styled(LazyLoadImage)`
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 1s ease-in-out;
+transform-origin: center center;
 
-  const LazyLoadedCategory = styled(LazyLoadImage)`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1s ease-in-out;
-    transform-origin: center center;
-    
 
-  
-    ${DivImmagineCategoria2}:hover & {
-      transform: scale(1.2);
-    }
+
+${DivImmagineCategoria2}:hover & {
+  transform: scale(1.2);
+}
 `;
 
   const ShopButton = styled.button`
@@ -342,6 +320,10 @@ margin-bottom: 0;
 text-align: center;
 
 margin-top:0;
+
+@media(max-width: 680px){
+  font-size: 35px; 
+}
 `;
 const Gta = styled.p`
 font-family: 'GTAmericaLight';
@@ -428,6 +410,7 @@ const CircleContainer = styled.div`
   @media(max-width:680px){
     left: 0%;
     top: -8%;
+    display:none;
 
   }
 `;
@@ -446,34 +429,9 @@ const CircleContainer2 = styled.div`
   @media(max-width:680px){
     right: 0%;
     top: -8%;
+    display:none;
   }
 `;
-
-
-// Componente RightArrowDisactivated
-const RightArrowDisactivated = styled.img`
-  position: absolute;
-  top: 50%;
-  right: 3%;
-  transform: translateY(-50%);
-  cursor: not-allowed;
-  filter: grayscale(100%);
-`;
-const RightArrowWrapper = styled.div`
-width:10px;
-height:10px;
-
-  top: 45%;
-  right: 3%;
-  cursor: ${({ isRightArrowActive }) => (isRightArrowActive ? 'pointer' : 'not-allowed')};
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: ${({ isRightArrowActive }) => (isRightArrowActive ? 'scale(1.2)' : 'none')};
-  }
-`;
-
-
 
 const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
@@ -511,6 +469,7 @@ display: flex; // Aggiungi questa riga per centrare il div verticalmente
 justify-content: center; // Aggiungi questa riga per centrare il div orizzontalmente
 
 
+
 `;
 const ContenitorePerInfo = styled.div`
 margin-top:2%;
@@ -522,25 +481,11 @@ height: auto;
 overflow: hidden;
 
 z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
-`;
 
-const DivTest2 = styled.div`
-width:100%;
-height:100%;
 
 `;
-const DivTest1 = styled.div`
-width:100%;
-height:100%;
 
-`;
-const SommaDivTest = styled.div`
-width:100%;
-height:100%;
-flex-direction:column;
-display:flex;
 
-`;
 
 
 
@@ -952,9 +897,9 @@ display:flex;
 
 
           <CircleContainer2 onClick={() => { handleButtonClickRight(); }}>
-          <RightArrow src={arrowRight} alt="Right Arrow" onClick={() => { handleButtonClickRight(); }} />
-          <CircleBackground />
-        </CircleContainer2>
+            <RightArrow src={arrowRight} alt="Right Arrow" onClick={() => { handleButtonClickRight(); }} />
+            <CircleBackground />
+          </CircleContainer2>
 
                 </>
 
