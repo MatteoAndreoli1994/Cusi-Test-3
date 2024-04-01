@@ -12,7 +12,7 @@ import styled from 'styled-components';
 import ringsCategory from "../../assets/ringsCategory2.jpg";
 import braceletsCategory from "../../assets/braceletsCategory2.jpg";
 import necklacesCategory from "../../assets/necklacesCategory2.jpg";
-import earringsCategory from "../../assets/earringsCategory2.jpg";
+import earringsCategory from "../../assets/earringsCategory2.avif";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
@@ -267,7 +267,7 @@ overflow: hidden;
 `;
   
 
-const LazyLoadedCategory = styled(LazyLoadImage)`
+const LazyLoadedCategory = styled.img`
 width: 100%;
 height: 100%;
 object-fit: cover;
