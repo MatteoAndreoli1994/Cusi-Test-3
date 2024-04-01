@@ -57,7 +57,7 @@ z-index: 2;
 
 margin-left: auto;
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   display: none;
 }
 `;
@@ -107,7 +107,7 @@ const BoxSinistra = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 
@@ -236,7 +236,7 @@ const HamburgerIcon = styled.div`
 
 const BoxMobileSinistra = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     margin-right: auto;
     display: flex;
     width: 50%;
@@ -251,7 +251,7 @@ const LensIcon = styled(SearchOutlined)`
 `;
 const BoxMobileDestra = styled.div`
 display: none;
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   display: flex;
   justify-content: space-between;
   gap: 40px; /* Utilizzo di gap al posto di columnGap */
@@ -288,7 +288,7 @@ const BoxMenuMobile = styled(Box)`
 display: none;
 
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
   display: flex;
 
@@ -458,7 +458,7 @@ function Navbar() {
   useEffect(() => {
     const handleResize = debounce(() => {
       setWindowWidth(window.innerWidth);
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1200) {
         setIsFilterVisible(false);
       }
     }, 200); // Ritardo di 200 millisecondi
