@@ -16,7 +16,7 @@ import earringsCategory from "../../assets/earringsCategory2.avif";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ShoppingList = () => {
@@ -577,7 +577,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                           
                   <DivImmagineCategoria2>
 
-                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" effect="blur" />
+                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings"/>
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
@@ -673,7 +673,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                   <Container2>
                     <DivImmagineCategoria2>
 
-                      <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" effect="blur" />
+                      <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
 
 
 
@@ -750,7 +750,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
 
                     <Container2>
                       <DivImmagineCategoria2>
-                      <LazyLoadedCategory src={necklacesCategory} alt="Categoria earrings" effect="blur" />
+                      <LazyLoadedCategory src={necklacesCategory} alt="Categoria earrings" />
 
                         {/* Aggiungi il tuo div qui */}
                         <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
@@ -827,7 +827,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                     <Container2>
                       <DivImmagineCategoria2>
 
-                        <LazyLoadedCategory src={ringsCategory} alt="Categoria earrings" effect="blur" />
+                        <LazyLoadedCategory src={ringsCategory} alt="Categoria earrings" />
                         {/* Aggiungi il tuo div qui */}
                         <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                         <ShopButton><GtaRegular2> SHOP RINGS </GtaRegular2></ShopButton>
