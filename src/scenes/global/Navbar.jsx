@@ -130,20 +130,22 @@ width: 65px;
 `;
 const Menu = styled.div`
   // Stili del div aggiuntivo
-  display: ${({ isHovered }) => (isHovered ? 'flex' : 'none')};
+  top: ${({ open }) => (open ? '120px' : '-100%')};
   position: absolute;
-  top: 120px;
-  left: 0;
+
+
   width: 100%;
   height: 62%;
   background-color: white;
   position: fixed;
   z-index: 2; // Assicurati che il div sovrapponga il contenuto della home page
-
+  z-index: 99;
   align-items:center;
+  transition: left 1s ease;
+
 
   &:hover {
-    display: flex; // Mostra il menu anche quando il mouse è sopra di esso
+
   }
 `;
 
@@ -269,6 +271,7 @@ const DivCarrello =  styled(Box)`
   width: 80%;
   height: 100%;
   background-color: white;
+
   z-index: 99;
 
   left: ${({ open }) => (open ? '0%' : '-90%')};
@@ -477,7 +480,8 @@ function Navbar() {
   const handleShopClick = () => {
     setIsHovered(false)
     setIsFilterVisible(false)
-    navigate('/shopRings');
+    setshowShopInfo(false);
+
   };
 
   const handleShopClickEarrings = () => {
@@ -511,8 +515,9 @@ function Navbar() {
   };
 
   const handleShopClickBracelets = () => {
-    setIsHovered(false)
-    setIsFilterVisible(false)
+    setIsHovered(false);
+
+    setIsFilterVisible(false);
     navigate('/shopBracelets');
   };
 
@@ -779,36 +784,12 @@ function Navbar() {
 
           <BoxMobileDestra>
 
-          <Badge
-            badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
-            color="secondary"
-            invisible={cart.length === 0}
-            sx={{
-              "& .MuiBadge-badge": {
-                right: 6,
-                top: 8,
-                padding: "0 4px",
-                height: "20px", // Imposta un'altezza fissa
-                width: "20px", // Imposta una larghezza fissa uguale all'altezza
-                borderRadius: "50%", // Imposta il valore di borderRadius per rendere il badge rotondo
-
-                fontSize: "8px", // Riduci la dimensione del font del badge
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Arial, sans-serif",
-              },
-            }}
-          >
-            <IconButton
-              onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
-            >
-              <ShoppingBagOutlined />
-            </IconButton>
-          </Badge>
-              
-              
+              <IconButton
+                onClick={() => dispatch(setIsCartOpen({}))}
+                sx={{ color: "black" }}
+              >
+                <ShoppingBagOutlined />
+              </IconButton>
 
           </BoxMobileDestra>
 
@@ -816,9 +797,11 @@ function Navbar() {
 
         
       </NavBarDiv>
+
+          {/* Versione DESKTOP*/}    
     </Container>
             {/*SHOP*/}
-    <Menu isHovered={isHovered}>
+    <Menu open={isHovered}>
       <MenuContent>
         <MenuItem>
        <Typography2>HIGH JEWELLEY</Typography2> 
@@ -851,7 +834,7 @@ function Navbar() {
 
     </Menu>
             {/*COLLECTIONS*/}
-    <Menu isHovered={isHoveredCollections}>
+    <Menu open={isHoveredCollections}>
       <MenuContent>
         <MenuItem>
        <Typography2>ALL COLLECTIONS</Typography2> 
@@ -881,7 +864,7 @@ function Navbar() {
     </Menu>
 
                 {/*ABOUT*/}
-    <Menu isHovered={isHoveredAbout}>
+    <Menu open={isHoveredAbout}>
       <MenuContent>
         <MenuItem>
        <Typography2>THE HOUSE</Typography2> 
