@@ -19,110 +19,7 @@ import {
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 
-const ShopBracelets = () => {
-
-
-
-
-
-
-  const dispatch = useDispatch();
-  
-  const [value, setValue] = useState("bracelets");
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
-  const items = useSelector((state) => state.cart.items);
-  const breakPoint = useMediaQuery("(min-width:600px)");
-
-  const [showCollectionInfo, setshowCollectionInfo] = useState(false);
-  const [showStoneInfo, setshowStoneInfo] = useState(false);
-  const [showMaterialInfo, setshowMaterialInfo] = useState(false);
-  const [selectedMaterials, setSelectedMaterials] = useState([]);
-  const [selectedCollection, setSelectedCollection] = useState([]);
-  const [selectedStone, setSelectedCStone] = useState([]);
-
-
-
-
-  const handleFilterClick = () => {
-    setIsFilterVisible(!isFilterVisible);
-  };
-
-  async function getItems() {
-    const items = await fetch(
-      "https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image",
-      { method: "GET" }
-    );
-    const itemsJson = await items.json();
-    dispatch(setItems(itemsJson.data));
-  }
-
-  useEffect(() => {
-    getItems();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-
-  const necklacesItems = items.filter(
-    (item) => item.attributes.category === "necklaces"
-  );
-  
-  const braceletsItems = items.filter((item) => {
-    // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
-      return item.attributes.category === "bracelets";
-    }
-  
-    // Verifica la categoria, il materiale e la collezione
-    return (
-      item.attributes.category === "bracelets" &&
-      (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
-    );
-  });
-  
-  
-  
-
-
-  const handleCheckboxChange = (material) => {
-    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
-    if (selectedMaterials.includes(material)) {
-      setSelectedMaterials(selectedMaterials.filter((m) => m !== material));
-
-      
-    } else {
-      setSelectedMaterials([...selectedMaterials, material]);
-
-    }
-  };
-
-  const handleCheckboxChangeCollection = (Collection) => {
-    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
-    if (selectedCollection.includes(Collection)) {
-      setSelectedCollection(selectedCollection.filter((m) => m !== Collection));
-
-      
-    } else {
-      setSelectedCollection([...selectedCollection, Collection]);
-
-    }
-  };
-
-
-
-  const Checkbox = ({ label, onChange, checked, ...props }) => (
-    <CheckboxContainer>
-      <UnstyledCheckbox
-        {...props}
-        checked={checked}
-        onChange={onChange}
-      />
-      <CheckboxText>{label}</CheckboxText>
-    </CheckboxContainer>
-  );
-  
-  
-
-  const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -245,21 +142,30 @@ const Div = styled.div`
   width: 30px;
 `;
 
-const DivCarrello = styled(Box)`
-
+const DivCarrello =  styled(Box)`
   position: fixed;
-  left: ${({ isCartOpen }) => (isCartOpen ? '-30%' : '0%')};
+
   bottom: 0;
-  width: max(400px, 30%);
+  width: 30%;
   height: 100%;
   background-color: white;
-  transition: right 1s ease-in-out; /* Animazione della transizione */
 
-  @media(max-width:680px){
-    width:80%;
+  z-index: 99;
+
+  left: ${({ open }) => (open ? '0%' : '-90%')};
+  transition: left 0.5s ease;
+
+  @media(max-width:1000px){
+    width:50%;
   }
 
+
+
+  
+
+
 `;
+
 
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
@@ -388,6 +294,111 @@ margin-right:10px;
 
 `;
 
+const ShopBracelets = () => {
+
+
+
+
+
+
+  const dispatch = useDispatch();
+  
+  const [value, setValue] = useState("bracelets");
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const items = useSelector((state) => state.cart.items);
+  const breakPoint = useMediaQuery("(min-width:600px)");
+
+  const [showCollectionInfo, setshowCollectionInfo] = useState(false);
+  const [showStoneInfo, setshowStoneInfo] = useState(false);
+  const [showMaterialInfo, setshowMaterialInfo] = useState(false);
+  const [selectedMaterials, setSelectedMaterials] = useState([]);
+  const [selectedCollection, setSelectedCollection] = useState([]);
+  const [selectedStone, setSelectedCStone] = useState([]);
+
+
+
+
+  const handleFilterClick = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
+  async function getItems() {
+    const items = await fetch(
+      "https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image",
+      { method: "GET" }
+    );
+    const itemsJson = await items.json();
+    dispatch(setItems(itemsJson.data));
+  }
+
+  useEffect(() => {
+    getItems();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
+  const necklacesItems = items.filter(
+    (item) => item.attributes.category === "necklaces"
+  );
+  
+  const braceletsItems = items.filter((item) => {
+    // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
+      return item.attributes.category === "bracelets";
+    }
+  
+    // Verifica la categoria, il materiale e la collezione
+    return (
+      item.attributes.category === "bracelets" &&
+      (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+    );
+  });
+  
+  
+  
+
+
+  const handleCheckboxChange = (material) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedMaterials.includes(material)) {
+      setSelectedMaterials(selectedMaterials.filter((m) => m !== material));
+
+      
+    } else {
+      setSelectedMaterials([...selectedMaterials, material]);
+
+    }
+  };
+
+  const handleCheckboxChangeCollection = (Collection) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedCollection.includes(Collection)) {
+      setSelectedCollection(selectedCollection.filter((m) => m !== Collection));
+
+      
+    } else {
+      setSelectedCollection([...selectedCollection, Collection]);
+
+    }
+  };
+
+
+
+  const Checkbox = ({ label, onChange, checked, ...props }) => (
+    <CheckboxContainer>
+      <UnstyledCheckbox
+        {...props}
+        checked={checked}
+        onChange={onChange}
+      />
+      <CheckboxText>{label}</CheckboxText>
+    </CheckboxContainer>
+  );
+  
+  
+
+  
+
 
 
 
@@ -397,22 +408,7 @@ margin-right:10px;
 
   return (
     <>
-    
-      <Box
-        display={isFilterVisible ? "block" : "none"}
-        backgroundColor="rgba(0, 0, 0, 0.4)"
-        position="fixed"
-        zIndex={10}
-        width="70%"  // Cambiato da 100% a 70%
-        height="100%"
-        right="0"    // Cambiato da left a right
-        top="0"
-        overflow="auto"
-        onClick={handleFilterClick}
-      >
-
-
-        <DivCarrello display={isFilterVisible ? "block" : "none"} onClick={(e) => e.stopPropagation()}>
+            <DivCarrello open={isFilterVisible}>
           <ContainerFiltri>
 
             <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
@@ -514,6 +510,21 @@ margin-right:10px;
 
           </ContainerFiltri>
         </DivCarrello>
+
+      <Box
+        display={isFilterVisible ? "block" : "none"}
+        backgroundColor="rgba(0, 0, 0, 0.4)"
+        position="fixed"
+        zIndex={10}
+        width="100%"  // Cambiato da 100% a 70%
+        height="100%"
+        right="0"    // Cambiato da left a right
+        top="0"
+        overflow="auto"
+        onClick={handleFilterClick}
+      >
+
+
 
 
 

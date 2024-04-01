@@ -78,6 +78,9 @@ const Image = styled.img`
 `;
 
 const Image2 = styled.img`
+
+`;
+const Image2Div = styled.div`
   width: 70%; /* Larghezza al 50% rispetto al container */
   height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
   object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
@@ -454,6 +457,7 @@ const ItemDetails = () => {
       <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
         {/* IMAGES */}
         <ImageContainer>
+
       <Image
         alt={item?.name}
         width="100%"
@@ -462,13 +466,17 @@ const ItemDetails = () => {
         style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
         onLoad={handleImageLoad}
       />
+          <Image2Div>
           <Image2
             alt={item?.name}
             width="100%"
             height="100%"
             src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
+            
           />
+          </Image2Div>
+
         </ImageContainer>
 
         {/* ACTIONS */}
