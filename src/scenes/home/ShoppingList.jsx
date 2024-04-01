@@ -9,9 +9,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../../state";
 import styled from 'styled-components';
-import ringsCategory from "../../assets/ringsCategory2.jpg";
-import braceletsCategory from "../../assets/braceletsCategory2.jpg";
-import necklacesCategory from "../../assets/necklacesCategory2.jpg";
+import ringsCategory from "../../assets/ringsCategory2.avif";
+import braceletsCategory from "../../assets/braceletsCategory2.avif";
+import necklacesCategory from "../../assets/necklacesCategory2.avif";
 import earringsCategory from "../../assets/earringsCategory2.avif";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
