@@ -301,7 +301,7 @@ const ContainerFiltri = styled.div`
   flex-direction: column;
 
   margin: 20px;
-  margin-top: 20%;
+  margin-top: 10vh;
 `;
 const FilterButtonText = styled.span`
   /* Aggiunto il flex-grow per far sì che occupi lo spazio rimanente */
@@ -481,7 +481,7 @@ function Navbar() {
     setIsHovered(false)
     setIsFilterVisible(false)
     setshowShopInfo(false);
-
+    navigate('/shopRings');
   };
 
   const handleShopClickEarrings = () => {

@@ -146,7 +146,7 @@ const DivCarrello =  styled(Box)`
   position: fixed;
 
   bottom: 0;
-  width: 30%;
+  width: 50%;
   height: 100%;
   background-color: white;
 
@@ -156,7 +156,7 @@ const DivCarrello =  styled(Box)`
   transition: left 0.5s ease;
 
   @media(max-width:1000px){
-    width:50%;
+    width:80%;
   }
 
 
