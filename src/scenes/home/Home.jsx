@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import gifHome from '../../assets/gifhome.gif';
+import video2 from '../../assets/video2.mp4';
 import ShoppingList from './ShoppingList';
 import Modella2 from"../../assets/modellasmeraldo.jpg";
 import Modella3 from"../../assets/modellazingara.jpg";
@@ -10,6 +10,8 @@ import SelectedItem1Model from"../../assets/urania.jpg";
 import Maison from"../../assets/maison1.jpg";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useEffect } from "react";
+
 
 
 import Anello1White from"../../assets/A2.jpg";
@@ -21,6 +23,7 @@ const Home = () => {
 
   const [item, setItem] = useState(null);
   const navigate = useNavigate();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
 
 
@@ -63,6 +66,9 @@ const Home = () => {
   };
 
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
 
   const Container = styled.div`
@@ -75,9 +81,11 @@ const Home = () => {
 
   const GifBox = styled.div`
     position: relative;
-    width: 100%;
-    height:auto;
+    display:flex;
+    justify-content:center;
+  width:100vw;
     overflow: hidden;
+
   `;
 
   const Gif = styled.img`
@@ -567,6 +575,13 @@ const LazyLoadedImmagine = styled(LazyLoadImage)`
   height: 100%;
   object-fit: cover;
 `;
+const Video = styled.video`
+
+width:100vw;
+height:auto;
+
+
+`;
 
 
 
@@ -575,9 +590,14 @@ const LazyLoadedImmagine = styled(LazyLoadImage)`
     <>
 
       <Container>
-        <GifBox>
-          <LazyLoadedGif src={gifHome} alt="GIF Home" effect="blur" />
-        </GifBox>
+
+      <GifBox>          <Video src={video2} type="video/mp4" autoPlay muted loop onLoad={handleImageLoad}/></GifBox>
+
+
+
+
+
+
 
 
 
@@ -591,7 +611,7 @@ const LazyLoadedImmagine = styled(LazyLoadImage)`
           <CollectionDiv>
             <Collection1DivIconic>
 
-
+            
             <LazyLoadedImmagine src={Modella2} effect="opacity" />
 
             <ABC24>Fleurie</ABC24>
@@ -601,6 +621,7 @@ const LazyLoadedImmagine = styled(LazyLoadImage)`
 
             
           </Collection1DivIconic>
+
             <Collection1DivIconic2Mobile>
               <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegular>
             </Collection1DivIconic2Mobile>

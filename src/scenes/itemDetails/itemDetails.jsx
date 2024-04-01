@@ -11,81 +11,10 @@ import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 import styled from 'styled-components';
-
-const ItemDetails = () => {
-  const dispatch = useDispatch();
-  const { itemId } = useParams();
-  const [value, setValue] = useState("description");
-  const [count, setCount] = useState(1);
-  const [item, setItem] = useState(null);
-  const [items, setItems] = useState([]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  // Funzione per formattare il prezzo
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
-  };
-
-  const handleAddToCart = () => {
-    // Verifica se l'elemento è già presente nel carrello
-    const isItemInCart = items.some(cartItem => cartItem.id === item.id);
-
-    if (!isItemInCart) {
-      // Se l'elemento non è presente nel carrello, aggiungilo
-      dispatch(addToCart({ item: { ...item, count } }));
-    } else {
-      // Se l'elemento è già presente nel carrello, gestisci l'azione di conseguenza
-      console.log('L\'elemento è già presente nel carrello.');
-      // Puoi mostrare un messaggio all'utente o eseguire altre azioni necessarie.
-    }
-  };
-
-  async function getItem() {
-    const item = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image`,
-      {
-        method: "GET",
-      }
-    );
-    const itemJson = await item.json();
-    setItem(itemJson.data);
-  }
-
-  async function getItems() {
-    const items = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image`,
-      {
-        method: "GET",
-      }
-    );
-    const itemsJson = await items.json();
-    setItems(itemsJson.data);
-  }
-
-  useEffect(() => {
-    getItem();
-    getItems();
-  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const handleButtonClick = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleOptionClick = (value) => {
-    setCount(value); // Aggiorna il valore
-    setSelectedOption(value); // Aggiorna il valore selezionato
-    setIsOpen(false); // Chiudi la finestra di scelta
-  };
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
-
-  const Container = styled.div`
+const Container = styled.div`
   min-height: 100vh;
   margin-top:120px;
 
@@ -437,6 +366,86 @@ font-size: 16px;
   font-size:14px;
 }
 `;
+
+const ItemDetails = () => {
+  const dispatch = useDispatch();
+  const { itemId } = useParams();
+  const [value, setValue] = useState("description");
+  const [count, setCount] = useState(1);
+  const [item, setItem] = useState(null);
+  const [items, setItems] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  // Funzione per formattare il prezzo
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
+  };
+
+  const handleAddToCart = () => {
+    // Verifica se l'elemento è già presente nel carrello
+    const isItemInCart = items.some(cartItem => cartItem.id === item.id);
+
+    if (!isItemInCart) {
+      // Se l'elemento non è presente nel carrello, aggiungilo
+      dispatch(addToCart({ item: { ...item, count } }));
+    } else {
+      // Se l'elemento è già presente nel carrello, gestisci l'azione di conseguenza
+      console.log('L\'elemento è già presente nel carrello.');
+      // Puoi mostrare un messaggio all'utente o eseguire altre azioni necessarie.
+    }
+  };
+
+  async function getItem() {
+    const item = await fetch(
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemJson = await item.json();
+    setItem(itemJson.data);
+  }
+
+  async function getItems() {
+    const items = await fetch(
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image`,
+      {
+        method: "GET",
+      }
+    );
+    const itemsJson = await items.json();
+    setItems(itemsJson.data);
+  }
+
+  useEffect(() => {
+    getItem();
+    getItems();
+  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleButtonClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClick = (value) => {
+    setCount(value); // Aggiorna il valore
+    setSelectedOption(value); // Aggiorna il valore selezionato
+    setIsOpen(false); // Chiudi la finestra di scelta
+  };
+
+
+
+  
   
 
   return (
@@ -445,19 +454,20 @@ font-size: 16px;
       <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
         {/* IMAGES */}
         <ImageContainer>
-          <Image
-            alt={item?.name}
-            width="100%"
-            height="100%"
-            src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-            style={{ objectFit: "contain" }}
-          />
+      <Image
+        alt={item?.name}
+        width="100%"
+        height="100%"
+        src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+        style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
+        onLoad={handleImageLoad}
+      />
           <Image2
             alt={item?.name}
             width="100%"
             height="100%"
             src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
           />
         </ImageContainer>
 
