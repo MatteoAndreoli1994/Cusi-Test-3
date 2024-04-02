@@ -375,9 +375,9 @@ const Immagine3 = styled.img`
 width:50%;
 
 @media(max-width: 680px){
-  margin-top:2%;
-  margin-bottom:8%;
-  width:80%;
+  margin-top:0%;
+  margin-bottom:0%;
+  width:70%;
 
 }
 
@@ -458,6 +458,7 @@ width:70%;
   font-size: 15px; 
   width:80%;
   margin-bottom: 0%;
+  margin-top: 0%;
 }
 `;
 const GtaLeft = styled.p`
@@ -626,9 +627,9 @@ height:auto;
             <Immagine src={Modella2} />
 
             <ABC24>Fleurie</ABC24>
-            <Gta2>Timeless and wearable earrings with a modern twist that 
+            <Gta>Timeless and wearable earrings with a modern twist that 
             add a touch of style to any outfit.
-            </Gta2>
+            </Gta>
 
             
           </Collection1DivIconic>
@@ -679,9 +680,8 @@ height:auto;
 
 
             <ABC24DUE>Tycoon</ABC24DUE>
-            <GtaDescription>Our signature pieces designed to be worn everyday with 
-            subtle details in contemporary shapes.
-            </GtaDescription>
+            <GtaDescription2>Elegance and shining harmony
+            </GtaDescription2>
             <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON</HyperLink></GtaRegular>
             </Collection2Div>
 
