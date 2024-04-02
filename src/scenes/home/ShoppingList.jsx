@@ -173,6 +173,7 @@ const ShoppingList = () => {
     display: flex;
     flex-direction: column;
     margin: 1%;
+
     margin-bottom: 5%;
     align-items:center;
     
@@ -183,7 +184,7 @@ const ShoppingList = () => {
     -ms-user-select: none;
 
     @media(max-width: 680px){
-
+      margin-top:10%;
     }
 
   `;

@@ -364,7 +364,7 @@ const Immagine2 = styled.img`
 width:40%;
 
 @media(max-width: 680px){
-  margin-top:12%;
+  margin-top:7%;
   margin-bottom:8%;
   width:40%;
 
@@ -612,7 +612,7 @@ height:auto;
             <Collection1DivIconic>
 
             
-            <LazyLoadedImmagine src={Modella2} effect="opacity" />
+            <Immagine src={Modella2} />
 
             <ABC24>Fleurie</ABC24>
             <Gta2>Timeless and wearable earrings with a modern twist that 
