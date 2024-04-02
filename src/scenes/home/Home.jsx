@@ -364,9 +364,9 @@ const Immagine2 = styled.img`
 width:40%;
 
 @media(max-width: 680px){
-  margin-top:7%;
+  margin-top:9%;
   margin-bottom:8%;
-  width:40%;
+  width:60%;
 
 }
 
