@@ -790,6 +790,34 @@ function Navbar() {
               >
                 <ShoppingBagOutlined />
               </IconButton>
+              <Badge
+            badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
+            color="secondary"
+            invisible={cart.length === 0}
+            sx={{
+              "& .MuiBadge-badge": {
+                right: 6,
+                top: 6,
+                padding: "0 4px",
+                height: "20px", // Imposta un'altezza fissa
+                width: "20px", // Imposta una larghezza fissa uguale all'altezza
+                borderRadius: "50%", // Imposta il valore di borderRadius per rendere il badge rotondo
+
+                fontSize: "8px", // Riduci la dimensione del font del badge
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontFamily: "Arial, sans-serif",
+              },
+            }}
+          >
+            <IconButton
+              onClick={() => dispatch(setIsCartOpen({}))}
+              sx={{ color: "black" }}
+            >
+              <ShoppingBagOutlined />
+            </IconButton>
+          </Badge>
 
           </BoxMobileDestra>
 
