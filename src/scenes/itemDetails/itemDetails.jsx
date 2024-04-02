@@ -320,6 +320,7 @@ margin-top: 0;
 
 @media(max-width: 680px){
   font-size:28px;
+  font-family: 'ABCGaisyr-Book';
 }
 
 `;

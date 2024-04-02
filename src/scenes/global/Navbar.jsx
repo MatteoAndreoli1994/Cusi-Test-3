@@ -732,9 +732,11 @@ function Navbar() {
         </Logo>
         
         <BoxDestra>
+          
           <IconButton sx={{ color: "black" }}>
             <SearchOutlined />
           </IconButton>
+
           <IconButton sx={{ color: "black" }}>
             <PersonOutline />
           </IconButton>
@@ -784,12 +786,7 @@ function Navbar() {
 
           <BoxMobileDestra>
 
-              <IconButton
-                onClick={() => dispatch(setIsCartOpen({}))}
-                sx={{ color: "black" }}
-              >
-                <ShoppingBagOutlined />
-              </IconButton>
+
               <Badge
             badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
             color="secondary"

@@ -14,7 +14,7 @@ import { useEffect } from "react";
 
 
 
-import Anello1White from"../../assets/A2.jpg";
+import Anello1White from"../../assets/A2.png";
 
 
 import { useNavigate } from "react-router-dom";
@@ -371,6 +371,17 @@ width:40%;
 }
 
 `;
+const Immagine3 = styled.img`
+width:50%;
+
+@media(max-width: 680px){
+  margin-top:2%;
+  margin-bottom:8%;
+  width:80%;
+
+}
+
+`;
 
 const ImmagineMaison = styled.img`
 width:100%;
@@ -588,7 +599,7 @@ height:auto;
 
   return (
     <>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <Container>
 
       <GifBox>          <Video src={video2} type="video/mp4" autoPlay muted loop onLoad={handleImageLoad}/></GifBox>
@@ -664,7 +675,7 @@ height:auto;
 
             <Collection2Div>
             
-            <Immagine2 src={Anello1White}/>
+            <Immagine3 src={Anello1White}/>
 
 
             <ABC24DUE>Tycoon</ABC24DUE>
