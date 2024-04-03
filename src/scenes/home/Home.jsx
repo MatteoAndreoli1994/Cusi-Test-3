@@ -87,7 +87,7 @@ const Home = () => {
     overflow: hidden;
     background: url(${video2}) no-repeat center center;
     background-size: cover;
-
+  margin-bottom: 2%;
   `;
 
 
@@ -102,12 +102,28 @@ const Home = () => {
   flex-direction:column;
   margin-bottom:6.5%;
 
-  @media(max-width: 800px){
 
+  @media(max-width: 1200px){
+    margin-bottom:12.5%;
   }
 
 
 `;
+const MarginDiv = styled.div`
+
+position:relative;
+
+
+@media(max-width: 680px){
+  margin-bottom:10%;
+}
+
+
+
+
+`;
+
+
 const Collection1DivIconic = styled.div`
 display: flex;
 width: 50%;
@@ -137,7 +153,7 @@ align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massi
 @media(max-width:680px){
 
   width:100%;
-  margin-bottom:8%;
+
   display:flex;
 }
 `;
@@ -304,7 +320,7 @@ width: 85%;
 height:auto;
 
 align-items:center;
-margin-top:4%;
+
 
 
 @media(max-width: 680px){
@@ -401,12 +417,19 @@ width:100%;
 
 const HyperLink = styled.a`
   color: gray;
-  text-decoration: underline; /* Aggiungi questa riga per il sottolineato */
-  text-decoration-thickness: 1px; /* Aggiungi questa riga per la spessore del sottolineato */
+  position: relative;
   font-family: 'GTAmericaLight';
-  font-size: 14px; 
+  font-size: 14px;
 
-
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+  }
 `;
 
 
@@ -417,7 +440,7 @@ font-size: 40px;
 margin-bottom: 0;
 
 @media(max-width: 1200px){
-  font-size: 30px; 
+  font-size: 35px; 
 
 }
 
@@ -456,6 +479,31 @@ width:70%;
   font-size: 13px; 
   margin-bottom: 6%;
   width:82%;
+}
+@media(max-width: 680px){
+  font-size: 13px; 
+  margin-bottom: 2%;
+  width:82%;
+}
+`;
+const GtaTitle = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:0.8%;
+text-align: center;
+width:70%;
+
+
+@media(max-width: 1200px){
+  font-size: 13px; 
+  margin-bottom: 6%;
+  width:82%;
+}
+@media(max-width: 680px){
+  font-size: 13px; 
+  margin-bottom: 6%;
+  width:62%;
 }
 `;
 const Gta2 = styled.p`
@@ -542,7 +590,22 @@ margin-bottom:0;
 
 @media(max-width: 1200px){
   font-size: 13px; 
-  margin-top:2%;
+  margin-top:0%;
+}
+@media(max-width: 680px){
+  font-size: 12px; 
+}
+
+`;
+const GtaRegularFleurie = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 12px;
+margin-top:5%;
+margin-bottom:3%;
+
+@media(max-width: 1200px){
+  font-size: 13px; 
+  margin-top:0%;
 }
 @media(max-width: 680px){
   font-size: 12px; 
@@ -613,7 +676,7 @@ height:auto;
     {/* Iconic collection */}
         <IconicCollectionDiv>
           <ABC>Our Iconic Collection</ABC>
-          <Gta>A meeting between tradition and innovation for real works of art to wear</Gta>
+          <GtaTitle>A meeting between tradition and innovation for real works of art to wear</GtaTitle>
           <CollectionDivBig>
             <Collection1DivIconic>
 
@@ -629,8 +692,9 @@ height:auto;
           </Collection1DivIconic>
 
             <Collection1DivIconic2Mobile>
-              <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegular>
+              <GtaRegularFleurie><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegularFleurie>
             </Collection1DivIconic2Mobile>
+            <MarginDiv></MarginDiv>
 
             <Collection2DivIconic>
             
@@ -679,7 +743,7 @@ height:auto;
             </GtaDescription2>
 
 
-            <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON COLLECTION</HyperLink></GtaRegular>
+            <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON</HyperLink></GtaRegular>
             </Collection2Div>
 
           </CollectionDiv>

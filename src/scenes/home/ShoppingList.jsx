@@ -144,7 +144,7 @@ const ShoppingList = () => {
 
 
     @media(max-width: 900px){
-      margin-bottom:4%;
+      margin-bottom:0%;
 
     }
     `;
@@ -182,9 +182,8 @@ const ShoppingList = () => {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    margin: 1%;
+    margin-bottom:6.5%;
 
-    margin-bottom: 5%;
     align-items:center;
     
     min-height:100%;
@@ -194,7 +193,7 @@ const ShoppingList = () => {
     -ms-user-select: none;
 
     @media(max-width: 900px){
-      margin-top:10%;
+      margin-bottom:6.5%;
     }
 
   `;
@@ -345,7 +344,7 @@ text-align: center;
 margin-top:0;
 
 @media(max-width: 900px){
-  font-size: 30px; 
+  font-size: 35px; 
 }
 `;
 const Gta = styled.p`
@@ -357,7 +356,7 @@ text-align: center;
 
 
 @media (max-width: 900px){
-  margin-bottom: 6%;
+  margin-bottom: 3%;
 }
 
 
@@ -369,7 +368,7 @@ font-size: 14px;
 margin:0;
 
 @media(max-width:900px){
-  font-size: 11px;
+  font-size: 13px;
 }
 
 `;
