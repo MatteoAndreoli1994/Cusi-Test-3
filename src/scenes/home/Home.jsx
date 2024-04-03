@@ -603,7 +603,10 @@ height:auto;
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <Container>
 
-      <GifBox>          <Video src={video2} type="video/mp4" autoPlay muted loop onLoad={handleImageLoad}/></GifBox>
+      <GifBox>                  <Video autoPlay loop muted>
+          <source src={video2} type="video/mp4" />
+          Your browser does not support the video tag.
+        </Video></GifBox>
 
 
 
