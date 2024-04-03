@@ -154,7 +154,7 @@ height: auto;
 margin-left:0.5%;
 margin-right:0.5%;
 margin-top:1%;
-background-color:green;
+
 
 
 @media(max-width:900px){
