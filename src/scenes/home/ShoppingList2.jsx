@@ -128,7 +128,7 @@ margin-bottom:6.5%;
 
 align-items:center;
 
-min-height:100%;
+min-height: 100vh;
 user-select: none;
 -webkit-user-select: none;
 -moz-user-select: none;
@@ -138,13 +138,17 @@ user-select: none;
 margin-bottom:6.5%;
 }
 
+@media(max-width: 680px){
+  min-height: 70vh;
+  }
+
 `;
 
 
 const DivImmaginiProdotti = styled.div`
 display:flex;
 width: 33%;
-height: 60vh;
+height: auto;
 
 
 margin-left:0.5%;
@@ -164,11 +168,11 @@ margin-right:0.5%;
 const DivImmaginiProdottiDesktop = styled(LazyLoad)`
 display:flex;
 width: 33%;
-height: 60vh;
+height: auto;
 margin-left:0.5%;
 margin-right:0.5%;
 margin-top:1%;
-background-color:blue;
+
 
 
 @media(max-width:900px){
@@ -605,20 +609,37 @@ const ShoppingList = () => {
               
               ) : (
                 
-              <DivImmaginiProdotti>
+                <DivImmaginiProdotti>
+                {/* Mostra il secondo elemento */}
+                {earringsItems[(startIndex) ] && (
 
 
+                  <Item item={earringsItems[(startIndex)-1]} key={`${earringsItems[(startIndex + 1) % earringsItems.length].name}-${earringsItems[(startIndex + 1) % earringsItems.length].id}`} />
+
+
+
+
+
+
+                      
+              )}
               </DivImmaginiProdotti>
               
               )}
 
 
               <DivImmaginiProdotti>
-
+                {/* Mostra il secondo elemento */}
+                {earringsItems[(startIndex) ] && (
+                  <Item item={earringsItems[(startIndex) ]} key={`${earringsItems[(startIndex + 1) % earringsItems.length].name}-${earringsItems[(startIndex + 1) % earringsItems.length].id}`} />
+                )}
               </DivImmaginiProdotti>
 
               <DivImmaginiProdottiDesktop>
-
+                {/* Mostra il terzo elemento */}
+                {earringsItems[(startIndex+1) ] && (
+                  <Item item={earringsItems[(startIndex+1) ]} key={`${earringsItems[(startIndex + 1) % earringsItems.length].name}-${earringsItems[(startIndex + 1) % earringsItems.length].id}`} />
+                )}
               </DivImmaginiProdottiDesktop>
             </ContenitoreDeiProdotti>
 
@@ -672,66 +693,74 @@ const ShoppingList = () => {
 
           <LazyLoad once>
             <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-              <ContenitoreDeiProdotti>
-                {startIndex === 0 ? (
-                  <DivImmaginiProdotti>
-                    {/* Mostra il messaggio "Ciao" solo quando startIndex è 0 */}
-
-                    <Container2>
-                      <DivImmagineCategoria2>
-
-                        <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
-
-
-
-                        {/* Aggiungi il tuo div qui */}
-                        <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                        <ShopButton><GtaRegular2> SHOP BRACELETS </GtaRegular2></ShopButton>
-
-                      </DivImmagineCategoria2>
-                    </Container2>
-
-                  </DivImmaginiProdotti>
-                ) : (
-                  <DivImmaginiProdotti>
-
-                  </DivImmaginiProdotti>
-                )}
-
+            <ContenitoreDeiProdotti>
+              {startIndex === 0 ? (
                 <DivImmaginiProdotti>
+                  {/* Mostra il messaggio "Ciao" solo quando startIndex è 0 */}
+
+                  <Container2>
+                    <DivImmagineCategoria2>
+
+                      <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+
+
+
+                      {/* Aggiungi il tuo div qui */}
+                      <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                      <ShopButton><GtaRegular2> SHOP BRACELETS </GtaRegular2></ShopButton>
+
+                    </DivImmagineCategoria2>
+                  </Container2>
 
                 </DivImmaginiProdotti>
-
-                <DivImmaginiProdottiDesktop>
-
-                </DivImmaginiProdottiDesktop>
-              </ContenitoreDeiProdotti>
-
-
-              <ContenitoreDeiProdotti>
-                {startIndex === 0 ? (
-                  <DivInfoProdotti>
-                  </DivInfoProdotti>
-                ) : (
-                  <DivInfoProdotti>
-                      <ItemInfo item={braceletsItems[(startIndex -1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
-                  </DivInfoProdotti>
-                )}
-
-                <DivInfoProdotti>
+              ) : (
+                <DivImmaginiProdotti>
                   {/* Mostra il secondo elemento */}
-                  {braceletsItems[(startIndex) % braceletsItems.length] && (
-                    <ItemInfo item={braceletsItems[(startIndex) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                  {braceletsItems[(startIndex)] && (
+                    <Item item={braceletsItems[(startIndex)-1]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                   )}
-                </DivInfoProdotti>
+                </DivImmaginiProdotti>
+              )}
 
-                <DivInfoProdottiDesktop>
-                  {/* Mostra il terzo elemento */}
-                  {braceletsItems[(startIndex + 1) % braceletsItems.length] && (
-                    <ItemInfo item={braceletsItems[(startIndex +1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 2) % braceletsItems.length].name}-${braceletsItems[(startIndex + 2) % braceletsItems.length].id}`} />
-                  )}
-                </DivInfoProdottiDesktop>
-              </ContenitoreDeiProdotti>
+              <DivImmaginiProdotti>
+                {/* Mostra il secondo elemento */}
+                {braceletsItems[(startIndex)] && (
+                  <Item item={braceletsItems[(startIndex)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                )}
+              </DivImmaginiProdotti>
+
+              <DivImmaginiProdottiDesktop>
+                {/* Mostra il terzo elemento */}
+                {braceletsItems[(startIndex+1)] && (
+                  <Item item={braceletsItems[(startIndex+1)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                )}
+              </DivImmaginiProdottiDesktop>
+            </ContenitoreDeiProdotti>
+
+            <ContenitoreDeiProdotti>
+              {startIndex === 0 ? (
+                <DivInfoProdotti>
+                </DivInfoProdotti>
+              ) : (
+                <DivInfoProdotti>
+                    <ItemInfo item={braceletsItems[(startIndex -1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                </DivInfoProdotti>
+              )}
+
+              <DivInfoProdotti>
+                {/* Mostra il secondo elemento */}
+                {braceletsItems[(startIndex) % braceletsItems.length] && (
+                  <ItemInfo item={braceletsItems[(startIndex) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                )}
+              </DivInfoProdotti>
+
+              <DivInfoProdottiDesktop>
+                {/* Mostra il terzo elemento */}
+                {braceletsItems[(startIndex + 1) % braceletsItems.length] && (
+                  <ItemInfo item={braceletsItems[(startIndex +1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 2) % braceletsItems.length].name}-${braceletsItems[(startIndex + 2) % braceletsItems.length].id}`} />
+                )}
+              </DivInfoProdottiDesktop>
+            </ContenitoreDeiProdotti>
 
             </LazyLoadWrapper>
            </LazyLoad>
@@ -748,7 +777,7 @@ const ShoppingList = () => {
             <ContenitorePerInfo>
             <LazyLoad once>
             <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-              <ContenitoreDeiProdotti>
+            <ContenitoreDeiProdotti>
                 {startIndex === 0 ? (
                   <DivImmaginiProdotti>
                     {/* Mostra il messaggio "Ciao" solo quando startIndex è 0 */}
@@ -767,16 +796,25 @@ const ShoppingList = () => {
                   </DivImmaginiProdotti>
                 ) : (
                   <DivImmaginiProdotti>
-
+                    {/* Mostra il secondo elemento */}
+                    {necklacesItems[(startIndex)] && (
+                      <Item item={necklacesItems[(startIndex)-1]} key={`${necklacesItems[(startIndex + 1) % necklacesItems.length].name}-${necklacesItems[(startIndex + 1) % necklacesItems.length].id}`} />
+                    )}
                   </DivImmaginiProdotti>
                 )}
 
                 <DivImmaginiProdotti>
-
+                  {/* Mostra il secondo elemento */}
+                  {necklacesItems[(startIndex)] && (
+                    <Item item={necklacesItems[(startIndex)]} key={`${necklacesItems[(startIndex + 1) % necklacesItems.length].name}-${necklacesItems[(startIndex + 1) % necklacesItems.length].id}`} />
+                  )}
                 </DivImmaginiProdotti>
 
                 <DivImmaginiProdottiDesktop>
-
+                  {/* Mostra il terzo elemento */}
+                  {necklacesItems[(startIndex+1)] && (
+                    <Item item={necklacesItems[(startIndex+1)]} key={`${necklacesItems[(startIndex + 1) % necklacesItems.length].name}-${necklacesItems[(startIndex + 1) % necklacesItems.length].id}`} />
+                  )}
                 </DivImmaginiProdottiDesktop>
               </ContenitoreDeiProdotti>
 
@@ -819,7 +857,7 @@ const ShoppingList = () => {
             <ContenitorePerInfo>
             <LazyLoad once>
             <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-              <ContenitoreDeiProdotti>
+            <ContenitoreDeiProdotti>
                 {startIndex === 0 ? (
                   <DivImmaginiProdotti>
                     {/* Mostra il messaggio "Ciao" solo quando startIndex è 0 */}
@@ -838,16 +876,25 @@ const ShoppingList = () => {
                   </DivImmaginiProdotti>
                 ) : (
                   <DivImmaginiProdotti>
-
+                    {/* Mostra il secondo elemento */}
+                    {ringsItems[(startIndex)] && (
+                      <Item item={ringsItems[(startIndex)-1]} key={`${ringsItems[(startIndex + 1) % ringsItems.length].name}-${ringsItems[(startIndex + 1) % ringsItems.length].id}`} />
+                    )}
                   </DivImmaginiProdotti>
                 )}
 
                 <DivImmaginiProdotti>
- 
+                  {/* Mostra il secondo elemento */}
+                  {ringsItems[(startIndex)] && (
+                    <Item item={ringsItems[(startIndex)]} key={`${ringsItems[(startIndex + 1) % ringsItems.length].name}-${ringsItems[(startIndex + 1) % ringsItems.length].id}`} />
+                  )}
                 </DivImmaginiProdotti>
 
                 <DivImmaginiProdottiDesktop>
-
+                  {/* Mostra il terzo elemento */}
+                  {ringsItems[(startIndex+1)] && (
+                    <Item item={ringsItems[(startIndex+1)]} key={`${ringsItems[(startIndex + 1) % ringsItems.length].name}-${ringsItems[(startIndex + 1) % ringsItems.length].id}`} />
+                  )}
                 </DivImmaginiProdottiDesktop>
               </ContenitoreDeiProdotti>
 
