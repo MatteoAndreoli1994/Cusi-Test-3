@@ -90,28 +90,7 @@ const Home = () => {
 
   `;
 
-  const Gif = styled.img`
-    width: 100%;
-    height:auto;
-    object-fit: cover;
-  `;
-  const LazyLoadedGif = styled(LazyLoadImage)`
-  width: 100vw; // Regola la larghezza in base alle tue esigenze
-  height: auto; // Altezza automatica per mantenere le proporzioni
-  `;
 
-  const Box1 = styled.div`
-    display: flex;
-    width: 100%;
-    height: auto;
-  `;
-
-  const Box2 = styled.div`
-
-    display: flex;
-    width: 100%;
-    height:auto;
-  `;
 
   const IconicCollectionDiv = styled.div`
 
@@ -139,7 +118,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:800px){
+@media(max-width:680px){
 
   width:100%;
   margin-bottom:1%;
@@ -155,7 +134,7 @@ justify-content: flex-start;
 display:none;
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:800px){
+@media(max-width:680px){
 
   width:100%;
   margin-bottom:8%;
@@ -172,7 +151,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:800px){
+@media(max-width:680px){
 
   width:100%;
 
@@ -189,7 +168,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:800px){
+@media(max-width:680px){
 
   width:100%;
   margin-bottom:1%;
@@ -207,7 +186,7 @@ flex-direction:column;
 
 justify-content:center;
 
-@media(max-width:800px){
+@media(max-width:680px){
 
   width:100%;
   margin-bottom:5%;
@@ -223,7 +202,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 800px){
+@media(max-width: 680px){
 
   width: 100%;
 
@@ -242,7 +221,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 800px){
+@media(max-width: 680px){
 
   width: 100%;
 
@@ -268,7 +247,7 @@ flex-direction:column;
 
 
 
-@media(max-width: 800px){
+@media(max-width: 680px){
 
   width: 100%;
 
@@ -292,7 +271,25 @@ align-items:center;
 
 
 
-@media(max-width: 800px){
+@media(max-width: 680px){
+
+  flex-direction:column;
+
+}
+
+
+`;
+const CollectionDivBig = styled.div`
+
+display: flex;
+width: 87%;
+height:auto;
+
+align-items:center;
+
+
+
+@media(max-width: 680px){
 
   flex-direction:column;
 
@@ -310,7 +307,7 @@ align-items:center;
 
 
 
-@media(max-width: 800px){
+@media(max-width: 680px){
 
   flex-direction:column-reverse;
 
@@ -328,7 +325,7 @@ align-items:center;
 
 
 
-@media(max-width: 800px){
+@media(max-width: 680px){
 
 flex-direction: column-reverse;
 
@@ -345,7 +342,7 @@ width: 70%;
 margin-left:27%;
 
 
-@media(max-width:800px){
+@media(max-width:680px){
   width:100%;
   align-items:center;
   margin-left:0%;
@@ -357,9 +354,10 @@ margin-left:27%;
 
 `;
 const Immagine = styled.img`
-width: 95%;
+width: 96%;
 height: 100%;
 object-fit: cover;
+
 
 `;
 const ImmagineAnello = styled.img`
@@ -369,7 +367,7 @@ width:100%;
 const Immagine2 = styled.img`
 width:40%;
 
-@media(max-width: 800px){
+@media(max-width: 680px){
   margin-top:9%;
   margin-bottom:8%;
   width:60%;
@@ -380,7 +378,7 @@ width:40%;
 const Immagine3 = styled.img`
 width:50%;
 
-@media(max-width: 800px){
+@media(max-width: 680px){
   margin-top:0%;
   margin-bottom:0%;
   width:70%;
@@ -444,9 +442,11 @@ margin-top:0.8%;
 text-align: center;
 width:70%;
 
+
 @media(max-width: 1200px){
   font-size: 13px; 
   margin-bottom: 6%;
+  width:82%;
 }
 `;
 const Gta2 = styled.p`
@@ -460,7 +460,7 @@ width:70%;
 @media(max-width: 1200px){
   font-size: 15px; 
 }
-@media(max-width: 800px){
+@media(max-width: 680px){
   font-size: 15px; 
   width:80%;
   margin-bottom: 0%;
@@ -479,7 +479,7 @@ width:100%;
   text-align: center;
 }
 
-@media(max-width: 800px){
+@media(max-width: 680px){
   width:95%;
   font-size: 13px;
 }
@@ -496,7 +496,7 @@ width:60%;
   font-size: 15px; 
 }
 
-@media(max-width: 800px){
+@media(max-width: 680px){
   font-size: 15px; 
   margin-top:5%;
   margin-bottom: 7%;
@@ -530,7 +530,7 @@ margin-bottom:0;
   font-size: 13px; 
   margin-top:2%;
 }
-@media(max-width: 800px){
+@media(max-width: 680px){
   font-size: 12px; 
 }
 
@@ -556,48 +556,17 @@ margin-bottom:0;
 color:gray;
 display:none;
 
-@media(max-width: 800px){
+@media(max-width: 680px){
   font-size: 12px; 
   display:flex;
 
 `;
 
-const DivImmagini = styled.div`
-  width: 85%;
-  height: auto;
-  font-size: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 5%;
-
-`;
-
-const ImmagineCollectionStyle = styled.img`
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  margin-right:2%;
-`;
-
-const ImmagineCollection2Style = styled.img`
-  width: 50%;
-  height: auto; /* Imposta l'altezza su auto per calcolarla automaticamente */
-  object-fit: cover;
-  margin-left:2%;
-`;
-
-const LazyLoadedImmagine = styled(LazyLoadImage)`
-  width: 95%;
-  height: 100%;
-  object-fit: cover;
-`;
 const Video = styled.video`
 
 width:100vw;
 height:auto;
-.video-js.vjs-default-skin .vjs-big-play-button { display: none; }
+
 
 `;
 
@@ -609,9 +578,10 @@ height:auto;
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <Container>
 
-      <GifBox>                 <Video playsInline controls={false} autoPlay loop muted data-setup='{"fluid": true, "bigPlayButton": false}' src={video2} type="video/mp4" >
-
-        </Video></GifBox>
+      <GifBox> 
+        <Video playsInline controls={false} autoPlay loop muted  src={video2} type="video/mp4" >
+        </Video>
+      </GifBox>
 
 
 
@@ -628,7 +598,7 @@ height:auto;
         <IconicCollectionDiv>
           <ABC>Our Iconic Collection</ABC>
           <Gta>A meeting between tradition and innovation for real works of art to wear</Gta>
-          <CollectionDiv>
+          <CollectionDivBig>
             <Collection1DivIconic>
 
             
@@ -650,13 +620,13 @@ height:auto;
             
             <Immagine src={Modella3}/>
             <ABC24>Zingara</ABC24>
-            <Gta2>Our signature pieces designed to be worn everyday with 
-            subtle details in contemporary shapes.
-            </Gta2>
+            <Gta>Timeless and wearable earrings with a modern twist that 
+            add a touch of style to any outfit.
+            </Gta>
 
             </Collection2DivIconic>
 
-          </CollectionDiv>
+          </CollectionDivBig>
 
           <CollectionDiv>
             <Collection1DivIconic2>
