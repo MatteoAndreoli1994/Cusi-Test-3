@@ -593,7 +593,7 @@ const Video = styled.video`
 
 width:100vw;
 height:auto;
-
+.video-js.vjs-default-skin .vjs-big-play-button { display: none; }
 
 `;
 
