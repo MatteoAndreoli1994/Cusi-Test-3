@@ -123,6 +123,10 @@ const Home = () => {
   flex-direction:column;
   margin-bottom:6.5%;
 
+  @media(max-width: 800px){
+
+  }
+
 
 `;
 const Collection1DivIconic = styled.div`
@@ -135,7 +139,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
   width:100%;
   margin-bottom:1%;
@@ -151,7 +155,7 @@ justify-content: flex-start;
 display:none;
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
   width:100%;
   margin-bottom:8%;
@@ -168,7 +172,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
   width:100%;
 
@@ -185,7 +189,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
   width:100%;
   margin-bottom:1%;
@@ -203,7 +207,7 @@ flex-direction:column;
 
 justify-content:center;
 
-@media(max-width:680px){
+@media(max-width:800px){
 
   width:100%;
   margin-bottom:5%;
@@ -219,7 +223,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
   width: 100%;
 
@@ -238,7 +242,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
   width: 100%;
 
@@ -264,7 +268,7 @@ flex-direction:column;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
   width: 100%;
 
@@ -288,7 +292,7 @@ align-items:center;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
   flex-direction:column;
 
@@ -306,7 +310,7 @@ align-items:center;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
   flex-direction:column-reverse;
 
@@ -324,7 +328,7 @@ align-items:center;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 flex-direction: column-reverse;
 
@@ -341,7 +345,7 @@ width: 70%;
 margin-left:27%;
 
 
-@media(max-width:680px){
+@media(max-width:800px){
   width:100%;
   align-items:center;
   margin-left:0%;
@@ -365,7 +369,7 @@ width:100%;
 const Immagine2 = styled.img`
 width:40%;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
   margin-top:9%;
   margin-bottom:8%;
   width:60%;
@@ -376,7 +380,7 @@ width:40%;
 const Immagine3 = styled.img`
 width:50%;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
   margin-top:0%;
   margin-bottom:0%;
   width:70%;
@@ -456,7 +460,7 @@ width:70%;
 @media(max-width: 1200px){
   font-size: 15px; 
 }
-@media(max-width: 680px){
+@media(max-width: 800px){
   font-size: 15px; 
   width:80%;
   margin-bottom: 0%;
@@ -475,7 +479,7 @@ width:100%;
   text-align: center;
 }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
   width:95%;
   font-size: 13px;
 }
@@ -492,7 +496,7 @@ width:60%;
   font-size: 15px; 
 }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
   font-size: 15px; 
   margin-top:5%;
   margin-bottom: 7%;
@@ -526,7 +530,7 @@ margin-bottom:0;
   font-size: 13px; 
   margin-top:2%;
 }
-@media(max-width: 680px){
+@media(max-width: 800px){
   font-size: 12px; 
 }
 
@@ -552,7 +556,7 @@ margin-bottom:0;
 color:gray;
 display:none;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
   font-size: 12px; 
   display:flex;
 

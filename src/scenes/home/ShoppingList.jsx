@@ -107,9 +107,19 @@ const ShoppingList = () => {
         }
       }
 
+      @media(max-width: 800px){
+        width:20%;
+        padding: 12px 40px;
+
+        &:not(:last-child) {
+          margin-right: 1.5%;
+        }
+
+      }
+
       @media(max-width: 680px){
         width:20%;
-        padding: 8px 40px;
+        padding: 10px 40px;
 
         &:not(:last-child) {
           margin-right: 1.5%;
@@ -133,7 +143,7 @@ const ShoppingList = () => {
     user-select: none;
 
 
-    @media(max-width: 680px){
+    @media(max-width: 900px){
       margin-bottom:4%;
 
     }
@@ -152,7 +162,7 @@ const ShoppingList = () => {
 
     margin-top:1%;
 
-    @media(max-width: 680px){
+    @media(max-width: 900px){
 
       width: 93%;
       margin-bottom: 10%;
@@ -183,7 +193,7 @@ const ShoppingList = () => {
     -moz-user-select: none;
     -ms-user-select: none;
 
-    @media(max-width: 680px){
+    @media(max-width: 900px){
       margin-top:10%;
     }
 
@@ -202,7 +212,7 @@ const ShoppingList = () => {
 
 
 
-  @media(max-width:680px){
+  @media(max-width:900px){
     width: 50%;
     margin-left:0.5%;
     margin-right:0.5%;
@@ -218,7 +228,7 @@ margin-left:0.5%;
 margin-right:0.5%;
 margin-top:1%;
 
-@media(max-width:680px){
+@media(max-width:900px){
   display:none;
 }
 
@@ -234,7 +244,7 @@ margin-top:1%;
 
 justify-content:center;
 
-@media(max-width:680px){
+@media(max-width:900px){
   width: 50%;
 }
 
@@ -251,7 +261,7 @@ margin-top:1%;
 justify-content:center;
 
 
-@media(max-width:680px){
+@media(max-width:900px){
   display:none;
 }
 
@@ -302,7 +312,7 @@ ${DivImmagineCategoria2}:hover & {
   }
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     top: 80%;
     padding: 10px 12.5px;
   }
@@ -319,7 +329,7 @@ const Info = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 680px){
+  @media (max-width: 900px){
     top: 65%;
     left: 7%;
   }
@@ -334,7 +344,7 @@ text-align: center;
 
 margin-top:0;
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   font-size: 30px; 
 }
 `;
@@ -346,7 +356,7 @@ margin-top:0.8%;
 text-align: center;
 
 
-@media (max-width: 680px){
+@media (max-width: 900px){
   margin-bottom: 6%;
 }
 
@@ -358,7 +368,7 @@ font-family: 'GTAmericaRegular';
 font-size: 14px;
 margin:0;
 
-@media(max-width:680px){
+@media(max-width:900px){
   font-size: 11px;
 }
 
@@ -373,7 +383,7 @@ const GtaRegularShadow = styled.p`
     font-size: 13px; 
   }
 
-  @media (max-width: 680px){
+  @media (max-width: 900px){
     font-size: 9.5px; 
   }
 `;
@@ -420,7 +430,7 @@ const CircleContainer = styled.div`
   justify-content: center;
   z-index: 9999; /* Imposta un valore z superiore */
 
-  @media(max-width:680px){
+  @media(max-width: 900px){
     left: 0%;
     top: -8%;
     display:none;
@@ -439,7 +449,7 @@ const CircleContainer2 = styled.div`
   justify-content: center;
   z-index: 9999; /* Imposta un valore z superiore */
 
-  @media(max-width:680px){
+  @media(max-width: 900px){
     right: 0%;
     top: -8%;
     display:none;
@@ -452,7 +462,7 @@ font-size: 12px;
 margin:0;
 
 
-@media(max-width:680px){
+@media(max-width: 900px){
   font-size: 9px;
 }
 
