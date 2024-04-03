@@ -134,13 +134,12 @@ user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 
-@media(max-width: 900px){
-margin-bottom:6.5%;
-}
 
 @media(max-width: 900px){
   min-height: 70vh;
+  margin-bottom:0%;
   }
+
 
 `;
 
