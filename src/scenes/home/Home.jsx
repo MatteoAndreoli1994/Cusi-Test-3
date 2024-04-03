@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import video2 from '../../assets/video2.mp4';
-import ShoppingList from './ShoppingList';
+import ShoppingList from './ShoppingList2';
 import Modella2 from"../../assets/modellasmeraldo.avif";
 import Modella3 from"../../assets/modellazingara.avif";
 import Anello1 from"../../assets/modella2.avif";
