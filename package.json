@@ -23,6 +23,7 @@
     "react-headroom": "^3.2.1",
     "react-helmet": "^6.1.0",
     "react-lazy-load-image-component": "^1.6.0",
+    "react-lazyload": "^3.2.1",
     "react-query": "^3.39.3",
     "react-redux": "^9.0.4",
     "react-responsive-carousel": "^3.2.23",
