@@ -165,7 +165,7 @@ const ShoppingList = () => {
     @media(max-width: 900px){
 
       width: 93%;
-      margin-bottom: 10%;
+
     }
     `;
 

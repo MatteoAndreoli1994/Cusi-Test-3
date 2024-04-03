@@ -304,7 +304,7 @@ width: 85%;
 height:auto;
 
 align-items:center;
-
+margin-top:4%;
 
 
 @media(max-width: 680px){
@@ -367,10 +367,16 @@ width:100%;
 const Immagine2 = styled.img`
 width:40%;
 
+
+@media(max-width: 1200px){
+  width:45%;
+
+}
+
 @media(max-width: 680px){
   margin-top:9%;
   margin-bottom:8%;
-  width:60%;
+  width:50%;
 
 }
 
@@ -381,7 +387,7 @@ width:50%;
 @media(max-width: 680px){
   margin-top:0%;
   margin-bottom:0%;
-  width:70%;
+  width:55%;
 
 }
 
@@ -397,6 +403,9 @@ const HyperLink = styled.a`
   color: gray;
   text-decoration: underline; /* Aggiungi questa riga per il sottolineato */
   text-decoration-thickness: 1px; /* Aggiungi questa riga per la spessore del sottolineato */
+  font-family: 'GTAmericaLight';
+  font-size: 14px; 
+
 
 `;
 
@@ -476,10 +485,11 @@ width:100%;
 
 @media(max-width: 1200px){
   font-size: 15px; 
-  text-align: center;
+
 }
 
 @media(max-width: 680px){
+  text-align: center;
   width:95%;
   font-size: 13px;
 }
@@ -508,7 +518,7 @@ width:60%;
 `;
 const GtaDescription2 = styled.p`
 font-family: 'GTAmericaLight';
-font-size: 14px;
+font-size: 16px;
 margin-bottom: 3.5%;
 margin-top:1%;
 text-align: center;
@@ -518,6 +528,10 @@ color:gray;
 
 @media(max-width: 1200px){
   font-size: 15px; 
+}
+
+@media(max-width: 680px){
+  font-size: 14px;
 }
 `;
 const GtaRegular = styled.p`
@@ -544,10 +558,11 @@ margin-top:5%;
 margin-bottom:0;
 color:gray;
 
-@media(max-width: 1200px){
+@media(max-width: 680px){
   font-size: 13px; 
   display:none;
 `;
+
 const GtaRegular14grayMobile = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 14px;
@@ -559,6 +574,7 @@ display:none;
 @media(max-width: 680px){
   font-size: 12px; 
   display:flex;
+  margin-top:10%;
 
 `;
 
@@ -658,9 +674,12 @@ height:auto;
 
 
             <ABC24DUE>Tycoon</ABC24DUE>
+
             <GtaDescription2>Elegance and shining harmony
             </GtaDescription2>
-            <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON</HyperLink></GtaRegular>
+
+
+            <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON COLLECTION</HyperLink></GtaRegular>
             </Collection2Div>
 
           </CollectionDiv>
