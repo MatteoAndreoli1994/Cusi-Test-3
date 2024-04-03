@@ -32,9 +32,14 @@ const Container = styled.div`
 
     width:70%;
 
+    @media(max-width: 1200px){
+      width:80%;
+      margin-right: 10%;
+    }
 
     @media(max-width: 680px){
       width:90%;
+      margin-right: 0%;
     }
 
   `;
@@ -65,8 +70,17 @@ const Image = styled.img`
   width: 70%; /* Larghezza al 50% rispetto al container */
   height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
   object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
-  margin-bottom:3%;
-  
+
+  margin-bottom:5%;
+
+  @media(max-width: 1200px){
+    margin-bottom:10%;
+
+  }
+  @media(max-width: 1000px){
+    margin-bottom:12%;
+
+  }
 
   @media(max-width: 680px){
     margin-top: 2%;
@@ -74,6 +88,8 @@ const Image = styled.img`
     height: auto;
     object-fit: cover;
     object-position: center;
+    margin-bottom:0%;
+
   }
 `;
 
@@ -210,6 +226,9 @@ const ButtonWhite = styled(Button)`
 
 
 
+  @media(max-width: 1200px){
+    width: 90%;
+  }
 
   @media(max-width: 680px){
     width: 90%;
