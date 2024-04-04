@@ -240,13 +240,13 @@ transform: scale(1.2);
 
 const ShopButton = styled.button`
 position: absolute;
-height: 10%;
+height: 8%;
+width: 40%;
 top: 85%;
 left: 6%;
 display: flex;
 background-color: black;
 color: white;
-padding: 10px 20px;
 border: none;
 cursor: pointer;
 transition: background-color 0.3s ease;
@@ -258,10 +258,29 @@ background-color: #333;
 }
 
 
+@media(max-width: 1200px){
+
+  height: 10%;
+  width: 40%;
+
+  }
+
+
+
 @media(max-width: 900px){
-top: 80%;
-padding: 10px 12.5px;
+top: 85%;
+height: 9%;
+
+
 }
+
+@media(max-width: 680px){
+  top: 85%;
+  height: 10%;
+  width: 60%;
+  
+  
+  }
 `;
 const Info = styled.div`
 position: absolute;
@@ -276,9 +295,14 @@ align-items: center;
 justify-content: center;
 
 @media (max-width: 900px){
-top: 65%;
+top: 75%;
 left: 7%;
 }
+
+@media (max-width: 680px){
+  top: 73%;
+  left: 7%;
+  }
 
 `;
 //FONT
@@ -334,9 +358,17 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Puoi personalizzare questi valor
 font-size: 13px; 
 }
 
-@media (max-width: 900px){
-font-size: 9.5px; 
-}
+@media(max-width: 900px){
+  font-size: 13px;
+  }
+
+@media(max-width: 680px){
+  font-size: 11px;
+  }
+
+  @media(max-width: 414px){
+    font-size: 10px;
+    }
 `;
 
 
@@ -409,14 +441,27 @@ display:none;
 
 const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
-font-size: 12px;
+font-size: 13px;
 margin:0;
 
+@media(max-width: 1200px){
+  font-size: 10px;
+  }
 
 @media(max-width: 900px){
-font-size: 9px;
+font-size: 13px;
 }
 
+@media(max-width: 680px){
+  font-size: 11px;
+  }
+
+@media(max-width: 414px){
+  font-size: 9px;
+  }
+  @media(max-width: 350px){
+    font-size: 8px;
+    }
 
 `;
 const Container2 = styled.div`
