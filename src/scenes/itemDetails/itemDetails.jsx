@@ -197,7 +197,7 @@ const ButtonWhite = styled(Button)`
   font-size:35px;
   margin-top: 0;
 
-  font-weight: 600;
+
   margin-bottom: 3%;
 
 
