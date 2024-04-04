@@ -18,6 +18,7 @@ import {
 } from "../../state";
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import LazyLoad from 'react-lazyload';
 
 const Container = styled.div`
   display: flex;
@@ -294,8 +295,16 @@ margin-right:10px;
 
 `;
 
-const ShopBracelets = () => {
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
+const ShopBracelets = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
 
 
@@ -408,108 +417,111 @@ const ShopBracelets = () => {
 
   return (
     <>
-            <DivCarrello open={isFilterVisible}>
-          <ContainerFiltri>
+      <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
-            <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
-              <FilterButtonText>Stones</FilterButtonText>            
-              
-              <FilterSign>
-              {showStoneInfo ? (
+      <DivCarrello open={isFilterVisible}>
+        <ContainerFiltri>
+
+          <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
+            <FilterButtonText>Stones</FilterButtonText>            
+            
+            <FilterSign>
+            {showStoneInfo ? (
+              <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+            
+
+          </FilterButton>
+          
+
+
+          <InfoContainer visible={showStoneInfo}>
+            {/* Inserisci qui le informazioni per le donne */}
+            <Checkbox label="filtro" />   
+            <Checkbox label="filtro" />
+            <Checkbox label="filtro" />
+            <Checkbox label="filtro" />
+            <Checkbox label="filtro" />
+          </InfoContainer>
+
+
+          <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
+            <FilterButtonText>Collection</FilterButtonText>
+
+            <FilterSign>
+              {showCollectionInfo ? (
                 <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
               ) : (
                 <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
               )}
             </FilterSign>
-              
+          </FilterButton>
 
-            </FilterButton>
-            
+          <InfoContainer visible={showCollectionInfo}>
+          <Checkbox
+            label="Zingara"
+            onChange={() => handleCheckboxChangeCollection("Zingara")}
+            checked={selectedCollection.includes("Zingara")}
+          />
+          <Checkbox
+            label="Urania"
+            onChange={() => handleCheckboxChangeCollection("Urania")}
+            checked={selectedCollection.includes("Urania")}
+          />
+          <Checkbox
+            label="Tycoon"
+            onChange={() => handleCheckboxChangeCollection("Tycoon")}
+            checked={selectedCollection.includes("Tycoon")}
+          />
+          </InfoContainer>
 
+          <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
+            <FilterButtonText>Material</FilterButtonText>
 
-            <InfoContainer visible={showStoneInfo}>
-              {/* Inserisci qui le informazioni per le donne */}
-              <Checkbox label="filtro" />   
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-            </InfoContainer>
-
-
-            <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
-              <FilterButtonText>Collection</FilterButtonText>
-
-              <FilterSign>
-                {showCollectionInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-
-            <InfoContainer visible={showCollectionInfo}>
-            <Checkbox
-              label="Zingara"
-              onChange={() => handleCheckboxChangeCollection("Zingara")}
-              checked={selectedCollection.includes("Zingara")}
-            />
-            <Checkbox
-              label="Urania"
-              onChange={() => handleCheckboxChangeCollection("Urania")}
-              checked={selectedCollection.includes("Urania")}
-            />
-            <Checkbox
-              label="Tycoon"
-              onChange={() => handleCheckboxChangeCollection("Tycoon")}
-              checked={selectedCollection.includes("Tycoon")}
-            />
-            </InfoContainer>
-
-            <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
-              <FilterButtonText>Material</FilterButtonText>
-
-              <FilterSign>
-                {showMaterialInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-       
-
-            <InfoContainer visible={showMaterialInfo}>
-
-
-            <Checkbox
-              label="Platinum"
-              onChange={() => handleCheckboxChange("Platinum")}
-              checked={selectedMaterials.includes("Platinum")}
-            />
-            <Checkbox
-              label="White Gold"
-              onChange={() => handleCheckboxChange("White Gold")}
-              checked={selectedMaterials.includes("White Gold")}
-            />
-            <Checkbox
-              label="Yellow Gold"
-              onChange={() => handleCheckboxChange("Yellow Gold")}
-              checked={selectedMaterials.includes("Yellow Gold")}
-            />
-
-              {/* Inserisci qui le informazioni per le persone trans */}
-
-
-
-            </InfoContainer>
-
+            <FilterSign>
+              {showMaterialInfo ? (
+                <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+              ) : (
+                <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+              )}
+            </FilterSign>
+          </FilterButton>
       
 
+          <InfoContainer visible={showMaterialInfo}>
 
-          </ContainerFiltri>
-        </DivCarrello>
+
+          <Checkbox
+            label="Platinum"
+            onChange={() => handleCheckboxChange("Platinum")}
+            checked={selectedMaterials.includes("Platinum")}
+          />
+          <Checkbox
+            label="White Gold"
+            onChange={() => handleCheckboxChange("White Gold")}
+            checked={selectedMaterials.includes("White Gold")}
+          />
+          <Checkbox
+            label="Yellow Gold"
+            onChange={() => handleCheckboxChange("Yellow Gold")}
+            checked={selectedMaterials.includes("Yellow Gold")}
+          />
+
+            {/* Inserisci qui le informazioni per le persone trans */}
+
+
+
+          </InfoContainer>
+
+    
+
+
+        </ContainerFiltri>
+      </DivCarrello>
 
       <Box
         display={isFilterVisible ? "block" : "none"}
@@ -576,7 +588,11 @@ const ShopBracelets = () => {
         </DivProdotti>
 
       </Container>
-      
+
+
+
+    </LazyLoadWrapper>
+    </LazyLoad>  
     </>
   );
 };

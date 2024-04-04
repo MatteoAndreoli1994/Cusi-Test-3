@@ -18,6 +18,7 @@ import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import LazyLoad from 'react-lazyload';
 
 const Container = styled.div`
   display: flex;
@@ -293,8 +294,16 @@ font-size: 16px;
 margin-right:10px;
 
 `;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
 const ShopRings = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
 
 
@@ -405,6 +414,8 @@ const ShopRings = () => {
 
   return (
     <>
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     
     <DivCarrello open={isFilterVisible}>
           <ContainerFiltri>
@@ -574,7 +585,10 @@ const ShopRings = () => {
         </DivProdotti>
 
       </Container>
-      
+
+
+    </LazyLoadWrapper>
+    </LazyLoad >
     </>
   );
 };

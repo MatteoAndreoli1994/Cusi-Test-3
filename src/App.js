@@ -24,6 +24,13 @@ import CustomerService from "./scenes/about/customerservice";
 import Footer from "./scenes/global/Footer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
+
+
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
 
 // apollo client
@@ -44,33 +51,13 @@ const ScrollToTop = () => {
 
 
 
-const MyfontTest = styled.p`
-  font-family: 'OldLondon', sans-serif;
-  font-size: 20px;
-`;
 
-const MyfontTest2 = styled.p`
-  font-family: 'ABCGaisyr-Regular';
-  font-size: 20px;
-`;
-
-const MyfontTest3 = styled.p`
-  font-size: 20px;
-`;
-
-const MyfontTest4 = styled.p`
-  font-family: 'GTAmericaBold';
-  font-size: 16px;
-  font-weight: normal;
-`;
-
-const MyfontTest5 = styled.p`
-  font-family: 'GTAmericaRegular';
-  font-size: 16px;
-  font-weight: normal;
-`;
 
 function App() {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
   return (
     <div className="app">
@@ -82,25 +69,31 @@ function App() {
           <Navbar />
           <ScrollToTop />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="item/:itemId" element={<ItemDetails />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="checkout/success" element={<Confirmation />} />
-            <Route path="/shopRings" element={<ShopRings />} />
-            <Route path="/shopEarrings" element={<ShopEarrings />} />
-            <Route path="/shopNecklaces" element={<ShopNecklaces />} />
-            <Route path="/shopBracelets" element={<ShopBracelets />} />
-            <Route path="/shopBollywood" element={<CollectionBollywood />} />
-            <Route path="/shopFleurie" element={<CollectionFleurie />} />
-            <Route path="/shopTycoon" element={<CollectionTycoon />} />
-            <Route path="/shopUrania" element={<CollectionUrania />} />
-            <Route path="/shopZingara" element={<CollectionZingara />} />
-            <Route path="/boutiques" element={<Boutiques />} />
-            <Route path="/maisoncusi" element={<MaisonCusi />} />
-            <Route path="/customerservice" element={<CustomerService />} />
-            <Route path="/contactus" element={<ContactUs />} />
-          </Routes>
+            <LazyLoad once>
+            <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="item/:itemId" element={<ItemDetails />} />
+                <Route path="checkout" element={<Checkout />} />
+                <Route path="checkout/success" element={<Confirmation />} />
+                <Route path="/shopRings" element={<ShopRings />} />
+                <Route path="/shopEarrings" element={<ShopEarrings />} />
+                <Route path="/shopNecklaces" element={<ShopNecklaces />} />
+                <Route path="/shopBracelets" element={<ShopBracelets />} />
+                <Route path="/shopBollywood" element={<CollectionBollywood />} />
+                <Route path="/shopFleurie" element={<CollectionFleurie />} />
+                <Route path="/shopTycoon" element={<CollectionTycoon />} />
+                <Route path="/shopUrania" element={<CollectionUrania />} />
+                <Route path="/shopZingara" element={<CollectionZingara />} />
+                <Route path="/boutiques" element={<Boutiques />} />
+                <Route path="/maisoncusi" element={<MaisonCusi />} />
+                <Route path="/customerservice" element={<CustomerService />} />
+                <Route path="/contactus" element={<ContactUs />} />
+              </Routes>
+
+            </LazyLoadWrapper>
+            </LazyLoad>  
           <Footer />
           <CartMenu />
         </ApolloProvider>

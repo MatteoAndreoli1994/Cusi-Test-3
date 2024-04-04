@@ -13,6 +13,7 @@ import ringsCategory from "../../assets/ringsCategory2.avif";
 import braceletsCategory from "../../assets/braceletsCategory2.avif";
 import necklacesCategory from "../../assets/necklacesCategory2.avif";
 import earringsCategory from "../../assets/earringsCategory2.avif";
+import { useNavigate } from "react-router-dom";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
@@ -556,6 +557,7 @@ const ShoppingList = () => {
   const [sliderOffset, setSliderOffset] = useState(0);
   const [sliderArrow, setArrowOffset] = useState(0);
   const [contentKey, setContentKey] = useState(0);
+  const navigate = useNavigate();
 
   const [isHovered, setIsHovered] = useState(false);
   // Dichiarazione di stato per tenere traccia dell'indice di inizio
@@ -572,6 +574,21 @@ const ShoppingList = () => {
     // Calcola l'indice di inizio in modo circolare
     const newStartIndex = (startIndex - 1 + earringsItems.length - 1) % (earringsItems.length - 1);
     setStartIndex(newStartIndex);
+  };
+
+  const handleShopClick = () => {
+    navigate('/shopRings');
+  };
+
+  const handleShopClickEarrings = () => {
+    navigate('/shopEarrings');
+  };
+  const handleShopClickNecklaces = () => {
+    navigate('/shopNecklaces');
+  };
+
+  const handleShopClickBracelets = () => {
+    navigate('/shopBracelets');
   };
 
    
@@ -654,7 +671,22 @@ const ShoppingList = () => {
             {startIndex === 0 ? (
 
               <DivImmaginiProdotti>
+                  {/* Mostra il messaggio "Ciao" solo quando startIndex è 0 */}
+
+                  <Container2>
+                    <DivImmagineCategoria2>
+
                       <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+
+
+
+                      {/* Aggiungi il tuo div qui */}
+                      <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                      <ShopButton><GtaRegular2 onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}> SHOP EARRINGS </GtaRegular2></ShopButton>
+
+                    </DivImmagineCategoria2>
+                  </Container2>
+
               </DivImmaginiProdotti>
               
               ) : (
@@ -757,7 +789,7 @@ const ShoppingList = () => {
 
                       {/* Aggiungi il tuo div qui */}
                       <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                      <ShopButton><GtaRegular2> SHOP BRACELETS </GtaRegular2></ShopButton>
+                      <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
 
                     </DivImmagineCategoria2>
                   </Container2>
@@ -838,7 +870,7 @@ const ShoppingList = () => {
 
                         {/* Aggiungi il tuo div qui */}
                         <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
-                        <ShopButton><GtaRegular2> SHOP NECKLACES </GtaRegular2></ShopButton>
+                        <ShopButton><GtaRegular2 onClick={handleShopClickNecklaces}> SHOP NECKLACES </GtaRegular2></ShopButton>
 
                       </DivImmagineCategoria2>
                     </Container2>
@@ -918,7 +950,7 @@ const ShoppingList = () => {
                         <LazyLoadedCategory src={ringsCategory} alt="Categoria earrings" />
                         {/* Aggiungi il tuo div qui */}
                         <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                        <ShopButton><GtaRegular2> SHOP RINGS </GtaRegular2></ShopButton>
+                        <ShopButton><GtaRegular2 onClick={handleShopClick}> SHOP RINGS </GtaRegular2></ShopButton>
 
                       </DivImmagineCategoria2>
                     </Container2>

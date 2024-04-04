@@ -12,6 +12,8 @@ import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 import styled from 'styled-components';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazyload';
+import React from "react";
 
 
 const Container = styled.div`
@@ -389,8 +391,16 @@ font-size: 16px;
   font-size:14px;
 }
 `;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
 const ItemDetails = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
   const dispatch = useDispatch();
   const { itemId } = useParams();
   const [value, setValue] = useState("description");
@@ -472,143 +482,150 @@ const ItemDetails = () => {
   
 
   return (
-    <Container width="100%" m="80px auto" >
-      
-      <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
-        {/* IMAGES */}
-        <ImageContainer>
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
-      <Image
-        alt={item?.name}
-        width="100%"
-        height="100%"
-        src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-        style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
-        onLoad={handleImageLoad}
-      />
-          <Image2Div>
-          <Image2
-            alt={item?.name}
-            width="100%"
-            height="100%"
-            src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-            style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
-            
-          />
-          </Image2Div>
+      <Container width="100%" m="80px auto" >
+        
+        <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
+          {/* IMAGES */}
+          <ImageContainer>
 
-        </ImageContainer>
-
-        {/* ACTIONS */}
-        <DescripionDiv>
-
-
-          <Info>
-          <TypographyCollection><GtaRegular>{item?.attributes?.collection}</GtaRegular></TypographyCollection>
-            <TypographyName><ABC> {item?.attributes?.name} </ABC> </TypographyName>
-
-        {/* INFO PRODOTTO */}
-            <TypographyDescrizioneProdotto>
-              <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
-
-            </TypographyDescrizioneProdotto>
-
-            <TypographyPrice><ABC24>  {formatPrice(item?.attributes?.price)} </ABC24></TypographyPrice>
-        {/* END:INFO PRODOTTO */}
-
-        {/* SIZE E QUANTITY */}
-
-            <TypographyDescrizioneProdotto>
-            <GtaRegular>Quantity</GtaRegular> 
-            </TypographyDescrizioneProdotto>
-
-
-
-            <DropdownContainer>
-              <DropdownButton onClick={handleButtonClick}>
-                <span>{selectedOption || '1'}</span>
-                <Arrow>&#9660;</Arrow>
-              </DropdownButton>
+        <Image
+          alt={item?.name}
+          width="100%"
+          height="100%"
+          src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+          style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
+          onLoad={handleImageLoad}
+        />
+            <Image2Div>
+            <Image2
+              alt={item?.name}
+              width="100%"
+              height="100%"
+              src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
               
-              <DropdownContent isOpen={isOpen}>
-                <DropdownOption onClick={() => handleOptionClick(1)}>1</DropdownOption>
-                <DropdownOption onClick={() => handleOptionClick(2)}>2</DropdownOption>
-                <DropdownOption onClick={() => handleOptionClick(3)}>3</DropdownOption>
-                {/* Aggiungi altre opzioni secondo necessità */}
-              </DropdownContent>
-            </DropdownContainer>
+            />
+            </Image2Div>
+
+          </ImageContainer>
+
+          {/* ACTIONS */}
+          <DescripionDiv>
+
+
+            <Info>
+            <TypographyCollection><GtaRegular>{item?.attributes?.collection}</GtaRegular></TypographyCollection>
+              <TypographyName><ABC> {item?.attributes?.name} </ABC> </TypographyName>
+
+          {/* INFO PRODOTTO */}
+              <TypographyDescrizioneProdotto>
+                <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+
+              </TypographyDescrizioneProdotto>
+
+              <TypographyPrice><ABC24>  {formatPrice(item?.attributes?.price)} </ABC24></TypographyPrice>
+          {/* END:INFO PRODOTTO */}
+
+          {/* SIZE E QUANTITY */}
+
+              <TypographyDescrizioneProdotto>
+              <GtaRegular>Quantity</GtaRegular> 
+              </TypographyDescrizioneProdotto>
+
+
+
+              <DropdownContainer>
+                <DropdownButton onClick={handleButtonClick}>
+                  <span>{selectedOption || '1'}</span>
+                  <Arrow>&#9660;</Arrow>
+                </DropdownButton>
+                
+                <DropdownContent isOpen={isOpen}>
+                  <DropdownOption onClick={() => handleOptionClick(1)}>1</DropdownOption>
+                  <DropdownOption onClick={() => handleOptionClick(2)}>2</DropdownOption>
+                  <DropdownOption onClick={() => handleOptionClick(3)}>3</DropdownOption>
+                  {/* Aggiungi altre opzioni secondo necessità */}
+                </DropdownContent>
+              </DropdownContainer>
 
 
 
 
 
 
-          </Info>
+            </Info>
 
 
 
 
-          <Bottoni>
+            <Bottoni>
 
 
 
 
 
 
-            <ButtonBlack
-              sx={{
-                backgroundColor: "black",
-                color: "white",
-                borderRadius: 0,
-                minWidth: "100%",
-                padding: "20px 40px",
+              <ButtonBlack
+                sx={{
+                  backgroundColor: "black",
+                  color: "white",
+                  borderRadius: 0,
+                  minWidth: "100%",
+                  padding: "20px 40px",
 
-              }}
-              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-            >
-              <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
-            </ButtonBlack>
+                }}
+                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+              >
+                <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
+              </ButtonBlack>
 
-            <ButtonWhite
-              sx={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: 0,
-                minWidth: "100%",
-                padding: "20px 40px",
+              <ButtonWhite
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  borderRadius: 0,
+                  minWidth: "100%",
+                  padding: "20px 40px",
 
-              }}
-              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-            >
-              <GtaRegular> ORDER BY PHONE </GtaRegular>
-            </ButtonWhite>
+                }}
+                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+              >
+                <GtaRegular> ORDER BY PHONE </GtaRegular>
+              </ButtonWhite>
 
-            <ButtonWhite
-              sx={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: 0,
-                minWidth: "100%",
-                padding: "20px 40px",
+              <ButtonWhite
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  borderRadius: 0,
+                  minWidth: "100%",
+                  padding: "20px 40px",
 
-              }}
-              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-            >
-              <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
-            </ButtonWhite>
-
-
-
-          </Bottoni>
-
-          
-        </DescripionDiv>
-      </ItemContainer>
+                }}
+                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+              >
+                <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
+              </ButtonWhite>
 
 
 
+            </Bottoni>
 
-    </Container>
+            
+          </DescripionDiv>
+        </ItemContainer>
+
+
+
+
+      </Container>
+
+    </LazyLoadWrapper>
+    </LazyLoad >
+
   );
 };
 
