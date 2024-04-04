@@ -61,7 +61,7 @@ width:140px;
 
 @media(max-width: 680px){
   width:20%;
-  padding: 10px 40px;
+  padding: 8px 40px;
 
   &:not(:last-child) {
     margin-right: 1.5%;
@@ -318,6 +318,11 @@ margin:0;
 font-size: 13px;
 }
 
+@media(max-width: 680px){
+  font-size: 10px;
+  }
+
+
 `;
 const GtaRegularShadow = styled.p`
 font-family: 'GTAmericaRegular';
@@ -411,6 +416,7 @@ margin:0;
 @media(max-width: 900px){
 font-size: 9px;
 }
+
 
 `;
 const Container2 = styled.div`
