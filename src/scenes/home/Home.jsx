@@ -34,6 +34,17 @@ display:flex;
 justify-content:center;
 width:100vw;
 overflow: hidden;
+
+background-size: cover;
+margin-bottom: 2%;
+`;
+
+const GifBoxSafari = styled.img`
+position: relative;
+display:flex;
+justify-content:center;
+width:100vw;
+overflow: hidden;
 background: url(${video2}) no-repeat center center;
 background-size: cover;
 margin-bottom: 2%;
@@ -676,6 +687,8 @@ const Home = () => {
         <Video playsInline controls={false} autoPlay loop muted  src={video2} type="video/mp4" >
         </Video>
       </GifBox>
+
+
 
 
 
