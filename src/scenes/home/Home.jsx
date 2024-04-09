@@ -11,7 +11,7 @@ import Maison from"../../assets/maison1.avif";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useEffect } from "react";
-
+import { isSafari } from 'react-device-detect';
 
 
 import Anello1White from"../../assets/A2.png";
@@ -29,19 +29,19 @@ margin-top:120px;
 `;
 
 const GifBox = styled.div`
-position: relative;
-display:flex;
-justify-content:center;
-width:100vw;
-overflow: hidden;
-
-background-size: cover;
-margin-bottom: 2%;
+display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+  background-size: cover;
+  margin-bottom: 2%;
 `;
 
-const GifBoxSafari = styled.img`
+const GifBoxSafari = styled.div`
 position: relative;
-display:flex;
+display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
 justify-content:center;
 width:100vw;
 overflow: hidden;
@@ -608,6 +608,14 @@ height:auto;
 
 
 `;
+
+const VideoSafari = styled.img`
+
+width:100vw;
+height:auto;
+
+
+`;
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
@@ -683,10 +691,23 @@ const Home = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <Container>
 
-      <GifBox> 
-        <Video playsInline controls={false} autoPlay loop muted  src={video2} type="video/mp4" >
-        </Video>
-      </GifBox>
+      {isSafari ? (
+              <GifBoxSafari >
+                  <VideoSafari src={video2}></VideoSafari>
+              </GifBoxSafari>
+            ) : null}
+
+            {/* Condizionalmente renderizza il componente per i browser diversi da Safari */}
+            {!isSafari ? (
+              <GifBox >
+                <Video autoPlay loop muted playsInline >
+                  <source src={video2} type="video/mp4" />
+                  Il tuo browser non supporta la riproduzione di video MP4.
+                </Video>
+              </GifBox>
+            ) : null}
+
+
 
 
 
