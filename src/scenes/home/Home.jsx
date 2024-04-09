@@ -32,15 +32,11 @@ const GifBox = styled.div`
 position: relative;
 display:flex;
 justify-content:center;
-width:100%;
-height: 90vh;
-background: url(${video2}) no-repeat center center fixed;
+width:100vw;
 overflow: hidden;
-align-items:center;
+background: url(${video2}) no-repeat center center;
 background-size: cover;
 margin-bottom: 2%;
-transition: 0.5s;
-justify-content: space-around;
 `;
 
 
@@ -677,7 +673,8 @@ const Home = () => {
       <Container>
 
       <GifBox> 
-
+        <Video playsInline controls={false} autoPlay loop muted  src={video2} type="video/mp4" >
+        </Video>
       </GifBox>
 
 
