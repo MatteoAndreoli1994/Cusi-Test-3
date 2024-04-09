@@ -27,6 +27,10 @@ const RowContainer = styled.div`
 
   height:auto;
 
+  @media(max-width:680px){
+    width: 100%;
+  }
+
 `;
 
 const Column = styled.div`
@@ -109,7 +113,7 @@ const LastColumnMobile = styled.div`
   @media(max-width:680px){
     display:flex;
     flex-direction:column;
-    width:95%;
+
   }
 
 

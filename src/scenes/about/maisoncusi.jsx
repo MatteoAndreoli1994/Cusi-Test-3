@@ -27,6 +27,7 @@ const MaisonCusi = () => {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height:auto;
     align-items:center;
 
     overflow:hidden;
@@ -37,7 +38,7 @@ const MaisonCusi = () => {
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  height:auto;
   align-items:center;
 
 
@@ -50,6 +51,8 @@ flex-direction: row;
 width: 90%;
 height: 70vh;
 margin-top:1%;
+
+
 
 @media(max-width: 680px){
   flex-direction: column;
@@ -163,7 +166,7 @@ font-size:16px;
 
 @media(max-width: 680px){
   font-size:14px; 
-  width:80%;
+  width:85%;
   margin-bottom:6%;
 }
 
@@ -182,11 +185,18 @@ const ImmagineBacheca = styled.img`
 width:100%;
 margin-bottom:4%;
 
+@media(max-width: 680px){
 
+  margin-bottom:8%;
+}
 `;
 const ImmagineFamiglia = styled.img`
+width: 85%;
 
-
+@media(max-width: 680px){
+  width: 90%;
+  margin-bottom:4%;
+}
 
 
 `;
@@ -203,6 +213,7 @@ justify-content:center;
 @media(max-width:680px){
   width:100%;
   height:auto;
+  margin-bottom: 6%;
 }
 
 
@@ -233,6 +244,7 @@ overflow:hidden;
   width:100%;
   height:auto;
   margin-top:4%;
+
 }
 
 
@@ -258,10 +270,11 @@ margin-bottom: 0;
 margin-top: 0;
 width:75%;
 
+
 @media(max-width:680px){
   font-size: 21px; 
 
-  width:90%;
+  width:100%;
 }
 
 `;
@@ -275,7 +288,7 @@ font-weight: 200;
 
 @media(max-width:680px){
   font-size: 14px; 
-  width:90%;
+  width:100%;
 }
 
 `;
@@ -304,7 +317,7 @@ font-weight: 200;
   font-size: 14px; 
 
   text-align:left;
-  width:80%;
+  width:90%;
   
 }
 
@@ -337,12 +350,13 @@ margin-bottom:4%;
 @media(max-width:680px){
   width:80%;
   font-size: 14px; 
+  margin-bottom:8%;
 }
 
 `;
 
 const ABC24Centered = styled.p`
-font-family: 'ABCGaisyr-Book';
+font-family: 'ABCGaisyr-Regular';
 font-size: 40px; 
 margin-bottom: 0;
 margin-top: 7%;
@@ -351,10 +365,39 @@ margin-top: 7%;
 @media(max-width:680px){
   font-size: 21px; 
 
-  width:70%;
+  width:80%;
+  margin-bottom: 2%;
 
 }
 `;
+
+const ImmagineAnnibaleCusi = styled.img`
+width: 80%;
+height: auto;
+
+
+@media(max-width:680px){
+
+
+  width:100%;
+
+}
+`;
+const ImmagineStuarda= styled.img`
+width: 80%;
+height: auto;
+
+
+@media(max-width:680px){
+
+  margin-top:8%;
+
+  width:100%;
+
+}
+`;
+
+
 
   return (
     <>
@@ -379,7 +422,7 @@ margin-top: 7%;
 
     <Boxstoryboard>
         <DivImmagine>
-        <img src={AnnibaleCusi} style={{ width: "80%", height: 'auto' }} />
+        <ImmagineAnnibaleCusi src={AnnibaleCusi}/>
 
         </DivImmagine>
 
@@ -454,7 +497,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         </DivInfo>
 
         <DivImmagine>
-        <img src={CollierMariaStuarda} style={{ width: '70%', height: "auto" }}/>
+        <ImmagineStuarda src={CollierMariaStuarda} />
 
         </DivImmagine>
 
@@ -462,7 +505,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
     <Boxstoryboard>
         <DivImmagine>
-        <img src={ViaClerici} style={{ width: '70%', height: "auto" }}/>
+        <ImmagineStuarda src={ViaClerici} />
 
         </DivImmagine>
 
@@ -513,7 +556,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
         <DivImmagine>
-        <img src={RinaldoCusi} style={{ width: '70%', height: "auto" }} />
+        <ImmagineStuarda src={RinaldoCusi} />
 
         </DivImmagine>
 
@@ -523,7 +566,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
     <Boxstoryboard>
 
         <DivImmagine>
-        <img src={RobertoCusi} style={{ width: '70%', height: "auto" }}/>
+        <ImmagineStuarda src={RobertoCusi}/>
 
         </DivImmagine>
 
@@ -559,7 +602,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
         </Introduzione>
 
-        <ImmagineFamiglia src={GiorgioCusi}  style={{ width: '70%', height: "auto" }}/>
+        <ImmagineFamiglia src={GiorgioCusi}  />
 
         <Description2>
         Oggi la tradizione della famiglia prosegue grazie all’impegno e la passione di Giorgio Nicola Cusi, della moglie Roberta Cusi e dei figli Alessia e Alessandro.
