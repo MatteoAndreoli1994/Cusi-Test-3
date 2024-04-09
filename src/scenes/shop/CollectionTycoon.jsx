@@ -16,10 +16,11 @@ import {
   removeFromCart,
   setIsCartOpen,
 } from "../../state";
-import ImmagineCollection from "../../assets/immagine1.jpg"
-import ImmagineCollection2 from "../../assets/immagine2.jpg"
+import ImmagineCollection from "../../assets/tycoon1.avif"
+import ImmagineCollection2 from "../../assets/tycoon5.avif"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import LazyLoad from 'react-lazyload';
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -331,7 +332,17 @@ margin-right:10px;
 
 `;
 
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
+
 const CollectionFleurie = () => {
+
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
 
 
@@ -436,6 +447,8 @@ const CollectionFleurie = () => {
 
   return (
     <>
+          <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     
     <DivCarrello open={isFilterVisible}>
           <ContainerFiltri>
@@ -612,6 +625,8 @@ At the center of this aquatic set, a betta fish swims through an opal sea.
         </DivProdotti>
 
       </Container>
+      </LazyLoadWrapper>
+      </LazyLoad>
       
     </>
   );

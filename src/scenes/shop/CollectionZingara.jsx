@@ -20,6 +20,7 @@ import ImmagineCollection from "../../assets/zingara1.jpg"
 import ImmagineCollection2 from "../../assets/zingara2.jpg"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import LazyLoad from 'react-lazyload';
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -331,7 +332,16 @@ margin-right:10px;
 
 `;
 
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
+
 const CollectionBollywood = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
 
 
@@ -436,182 +446,188 @@ const CollectionBollywood = () => {
 
   return (
     <>
-    
-    <DivCarrello open={isFilterVisible}>
-          <ContainerFiltri>
 
-            <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
-              <FilterButtonText>Stones</FilterButtonText>            
-              
-              <FilterSign>
-              {showStoneInfo ? (
-                <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-              ) : (
-                <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-              )}
-            </FilterSign>
-              
-
-            </FilterButton>
-            
-
-
-            <InfoContainer visible={showStoneInfo}>
-              {/* Inserisci qui le informazioni per le donne */}
-              <Checkbox label="filtro" />   
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-            </InfoContainer>
-
-
-            <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
-              <FilterButtonText>Collection</FilterButtonText>
-
-              <FilterSign>
-                {showCollectionInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-
-            <InfoContainer visible={showCollectionInfo}>
-            <Checkbox
-              label="Zingara"
-              onChange={() => handleCheckboxChangeCollection("Zingara")}
-              checked={selectedCollection.includes("Zingara")}
-            />
-            <Checkbox
-              label="Urania"
-              onChange={() => handleCheckboxChangeCollection("Urania")}
-              checked={selectedCollection.includes("Urania")}
-            />
-            <Checkbox
-              label="Tycoon"
-              onChange={() => handleCheckboxChangeCollection("Tycoon")}
-              checked={selectedCollection.includes("Tycoon")}
-            />
-            </InfoContainer>
-
-            <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
-              <FilterButtonText>Material</FilterButtonText>
-
-              <FilterSign>
-                {showMaterialInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-       
-
-            <InfoContainer visible={showMaterialInfo}>
-
-
-            <Checkbox
-              label="Platinum"
-              onChange={() => handleCheckboxChange("Platinum")}
-              checked={selectedMaterials.includes("Platinum")}
-            />
-            <Checkbox
-              label="White Gold"
-              onChange={() => handleCheckboxChange("White Gold")}
-              checked={selectedMaterials.includes("White Gold")}
-            />
-            <Checkbox
-              label="Yellow Gold"
-              onChange={() => handleCheckboxChange("Yellow Gold")}
-              checked={selectedMaterials.includes("Yellow Gold")}
-            />
-
-              {/* Inserisci qui le informazioni per le persone trans */}
-
-
-
-            </InfoContainer>
-
+      <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
       
+        <DivCarrello open={isFilterVisible}>
+              <ContainerFiltri>
+
+                <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
+                  <FilterButtonText>Stones</FilterButtonText>            
+                  
+                  <FilterSign>
+                  {showStoneInfo ? (
+                    <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  ) : (
+                    <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  )}
+                </FilterSign>
+                  
+
+                </FilterButton>
+                
 
 
-          </ContainerFiltri>
-    </DivCarrello>
-
-      <Box
-        display={isFilterVisible ? "block" : "none"}
-        backgroundColor="rgba(0, 0, 0, 0.4)"
-        position="fixed"
-        zIndex={10}
-        width="100%"  // Cambiato da 100% a 70%
-        height="100%"
-        right="0"    // Cambiato da left a right
-        top="0"
-        overflow="auto"
-        onClick={handleFilterClick}
-      >
+                <InfoContainer visible={showStoneInfo}>
+                  {/* Inserisci qui le informazioni per le donne */}
+                  <Checkbox label="filtro" />   
+                  <Checkbox label="filtro" />
+                  <Checkbox label="filtro" />
+                  <Checkbox label="filtro" />
+                  <Checkbox label="filtro" />
+                </InfoContainer>
 
 
+                <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
+                  <FilterButtonText>Collection</FilterButtonText>
 
+                  <FilterSign>
+                    {showCollectionInfo ? (
+                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    ) : (
+                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    )}
+                  </FilterSign>
+                </FilterButton>
 
+                <InfoContainer visible={showCollectionInfo}>
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Tycoon"
+                  onChange={() => handleCheckboxChangeCollection("Tycoon")}
+                  checked={selectedCollection.includes("Tycoon")}
+                />
+                </InfoContainer>
 
-      </Box>
+                <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
+                  <FilterButtonText>Material</FilterButtonText>
 
-      <Container>
-        <DivInfo>
-          <ABC>Zingara</ABC>
-          <DivDescrizione>
-            <GtaRegular>
-            A luminous wave running through a translucent material with iridescent reflections.
-At the center of this aquatic set, a betta fish swims through an opal sea.
-            </GtaRegular>
-          </DivDescrizione>
-        </DivInfo>
-
-        <DivImmagini>
-
-        <ImmagineCollectionStyle src={ImmagineCollection}/>
-        <ImmagineCollection2Style src={ImmagineCollection2}/>
-        </DivImmagini>
-
-
-        <DivFiltri>
-          <CustomButton backgroundColor="white" onClick={handleFilterClick}>
-          <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
-          <GtaRegular>Filter</GtaRegular>
-
-          </CustomButton>
-          <CustomButton backgroundColor="white" onClick={handleFilterClick}>
-
-          <GtaRegular2>Sort By</GtaRegular2>
-          <img src={SortImage} alt="Filter" style={{ width: '20px' }} />
-          </CustomButton>
-        </DivFiltri>
-
-        
-        <DivProdotti>
+                  <FilterSign>
+                    {showMaterialInfo ? (
+                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    ) : (
+                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    )}
+                  </FilterSign>
+                </FilterButton>
           
-          {value === "zingara" &&
-            zingaraItems.map((item) => (
 
-              <StyledItem key={`${item.id}`}>
-                <ItemInShop item={item} />
-              </StyledItem>
-            ))}
+                <InfoContainer visible={showMaterialInfo}>
 
 
+                <Checkbox
+                  label="Platinum"
+                  onChange={() => handleCheckboxChange("Platinum")}
+                  checked={selectedMaterials.includes("Platinum")}
+                />
+                <Checkbox
+                  label="White Gold"
+                  onChange={() => handleCheckboxChange("White Gold")}
+                  checked={selectedMaterials.includes("White Gold")}
+                />
+                <Checkbox
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
+                />
+
+                  {/* Inserisci qui le informazioni per le persone trans */}
 
 
+
+                </InfoContainer>
+
+          
+
+
+              </ContainerFiltri>
+        </DivCarrello>
+
+        <Box
+          display={isFilterVisible ? "block" : "none"}
+          backgroundColor="rgba(0, 0, 0, 0.4)"
+          position="fixed"
+          zIndex={10}
+          width="100%"  // Cambiato da 100% a 70%
+          height="100%"
+          right="0"    // Cambiato da left a right
+          top="0"
+          overflow="auto"
+          onClick={handleFilterClick}
+        >
+
+
+
+
+
+        </Box>
+
+        <Container>
+          <DivInfo>
+            <ABC>Zingara</ABC>
+            <DivDescrizione>
+              <GtaRegular>
+              A luminous wave running through a translucent material with iridescent reflections.
+  At the center of this aquatic set, a betta fish swims through an opal sea.
+              </GtaRegular>
+            </DivDescrizione>
+          </DivInfo>
+
+          <DivImmagini>
+
+          <ImmagineCollectionStyle src={ImmagineCollection}/>
+          <ImmagineCollection2Style src={ImmagineCollection2}/>
+          </DivImmagini>
+
+
+          <DivFiltri>
+            <CustomButton backgroundColor="white" onClick={handleFilterClick}>
+            <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
+            <GtaRegular>Filter</GtaRegular>
+
+            </CustomButton>
+            <CustomButton backgroundColor="white" onClick={handleFilterClick}>
+
+            <GtaRegular2>Sort By</GtaRegular2>
+            <img src={SortImage} alt="Filter" style={{ width: '20px' }} />
+            </CustomButton>
+          </DivFiltri>
+
+          
+          <DivProdotti>
             
+            {value === "zingara" &&
+              zingaraItems.map((item) => (
 
-            
+                <StyledItem key={`${item.id}`}>
+                  <ItemInShop item={item} />
+                </StyledItem>
+              ))}
 
-            
-        </DivProdotti>
 
-      </Container>
+
+
+              
+
+              
+
+              
+          </DivProdotti>
+
+        </Container>
+
+      </LazyLoadWrapper>
+      </LazyLoad>
       
     </>
   );

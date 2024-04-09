@@ -483,6 +483,12 @@ function Navbar() {
     setshowShopInfo(false);
     navigate('/shopRings');
   };
+  const handleHome = () => {
+    setIsHovered(false)
+
+    
+    navigate('/');
+  };
 
   const handleShopClickEarrings = () => {
     setIsHovered(false)
@@ -723,7 +729,8 @@ function Navbar() {
 
 
         <Logo
-          onClick={() => navigate("/")}
+          onClick={handleHome}
+
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
 

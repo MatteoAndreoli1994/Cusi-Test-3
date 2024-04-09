@@ -689,7 +689,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
 
                       {/* Aggiungi il tuo div qui */}
                       <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                      <ShopButton><GtaRegular2> SHOP BRACELETS </GtaRegular2></ShopButton>
+                      <ShopButton><GtaRegular2> SHOP BRACELETSS </GtaRegular2></ShopButton>
 
                     </DivImmagineCategoria2>
                   </Container2>
@@ -699,7 +699,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
                 <DivImmaginiProdotti>
                   {/* Mostra il secondo elemento */}
                   {braceletsItems[(startIndex)] && (
-                    <Item item={braceletsItems[(startIndex)-1]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                    <Item item={braceletsItems[(startIndex)-1] % braceletsItems.length} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                   )}
                 </DivImmaginiProdotti>
               )}
@@ -707,14 +707,14 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
               <DivImmaginiProdotti>
                 {/* Mostra il secondo elemento */}
                 {braceletsItems[(startIndex)] && (
-                  <Item item={braceletsItems[(startIndex)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                  <Item item={braceletsItems[(startIndex) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                 )}
               </DivImmaginiProdotti>
 
               <DivImmaginiProdottiDesktop>
                 {/* Mostra il terzo elemento */}
                 {braceletsItems[(startIndex+1)] && (
-                  <Item item={braceletsItems[(startIndex+1)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                  <Item item={braceletsItems[(startIndex+1) % braceletsItems.length ]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                 )}
               </DivImmaginiProdottiDesktop>
             </ContenitoreDeiProdotti>

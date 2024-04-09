@@ -798,23 +798,23 @@ const ShoppingList = () => {
               ) : (
                 <DivImmaginiProdotti>
                   {/* Mostra il secondo elemento */}
-                  {braceletsItems[(startIndex)] && (
-                    <Item item={braceletsItems[(startIndex)-1]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                  {braceletsItems[(startIndex -1) % braceletsItems.length] && (
+                    <Item item={braceletsItems[(startIndex -1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                   )}
                 </DivImmaginiProdotti>
               )}
 
               <DivImmaginiProdotti>
                 {/* Mostra il secondo elemento */}
-                {braceletsItems[(startIndex)] && (
-                  <Item item={braceletsItems[(startIndex)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                {braceletsItems[(startIndex) % braceletsItems.length] && (
+                  <Item item={braceletsItems[(startIndex) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                 )}
               </DivImmaginiProdotti>
 
               <DivImmaginiProdottiDesktop>
                 {/* Mostra il terzo elemento */}
-                {braceletsItems[(startIndex+1)] && (
-                  <Item item={braceletsItems[(startIndex+1)]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
+                {braceletsItems[(startIndex+1) % braceletsItems.length] && (
+                  <Item item={braceletsItems[(startIndex+1) % braceletsItems.length]} key={`${braceletsItems[(startIndex + 1) % braceletsItems.length].name}-${braceletsItems[(startIndex + 1) % braceletsItems.length].id}`} />
                 )}
               </DivImmaginiProdottiDesktop>
             </ContenitoreDeiProdotti>

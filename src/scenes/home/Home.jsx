@@ -18,8 +18,600 @@ import Anello1White from"../../assets/A2.png";
 
 
 import { useNavigate } from "react-router-dom";
+import LazyLoad from 'react-lazyload';
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-top:120px;
+
+`;
+
+const GifBox = styled.div`
+position: relative;
+display:flex;
+justify-content:center;
+width:100%;
+height: 90vh;
+background: url(${video2}) no-repeat center center fixed;
+overflow: hidden;
+align-items:center;
+background-size: cover;
+margin-bottom: 2%;
+transition: 0.5s;
+justify-content: space-around;
+`;
+
+
+
+const IconicCollectionDiv = styled.div`
+
+display: flex;
+width: 100%;
+
+
+align-items:center;
+flex-direction:column;
+margin-bottom:6.5%;
+
+
+@media(max-width: 1200px){
+margin-bottom:12.5%;
+}
+
+
+`;
+const MarginDiv = styled.div`
+
+position:relative;
+
+
+@media(max-width: 680px){
+margin-bottom:10%;
+}
+
+
+
+
+`;
+
+
+const Collection1DivIconic = styled.div`
+display: flex;
+width: 50%;
+height: auto;
+align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+
+align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+
+@media(max-width:680px){
+
+width:100%;
+margin-bottom:1%;
+}
+`;
+const Collection1DivIconic2Mobile = styled.div`
+display: flex;
+width: 50%;
+height: auto;
+align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+display:none;
+align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+
+@media(max-width:680px){
+
+width:100%;
+
+display:flex;
+}
+`;
+const Collection1DivIconic2 = styled.div`
+display: flex;
+width: 50%;
+height: auto;
+align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+
+align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+
+@media(max-width:680px){
+
+width:100%;
+
+display:none;
+}
+`;
+const Collection2DivIconic = styled.div`
+display: flex;
+width: 50%;
+height: auto;
+align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+
+align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+
+@media(max-width:680px){
+
+width:100%;
+margin-bottom:1%;
+}
+`;
+
+const Collection1Div = styled.div`
+
+display: flex;
+width: 50%;
+height:auto;
+
+align-items:center;
+flex-direction:column;
+
+justify-content:center;
+
+@media(max-width:680px){
+
+width:100%;
+margin-bottom:5%;
+}
+
+`;
+const Collection2Div = styled.div`
+
+display: flex;
+width: 50%;
+height:auto;
+
+align-items:center;
+flex-direction:column;
+
+@media(max-width: 680px){
+
+width: 100%;
+
+
+}
+
+
+
+`;
+const Collection3Div = styled.div`
+
+display: flex;
+width: 50%;
+height:auto;
+
+align-items:center;
+flex-direction:column;
+
+@media(max-width: 680px){
+
+width: 100%;
+
+
+
+
+
+}
+
+
+
+`;
+const Collection2Div2 = styled.div`
+
+display: flex;
+width: 50%;
+height:100%;
+
+
+align-items:center;
+flex-direction:column;
+
+
+
+
+@media(max-width: 680px){
+
+width: 100%;
+
+
+
+
+
+}
+
+
+`;
+
+
+const CollectionDiv = styled.div`
+
+display: flex;
+width: 85%;
+height:auto;
+
+align-items:center;
+
+
+
+@media(max-width: 680px){
+
+flex-direction:column;
+
+}
+
+
+`;
+const CollectionDivBig = styled.div`
+
+display: flex;
+width: 87%;
+height:auto;
+
+align-items:center;
+
+
+
+@media(max-width: 680px){
+
+flex-direction:column;
+
+}
+
+
+`;
+const CollectionDivAbout = styled.div`
+
+display: flex;
+width: 85%;
+height:auto;
+
+align-items:center;
+
+
+
+@media(max-width: 680px){
+
+flex-direction:column-reverse;
+
+}
+
+
+`;
+const CollectionDivInverted = styled.div`
+
+display: flex;
+width: 85%;
+height:auto;
+
+align-items:center;
+
+
+
+@media(max-width: 680px){
+
+flex-direction: column-reverse;
+
+
+}
+
+
+`;
+const Text = styled.div`
+
+display: flex;
+flex-direction:column;
+width: 70%;
+margin-left:27%;
+
+
+@media(max-width:680px){
+width:100%;
+align-items:center;
+margin-left:0%;
+margin-bottom:5%;
+
+}
+
+
+
+`;
+const Immagine = styled.img`
+width: 96%;
+height: 100%;
+object-fit: cover;
+
+
+`;
+const ImmagineAnello = styled.img`
+width:100%;
+
+`;
+const Immagine2 = styled.img`
+width:40%;
+
+
+@media(max-width: 1200px){
+width:45%;
+
+}
+
+@media(max-width: 680px){
+margin-top:9%;
+margin-bottom:8%;
+width:50%;
+
+}
+
+`;
+const Immagine3 = styled.img`
+width:50%;
+
+@media(max-width: 680px){
+margin-top:0%;
+margin-bottom:0%;
+width:55%;
+
+}
+
+`;
+
+const ImmagineMaison = styled.img`
+width:100%;
+
+
+`;
+
+const HyperLink = styled.a`
+color: gray;
+position: relative;
+font-family: 'GTAmericaLight';
+font-size: 14px;
+
+&::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
+width: 100%;
+height: 1px;
+background-color: gray;
+}
+`;
+
+
+//FONT
+const ABC = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 40px; 
+margin-bottom: 0;
+
+@media(max-width: 1200px){
+font-size: 35px; 
+
+}
+
+`;
+const ABC24 = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 24px; 
+margin-bottom: 1.5%;
+margin-top:7%;
+
+@media(max-width: 1200px){
+font-size: 24px; 
+}
+
+`;
+const ABC24DUE = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 20px; 
+margin-bottom: 0;
+
+@media(max-width: 1200px){
+font-size: 23px; 
+}
+
+`;
+const Gta = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:0.8%;
+text-align: center;
+width:70%;
+
+
+@media(max-width: 1200px){
+font-size: 13px; 
+margin-bottom: 6%;
+width:82%;
+}
+@media(max-width: 680px){
+font-size: 13px; 
+margin-bottom: 2%;
+width:82%;
+}
+`;
+const GtaTitle = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:0.8%;
+text-align: center;
+width:70%;
+
+
+@media(max-width: 1200px){
+font-size: 13px; 
+margin-bottom: 6%;
+width:82%;
+}
+@media(max-width: 680px){
+font-size: 13px; 
+margin-bottom: 6%;
+width:62%;
+}
+`;
+const Gta2 = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:1%;
+text-align: center;
+width:70%;
+
+@media(max-width: 1200px){
+font-size: 15px; 
+}
+@media(max-width: 680px){
+font-size: 15px; 
+width:80%;
+margin-bottom: 0%;
+margin-top: 0%;
+}
+`;
+const GtaLeft = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 5%;
+
+width:100%;
+
+@media(max-width: 1200px){
+font-size: 15px; 
+
+}
+
+@media(max-width: 680px){
+text-align: center;
+width:95%;
+font-size: 13px;
+}
+`;
+const GtaDescription = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:1%;
+text-align: center;
+width:60%;
+
+@media(max-width: 1200px){
+font-size: 15px; 
+}
+
+@media(max-width: 680px){
+font-size: 15px; 
+margin-top:5%;
+margin-bottom: 7%;
+width:100%;
+
+}
+
+
+`;
+const GtaDescription2 = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:1%;
+text-align: center;
+width:60%;
+color:gray;
+
+
+@media(max-width: 1200px){
+font-size: 15px; 
+}
+
+@media(max-width: 680px){
+font-size: 14px;
+}
+`;
+const GtaRegular = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 12px;
+margin-top:5%;
+margin-bottom:0;
+
+@media(max-width: 1200px){
+font-size: 13px; 
+margin-top:0%;
+}
+@media(max-width: 680px){
+font-size: 12px; 
+}
+
+`;
+const GtaRegularFleurie = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 12px;
+margin-top:5%;
+margin-bottom:3%;
+
+@media(max-width: 1200px){
+font-size: 13px; 
+margin-top:0%;
+}
+@media(max-width: 680px){
+font-size: 12px; 
+}
+
+`;
+
+
+const GtaRegular14gray = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 14px;
+margin-top:5%;
+margin-bottom:0;
+color:gray;
+
+@media(max-width: 680px){
+font-size: 13px; 
+display:none;
+`;
+
+const GtaRegular14grayMobile = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 14px;
+margin-top:5%;
+margin-bottom:0;
+color:gray;
+display:none;
+
+@media(max-width: 680px){
+font-size: 12px; 
+display:flex;
+margin-top:10%;
+
+`;
+
+const Video = styled.video`
+
+width:100vw;
+height:auto;
+
+
+`;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
 const Home = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
+
 
   const [item, setItem] = useState(null);
   const navigate = useNavigate();
@@ -55,9 +647,9 @@ const Home = () => {
 
     navigate('/shopFleurie');
   };
-  const handleShopClickTycoon = () => {
+  const handleShopClickEarrings = () => {
 
-    navigate('/shopTycoon');
+    navigate('/shopEarrings');
   };
 
   const handleBoutiques = () => {
@@ -71,595 +663,21 @@ const Home = () => {
   };
 
 
-  const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top:120px;
-
-  `;
-
-  const GifBox = styled.div`
-    position: relative;
-    display:flex;
-    justify-content:center;
-  width:100vw;
-    overflow: hidden;
-    background: url(${video2}) no-repeat center center;
-    background-size: cover;
-  margin-bottom: 2%;
-  `;
-
-
-
-  const IconicCollectionDiv = styled.div`
-
-  display: flex;
-  width: 100%;
-
-
-  align-items:center;
-  flex-direction:column;
-  margin-bottom:6.5%;
-
-
-  @media(max-width: 1200px){
-    margin-bottom:12.5%;
-  }
-
-
-`;
-const MarginDiv = styled.div`
-
-position:relative;
-
-
-@media(max-width: 680px){
-  margin-bottom:10%;
-}
-
-
-
-
-`;
-
-
-const Collection1DivIconic = styled.div`
-display: flex;
-width: 50%;
-height: auto;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
-
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
-
-@media(max-width:680px){
-
-  width:100%;
-  margin-bottom:1%;
-}
-`;
-const Collection1DivIconic2Mobile = styled.div`
-display: flex;
-width: 50%;
-height: auto;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
-display:none;
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
-
-@media(max-width:680px){
-
-  width:100%;
-
-  display:flex;
-}
-`;
-const Collection1DivIconic2 = styled.div`
-display: flex;
-width: 50%;
-height: auto;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
-
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
-
-@media(max-width:680px){
-
-  width:100%;
-
-  display:none;
-}
-`;
-const Collection2DivIconic = styled.div`
-display: flex;
-width: 50%;
-height: auto;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
-
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
-
-@media(max-width:680px){
-
-  width:100%;
-  margin-bottom:1%;
-}
-`;
-
-const Collection1Div = styled.div`
-
-display: flex;
-width: 50%;
-height:auto;
-
-align-items:center;
-flex-direction:column;
-
-justify-content:center;
-
-@media(max-width:680px){
-
-  width:100%;
-  margin-bottom:5%;
-}
-
-`;
-const Collection2Div = styled.div`
-
-display: flex;
-width: 50%;
-height:auto;
-
-align-items:center;
-flex-direction:column;
-
-@media(max-width: 680px){
-
-  width: 100%;
-
-
-}
-
-
-
-`;
-const Collection3Div = styled.div`
-
-display: flex;
-width: 50%;
-height:auto;
-
-align-items:center;
-flex-direction:column;
-
-@media(max-width: 680px){
-
-  width: 100%;
-
-
-
-
-
-}
-
-
-
-`;
-const Collection2Div2 = styled.div`
-
-display: flex;
-width: 50%;
-height:100%;
-
-
-align-items:center;
-flex-direction:column;
-
-
-
-
-@media(max-width: 680px){
-
-  width: 100%;
-
-
-
-
-
-}
-
-
-`;
-
-
-const CollectionDiv = styled.div`
-
-display: flex;
-width: 85%;
-height:auto;
-
-align-items:center;
-
-
-
-@media(max-width: 680px){
-
-  flex-direction:column;
-
-}
-
-
-`;
-const CollectionDivBig = styled.div`
-
-display: flex;
-width: 87%;
-height:auto;
-
-align-items:center;
-
-
-
-@media(max-width: 680px){
-
-  flex-direction:column;
-
-}
-
-
-`;
-const CollectionDivAbout = styled.div`
-
-display: flex;
-width: 85%;
-height:auto;
-
-align-items:center;
-
-
-
-@media(max-width: 680px){
-
-  flex-direction:column-reverse;
-
-}
-
-
-`;
-const CollectionDivInverted = styled.div`
-
-display: flex;
-width: 85%;
-height:auto;
-
-align-items:center;
-
-
-
-@media(max-width: 680px){
-
-flex-direction: column-reverse;
-
-
-}
-
-
-`;
-const Text = styled.div`
-
-display: flex;
-flex-direction:column;
-width: 70%;
-margin-left:27%;
-
-
-@media(max-width:680px){
-  width:100%;
-  align-items:center;
-  margin-left:0%;
-  margin-bottom:5%;
-
-}
-
-
-
-`;
-const Immagine = styled.img`
-width: 96%;
-height: 100%;
-object-fit: cover;
-
-
-`;
-const ImmagineAnello = styled.img`
-width:100%;
-
-`;
-const Immagine2 = styled.img`
-width:40%;
-
-
-@media(max-width: 1200px){
-  width:45%;
-
-}
-
-@media(max-width: 680px){
-  margin-top:9%;
-  margin-bottom:8%;
-  width:50%;
-
-}
-
-`;
-const Immagine3 = styled.img`
-width:50%;
-
-@media(max-width: 680px){
-  margin-top:0%;
-  margin-bottom:0%;
-  width:55%;
-
-}
-
-`;
-
-const ImmagineMaison = styled.img`
-width:100%;
-
-
-`;
-
-const HyperLink = styled.a`
-  color: gray;
-  position: relative;
-  font-family: 'GTAmericaLight';
-  font-size: 14px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
-    width: 100%;
-    height: 1px;
-    background-color: gray;
-  }
-`;
-
-
-//FONT
-const ABC = styled.p`
-font-family: 'ABCGaisyr-Book';
-font-size: 40px; 
-margin-bottom: 0;
-
-@media(max-width: 1200px){
-  font-size: 35px; 
-
-}
-
-`;
-const ABC24 = styled.p`
-font-family: 'ABCGaisyr-Book';
-font-size: 24px; 
-margin-bottom: 1.5%;
-margin-top:7%;
-
-@media(max-width: 1200px){
-  font-size: 24px; 
-}
-
-`;
-const ABC24DUE = styled.p`
-font-family: 'ABCGaisyr-Book';
-font-size: 20px; 
-margin-bottom: 0;
-
-@media(max-width: 1200px){
-  font-size: 23px; 
-}
-
-`;
-const Gta = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:0.8%;
-text-align: center;
-width:70%;
-
-
-@media(max-width: 1200px){
-  font-size: 13px; 
-  margin-bottom: 6%;
-  width:82%;
-}
-@media(max-width: 680px){
-  font-size: 13px; 
-  margin-bottom: 2%;
-  width:82%;
-}
-`;
-const GtaTitle = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:0.8%;
-text-align: center;
-width:70%;
-
-
-@media(max-width: 1200px){
-  font-size: 13px; 
-  margin-bottom: 6%;
-  width:82%;
-}
-@media(max-width: 680px){
-  font-size: 13px; 
-  margin-bottom: 6%;
-  width:62%;
-}
-`;
-const Gta2 = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:70%;
-
-@media(max-width: 1200px){
-  font-size: 15px; 
-}
-@media(max-width: 680px){
-  font-size: 15px; 
-  width:80%;
-  margin-bottom: 0%;
-  margin-top: 0%;
-}
-`;
-const GtaLeft = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 5%;
-
-width:100%;
-
-@media(max-width: 1200px){
-  font-size: 15px; 
-
-}
-
-@media(max-width: 680px){
-  text-align: center;
-  width:95%;
-  font-size: 13px;
-}
-`;
-const GtaDescription = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:60%;
-
-@media(max-width: 1200px){
-  font-size: 15px; 
-}
-
-@media(max-width: 680px){
-  font-size: 15px; 
-  margin-top:5%;
-  margin-bottom: 7%;
-  width:100%;
-
-}
-
-
-`;
-const GtaDescription2 = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:60%;
-color:gray;
-
-
-@media(max-width: 1200px){
-  font-size: 15px; 
-}
-
-@media(max-width: 680px){
-  font-size: 14px;
-}
-`;
-const GtaRegular = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 12px;
-margin-top:5%;
-margin-bottom:0;
-
-@media(max-width: 1200px){
-  font-size: 13px; 
-  margin-top:0%;
-}
-@media(max-width: 680px){
-  font-size: 12px; 
-}
-
-`;
-const GtaRegularFleurie = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 12px;
-margin-top:5%;
-margin-bottom:3%;
-
-@media(max-width: 1200px){
-  font-size: 13px; 
-  margin-top:0%;
-}
-@media(max-width: 680px){
-  font-size: 12px; 
-}
-
-`;
-
-
-const GtaRegular14gray = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 14px;
-margin-top:5%;
-margin-bottom:0;
-color:gray;
-
-@media(max-width: 680px){
-  font-size: 13px; 
-  display:none;
-`;
-
-const GtaRegular14grayMobile = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 14px;
-margin-top:5%;
-margin-bottom:0;
-color:gray;
-display:none;
-
-@media(max-width: 680px){
-  font-size: 12px; 
-  display:flex;
-  margin-top:10%;
-
-`;
-
-const Video = styled.video`
-
-width:100vw;
-height:auto;
-
-
-`;
+ 
 
 
 
 
   return (
     <>
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
       <Container>
 
       <GifBox> 
-        <Video playsInline controls={false} autoPlay loop muted  src={video2} type="video/mp4" >
-        </Video>
+
       </GifBox>
 
 
@@ -737,13 +755,13 @@ height:auto;
             <Immagine3 src={Anello1White}/>
 
 
-            <ABC24DUE>Tycoon</ABC24DUE>
+            <ABC24DUE>Madreperla</ABC24DUE>
 
             <GtaDescription2>Elegance and shining harmony
             </GtaDescription2>
 
 
-            <GtaRegular><HyperLink  onClick={ handleShopClickTycoon} style={{ cursor: 'pointer' }} >DISCOVER TYCOON</HyperLink></GtaRegular>
+            <GtaRegular><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >DISCOVER EARRINGS</HyperLink></GtaRegular>
             </Collection2Div>
 
           </CollectionDiv>
@@ -809,6 +827,9 @@ height:auto;
 
     </IconicCollectionDiv>
       </Container>
+
+      </LazyLoadWrapper>
+    </LazyLoad>  
     </>
   );
 };

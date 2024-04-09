@@ -16,10 +16,12 @@ import {
   removeFromCart,
   setIsCartOpen,
 } from "../../state";
-import ImmagineCollection from "../../assets/immagine1.jpg"
+import ImmagineCollection from "../../assets/Fleurie1.jpg"
 import ImmagineCollection2 from "../../assets/immagine2.jpg"
+import VideoCollection2Video from "../../assets/fleurieVideo1_1.mp4";
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import LazyLoad from 'react-lazyload';
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -31,6 +33,9 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
+  @media(max-width: 680px){
+
+  }
 `;
 
 const ImmagineCollectionStyle = styled.img`
@@ -40,8 +45,10 @@ const ImmagineCollectionStyle = styled.img`
   margin-right:2%;
 
   @media(max-width: 680px){
-    display: none;
+    width: 80%;
   }
+
+
 `;
 
 const ImmagineCollection2Style = styled.img`
@@ -88,13 +95,14 @@ justify-content: flex-start;
 flex-direction: column;
 overflow: hidden;
 
-margin-bottom: 20px;
+margin-bottom: 0%;
 margin-top:1%;
 transition: min-height 0.5s ease;
 width: 50%;
 
 @media(max-width:680px){
   width:80%;
+
 }
 
 `;
@@ -331,7 +339,28 @@ margin-right:10px;
 
 `;
 
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
+
+const Video = styled.video`
+
+
+@media(max-width: 680px){
+  display: none;
+}
+
+`;
+
+
+
+
 const CollectionFleurie = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
 
 
 
@@ -433,6 +462,9 @@ const CollectionFleurie = () => {
   
   return (
     <>
+
+      <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     
     <DivCarrello open={isFilterVisible}>
           <ContainerFiltri>
@@ -570,7 +602,10 @@ At the center of this aquatic set, a betta fish swims through an opal sea.
         <DivImmagini>
 
         <ImmagineCollectionStyle src={ImmagineCollection}/>
-        <ImmagineCollection2Style src={ImmagineCollection2}/>
+        <Video autoPlay loop muted playsInline style={{ objectFit: 'cover', marginLeft: '2%', width: '50%', height: 'auto' }}>
+          <source src={VideoCollection2Video} type="video/mp4" />
+          Il tuo browser non supporta la riproduzione di video MOV.
+        </Video>
         </DivImmagini>
 
 
@@ -609,7 +644,9 @@ At the center of this aquatic set, a betta fish swims through an opal sea.
         </DivProdotti>
 
       </Container>
-      
+
+      </LazyLoadWrapper>
+      </LazyLoad>
     </>
   );
 };
