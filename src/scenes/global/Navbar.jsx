@@ -266,7 +266,7 @@ display: none;
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
   position: fixed;
-
+  overflow: auto;
   bottom: 0;
   width: 80%;
   height: 100%;
@@ -442,8 +442,14 @@ function Navbar() {
   const [isHoveredAbout, setIsHoveredAbout] = useState(false);
 
   const [showCollectionInfo, setshowCollectionInfo] = useState(false);
+
+
+
   const [showShopInfo, setshowShopInfo] = useState(false);
   const [showHighJewellery, setShowHighJewellery] = useState(false);
+  const [showHouseInfo, setShowHouseInfo] = useState(false);
+  
+  const [showExpertiseInfo, setShowExpertiseInfo] = useState(false);
   const [showAboutInfo, setshowAboutInfo] = useState(false);
 
   const [selectedCollection, setSelectedCollection] = useState([]);
@@ -656,8 +662,23 @@ function Navbar() {
             </FilterButton>
 
             <InfoContainer visible={showAboutInfo}>
-            <GtaRegular onClick={handleMaisonCusi}>THE HOUSE</GtaRegular>
-              <GtaRegular onClick={handleBoutiques}>EXPERTISE</GtaRegular>
+            <GtaRegular onClick={() => setShowHouseInfo(prevState => !prevState)}>THE HOUSE</GtaRegular>
+
+                <HighJewellery  visible={showHouseInfo}>
+                  <GtaRegular onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</GtaRegular> 
+                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Boutiques</GtaRegular> 
+
+                </HighJewellery>
+
+
+              <GtaRegular onClick={() => setShowExpertiseInfo(prevState => !prevState)}>EXPERTISE</GtaRegular>
+
+              <HighJewellery  visible={showExpertiseInfo}>
+                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Book an appointment</GtaRegular> 
+                  <GtaRegular onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</GtaRegular> 
+                  <GtaRegular onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</GtaRegular> 
+                </HighJewellery>
+
             </InfoContainer>
 
             <FilterButton2>

@@ -341,7 +341,7 @@ margin-right:10px;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 1s ease-in-out;
+transition: opacity 3s ease-in-out;
 `;
 
 const Video = styled.video`

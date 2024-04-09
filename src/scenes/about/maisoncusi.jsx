@@ -14,32 +14,24 @@ import Bacheca from "../../assets/bacheca.png"
 const MaisonCusi = () => {
 
 
-
-
-
-
-
-
-
-
-  const Container = styled.div`
-    margin-top:120px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height:auto;
-    align-items:center;
-
-    overflow:hidden;
-  `;
-
-  const DivBacheca = styled.div`
-
+const Container = styled.div`
+  margin-top:120px;
   display: flex;
   flex-direction: column;
   width: 100%;
   height:auto;
   align-items:center;
+
+  overflow:hidden;
+`;
+
+const DivBacheca = styled.div`
+
+display: flex;
+flex-direction: column;
+width: 100%;
+height:auto;
+align-items:center;
 
 
 `;
@@ -49,12 +41,13 @@ const Boxstoryboard = styled.div`
 display: flex;
 flex-direction: row;
 width: 90%;
-height: 70vh;
-margin-top:1%;
+height: auto;
+
+margin-top: 6%;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 1000px){
   flex-direction: column;
 
 
@@ -69,10 +62,12 @@ const Boxstoryboard4 = styled.div`
 display: flex;
 flex-direction: row;
 width: 90%;
-height: 70vh;
-margin-top:1%;
 
-@media(max-width: 680px){
+margin-top:6%;
+
+
+
+@media(max-width: 1000px){
   flex-direction: column-reverse;
 
 
@@ -87,10 +82,11 @@ const Boxstoryboard2 = styled.div`
 display: flex;
 flex-direction: row;
 width: 90%;
-height: 60vh;
-margin-top:1%;
 
-@media(max-width: 680px){
+margin-top:6%;
+
+
+@media(max-width: 1000px){
   flex-direction: column;
 
 
@@ -107,10 +103,10 @@ const Boxstoryboard3 = styled.div`
 display: flex;
 flex-direction: row;
 width: 90%;
-height: 60vh;
-margin-top:1%;
 
-@media(max-width: 680px){
+margin-top:6%;
+
+@media(max-width: 1000px){
   flex-direction: column-reverse;
 
 
@@ -164,10 +160,16 @@ margin-bottom:3%;
 font-family: 'GTAmericaLight';
 font-size:16px;
 
+@media(max-width: 1000px){
+  font-size:14px; 
+  width:80%;
+  margin-bottom:6%;
+}
+
 @media(max-width: 680px){
   font-size:14px; 
   width:85%;
-  margin-bottom:6%;
+
 }
 
 
@@ -185,7 +187,7 @@ const ImmagineBacheca = styled.img`
 width:100%;
 margin-bottom:4%;
 
-@media(max-width: 680px){
+@media(max-width: 1000px){
 
   margin-bottom:8%;
 }
@@ -193,9 +195,14 @@ margin-bottom:4%;
 const ImmagineFamiglia = styled.img`
 width: 85%;
 
+@media(max-width: 1000px){
+
+  margin-bottom:4%;
+}
+
 @media(max-width: 680px){
   width: 90%;
-  margin-bottom:4%;
+
 }
 
 
@@ -203,17 +210,17 @@ width: 85%;
 const DivImmagine = styled.div`
 
 width:50%;
-height:100%;
+
 display:flex;
 align-items:center;
 justify-content:center;
 
 
 
-@media(max-width:680px){
+@media(max-width:1000px){
   width:100%;
   height:auto;
-  margin-bottom: 6%;
+  margin-bottom: 4%;
 }
 
 
@@ -229,10 +236,25 @@ justify-content:center;
 
 
 `;
+const ContenitoreDivInfo = styled.div`
+
+height:100%;
+background-color: blue;
+width: 100%;
+
+@media(max-width: 1200px){
+
+
+}
+
+
+
+`;
+
 const DivInfo = styled.div`
 
 width:50%;
-height:100%;
+
 align-items:center;
 justify-content:center;
 display:flex;
@@ -240,7 +262,7 @@ flex-direction: column;
 
 overflow:hidden;
 
-@media(max-width: 680px){
+@media(max-width: 1000px){
   width:100%;
   height:auto;
   margin-top:4%;
@@ -257,7 +279,7 @@ font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
 margin-bottom: 0;
 
-@media(max-width:680px){
+@media(max-width:1200px){
   font-size: 35px; 
 }
 
@@ -286,6 +308,11 @@ margin-bottom: 0;
 width:75%;
 font-weight: 200;
 
+@media(max-width:1200px){
+  font-size: 14px; 
+
+}
+
 @media(max-width:680px){
   font-size: 14px; 
   width:100%;
@@ -312,6 +339,12 @@ margin-bottom: 0;
 margin-top: 4%;
 width:60%;
 font-weight: 200;
+
+@media(max-width: 1000px){
+
+  width:80%;
+  
+}
 
 @media(max-width:680px){
   font-size: 14px; 
@@ -346,6 +379,10 @@ width:60%;
 text-align: center;
 margin-bottom:4%;
 
+@media(max-width:1000px){
+  width: 85%;
+
+}
 
 @media(max-width:680px){
   width:80%;
@@ -361,6 +398,15 @@ font-size: 40px;
 margin-bottom: 0;
 margin-top: 7%;
 
+@media(max-width:1000px){
+  font-size: 30px; 
+
+}
+
+@media(max-width:800px){
+  font-size: 28px; 
+
+}
 
 @media(max-width:680px){
   font-size: 21px; 
@@ -372,9 +418,16 @@ margin-top: 7%;
 `;
 
 const ImmagineAnnibaleCusi = styled.img`
-width: 80%;
+width: 100%;
 height: auto;
 
+
+@media(max-width:1000px){
+
+
+  width:75%;
+
+}
 
 @media(max-width:680px){
 
@@ -388,13 +441,21 @@ width: 80%;
 height: auto;
 
 
-@media(max-width:680px){
+@media(max-width:1000px){
 
   margin-top:8%;
+
+  width:75%;
+
+}
+
+@media(max-width:680px){
+
 
   width:100%;
 
 }
+
 `;
 
 
@@ -570,24 +631,28 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
         </DivImmagine>
 
-        <DivInfo>
-        <ABC24>1926-1996</ABC24> 
-        <ABC24>
-          Roberto Cusi
-        </ABC24>
 
-        <Description>
-        Con Roberto CUSI (1926 – 1996), l’azienda si consolida e nel 1964 viene innaugurata l’esclusiva sede di Portofino,
-        e dopo soli due anni anche l’attuale sede di Milano in via Montenapoleone al numero 21,
-        location simbolo per eccellenza della moda e del lusso nel mondo.
-        Successivamente nel 2004 nella filiale di Portofino CUSI diventa concessionario ufficiale ROLEX e nel 2013 
-        vi dedica interamente un Atelier accanto alla propria gioielleria.
+          <DivInfo>
+            <ABC24>1926-1996</ABC24> 
+            <ABC24>
+              Roberto Cusi
+            </ABC24>
 
-        </Description>
+            <Description>
+            Con Roberto CUSI (1926 – 1996), l’azienda si consolida e nel 1964 viene innaugurata l’esclusiva sede di Portofino,
+            e dopo soli due anni anche l’attuale sede di Milano in via Montenapoleone al numero 21,
+            location simbolo per eccellenza della moda e del lusso nel mondo.
+            Successivamente nel 2004 nella filiale di Portofino CUSI diventa concessionario ufficiale ROLEX e nel 2013 
+            vi dedica interamente un Atelier accanto alla propria gioielleria.
 
-            
+            </Description>
 
-        </DivInfo>
+              
+
+          </DivInfo>
+
+
+
 
 
 
