@@ -338,17 +338,17 @@ margin-bottom:5%;
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const Immagine = styled.img`
 width: 96%;
-min-height: 30vh;
+min-height: 40vh;
 object-fit: cover;
 `;
 
 const ImmagineAnello = styled.img`
 width:100%;
-
+min-height: 40vh;
 `;
 const Immagine2 = styled.img`
 width:40%;
-
+min-height: 10vh;
 
 @media(max-width: 1200px){
 width:45%;
@@ -365,7 +365,7 @@ width:50%;
 `;
 const Immagine3 = styled.img`
 width:50%;
-
+min-height: 10vh;
 @media(max-width: 680px){
 margin-top:0%;
 margin-bottom:0%;
@@ -377,7 +377,7 @@ width:55%;
 
 const ImmagineMaison = styled.img`
 width:100%;
-
+min-height: 40vh;
 
 `;
 
