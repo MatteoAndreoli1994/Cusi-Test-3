@@ -21,6 +21,8 @@ import ImmagineCollection2 from "../../assets/tycoon5.avif"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -34,27 +36,31 @@ const DivImmagini = styled.div`
 
 `;
 
-const ImmagineCollectionStyle = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-right:2%;
 
-  @media(max-width: 680px){
-    display: none;
-  }
+
+const ImmagineCollectionStyle = styled(LazyLoadImage)`
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-right:2%;
+
+@media(max-width: 680px){
+  display: none;
+}
 `;
 
-const ImmagineCollection2Style = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-left:2%;
+const ImmagineCollection2Style = styled(LazyLoadImage)`
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
 
-  @media(max-width: 680px){
-    width: 100%;
-  }
+@media(max-width: 680px){
+  width: 100%;
+}
 `;
+
+
 
   
 const Container = styled.div`
