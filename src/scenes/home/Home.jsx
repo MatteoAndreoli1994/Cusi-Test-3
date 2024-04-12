@@ -336,7 +336,7 @@ margin-bottom:5%;
 `;
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
-const Immagine = styled(LazyLoadImage)`
+const Immagine = styled.img`
 width: 96%;
 min-height: 30vh;
 object-fit: cover;
