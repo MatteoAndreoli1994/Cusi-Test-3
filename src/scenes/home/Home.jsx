@@ -9,7 +9,9 @@ import SelectedItem1White from"../../assets/A58.avif";
 import SelectedItem1Model from"../../assets/urania.avif";
 import Maison from"../../assets/maison1.avif";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+// Importa LazyLoadImage e il suo effetto di sfocatura
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useEffect } from "react";
 import { isSafari } from 'react-device-detect';
 
@@ -30,7 +32,7 @@ margin-top:120px;
 
 const GifBox = styled.div`
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-height: ${({ loaded }) => (loaded ? '100vh' : 'auto')};
+min-height:40vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -43,12 +45,12 @@ height: ${({ loaded }) => (loaded ? '100vh' : 'auto')};
 const GifBoxSafari = styled.div`
 position: relative;
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-height: ${({ loaded }) => (loaded ? '100vh' : 'auto')};
+min-height:40vh;
 justify-content:center;
 width:100vw;
 
 overflow: hidden;
-background: url(${video2}) no-repeat center center;
+
 background-size: cover;
 margin-bottom: 2%;
 `;
@@ -332,13 +334,14 @@ margin-bottom:5%;
 
 
 `;
-const Immagine = styled.img`
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
+const Immagine = styled(LazyLoadImage)`
 width: 96%;
 height: 100%;
 object-fit: cover;
-
-
 `;
+
 const ImmagineAnello = styled.img`
 width:100%;
 
@@ -696,17 +699,25 @@ const Home = () => {
 
       {isSafari ? (
               <GifBoxSafari >
-                  <VideoSafari src={video2}></VideoSafari>
+                                 <VideoSafari src={video2}></VideoSafari>
+
               </GifBoxSafari>
             ) : null}
 
             {/* Condizionalmente renderizza il componente per i browser diversi da Safari */}
             {!isSafari ? (
               <GifBox >
-                <Video autoPlay loop muted playsInline >
+
+
+                                                
+                <Video autoPlay loop muted playsInline >              
                   <source src={video2} type="video/mp4" />
                   Il tuo browser non supporta la riproduzione di video MP4.
                 </Video>
+                                  
+                                  
+                                  
+
               </GifBox>
             ) : null}
 
