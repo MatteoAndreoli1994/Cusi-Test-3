@@ -12,25 +12,21 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 10%;
   font-size: 12px; /* Imposta la dimensione del font del corpo del testo */
+
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2em; /* Esempio: il doppio della dimensione del font del corpo del testo */
-`;
-
-const Subtitle = styled.p`
-  width:40%;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 15px; /* Esempio: 1,5 volte la dimensione del font del corpo del testo */
-`;
 
 const ContactSection = styled.div`
   display: flex;
   width: 80%;
   margin-top: 20px;
+  backgroud-color:blue;
+
+  @media(max-width: 680px){
+  width: 85%;
+    flex-direction:column;
+  }
+
 `;
 
 const ModelImage = styled.div`
@@ -63,11 +59,33 @@ const ContactInfo = styled.div`
   width: 90%;
   justify-content: center;
 
+  @media(max-width: 1200px){
+    width: 93%;
+    gap: 7px;
+
+  }
+  @media(max-width: 1000px){
+    width: 96%;
+    gap: 5px;
+
+  }
+
+  @media(max-width: 680px){
+    width: 100%;
+    gap: 0px;
+
+  }
+
 `;
 
 const DivCustomerService = styled.div`
   display: flex;
 
+  @media(max-width: 680px){
+    margin-top: 8%;
+
+    flex-direction:column;
+  }
 `;
 
 const Box = styled.div`
@@ -81,7 +99,12 @@ const Box = styled.div`
 
   p {
     margin: 0;
-    font-size: 1.2em; /* Esempio: 1,2 volte la dimensione del font del corpo del testo */
+
+  }
+
+  @media(max-width: 680px){
+    margin-bottom: 1%;
+    width: 90%;
   }
 `;
 
@@ -92,16 +115,14 @@ font-size: 40px;
 margin-bottom: 0;
 
 
-`;
-
-const GtaRegular = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 16px;
-width:30%;
-text-align: center;
+@media(max-width:1200px){
+  font-size: 35px; 
+}
 
 
 `;
+
+
 const GtaLight = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 16px;
@@ -110,15 +131,34 @@ margin-bottom:2%;
 width:40%;
 text-align:center;
 
+@media(max-width: 1200px){
+  width:60%;
+  backgroud-color:blue;
+  font-size: 14px; 
+}
+
+@media(max-width: 680px){
+  width:70%;
+}
+
+
 `;
 const GtaLightRegular = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
+
+@media(max-width: 1200px){
+  font-size: 13px; 
+}
 `;
 
 const GtaLightLightInfo = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 16px;
+
+@media(max-width: 1200px){
+  font-size: 14px; 
+}
 `;
 
 const ContactUs = () => {
@@ -127,6 +167,7 @@ const ContactUs = () => {
       <ABC>Contact Us</ABC>
       <GtaLight>Our personal advisors are available to answer any questions from Monday to Friday from 9 am to 7 pm and on Saturdays from 9 am to 5 pm.</GtaLight>
       <ContactSection>
+        
         <ModelImage>
           <img src={Modella} alt="Model" />
         </ModelImage>
