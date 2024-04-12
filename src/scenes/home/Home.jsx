@@ -30,6 +30,7 @@ margin-top:120px;
 
 const GifBox = styled.div`
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
+height: ${({ loaded }) => (loaded ? '100vh' : 'auto')};
   position: relative;
   display: flex;
   justify-content: center;
@@ -42,8 +43,10 @@ display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
 const GifBoxSafari = styled.div`
 position: relative;
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
+height: ${({ loaded }) => (loaded ? '100vh' : 'auto')};
 justify-content:center;
 width:100vw;
+
 overflow: hidden;
 background: url(${video2}) no-repeat center center;
 background-size: cover;
