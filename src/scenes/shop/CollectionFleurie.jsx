@@ -602,6 +602,7 @@ At the center of this aquatic set, a betta fish swims through an opal sea.
         <DivImmagini>
 
         <ImmagineCollectionStyle src={ImmagineCollection}/>
+        
         <Video autoPlay loop muted playsInline style={{ objectFit: 'cover', marginLeft: '2%', width: '50%', height: 'auto' }}>
           <source src={VideoCollection2Video} type="video/mp4" />
           Il tuo browser non supporta la riproduzione di video MOV.

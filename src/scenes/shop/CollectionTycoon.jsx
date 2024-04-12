@@ -38,7 +38,7 @@ const DivImmagini = styled.div`
 
 
 
-const ImmagineCollectionStyle = styled(LazyLoadImage)`
+const ImmagineCollectionStyle = styled.img`
 width: 50%;
 height: auto;
 object-fit: cover;
@@ -49,7 +49,7 @@ margin-right:2%;
 }
 `;
 
-const ImmagineCollection2Style = styled(LazyLoadImage)`
+const ImmagineCollection2Style = styled.img`
 width: 50%;
 height: auto;
 object-fit: cover;
