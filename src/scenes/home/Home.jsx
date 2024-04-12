@@ -744,7 +744,7 @@ const Home = () => {
             <Collection1DivIconic>
 
             
-            <Immagine src={Modella2} />
+            <Immagine src={Modella2}   effect="blur"/>
 
             <ABC24>Fleurie</ABC24>
             <Gta>Timeless and wearable earrings with a modern twist that 
