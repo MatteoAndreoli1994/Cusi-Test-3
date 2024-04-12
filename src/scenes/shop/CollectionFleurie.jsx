@@ -25,7 +25,7 @@ import LazyLoad from 'react-lazyload';
 
 const DivImmagini = styled.div`
   width: 85%;
-  height: auto;
+  min-height: 50vh;
   font-size: 8px;
   display: flex;
   align-items: center;
