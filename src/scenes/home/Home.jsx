@@ -338,7 +338,7 @@ margin-bottom:5%;
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const Immagine = styled(LazyLoadImage)`
 width: 96%;
-height: 100%;
+min-height: 30vh;
 object-fit: cover;
 `;
 
@@ -761,7 +761,7 @@ const Home = () => {
 
             <Collection2DivIconic>
             
-            <Immagine src={Modella3}/>
+            <Immagine src={Modella3} effect="blur"/>
             <ABC24>Zingara</ABC24>
             <Gta>Timeless and wearable earrings with a modern twist that 
             add a touch of style to any outfit.
