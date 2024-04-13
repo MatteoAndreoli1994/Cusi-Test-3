@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import add from '../../assets/add.png';
+import close from '../../assets/meno.png';
 const Container = styled.div`
   display: flex;
   margin-top: 120px;
@@ -14,6 +15,10 @@ const Container = styled.div`
 const CustomerServiceDiv = styled.div`
   display: flex;
   width: 85%;
+
+  @media(max-width: 680px){
+    display:none;
+  }
 `;
 
 const Menu = styled.div`
@@ -65,11 +70,31 @@ const Content = styled.div`
 
   margin-top:3%;
 `;
+
+const Mobile = styled.div`
+width:100%;
+height: auto;
+
+display:flex;
+align-items:center;
+display: none;
+flex-direction:column;
+
+@media(max-width:680px){
+  display:flex;
+}
+`;
+
 //FONT
 const ABC = styled.p`
-font-family: 'ABCGaisyr-Regular';
+font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
 margin-bottom: 0;
+
+
+@media(max-width:1200px){
+  font-size: 35px; 
+}
 
 
 `;
@@ -119,6 +144,49 @@ font-size: 13px;
 margin-bottom:0;
 margin-top:0;
 `;
+
+const AccordionItem = styled.div`
+
+  padding: 10px;
+
+  padding-left: 0;
+  cursor: pointer;
+
+`;
+
+const AccordionContent = styled.div`
+  max-height: ${({ isOpen }) => (isOpen ? '100%' : '0')}; /* Imposta una max-height elevata quando è aperto */
+  overflow: hidden;
+  transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+  border-bottom: 1px solid black;
+
+`;
+
+const FaqDiv = styled.div`
+  width: 90%;
+
+`;
+const FilterSign = styled.span`
+
+
+  display:flex;
+
+  align-items:center;
+`;
+const FilterButton = styled.div`
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Aggiunto per separare gli elementi */
+
+
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none; /* Evita la selezione del testo */
+  width: 100%;
+
+`;
+
 
 const CustomerService = () => {
   const [selectedItem, setSelectedItem] = useState('Our Services');
@@ -272,6 +340,19 @@ const CustomerService = () => {
         return null;
     }
   };
+
+  const [accordionState, setAccordionState] = useState({
+    OurServices: false,
+    ProductCare: false,
+    // Aggiungi altri elementi del tuo accordion qui...
+  });
+
+  const toggleAccordion = (item) => {
+    setAccordionState((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
   
   
   
@@ -332,6 +413,85 @@ const CustomerService = () => {
         </Menu>
         <Content>{getContent()}</Content>
       </CustomerServiceDiv>
+
+
+
+
+
+
+
+      <Mobile>
+        <GtaRegular>Customer Service</GtaRegular>
+
+        <FaqDiv>
+
+          <FilterButton onClick={() => toggleAccordion('OurServices')}>
+            <AccordionItem >
+              Our Services
+
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['OurServices'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['OurServices']}>
+                <GtaLightLightInfo>
+                  Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                  to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                  timeless beauty and sophistication you deserve.
+                </GtaLightLightInfo>
+                <GtaLightLightInfo>
+                  Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                  to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                  style.
+                </GtaLightLightInfo>
+                <GtaLightLightInfo>
+                <br></br>
+                </GtaLightLightInfo>
+          </AccordionContent>
+
+
+      <FilterButton>
+            <AccordionItem onClick={() => toggleAccordion('ProductCare')}>
+                Product Care
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['ProductCare'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+      <AccordionContent isOpen={accordionState['ProductCare']}>
+      <GtaLightLightInfo>
+                  Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                  to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                  timeless beauty and sophistication you deserve.
+                </GtaLightLightInfo>
+                <GtaLightLightInfo>
+                  Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                  to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                  style.
+                </GtaLightLightInfo>
+                <GtaLightLightInfo>
+                <br></br>
+                </GtaLightLightInfo>
+      </AccordionContent>
+
+      {/* Aggiungi gli altri elementi dell'accordion seguendo lo stesso modello */}
+        </FaqDiv>
+      </Mobile>
+
+
     </Container>
   );
 };
