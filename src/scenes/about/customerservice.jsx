@@ -147,6 +147,7 @@ margin-top:0;
 
 const AccordionItem = styled.div`
 
+width: 100%;
   padding: 3%;
   font-family: 'GTAmericaRegular';
   font-size: 16px;
