@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   margin-top: 120px;
   width: 100%;
-  min-height:80vh;
+  height:auto;
 
   justify-content: center;
 
@@ -344,6 +344,14 @@ const CustomerService = () => {
   const [accordionState, setAccordionState] = useState({
     OurServices: false,
     ProductCare: false,
+    Shippig: false,
+    Size: false,
+    Garanzia: false,
+    Privacy: false,
+    Faq: false,
+    Contact: false,
+
+
     // Aggiungi altri elementi del tuo accordion qui...
   });
 
@@ -424,7 +432,7 @@ const CustomerService = () => {
         <GtaRegular>Customer Service</GtaRegular>
 
         <FaqDiv>
-
+{/* Prima Domanda */}
           <FilterButton onClick={() => toggleAccordion('OurServices')}>
             <AccordionItem >
               Our Services
@@ -455,10 +463,10 @@ const CustomerService = () => {
                 <br></br>
                 </GtaLightLightInfo>
           </AccordionContent>
+{/* Fine Prima Domanda */}
 
-
-      <FilterButton>
-            <AccordionItem onClick={() => toggleAccordion('ProductCare')}>
+          <FilterButton onClick={() => toggleAccordion('ProductCare')}>
+            <AccordionItem >
                 Product Care
             </AccordionItem>
             <FilterSign>
@@ -471,23 +479,223 @@ const CustomerService = () => {
           </FilterButton>
 
 
-      <AccordionContent isOpen={accordionState['ProductCare']}>
-      <GtaLightLightInfo>
-                  Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                  to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                  timeless beauty and sophistication you deserve.
-                </GtaLightLightInfo>
-                <GtaLightLightInfo>
-                  Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                  to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                  style.
-                </GtaLightLightInfo>
-                <GtaLightLightInfo>
-                <br></br>
-                </GtaLightLightInfo>
-      </AccordionContent>
+          <AccordionContent isOpen={accordionState['ProductCare']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
 
-      {/* Aggiungi gli altri elementi dell'accordion seguendo lo stesso modello */}
+
+<FilterButton onClick={() => toggleAccordion('Shipping')}>
+            <AccordionItem >
+                Shipping & returns
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Shipping'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Shipping']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+<FilterButton onClick={() => toggleAccordion('Size')}>
+            <AccordionItem >
+                Size Chart
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Size'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Size']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+<FilterButton onClick={() => toggleAccordion('Garanzia')}>
+            <AccordionItem >
+                Garanzia
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Garanzia'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Garanzia']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+<FilterButton onClick={() => toggleAccordion('Privacy')}>
+            <AccordionItem >
+                Privacy Policy
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Privacy'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Privacy']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+<FilterButton onClick={() => toggleAccordion('Faq')}>
+            <AccordionItem >
+               Faq
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Faq'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Faq']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+<FilterButton onClick={() => toggleAccordion('Contact')}>
+            <AccordionItem >
+                Contact
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Contact'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Contact']}>
+          <GtaLightLightInfo>
+                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
+                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
+                      timeless beauty and sophistication you deserve.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+                      style.
+                    </GtaLightLightInfo>
+                    <GtaLightLightInfo>
+                    <br></br>
+                    </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* Fine Prima Domanda */}
+
+
+
+
+
+
+         
+
+      
         </FaqDiv>
       </Mobile>
 
