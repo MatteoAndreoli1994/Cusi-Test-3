@@ -147,8 +147,9 @@ margin-top:0;
 
 const AccordionItem = styled.div`
 
-  padding: 10px;
-
+  padding: 3%;
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
   padding-left: 0;
   cursor: pointer;
 
@@ -184,6 +185,7 @@ const FilterButton = styled.div`
   cursor: pointer;
   user-select: none; /* Evita la selezione del testo */
   width: 100%;
+
 
 `;
 
@@ -432,6 +434,9 @@ const CustomerService = () => {
         <GtaRegular>Customer Service</GtaRegular>
 
         <FaqDiv>
+{/* prima Linea nera */}
+        <AccordionContent></AccordionContent>
+
 {/* Prima Domanda */}
           <FilterButton onClick={() => toggleAccordion('OurServices')}>
             <AccordionItem >
