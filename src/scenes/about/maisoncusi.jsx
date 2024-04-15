@@ -8,6 +8,7 @@ import RinaldoCusi from "../../assets/about5.jpg";
 import RobertoCusi from "../../assets/about6.png";
 import GiorgioCusi from "../../assets/about7.png";
 import Bacheca from "../../assets/bacheca.png"
+import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
 import { LazyLoadImage } from 'react-lazy-load-image-component'; // Importa LazyLoadImage dalla libreria
 
@@ -494,7 +495,12 @@ const handleContentLoad = () => {
         </Light16>
 
 
-
+        
+        <ImmagineDelay
+          src={BachecaAvif}
+          alt="Annibale Cusi"
+          effect="blur" // Aggiungi l'effetto di sfocatura
+        />
         <ImmagineDelay
           src={Bacheca}
           alt="Annibale Cusi"
