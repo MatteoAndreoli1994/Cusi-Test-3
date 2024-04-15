@@ -46,9 +46,12 @@ height: auto;
 
 margin-top: 6%;
 
-
-
 @media(max-width: 1000px){
+
+  width: 80%;
+}
+
+@media(max-width: 680px){
   flex-direction: column;
 
 
@@ -68,7 +71,7 @@ margin-top:6%;
 
 
 
-@media(max-width: 1000px){
+@media(max-width: 680px){
   flex-direction: column-reverse;
 
 
@@ -88,7 +91,7 @@ height:auto;
 margin-top:6%;
 
 
-@media(max-width: 1000px){
+@media(max-width: 680px){
   flex-direction: column;
 
 
@@ -109,7 +112,7 @@ width: 80%;
 margin-top:6%;
 
 
-@media(max-width: 1000px){
+@media(max-width: 680px){
   flex-direction: column-reverse;
 
 
@@ -197,7 +200,7 @@ margin-bottom:4%;
 `;
 const ImmagineFamiglia = styled(LazyLoadImage)`
 width: 85%;
-
+height:100%;
 @media(max-width: 1000px){
 
   margin-bottom:4%;
@@ -297,6 +300,12 @@ margin-bottom: 0;
 margin-top: 0;
 width:75%;
 
+@media(max-width:1000px){
+  font-size: 21px; 
+
+
+}
+
 @media(max-width:680px){
   font-size: 21px; 
 
@@ -329,7 +338,7 @@ font-weight: 200;
 
 @media(max-width:1200px){
   font-size: 14px; 
-
+  width:75%;
 }
 
 @media(max-width:680px){
@@ -387,7 +396,7 @@ font-weight: 200;
   font-size: 14px; 
 
   text-align:left;
-  width:90%;
+  width:80%;
   
 }
 
@@ -457,12 +466,12 @@ margin-top: 7%;
 const ImmagineAnnibaleCusi = styled(LazyLoadImage)`
 width: 100%;
 height: auto;
-transition: opacity 3s ease-in-out;
+
 
 @media(max-width:1000px){
 
 
-  width:75%;
+  width:100%;
 
 }
 
@@ -482,7 +491,7 @@ height: auto;
 
   margin-top:8%;
 
-  width:75%;
+  width:100%;
 
 }
 
@@ -505,13 +514,13 @@ margin-left:15%;
 
   margin-top:8%;
 
-  width:75%;
+  width:100%;
 
 }
 
 @media(max-width:680px){
 
-
+  margin-left:0%;
   width:100%;
 
 }
@@ -527,13 +536,13 @@ margin-left:12.5%;
 
   margin-top:8%;
 
-  width:75%;
+  width:100%;
 
 }
 
 @media(max-width:680px){
 
-
+  margin-left:0%;
   width:100%;
 
 }
