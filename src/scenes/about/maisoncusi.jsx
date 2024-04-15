@@ -174,7 +174,7 @@ font-size:16px;
 
 @media(max-width: 680px){
   font-size:14px; 
-  width:85%;
+  width:80%;
 
 }
 
@@ -199,15 +199,18 @@ margin-bottom:4%;
 }
 `;
 const ImmagineFamiglia = styled(LazyLoadImage)`
-width: 85%;
-height:100%;
+width: 80vw;
+min-height: 30vh;
+
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 10s ease-in-out;
 @media(max-width: 1000px){
 
   margin-bottom:4%;
 }
 
 @media(max-width: 680px){
-  width: 90%;
+  width: 80%;
 
 }
 
