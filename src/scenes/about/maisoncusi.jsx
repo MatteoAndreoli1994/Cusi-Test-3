@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import AnnibaleCusi from "../../assets/about2.png";
-import SpillaDelPozzo from "../../assets/about.png";
-import CollierMariaStuarda from "../../assets/about3.png";
-import ViaClerici from "../../assets/about4.png";
-import RinaldoCusi from "../../assets/about5.jpg";
-import RobertoCusi from "../../assets/about6.png";
-import GiorgioCusi from "../../assets/about7.png";
-import Bacheca from "../../assets/bacheca.png"
+import AnnibaleCusi from "../../assets/about2.avif";
+import SpillaDelPozzo from "../../assets/about.avif";
+import CollierMariaStuarda from "../../assets/about3.avif";
+import ViaClerici from "../../assets/about4.avif";
+import RinaldoCusi from "../../assets/about5.avif";
+import RobertoCusi from "../../assets/about6.avif";
+import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
 import { LazyLoadImage } from 'react-lazy-load-image-component'; // Importa LazyLoadImage dalla libreria
@@ -194,7 +193,7 @@ margin-bottom:4%;
   margin-bottom:8%;
 }
 `;
-const ImmagineFamiglia = styled.img`
+const ImmagineFamiglia = styled(LazyLoadImage)`
 width: 85%;
 
 @media(max-width: 1000px){
@@ -438,7 +437,7 @@ height: auto;
 
 }
 `;
-const ImmagineStuarda= styled.img`
+const ImmagineStuarda= styled(LazyLoadImage)`
 width: 80%;
 height: auto;
 
@@ -485,7 +484,8 @@ const handleContentLoad = () => {
 
   return (
     <>
-
+      <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 <Container>
     <DivBacheca>
 
@@ -498,17 +498,9 @@ const handleContentLoad = () => {
         
         <ImmagineDelay
           src={BachecaAvif}
-          alt="Annibale Cusi"
+
           effect="blur" // Aggiungi l'effetto di sfocatura
         />
-        <ImmagineDelay
-          src={Bacheca}
-          alt="Annibale Cusi"
-          effect="blur" // Aggiungi l'effetto di sfocatura
-        />
-        <ImmagineBacheca src={Bacheca} />
-
-
 
 
 
@@ -517,7 +509,7 @@ const handleContentLoad = () => {
 
     <Boxstoryboard>
         <DivImmagine>
-        <ImmagineAnnibaleCusi src={AnnibaleCusi}/>
+        <ImmagineAnnibaleCusi src={AnnibaleCusi} effect="blur"/>
 
         </DivImmagine>
 
@@ -547,7 +539,7 @@ const handleContentLoad = () => {
 
     <Boxstoryboard2>
     <DivImmagine >
-    <img src={SpillaDelPozzo} style={{ width: '70%', height: "auto" }} />
+    <ImmagineStuarda src={SpillaDelPozzo} style={{ width: '70%', height: "auto" }} effect="blur"/>
     </DivImmagine>
 
 
@@ -592,7 +584,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         </DivInfo>
 
         <DivImmagine>
-        <ImmagineStuarda src={CollierMariaStuarda} />
+        <ImmagineStuarda src={CollierMariaStuarda} effect="blur"/>
 
         </DivImmagine>
 
@@ -600,7 +592,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
     <Boxstoryboard>
         <DivImmagine>
-        <ImmagineStuarda src={ViaClerici} />
+        <ImmagineStuarda src={ViaClerici} effect="blur"/>
 
         </DivImmagine>
 
@@ -651,7 +643,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
         <DivImmagine>
-        <ImmagineStuarda src={RinaldoCusi} />
+        <ImmagineStuarda src={RinaldoCusi} effect="blur"/>
 
         </DivImmagine>
 
@@ -661,7 +653,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
     <Boxstoryboard>
 
         <DivImmagine>
-        <ImmagineStuarda src={RobertoCusi}/>
+        <ImmagineStuarda src={RobertoCusi} effect="blur"/>
 
         </DivImmagine>
 
@@ -701,7 +693,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
         </Introduzione>
 
-        <ImmagineFamiglia src={GiorgioCusi}  />
+        <ImmagineFamiglia src={GiorgioCusi}  effect="blur"/>
 
         <Description2>
         Oggi la tradizione della famiglia prosegue grazie all’impegno e la passione di Giorgio Nicola Cusi, della moglie Roberta Cusi e dei figli Alessia e Alessandro.
@@ -721,6 +713,8 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
     
 </Container>
 
+        </LazyLoadWrapper>
+  </LazyLoad>
     </>
   );
 };
