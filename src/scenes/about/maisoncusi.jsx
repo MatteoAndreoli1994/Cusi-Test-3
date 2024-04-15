@@ -8,7 +8,8 @@ import RinaldoCusi from "../../assets/about5.jpg";
 import RobertoCusi from "../../assets/about6.png";
 import GiorgioCusi from "../../assets/about7.png";
 import Bacheca from "../../assets/bacheca.png"
-
+import LazyLoad from 'react-lazyload';
+import { LazyLoadImage } from 'react-lazy-load-image-component'; // Importa LazyLoadImage dalla libreria
 
 
 const MaisonCusi = () => {
@@ -458,10 +459,32 @@ height: auto;
 
 `;
 
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 3s ease-in-out;
+`;
+const ImmagineDelay = styled(LazyLoadImage)`
+width:100%;
+margin-bottom:4%;
+
+@media(max-width: 1000px){
+
+  margin-bottom:8%;
+}
+`;
+
+
+const [loaded, setLoaded] = React.useState(false);
+const handleContentLoad = () => {
+  setLoaded(true);
+};
+
+
 
 
   return (
     <>
+
 <Container>
     <DivBacheca>
 
@@ -472,8 +495,13 @@ height: auto;
 
 
 
-
+        <ImmagineDelay
+          src={Bacheca}
+          alt="Annibale Cusi"
+          effect="blur" // Aggiungi l'effetto di sfocatura
+        />
         <ImmagineBacheca src={Bacheca} />
+
 
 
 
@@ -686,6 +714,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
     
 </Container>
+
     </>
   );
 };
