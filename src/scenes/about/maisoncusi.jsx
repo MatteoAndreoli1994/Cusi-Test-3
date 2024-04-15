@@ -41,7 +41,7 @@ const Boxstoryboard = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 90%;
+width: 80%;
 height: auto;
 
 margin-top: 6%;
@@ -62,7 +62,7 @@ const Boxstoryboard4 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 90%;
+width: 80%;
 
 margin-top:6%;
 
@@ -82,7 +82,8 @@ const Boxstoryboard2 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 90%;
+width: 80%;
+height:auto;
 
 margin-top:6%;
 
@@ -103,9 +104,10 @@ const Boxstoryboard3 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 90%;
+width: 80%;
 
 margin-top:6%;
+
 
 @media(max-width: 1000px){
   flex-direction: column-reverse;
@@ -211,10 +213,12 @@ width: 85%;
 const DivImmagine = styled.div`
 
 width:50%;
+height:100%;
 
 display:flex;
 align-items:center;
-justify-content:center;
+justify-content: flex-start;
+
 
 
 
@@ -240,7 +244,7 @@ justify-content:center;
 const ContenitoreDivInfo = styled.div`
 
 height:100%;
-background-color: blue;
+
 width: 100%;
 
 @media(max-width: 1200px){
@@ -293,6 +297,20 @@ margin-bottom: 0;
 margin-top: 0;
 width:75%;
 
+@media(max-width:680px){
+  font-size: 21px; 
+
+  width:100%;
+}
+
+`;
+const ABC24Sinistra = styled.p`
+font-family: 'ABCGaisyr-Regular';
+font-size: 24px; 
+margin-bottom: 0;
+margin-top: 0;
+width:100%;
+
 
 @media(max-width:680px){
   font-size: 21px; 
@@ -307,6 +325,24 @@ font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
 margin-bottom: 0;
 width:75%;
+font-weight: 200;
+
+@media(max-width:1200px){
+  font-size: 14px; 
+
+}
+
+@media(max-width:680px){
+  font-size: 14px; 
+  width:100%;
+}
+
+`;
+const DescriptionSinistra = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 16px; 
+margin-bottom: 0;
+width:100%;
 font-weight: 200;
 
 @media(max-width:1200px){
@@ -418,10 +454,10 @@ margin-top: 7%;
 }
 `;
 
-const ImmagineAnnibaleCusi = styled.img`
+const ImmagineAnnibaleCusi = styled(LazyLoadImage)`
 width: 100%;
 height: auto;
-
+transition: opacity 3s ease-in-out;
 
 @media(max-width:1000px){
 
@@ -438,7 +474,7 @@ height: auto;
 }
 `;
 const ImmagineStuarda= styled(LazyLoadImage)`
-width: 80%;
+width: 100%;
 height: auto;
 
 
@@ -456,6 +492,56 @@ height: auto;
   width:100%;
 
 }
+
+`;
+
+const CollieImg = styled(LazyLoadImage)`
+width: 100%;
+height: auto;
+margin-left:15%;
+
+
+@media(max-width:1000px){
+
+  margin-top:8%;
+
+  width:75%;
+
+}
+
+@media(max-width:680px){
+
+
+  width:100%;
+
+}
+
+`;
+const RinaldoCusiImg = styled(LazyLoadImage)`
+width: 90%;
+height: auto;
+margin-left:12.5%;
+
+
+@media(max-width:1000px){
+
+  margin-top:8%;
+
+  width:75%;
+
+}
+
+@media(max-width:680px){
+
+
+  width:100%;
+
+}
+
+`;
+const ImmagineStuarda2= styled(LazyLoadImage)`
+width:100%;
+height:100%;
 
 `;
 
@@ -486,6 +572,7 @@ const handleContentLoad = () => {
     <>
       <LazyLoad once>
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
 <Container>
     <DivBacheca>
 
@@ -539,7 +626,7 @@ const handleContentLoad = () => {
 
     <Boxstoryboard2>
     <DivImmagine >
-    <ImmagineStuarda src={SpillaDelPozzo} style={{ width: '70%', height: "auto" }} effect="blur"/>
+    <ImmagineStuarda2 src={SpillaDelPozzo}  effect="blur"/>
     </DivImmagine>
 
 
@@ -564,9 +651,9 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
     <Boxstoryboard3>
 
         <DivInfo>
-        <ABC24>1906</ABC24> 
-        <ABC24>Il Collier di Maria Stuarda</ABC24>
-        <Description>
+        <ABC24Sinistra>1906</ABC24Sinistra> 
+        <ABC24Sinistra>Il Collier di Maria Stuarda</ABC24Sinistra>
+        <DescriptionSinistra>
           Nel 1906 Milano fu protagonista dell’Esposizione Internazionale,
           un vero successo, parteciparono infatti 40 stati e la città fu visitata da quasi 5 milioni di persone,
           un vero record per l’epoca. Nella sezione delle Arti Decorative Cusi espose i suoi gioielli,
@@ -577,14 +664,14 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
           Il “Colletto” era tempestato di circa 15000 diamanti, perle e rubini.
           L’architettura era complessa in quanto tutte le parti erano snodate e permettevando quindi movimenti articolati.
           Chi scrisse su di essa la definì, nonostante l’imponenza, leggera come un pizzo.
-        </Description>
+        </DescriptionSinistra>
 
             
 
         </DivInfo>
 
         <DivImmagine>
-        <ImmagineStuarda src={CollierMariaStuarda} effect="blur"/>
+        <CollieImg src={CollierMariaStuarda} effect="blur"/>
 
         </DivImmagine>
 
@@ -620,12 +707,12 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
         <DivInfo>
-        <ABC24>1895-1979</ABC24> 
-        <ABC24>
+        <ABC24Sinistra>1895-1979</ABC24Sinistra> 
+        <ABC24Sinistra>
           Rinaldo Cusi
-        </ABC24>
+        </ABC24Sinistra>
 
-        <Description>
+        <DescriptionSinistra>
           Il marchio CUSI, nel ventennio del XX secolo fu apprezzato non solo dalle più importanti 
           famiglie dell’aristocrazia milanese, ma anche dalla Famiglia Reale Italiana, tanto da vantare numerose collaborazioni per il Re,Vittorio Emanuele III,
           con S.A.R. Vittorio Emanuele il Conte di Torino ed il Duca di Aosta Amedeo di Savoia. 
@@ -635,7 +722,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
           dove il mercato internazionale rispose con ampio consenso. Da sempre grande esperto e collezionista di gioielli,
           gemme preziose, ma sopratutto di perle, cedette in età al figlio Roberto CUSI il timone dell’azienda.
 
-        </Description>
+        </DescriptionSinistra>
 
             
 
@@ -643,7 +730,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
         <DivImmagine>
-        <ImmagineStuarda src={RinaldoCusi} effect="blur"/>
+        <RinaldoCusiImg src={RinaldoCusi} effect="blur"/>
 
         </DivImmagine>
 
