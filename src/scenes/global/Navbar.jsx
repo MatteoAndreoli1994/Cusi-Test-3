@@ -408,8 +408,8 @@ transition:  margin-left 0.2s;
   color: gray;
   margin-left: 5px;
 }
-margin-bottom:6%;
-margin-top:6%;
+margin-bottom:5%;
+margin-top:5%;
 
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
@@ -421,7 +421,7 @@ font-size: 16px;
 cursor: pointer;
 color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
 transition:  margin-left 0.2s;
-margin:0;
+margin:2%;
 height:30px;
 
 &:hover {
@@ -655,7 +655,13 @@ function Navbar() {
                   <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</GtaRegular> 
                 </HighJewellery>
               <GtaRegularMobile>FINE SILVER</GtaRegularMobile>
+              <HighJewellery>
+                test
+              </HighJewellery>
               <GtaRegularMobile>GIFTS</GtaRegularMobile>
+              <HighJewellery>
+                test
+              </HighJewellery>
                 
             </InfoContainer>
 
