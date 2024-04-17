@@ -363,7 +363,7 @@ const DivSettingButton = styled.div`
 
   position: absolute;
   display: flex;
-  top: 75%;
+  top: 85%;
   align-items:center;
   justify-content: center;
 
