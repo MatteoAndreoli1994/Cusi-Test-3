@@ -324,7 +324,7 @@ const FilterSign = styled.span`
 const InfoContainer = styled.div`
 max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
-transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
 text-align: left;
 width:100%;
@@ -444,7 +444,7 @@ margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 const HighJewellery = styled.div`
 max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
-transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
 
 text-align: left;
