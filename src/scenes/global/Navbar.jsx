@@ -316,27 +316,7 @@ const FilterSign = styled.span`
   font-size: 30px;
 `;
 const InfoContainer = styled.div`
-display: ${({ visible }) => (visible ? 'block' : 'none')};
-
-text-align: left;
-width:100%;
-
-align-items: center;
-justify-content: space-between;  /* Aggiunto per separare gli elementi */
-
-margin-left: 5%;
-
-font-size: 16px;
-user-select: none; /* Evita la selezione del testo */
-width: 100%;
-
-
-
-
-`;
-const InfoContainer2 = styled.div`
-
-max-height: ${({ visible }) => (visible ? '100px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
 transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
 
@@ -355,8 +335,8 @@ width: 100%;
 
 
 
-
 `;
+
 const CheckboxContainer = styled.label`
 display: flex;
 align-items: center;
@@ -427,7 +407,9 @@ transition:  margin-left 0.2s;
   color: gray;
   margin-left: 5px;
 }
-
+margin-bottom:0;
+margin-top:0;
+height:30px;
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
@@ -438,17 +420,24 @@ font-size: 14px;
 cursor: pointer;
 color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
 transition:  margin-left 0.2s;
+margin:0;
+height:30px;
 
 &:hover {
   color: gray;
 
 }
 
+
+
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
 const HighJewellery = styled.div`
-display: ${({ visible }) => (visible ? 'block' : 'none')};
+max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+overflow: hidden;
+transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+
 
 text-align: left;
 width:100%;
@@ -656,7 +645,7 @@ function Navbar() {
             
 
 
-            <InfoContainer2 visible={showShopInfo}>
+            <InfoContainer visible={showShopInfo}>
               <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegularMobile>
                 <HighJewellery  visible={showHighJewellery}>
                   <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</GtaRegular> 
@@ -667,7 +656,7 @@ function Navbar() {
               <GtaRegularMobile>FINE SILVER</GtaRegularMobile>
               <GtaRegularMobile>GIFTS</GtaRegularMobile>
                 
-            </InfoContainer2>
+            </InfoContainer>
 
 
             <FilterButton onClick={handleShowCollection}>
