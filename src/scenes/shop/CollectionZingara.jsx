@@ -257,7 +257,10 @@ font-size: 30px;
 `;
 
 const InfoContainer = styled.div`
-display: ${({ visible }) => (visible ? 'block' : 'none')};
+max-height: ${({ visible }) => (visible ? '400px' : '0px')}; /* Imposta una max-height elevata quando è aperto */
+overflow: hidden;
+transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
+
 margin-top: 10px;
 text-align: left;
 width:100%;
@@ -265,7 +268,7 @@ width:100%;
 align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 margin: 5px;
-padding: 8px;
+margin-left: 5%;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
@@ -496,7 +499,7 @@ const CollectionBollywood = () => {
   
     // Verifica la categoria, il materiale e la collezione
     return (
-      item.attributes.category === "zingara" &&
+      item.attributes.collection === "Zingara" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
       (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
     );
@@ -628,9 +631,9 @@ const CollectionBollywood = () => {
 
 
                 <Checkbox
-                  label="Platinum"
-                  onChange={() => handleCheckboxChange("Platinum")}
-                  checked={selectedMaterials.includes("Platinum")}
+                  label="Diamonds"
+                  onChange={() => handleCheckboxChange("Diamond")}
+                  checked={selectedMaterials.includes("Diamond")}
                 />
                 <Checkbox
                   label="White Gold"
@@ -664,7 +667,7 @@ const CollectionBollywood = () => {
                       minWidth: "10%",
 
 
-                    }}
+                    }}           onClick={handleFilterClick}
                   >
                      <GtaRegular12>APPLY</GtaRegular12>  
                   </ButtonBlack>
