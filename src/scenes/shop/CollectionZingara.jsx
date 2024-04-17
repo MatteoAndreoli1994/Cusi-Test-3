@@ -678,7 +678,7 @@ const CollectionBollywood = () => {
 
                     }}
                   >
-                      <GtaRegular12>SHOW RESULTS </GtaRegular12>
+                      <GtaRegular12>RESET </GtaRegular12>
                   </ButtonWhite>
 
 

@@ -303,6 +303,7 @@ const ContainerFiltri = styled.div`
 
   margin: 20px;
   margin-top: 10vh;
+
 `;
 const FilterButtonText = styled.span`
   /* Aggiunto il flex-grow per far sì che occupi lo spazio rimanente */
@@ -310,8 +311,8 @@ const FilterButtonText = styled.span`
   margin-right: 14px;
   text-align: left;  /* Allinea il testo a sinistra */
   font-size: 26px;
-  margin:0;
-  height: 30px;
+
+
 
   
 
@@ -333,7 +334,7 @@ align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 
 margin-left: 5%;
-
+margin-top:3%;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
@@ -685,11 +686,14 @@ function Navbar() {
             </FilterButton>
 
             <InfoContainer visible={showCollectionInfo}>
+            <HighJewellery visible={showCollectionInfo}>
               <GtaRegular onClick={handleShopClickZingara}>Zingara</GtaRegular>
               <GtaRegular onClick={handleShopClickUrania}>Urania</GtaRegular>
               <GtaRegular onClick={handleShopClickTycoon}>Tycoon</GtaRegular>
               <GtaRegular onClick={handleShopClickFleurie}>Fleurie</GtaRegular>
               <GtaRegular onClick={handleShopClickBollywood}>Bollywood</GtaRegular>
+            </HighJewellery>
+
             </InfoContainer>
 
             <FilterButton onClick={handleShowAboutInfo}>
