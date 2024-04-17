@@ -9,7 +9,7 @@ import RobertoCusi from "../../assets/about6.avif";
 import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
-import { LazyLoadImage } from 'react-lazy-load-image-component'; // Importa LazyLoadImage dalla libreria
+
 const Container = styled.div`
   margin-top:120px;
   display: flex;
@@ -193,7 +193,7 @@ margin-bottom:4%;
   margin-bottom:8%;
 }
 `;
-const ImmagineFamiglia = styled(LazyLoadImage)`
+const ImmagineFamiglia = styled.img`
 width: 80vw;
 min-height: 30vh;
 
@@ -463,10 +463,10 @@ margin-top: 7%;
 }
 `;
 
-const ImmagineAnnibaleCusi = styled(LazyLoadImage)`
+const ImmagineAnnibaleCusi = styled.img`
 width: 100%;
 height: auto;
-
+min-height: 30vh;
 
 @media(max-width:1000px){
 
@@ -482,7 +482,7 @@ height: auto;
 
 }
 `;
-const ImmagineStuarda= styled(LazyLoadImage)`
+const ImmagineStuarda= styled.img`
 width: 100%;
 min-height: 30vh;
 
@@ -504,9 +504,10 @@ min-height: 30vh;
 
 `;
 
-const CollieImg = styled(LazyLoadImage)`
+const CollieImg = styled.img`
 width: 100%;
 height: auto;
+min-height: 30vh;
 margin-left:15%;
 
 
@@ -526,9 +527,10 @@ margin-left:15%;
 }
 
 `;
-const RinaldoCusiImg = styled(LazyLoadImage)`
+const RinaldoCusiImg = styled.img`
 width: 90%;
 height: auto;
+min-height: 30vh;
 margin-left:12.5%;
 
 
@@ -548,7 +550,7 @@ margin-left:12.5%;
 }
 
 `;
-const ImmagineStuarda2= styled(LazyLoadImage)`
+const ImmagineStuarda2= styled.img`
 width:100%;
 height:100%;
 min-height: 30vh;
@@ -559,7 +561,7 @@ const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 3s ease-in-out;
 `;
-const ImmagineDelay = styled(LazyLoadImage)`
+const ImmagineDelay = styled.img`
 width:100%;
 margin-bottom:4%;
 
