@@ -310,6 +310,11 @@ const FilterButtonText = styled.span`
   margin-right: 14px;
   text-align: left;  /* Allinea il testo a sinistra */
   font-size: 26px;
+  margin:0;
+  height: 30px;
+
+  
+
 
 `;
 const FilterSign = styled.span`
@@ -408,9 +413,10 @@ transition:  margin-left 0.2s;
   color: gray;
   margin-left: 5px;
 }
-margin-bottom:5%;
-margin-top:5%;
 
+
+margin:0;
+height: 40px;
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
@@ -421,8 +427,9 @@ font-size: 16px;
 cursor: pointer;
 color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
 transition:  margin-left 0.2s;
-margin:2%;
-height:30px;
+
+margin:0;
+height: 40px;
 
 &:hover {
   color: gray;
