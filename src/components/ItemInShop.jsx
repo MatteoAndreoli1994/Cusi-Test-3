@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -7,28 +7,7 @@ import { shades } from "../theme";
 import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
-
-const Item = ({ item, width }) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
-  const {
-    palette: { neutral },
-  } = useTheme();
-
-  const { category, price, name, image } = item.attributes;
-  const {
-    data: {
-        attributes: { url },
-    },
-} = image;
-
-  // Funzione per formattare il prezzo
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
-  };
-
+import LazyLoad from 'react-lazyload';
 
 const DivItem = styled.div`
 display:flex;
@@ -76,8 +55,44 @@ margin-top:1%;
 
 
 `;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
+
+const Item = ({ item, width }) => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [count, setCount] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
+  const {
+    palette: { neutral },
+  } = useTheme();
+
+  const { category, price, name, image } = item.attributes;
+  const {
+    data: {
+        attributes: { url },
+    },
+} = image;
+
+  // Funzione per formattare il prezzo
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
+  };
+
+
+
 
   return (
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
     <DivItem >
       <Box
         position="relative"
@@ -93,6 +108,7 @@ margin-top:1%;
           style={{ cursor: "pointer" }}
 
         />
+        
         <Box
           display={isHovered ? "block" : "none"}
           position="absolute"
@@ -121,6 +137,8 @@ margin-top:1%;
         <ABC16 fontWeight="bold">{formatPrice(price)}</ABC16>
       </InfoProdotto>
     </DivItem>
+    </LazyLoadWrapper>
+    </LazyLoad>  
   );
 };
 

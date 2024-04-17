@@ -9,23 +9,6 @@ import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
-const Item = ({ item, width }) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
-  const {
-    palette: { neutral },
-  } = useTheme();
-
-  const { category, price, name, image } = item.attributes;
-  const {
-    data: {
-        attributes: { url },
-    },
-} = image;
-
 const DivItem = styled.div`
 display:flex;
 flex-direction: column;
@@ -70,6 +53,25 @@ margin: 0;
 text-align: center;
 font-weight: lighter;
 `;
+
+
+const Item = ({ item, width }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [count, setCount] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
+  const {
+    palette: { neutral },
+  } = useTheme();
+
+  const { category, price, name, image } = item.attributes;
+  const {
+    data: {
+        attributes: { url },
+    },
+} = image;
+
+
 
   return (
     <DivItem >
