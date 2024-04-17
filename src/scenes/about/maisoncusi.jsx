@@ -10,11 +10,6 @@ import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
 import { LazyLoadImage } from 'react-lazy-load-image-component'; // Importa LazyLoadImage dalla libreria
-
-
-const MaisonCusi = () => {
-
-
 const Container = styled.div`
   margin-top:120px;
   display: flex;
@@ -204,6 +199,8 @@ min-height: 30vh;
 
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 10s ease-in-out;
+
+
 @media(max-width: 1000px){
 
   margin-bottom:4%;
@@ -566,11 +563,17 @@ const ImmagineDelay = styled(LazyLoadImage)`
 width:100%;
 margin-bottom:4%;
 
+
 @media(max-width: 1000px){
 
   margin-bottom:8%;
 }
 `;
+
+const MaisonCusi = () => {
+
+
+
 
 
 const [loaded, setLoaded] = React.useState(false);

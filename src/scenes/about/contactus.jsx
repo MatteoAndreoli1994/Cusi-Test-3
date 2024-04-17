@@ -36,6 +36,7 @@ const ModelImage = styled.div`
   img {
     width: 100%;
     height: auto;
+    min-height: 40vh;
   }
 `;
 
