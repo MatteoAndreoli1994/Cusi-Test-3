@@ -487,7 +487,7 @@ height: auto;
 `;
 const ImmagineStuarda= styled(LazyLoadImage)`
 width: 100%;
-height: auto;
+min-height: 30vh;
 
 
 @media(max-width:1000px){
@@ -554,6 +554,7 @@ margin-left:12.5%;
 const ImmagineStuarda2= styled(LazyLoadImage)`
 width:100%;
 height:100%;
+min-height: 30vh;
 
 `;
 
