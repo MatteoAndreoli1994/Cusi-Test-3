@@ -197,8 +197,7 @@ const ImmagineFamiglia = styled.img`
 width: 80vw;
 min-height: 30vh;
 
-opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 10s ease-in-out;
+
 
 
 @media(max-width: 1000px){
