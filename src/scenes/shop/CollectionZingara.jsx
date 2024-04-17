@@ -383,7 +383,7 @@ const ButtonBlack= styled(Button)`
   && {
     margin-bottom: 20px;
     margin-top: 20px;
-    margin-right: 4%;
+    margin-right: 2%;
     background-color: black;
     color: white;
     width:100%;
@@ -414,7 +414,7 @@ const ButtonWhite = styled(Button)`
   && {
     width:100%;
     height:50%;
-    margin-left: 4%;
+    margin-left: 2%;
     margin-bottom: 20px;
     margin-top: 20px;
     background-color: white;
