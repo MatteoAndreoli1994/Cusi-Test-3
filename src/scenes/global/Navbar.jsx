@@ -678,11 +678,11 @@ function Navbar() {
             </FilterButton>
 
             <InfoContainer visible={showCollectionInfo}>
-              <GtaRegular onClick={handleShopClickZingara}>ZINGARA</GtaRegular>
-              <GtaRegular onClick={handleShopClickUrania}>URANIA</GtaRegular>
-              <GtaRegular onClick={handleShopClickTycoon}>TYCOON</GtaRegular>
-              <GtaRegular onClick={handleShopClickFleurie}>FLEURIE</GtaRegular>
-              <GtaRegular onClick={handleShopClickBollywood}>BOLLYWOOD</GtaRegular>
+              <GtaRegular onClick={handleShopClickZingara}>Zingara</GtaRegular>
+              <GtaRegular onClick={handleShopClickUrania}>Urania</GtaRegular>
+              <GtaRegular onClick={handleShopClickTycoon}>Tycoon</GtaRegular>
+              <GtaRegular onClick={handleShopClickFleurie}>Fleurie</GtaRegular>
+              <GtaRegular onClick={handleShopClickBollywood}>Bollywood</GtaRegular>
             </InfoContainer>
 
             <FilterButton onClick={handleShowAboutInfo}>
