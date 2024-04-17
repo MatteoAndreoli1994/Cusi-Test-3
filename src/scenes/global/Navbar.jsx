@@ -266,8 +266,7 @@ display: none;
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
   position: fixed;
-  overflow-y: auto; /* Solo scorrimento verticale */
-  overflow-x: hidden; /* Disabilita lo scorrimento orizzontale */
+  overflow: auto;
   bottom: 0;
   width: 80%;
   height: 100%;
@@ -330,6 +329,29 @@ margin-left: 5%;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
+
+
+
+
+`;
+const InfoContainer2 = styled.div`
+
+max-height: ${({ visible }) => (visible ? '100px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+overflow: hidden;
+transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+
+text-align: left;
+width:100%;
+
+align-items: center;
+justify-content: space-between;  /* Aggiunto per separare gli elementi */
+
+margin-left: 5%;
+
+font-size: 16px;
+user-select: none; /* Evita la selezione del testo */
+width: 100%;
+
 
 
 
@@ -634,7 +656,7 @@ function Navbar() {
             
 
 
-            <InfoContainer visible={showShopInfo}>
+            <InfoContainer2 visible={showShopInfo}>
               <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegularMobile>
                 <HighJewellery  visible={showHighJewellery}>
                   <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</GtaRegular> 
@@ -645,7 +667,7 @@ function Navbar() {
               <GtaRegularMobile>FINE SILVER</GtaRegularMobile>
               <GtaRegularMobile>GIFTS</GtaRegularMobile>
                 
-            </InfoContainer>
+            </InfoContainer2>
 
 
             <FilterButton onClick={handleShowCollection}>
