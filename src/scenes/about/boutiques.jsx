@@ -5,6 +5,7 @@ import Maison2 from "../../assets/maison2.jpg"
 
 import emailjs from "@emailjs/browser";
 import { BarLoader, ClipLoader } from 'react-spinners';
+import LazyLoad from 'react-lazyload';
 
 const SubscribeButton = styled.button`
   background-color: black;
@@ -128,7 +129,7 @@ flex-direction: column;
 
 const Maison2Img = styled.img`
 width:100%;
-
+min-height:50vh;
 @media(max-width:680px){
 
 }
@@ -503,12 +504,21 @@ margin-bottom:0;
 }
 
 `;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 3s ease-in-out;
+`;
 
 
 const Boutiques = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOptionNewsletter, setSelectedOptionNewsletter] = useState(null);
   const [selectedBoutique, setSelectedBoutique] = useState('');
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
+
 
   const handleBoutiqueChange = (event) => {
     setSelectedBoutique(event.target.value);
@@ -580,6 +590,9 @@ const handleSubmit = (e) => {
 
   return (
     <>
+          <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+        
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <Container>
   <ABC>Boutiques</ABC>
@@ -788,6 +801,9 @@ and on Saturdays from 9 am to 5 pm.
 
 
 </Container>
+
+</LazyLoadWrapper>
+</LazyLoad>
 
     </>
   );

@@ -408,6 +408,22 @@ transition:  margin-left 0.2s;
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
+const GtaRegularMobile = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 14px;
+
+cursor: pointer;
+color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
+transition:  margin-left 0.2s;
+
+&:hover {
+  color: gray;
+
+}
+
+margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
+`;
+
 const HighJewellery = styled.div`
 display: ${({ visible }) => (visible ? 'block' : 'none')};
 
@@ -618,15 +634,15 @@ function Navbar() {
 
 
             <InfoContainer visible={showShopInfo}>
-              <GtaRegular onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegular>
+              <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegularMobile>
                 <HighJewellery  visible={showHighJewellery}>
                   <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</GtaRegular> 
                   <GtaRegular onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>Earrings</GtaRegular> 
                   <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</GtaRegular> 
                   <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</GtaRegular> 
                 </HighJewellery>
-              <GtaRegular>FINE SILVER</GtaRegular>
-              <GtaRegular>GIFTS</GtaRegular>
+              <GtaRegularMobile>FINE SILVER</GtaRegularMobile>
+              <GtaRegularMobile>GIFTS</GtaRegularMobile>
                 
             </InfoContainer>
 
@@ -662,7 +678,7 @@ function Navbar() {
             </FilterButton>
 
             <InfoContainer visible={showAboutInfo}>
-            <GtaRegular onClick={() => setShowHouseInfo(prevState => !prevState)}>THE HOUSE</GtaRegular>
+            <GtaRegularMobile onClick={() => setShowHouseInfo(prevState => !prevState)}>THE HOUSE</GtaRegularMobile>
 
                 <HighJewellery  visible={showHouseInfo}>
                   <GtaRegular onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</GtaRegular> 
@@ -671,7 +687,7 @@ function Navbar() {
                 </HighJewellery>
 
 
-              <GtaRegular onClick={() => setShowExpertiseInfo(prevState => !prevState)}>EXPERTISE</GtaRegular>
+              <GtaRegularMobile onClick={() => setShowExpertiseInfo(prevState => !prevState)}>EXPERTISE</GtaRegularMobile>
 
               <HighJewellery  visible={showExpertiseInfo}>
                   <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Book an appointment</GtaRegular> 
