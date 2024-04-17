@@ -266,7 +266,8 @@ display: none;
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
   position: fixed;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   bottom: 0;
   width: 80%;
   height: 100%;
