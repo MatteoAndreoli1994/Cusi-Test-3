@@ -21,9 +21,8 @@ import ImmagineCollection2 from "../../assets/zingara2.jpg"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
-// Importa LazyLoadImage e il suo effetto di sfocatura
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
+
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -40,7 +39,7 @@ const DivImmagini = styled.div`
 
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
-const ImmagineCollectionStyle = styled(LazyLoadImage)`
+const ImmagineCollectionStyle = styled.img`
 width: 50%;
 height: auto;
 object-fit: cover;
@@ -52,7 +51,7 @@ margin-right:2%;
 `;
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
-const ImmagineCollection2Style = styled(LazyLoadImage)`
+const ImmagineCollection2Style = styled.img`
 width: 50%;
 height: auto;
 object-fit: cover;
