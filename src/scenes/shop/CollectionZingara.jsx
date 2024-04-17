@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Box, Button, IconButton, Typography } from "@mui/material";
+
 import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
+import { shades } from "../../theme";
 import ItemInShop from "../../components/ItemInShop";
-import { Typography } from "@mui/material";
+
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -21,6 +23,7 @@ import ImmagineCollection2 from "../../assets/zingara2.avif"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
+import { blue } from '@mui/material/colors';
 
 
 
@@ -74,6 +77,7 @@ margin-top:120px;
 align-items: center;
 margin-bot:1%;
 overflow:hidden;
+
 
 `;
 
@@ -217,8 +221,10 @@ transition: left 0.5s ease;
 const ContainerFiltri = styled.div`
 display: flex;
 flex-direction: column;
-
+height:80%;
 margin: 20px;
+margin-top:22%;
+
 `;
 
 const FilterButton = styled.div`
@@ -340,10 +346,98 @@ margin-right:10px;
 
 `;
 
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
+
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 3s ease-in-out;
 `;
+
+const DivSettingButton = styled.div`
+  width: 100%;
+  height: 10%;
+
+  position: absolute;
+  display: flex;
+  top: 75%;
+  align-items:center;
+  justify-content: center;
+
+`;
+
+const DivSettingButtonCenter = styled.div`
+  width: 80%;
+  height: 100%;
+  display:flex;
+`;
+
+
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonBlack= styled(Button)`
+
+
+  && {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 4%;
+    background-color: black;
+    color: white;
+    width:100%;
+    height:50%;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+  }
+`;
+
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonWhite = styled(Button)`
+
+
+  && {
+    width:100%;
+    height:50%;
+    margin-left: 4%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+  }
+`;
+
 
 const CollectionBollywood = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -559,6 +653,39 @@ const CollectionBollywood = () => {
 
 
               </ContainerFiltri>
+
+              <DivSettingButton>
+              <DivSettingButtonCenter>
+                  <ButtonBlack
+                    sx={{
+                      backgroundColor: "black",
+                      color: "white",
+                      borderRadius: 0,
+                      minWidth: "10%",
+
+
+                    }}
+                  >
+                     <GtaRegular12>APPLY</GtaRegular12>  
+                  </ButtonBlack>
+                  <ButtonWhite
+                    sx={{
+                      backgroundColor: "white",
+                      color: "black",
+                      borderRadius: 0,
+                      minWidth: "10%",
+
+
+                    }}
+                  >
+                      <GtaRegular12>SHOW RESULTS </GtaRegular12>
+                  </ButtonWhite>
+
+
+              </DivSettingButtonCenter>
+
+
+              </DivSettingButton>
         </DivCarrello>
 
         <Box
