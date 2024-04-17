@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Modella from "../../assets/modella1.png";
+import Modella from "../../assets/modella1.avif";
 import LazyLoad from 'react-lazyload';
 
 const Container = styled.div`
