@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modella from "../../assets/modella1.png";
+import LazyLoad from 'react-lazyload';
 
 const Container = styled.div`
   display: flex;
@@ -161,8 +162,20 @@ font-size: 16px;
 }
 `;
 
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 3s ease-in-out;
+`;
+
 const ContactUs = () => {
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
+
   return (
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     <Container>
       <ABC>Contact Us</ABC>
       <GtaLight>Our personal advisors are available to answer any questions from Monday to Friday from 9 am to 7 pm and on Saturdays from 9 am to 5 pm.</GtaLight>
@@ -207,6 +220,9 @@ const ContactUs = () => {
         </InfoSection>
       </ContactSection>
     </Container>
+
+    </LazyLoadWrapper>
+      </LazyLoad>
   );
 };
 
