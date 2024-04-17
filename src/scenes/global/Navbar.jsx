@@ -309,7 +309,7 @@ const FilterButtonText = styled.span`
   flex-grow: 1;
   margin-right: 14px;
   text-align: left;  /* Allinea il testo a sinistra */
-  font-size: 25px;
+  font-size: 26px;
 
 `;
 const FilterSign = styled.span`
@@ -398,7 +398,7 @@ const ABC20 = styled.div`
 `;
 const GtaRegular = styled.p`
 font-family: 'GTAmericaRegular';
-font-size: 14px;
+font-size: 20px;
 
 cursor: pointer;
 color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
@@ -408,15 +408,15 @@ transition:  margin-left 0.2s;
   color: gray;
   margin-left: 5px;
 }
-margin-bottom:0;
-margin-top:0;
-height:30px;
+margin-bottom:6%;
+margin-top:6%;
+
 margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
 const GtaRegularMobile = styled.p`
 font-family: 'GTAmericaRegular';
-font-size: 14px;
+font-size: 16px;
 
 cursor: pointer;
 color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
