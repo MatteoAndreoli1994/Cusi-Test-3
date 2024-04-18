@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import Maison1 from "../../assets/maison1.jpg"
 import Maison2 from "../../assets/maison2.jpg"
-
+import { useLocation } from 'react-router-dom';
 import emailjs from "@emailjs/browser";
 import { BarLoader, ClipLoader } from 'react-spinners';
 import LazyLoad from 'react-lazyload';
@@ -511,6 +512,18 @@ transition: opacity 3s ease-in-out;
 
 
 const Boutiques = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const message = searchParams.get('message');
+
+  useEffect(() => {
+    const bookElement = document.getElementById('Book');
+    if (bookElement) {
+      bookElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOptionNewsletter, setSelectedOptionNewsletter] = useState(null);
   const [selectedBoutique, setSelectedBoutique] = useState('');
@@ -653,7 +666,7 @@ const handleSubmit = (e) => {
 
   </Box>
 
-  <ABC>Book an appointment</ABC>
+  <ABC >Book an appointment</ABC>
   <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
 and on Saturdays from 9 am to 5 pm. 
   </GtaLightCenter>
@@ -662,11 +675,11 @@ and on Saturdays from 9 am to 5 pm.
 
 
 
-  <FormContainer>
+  <FormContainer >
   <form ref={form} onSubmit={sendEmail}>
-      <span><GtaLight> Title*</GtaLight></span>
+      <span><GtaLight > Title*</GtaLight></span>
 
-      <CheckboxContainer>
+      <CheckboxContainer >
         <CheckboxLabel>
           <Checkbox
             type="checkbox"
@@ -702,7 +715,7 @@ and on Saturdays from 9 am to 5 pm.
 
       {/* Altre parti del form possono essere aggiunte qui */}
 
-      <FlexContainer>
+      <FlexContainer id="Book">
         <InputLabel>
           <span><GtaLight> First Name* </GtaLight></span>
           <Input type="text" name="user_name" />
@@ -713,7 +726,7 @@ and on Saturdays from 9 am to 5 pm.
         </InputLabel>
       </FlexContainer>
 
-      <FlexContainer>
+      <FlexContainer >
         <InputLabel>
           <span> <GtaLight> E-mail* </GtaLight></span>
           <Input type="email" name="user_email" />
@@ -741,7 +754,7 @@ and on Saturdays from 9 am to 5 pm.
 
       </FlexContainer>
 
-      <FlexContainer>
+      <FlexContainer >
         <InputLabel>
           <span><GtaLight> Appointment Date* </GtaLight></span>
           <Input type="date" name="user_date"/>
@@ -752,13 +765,31 @@ and on Saturdays from 9 am to 5 pm.
         </InputLabel>
       </FlexContainer>
 
-      <FlexContainer>
+            <FlexContainer >
+        <InputLabelSolo>
+          <span ><GtaLight> Product* </GtaLight></span>
+          <Input
+                type="text"
+                name="product"
+                value={message}
+                readOnly={message} // Imposta readOnly a true se non c'è un messaggio nell'URL
+                
+              />
+        </InputLabelSolo>
+
+      </FlexContainer>
+
+      <FlexContainer >
         <InputLabelSolo>
           <span ><GtaLight> Message* </GtaLight></span>
           <Input type="text" name="message" />
         </InputLabelSolo>
 
       </FlexContainer>
+
+
+
+      
 
       <CheckboxContainer>
         <CheckboxLabel2>

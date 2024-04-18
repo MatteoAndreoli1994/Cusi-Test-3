@@ -14,7 +14,8 @@ import styled from 'styled-components';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import LazyLoad from 'react-lazyload';
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -25,6 +26,11 @@ const Container = styled.div`
   display:flex;
 
   `;
+  const StyledHashLink = styled(HashLink)`
+  text-decoration: none; /* Rimuovi sottolineature */
+  color: inherit; /* Usa il colore del testo predefinito */
+  /* Aggiungi altri stili del bottone qui, se necessario */
+`;
 
   const Bottoni = styled.div`
     display:flex;
@@ -396,7 +402,14 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
 
+
+
+
 const ItemDetails = () => {
+
+
+
+  const navigate = useNavigate();
   const [loaded, setLoaded] = React.useState(false);
   const handleContentLoad = () => {
     setLoaded(true);
@@ -408,6 +421,7 @@ const ItemDetails = () => {
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const message = `${item?.attributes?.name}`;
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -474,6 +488,11 @@ const ItemDetails = () => {
     setCount(value); // Aggiorna il valore
     setSelectedOption(value); // Aggiorna il valore selezionato
     setIsOpen(false); // Chiudi la finestra di scelta
+  };
+
+
+  const handleBook = () => {
+    navigate('/boutiques#Book');
   };
 
 
@@ -595,7 +614,7 @@ const ItemDetails = () => {
               >
                 <GtaRegular> ORDER BY PHONE </GtaRegular>
               </ButtonWhite>
-
+              <StyledHashLink to={`/boutiques?message=${encodeURIComponent(message)}`}>
               <ButtonWhite
                 sx={{
                   backgroundColor: "white",
@@ -605,11 +624,13 @@ const ItemDetails = () => {
                   padding: "20px 40px",
 
                 }}
-                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-              >
-                <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
-              </ButtonWhite>
 
+              >
+
+                <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
+
+              </ButtonWhite>
+              </StyledHashLink>
 
 
             </Bottoni>

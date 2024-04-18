@@ -533,6 +533,12 @@ const CollectionBollywood = () => {
     }
   };
 
+  const handleResetClick = () => {
+    // Reimposta gli stati a array vuoti
+    setSelectedMaterials([]);
+    setSelectedCollection([]);
+  };
+
 
 
   const Checkbox = ({ label, onChange, checked, ...props }) => (
@@ -679,7 +685,7 @@ const CollectionBollywood = () => {
                       minWidth: "10%",
 
 
-                    }}
+                    }}   onClick={handleResetClick}
                   >
                       <GtaRegular12>RESET </GtaRegular12>
                   </ButtonWhite>
