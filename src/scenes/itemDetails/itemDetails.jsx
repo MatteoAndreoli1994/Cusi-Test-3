@@ -32,6 +32,13 @@ const Container = styled.div`
   /* Aggiungi altri stili del bottone qui, se necessario */
 `;
 
+const Telefonata = styled.a`
+text-decoration: none; /* Rimuovi sottolineature */
+color: inherit; /* Usa il colore del testo predefinito */
+/* Aggiungi altri stili del bottone qui, se necessario */
+`;
+
+
   const Bottoni = styled.div`
     display:flex;
     flex-direction:column;
@@ -601,6 +608,7 @@ const ItemDetails = () => {
                 <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
               </ButtonBlack>
 
+              <Telefonata href="tel:+123456789">
               <ButtonWhite
                 sx={{
                   backgroundColor: "white",
@@ -614,6 +622,7 @@ const ItemDetails = () => {
               >
                 <GtaRegular> ORDER BY PHONE </GtaRegular>
               </ButtonWhite>
+              </Telefonata>
               <StyledHashLink to={`/boutiques?message=${encodeURIComponent(message)}`}>
               <ButtonWhite
                 sx={{
