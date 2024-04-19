@@ -6,6 +6,7 @@ import Home from "./scenes/home/Home";
 import Checkout from './scenes/checkout/Checkout';
 import ItemDetails from "./scenes/itemDetails/itemDetails";
 import Confirmation from './scenes/checkout/Confirmation';
+
 import Navbar from './scenes/global/Navbar';
 import CartMenu from './scenes/global/CartMenu';
 import ShopRings from "./scenes/shop/ShopRings";
@@ -76,7 +77,6 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="item/:itemId" element={<ItemDetails />} />
                 <Route path="checkout" element={<Checkout />} />
-                <Route path="checkout/success" element={<Confirmation />} />
                 <Route path="/shopRings" element={<ShopRings />} />
                 <Route path="/shopEarrings" element={<ShopEarrings />} />
                 <Route path="/shopNecklaces" element={<ShopNecklaces />} />
@@ -94,6 +94,13 @@ function App() {
 
             </LazyLoadWrapper>
             </LazyLoad>  
+
+                      {/* Renderizza direttamente le route checkout/success e checkout/conf */}
+          <Routes>
+            <Route path="checkout/success" element={<Confirmation />} />
+
+          </Routes>
+
           <Footer />
           <CartMenu />
         </ApolloProvider>
