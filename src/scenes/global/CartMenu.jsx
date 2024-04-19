@@ -82,9 +82,11 @@ const BoxProdotti = styled.div`
 
 
 const Checkout = styled(Button)`
-  &:hover {
-
-    color: white; /* Cambia il colore del testo al passaggio del mouse */
+  && {
+    &:hover {
+      color: white; /* Cambia il colore del testo al passaggio del mouse */
+      background-color: ${shades.primary[300]}; /* Cambia il colore a tuo piacimento */
+    }
   }
 `;
 
