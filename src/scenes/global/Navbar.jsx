@@ -265,6 +265,7 @@ display: none;
 
 //CONTENUTO MENU LATERALE
 const DivCarrello =  styled(Box)`
+  z-index: 99;
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
@@ -273,7 +274,7 @@ const DivCarrello =  styled(Box)`
   height: 100%;
   background-color: white;
 
-  z-index: 99;
+
 
   left: ${({ open }) => (open ? '0%' : '-90%')};
   transition: left 0.5s ease;

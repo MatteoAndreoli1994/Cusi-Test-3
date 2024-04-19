@@ -7,6 +7,13 @@ import { useLocation } from 'react-router-dom';
 import emailjs from "@emailjs/browser";
 import { BarLoader, ClipLoader } from 'react-spinners';
 import LazyLoad from 'react-lazyload';
+import { HashLink } from 'react-router-hash-link';
+
+const StyledHashLink = styled(HashLink)`
+text-decoration: none; /* Rimuovi sottolineature */
+color: inherit; /* Usa il colore del testo predefinito */
+/* Aggiungi altri stili del bottone qui, se necessario */
+`;
 
 const SubscribeButton = styled.button`
   background-color: black;
@@ -516,12 +523,17 @@ const Boutiques = () => {
   const searchParams = new URLSearchParams(location.search);
   const message = searchParams.get('message');
 
-  useEffect(() => {
+  // Verifica se il messaggio è presente nell'URL
+  if (message) {
+    // Trova l'elemento con ID 'Book'
     const bookElement = document.getElementById('Book');
+
+    // Controlla se l'elemento esiste
     if (bookElement) {
-      bookElement.scrollIntoView({ behavior: 'smooth' });
+        // Scorri la visuale della pagina verso l'elemento 'Book'
+        bookElement.scrollIntoView({ behavior: 'smooth' });
     }
-  }, []);
+  }
 
 
   const [selectedOption, setSelectedOption] = useState(null);
@@ -608,6 +620,8 @@ const handleSubmit = (e) => {
         
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <Container>
+
+
   <ABC>Boutiques</ABC>
   <GtaRegular>We would be delighted to welcome you so that you may discover 
   and try on your favorite creations.
@@ -666,7 +680,7 @@ const handleSubmit = (e) => {
 
   </Box>
 
-  <ABC >Book an appointment</ABC>
+  <ABC id="Book">Book an appointment</ABC>
   <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
 and on Saturdays from 9 am to 5 pm. 
   </GtaLightCenter>
@@ -715,7 +729,7 @@ and on Saturdays from 9 am to 5 pm.
 
       {/* Altre parti del form possono essere aggiunte qui */}
 
-      <FlexContainer id="Book">
+      <FlexContainer>
         <InputLabel>
           <span><GtaLight> First Name* </GtaLight></span>
           <Input type="text" name="user_name" />

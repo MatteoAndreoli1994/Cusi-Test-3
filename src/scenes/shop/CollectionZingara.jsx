@@ -193,14 +193,17 @@ width: 30px;
 `;
 
 const DivCarrello =  styled(Box)`
+z-index: 99;
 position: fixed;
 
 bottom: 0;
-width: 50%;
-height: 100%;
+width: 40%;
+min-height: 100%;
 background-color: white;
+display: flex;
+justify-content:center;
 
-z-index: 99;
+
 
 left: ${({ open }) => (open ? '0%' : '-90%')};
 transition: left 0.5s ease;
@@ -221,9 +224,14 @@ transition: left 0.5s ease;
 const ContainerFiltri = styled.div`
 display: flex;
 flex-direction: column;
+width:85%;
 height:80%;
 margin: 20px;
-margin-top:22%;
+margin-top:10%;
+
+@media(max-width: 680px){
+  margin-top:20%;
+}
 
 `;
 
@@ -362,20 +370,30 @@ transition: opacity 3s ease-in-out;
 
 const DivSettingButton = styled.div`
   width: 100%;
-  height: 10%;
+  height: 50px;
 
   position: absolute;
   display: flex;
-  top: 85%;
+  top: 88%;
   align-items:center;
   justify-content: center;
+
+  margin-top:5%;
+
 
 `;
 
 const DivSettingButtonCenter = styled.div`
   width: 80%;
-  height: 100%;
+  height: 120px;
   display:flex;
+
+  @media(max-width: 680px){
+    width: 80%;
+    height: 80px;
+  }
+
+  
 `;
 
 
@@ -404,8 +422,7 @@ const ButtonBlack= styled(Button)`
   @media(max-width: 680px){
     && {
       transition: background-color 0.3s ease;
-      margin-bottom: 8px;
-      margin-top: 8px;
+
     }
   }
 `;
@@ -435,8 +452,7 @@ const ButtonWhite = styled(Button)`
   @media(max-width: 680px){
     && {
       transition: background-color 0.3s ease;
-      margin-bottom: 8px;
-      margin-top: 8px;
+
     }
   }
 `;
