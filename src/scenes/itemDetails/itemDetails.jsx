@@ -618,7 +618,6 @@ const ItemDetails = () => {
                   padding: "20px 40px",
 
                 }}
-                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
               >
                 <GtaRegular> ORDER BY PHONE </GtaRegular>
               </ButtonWhite>
