@@ -16,7 +16,9 @@ const Confirmation = () => {
       let testtestsResponse;
 
       try {
-
+        // Log delle informazioni del carrello
+        console.log("Carrello:");
+        console.log(cart);
 
         // Prima operazione: Cambio della quantità a 123
         const requestData = {
@@ -54,6 +56,7 @@ const Confirmation = () => {
 
     fetchData();
 
+    
     // seconda operazione: Azzeramento del carrello
     dispatch(clearCartAfterConfirmation());
 
