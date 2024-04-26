@@ -52,7 +52,7 @@ const Confirmation = async () => {
         console.log("Risposta del server (JSON):", testtestsResult);
         console.log("REINDIRIZZA");
                 // Reindirizza l'utente a Google
-      //  window.location.href = 'https://cusiecommerce.netlify.app/checkout/success2';
+     //   window.location.href = 'https://www.google.com';
 
     } else {
         console.log("Risposta del server:", await testtestsResponse.text());
@@ -65,7 +65,7 @@ const Confirmation = async () => {
   return (
     <Box m="120px auto" width="80%" height="50vh">
       <Alert severity="success">
-        <AlertTitle>Pre Success</AlertTitle>
+        <AlertTitle>Success</AlertTitle>
         You have successfully made an Order —{" "}
         <strong>Congrats on Making your Purchase</strong>
       </Alert>
