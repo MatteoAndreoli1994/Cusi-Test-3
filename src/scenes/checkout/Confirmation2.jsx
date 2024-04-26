@@ -14,7 +14,7 @@ import styled from 'styled-components';
         
 
 
-const Confirmation = async () => {
+const Confirmation2 = async () => {
   
   
 
@@ -29,4 +29,4 @@ const Confirmation = async () => {
   );
 };
 
-export default Confirmation;
+export default Confirmation2;
