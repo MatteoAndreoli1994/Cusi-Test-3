@@ -4,7 +4,7 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { useDispatch } from 'react-redux';
 import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 const Confirmation = async () => {
   
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   // Azzeramento del carrello quando la pagina di conferma è montata
   dispatch(clearCartAfterConfirmation());
 
@@ -51,8 +51,7 @@ const Confirmation = async () => {
         const testtestsResult = await testtestsResponse.json();
         console.log("Risposta del server (JSON):", testtestsResult);
         console.log("REINDIRIZZA");
-        
-        // Reindirizza l'utente a Google
+                // Reindirizza l'utente a Google
         window.location.href = 'https://www.google.com';
 
     } else {
@@ -64,7 +63,13 @@ const Confirmation = async () => {
 }
 
   return (
-    <></>
+    <Box m="120px auto" width="80%" height="50vh">
+      <Alert severity="success">
+        <AlertTitle>Success</AlertTitle>
+        You have successfully made an Order —{" "}
+        <strong>Congrats on Making your Purchase</strong>
+      </Alert>
+    </Box>
   );
 };
 
