@@ -99,7 +99,7 @@ function App() {
 
                       {/* Renderizza direttamente le route checkout/success e checkout/conf */}
           <Routes>
-            <Route path="checkout/hd3289h2387h7hd72383726373298ydy8dhd23" element={<Confirmation />} />
+            <Route path="checkout/success" element={<Confirmation />} />
             <Route path="checkout/success2" element={<Confirmation2 />} />
           </Routes>
 
