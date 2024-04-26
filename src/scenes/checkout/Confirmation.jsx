@@ -46,7 +46,7 @@ const Confirmation = () => {
           console.log("Risposta del server (JSON):", testtestsResult);
           console.log("REINDIRIZZA");
           // Reindirizza l'utente a Google
-          navigate('/checkout/success2');
+          navigate('/checkout/success');
           // window.location.href = 'https://www.google.com';
         } else {
           console.log("Risposta del server:", await testtestsResponse.text());
