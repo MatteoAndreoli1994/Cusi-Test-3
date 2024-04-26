@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { useDispatch } from 'react-redux';
-import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
+import { clearCartAfterConfirmation } from '../../state/index.js';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 
@@ -13,15 +13,12 @@ const Confirmation = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let testtestsResponse; // Definisci testtestsResponse qui
+      let testtestsResponse;
 
       try {
-        // Azzeramento del carrello quando la pagina di conferma è montata
-        dispatch(clearCartAfterConfirmation());
 
-        ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY
 
-        // Dati da inviare nella richiesta POST
+        // Prima operazione: Cambio della quantità a 123
         const requestData = {
           data: {
             quantity: 123,
@@ -34,7 +31,6 @@ const Confirmation = () => {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            // Aggiungi eventuali altri header necessari
           },
           body: JSON.stringify(requestData),
         });
@@ -44,10 +40,9 @@ const Confirmation = () => {
         if (contentType && contentType.indexOf("application/json") !== -1) {
           const testtestsResult = await testtestsResponse.json();
           console.log("Risposta del server (JSON):", testtestsResult);
-          console.log("REINDIRIZZA");
+
           // Reindirizza l'utente a Google
           navigate('/checkout/success');
-          // window.location.href = 'https://www.google.com';
         } else {
           console.log("Risposta del server:", await testtestsResponse.text());
         }
@@ -58,7 +53,11 @@ const Confirmation = () => {
     };
 
     fetchData();
-  }, [dispatch]);
+
+    // seconda operazione: Azzeramento del carrello
+    dispatch(clearCartAfterConfirmation());
+
+  }, [dispatch, navigate]);
 
   return (
     <Box m="120px auto" width="80%" height="50vh">
