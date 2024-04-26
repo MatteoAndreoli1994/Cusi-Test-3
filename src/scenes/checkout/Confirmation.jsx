@@ -51,8 +51,9 @@ const Confirmation = async () => {
         const testtestsResult = await testtestsResponse.json();
         console.log("Risposta del server (JSON):", testtestsResult);
         console.log("REINDIRIZZA");
+        
         // Reindirizza l'utente a Google
-        navigate('checkout/success');
+        window.location.href = 'https://www.google.com';
 
     } else {
         console.log("Risposta del server:", await testtestsResponse.text());
