@@ -65,7 +65,7 @@ const Confirmation = async () => {
   return (
     <Box m="120px auto" width="80%" height="50vh">
       <Alert severity="success">
-        <AlertTitle>Success</AlertTitle>
+        <AlertTitle>Pre Success</AlertTitle>
         You have successfully made an Order —{" "}
         <strong>Congrats on Making your Purchase</strong>
       </Alert>
