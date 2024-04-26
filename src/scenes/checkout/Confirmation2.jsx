@@ -16,11 +16,6 @@ import styled from 'styled-components';
 
 const Confirmation = async () => {
   
-  const dispatch = useDispatch();
-
-  // Azzeramento del carrello quando la pagina di conferma è montata
-  dispatch(clearCartAfterConfirmation());
-
   
 
   return (
