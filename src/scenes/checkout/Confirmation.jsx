@@ -52,7 +52,7 @@ const Confirmation = async () => {
         console.log("Risposta del server (JSON):", testtestsResult);
         console.log("REINDIRIZZA");
                 // Reindirizza l'utente a Google
-        window.location.href = 'https://cusiecommerce.netlify.app/checkout/success2';
+      //  window.location.href = 'https://cusiecommerce.netlify.app/checkout/success2';
 
     } else {
         console.log("Risposta del server:", await testtestsResponse.text());
