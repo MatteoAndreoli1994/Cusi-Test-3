@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Box } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
@@ -5,59 +6,44 @@ import { useDispatch } from 'react-redux';
 import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
 
-
-
-
-
-
-
-        
-
-
 const Confirmation = async () => {
-  
   const dispatch = useDispatch();
 
   // Azzeramento del carrello quando la pagina di conferma è montata
-  dispatch(clearCartAfterConfirmation());
+  useEffect(() => {
+    const fetchData = async () => {
+      // Azzeramento del carrello
+      dispatch(clearCartAfterConfirmation());
 
-   ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY
+      try {
+        // Esegui l'aggiornamento del content type
+        const requestData = {
+          data: {
+            quantity: 123,
+          },
+        };
 
-    // Dati da inviare nella richiesta POST
-    const requestData = {
-      data: {
-          
-          quantity: 123,
-      },
-  };
-
-  console.log("post (testtests): " + JSON.stringify(requestData));
-
-  let testtestsResponse;
-
-  try {
-    testtestsResponse = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/Items/5", {
-        method: "PUT",
-        headers: {
+        const response = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/Items/5", {
+          method: "PUT",
+          headers: {
             "Content-Type": "application/json",
-            // Aggiungi eventuali altri header necessari
-        },
-        body: JSON.stringify(requestData),
-    });
+          },
+          body: JSON.stringify(requestData),
+        });
 
-    const contentType = testtestsResponse.headers.get("content-type");
+        if (!response.ok) {
+          throw new Error('Errore durante l\'aggiornamento del content type');
+        }
 
-    if (contentType && contentType.indexOf("application/json") !== -1) {
-        const testtestsResult = await testtestsResponse.json();
-        console.log("Risposta del server (JSON):", testtestsResult);
-        // Puoi fare qualcosa con il risultato se necessario
-    } else {
-        console.log("Risposta del server:", await testtestsResponse.text());
-    }
-} catch (error) {
-    console.error("Errore durante la richiesta:", error);
-    console.log("Dettagli della risposta:", await testtestsResponse?.text());
-}
+        // Reindirizza l'utente a Google
+        window.location.href = 'https://www.google.com';
+      } catch (error) {
+        console.error('Errore:', error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
 
   return (
     <Box m="120px auto" width="80%" height="50vh">
