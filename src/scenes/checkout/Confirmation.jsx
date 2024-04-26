@@ -6,11 +6,58 @@ import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurat
 import styled from 'styled-components';
 
 
-const Confirmation = () => {
+
+
+
+
+
+        
+
+
+const Confirmation = async () => {
+  
   const dispatch = useDispatch();
 
   // Azzeramento del carrello quando la pagina di conferma è montata
   dispatch(clearCartAfterConfirmation());
+
+   ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY
+
+    // Dati da inviare nella richiesta POST
+    const requestData = {
+      data: {
+          
+          quantity: 123,
+      },
+  };
+
+  console.log("post (testtests): " + JSON.stringify(requestData));
+
+  let testtestsResponse;
+
+  try {
+    testtestsResponse = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/Items/5", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            // Aggiungi eventuali altri header necessari
+        },
+        body: JSON.stringify(requestData),
+    });
+
+    const contentType = testtestsResponse.headers.get("content-type");
+
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+        const testtestsResult = await testtestsResponse.json();
+        console.log("Risposta del server (JSON):", testtestsResult);
+        // Puoi fare qualcosa con il risultato se necessario
+    } else {
+        console.log("Risposta del server:", await testtestsResponse.text());
+    }
+} catch (error) {
+    console.error("Errore durante la richiesta:", error);
+    console.log("Dettagli della risposta:", await testtestsResponse?.text());
+}
 
   return (
     <Box m="120px auto" width="80%" height="50vh">

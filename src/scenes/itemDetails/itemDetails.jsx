@@ -2,7 +2,7 @@ import { Box, Button, IconButton, Typography } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Item from "../../components/Item";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AddIcon from "@mui/icons-material/Add";
@@ -16,6 +16,7 @@ import LazyLoad from 'react-lazyload';
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+
 
 const Container = styled.div`
   min-height: 100vh;
@@ -169,6 +170,14 @@ const ButtonBlack = styled(Button)`
     }
   }
 
+  &:disabled {
+    background-color: lightgrey;
+    color: darkgrey;
+    cursor: not-allowed;
+  }
+
+
+
   @media(max-width: 680px){
     && {
       transition: background-color 0.3s ease;
@@ -287,7 +296,9 @@ const DropdownButton = styled.button`
   background-color: transparent;
   width:100%;
   color: gray;
-  padding: 24px;
+
+
+  padding: 20px;
   border: 1px solid black; /* Aggiunto il bordo nero */
   cursor: pointer;
   display: flex;
@@ -340,9 +351,14 @@ const DropdownOption = styled.div`
 `;
 
 const PlaceholderOption = styled.div`
-  padding: 10px;
-  color: gray;
 
+color: gray;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+width:100%;
   
 `;
 //FONT
@@ -428,7 +444,36 @@ const ItemDetails = () => {
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  
+
+
+
   const message = `${item?.attributes?.name}`;
+
+  useEffect(() => {
+    getItem();
+    getItems();
+
+  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -458,7 +503,7 @@ const ItemDetails = () => {
 
   async function getItem() {
     const item = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image`,
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image,image2`,
       {
         method: "GET",
       }
@@ -469,7 +514,7 @@ const ItemDetails = () => {
 
   async function getItems() {
     const items = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image`,
+      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image,image2`,
       {
         method: "GET",
       }
@@ -478,14 +523,14 @@ const ItemDetails = () => {
     setItems(itemsJson.data);
   }
 
-  useEffect(() => {
-    getItem();
-    getItems();
-  }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+
 
   const [isOpen, setIsOpen] = useState(false);
 
   const [selectedOption, setSelectedOption] = useState(null);
+
+
+
 
   const handleButtonClick = () => {
     setIsOpen(!isOpen);
@@ -511,9 +556,9 @@ const ItemDetails = () => {
     <LazyLoad once>
     <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
-      <Container width="100%" m="80px auto" >
+      <Container width="100%" m="80px auto"        >
         
-        <ItemContainer display="flex" flexWrap="wrap" columnGap="40px">
+        <ItemContainer display="flex" flexWrap="wrap" columnGap="40px" >
           {/* IMAGES */}
           <ImageContainer>
 
@@ -530,7 +575,7 @@ const ItemDetails = () => {
               alt={item?.name}
               width="100%"
               height="100%"
-              src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}
               style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
               
             />
@@ -558,24 +603,43 @@ const ItemDetails = () => {
           {/* SIZE E QUANTITY */}
 
               <TypographyDescrizioneProdotto>
-              <GtaRegular>Quantity</GtaRegular> 
+              <GtaRegular>Quantity</GtaRegular>
+
               </TypographyDescrizioneProdotto>
 
-
-
               <DropdownContainer>
-                <DropdownButton onClick={handleButtonClick}>
-                  <span>{selectedOption || '1'}</span>
-                  <Arrow>&#9660;</Arrow>
+
+                <DropdownButton onClick={handleButtonClick} disabled={`${item?.attributes?.quantity}` === "0"}>
+                  {selectedOption ? (
+                    <span>{selectedOption}</span>
+                  ) : (
+                    `${item?.attributes?.quantity}` === "0" ? (
+                      <PlaceholderOption>SOLD OUT</PlaceholderOption>
+                    ) : (
+                      <>
+                        <span>1</span>
+                        <Arrow>&#x25BC;</Arrow>
+                      </>
+                    )
+                  )}
                 </DropdownButton>
-                
-                <DropdownContent isOpen={isOpen}>
-                  <DropdownOption onClick={() => handleOptionClick(1)}>1</DropdownOption>
-                  <DropdownOption onClick={() => handleOptionClick(2)}>2</DropdownOption>
-                  <DropdownOption onClick={() => handleOptionClick(3)}>3</DropdownOption>
-                  {/* Aggiungi altre opzioni secondo necessità */}
+
+                <DropdownContent isOpen={isOpen} ref={dropdownRef}>
+                  {`${item?.attributes?.quantity}` !== "0" && (
+                    Array.from({ length: parseInt(`${item?.attributes?.quantity}`) }, (_, index) => (
+                      <DropdownOption key={index + 1} onClick={() => handleOptionClick(index + 1)}>
+                        {index + 1}
+                      </DropdownOption>
+                    ))
+                  )}
                 </DropdownContent>
+
               </DropdownContainer>
+
+
+
+
+
 
 
 
@@ -604,6 +668,7 @@ const ItemDetails = () => {
 
                 }}
                 onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+                disabled={item?.attributes?.quantity === "0"}
               >
                 <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
               </ButtonBlack>

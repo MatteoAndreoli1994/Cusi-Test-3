@@ -95,6 +95,7 @@ const Checkout = () => {
 
       })),
     };
+
     console.log("post: "+JSON.stringify(requestBody));
 
     const response = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/orders", {
@@ -102,6 +103,18 @@ const Checkout = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
     });
+
+
+
+
+
+
+
+
+
+
+  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY  ///TEST UPDATE QUANTITY
+
 
 
     const session = await response.json();
