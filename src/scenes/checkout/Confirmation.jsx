@@ -50,7 +50,8 @@ const Confirmation = async () => {
     if (contentType && contentType.indexOf("application/json") !== -1) {
         const testtestsResult = await testtestsResponse.json();
         console.log("Risposta del server (JSON):", testtestsResult);
-        // Puoi fare qualcosa con il risultato se necessario
+        console.log("REINDIRIZZA");
+
     } else {
         console.log("Risposta del server:", await testtestsResponse.text());
     }
