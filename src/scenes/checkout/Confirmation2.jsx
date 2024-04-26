@@ -14,13 +14,13 @@ import styled from 'styled-components';
         
 
 
-const Confirmation2 = async () => {
+const Confirmation2 =  () => {
   
   
 
   return (
     <Box m="120px auto" width="80%" height="50vh">
-      <Alert severity="success">
+      <Alert>
         <AlertTitle>Success</AlertTitle>
         You have successfully made an Order —{" "}
         <strong>Congrats on Making your Purchase</strong>
