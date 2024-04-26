@@ -4,7 +4,7 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { useDispatch } from 'react-redux';
 import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -51,7 +51,8 @@ const Confirmation = async () => {
         console.log("Risposta del server (JSON):", testtestsResult);
         console.log("REINDIRIZZA");
                 // Reindirizza l'utente a Google
-        navigate('/checkout/success2');
+        window.location.href = 'https://cusiecommerce.netlify.app/checkout/success2';
+
     } else {
         console.log("Risposta del server:", await testtestsResponse.text());
     }

@@ -57,7 +57,7 @@ const ScrollToTop = () => {
 
 function App() {
   const [loaded, setLoaded] = React.useState(false);
-  const navigate = useNavigate();
+
   const handleContentLoad = () => {
     setLoaded(true);
   };
