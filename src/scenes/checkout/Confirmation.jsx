@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'; // Importa anche useSelector
 
 //token
-console.log(process.env.REACT_APP_API_TOKEN);
+
 const apiToken =process.env.REACT_APP_API_TOKEN;
 
 const Confirmation = () => {
