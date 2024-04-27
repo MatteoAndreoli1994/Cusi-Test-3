@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'; // Importa anche useSelector
 
 //token
-
-const apiToken ="d0d98432b35d2499b9aa538e5a7b001b099a4a4231ebe7820b6bb0b835e97e8f9d910db2d115f8968416f76537172385add04f8e6d1b7db2729061000e48a712f09ccd3cd54119433e7b90ae10a245fd14c6ff943675a43395397cc037d62e6fdabc805fc923caf302047a4b9e4d50c582f589a8df149d0949538d4fa86b4978";
+console.log(process.env.REACT_APP_API_TOKEN);
+const apiToken =process.env.REACT_APP_API_TOKEN;
 
 const Confirmation = () => {
   const dispatch = useDispatch();
