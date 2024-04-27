@@ -11,6 +11,7 @@ import styled from 'styled-components';
 
 
 console.log(process.env.REACT_APP_API_TOKEN);
+
 const Confirmation2 =  () => {
   
   
