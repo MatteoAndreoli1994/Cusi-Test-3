@@ -24,6 +24,8 @@ import collana_navbar from '../../assets/collana_navbar.jpg';
 import collana2_navbar from '../../assets/collana2_navbar.jpg';
 import orecchini_navbar from '../../assets/orecchini_navbar.jpg';
 import maison_navbar from '../../assets/maison2.jpg';
+import { setItems } from "../../state";
+import ItemSearch from "../../components/ItemSearch";
 
 const Container = styled.div`
 display: flex;
@@ -148,6 +150,28 @@ const Menu = styled.div`
 
   }
 `;
+const MenuSearch = styled.div`
+  // Stili del div aggiuntivo
+  top: ${({ open }) => (open ? '120px' : '-100%')};
+  position: absolute;
+
+  min-height:20%;
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  z-index: 2; // Assicurati che il div sovrapponga il contenuto della home page
+  z-index: 99;
+  align-items:center;
+  transition: left 1s ease;
+
+background-color:white;
+
+  &:hover {
+
+  }
+`;
+
 
 const MenuContent = styled.div`
   display: flex;
@@ -158,6 +182,7 @@ const MenuContent = styled.div`
   margin-left: auto; /* Aggiunto per centrare orizzontalmente */
   margin-right:auto;
   margin-top:0;
+  border: 1px;
 
 
 
@@ -192,7 +217,7 @@ const ImmagineHighJewellery = styled.img`
 `;
 
 const BigContainer = styled.div`
-
+background-color:red;
 `;
 
 const Typography2 = styled.p`
@@ -246,7 +271,7 @@ const BoxMobileSinistra = styled.div`
 const LensIcon = styled(SearchOutlined)`
   font-size: 24px;
   cursor: pointer;
-  margin-top: 3px; /* Aggiunto margine superiore per allineare con l'hamburger */
+  margin-top: 10%; /* Aggiunto margine superiore per allineare con l'hamburger */
   margin-left:20%;
 `;
 const BoxMobileDestra = styled.div`
@@ -396,10 +421,13 @@ const FilterButton2 = styled.div`
 
 `;
 //font
-const ABC20 = styled.div`
-
-
-  font-size: 20px;
+const ABC16 = styled.p`
+  font-family: 'ABCGaisyr-Regular';
+  font-size: 15px; 
+  margin: 0;
+  text-align: center;
+  font-weight: lighter;
+  transition: color 0.3s ease; /* Aggiunta transizione per il colore del testo */
 
 
 `;
@@ -466,8 +494,122 @@ width: 100%;
 
 `;
 
+const SearchSection = styled.div`
+  width: 100%;
+  height: auto;
+  margin-bottom:1%;
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+`;
+
+const ContenitoreRicerca = styled.div`
+  width: 100%;
+  height: auto;
+
+  display:flex;
+
+  justify-content:center;
+
+
+`;
+const ContenitoreRicerca2 = styled.div`
+  width: 80%;
+  height: auto;
+
+  display:flex;
+  justify-content:center;
+
+  @media(max-width:680px){
+    flex-direction:column;
+
+  }
+`;
+const DivItems = styled.div`
+  width: auto;
+  height: auto;
+
+  display:flex;
+  margin-right: 1%;
+  align-items:center;
+
+  justify-content:center;
+
+
+`;
+
+const Line = styled.div`
+  width: 100%;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+`;
+
+const SearchBox = styled.div`
+  display: flex;
+
+  width:85%;
+`;
+
+const SearchIcon = styled.span`
+  color: #999;
+  margin-right: 10px;
+`;
+
+const SearchInput = styled.input`
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+
+  width: 100%; /* larghezza del campo di ricerca */
+`;
+
+const Placeholder = styled.span`
+  color: #999;
+`;
+
 
 function Navbar() {
+const [value, setValue] = useState("all");
+const items = useSelector((state) => state.cart.items);
+console.log("items", items);
+
+async function getItems() {
+  const items = await fetch(
+    "https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image",
+    { method: "GET" }
+  );
+
+  const itemsJson = await items.json();
+  dispatch(setItems(itemsJson.data));
+}
+
+useEffect(() => {
+  getItems();
+}, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
+
+
+
+
+
+
+  const [query, setQuery] = useState('');
+
+
+
+
+
+
+  const handleChange = (event) => {
+    const cleanedQuery = event.target.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
+    setQuery(cleanedQuery);
+  };
+  
+  
+
   
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -478,6 +620,7 @@ function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredCollections, setIsHoveredCollections] = useState(false);
   const [isHoveredAbout, setIsHoveredAbout] = useState(false);
+  const [isHoveredSearch, setIsHoveredSearch] = useState(false);
 
   const [showCollectionInfo, setshowCollectionInfo] = useState(false);
 
@@ -620,6 +763,16 @@ function Navbar() {
     navigate('/contactus');
   };
 
+  const searchedItems = items.filter(item => {
+    const collectionMatch = item.attributes.collection.toLowerCase() === query;
+    const categoryMatch = item.attributes.category.toLowerCase() === query;
+    return collectionMatch || categoryMatch;
+  });
+  
+  
+
+
+
 
   
 
@@ -636,8 +789,11 @@ function Navbar() {
 
   return (
     <BigContainer     
-    onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); }}>
+    onMouseLeave={() => { setIsHovered(false); setIsHoveredCollections(false); setIsHoveredAbout(false); setIsHoveredSearch(false);}}>
     {/*HAMBURGER MENU OPENED*/ }
+
+
+
 
     <DivCarrello open={isFilterVisible} >
           <ContainerFiltri>
@@ -776,18 +932,18 @@ function Navbar() {
         <BoxSinistra> 
             <Ul>
                 
-            <li  onMouseEnter={() => {setIsHovered(true); setIsHoveredCollections(false); setIsHoveredAbout(false);}}>    
+            <li  onMouseEnter={() => { setIsHoveredSearch(false); setIsHovered(true); setIsHoveredCollections(false); setIsHoveredAbout(false);}}>    
                 <Typography2 >
                     Shop
                 </Typography2>
             </li>
             <li>    
-                <Typography2 onMouseEnter={() => {setIsHoveredCollections(true); setIsHovered(false); setIsHoveredAbout(false);}}>
+                <Typography2 onMouseEnter={() => { setIsHoveredSearch(false); setIsHoveredCollections(true); setIsHovered(false); setIsHoveredAbout(false);}}>
                     Collections
                 </Typography2>
             </li>
             <li>    
-                <Typography2 onMouseEnter={() => {setIsHoveredAbout(true); setIsHoveredCollections(false); setIsHovered(false); } }>
+                <Typography2 onMouseEnter={() => {setIsHoveredSearch(false); setIsHoveredAbout(true); setIsHoveredCollections(false); setIsHovered(false); } }>
                     About
                 </Typography2>
             </li>
@@ -806,10 +962,10 @@ function Navbar() {
           <ImmagineLogo src={logo}/>
         </Logo>
         
-        <BoxDestra>
+        <BoxDestra >
           
-          <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
+          <IconButton sx={{ color: "black" }} >
+            <SearchOutlined onMouseEnter={() => {setIsHoveredSearch(true); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
           </IconButton>
 
           <IconButton sx={{ color: "black" }}>
@@ -856,16 +1012,18 @@ function Navbar() {
             <div></div>
             <div></div>
           </HamburgerIcon>
-          <LensIcon />
+
+
         </BoxMobileSinistra>
 
           <BoxMobileDestra>
 
-
+          <LensIcon onMouseEnter={() => {setIsHoveredSearch(true); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
               <Badge
             badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
             color="secondary"
             invisible={cart.length === 0}
+            
             sx={{
               "& .MuiBadge-badge": {
                 right: 6,
@@ -883,6 +1041,7 @@ function Navbar() {
               },
             }}
           >
+            
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
               sx={{ color: "black" }}
@@ -992,7 +1151,46 @@ function Navbar() {
       </MenuContent>
 
     </Menu>
+
+
+
+
+    <MenuSearch open={isHoveredSearch}>
+    <SearchSection>
+      <Line />
+      <SearchBox>
+        <SearchIcon>
+          <i className="fas fa-search"></i>
+        </SearchIcon>
+        <SearchInput
+          type="text"
+          value={query}
+          onChange={handleChange}
+          placeholder="Search..."
+        />
+      </SearchBox>
+      <Line />
+    </SearchSection>
     
+
+    <ContenitoreRicerca>
+    <ContenitoreRicerca2 onClick={() => setIsHoveredSearch(false)}>
+        {searchedItems.length === 0 ? (
+          <ABC16>No products found with this name</ABC16>
+        ) : (
+          searchedItems.slice(0, 4).map((item, index) => (
+            <DivItems key={index}>
+              <ItemSearch item={item} />
+            </DivItems>
+          ))
+        )}
+      </ContenitoreRicerca2>
+    </ContenitoreRicerca>
+
+
+    </MenuSearch>
+    
+
 
     </BigContainer>
   );
