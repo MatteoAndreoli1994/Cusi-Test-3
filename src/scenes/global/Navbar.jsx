@@ -322,6 +322,13 @@ display: none;
 }
 
 `;
+const BoxMenuGrayOutSearch = styled(Box)`
+margin-top:150px;
+display: flex;
+
+
+
+`;
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
   display: flex;
@@ -661,6 +668,10 @@ useEffect(() => {
     setIsFilterVisible(!isFilterVisible);
   };
 
+  const handleFilterClickOutSearch = () => {
+    setIsHoveredSearch(!isHoveredSearch);
+  };
+
 
 
 
@@ -965,7 +976,7 @@ useEffect(() => {
         <BoxDestra >
           
           <IconButton sx={{ color: "black" }} >
-            <SearchOutlined onMouseEnter={() => {setIsHoveredSearch(true); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
+            <SearchOutlined onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
           </IconButton>
 
           <IconButton sx={{ color: "black" }}>
@@ -993,7 +1004,7 @@ useEffect(() => {
             }}
           >
             <IconButton
-              onClick={() => dispatch(setIsCartOpen({}))}
+              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
               sx={{ color: "black" }}
             >
               <ShoppingBagOutlined />
@@ -1007,18 +1018,22 @@ useEffect(() => {
 
         {/* Versione Mobile*/}
         <BoxMobileSinistra>
-          <HamburgerIcon onClick={handleFilterClick}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </HamburgerIcon>
+        <HamburgerIcon onClick={() => {
+          handleFilterClick();
+          setIsHoveredSearch(false);
+        }}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </HamburgerIcon>
+
 
 
         </BoxMobileSinistra>
 
           <BoxMobileDestra>
 
-          <LensIcon onMouseEnter={() => {setIsHoveredSearch(true); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
+          <LensIcon onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
               <Badge
             badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
             color="secondary"
@@ -1043,7 +1058,7 @@ useEffect(() => {
           >
             
             <IconButton
-              onClick={() => dispatch(setIsCartOpen({}))}
+              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
               sx={{ color: "black" }}
             >
               <ShoppingBagOutlined />
@@ -1189,6 +1204,26 @@ useEffect(() => {
 
 
     </MenuSearch>
+
+    <BoxMenuGrayOutSearch 
+        display={isHoveredSearch ? "flex" : "none"}
+        backgroundColor="rgba(0, 0, 0, 0.4)"
+        position="fixed"
+        zIndex={10}
+        width="100%"  // Cambiato da 100% a 70%
+        height="100%"
+        right="0"    // Cambiato da left a right
+        top="0"
+        overflow="auto"
+        onClick={handleFilterClickOutSearch}
+        onMouseEnter={() => {setIsHoveredSearch(false);}}
+      >
+
+
+
+
+
+      </BoxMenuGrayOutSearch>
     
 
 
