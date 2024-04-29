@@ -155,7 +155,6 @@ const MenuSearch = styled.div`
   top: ${({ open }) => (open ? '120px' : '-100%')};
   position: absolute;
 
-  min-height:20%;
   width: 100%;
   height: auto;
 
@@ -217,7 +216,7 @@ const ImmagineHighJewellery = styled.img`
 `;
 
 const BigContainer = styled.div`
-background-color:red;
+
 `;
 
 const Typography2 = styled.p`
@@ -328,6 +327,7 @@ display: flex;
 
 
 
+
 `;
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
@@ -429,11 +429,12 @@ const FilterButton2 = styled.div`
 `;
 //font
 const ABC16 = styled.p`
-  font-family: 'ABCGaisyr-Regular';
-  font-size: 15px; 
-  margin: 0;
-  text-align: center;
-  font-weight: lighter;
+font-family: 'GTAmericaRegular';
+  font-size: 14px; 
+
+
+
+  color: gray;
   transition: color 0.3s ease; /* Aggiunta transizione per il colore del testo */
 
 
@@ -504,44 +505,56 @@ width: 100%;
 const SearchSection = styled.div`
   width: 100%;
   height: auto;
-  margin-bottom:1%;
+
   display: flex;
   align-items: center;
-
+  margin-top: 2%;
   flex-direction: column;
+
 `;
 
 const ContenitoreRicerca = styled.div`
   width: 100%;
   height: auto;
-
+  margin-top: 1%;
+  margin-bottom: 1%;
   display:flex;
 
   justify-content:center;
 
+
+
+  @media(max-width: 750px){
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
 
 `;
 const ContenitoreRicerca2 = styled.div`
   width: 80%;
-  height: auto;
+
 
   display:flex;
   justify-content:center;
 
-  @media(max-width:680px){
+  align-items:center;
+
+  @media(max-width:750px){
     flex-direction:column;
 
   }
 `;
 const DivItems = styled.div`
-  width: auto;
+  width: 100%;
   height: auto;
 
   display:flex;
-  margin-right: 1%;
+  margin-right: 2%;
+  margin-left: 2%;
   align-items:center;
-
+  flex-direction: column;
   justify-content:center;
+
 
 
 `;
@@ -549,8 +562,22 @@ const DivItems = styled.div`
 const Line = styled.div`
   width: 100%;
   border-top: 1px solid #ccc;
-  margin: 10px 0;
+
 `;
+
+const Line2 = styled.div`
+  width: 100%;
+  border-top: 1px solid #ccc;
+margin-top:1%;
+display:none;
+
+@media(max-width: 750px){
+  display: block;
+}
+
+
+`;
+
 
 const SearchBox = styled.div`
   display: flex;
@@ -567,7 +594,7 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   font-size: 16px;
-  padding: 5px;
+  padding: 15px;
 
   width: 100%; /* larghezza del campo di ricerca */
 `;
@@ -1182,6 +1209,8 @@ useEffect(() => {
           value={query}
           onChange={handleChange}
           placeholder="Search..."
+          style={{ fontFamily: 'Arial' }}
+          
         />
       </SearchBox>
       <Line />
@@ -1193,10 +1222,12 @@ useEffect(() => {
         {searchedItems.length === 0 ? (
           <ABC16>No products found with this name</ABC16>
         ) : (
-          searchedItems.slice(0, 4).map((item, index) => (
+          searchedItems.slice(0, 3).map((item, index) => (
             <DivItems key={index}>
               <ItemSearch item={item} />
+              <Line2 />
             </DivItems>
+            
           ))
         )}
       </ContenitoreRicerca2>

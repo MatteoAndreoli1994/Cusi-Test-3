@@ -14,20 +14,20 @@ const DivItem = styled.div`
 display:flex;
 
 align-items: center;
-
+justify-content: center;
 height:100%;
 
 width:100%;
 
 
 
-margin-bottom:3%;
 
 
 `;
 
 const InfoProdotto = styled.div`
-  height: 15%;
+
+
   display: flex;
   flex-direction: column;
   align-items: center; /* Aggiornato da "flex-align" a "flex-start" */
@@ -41,13 +41,11 @@ height:100%;
 
 `;
 
-const ABC16 = styled.p`
-  font-family: 'ABCGaisyr-Regular';
-  font-size: 15px; 
-  margin: 0;
+const GTA = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+
   text-align: center;
-  font-weight: lighter;
-  transition: color 0.3s ease; /* Aggiunta transizione per il colore del testo */
 
   &:hover {
     color: rgba(0, 0, 0, 0.5); /* Cambia il colore del testo quando si passa sopra con il mouse */
@@ -80,7 +78,7 @@ const ItemSearch = ({ item, width }) => {
     
     <InfoProdotto           style={{ cursor: "pointer" }} onClick={() => navigate(`/item/${item.id}`)}>
 
-    <ABC16>{name}</ABC16>
+    <GTA>{name}</GTA>
 
    </InfoProdotto>
 
