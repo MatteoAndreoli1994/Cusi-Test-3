@@ -20,6 +20,9 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 
+import ImmagineCollection from "../../assets/enamelledChains/a.avif"
+import ImmagineCollection2 from "../../assets/enamelledChains/b.avif"
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,6 +34,43 @@ const Container = styled.div`
   overflow:hidden;
 
 `;
+
+const DivImmagini = styled.div`
+  width: 85%;
+  min-height: 50vh;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 5%;
+
+`;
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
+const ImmagineCollectionStyle = styled.img`
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-right:2%;
+
+@media(max-width: 680px){
+  display: none;
+}
+`;
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
+const ImmagineCollection2Style = styled.img`
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
+
+@media(max-width: 680px){
+  width: 100%;
+}
+`;
+
 
 const FilterOverlay = styled.div`
   position: fixed;
@@ -549,6 +589,15 @@ const EnamelledChains = () => {
             </GtaRegular>
           </DivDescrizione>
         </DivInfo>
+
+
+        <DivImmagini>
+
+          <ImmagineCollectionStyle src={ImmagineCollection}/>
+          <ImmagineCollection2Style src={ImmagineCollection2}/>
+        </DivImmagini>
+
+
 
         <DivFiltri>
           <CustomButton backgroundColor="white" onClick={handleFilterClick}>
