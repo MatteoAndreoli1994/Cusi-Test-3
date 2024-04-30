@@ -228,7 +228,7 @@ width:85%;
 height:80%;
 margin: 20px;
 margin-top:10%;
-
+background-color:red;
 @media(max-width: 680px){
   margin-top:20%;
 }

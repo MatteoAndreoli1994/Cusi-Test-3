@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import ItemInShop from "../../components/ItemInShop";
-import { Typography } from "@mui/material";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../../state";
@@ -170,10 +170,17 @@ const DivCarrello =  styled(Box)`
 
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+width:85%;
+height:80%;
+margin: 20px;
+margin-top:10%;
 
-  margin: 20px;
+@media(max-width: 680px){
+  margin-top:20%;
+}
+
 `;
 
 const FilterButton = styled.div`
@@ -300,6 +307,98 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
 
+const DivSettingButton = styled.div`
+  width: 100%;
+  height: 50px;
+
+  position: absolute;
+  display: flex;
+  top: 88%;
+  align-items:center;
+  justify-content: center;
+
+  margin-top:5%;
+
+
+`;
+const DivSettingButtonCenter = styled.div`
+  width: 80%;
+  height: 120px;
+  display:flex;
+
+  @media(max-width: 680px){
+    width: 80%;
+    height: 80px;
+  }
+
+  
+`;
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonBlack= styled(Button)`
+
+
+  && {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 2%;
+    background-color: black;
+    color: white;
+    width:100%;
+    height:50%;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+
+    }
+  }
+`;
+
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonWhite = styled(Button)`
+
+
+  && {
+    width:100%;
+    height:50%;
+    margin-left: 2%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+
+    }
+  }
+`;
+
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
+
 const ShopBracelets = () => {
   const [loaded, setLoaded] = React.useState(false);
   const handleContentLoad = () => {
@@ -391,7 +490,11 @@ const ShopBracelets = () => {
     }
   };
 
-
+  const handleResetClick = () => {
+    // Reimposta gli stati a array vuoti
+    setSelectedMaterials([]);
+    setSelectedCollection([]);
+  };
 
   const Checkbox = ({ label, onChange, checked, ...props }) => (
     <CheckboxContainer>
@@ -421,107 +524,141 @@ const ShopBracelets = () => {
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
       <DivCarrello open={isFilterVisible}>
-        <ContainerFiltri>
+              <ContainerFiltri>
 
-          <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
-            <FilterButtonText>Stones</FilterButtonText>            
-            
-            <FilterSign>
-            {showStoneInfo ? (
-              <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-            ) : (
-              <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-            )}
-          </FilterSign>
-            
+                <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
+                  <FilterButtonText>Stones</FilterButtonText>            
+                  
+                  <FilterSign>
+                  {showStoneInfo ? (
+                    <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  ) : (
+                    <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  )}
+                </FilterSign>
+                  
 
-          </FilterButton>
+                </FilterButton>
+                
+
+
+                <InfoContainer visible={showStoneInfo}>
+                  {/* Inserisci qui le informazioni per le donne */}
+                  <Checkbox label="Diamond" />   
+                  <Checkbox label="Malachite" />
+                  <Checkbox label="Nacre" />
+                  <Checkbox label="Sapphire" />
+                  <Checkbox label="Ruby" />
+                  <Checkbox label="Emerald" />
+                </InfoContainer>
+
+
+                <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
+                  <FilterButtonText>Collection</FilterButtonText>
+
+                  <FilterSign>
+                    {showCollectionInfo ? (
+                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    ) : (
+                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    )}
+                  </FilterSign>
+                </FilterButton>
+
+                <InfoContainer visible={showCollectionInfo}>
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Tycoon"
+                  onChange={() => handleCheckboxChangeCollection("Tycoon")}
+                  checked={selectedCollection.includes("Tycoon")}
+                />
+                </InfoContainer>
+
+                <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
+                  <FilterButtonText>Material</FilterButtonText>
+
+                  <FilterSign>
+                    {showMaterialInfo ? (
+                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    ) : (
+                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    )}
+                  </FilterSign>
+                </FilterButton>
+          
+
+                <InfoContainer visible={showMaterialInfo}>
+
+
+                <Checkbox
+                  label="Diamonds"
+                  onChange={() => handleCheckboxChange("Diamond")}
+                  checked={selectedMaterials.includes("Diamond")}
+                />
+                <Checkbox
+                  label="White Gold"
+                  onChange={() => handleCheckboxChange("White Gold")}
+                  checked={selectedMaterials.includes("White Gold")}
+                />
+                <Checkbox
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
+                />
+
+                  {/* Inserisci qui le informazioni per le persone trans */}
+
+
+
+                </InfoContainer>
+
           
 
 
-          <InfoContainer visible={showStoneInfo}>
-            {/* Inserisci qui le informazioni per le donne */}
-            <Checkbox label="filtro" />   
-            <Checkbox label="filtro" />
-            <Checkbox label="filtro" />
-            <Checkbox label="filtro" />
-            <Checkbox label="filtro" />
-          </InfoContainer>
+              </ContainerFiltri>
+
+              <DivSettingButton>
+              <DivSettingButtonCenter>
+                  <ButtonBlack
+                    sx={{
+                      backgroundColor: "black",
+                      color: "white",
+                      borderRadius: 0,
+                      minWidth: "10%",
 
 
-          <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
-            <FilterButtonText>Collection</FilterButtonText>
-
-            <FilterSign>
-              {showCollectionInfo ? (
-                <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-              ) : (
-                <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-              )}
-            </FilterSign>
-          </FilterButton>
-
-          <InfoContainer visible={showCollectionInfo}>
-          <Checkbox
-            label="Zingara"
-            onChange={() => handleCheckboxChangeCollection("Zingara")}
-            checked={selectedCollection.includes("Zingara")}
-          />
-          <Checkbox
-            label="Urania"
-            onChange={() => handleCheckboxChangeCollection("Urania")}
-            checked={selectedCollection.includes("Urania")}
-          />
-          <Checkbox
-            label="Tycoon"
-            onChange={() => handleCheckboxChangeCollection("Tycoon")}
-            checked={selectedCollection.includes("Tycoon")}
-          />
-          </InfoContainer>
-
-          <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
-            <FilterButtonText>Material</FilterButtonText>
-
-            <FilterSign>
-              {showMaterialInfo ? (
-                <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-              ) : (
-                <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-              )}
-            </FilterSign>
-          </FilterButton>
-      
-
-          <InfoContainer visible={showMaterialInfo}>
+                    }}           onClick={handleFilterClick}
+                  >
+                     <GtaRegular12>APPLY</GtaRegular12>  
+                  </ButtonBlack>
+                  <ButtonWhite
+                    sx={{
+                      backgroundColor: "white",
+                      color: "black",
+                      borderRadius: 0,
+                      minWidth: "10%",
 
 
-          <Checkbox
-            label="Platinum"
-            onChange={() => handleCheckboxChange("Platinum")}
-            checked={selectedMaterials.includes("Platinum")}
-          />
-          <Checkbox
-            label="White Gold"
-            onChange={() => handleCheckboxChange("White Gold")}
-            checked={selectedMaterials.includes("White Gold")}
-          />
-          <Checkbox
-            label="Yellow Gold"
-            onChange={() => handleCheckboxChange("Yellow Gold")}
-            checked={selectedMaterials.includes("Yellow Gold")}
-          />
-
-            {/* Inserisci qui le informazioni per le persone trans */}
+                    }}   onClick={handleResetClick}
+                  >
+                      <GtaRegular12>RESET </GtaRegular12>
+                  </ButtonWhite>
 
 
-
-          </InfoContainer>
-
-    
+              </DivSettingButtonCenter>
 
 
-        </ContainerFiltri>
-      </DivCarrello>
+              </DivSettingButton>
+        </DivCarrello>
 
       <Box
         display={isFilterVisible ? "block" : "none"}
