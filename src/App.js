@@ -14,6 +14,13 @@ import ShopRings from "./scenes/shop/ShopRings";
 import ShopEarrings from "./scenes/shop/ShopEarrings";
 import ShopBracelets from "./scenes/shop/ShopBracelets";
 import ShopNecklaces from "./scenes/shop/ShopNecklaces";
+
+import ShopEnamelledChains from "./scenes/shop/ShopEnamelledChains";
+import ShopAnimals from "./scenes/shop/ShopAnimals";
+import ShopSea from "./scenes/shop/ShopSea";
+
+
+
 import CollectionBollywood from "./scenes/shop/CollectionBollywood";
 import CollectionFleurie from "./scenes/shop/CollectionFleurie";
 import CollectionTycoon from "./scenes/shop/CollectionTycoon";
@@ -83,6 +90,14 @@ function App() {
                 <Route path="/shopEarrings" element={<ShopEarrings />} />
                 <Route path="/shopNecklaces" element={<ShopNecklaces />} />
                 <Route path="/shopBracelets" element={<ShopBracelets />} />
+
+                <Route path="/shopEnamelledChains" element={<ShopEnamelledChains />} />
+                <Route path="/shopAnimals" element={<ShopAnimals />} />
+                <Route path="/shopSea" element={<ShopSea />} />
+
+
+
+
                 <Route path="/shopBollywood" element={<CollectionBollywood />} />
                 <Route path="/shopFleurie" element={<CollectionFleurie />} />
                 <Route path="/shopTycoon" element={<CollectionTycoon />} />

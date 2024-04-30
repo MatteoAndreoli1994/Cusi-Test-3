@@ -662,6 +662,7 @@ useEffect(() => {
 
   const [showShopInfo, setshowShopInfo] = useState(false);
   const [showHighJewellery, setShowHighJewellery] = useState(false);
+  const [showFineObject, setShowFineObject] = useState(false);
   const [showHouseInfo, setShowHouseInfo] = useState(false);
   
   const [showExpertiseInfo, setShowExpertiseInfo] = useState(false);
@@ -708,6 +709,25 @@ useEffect(() => {
     setshowShopInfo(false);
     navigate('/shopRings');
   };
+  const handleShopClickEnamelledChains = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    setshowShopInfo(false);
+    navigate('/shopEnamelledChains');
+  };
+  const handleShopClickAnimals = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    setshowShopInfo(false);
+    navigate('/shopAnimals');
+  };
+  const handleShopClickSea = () => {
+    setIsHovered(false)
+    setIsFilterVisible(false)
+    setshowShopInfo(false);
+    navigate('/shopSea');
+  };
+
   const handleHome = () => {
     setIsHovered(false)
 
@@ -857,10 +877,14 @@ useEffect(() => {
                   <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</GtaRegular> 
                   <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</GtaRegular> 
                 </HighJewellery>
-              <GtaRegularMobile>FINE SILVER</GtaRegularMobile>
-              <HighJewellery>
-                test
+
+              <GtaRegularMobile onClick={() => setShowFineObject(prevState => !prevState)} >FINE OBJECTS</GtaRegularMobile>
+              <HighJewellery visible={showFineObject}>
+                  <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</GtaRegular> 
               </HighJewellery>
+
               <GtaRegularMobile>GIFTS</GtaRegularMobile>
               <HighJewellery>
                 test
@@ -1114,10 +1138,11 @@ useEffect(() => {
 
 
         <MenuItem>
-        <Typography2>FINE SILVER</Typography2>
-        <Typography3>Sea</Typography3> 
-       <Typography3>Animals</Typography3> 
-       <Typography3>Object</Typography3> 
+        <Typography2>FINE OBJECTS</Typography2>
+        <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</Typography3> 
+        <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</Typography3> 
+        <Typography3 onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</Typography3> 
+
 
         </MenuItem>
         <MenuItem>
