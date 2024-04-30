@@ -256,7 +256,7 @@ const FilterSign = styled.span`
 `;
 
 const InfoContainer = styled.div`
-max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+max-height: ${({ visible }) => (visible ? '600px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
 transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
@@ -458,7 +458,7 @@ const Animals = () => {
 
   const dispatch = useDispatch();
   
-  const [value, setValue] = useState("rings");
+  const [value, setValue] = useState("animals");
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
@@ -466,9 +466,10 @@ const Animals = () => {
   const [showCollectionInfo, setshowCollectionInfo] = useState(false);
   const [showStoneInfo, setshowStoneInfo] = useState(false);
   const [showMaterialInfo, setshowMaterialInfo] = useState(false);
+
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
-  const [selectedStone, setSelectedCStone] = useState([]);
+  const [selectedStone, setSelectedStone] = useState([]);
 
 
 
@@ -501,17 +502,18 @@ const Animals = () => {
     (item) => item.attributes.category === "necklaces"
   );
   
-  const ringsItems = items.filter((item) => {
+  const animalsItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
-      return item.attributes.category === "rings";
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0) {
+      return item.attributes.category === "animals";
     }
   
     // Verifica la categoria, il materiale e la collezione
     return (
-      item.attributes.category === "rings" &&
+      item.attributes.category === "animals" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
+      (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
     );
   });
   
@@ -543,9 +545,22 @@ const Animals = () => {
     }
   };
 
+  const handleCheckboxChangeStone = (Stone) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedStone.includes(Stone)) {
+      setSelectedStone(selectedStone.filter((m) => m !== Stone));
+
+      
+    } else {
+      setSelectedStone([...selectedStone, Stone]);
+
+    }
+  };
+
   const handleResetClick = () => {
     // Reimposta gli stati a array vuoti
     setSelectedMaterials([]);
+    setSelectedStone([]);
     setSelectedCollection([]);
   };
 
@@ -589,12 +604,36 @@ const Animals = () => {
 
                 <InfoContainer visible={showStoneInfo}>
                   {/* Inserisci qui le informazioni per le donne */}
-                  <Checkbox label="Diamond" />   
-                  <Checkbox label="Malachite" />
-                  <Checkbox label="Nacre" />
-                  <Checkbox label="Sapphire" />
-                  <Checkbox label="Ruby" />
-                  <Checkbox label="Emerald" />
+                  <Checkbox
+                  label="Diamond"
+                  onChange={() => handleCheckboxChangeStone("Diamond")}
+                  checked={selectedStone.includes("Diamond")}
+                /> 
+                  <Checkbox
+                  label="Malachite"
+                  onChange={() => handleCheckboxChangeStone("Malachite")}
+                  checked={selectedStone.includes("Malachite")}
+                /> 
+                  <Checkbox
+                  label="Nacre"
+                  onChange={() => handleCheckboxChangeStone("Nacre")}
+                  checked={selectedStone.includes("Nacre")}
+                /> 
+                  <Checkbox
+                  label="Sapphire"
+                  onChange={() => handleCheckboxChangeStone("Sapphire")}
+                  checked={selectedStone.includes("Sapphire")}
+                /> 
+                  <Checkbox
+                  label="Ruby"
+                  onChange={() => handleCheckboxChangeStone("Ruby")}
+                  checked={selectedStone.includes("Ruby")}
+                /> 
+                  <Checkbox
+                  label="Emerald"
+                  onChange={() => handleCheckboxChangeStone("Emerald")}
+                  checked={selectedStone.includes("Emerald")}
+                /> 
                 </InfoContainer>
 
 
@@ -612,20 +651,33 @@ const Animals = () => {
 
                 <InfoContainer visible={showCollectionInfo}>
                 <Checkbox
-                  label="Zingara"
-                  onChange={() => handleCheckboxChangeCollection("Zingara")}
-                  checked={selectedCollection.includes("Zingara")}
+                  label="Bollywood"
+                  onChange={() => handleCheckboxChangeCollection("Bollywood")}
+                  checked={selectedCollection.includes("Bollywood")}
                 />
                 <Checkbox
-                  label="Urania"
-                  onChange={() => handleCheckboxChangeCollection("Urania")}
-                  checked={selectedCollection.includes("Urania")}
+                  label="Fleurie"
+                  onChange={() => handleCheckboxChangeCollection("Fleurie")}
+                  checked={selectedCollection.includes("Fleurie")}
                 />
                 <Checkbox
                   label="Tycoon"
                   onChange={() => handleCheckboxChangeCollection("Tycoon")}
                   checked={selectedCollection.includes("Tycoon")}
                 />
+
+
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+
                 </InfoContainer>
 
                 <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
@@ -645,9 +697,9 @@ const Animals = () => {
 
 
                 <Checkbox
-                  label="Diamonds"
-                  onChange={() => handleCheckboxChange("Diamond")}
-                  checked={selectedMaterials.includes("Diamond")}
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
                 />
                 <Checkbox
                   label="White Gold"
@@ -655,9 +707,19 @@ const Animals = () => {
                   checked={selectedMaterials.includes("White Gold")}
                 />
                 <Checkbox
-                  label="Yellow Gold"
-                  onChange={() => handleCheckboxChange("Yellow Gold")}
-                  checked={selectedMaterials.includes("Yellow Gold")}
+                  label="Pink Gold"
+                  onChange={() => handleCheckboxChange("Pink Gold")}
+                  checked={selectedMaterials.includes("Pink Gold")}
+                />
+                <Checkbox
+                  label="Black Gold"
+                  onChange={() => handleCheckboxChange("Black Gold")}
+                  checked={selectedMaterials.includes("Black Gold")}
+                />
+                <Checkbox
+                  label="Platinum"
+                  onChange={() => handleCheckboxChange("Platinum")}
+                  checked={selectedMaterials.includes("Platinum")}
                 />
 
                   {/* Inserisci qui le informazioni per le persone trans */}
@@ -759,8 +821,8 @@ const Animals = () => {
         
         <DivProdotti>
           
-          {value === "rings" &&
-            ringsItems.map((item) => (
+          {value === "animals" &&
+            animalsItems.map((item) => (
 
               <StyledItem key={`${item.id}`}>
                 <ItemInShop item={item} />
