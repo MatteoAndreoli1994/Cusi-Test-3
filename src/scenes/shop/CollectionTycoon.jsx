@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
+
 import ItemInShop from "../../components/ItemInShop";
-import { Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -187,14 +187,17 @@ width: 30px;
 `;
 
 const DivCarrello =  styled(Box)`
+z-index: 99;
 position: fixed;
 
 bottom: 0;
-width: 50%;
-height: 100%;
+width: 40%;
+min-height: 100%;
 background-color: white;
+display: flex;
+justify-content:center;
 
-z-index: 99;
+
 
 left: ${({ open }) => (open ? '0%' : '-90%')};
 transition: left 0.5s ease;
@@ -211,13 +214,22 @@ transition: left 0.5s ease;
 `;
 
 
+
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
 display: flex;
 flex-direction: column;
-
+width:85%;
+height:80%;
 margin: 20px;
+margin-top:10%;
+
+@media(max-width: 680px){
+  margin-top:20%;
+}
+
 `;
+
 
 const FilterButton = styled.div`
 display: flex;
@@ -249,7 +261,10 @@ font-size: 30px;
 `;
 
 const InfoContainer = styled.div`
-display: ${({ visible }) => (visible ? 'block' : 'none')};
+max-height: ${({ visible }) => (visible ? '400px' : '0px')}; /* Imposta una max-height elevata quando è aperto */
+overflow: hidden;
+transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
+
 margin-top: 10px;
 text-align: left;
 width:100%;
@@ -257,7 +272,7 @@ width:100%;
 align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 margin: 5px;
-padding: 8px;
+margin-left: 5%;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
@@ -343,6 +358,101 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 3s ease-in-out;
 `;
 
+const DivSettingButton = styled.div`
+  width: 100%;
+  height: 50px;
+
+  position: absolute;
+  display: flex;
+  top: 88%;
+  align-items:center;
+  justify-content: center;
+
+  margin-top:5%;
+
+
+`;
+
+const DivSettingButtonCenter = styled.div`
+  width: 80%;
+  height: 120px;
+  display:flex;
+
+  @media(max-width: 680px){
+    width: 80%;
+    height: 80px;
+  }
+
+  
+`;
+
+
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonBlack= styled(Button)`
+
+
+  && {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 2%;
+    background-color: black;
+    color: white;
+    width:100%;
+    height:50%;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+
+    }
+  }
+`;
+
+// Definisci il componente ButtonBlack come variante di Button
+const ButtonWhite = styled(Button)`
+
+
+  && {
+    width:100%;
+    height:50%;
+    margin-left: 2%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black; // Imposta il bordo nero di 1px per il normale stato del bottone
+  }
+
+  &&:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black; // Mantieni il bordo nero di 1px anche al passaggio del mouse
+  }
+
+
+  @media(max-width: 680px){
+    && {
+      transition: background-color 0.3s ease;
+
+    }
+  }
+`;
+
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
+
 const CollectionFleurie = () => {
 
   const [loaded, setLoaded] = React.useState(false);
@@ -368,7 +478,7 @@ const CollectionFleurie = () => {
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [showStoneInfo, setshowStoneInfo] = useState(false);
-
+  const [selectedStone, setSelectedStone] = useState([]);
 
 
 
@@ -396,7 +506,7 @@ const CollectionFleurie = () => {
   
   const tycoonItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0){
       return item.attributes.collection === "Tycoon";
     }
   
@@ -404,7 +514,8 @@ const CollectionFleurie = () => {
     return (
       item.attributes.category === "tycoon" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
+      (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
     );
   });
   
@@ -437,6 +548,25 @@ const CollectionFleurie = () => {
   };
 
 
+  const handleResetClick = () => {
+    // Reimposta gli stati a array vuoti
+    setSelectedMaterials([]);
+    setSelectedStone([]);
+    setSelectedCollection([]);
+  };
+
+  const handleCheckboxChangeStone = (Stone) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedStone.includes(Stone)) {
+      setSelectedStone(selectedStone.filter((m) => m !== Stone));
+
+      
+    } else {
+      setSelectedStone([...selectedStone, Stone]);
+
+    }
+  };
+
 
   const Checkbox = ({ label, onChange, checked, ...props }) => (
     <CheckboxContainer>
@@ -456,108 +586,179 @@ const CollectionFleurie = () => {
           <LazyLoad once>
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     
-    <DivCarrello open={isFilterVisible}>
-          <ContainerFiltri>
+      <DivCarrello open={isFilterVisible}>
+              <ContainerFiltri>
 
-            <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
-              <FilterButtonText>Stones</FilterButtonText>            
-              
-              <FilterSign>
-              {showStoneInfo ? (
-                <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-              ) : (
-                <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-              )}
-            </FilterSign>
-              
+                <FilterButton onClick={() =>  {setshowStoneInfo(!showStoneInfo); setshowMaterialInfo(false); setshowCollectionInfo(false);  } }>
+                  <FilterButtonText>Stones</FilterButtonText>            
+                  
+                  <FilterSign>
+                  {showStoneInfo ? (
+                    <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  ) : (
+                    <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                  )}
+                </FilterSign>
+                  
 
-            </FilterButton>
-            
-
-
-            <InfoContainer visible={showStoneInfo}>
-              {/* Inserisci qui le informazioni per le donne */}
-              <Checkbox label="filtro" />   
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-              <Checkbox label="filtro" />
-            </InfoContainer>
+                </FilterButton>
+                
 
 
-            <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
-              <FilterButtonText>Collection</FilterButtonText>
-
-              <FilterSign>
-                {showCollectionInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-
-            <InfoContainer visible={showCollectionInfo}>
-            <Checkbox
-              label="Zingara"
-              onChange={() => handleCheckboxChangeCollection("Zingara")}
-              checked={selectedCollection.includes("Zingara")}
-            />
-            <Checkbox
-              label="Urania"
-              onChange={() => handleCheckboxChangeCollection("Urania")}
-              checked={selectedCollection.includes("Urania")}
-            />
-            <Checkbox
-              label="Tycoon"
-              onChange={() => handleCheckboxChangeCollection("Tycoon")}
-              checked={selectedCollection.includes("Tycoon")}
-            />
-            </InfoContainer>
-
-            <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
-              <FilterButtonText>Material</FilterButtonText>
-
-              <FilterSign>
-                {showMaterialInfo ? (
-                  <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                )}
-              </FilterSign>
-            </FilterButton>
-       
-
-            <InfoContainer visible={showMaterialInfo}>
-
-
-            <Checkbox
-              label="Platinum"
-              onChange={() => handleCheckboxChange("Platinum")}
-              checked={selectedMaterials.includes("Platinum")}
-            />
-            <Checkbox
-              label="White Gold"
-              onChange={() => handleCheckboxChange("White Gold")}
-              checked={selectedMaterials.includes("White Gold")}
-            />
-            <Checkbox
-              label="Yellow Gold"
-              onChange={() => handleCheckboxChange("Yellow Gold")}
-              checked={selectedMaterials.includes("Yellow Gold")}
-            />
-
-              {/* Inserisci qui le informazioni per le persone trans */}
+                <InfoContainer visible={showStoneInfo}>
+                  {/* Inserisci qui le informazioni per le donne */}
+                  <Checkbox
+                  label="Diamond"
+                  onChange={() => handleCheckboxChangeStone("Diamond")}
+                  checked={selectedStone.includes("Diamond")}
+                /> 
+                  <Checkbox
+                  label="Malachite"
+                  onChange={() => handleCheckboxChangeStone("Malachite")}
+                  checked={selectedStone.includes("Malachite")}
+                /> 
+                  <Checkbox
+                  label="Nacre"
+                  onChange={() => handleCheckboxChangeStone("Nacre")}
+                  checked={selectedStone.includes("Nacre")}
+                /> 
+                  <Checkbox
+                  label="Sapphire"
+                  onChange={() => handleCheckboxChangeStone("Sapphire")}
+                  checked={selectedStone.includes("Sapphire")}
+                /> 
+                  <Checkbox
+                  label="Ruby"
+                  onChange={() => handleCheckboxChangeStone("Ruby")}
+                  checked={selectedStone.includes("Ruby")}
+                /> 
+                  <Checkbox
+                  label="Emerald"
+                  onChange={() => handleCheckboxChangeStone("Emerald")}
+                  checked={selectedStone.includes("Emerald")}
+                /> 
+                </InfoContainer>
 
 
 
-            </InfoContainer>
 
-      
+                <InfoContainer visible={showCollectionInfo}>
+                <Checkbox
+                  label="Bollywood"
+                  onChange={() => handleCheckboxChangeCollection("Bollywood")}
+                  checked={selectedCollection.includes("Bollywood")}
+                />
+                <Checkbox
+                  label="Fleurie"
+                  onChange={() => handleCheckboxChangeCollection("Fleurie")}
+                  checked={selectedCollection.includes("Fleurie")}
+                />
+                <Checkbox
+                  label="Tycoon"
+                  onChange={() => handleCheckboxChangeCollection("Tycoon")}
+                  checked={selectedCollection.includes("Tycoon")}
+                />
 
 
-          </ContainerFiltri>
-    </DivCarrello>
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+
+                </InfoContainer>
+
+                <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
+                  <FilterButtonText>Material</FilterButtonText>
+
+                  <FilterSign>
+                    {showMaterialInfo ? (
+                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    ) : (
+                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
+                    )}
+                  </FilterSign>
+                </FilterButton>
+          
+
+                <InfoContainer visible={showMaterialInfo}>
+
+
+                <Checkbox
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
+                />
+                <Checkbox
+                  label="White Gold"
+                  onChange={() => handleCheckboxChange("White Gold")}
+                  checked={selectedMaterials.includes("White Gold")}
+                />
+                <Checkbox
+                  label="Pink Gold"
+                  onChange={() => handleCheckboxChange("Pink Gold")}
+                  checked={selectedMaterials.includes("Pink Gold")}
+                />
+                <Checkbox
+                  label="Black Gold"
+                  onChange={() => handleCheckboxChange("Black Gold")}
+                  checked={selectedMaterials.includes("Black Gold")}
+                />
+                <Checkbox
+                  label="Platinum"
+                  onChange={() => handleCheckboxChange("Platinum")}
+                  checked={selectedMaterials.includes("Platinum")}
+                />
+
+                  {/* Inserisci qui le informazioni per le persone trans */}
+
+
+
+                </InfoContainer>
+
+          
+
+
+              </ContainerFiltri>
+
+              <DivSettingButton>
+              <DivSettingButtonCenter>
+                  <ButtonBlack
+                    sx={{
+                      backgroundColor: "black",
+                      color: "white",
+                      borderRadius: 0,
+                      minWidth: "10%",
+
+
+                    }}           onClick={handleFilterClick}
+                  >
+                     <GtaRegular12>APPLY</GtaRegular12>  
+                  </ButtonBlack>
+                  <ButtonWhite
+                    sx={{
+                      backgroundColor: "white",
+                      color: "black",
+                      borderRadius: 0,
+                      minWidth: "10%",
+
+
+                    }}   onClick={handleResetClick}
+                  >
+                      <GtaRegular12>RESET </GtaRegular12>
+                  </ButtonWhite>
+
+
+              </DivSettingButtonCenter>
+
+
+              </DivSettingButton>
+      </DivCarrello>
 
       <Box
         display={isFilterVisible ? "block" : "none"}

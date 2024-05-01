@@ -439,11 +439,15 @@ const ItemDetails = () => {
   };
   const dispatch = useDispatch();
   const { itemId } = useParams();
+
+
+
   const [value, setValue] = useState("description");
   const [count, setCount] = useState(1);
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [available, setAvailable] = useState(null);
 
   const dropdownRef = useRef(null);
 
@@ -471,7 +475,15 @@ const ItemDetails = () => {
     getItem();
     getItems();
 
+
+
+
   }, [itemId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    setAvailable(item?.attributes?.stripe);
+
+  }, [item]);
 
   
 
@@ -591,6 +603,7 @@ const ItemDetails = () => {
             <TypographyCollection><GtaRegular>{item?.attributes?.collection}</GtaRegular></TypographyCollection>
               <TypographyName><ABC> {item?.attributes?.name} </ABC> </TypographyName>
 
+
           {/* INFO PRODOTTO */}
               <TypographyDescrizioneProdotto>
                 <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
@@ -658,34 +671,52 @@ const ItemDetails = () => {
 
 
 
-              <ButtonBlack
-                sx={{
-                  backgroundColor: "black",
-                  color: "white",
-                  borderRadius: 0,
-                  minWidth: "100%",
-                  padding: "20px 40px",
+            {available && (
+                <ButtonBlack
+                  sx={{
+                    backgroundColor: "black",
+                    color: "white",
+                    borderRadius: 0,
+                    minWidth: "100%",
+                    padding: "20px 40px",
+                  }}
+                  onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+                  disabled={item?.attributes?.quantity === "0"}
+                >
+                  <GtaRegular>ADD TO SHOPPING BAG</GtaRegular>
+                </ButtonBlack>
+              )}
 
-                }}
-                onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-                disabled={item?.attributes?.quantity === "0"}
-              >
-                <GtaRegular> ADD TO SHOPPING BAG </GtaRegular>
-              </ButtonBlack>
 
               <Telefonata href="tel:+123456789">
-              <ButtonWhite
-                sx={{
-                  backgroundColor: "white",
-                  color: "black",
-                  borderRadius: 0,
-                  minWidth: "100%",
-                  padding: "20px 40px",
 
-                }}
-              >
-                <GtaRegular> ORDER BY PHONE </GtaRegular>
-              </ButtonWhite>
+              {available ? (
+                <ButtonWhite
+                  sx={{
+                    backgroundColor: "white",
+                    color: "black",
+                    borderRadius: 0,
+                    minWidth: "100%",
+                    padding: "20px 40px",
+                  }}
+                >
+                  <GtaRegular>ORDER BY PHONE</GtaRegular>
+                </ButtonWhite>
+              ) : (
+                <ButtonBlack
+                  sx={{
+                    backgroundColor: "black",
+                    color: "white",
+                    borderRadius: 0,
+                    minWidth: "100%",
+                    padding: "20px 40px",
+                  }}
+                >
+                  <GtaRegular>ORDER BY PHONE</GtaRegular>
+                </ButtonBlack>
+              )}
+
+
               </Telefonata>
               <StyledHashLink to={`/boutiques?message=${encodeURIComponent(message)}`}>
               <ButtonWhite

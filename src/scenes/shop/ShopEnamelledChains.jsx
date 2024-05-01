@@ -505,7 +505,7 @@ const EnamelledChains = () => {
   
   const enamelledChainsItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0) {
       return item.attributes.category === "enamelledChains";
     }
   
@@ -513,7 +513,8 @@ const EnamelledChains = () => {
     return (
       item.attributes.category === "enamelledChains" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
+      (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
     );
   });
   

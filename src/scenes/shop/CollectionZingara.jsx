@@ -228,7 +228,7 @@ width:85%;
 height:80%;
 margin: 20px;
 margin-top:10%;
-background-color:red;
+
 @media(max-width: 680px){
   margin-top:20%;
 }
@@ -476,12 +476,13 @@ const CollectionBollywood = () => {
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
 
+  const [showStoneInfo, setshowStoneInfo] = useState(false);
   const [showCollectionInfo, setshowCollectionInfo] = useState(false);
   const [showCategoryInfo, setshowCategoryInfo] = useState(false);
   const [showMaterialInfo, setshowMaterialInfo] = useState(false);
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
-  const [showStoneInfo, setshowStoneInfo] = useState(false);
+  const [selectedStone, setSelectedStone] = useState([]);
 
 
 
@@ -509,7 +510,7 @@ const CollectionBollywood = () => {
   
   const zingaraItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0) {
       return item.attributes.collection === "Zingara";
     }
   
@@ -517,7 +518,8 @@ const CollectionBollywood = () => {
     return (
       item.attributes.collection === "Zingara" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
+      (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
     );
   });
   
@@ -537,6 +539,18 @@ const CollectionBollywood = () => {
     }
   };
 
+  const handleCheckboxChangeStone = (Stone) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedStone.includes(Stone)) {
+      setSelectedStone(selectedStone.filter((m) => m !== Stone));
+
+      
+    } else {
+      setSelectedStone([...selectedStone, Stone]);
+
+    }
+  };
+
   const handleCheckboxChangeCollection = (Collection) => {
     // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
     if (selectedCollection.includes(Collection)) {
@@ -552,6 +566,7 @@ const CollectionBollywood = () => {
   const handleResetClick = () => {
     // Reimposta gli stati a array vuoti
     setSelectedMaterials([]);
+    setSelectedStone([]);
     setSelectedCollection([]);
   };
 
@@ -577,10 +592,10 @@ const CollectionBollywood = () => {
       <LazyLoad once>
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
       
-        <DivCarrello open={isFilterVisible}>
+      <DivCarrello open={isFilterVisible}>
               <ContainerFiltri>
 
-                <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
+                <FilterButton onClick={() =>  {setshowStoneInfo(!showStoneInfo); setshowMaterialInfo(false); setshowCollectionInfo(false);  } }>
                   <FilterButtonText>Stones</FilterButtonText>            
                   
                   <FilterSign>
@@ -598,45 +613,73 @@ const CollectionBollywood = () => {
 
                 <InfoContainer visible={showStoneInfo}>
                   {/* Inserisci qui le informazioni per le donne */}
-                  <Checkbox label="filtro" />   
-                  <Checkbox label="filtro" />
-                  <Checkbox label="filtro" />
-                  <Checkbox label="filtro" />
-                  <Checkbox label="filtro" />
+                  <Checkbox
+                  label="Diamond"
+                  onChange={() => handleCheckboxChangeStone("Diamond")}
+                  checked={selectedStone.includes("Diamond")}
+                /> 
+                  <Checkbox
+                  label="Malachite"
+                  onChange={() => handleCheckboxChangeStone("Malachite")}
+                  checked={selectedStone.includes("Malachite")}
+                /> 
+                  <Checkbox
+                  label="Nacre"
+                  onChange={() => handleCheckboxChangeStone("Nacre")}
+                  checked={selectedStone.includes("Nacre")}
+                /> 
+                  <Checkbox
+                  label="Sapphire"
+                  onChange={() => handleCheckboxChangeStone("Sapphire")}
+                  checked={selectedStone.includes("Sapphire")}
+                /> 
+                  <Checkbox
+                  label="Ruby"
+                  onChange={() => handleCheckboxChangeStone("Ruby")}
+                  checked={selectedStone.includes("Ruby")}
+                /> 
+                  <Checkbox
+                  label="Emerald"
+                  onChange={() => handleCheckboxChangeStone("Emerald")}
+                  checked={selectedStone.includes("Emerald")}
+                /> 
                 </InfoContainer>
 
 
-                <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
-                  <FilterButtonText>Collection</FilterButtonText>
 
-                  <FilterSign>
-                    {showCollectionInfo ? (
-                      <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
-                    ) : (
-                      <img src={add} alt="Add" style={{ width: '20px', height: '20px' }} />
-                    )}
-                  </FilterSign>
-                </FilterButton>
 
                 <InfoContainer visible={showCollectionInfo}>
                 <Checkbox
-                  label="Zingara"
-                  onChange={() => handleCheckboxChangeCollection("Zingara")}
-                  checked={selectedCollection.includes("Zingara")}
+                  label="Bollywood"
+                  onChange={() => handleCheckboxChangeCollection("Bollywood")}
+                  checked={selectedCollection.includes("Bollywood")}
                 />
                 <Checkbox
-                  label="Urania"
-                  onChange={() => handleCheckboxChangeCollection("Urania")}
-                  checked={selectedCollection.includes("Urania")}
+                  label="Fleurie"
+                  onChange={() => handleCheckboxChangeCollection("Fleurie")}
+                  checked={selectedCollection.includes("Fleurie")}
                 />
                 <Checkbox
                   label="Tycoon"
                   onChange={() => handleCheckboxChangeCollection("Tycoon")}
                   checked={selectedCollection.includes("Tycoon")}
                 />
+
+
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+
                 </InfoContainer>
 
-                <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
+                <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
                   <FilterButtonText>Material</FilterButtonText>
 
                   <FilterSign>
@@ -653,9 +696,9 @@ const CollectionBollywood = () => {
 
 
                 <Checkbox
-                  label="Diamonds"
-                  onChange={() => handleCheckboxChange("Diamond")}
-                  checked={selectedMaterials.includes("Diamond")}
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
                 />
                 <Checkbox
                   label="White Gold"
@@ -663,9 +706,19 @@ const CollectionBollywood = () => {
                   checked={selectedMaterials.includes("White Gold")}
                 />
                 <Checkbox
-                  label="Yellow Gold"
-                  onChange={() => handleCheckboxChange("Yellow Gold")}
-                  checked={selectedMaterials.includes("Yellow Gold")}
+                  label="Pink Gold"
+                  onChange={() => handleCheckboxChange("Pink Gold")}
+                  checked={selectedMaterials.includes("Pink Gold")}
+                />
+                <Checkbox
+                  label="Black Gold"
+                  onChange={() => handleCheckboxChange("Black Gold")}
+                  checked={selectedMaterials.includes("Black Gold")}
+                />
+                <Checkbox
+                  label="Platinum"
+                  onChange={() => handleCheckboxChange("Platinum")}
+                  checked={selectedMaterials.includes("Platinum")}
                 />
 
                   {/* Inserisci qui le informazioni per le persone trans */}
@@ -711,7 +764,7 @@ const CollectionBollywood = () => {
 
 
               </DivSettingButton>
-        </DivCarrello>
+      </DivCarrello>
 
         <Box
           display={isFilterVisible ? "block" : "none"}

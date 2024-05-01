@@ -144,30 +144,34 @@ const Div = styled.div`
 `;
 
 const DivCarrello =  styled(Box)`
-  position: fixed;
+z-index: 99;
+position: fixed;
 
-  bottom: 0;
-  width: 50%;
-  height: 100%;
-  background-color: white;
-
-  z-index: 99;
-
-  left: ${({ open }) => (open ? '0%' : '-90%')};
-  transition: left 0.5s ease;
-
-  @media(max-width:1000px){
-    width:80%;
-  }
+bottom: 0;
+width: 40%;
+min-height: 100%;
+background-color: white;
+display: flex;
+justify-content:center;
 
 
 
-  
+left: ${({ open }) => (open ? '0%' : '-90%')};
+transition: left 0.5s ease;
+
+@media(max-width:1000px){
+  width:80%;
+}
+
+
+
+
 
 
 `;
 
 
+// Definisci i componenti styled
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
 display: flex;
@@ -213,7 +217,10 @@ const FilterSign = styled.span`
 `;
 
 const InfoContainer = styled.div`
-display: ${({ visible }) => (visible ? 'block' : 'none')};
+max-height: ${({ visible }) => (visible ? '600px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+overflow: hidden;
+transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
+
 margin-top: 10px;
 text-align: left;
 width:100%;
@@ -221,7 +228,7 @@ width:100%;
 align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 margin: 5px;
-padding: 8px;
+margin-left: 12px;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
@@ -421,7 +428,7 @@ const ShopBracelets = () => {
   const [showMaterialInfo, setshowMaterialInfo] = useState(false);
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
-  const [selectedStone, setSelectedCStone] = useState([]);
+  const [selectedStone, setSelectedStone] = useState([]);
 
 
 
@@ -450,7 +457,7 @@ const ShopBracelets = () => {
   
   const braceletsItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
-    if (selectedMaterials.length === 0 && selectedCollection.length === 0) {
+    if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0) {
       return item.attributes.category === "bracelets";
     }
   
@@ -458,7 +465,8 @@ const ShopBracelets = () => {
     return (
       item.attributes.category === "bracelets" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
-      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection))
+      (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
+      (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
     );
   });
   
@@ -489,10 +497,22 @@ const ShopBracelets = () => {
 
     }
   };
+  const handleCheckboxChangeStone = (Stone) => {
+    // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
+    if (selectedStone.includes(Stone)) {
+      setSelectedStone(selectedStone.filter((m) => m !== Stone));
+
+      
+    } else {
+      setSelectedStone([...selectedStone, Stone]);
+
+    }
+  };
 
   const handleResetClick = () => {
     // Reimposta gli stati a array vuoti
     setSelectedMaterials([]);
+    setSelectedStone([]);
     setSelectedCollection([]);
   };
 
@@ -526,7 +546,7 @@ const ShopBracelets = () => {
       <DivCarrello open={isFilterVisible}>
               <ContainerFiltri>
 
-                <FilterButton onClick={() => setshowStoneInfo(!showStoneInfo)}>
+                <FilterButton onClick={() =>  {setshowStoneInfo(!showStoneInfo); setshowMaterialInfo(false); setshowCollectionInfo(false);  } }>
                   <FilterButtonText>Stones</FilterButtonText>            
                   
                   <FilterSign>
@@ -544,16 +564,40 @@ const ShopBracelets = () => {
 
                 <InfoContainer visible={showStoneInfo}>
                   {/* Inserisci qui le informazioni per le donne */}
-                  <Checkbox label="Diamond" />   
-                  <Checkbox label="Malachite" />
-                  <Checkbox label="Nacre" />
-                  <Checkbox label="Sapphire" />
-                  <Checkbox label="Ruby" />
-                  <Checkbox label="Emerald" />
+                  <Checkbox
+                  label="Diamond"
+                  onChange={() => handleCheckboxChangeStone("Diamond")}
+                  checked={selectedStone.includes("Diamond")}
+                /> 
+                  <Checkbox
+                  label="Malachite"
+                  onChange={() => handleCheckboxChangeStone("Malachite")}
+                  checked={selectedStone.includes("Malachite")}
+                /> 
+                  <Checkbox
+                  label="Nacre"
+                  onChange={() => handleCheckboxChangeStone("Nacre")}
+                  checked={selectedStone.includes("Nacre")}
+                /> 
+                  <Checkbox
+                  label="Sapphire"
+                  onChange={() => handleCheckboxChangeStone("Sapphire")}
+                  checked={selectedStone.includes("Sapphire")}
+                /> 
+                  <Checkbox
+                  label="Ruby"
+                  onChange={() => handleCheckboxChangeStone("Ruby")}
+                  checked={selectedStone.includes("Ruby")}
+                /> 
+                  <Checkbox
+                  label="Emerald"
+                  onChange={() => handleCheckboxChangeStone("Emerald")}
+                  checked={selectedStone.includes("Emerald")}
+                /> 
                 </InfoContainer>
 
 
-                <FilterButton onClick={() => setshowCollectionInfo(!showCollectionInfo)}>
+                <FilterButton onClick={() => {setshowCollectionInfo(!showCollectionInfo);   setshowStoneInfo(false); setshowMaterialInfo(false)       }       }>
                   <FilterButtonText>Collection</FilterButtonText>
 
                   <FilterSign>
@@ -567,23 +611,36 @@ const ShopBracelets = () => {
 
                 <InfoContainer visible={showCollectionInfo}>
                 <Checkbox
-                  label="Zingara"
-                  onChange={() => handleCheckboxChangeCollection("Zingara")}
-                  checked={selectedCollection.includes("Zingara")}
+                  label="Bollywood"
+                  onChange={() => handleCheckboxChangeCollection("Bollywood")}
+                  checked={selectedCollection.includes("Bollywood")}
                 />
                 <Checkbox
-                  label="Urania"
-                  onChange={() => handleCheckboxChangeCollection("Urania")}
-                  checked={selectedCollection.includes("Urania")}
+                  label="Fleurie"
+                  onChange={() => handleCheckboxChangeCollection("Fleurie")}
+                  checked={selectedCollection.includes("Fleurie")}
                 />
                 <Checkbox
                   label="Tycoon"
                   onChange={() => handleCheckboxChangeCollection("Tycoon")}
                   checked={selectedCollection.includes("Tycoon")}
                 />
+
+
+                <Checkbox
+                  label="Urania"
+                  onChange={() => handleCheckboxChangeCollection("Urania")}
+                  checked={selectedCollection.includes("Urania")}
+                />
+                <Checkbox
+                  label="Zingara"
+                  onChange={() => handleCheckboxChangeCollection("Zingara")}
+                  checked={selectedCollection.includes("Zingara")}
+                />
+
                 </InfoContainer>
 
-                <FilterButton onClick={() => setshowMaterialInfo(!showMaterialInfo)}>
+                <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
                   <FilterButtonText>Material</FilterButtonText>
 
                   <FilterSign>
@@ -600,9 +657,9 @@ const ShopBracelets = () => {
 
 
                 <Checkbox
-                  label="Diamonds"
-                  onChange={() => handleCheckboxChange("Diamond")}
-                  checked={selectedMaterials.includes("Diamond")}
+                  label="Yellow Gold"
+                  onChange={() => handleCheckboxChange("Yellow Gold")}
+                  checked={selectedMaterials.includes("Yellow Gold")}
                 />
                 <Checkbox
                   label="White Gold"
@@ -610,9 +667,19 @@ const ShopBracelets = () => {
                   checked={selectedMaterials.includes("White Gold")}
                 />
                 <Checkbox
-                  label="Yellow Gold"
-                  onChange={() => handleCheckboxChange("Yellow Gold")}
-                  checked={selectedMaterials.includes("Yellow Gold")}
+                  label="Pink Gold"
+                  onChange={() => handleCheckboxChange("Pink Gold")}
+                  checked={selectedMaterials.includes("Pink Gold")}
+                />
+                <Checkbox
+                  label="Black Gold"
+                  onChange={() => handleCheckboxChange("Black Gold")}
+                  checked={selectedMaterials.includes("Black Gold")}
+                />
+                <Checkbox
+                  label="Platinum"
+                  onChange={() => handleCheckboxChange("Platinum")}
+                  checked={selectedMaterials.includes("Platinum")}
                 />
 
                   {/* Inserisci qui le informazioni per le persone trans */}
@@ -658,7 +725,7 @@ const ShopBracelets = () => {
 
 
               </DivSettingButton>
-        </DivCarrello>
+    </DivCarrello>
 
       <Box
         display={isFilterVisible ? "block" : "none"}
