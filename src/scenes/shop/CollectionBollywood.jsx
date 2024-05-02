@@ -771,8 +771,7 @@ const CollectionBollywood = () => {
             <ABC>Bollywood</ABC>
             <DivDescrizione>
               <GtaRegular>
-              A luminous wave running through a translucent material with iridescent reflections.
-  At the center of this aquatic set, a betta fish swims through an opal sea.
+              Gems, opulence of the gaze drawn into the whirlpool of the dance of stark lines. Opulent lights of the spectacle set in gold, captured in the ecstatic rhythms of the carvings, precious scenes immortalized in luxury
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>

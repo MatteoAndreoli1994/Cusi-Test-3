@@ -337,6 +337,7 @@ const ContainerFiltri = styled.div`
   margin: 20px;
   margin-top: 10vh;
 
+
 `;
 const FilterButtonText = styled.span`
   /* Aggiunto il flex-grow per far sì che occupi lo spazio rimanente */
@@ -356,7 +357,7 @@ const FilterSign = styled.span`
   font-size: 30px;
 `;
 const InfoContainer = styled.div`
-max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+max-height: ${({ visible }) => (visible ? '600px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
 transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
@@ -480,7 +481,7 @@ margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
 `;
 
 const HighJewellery = styled.div`
-max-height: ${({ visible }) => (visible ? '400px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+max-height: ${({ visible }) => (visible ? '800px' : '0')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
 transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
@@ -492,6 +493,7 @@ align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 
 margin-left: 5%;
+margin-bottom: 4%;
 
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
