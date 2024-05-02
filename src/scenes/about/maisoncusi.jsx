@@ -594,8 +594,7 @@ const handleContentLoad = () => {
     <DivBacheca>
 
         <ABC>Maison Cusi</ABC>
-        <Light16>La storica gioielleria fondata nel 1886 da Annibale Cusi ha segnato l’inizio di un’epoca che dura da cinque generazioni
-           durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
+        <Light16>The historic jewelry store founded in 1886 by Annibale Cusi marked the beginning of an era that has lasted for five generations. Over these 131 years, Cusi has become one of the most prestigious names among Italian jewelers.
         </Light16>
 
 
@@ -619,12 +618,11 @@ const handleContentLoad = () => {
 
         <DivInfo>
         <ABC24>1886</ABC24>
-        <ABC24>Nascita del marchio Cusi</ABC24>
-        <Description>Annibale CUSI (18 Settembre 1863 – 28 Ottobre 1930) undicesimo figlio di Pietro CUSI e Giuseppina Villa, cominciò a lavorare in giovanissima età come garzone di bottega, allora il mestiere si insegnava praticando fin dalla prima infanzia lavorando a stretto contatto con gli artigiani orafi. Per Annibale non fu diverso, iniziò a soli 9 anni e presto acquisì una certa esperienza, distinguendosi per le sue spiccate doti artistiche e abilità artigiane.
+        <ABC24>Birth of the Cusi brand</ABC24>
+        <Description>Annibale CUSI (September 18, 1863 – October 28, 1930), the eleventh child of Pietro CUSI and Giuseppina Villa, began working at a very young age as an apprentice in a workshop. Back then, the craft was taught by practicing from early childhood, working closely with goldsmith artisans. For Annibale, it was no different; he started at just 9 years old and soon gained considerable experience, standing out for his artistic talents and craftsmanship skills.
         </Description>
         <Description>
-          Il lungo periodo passato dietro ai banchi orafi permise al giovane di far proprio il mestiere, maturando in se anche quel coraggio e abilità imprenditoriale che a soli 23 anni e più precisamente nel 1886 lo spinsero a lasciare la bottega ed aprire un proprio laboratorio in via della Farine nel pieno centro di Milano a pochi passi dal Duomo e dal Teatro alla Scala.
-          Nacque così il marchio CUSI.
+        The long period spent behind the goldsmith's benches allowed the young Annibale to make the trade his own, also developing within himself the courage and entrepreneurial skills that, at the age of 23, precisely in 1886, led him to leave the workshop and open his own laboratory in Via della Farine in the heart of Milan, just a few steps from the Duomo and Teatro alla Scala. Thus, the CUSI brand was born.
         </Description>
 
             
@@ -649,14 +647,13 @@ const handleContentLoad = () => {
 
         <DivInfo>
 
-        <Description>Nel proprio Atelier di Via delle Farine al numero 8 il giovane Annibale getterà le fondamenta che lo porteranno in pochi anni a fare del marchio Cusi uno dei brand più apprezzati dall’aristocrazia e dalla nobiltà Milanese.         </Description>
+        <Description>In his Atelier on Via delle Farine, number 8, young Annibale laid the foundations that would lead him in a few years to make the Cusi brand one of the most appreciated brands by the aristocracy and nobility of Milan. </Description>
 
         <Description>
-Il fervente arrivo dell’Art Nouveau a fine 800 rivitalizzò l’arte della gioielleria, riferendosi alla natura come principale soggetto ispiratore. 
-In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Liberty non si fece attendere. Cusi in quegl’anni di bellezza da vita a collezioni di gioielli uniche e straordinarie, utilizzando materiali innovativi e gemme di colore rare.
+        The fervent arrival of Art Nouveau at the end of the 19th century revitalized the art of jewelry, referring to nature as the main inspirational subject. In Europe, it was a true revolution in art, and in Milan, the Liberty style was eagerly embraced. During those years of beauty, Cusi created unique and extraordinary jewelry collections, using innovative materials and rare colored gems.
         </Description>
         <DescriptionLight>
-        A sinistra, la famosa Spilla del Pozzo in platino e diamanti con il relativo disegno realizzata da Annibale e tutt’oggi conservata con affetto iconico dalla famiglia Cusi.
+        On the left, the famous Platinum and Diamond Well Brooch, along with its design, created by Annibale and still affectionately preserved by the Cusi family.
         </DescriptionLight>
 
             
@@ -669,18 +666,9 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
         <DivInfo>
         <ABC24Sinistra>1906</ABC24Sinistra> 
-        <ABC24Sinistra>Il Collier di Maria Stuarda</ABC24Sinistra>
+        <ABC24Sinistra>The Necklace of Mary Stuart</ABC24Sinistra>
         <DescriptionSinistra>
-          Nel 1906 Milano fu protagonista dell’Esposizione Internazionale,
-          un vero successo, parteciparono infatti 40 stati e la città fu visitata da quasi 5 milioni di persone,
-          un vero record per l’epoca. Nella sezione delle Arti Decorative Cusi espose i suoi gioielli,
-          e vinse il Gran Premio grazie ad un capolavoro dell’arte orafa, il collier chiamato “Maria Stuarda”,
-          un’opera che richiese due anni di lavoro da parte degli artigiani della bottega,
-          che la realizzarono in “Platiuralium” una speciale lega inventata da Cusi composta da platino,
-          oro, argento e alluminio con caratteristiche di leggerezza uniche.
-          Il “Colletto” era tempestato di circa 15000 diamanti, perle e rubini.
-          L’architettura era complessa in quanto tutte le parti erano snodate e permettevando quindi movimenti articolati.
-          Chi scrisse su di essa la definì, nonostante l’imponenza, leggera come un pizzo.
+        In 1906, Milan was the protagonist of the International Exposition, a true success. Forty states participated, and the city was visited by almost 5 million people, a record for the time. In the Decorative Arts section, Cusi exhibited its jewelry and won the Grand Prize thanks to a masterpiece of goldsmith art, the necklace called "Mary Stuart", a work that required two years of work by the workshop artisans, who made it in "Platiuralium," a special alloy invented by Cusi consisting of platinum, gold, silver, and aluminum with unique lightweight characteristics. The "Collar" was studded with about 15,000 diamonds, pearls, and rubies. The architecture was complex as all parts were articulated, allowing for articulated movements. Those who wrote about it described it as, despite its grandeur, light as lace.
         </DescriptionSinistra>
 
             
@@ -704,12 +692,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         <ABC24>1921</ABC24> 
         <ABC24>Via Clerici, 1</ABC24>
         <Description>
-        Dopo la dolorosa parentesi della grande guerra 1915-18,
-        Annibale CUSI divenuto ormai un esperto di fama internazionale nel campo delle pietre preziose e delle perle,
-        riprese con rinnovata energia la sua attività e presto fu necessario ingrandirsi.
-        Così che nel 1922 Annibale ed il figlio Rinaldo allora ventisettenne,
-        fecero costruire in via Clerici 1 l’elegante Palazzo CUSI, sede propria della famiglia,
-        dell’atelier di vendita e dei laboratori di produzione. Nel 1921 Annibale fu proclamato Cavaliere del Lavoro.
+        After the painful period of the Great War 1915-18, Annibale CUSI, now an internationally renowned expert in precious stones and pearls, resumed his activity with renewed energy, and soon expansion was necessary. So, in 1922, Annibale and his twenty-seven-year-old son Rinaldo had the elegant Palazzo CUSI built at Via Clerici 1, the family's own headquarters, sales atelier, and production laboratories. In 1921, Annibale was proclaimed Knight of Labor.
         </Description>
 
             
@@ -730,14 +713,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
         </ABC24Sinistra>
 
         <DescriptionSinistra>
-          Il marchio CUSI, nel ventennio del XX secolo fu apprezzato non solo dalle più importanti 
-          famiglie dell’aristocrazia milanese, ma anche dalla Famiglia Reale Italiana, tanto da vantare numerose collaborazioni per il Re,Vittorio Emanuele III,
-          con S.A.R. Vittorio Emanuele il Conte di Torino ed il Duca di Aosta Amedeo di Savoia. 
-          I tre stemmi reali in quegl’anni decorano la carta intestata e il logo della Gioielleria Cusi. 
-
-          Rinaldo seppe con grande abilità e carisma esportare il nostro stile anche all’estero,
-          dove il mercato internazionale rispose con ampio consenso. Da sempre grande esperto e collezionista di gioielli,
-          gemme preziose, ma sopratutto di perle, cedette in età al figlio Roberto CUSI il timone dell’azienda.
+        In the twentieth century, the CUSI brand was appreciated not only by the most important families of Milanese aristocracy but also by the Italian Royal Family, boasting numerous collaborations for King Vittorio Emanuele III, with S.A.R. Vittorio Emanuele the Count of Turin and the Duke of Aosta Amedeo di Savoia. The three royal emblems in those years adorned the letterhead and logo of Gioielleria Cusi. With great skill and charisma, Rinaldo exported our style abroad, where the international market responded with wide consensus. Always a great expert and collector of jewelry, precious gems, but above all of pearls, he handed over the helm of the company to his son Roberto CUSI in his old age.
 
         </DescriptionSinistra>
 
@@ -769,11 +745,7 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
             </ABC24>
 
             <Description>
-            Con Roberto CUSI (1926 – 1996), l’azienda si consolida e nel 1964 viene innaugurata l’esclusiva sede di Portofino,
-            e dopo soli due anni anche l’attuale sede di Milano in via Montenapoleone al numero 21,
-            location simbolo per eccellenza della moda e del lusso nel mondo.
-            Successivamente nel 2004 nella filiale di Portofino CUSI diventa concessionario ufficiale ROLEX e nel 2013 
-            vi dedica interamente un Atelier accanto alla propria gioielleria.
+            With Roberto CUSI (1926 – 1996), the company consolidated, and in 1964, the exclusive headquarters in Portofino was inaugurated, and after only two years, also the current headquarters in Milan at Via Montenapoleone, 21, a symbolic location for excellence in fashion and luxury worldwide. Subsequently, in 2004, at the Portofino branch, CUSI became an official ROLEX dealer, and in 2013, it dedicated an entire Atelier next to its jewelry store.
 
             </Description>
 
@@ -791,21 +763,17 @@ In Europa fu una vera e propria rivoluzione dell’arte e a Milano lo stile Libe
 
 
     <BoxFamiglia>
-        <ABC24Centered>La tradizione Cusi continua con le nuove generazioni</ABC24Centered>
+        <ABC24Centered>The Cusi tradition continues with the new generations.</ABC24Centered>
         <Introduzione>
-        La storica gioielleria fondata nel 1886 da Annibale Cusi ha segnato l’inizio di un’epoca che dura da cinque generazioni; 
-        durante questi 131 anni Cusi è diventato uno dei nomi più prestigiosi tra i gioiellieri Italiani.
+        The historic jewelry store founded in 1886 by Annibale Cusi marked the beginning of an era that has lasted for five generations; over these 131 years, Cusi has become one of the most prestigious names among Italian jewelers.
         </Introduzione>
 
         <ImmagineFamiglia src={GiorgioCusi}  effect="blur"/>
 
         <Description2>
-        Oggi la tradizione della famiglia prosegue grazie all’impegno e la passione di Giorgio Nicola Cusi, della moglie Roberta Cusi e dei figli Alessia e Alessandro.
-        Cusi non è solo un nome: è passione, professionalità, sicurezza, tradizione, è qualcosa di familiare; il nostro scopo è quello di far sentire i nostri clienti come a casa.
+Today, the family tradition continues thanks to the commitment and passion of Giorgio Nicola Cusi, his wife Roberta Cusi, and their children Alessia and Alessandro. Cusi is not just a name: it's passion, professionalism, security, tradition—it's something familiar; our goal is to make our customers feel at home.
 <br/><br/>
-        Questa breve retrospettiva che racconta la storia, l’evoluzione del concetto di gioielleria e di quanto siamo legati alla tradizione, mantenendo sì la qualità del passato, ma introducendo via via una prospettiva di attualità e design.‍
-        L’alta gioielleria italiana basata su tradizione e innovazione, che si può ammirare nelle sedi di via Montenapoleone e di Portofino, fonde in sé le massime espressioni d’arte quali il disegno, la progettazione, la lavorazione artigianale, 
-        la cura del dettaglio e in più la ricerca di gemme rare provenienti dai più remoti angoli della terra. E’ con questa filosofia che la famiglia Cusi vuole tramandare la tradizione alle nuove generazioni.
+This brief retrospective tells the story, the evolution of the concept of jewelry, and how we are tied to tradition, maintaining the quality of the past while gradually introducing a perspective of modernity and design. Italian high jewelry, based on tradition and innovation, which can be admired at the locations on Via Montenapoleone and in Portofino, combines the highest expressions of art such as design, craftsmanship, attention to detail, and the search for rare gems from the most remote corners of the earth. It is with this philosophy that the Cusi family wants to pass on the tradition to the new generations.
 
         </Description2>
 

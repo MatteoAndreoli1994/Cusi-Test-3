@@ -747,9 +747,7 @@ const Home = () => {
             <Immagine src={Modella2}   effect="blur"/>
 
             <ABC24>Fleurie</ABC24>
-            <Gta>Timeless and wearable earrings with a modern twist that 
-            add a touch of style to any outfit.
-            </Gta>
+            <Gta>Exquisite gemstones and refined cuts, embodying elegance and sophistication</Gta>
 
             
           </Collection1DivIconic>
@@ -763,8 +761,7 @@ const Home = () => {
             
             <Immagine src={Modella3} effect="blur"/>
             <ABC24>Zingara</ABC24>
-            <Gta>Timeless and wearable earrings with a modern twist that 
-            add a touch of style to any outfit.
+            <Gta>Elegant, natural gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
             </Gta>
 
             </Collection2DivIconic>
@@ -851,7 +848,7 @@ const Home = () => {
       <CollectionDivAbout>
       <Collection1Div>
           <ImmagineMaison src={Maison}/>
-          <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >PRENOTA UN APPUNTAMENTO</HyperLink></GtaRegular14grayMobile>
+          <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >BOOK AN APPOINTMENT</HyperLink></GtaRegular14grayMobile>
         </Collection1Div>
 
         <Collection2Div2>
@@ -862,7 +859,7 @@ const Home = () => {
           you may discover and try on your favorite creations.
           </GtaLeft>
 
-          <GtaRegular14gray><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >PRENOTA UN APPUNTAMENTO</HyperLink></GtaRegular14gray>
+          <GtaRegular14gray><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >BOOK AN APPOINTMENT</HyperLink></GtaRegular14gray>
           </Text>
         </Collection2Div2>
 

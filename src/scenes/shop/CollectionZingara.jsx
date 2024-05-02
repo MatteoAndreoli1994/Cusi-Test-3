@@ -790,8 +790,8 @@ const CollectionBollywood = () => {
             <ABC>Zingara</ABC>
             <DivDescrizione>
               <GtaRegular>
-              A luminous wave running through a translucent material with iridescent reflections.
-  At the center of this aquatic set, a betta fish swims through an opal sea.
+              The Zingara collection represents the true fusion of modern style and elegance in the spirit of tradition.
+The natural softness of gold and the particular hammered work contribute to creating a play of lights and reflections that is enhanced in movement.
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>
