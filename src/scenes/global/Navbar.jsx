@@ -337,6 +337,8 @@ const ContainerFiltri = styled.div`
   margin: 20px;
   margin-top: 10vh;
 
+min-height:80%;
+height:auto;
 
 `;
 const FilterButtonText = styled.span`
@@ -413,20 +415,17 @@ const FilterButton = styled.div`
   user-select: none; /* Evita la selezione del testo */
   width: 100%;
 `;
+const FilterButtonContainer = styled.div`
+  margin-top: auto; /* Spinge il contenuto verso l'alto per far spazio al div rosso in fondo */
+`;
+
 const FilterButton2 = styled.div`
-  display: flex;
 
-  flex-direction:column;
-  justify-content: space-between;  /* Aggiunto per separare gli elementi */
-  margin: 5px;
   padding: 8px;
-
-
   font-size: 16px;
   cursor: pointer;
-  user-select: none; /* Evita la selezione del testo */
+  user-select: none;
   width: 100%;
-
 `;
 //font
 const ABC16 = styled.p`
@@ -948,14 +947,14 @@ useEffect(() => {
 
             </InfoContainer>
 
-            <FilterButton2>
-              <Typography3>Login</Typography3> 
-              <Typography3>Account</Typography3> 
-            </FilterButton2>
 
-            <FilterButton2>
+                <FilterButtonContainer>
+
+                <FilterButton2>
               <Typography3>EUR/IT</Typography3> 
             </FilterButton2>
+                </FilterButtonContainer>
+
 
 
       
