@@ -224,7 +224,7 @@ const Checkout = () => {
                       boxShadow: "none",
                       color: "white",
                       borderRadius: 0,
-                      padding: "15px 40px",
+                      padding: "15px 12px",
                     }}
                     onClick={() => setActiveStep(activeStep - 1)}
                   >
@@ -241,7 +241,7 @@ const Checkout = () => {
                     boxShadow: "none",
                     color: "white",
                     borderRadius: 0,
-                    padding: "15px 40px",
+                    padding: "15px 12px",
                   }}
                 >
                   {!isSecondStep ? "Next" : "Place Order"}

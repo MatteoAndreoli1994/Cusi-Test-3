@@ -32,6 +32,40 @@ const DivCarrello = styled(Box)`
       width:  85%;
     }
   `;
+  const MenuItem = styled.div`
+  width: 90%;
+
+  height:50%;
+  display: flex;
+  flex-direction:column;
+
+margin-top: 15%;
+
+`;
+const Typography2 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 22px;
+font-weight: normal;
+margin-top:0;
+margin-bottom:0;
+`;
+const Typography3 = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 0;
+  cursor: pointer;
+  color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
+  transition:  margin-left 0.2s;
+
+  &:hover {
+    color: gray;
+    margin-left: 5px;
+  }
+
+  margin-left: ${(props) => (props.isHovered ? '5px' : '0')};
+`;
+
   
   const FlexBox = styled(Box)`
   display: flex;
@@ -126,6 +160,7 @@ const GtaRegular16normal = styled.p`
   font-family: 'GTAmericaRegular';
   font-size: 16px;
     margin:0;
+    color:gray;
 
     @media(max-width: 680px){
       font-size: 14px;
@@ -206,6 +241,28 @@ const CartMenu = () => {
     const formatPrice = (price) => {
       return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
     };
+
+    const handleShopClickBollywood = () => {
+
+      navigate('/shopBollywood');
+    };
+  
+    const handleShopClickFleurie = () => {
+
+      navigate('/shopFleurie');
+    };
+    const handleShopClickTycoon = () => {
+
+      navigate('/shopTycoon');
+    };
+    const handleShopClickUrania = () => {
+
+      navigate('/shopUrania');
+    };
+    const handleShopClickZingara = () => {
+
+      navigate('/shopZingara');
+    };
   
 
 
@@ -213,13 +270,33 @@ const CartMenu = () => {
   return (
     <> 
     <DivCarrello open={isCartOpen}>
-    <Box      padding="15px" overflow="auto" height="100%" >
+    <Box      padding="30px" overflow="auto" height="100%" >
       {/* HEADER */}
+
+
       <FlexBox  marginRight={0}>
+        {cart.length==0 ?
+        (<>
+        <GtaRegular24>Your Bag</GtaRegular24>
+
+        <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
+          <CloseIcon2 src={CloseIconImage}/>
+        </IconButton>
+        </>)
+        :
+        
+        (<>
+
         <GtaRegular24>Your Bag ({cart.length})</GtaRegular24>
         <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
           <CloseIcon2 src={CloseIconImage}/>
         </IconButton>
+        
+        </>)
+
+        }
+
+        
       </FlexBox>
 
       {/* CART LIST */}
@@ -292,6 +369,31 @@ const CartMenu = () => {
       </Box>
 
       {/* ACTIONS */}
+
+
+
+
+
+      {cart.length==0 ?
+        (<>
+         <GtaRegular16normal>Your shopping bag is empty at the moment.</GtaRegular16normal> 
+
+
+        {/*
+         <MenuItem>
+          <Typography2>Discover our collection</Typography2> 
+          <Typography3 onClick={handleShopClickBollywood} style={{ cursor: 'pointer' }}>Bollywood</Typography3> 
+          <Typography3 onClick={handleShopClickFleurie} style={{ cursor: 'pointer' }}>Fleurie</Typography3> 
+          <Typography3 onClick={handleShopClickTycoon} style={{ cursor: 'pointer' }}>Tycoon</Typography3> 
+          <Typography3 onClick={handleShopClickUrania} style={{ cursor: 'pointer' }}>Urania</Typography3> 
+          <Typography3 onClick={handleShopClickZingara} style={{ cursor: 'pointer' }}>Zingara</Typography3> 
+        </MenuItem> 
+        */ }
+
+        </>)
+        :
+        
+        (<>
       <Box m="20px 0">
         <FlexBox m="20px 0">
           <GtaRegular16normal fontWeight="bold">Subtotal</GtaRegular16normal>
@@ -314,7 +416,14 @@ const CartMenu = () => {
          <GtaRegular16normal>CHECKOUT</GtaRegular16normal> 
         </Checkout>
       </Box>
+
+        
+        </>)
+
+        }
     </Box>
+
+
   </DivCarrello>
 
 
