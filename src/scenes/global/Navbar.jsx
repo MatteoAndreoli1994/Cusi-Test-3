@@ -274,7 +274,7 @@ const LensIcon = styled.div`
   height: 22px; /* Imposta l'altezza dell'icona */
   cursor: pointer;
   margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
-  margin-left: 15%;
+  margin-left: 19%;
   background-image: url(${SearchImage}); /* Imposta l'immagine di sfondo con il percorso del tuo file PNG */
   background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
 `;
