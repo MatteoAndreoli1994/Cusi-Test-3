@@ -288,8 +288,8 @@ const LensIconDesktop = styled.div`
   background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
 `;
 const ShoppingBagOutlined2 = styled.div`
-  width: 23px; /* Imposta la larghezza dell'icona */
-  height: 23px; /* Imposta l'altezza dell'icona */
+  width: 24px; /* Imposta la larghezza dell'icona */
+  height: 24px; /* Imposta l'altezza dell'icona */
   cursor: pointer;
   margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
   margin-left: 0%;
