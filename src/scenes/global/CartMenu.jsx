@@ -166,6 +166,16 @@ const GtaRegular16normal = styled.p`
       font-size: 14px;
     }
 `;
+const GtaRegular16normalW = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+    margin:0;
+    color:white;
+
+    @media(max-width: 680px){
+      font-size: 14px;
+    }
+`;
 
 const ABC16 = styled.p`
 font-family: 'ABCGaisyr-Book';
@@ -413,7 +423,7 @@ const CartMenu = () => {
             dispatch(setIsCartOpen({}));
           }}
         >
-         <GtaRegular16normal>CHECKOUT</GtaRegular16normal> 
+         <GtaRegular16normalW>CHECKOUT</GtaRegular16normalW> 
         </Checkout>
       </Box>
 
