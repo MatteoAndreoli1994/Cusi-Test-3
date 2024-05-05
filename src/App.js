@@ -65,6 +65,8 @@ const ScrollToTop = () => {
 function App() {
   const [loaded, setLoaded] = React.useState(false);
 
+
+
   const handleContentLoad = () => {
     setLoaded(true);
   };
@@ -118,10 +120,14 @@ function App() {
             <Route path="checkout/success" element={<Confirmation2 />} />
           </Routes>
 
+
           <Footer />
           <CartMenu />
+
         </ApolloProvider>
       </BrowserRouter>
+
+      
     </div>
   );
 }

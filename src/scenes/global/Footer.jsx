@@ -238,9 +238,13 @@ font-size: 14px;
 function Footer() {
 
     const navigate = useNavigate();
+    
 
   return (
     <Container>
+
+
+
         <LastColumnMobile>
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaLight>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaLight>
         
@@ -301,6 +305,7 @@ function Footer() {
       <ColumnMobile><GtaRegular>© 2024 Cusi. All rights reserved</GtaRegular></ColumnMobile>
 
       </CopyrightContainerMobile>
+      
     </Container>
   );
 }
