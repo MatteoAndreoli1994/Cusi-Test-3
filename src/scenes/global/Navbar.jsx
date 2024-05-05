@@ -26,6 +26,7 @@ import orecchini_navbar from '../../assets/orecchini_navbar.jpg';
 import maison_navbar from '../../assets/maison2.jpg';
 import { setItems } from "../../state";
 import ItemSearch from "../../components/ItemSearch";
+import SearchImage from "../../assets/search.png";
 
 const Container = styled.div`
 display: flex;
@@ -267,11 +268,14 @@ const BoxMobileSinistra = styled.div`
     align-items: center; /* Aggiunto per centrare verticalmente */
   }
 `;
-const LensIcon = styled(SearchOutlined)`
-  font-size: 24px;
+const LensIcon = styled.div`
+  width: 22px; /* Imposta la larghezza dell'icona */
+  height: 22px; /* Imposta l'altezza dell'icona */
   cursor: pointer;
-  margin-top: 10%; /* Aggiunto margine superiore per allineare con l'hamburger */
-  margin-left:20%;
+  margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
+  margin-left: 15%;
+  background-image: url(${SearchImage}); /* Imposta l'immagine di sfondo con il percorso del tuo file PNG */
+  background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
 `;
 const BoxMobileDestra = styled.div`
 display: none;
@@ -1031,9 +1035,7 @@ useEffect(() => {
             <SearchOutlined onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
           </IconButton>
 
-          <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
-          </IconButton>
+
           <Badge
             badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
             color="secondary"
@@ -1079,13 +1081,13 @@ useEffect(() => {
           <div></div>
         </HamburgerIcon>
 
-
+        <LensIcon onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
 
         </BoxMobileSinistra>
 
           <BoxMobileDestra>
 
-          <LensIcon onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
+      
               <Badge
             badgeContent={cart.map(item => item.count).reduce((acc, curr) => acc + curr, 0)}
             color="secondary"
