@@ -27,6 +27,7 @@ import maison_navbar from '../../assets/maison2.jpg';
 import { setItems } from "../../state";
 import ItemSearch from "../../components/ItemSearch";
 import SearchImage from "../../assets/search.png";
+import ShoppingBag from "../../assets/shopping-bag.png";
 
 const Container = styled.div`
 display: flex;
@@ -275,6 +276,24 @@ const LensIcon = styled.div`
   margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
   margin-left: 15%;
   background-image: url(${SearchImage}); /* Imposta l'immagine di sfondo con il percorso del tuo file PNG */
+  background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
+`;
+const LensIconDesktop = styled.div`
+  width: 22px; /* Imposta la larghezza dell'icona */
+  height: 22px; /* Imposta l'altezza dell'icona */
+  cursor: pointer;
+  margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
+  margin-left: 0%;
+  background-image: url(${SearchImage}); /* Imposta l'immagine di sfondo con il percorso del tuo file PNG */
+  background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
+`;
+const ShoppingBagOutlined2 = styled.div`
+  width: 23px; /* Imposta la larghezza dell'icona */
+  height: 23px; /* Imposta l'altezza dell'icona */
+  cursor: pointer;
+  margin-top: 0%; /* Aggiunto margine superiore per allineare con l'hamburger */
+  margin-left: 0%;
+  background-image: url(${ShoppingBag}); /* Imposta l'immagine di sfondo con il percorso del tuo file PNG */
   background-size: cover; /* Assicura che l'immagine copra completamente l'elemento */
 `;
 const BoxMobileDestra = styled.div`
@@ -1032,7 +1051,7 @@ useEffect(() => {
         <BoxDestra >
           
           <IconButton sx={{ color: "black" }} >
-            <SearchOutlined onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
+            <LensIconDesktop onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
           </IconButton>
 
 
@@ -1048,7 +1067,7 @@ useEffect(() => {
                 height: "20px", // Imposta un'altezza fissa
                 width: "20px", // Imposta una larghezza fissa uguale all'altezza
                 borderRadius: "50%", // Imposta il valore di borderRadius per rendere il badge rotondo
-
+                backgroundColor: "black",
                 fontSize: "8px", // Riduci la dimensione del font del badge
                 display: "flex",
                 alignItems: "center",
@@ -1061,7 +1080,7 @@ useEffect(() => {
               onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
               sx={{ color: "black" }}
             >
-              <ShoppingBagOutlined />
+              <ShoppingBagOutlined2 />
             </IconButton>
           </Badge>
 
@@ -1101,7 +1120,7 @@ useEffect(() => {
                 height: "20px", // Imposta un'altezza fissa
                 width: "20px", // Imposta una larghezza fissa uguale all'altezza
                 borderRadius: "50%", // Imposta il valore di borderRadius per rendere il badge rotondo
-
+                backgroundColor: "black",
                 fontSize: "8px", // Riduci la dimensione del font del badge
                 display: "flex",
                 alignItems: "center",
@@ -1115,7 +1134,7 @@ useEffect(() => {
               onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
               sx={{ color: "black" }}
             >
-              <ShoppingBagOutlined />
+              <ShoppingBagOutlined2 />
             </IconButton>
           </Badge>
 
