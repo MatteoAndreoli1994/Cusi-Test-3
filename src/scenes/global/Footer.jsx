@@ -158,7 +158,7 @@ const DivLingua = styled.div`
   color: black;
   display: flex;
   justify-content: space-between;
-  width: 15%;
+  width: 30%;
   align-items: center;
   padding: 10px;
 
@@ -311,11 +311,21 @@ function Footer() {
         <GtaRegular>Copyright © 2024 Your Company. All rights reserved.         
 
         </GtaRegular>
-        <a href="https://www.iubenda.com/privacy-policy/74025686" className="custom-link privacy-policy-link" title="Privacy Policy">Privacy Policy</a>
-        <a href="https://www.iubenda.com/privacy-policy/74025686/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy">Cookie Policy</a>
+
 
         <DivLingua>
-          
+
+        <a href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
+  <GtaRegular>Privacy Policy</GtaRegular>
+</a>
+
+<a href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+  <GtaRegular>Cookie Policy</GtaRegular>
+</a>
+
+
+
+
           <GtaRegular>IT/€</GtaRegular>
           <GtaRegular>English</GtaRegular>
         </DivLingua>
