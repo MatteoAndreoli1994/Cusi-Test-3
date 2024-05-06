@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/logo.png';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
+// Importa il componente Link da react-router-dom
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -238,6 +240,18 @@ font-size: 14px;
 function Footer() {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.iubenda.com/iubenda.js";
+      script.async = true;
+      document.body.appendChild(script);
+  
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
+  
     
 
   return (
@@ -294,15 +308,25 @@ function Footer() {
 
       
       <CopyrightContainer>
-        <GtaRegular>Copyright © 2024 Your Company. All rights reserved.</GtaRegular>
+        <GtaRegular>Copyright © 2024 Your Company. All rights reserved.         
+
+        </GtaRegular>
+        <a href="https://www.iubenda.com/privacy-policy/74025686" className="custom-link privacy-policy-link" title="Privacy Policy">Privacy Policy</a>
+        <a href="https://www.iubenda.com/privacy-policy/74025686/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy">Cookie Policy</a>
+
         <DivLingua>
+          
           <GtaRegular>IT/€</GtaRegular>
           <GtaRegular>English</GtaRegular>
         </DivLingua>
       </CopyrightContainer>
 
       <CopyrightContainerMobile>
-      <ColumnMobile><GtaRegular>© 2024 Cusi. All rights reserved</GtaRegular></ColumnMobile>
+        
+      <ColumnMobile><GtaRegular>© 2024 Cusi. All rights reserved </GtaRegular></ColumnMobile>
+
+
+      
 
       </CopyrightContainerMobile>
       

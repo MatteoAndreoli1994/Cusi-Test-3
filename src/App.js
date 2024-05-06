@@ -30,6 +30,7 @@ import Boutiques from "./scenes/about/boutiques";
 import MaisonCusi from "./scenes/about/maisoncusi";
 import ContactUs from "./scenes/about/contactus";
 import CustomerService from "./scenes/about/customerservice";
+import Legal from "./scenes/about/legal";
 import Footer from "./scenes/global/Footer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import styled from 'styled-components';
@@ -108,6 +109,7 @@ function App() {
                 <Route path="/boutiques" element={<Boutiques />} />
                 <Route path="/maisoncusi" element={<MaisonCusi />} />
                 <Route path="/customerservice" element={<CustomerService />} />
+                <Route path="/legal" element={<Legal />} />
                 <Route path="/contactus" element={<ContactUs />} />
               </Routes>
 

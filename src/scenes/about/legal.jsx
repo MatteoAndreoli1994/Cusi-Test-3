@@ -7,9 +7,9 @@ const Container = styled.div`
   margin-top: 120px;
   width: 100%;
   height:auto;
-  min-height: 100vh;
-  justify-content: center;
 
+  justify-content: center;
+  min-height: 100vh;
 `;
 
 const CustomerServiceDiv = styled.div`
@@ -191,8 +191,8 @@ const FilterButton = styled.div`
 `;
 
 
-const CustomerService = () => {
-  const [selectedItem, setSelectedItem] = useState('Our Services');
+const Legal = () => {
+  const [selectedItem, setSelectedItem] = useState('Privacy Policy');
 
   const handleMenuItemClick = (item) => {
     setSelectedItem(item);
@@ -200,42 +200,8 @@ const CustomerService = () => {
 
   const getContent = () => {
     switch (selectedItem) {
-      case 'Our Services':
-        return (
-          <>
-            <GtaRegular16>Our Services</GtaRegular16>
 
-            <GtaLightLightInfo>
-              Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-              to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-              timeless beauty and sophistication you deserve.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-              to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-              style.
-            </GtaLightLightInfo>
-          </>
-        );
-      case 'Product Care':
-        return (
-          <>
-            <GtaRegular16>Product Care</GtaRegular16>
-            <GtaLightLightInfo>
-              Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations,
-              follow these product care guidelines:
-            </GtaLightLightInfo>
-            <ul>
-              <GtaLightLightInfoLi>Store your jewelry in a soft pouch or box to prevent scratches.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Clean your jewelry gently with a soft, lint-free cloth.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>For specific care instructions, refer to the care guide provided with each item.</GtaLightLightInfoLi>
-            </ul>
-            <GtaLightLightInfo>
-              Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.
-            </GtaLightLightInfo>
-          </>
-        );
+
       case 'Shopping & Returns':
         return (
           <>
@@ -267,33 +233,62 @@ const CustomerService = () => {
             </div>
           </>
         );
-      case 'Size Chart':
+
+
+      case 'Privacy Policy':
         return (
           <>
-            <GtaRegular16>Size Chart</GtaRegular16>
+            <GtaRegular16>Privacy Policy</GtaRegular16>
             <GtaLightLightInfo>
-              Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your
-              selected piece complements your style and comfort.
+            Questa Informativa descrive ampiamente le pratiche che abbiamo adottato
+            In questa pagina si descrivono le modalità di gestione del sito in riferimento al trattamento dei dati personali degli utenti che lo consultano. Il trattamento si basa sempre su principi di liceità e correttezza in ottemperanza a tutte le vigenti normative e vengono adottate idonee misure di sicurezza a protezione dei dati. Tale policy privacy è data anche come breve informativa ai sensi dell’art.13 D. Lgs. 196/2003 e ai sensi dell’ art. 13 GDPR 679/ 2016 Regolamento Europeo in materia di privacy, nonché ai sensi del Provvedimento in materia di cookie n. 229 dell’8 maggio 2014, si desidera informare i visitatori del sito circa l’utilizzo dei dati inseriti e dei cookie utilizzati dal sito stesso. L’informativa è resa anche ai sensi della Raccomandazione n. 2/2001 adottata dal Gruppo di lavoro istituito dall’art. 29 della direttiva n. 95/46/CE. a coloro che interagiscono con i servizi web di questo sito, al fine della protezione dei dati personali, accessibili per via telematica a partire dall’indirizzo: Utilizzando uno qualsiasi dei nostri servizi e/o accettando la presente Informativa, per esempio nell’ambito della registrazione a uno dei nostri servizi, acconsenti alla raccolta e all’uso delle Informazioni personali come descritto nella presente Informativa.
+
+            Questa Informativa descrive ampiamente le pratiche che abbiamo adottato
             </GtaLightLightInfo>
+            <h1>INFORMAZIONI PERSONALI CHE RACCOGLIAMO</h1>
             <GtaLightLightInfo>
-              If you have any questions about sizing or need assistance, our customer service team is here to help. Reach
-              out to us for personalized guidance.
+            In ogni occasione di contatto o interazione con l’ospite e in tutti gli altri aspetti del nostro lavoro, possiamo raccogliere delle informazioni personali. Queste informazioni personali possono includere: le tue informazioni di contatto; informazioni caratteristiche personali, nazionalità, documenti di identità, informazioni di pagamento, così come dettagli di fatturazione e del conto relativi alla fatturazione elettronica; preferenze, previo consenso scritto, riguardo a marketing e comunicazione e possiamo inviarti informazioni commerciali previo tuo consenso espresso.
             </GtaLightLightInfo>
-          </>
-        );
-      case 'Garanzia':
-        return (
-          <>
-            <GtaRegular16>Garanzia</GtaRegular16>
+            <h1>FINALITA' DI TRATTAMENTO</h1>
             <GtaLightLightInfo>
-              La nostra garanzia testimonia l'impegno nella qualità e nell'eccellenza. Tutti i nostri gioielli sono
-              coperti da una garanzia che attesta la genuinità dei materiali e la maestria artigianale impiegata nella
-              creazione di ciascun pezzo.
+            Il trattamento dei dati è finalizzato per le seguenti finalità:
+            alla gestione dei rapporti con la clientela (emissione di fatture, preventivi), a eseguire eventuali obblighi contrattuali, alla gestione del contenzioso e nonché ad adempiere agli obblighi normativi, in particolare quelli contabili e fiscali;
+
+            2a) Inerenti al servizio:
+            all’invio (previo Suo consenso scritto) di offerte promozionali sui nostri servizi e sulle offerte praticate nonché di auguri a mezzo posta ordinaria o tramite fax o email;
+            Di richieste tecniche per confezionare, completare, modificare o riparare articoli di gioielleria a piacimento del cliente e secondo la sua ordinazione, a mezzo telefonico, mail, fax
+
+            2b) programma di ricevuta elettronica:
+            possiamo automaticamente iscriverti al nostro programma di ricevuta elettronica e utilizzare il tuo indirizzo e-mail per inviarti fatture o ricevute fiscali, o documenti relativi al tuo acquisto. È tua responsabilità assicurarti che l’indirizzo e-mail in nostro possesso sia quello corretto (e preferito).
+            Possiamo utilizzare il tuo indirizzo di posta elettronica per inviarti, previo consenso scritto, le nostre newletter, i nostri auguri per le festività.            
             </GtaLightLightInfo>
+            <h1>ULTERIORI FINALITà</h1>
+
             <GtaLightLightInfo>
-              Per maggiori dettagli sulla garanzia e i suoi termini, contatta il nostro servizio clienti. Siamo qui per
-              garantire la tua completa soddisfazione.
+            I sistemi informatici e le procedure software preposte al funzionamento di questo sito web acquisiscono, nel corso del loro normale esercizio alcuni dati personali la cui trasmissione è implicita nell’uso dei protocolli di comunicazione di internet. Tali informazioni non sono raccolte per essere associate a interessati identificati, ma che per loro stessa natura potrebbero, attraverso elaborazioni ed associazioni con dati detenuti da terzi, permettere di identificare gli utenti.
+In questa categoria di dati rientrano gli indirizzi IP o i nomi a dominio dei computer utilizzati dagli utenti che si connettono al sito, gli indirizzi in notazione URI (Uniform resource Identifier) delle risorse richieste, l’orario della richiesta, il metodo utilizzato nel sottoporre la richiesta al server, la dimensione del file ottenuto in risposta, il codice numerico indicante lo stato della risposta data dal server (buon fine, errore….) ed altri parametri relativi al sistema operativo e all’ambiente informatico dell’utente.
+Questi dati vengono utilizzati al solo fine di ricavare informazioni statistiche anonime sull’uso del sito e per controllarne il corretto funzionamento e vengono cancellate immediatamente dopo l’elaborazione. I dati potrebbero, altresì, essere utilizzati per l’accertamento di responsabilità in caso di ipotetici reati informatici ai danni del sito.          
             </GtaLightLightInfo>
+
+            <h1>IDENTITA’ DEL TITOLARE DEL TRATTAMENTO</h1>
+
+            <GtaLightLightInfo>
+            Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale
+rappresentante p.t. della società:<br/><br/>
+
+CUSI MONTENAPOLEONE S.r.l.<br/>
+con sede legale:<br/>
+MIlano (MI), Via Montenapoleone, 21/A<br/>
+P.Iva 01932840182,<br/>
+mail: info@cusimontenapoleone.com<br/><br/>
+
+Il Titolare del trattamento garantisce la sicurezza, la riservatezza e la protezione di cui sono in possesso, in qualsiasi fase del processo di trattamento degli stessi. I dati raccolti vengono utilizzati nel rispetto della normativa vigente in materia di privacy (D.Lgs. 196/ 2003 e GDPR 679/2016)
+            </GtaLightLightInfo>
+
+
+
+
+
           </>
         );
       case 'FAQ':
@@ -358,38 +353,31 @@ const CustomerService = () => {
     <Container>
       <CustomerServiceDiv>
         <Menu>
-          <GtaRegular>Customer Service</GtaRegular>
-          <MenuItem
-            className={selectedItem === 'Our Services' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Our Services')}
-          >
-           <li><GtaRegular16Category>Our Services</GtaRegular16Category></li> 
-          </MenuItem>
-          <MenuItem
-            className={selectedItem === 'Product Care' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Product Care')}
-          >
-            <li><GtaRegular16Category> Product Care </GtaRegular16Category></li>
-          </MenuItem>
+          <GtaRegular>Legal</GtaRegular>
+
           <MenuItem
             className={selectedItem === 'Shopping & Returns' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Shopping & Returns')}
           >
-            <li> <GtaRegular16Category> Shipping & Returns </GtaRegular16Category></li>
-          </MenuItem>
-          <MenuItem
-            className={selectedItem === 'Size Chart' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Size Chart')}
-          >
-            <li> <GtaRegular16Category> Size Chart </GtaRegular16Category></li>
+            <li> <GtaRegular16Category> CONDIZIONI DI VENDITA </GtaRegular16Category></li>
           </MenuItem>
 
           <MenuItem
-            className={selectedItem === 'Contact' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Contact')}
+            className={selectedItem === 'Cookie Policy' ? 'selected' : ''}
+            onClick={() => handleMenuItemClick('Cookie Policy')}
           >
-            <li><GtaRegular16Category> Contact </GtaRegular16Category></li>
+            <li><GtaRegular16Category> COOKIE POLICY </GtaRegular16Category></li>
           </MenuItem>
+
+
+
+          <MenuItem
+            className={selectedItem === 'Privacy Policy' ? 'selected' : ''}
+            onClick={() => handleMenuItemClick('Privacy Policy')}
+          >
+            <li> <GtaRegular16Category> PRIVACY POLICY </GtaRegular16Category></li>
+          </MenuItem>
+
         </Menu>
         <Content>{getContent()}</Content>
       </CustomerServiceDiv>
@@ -679,4 +667,4 @@ const CustomerService = () => {
   );
 };
 
-export default CustomerService;
+export default Legal;
