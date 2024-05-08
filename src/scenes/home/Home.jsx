@@ -34,7 +34,7 @@ const GifBox = styled.div`
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
 
 width:100vw;
-
+min-height:auto;
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,9 +46,9 @@ width:100vw;
 
 const GifBoxSafari = styled.div`
 position: relative;
-height:87vh;
+
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-min-height:87vh;
+min-height:auto;
 justify-content:center;
 width:100vw;
 
@@ -56,6 +56,11 @@ overflow: hidden;
 
 background-size: cover;
 margin-bottom: 2%;
+
+
+@media(max-width:680px){
+  
+}
 `;
 
 
