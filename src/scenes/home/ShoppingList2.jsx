@@ -22,7 +22,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import LazyLoad from 'react-lazyload';
 
 const ButtonCarousel = styled.button`
-padding: 12px 36px;
+padding: 11px 36px;
 border: 1px solid black;
 border-radius: 50px;
 color: ${({ selected }) => (selected ? 'white' : 'black')};
@@ -147,15 +147,15 @@ user-select: none;
 
 const DivImmaginiProdotti = styled.div`
 display:flex;
-width: 33%;
+width: 30%;
 height: auto;
 
 
 margin-left:0.5%;
 margin-right:0.5%;
 margin-top:1%;
-
-
+margin-bottom:0%;
+background-color:green;
 
 @media(max-width:900px){
 width: 50%;
@@ -167,7 +167,7 @@ margin-right:0.5%;
 `;
 const DivImmaginiProdottiDesktop = styled(LazyLoad)`
 display:flex;
-width: 33%;
+width: 30%;
 height: auto;
 margin-left:0.5%;
 margin-right:0.5%;
@@ -183,11 +183,11 @@ display:none;
 `;
 const DivInfoProdotti = styled.div`
 display:flex;
-width: 33%;
+width: 30%;
 min-height: 8vh;
 margin-left:0.5%;
 margin-right:0.5%;
-margin-top:1%;
+
 
 justify-content:center;
 
@@ -199,11 +199,11 @@ width: 50%;
 `;
 const DivInfoProdottiDesktop = styled.div`
 display:flex;
-width: 33%;
+width: 30%;
 min-height: 8vh;
 margin-left:0.5%;
 margin-right:0.5%;
-margin-top:1%;
+
 
 justify-content:center;
 
@@ -407,7 +407,7 @@ cursor: pointer;
 const CircleContainer = styled.div`
 position: absolute;
 top: 40%;
-left: -3%;
+left: 0%;
 cursor: pointer;
 display: flex;
 align-items: center;
@@ -426,7 +426,7 @@ display:none;
 const CircleContainer2 = styled.div`
 position: absolute;
 top: 40%;
-right: -3%;
+right: 0%;
 cursor: pointer;
 display: flex;
 align-items: center;
@@ -498,7 +498,7 @@ margin-bottom:3%;
 
 left: 0;
 width: 100%;
-height: auto;
+height: 100%;
 overflow: hidden;
 
 z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti

@@ -90,7 +90,7 @@ const ShoppingList = () => {
       justify-content:center;
       display:flex;
       width:140px;
-
+  background-color:red;
 
 
       &:not(:last-child) {

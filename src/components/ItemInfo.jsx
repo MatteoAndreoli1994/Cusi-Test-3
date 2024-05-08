@@ -37,7 +37,7 @@ align-items: center;
 height:100%;
 
 width:100%;
-
+z-index: 99;
 
 
 margin-bottom:1%;
@@ -75,7 +75,7 @@ font-weight: lighter;
 const ABC16 = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
-margin-top: 3%;
+margin-top: 2%;
 text-align: center;
 font-weight: lighter;
 

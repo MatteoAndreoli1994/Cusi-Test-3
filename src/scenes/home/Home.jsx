@@ -32,7 +32,9 @@ margin-top:120px;
 
 const GifBox = styled.div`
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-min-height:40vh;
+
+width:100vw;
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -44,8 +46,9 @@ min-height:40vh;
 
 const GifBoxSafari = styled.div`
 position: relative;
+height:87vh;
 display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-min-height:40vh;
+min-height:87vh;
 justify-content:center;
 width:100vw;
 
@@ -128,9 +131,27 @@ width: 50%;
 height: auto;
 align-items: center;
 flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+align-self: center;
+
+@media(max-width:680px){
+
+width:100%;
+
+display:none;
+}
+`;
+const Collection1DivIconic2_2 = styled.div`
+display: flex;
+width: 90%;
+height: auto;
+align-items: center;
+
+flex-direction: column;
+
+
+
 
 @media(max-width:680px){
 
@@ -145,9 +166,23 @@ width: 50%;
 height: auto;
 align-items: center;
 flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 
-align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+align-self: center; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
+
+@media(max-width:680px){
+
+width:100%;
+margin-bottom:1%;
+}
+`;
+const Collection2DivIconic_2 = styled.div`
+display: flex;
+width: 90%;
+height: auto;
+align-items: center;
+flex-direction: column;
+
 
 @media(max-width:680px){
 
@@ -263,7 +298,7 @@ flex-direction:column;
 const CollectionDivBig = styled.div`
 
 display: flex;
-width: 87%;
+width: 85%;
 height:auto;
 
 align-items:center;
@@ -320,8 +355,9 @@ const Text = styled.div`
 display: flex;
 flex-direction:column;
 width: 70%;
-margin-left:27%;
+margin-left:10%;
 
+margin-bottom:10%;
 
 @media(max-width:680px){
 width:100%;
@@ -337,13 +373,13 @@ margin-bottom:5%;
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const Immagine = styled.img`
-width: 96%;
+width: 90%;
 min-height: 40vh;
 object-fit: cover;
 `;
 
 const ImmagineAnello = styled.img`
-width:100%;
+width:90%;
 min-height: 40vh;
 `;
 const Immagine2 = styled.img`
@@ -364,7 +400,7 @@ width:50%;
 
 `;
 const Immagine3 = styled.img`
-width:50%;
+width:40%;
 min-height: 10vh;
 @media(max-width: 680px){
 margin-top:0%;
@@ -376,7 +412,7 @@ width:55%;
 `;
 
 const ImmagineMaison = styled.img`
-width:100%;
+width:90%;
 min-height: 40vh;
 
 `;
@@ -551,7 +587,7 @@ font-size: 14px;
 const GtaRegular = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 12px;
-margin-top:5%;
+
 margin-bottom:0;
 
 @media(max-width: 1200px){
@@ -568,6 +604,7 @@ font-family: 'GTAmericaLight';
 font-size: 12px;
 margin-top:5%;
 margin-bottom:3%;
+
 
 @media(max-width: 1200px){
 font-size: 13px; 
@@ -770,11 +807,15 @@ const Home = () => {
 
           <CollectionDiv>
             <Collection1DivIconic2>
+              <Collection1DivIconic2_2>
              <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegular>
+             </Collection1DivIconic2_2>
             </Collection1DivIconic2>
 
             <Collection2DivIconic>
+            <Collection2DivIconic_2>
               <GtaRegular><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >SHOP ZINGARA</HyperLink></GtaRegular>
+              </Collection2DivIconic_2>
             </Collection2DivIconic>
 
           </CollectionDiv>

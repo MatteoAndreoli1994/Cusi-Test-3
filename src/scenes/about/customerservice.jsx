@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
+import { useNavigate } from "react-router-dom";
+
 const Container = styled.div`
   display: flex;
   margin-top: 120px;
@@ -189,10 +191,15 @@ const FilterButton = styled.div`
 
 
 `;
+const GrayClickableLink = styled.a`
+  color: gray;
+  cursor: pointer;
+`;
 
 
 const CustomerService = () => {
   const [selectedItem, setSelectedItem] = useState('Our Services');
+  const navigate = useNavigate();
 
   const handleMenuItemClick = (item) => {
     setSelectedItem(item);
@@ -315,7 +322,7 @@ const CustomerService = () => {
           <>
             <GtaRegular16>Contact</GtaRegular16>
             <GtaLightLightInfo>
-              Our customer service team is here to assist you. If you have any questions, concerns, or need personalized
+              Our customer service team is <GrayClickableLink onClick={() => navigate("/contactus")}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized
               assistance, please don't hesitate to contact us.
             </GtaLightLightInfo>
             <GtaLightLightInfo>

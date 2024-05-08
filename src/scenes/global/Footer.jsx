@@ -230,6 +230,11 @@ font-family: 'GTAmericaRegular';
 font-size: 14px;
 
 `;
+const GtaRegularLegalPol = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 14px;
+cursor: pointer;
+`;
 
 const GtaLight = styled.p`
 font-family: 'GTAmericaLight';
@@ -316,12 +321,16 @@ function Footer() {
         <DivLingua>
 
         <a href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
-  <GtaRegular>Privacy Policy</GtaRegular>
-</a>
+          <GtaRegular>Privacy Policy</GtaRegular>
+        </a>
 
-<a href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
-  <GtaRegular>Cookie Policy</GtaRegular>
-</a>
+        <a href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+          <GtaRegular>Cookie Policy</GtaRegular>
+        </a>
+
+
+          <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
+
 
 
 

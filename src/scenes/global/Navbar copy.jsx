@@ -30,18 +30,18 @@ import SearchImage from "../../assets/search.png";
 import ShoppingBag from "../../assets/shopping-bag.png";
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 120px;
-  background-color: white;
-  color: black;
-  position: fixed;
-  top: ${props => props.top}px;
-  left: 0;
-  z-index: 3;
-  overflow: hidden;
-  transition: top 1s;
+display: flex;
+align-items: center;
+width: 100%;
+height: 120px;
+background-color: white;
+color: black;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 3;
+
+
 `;
 
 const NavBarDiv = styled.div`
@@ -629,38 +629,9 @@ const Placeholder = styled.span`
 
 
 function Navbar() {
-    
-  const [scrollPosition, setScrollPosition] = useState(window.scrollY);
-  const [containerTop, setContainerTop] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window.scrollY;
-      const scrollDifference = currentPosition - scrollPosition;
-  
-      if (scrollDifference > 0 && currentPosition > 1000) {
-        // Scrolling down by at least 500px
-        setContainerTop(-250);
-      } else if (scrollDifference < 0) {
-        // Scrolling up
-        setContainerTop(0);
-      }
-      setScrollPosition(currentPosition);
-    };
-  
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollPosition]);
-
-
-
-
 const [value, setValue] = useState("all");
 const items = useSelector((state) => state.cart.items);
-
+console.log("items", items);
 
 async function getItems() {
   const items = await fetch(
@@ -879,8 +850,7 @@ useEffect(() => {
     const categoryMatch = item.attributes.category.toLowerCase() === query;
     return collectionMatch || categoryMatch;
   });
-
-
+  
   
 
 
@@ -1043,7 +1013,7 @@ useEffect(() => {
 
 
 
-    <Container top={containerTop}>
+    <Container>
 
       <NavBarDiv>
 

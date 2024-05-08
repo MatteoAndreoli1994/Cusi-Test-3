@@ -116,14 +116,15 @@ text-align:center;
 
 `;
 const GtaRegular16 = styled.p`
-font-family: 'GTAmericaRegular';
+font-family: 'GTAmericaBold';
 font-size: 16px;
 margin-top:4%;
 margin-bottom:3%;
 
+
 `;
 const GtaRegular16Category = styled.p`
-font-family: 'GTAmericaRegular';
+font-family: 'GTAmerica';
 font-size: 16px;
 margin-top:2%;
 margin-bottom:2%;
@@ -192,7 +193,7 @@ const FilterButton = styled.div`
 
 
 const Legal = () => {
-  const [selectedItem, setSelectedItem] = useState('Privacy Policy');
+  const [selectedItem, setSelectedItem] = useState('Terms & Conditions');
 
   const handleMenuItemClick = (item) => {
     setSelectedItem(item);
@@ -202,123 +203,215 @@ const Legal = () => {
     switch (selectedItem) {
 
 
-      case 'Shopping & Returns':
+      case 'Terms & Conditions':
         return (
-          <>
-            <div>
-              <GtaRegular16>Shipping</GtaRegular16>
-              <GtaLightLightInfo>
-                Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the
-                comfort of your home.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                All orders are shipped with the utmost care and attention to detail. You will receive a shipping
-                confirmation email with a tracking link to monitor the journey of your precious purchase.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons,
-                please allow for additional delivery time.
-              </GtaLightLightInfo>
-            </div>
-            <div>
-              <GtaRegular16>Returns</GtaRegular16>
-              <GtaLightLightInfo>
-                While we hope you adore your purchase, we understand that preferences may change. Our return policy
-                ensures a hassle-free process for returns and exchanges.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                If, for any reason, you wish to return or exchange an item, please contact our customer service team
-                within 14 days of receiving your order. We are dedicated to ensuring your satisfaction.
-              </GtaLightLightInfo>
-            </div>
-          </>
+<>
+  <div>
+    <GtaRegular16>Termini di utilizzo</GtaRegular16>
+    <GtaLightLightInfo>
+      Cusi Termini di utilizzo
+      Ultimo aggiornamento: Maggio 2024<br/><br/>
+    </GtaLightLightInfo>
+  </div>
+
+  <div>
+    <GtaRegular16>    Informazioni su Cusi e i presenti Termini di utilizzo</GtaRegular16>
+
+    <GtaLightLightInfo>
+
+      Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale rappresentante p.t. della società:<br/>      <br/>
+      CUSI MONTENAPOLEONE S.r.l.
+      <br/> sede legale: Milano (MI), Via Montenapoleone, 21/A
+      <br/> P.Iva 01932840182
+      <br/>mail: info@cusimontenapoleone.com
+      <br/>      <br/>
+      I presenti termini di utilizzo ("Termini di utilizzo") regolano l'utilizzo delle Piattaforme di Cusi. Con l'accesso e l'utilizzo delle Piattaforme, manifestate il vostro consenso e accettazione dei presenti Termini di utilizzo. In caso di disaccordo con tali Termini, non siete autorizzati a utilizzare le Piattaforme.
+    </GtaLightLightInfo>
+  </div>
+
+  <div>
+    <GtaRegular16>Aggiornamenti ai presenti Termini di utilizzo</GtaRegular16>
+    <GtaLightLightInfo>
+      Periodicamente, potremmo apportare modifiche ai presenti Termini di utilizzo. Vi invitiamo a controllare regolarmente per restare aggiornati. L'ultima versione sarà sempre disponibile sulle Piattaforme e diventerà efficace immediatamente dopo la pubblicazione. L'utilizzo continuato delle Piattaforme costituirà l'accettazione di tali modifiche.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Informazioni sui nostri servizi di hosting</GtaRegular16>
+    <GtaLightLightInfo>
+      I servizi di hosting per il sito web di Cusi sono forniti da Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>La nostra informativa sulla privacy</GtaRegular16>
+    <GtaLightLightInfo>
+      La nostra prassi di raccolta dei dati all’interno della piattaforma eCommerce Cusi è disciplinata dai termine della nostra Informativa sulla privacy resa disponibile da Iubenda. Vi invitiamo a leggerla per comprendere come trattiamo i vostri dati.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>e-Commerce di Cusi – Condizioni di vendita</GtaRegular16>
+    <GtaLightLightInfo>
+      I clienti che effettuano acquisti online attraverso il nostro e-commerce devono consultare le Condizioni di vendita, che regolano i termini e le condizioni di tali transazioni.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Utilizzo dei contenuti sulle Piattaforme</GtaRegular16>
+    <GtaLightLightInfo>
+      Cusi offre informazioni sui propri prodotti e servizi attraverso tale piattaforma per uso personale dei visitatori. Le rappresentazioni visive dei prodotti sono accuratamente create, tuttavia, possono verificarsi lievi variazioni nei colori o nel design. Si consiglia di visitare i nostri punti vendita o contattarci direttamente per maggiori informazioni prima di effettuare un acquisto.
+      Potete scaricare o stampare i contenuti dalle Piattaforme esclusivamente per uso personale, non commerciale, a condizione che vengano mantenuti intatti i diritti di proprietà intellettuale e non vengano alterate le note relative ai diritti.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Comunicazioni e feedback</GtaRegular16>
+    <GtaLightLightInfo>
+      Accogliamo con favore i vostri feedback e suggerimenti. Si prega di inviarli a info@cusimontenapoleone.com. Tutte le comunicazioni inviate a Cusi saranno trattate in conformità con la nostra Informativa sulla privacy.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Limitazione di responsabilità</GtaRegular16>
+    <GtaLightLightInfo>
+      Cusi si impegna a fornire informazioni precise e complete attraverso tale piattaforma, tuttavia, non può garantire la completezza o l'accuratezza dei contenuti. Inoltre, non assumiamo responsabilità per eventuali danni derivanti dall'utilizzo delle Piattaforme o dall'accesso ai contenuti.
+      Non garantiamo che gli aspetti funzionali e/o tecnici delle Piattaforme o del nostro materiale saranno privi di errori, né che i server che rendono disponibili le Piattaforme saranno esenti da virus o altri componenti dannosi. Nel caso in cui l'utilizzo delle Piattaforme causasse la necessità di assistenza o la sostituzione di beni o dati, Cusi non sarà responsabile di tali costi.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Nota sui marchi e il diritto d'autore</GtaRegular16>
+    <GtaLightLightInfo>
+      Tutti i marchi e i contenuti presenti sulle Piattaforme sono di proprietà di Cusi o utilizzati con autorizzazione. È severamente vietato utilizzare tali marchi o contenuti senza il nostro consenso scritto.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Link e collegamenti</GtaRegular16>
+    <GtaLightLightInfo>
+      Le Piattaforme possono contenere collegamenti a siti web di terze parti. Cusi non è responsabile dei contenuti o delle pratiche di privacy di tali siti. L'accesso a tali siti avviene a proprio rischio.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Risoluzione e sospensione</GtaRegular16>
+    <GtaLightLightInfo>
+      Cusi si riserva il diritto di terminare o sospendere l'accesso alla Piattaforma per violazioni dei presenti Termini di utilizzo o per altri motivi a nostra discrezione.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Disposizioni generali</GtaRegular16>
+    <GtaLightLightInfo>
+      I presenti Termini di utilizzo costituiscono l'accordo completo tra voi e Cusi per l'utilizzo delle Piattaforme. Qualsiasi modifica o rinuncia deve essere effettuata per iscritto e firmata da entrambe le parti.
+    </GtaLightLightInfo>
+  </div>
+  <div>
+    <GtaRegular16>Legge applicabile e foro competente</GtaRegular16>
+    <GtaLightLightInfo>
+      I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale.
+    </GtaLightLightInfo>
+  </div>
+</>
+
         );
 
 
-      case 'Privacy Policy':
-        return (
-          <>
-            <GtaRegular16>Privacy Policy</GtaRegular16>
-            <GtaLightLightInfo>
-            Questa Informativa descrive ampiamente le pratiche che abbiamo adottato
-            In questa pagina si descrivono le modalità di gestione del sito in riferimento al trattamento dei dati personali degli utenti che lo consultano. Il trattamento si basa sempre su principi di liceità e correttezza in ottemperanza a tutte le vigenti normative e vengono adottate idonee misure di sicurezza a protezione dei dati. Tale policy privacy è data anche come breve informativa ai sensi dell’art.13 D. Lgs. 196/2003 e ai sensi dell’ art. 13 GDPR 679/ 2016 Regolamento Europeo in materia di privacy, nonché ai sensi del Provvedimento in materia di cookie n. 229 dell’8 maggio 2014, si desidera informare i visitatori del sito circa l’utilizzo dei dati inseriti e dei cookie utilizzati dal sito stesso. L’informativa è resa anche ai sensi della Raccomandazione n. 2/2001 adottata dal Gruppo di lavoro istituito dall’art. 29 della direttiva n. 95/46/CE. a coloro che interagiscono con i servizi web di questo sito, al fine della protezione dei dati personali, accessibili per via telematica a partire dall’indirizzo: Utilizzando uno qualsiasi dei nostri servizi e/o accettando la presente Informativa, per esempio nell’ambito della registrazione a uno dei nostri servizi, acconsenti alla raccolta e all’uso delle Informazioni personali come descritto nella presente Informativa.
+        case 'Conditions Of Sales':
+          return (
+  <>
+    <div>
+      <GtaRegular16>CONDIZIONI DI VENDITA DI CUSI</GtaRegular16>
+      <GtaLightLightInfo>
+        Cusi Condizioni di Vendita
+        Ultimo aggiornamento: Gennaio 2024<br/><br/>
+      </GtaLightLightInfo>
+    </div>
+  
+    <div>
+      <GtaRegular16>    Informazioni su Cusi e i presenti Termini di utilizzo</GtaRegular16>
+  
+      <GtaLightLightInfo>
+  
+        Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale rappresentante p.t. della società:<br/>      <br/>
+        CUSI MONTENAPOLEONE S.r.l.
+        <br/> sede legale: Milano (MI), Via Montenapoleone, 21/A
+        <br/> P.Iva 01932840182
+        <br/>mail: info@cusimontenapoleone.com
+        <br/>      <br/>
+        I presenti termini di utilizzo ("Termini di utilizzo") regolano l'utilizzo delle Piattaforme di Cusi. Con l'accesso e l'utilizzo delle Piattaforme, manifestate il vostro consenso e accettazione dei presenti Termini di utilizzo. In caso di disaccordo con tali Termini, non siete autorizzati a utilizzare le Piattaforme.
+      </GtaLightLightInfo>
+    </div>
+  
+    <div>
+      <GtaRegular16>Aggiornamenti ai presenti Termini di utilizzo</GtaRegular16>
+      <GtaLightLightInfo>
+        Periodicamente, potremmo apportare modifiche ai presenti Termini di utilizzo. Vi invitiamo a controllare regolarmente per restare aggiornati. L'ultima versione sarà sempre disponibile sulle Piattaforme e diventerà efficace immediatamente dopo la pubblicazione. L'utilizzo continuato delle Piattaforme costituirà l'accettazione di tali modifiche.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Informazioni sui nostri servizi di hosting</GtaRegular16>
+      <GtaLightLightInfo>
+        I servizi di hosting per il sito web di Cusi sono forniti da Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>La nostra informativa sulla privacy</GtaRegular16>
+      <GtaLightLightInfo>
+        La nostra prassi di raccolta dei dati all’interno della piattaforma eCommerce Cusi è disciplinata dai termine della nostra Informativa sulla privacy resa disponibile da Iubenda. Vi invitiamo a leggerla per comprendere come trattiamo i vostri dati.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>e-Commerce di Cusi – Condizioni di vendita</GtaRegular16>
+      <GtaLightLightInfo>
+        I clienti che effettuano acquisti online attraverso il nostro e-commerce devono consultare le Condizioni di vendita, che regolano i termini e le condizioni di tali transazioni.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Utilizzo dei contenuti sulle Piattaforme</GtaRegular16>
+      <GtaLightLightInfo>
+        Cusi offre informazioni sui propri prodotti e servizi attraverso tale piattaforma per uso personale dei visitatori. Le rappresentazioni visive dei prodotti sono accuratamente create, tuttavia, possono verificarsi lievi variazioni nei colori o nel design. Si consiglia di visitare i nostri punti vendita o contattarci direttamente per maggiori informazioni prima di effettuare un acquisto.
+        Potete scaricare o stampare i contenuti dalle Piattaforme esclusivamente per uso personale, non commerciale, a condizione che vengano mantenuti intatti i diritti di proprietà intellettuale e non vengano alterate le note relative ai diritti.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Comunicazioni e feedback</GtaRegular16>
+      <GtaLightLightInfo>
+        Accogliamo con favore i vostri feedback e suggerimenti. Si prega di inviarli a info@cusimontenapoleone.com. Tutte le comunicazioni inviate a Cusi saranno trattate in conformità con la nostra Informativa sulla privacy.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Limitazione di responsabilità</GtaRegular16>
+      <GtaLightLightInfo>
+        Cusi si impegna a fornire informazioni precise e complete attraverso tale piattaforma, tuttavia, non può garantire la completezza o l'accuratezza dei contenuti. Inoltre, non assumiamo responsabilità per eventuali danni derivanti dall'utilizzo delle Piattaforme o dall'accesso ai contenuti.
+        Non garantiamo che gli aspetti funzionali e/o tecnici delle Piattaforme o del nostro materiale saranno privi di errori, né che i server che rendono disponibili le Piattaforme saranno esenti da virus o altri componenti dannosi. Nel caso in cui l'utilizzo delle Piattaforme causasse la necessità di assistenza o la sostituzione di beni o dati, Cusi non sarà responsabile di tali costi.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Nota sui marchi e il diritto d'autore</GtaRegular16>
+      <GtaLightLightInfo>
+        Tutti i marchi e i contenuti presenti sulle Piattaforme sono di proprietà di Cusi o utilizzati con autorizzazione. È severamente vietato utilizzare tali marchi o contenuti senza il nostro consenso scritto.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Link e collegamenti</GtaRegular16>
+      <GtaLightLightInfo>
+        Le Piattaforme possono contenere collegamenti a siti web di terze parti. Cusi non è responsabile dei contenuti o delle pratiche di privacy di tali siti. L'accesso a tali siti avviene a proprio rischio.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Risoluzione e sospensione</GtaRegular16>
+      <GtaLightLightInfo>
+        Cusi si riserva il diritto di terminare o sospendere l'accesso alla Piattaforma per violazioni dei presenti Termini di utilizzo o per altri motivi a nostra discrezione.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Disposizioni generali</GtaRegular16>
+      <GtaLightLightInfo>
+        I presenti Termini di utilizzo costituiscono l'accordo completo tra voi e Cusi per l'utilizzo delle Piattaforme. Qualsiasi modifica o rinuncia deve essere effettuata per iscritto e firmata da entrambe le parti.
+      </GtaLightLightInfo>
+    </div>
+    <div>
+      <GtaRegular16>Legge applicabile e foro competente</GtaRegular16>
+      <GtaLightLightInfo>
+        I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale.
+      </GtaLightLightInfo>
+    </div>
+  </>
+  
+          );
 
-            Questa Informativa descrive ampiamente le pratiche che abbiamo adottato
-            </GtaLightLightInfo>
-            <h1>INFORMAZIONI PERSONALI CHE RACCOGLIAMO</h1>
-            <GtaLightLightInfo>
-            In ogni occasione di contatto o interazione con l’ospite e in tutti gli altri aspetti del nostro lavoro, possiamo raccogliere delle informazioni personali. Queste informazioni personali possono includere: le tue informazioni di contatto; informazioni caratteristiche personali, nazionalità, documenti di identità, informazioni di pagamento, così come dettagli di fatturazione e del conto relativi alla fatturazione elettronica; preferenze, previo consenso scritto, riguardo a marketing e comunicazione e possiamo inviarti informazioni commerciali previo tuo consenso espresso.
-            </GtaLightLightInfo>
-            <h1>FINALITA' DI TRATTAMENTO</h1>
-            <GtaLightLightInfo>
-            Il trattamento dei dati è finalizzato per le seguenti finalità:
-            alla gestione dei rapporti con la clientela (emissione di fatture, preventivi), a eseguire eventuali obblighi contrattuali, alla gestione del contenzioso e nonché ad adempiere agli obblighi normativi, in particolare quelli contabili e fiscali;
-
-            2a) Inerenti al servizio:
-            all’invio (previo Suo consenso scritto) di offerte promozionali sui nostri servizi e sulle offerte praticate nonché di auguri a mezzo posta ordinaria o tramite fax o email;
-            Di richieste tecniche per confezionare, completare, modificare o riparare articoli di gioielleria a piacimento del cliente e secondo la sua ordinazione, a mezzo telefonico, mail, fax
-
-            2b) programma di ricevuta elettronica:
-            possiamo automaticamente iscriverti al nostro programma di ricevuta elettronica e utilizzare il tuo indirizzo e-mail per inviarti fatture o ricevute fiscali, o documenti relativi al tuo acquisto. È tua responsabilità assicurarti che l’indirizzo e-mail in nostro possesso sia quello corretto (e preferito).
-            Possiamo utilizzare il tuo indirizzo di posta elettronica per inviarti, previo consenso scritto, le nostre newletter, i nostri auguri per le festività.            
-            </GtaLightLightInfo>
-            <h1>ULTERIORI FINALITà</h1>
-
-            <GtaLightLightInfo>
-            I sistemi informatici e le procedure software preposte al funzionamento di questo sito web acquisiscono, nel corso del loro normale esercizio alcuni dati personali la cui trasmissione è implicita nell’uso dei protocolli di comunicazione di internet. Tali informazioni non sono raccolte per essere associate a interessati identificati, ma che per loro stessa natura potrebbero, attraverso elaborazioni ed associazioni con dati detenuti da terzi, permettere di identificare gli utenti.
-In questa categoria di dati rientrano gli indirizzi IP o i nomi a dominio dei computer utilizzati dagli utenti che si connettono al sito, gli indirizzi in notazione URI (Uniform resource Identifier) delle risorse richieste, l’orario della richiesta, il metodo utilizzato nel sottoporre la richiesta al server, la dimensione del file ottenuto in risposta, il codice numerico indicante lo stato della risposta data dal server (buon fine, errore….) ed altri parametri relativi al sistema operativo e all’ambiente informatico dell’utente.
-Questi dati vengono utilizzati al solo fine di ricavare informazioni statistiche anonime sull’uso del sito e per controllarne il corretto funzionamento e vengono cancellate immediatamente dopo l’elaborazione. I dati potrebbero, altresì, essere utilizzati per l’accertamento di responsabilità in caso di ipotetici reati informatici ai danni del sito.          
-            </GtaLightLightInfo>
-
-            <h1>IDENTITA’ DEL TITOLARE DEL TRATTAMENTO</h1>
-
-            <GtaLightLightInfo>
-            Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale
-rappresentante p.t. della società:<br/><br/>
-
-CUSI MONTENAPOLEONE S.r.l.<br/>
-con sede legale:<br/>
-MIlano (MI), Via Montenapoleone, 21/A<br/>
-P.Iva 01932840182,<br/>
-mail: info@cusimontenapoleone.com<br/><br/>
-
-Il Titolare del trattamento garantisce la sicurezza, la riservatezza e la protezione di cui sono in possesso, in qualsiasi fase del processo di trattamento degli stessi. I dati raccolti vengono utilizzati nel rispetto della normativa vigente in materia di privacy (D.Lgs. 196/ 2003 e GDPR 679/2016)
-            </GtaLightLightInfo>
-
-
-
-
-
-          </>
-        );
-      case 'FAQ':
-        return (
-          <>
-            <GtaRegular16>FAQ</GtaRegular16>
-            <GtaLightLightInfo>
-              Explore our frequently asked questions to find answers to common queries. Whether it's about our products,
-              shipping, or returns, you'll likely find the information you need here.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              If your question isn't covered in our FAQ section, please don't hesitate to reach out to our customer
-              service team. We're here to assist you.
-            </GtaLightLightInfo>
-          </>
-        );
-      case 'Contact':
-        return (
-          <>
-            <GtaRegular16>Contact</GtaRegular16>
-            <GtaLightLightInfo>
-              Our customer service team is here to assist you. If you have any questions, concerns, or need personalized
-              assistance, please don't hesitate to contact us.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond
-              promptly and ensure your experience with us is seamless.
-            </GtaLightLightInfo>
-          </>
-        );
       // Aggiungi altri casi per le voci rimanenti
       default:
         return null;
@@ -356,27 +449,20 @@ Il Titolare del trattamento garantisce la sicurezza, la riservatezza e la protez
           <GtaRegular>Legal</GtaRegular>
 
           <MenuItem
-            className={selectedItem === 'Shopping & Returns' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Shopping & Returns')}
+            className={selectedItem === 'Terms & Conditions' ? 'selected' : ''}
+            onClick={() => handleMenuItemClick('Terms & Conditions')}
           >
-            <li> <GtaRegular16Category> CONDIZIONI DI VENDITA </GtaRegular16Category></li>
+            <li> <GtaRegular16Category> TERMS & CONDITIONS </GtaRegular16Category></li>
+
           </MenuItem>
 
           <MenuItem
-            className={selectedItem === 'Cookie Policy' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Cookie Policy')}
+            className={selectedItem === 'Conditions Of Sales' ? 'selected' : ''}
+            onClick={() => handleMenuItemClick('Conditions Of Sales')}
           >
-            <li><GtaRegular16Category> COOKIE POLICY </GtaRegular16Category></li>
+            <li><GtaRegular16Category> CONDITIONS OF SALES </GtaRegular16Category></li>
           </MenuItem>
 
-
-
-          <MenuItem
-            className={selectedItem === 'Privacy Policy' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Privacy Policy')}
-          >
-            <li> <GtaRegular16Category> PRIVACY POLICY </GtaRegular16Category></li>
-          </MenuItem>
 
         </Menu>
         <Content>{getContent()}</Content>
