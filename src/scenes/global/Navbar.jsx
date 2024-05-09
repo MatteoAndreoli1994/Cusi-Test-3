@@ -783,7 +783,10 @@ useEffect(() => {
 
   const handleHome = () => {
     setIsHovered(false)
-
+    setIsHoveredSearch(false); 
+    setIsHoveredAbout(false);
+     setIsHoveredCollections(false);
+      setIsHovered(false);
     
     navigate('/');
   };
@@ -1056,13 +1059,13 @@ useEffect(() => {
                     Shop
                 </Typography2>
             </li>
-            <li>    
-                <Typography2 onMouseEnter={() => { setIsHoveredSearch(false); setIsHoveredCollections(true); setIsHovered(false); setIsHoveredAbout(false);}}>
+            <li onMouseEnter={() => { setIsHoveredSearch(false); setIsHoveredCollections(true); setIsHovered(false); setIsHoveredAbout(false);}}>    
+                <Typography2 >
                     Collections
                 </Typography2>
             </li>
-            <li>    
-                <Typography2 onMouseEnter={() => {setIsHoveredSearch(false); setIsHoveredAbout(true); setIsHoveredCollections(false); setIsHovered(false); } }>
+            <li onMouseEnter={() => {setIsHoveredSearch(false); setIsHoveredAbout(true); setIsHoveredCollections(false); setIsHovered(false); } }>    
+                <Typography2 >
                     About
                 </Typography2>
             </li>
@@ -1083,8 +1086,8 @@ useEffect(() => {
         
         <BoxDestra >
           
-          <IconButton sx={{ color: "black" }} >
-            <LensIconDesktop onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } } onClick={() => setIsHoveredSearch(prevState => !prevState)}/>
+          <IconButton sx={{ color: "black" }} onClick={() => setIsHoveredSearch(prevState => !prevState)} onMouseEnter={() => {setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false); } }>
+            <LensIconDesktop  />
           </IconButton>
 
 
@@ -1110,7 +1113,7 @@ useEffect(() => {
             }}
           >
             <IconButton
-              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
+              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);  setIsHoveredSearch(false); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false);     } }
               sx={{ color: "black" }}
             >
               <ShoppingBagOutlined2 />
@@ -1164,7 +1167,8 @@ useEffect(() => {
           >
             
             <IconButton
-              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);      } }
+              onClick={() => { dispatch(setIsCartOpen({}));  setIsHoveredSearch(false);  setIsHoveredSearch(false);  setIsHoveredSearch(false); setIsHoveredAbout(false); setIsHoveredCollections(false); setIsHovered(false);   } }
+
               sx={{ color: "black" }}
             >
               <ShoppingBagOutlined2 />
