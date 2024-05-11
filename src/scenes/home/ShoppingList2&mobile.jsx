@@ -110,7 +110,11 @@ margin-top:1%;
 const ItemDiv = styled.div`
 display:flex;
 height:100%;
-width:97%;
+width:95%;
+
+@media(max-width: 900px){
+  width:90%;
+}
 
 
 
@@ -320,19 +324,7 @@ font-size: 13px;
     }
 
 `;
-const Container2 = styled.div`
-width:100%;
-height:auto;
-display: flex;
-flex-direction: column;
 
-
-align-items:center;
-
-
-
-
-`;
 
 const Column = styled.div`
 
@@ -348,32 +340,7 @@ align-items:center;
 
 `;
 
-const ContenitoreDeiProdotti = styled.div`
-  width: 200vw; /* Imposta una larghezza fissa maggiore del 100% per far uscire il contenitore dallo schermo */
-  height: auto;
-  top: 0;
-  margin: auto;
-  display: flex;
-  overflow-x: auto; /* Abilita lo scorrimento orizzontale */
-  justify-content: center;
-  background-color: orange;
-  position: relative; /* Aggiungi posizione relativa per posizionare il contenitore */
-  left: -10%; /* Posiziona il contenitore a sinistra del 10% rispetto alla sua posizione originale */
-`;
 
-const ContenitorePerInfo = styled.div`
-margin-top:2%;
-margin-bottom:3%;
-
-left: 0;
-width: 100%;
-height: 100%;
-overflow: hidden;
-
-z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
-
-
-`;
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
@@ -385,7 +352,7 @@ const Containertest = styled.div`
   white-space: nowrap; /* evita il wrapping dei figli */
   overflow-x: auto; /* barra di scorrimento orizzontale automatica */
 
-  
+
   /* Nascondi la barra di scorrimento sui browser WebKit */
   &::-webkit-scrollbar {
     display: none;
