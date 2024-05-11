@@ -81,6 +81,7 @@ margin-bottom:12.5%;
 }
 
 
+
 `;
 const MarginDiv = styled.div`
 
@@ -349,7 +350,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction: column-reverse;
-
+width: 100%;
 
 }
 

@@ -134,12 +134,17 @@ margin-bottom:6.5%;
 
 align-items:center;
 
-min-height: 70vh;
+min-height: 50vh;
 user-select: none;
 -webkit-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 
+
+
+@media(max-width: 480px){
+  margin-bottom:6.5%;
+}
 
 
 
