@@ -104,6 +104,9 @@ justify-content: center; // Aggiungi questa riga per centrare il div orizzontalm
 
 
 margin-top:1%;
+@media(max-width: 1200px){
+  width: 90%;
+}
 
 @media(max-width: 900px){
   width: 100%;

@@ -293,6 +293,12 @@ align-items:center;
 
 
 
+@media(max-width: 1200px){
+
+
+  width: 90%;
+  }
+
 @media(max-width: 680px){
 
 flex-direction:column;
@@ -310,6 +316,12 @@ height:auto;
 align-items:center;
 
 
+@media(max-width: 1200px){
+
+
+  width: 90%;
+  
+  }
 
 @media(max-width: 680px){
 
@@ -328,7 +340,12 @@ height:auto;
 margin-top:4%;
 align-items:center;
 
+@media(max-width: 1200px){
 
+
+  width: 90%;
+  
+  }
 
 @media(max-width: 680px){
 
@@ -348,7 +365,12 @@ height:auto;
 
 align-items:center;
 
+@media(max-width: 1200px){
 
+
+  width: 90%;
+  
+  }
 
 @media(max-width: 680px){
 
