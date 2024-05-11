@@ -177,7 +177,7 @@ const ShopButton = styled.button`
 position: absolute;
 height: 8%;
 width: 40%;
-top: 85%;
+top: 84%;
 
 left: 6%;
 display: flex;
@@ -208,7 +208,7 @@ background-color: #333;
 const Info = styled.div`
 position: absolute;
 height: 7%;
-top: 73%;
+top: 69%;
 left: 6%;
 display: flex;
 color: white;
