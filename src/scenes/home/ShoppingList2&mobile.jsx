@@ -94,7 +94,7 @@ margin-bottom:1%;
 `;
 const ItemDivContenitore = styled.div`
 width: 85%;
-height: auto;
+min-height: 70vh;
 
 
 display: flex; // Aggiungi questa riga per centrare il div verticalmente
@@ -104,12 +104,15 @@ justify-content: center; // Aggiungi questa riga per centrare il div orizzontalm
 
 
 margin-top:1%;
+
 @media(max-width: 1200px){
   width: 90%;
+  min-height: 50vh;
 }
 
 @media(max-width: 900px){
   width: 100%;
+  min-height: 45vh;
 }
 
 
