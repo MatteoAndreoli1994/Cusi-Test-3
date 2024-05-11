@@ -96,7 +96,6 @@ width: 85%;
 height: auto;
 
 
-margin: auto; // Aggiungi questa riga per centrare il div orizzontalmente
 display: flex; // Aggiungi questa riga per centrare il div verticalmente
 align-items: center; // Aggiungi questa riga per centrare il div verticalmente
 justify-content: center; // Aggiungi questa riga per centrare il div orizzontalmente
@@ -339,7 +338,7 @@ const Column = styled.div`
 
 
 display: flex;
-
+width:100%;
 
 flex-direction:column;
 align-items:center;
@@ -386,6 +385,7 @@ const Containertest = styled.div`
   white-space: nowrap; /* evita il wrapping dei figli */
   overflow-x: auto; /* barra di scorrimento orizzontale automatica */
   background-color:orange;
+  
   /* Nascondi la barra di scorrimento sui browser WebKit */
   &::-webkit-scrollbar {
     display: none;
@@ -396,7 +396,7 @@ const Containertest = styled.div`
 
 
 const InnerDiv = styled.div`
-  width: 25%; /* 50% della larghezza dello schermo */
+  width: 33%; /* 50% della larghezza dello schermo */
   height: auto;
   display: inline-block;
   margin-top: 3%;
@@ -559,8 +559,7 @@ const ShoppingList = () => {
 
     <ItemDivContenitore>
       <ItemDiv
-        style={{ transform: `translateX(${sliderOffset}px)` }}
-        key={contentKey} // Aggiunge la chiave del contenuto come proprietà
+
       >
 
 

@@ -29,21 +29,21 @@ const Item = ({ item, width }) => {
     return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
   };
 
-const DivItem = styled.div`
-display:flex;
-flex-direction: column;
-align-items: center;
+  const DivItem = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height:100%;
+  
+  max-width:100px;
+  
+  position:relative;
+  
 
-height:100%;
-
-width:100%;
-z-index: 99;
-overflow:hidden;
-
-
-
-
-`;
+  
+  
+  `;
 
 const InfoProdotto = styled.div`
   height: 100%;
@@ -65,10 +65,10 @@ margin: 0%;
 font-weight: lighter;
 
 @media (max-width: 1200px) {
-  font-size: 17px; 
+  font-size: 14px; 
 }
 @media(max-width: 680px){
-  font-size: 15px; 
+  font-size: 13px; 
 }
 
 `;
