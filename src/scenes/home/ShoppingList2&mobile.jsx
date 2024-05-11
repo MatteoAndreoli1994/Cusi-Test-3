@@ -144,7 +144,7 @@ user-select: none;
 
 
 @media(max-width: 480px){
-  margin-bottom:6.5%;
+  margin-bottom:8.5%;
 }
 
 
