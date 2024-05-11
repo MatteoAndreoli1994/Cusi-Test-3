@@ -237,6 +237,9 @@ margin-top:0;
 @media(max-width: 900px){
 font-size: 35px; 
 }
+@media(max-width: 680px){
+  font-size: 30px; 
+  }
 `;
 const Gta = styled.p`
 font-family: 'GTAmericaLight';

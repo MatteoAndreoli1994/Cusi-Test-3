@@ -454,6 +454,10 @@ margin-bottom: 0;
 font-size: 35px; 
 
 }
+@media(max-width: 680px){
+  font-size: 30px; 
+  
+  }
 
 `;
 const ABC24 = styled.p`
