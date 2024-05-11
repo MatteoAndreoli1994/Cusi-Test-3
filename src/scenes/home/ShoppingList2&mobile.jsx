@@ -88,7 +88,8 @@ user-select: none;
 
 @media(max-width: 900px){
 margin-bottom:0%;
-margin-top:3%;
+margin-top:2%;
+margin-bottom:1%;
 }
 `;
 const ItemDivContenitore = styled.div`
