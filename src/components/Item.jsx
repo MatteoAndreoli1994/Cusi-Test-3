@@ -25,34 +25,13 @@ width:100%;
 
 `;
 
-const InfoProdotto = styled.div`
-  height: 15%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Aggiornato da "flex-align" a "flex-start" */
-  justify-content: flex-end; /* Aggiunto per centrare verticalmente */
-`;
 
 
 const DivImmagine = styled.div`
 height:100%;
 
 `;
-const ABC20 = styled.p`
-font-family: 'ABCGaisyr-Regular';
-font-size: 20px; 
-margin: 0%;
 
-font-weight: lighter;
-
-`;
-const ABC16 = styled.p`
-font-family: 'ABCGaisyr-Regular';
-font-size: 15px; 
-margin: 0;
-text-align: center;
-font-weight: lighter;
-`;
 
 
 const Item = ({ item, width }) => {

@@ -163,7 +163,7 @@ display: flex;
 width: 100%;
 height: 100%;
 overflow: hidden;
-
+background-color:gray;
 `;
 
 
@@ -173,7 +173,7 @@ height: 100%;
 object-fit: cover;
 transition: transform 1s ease-in-out;
 transform-origin: center center;
-
+transform: scale(1.1);
 
 
 ${DivImmagineCategoria2}:hover & {
@@ -384,7 +384,7 @@ const Containertest = styled.div`
   width: 100%; /* 2 volte il 100% della larghezza dello schermo */
   white-space: nowrap; /* evita il wrapping dei figli */
   overflow-x: auto; /* barra di scorrimento orizzontale automatica */
-  background-color:orange;
+
   
   /* Nascondi la barra di scorrimento sui browser WebKit */
   &::-webkit-scrollbar {
@@ -400,6 +400,12 @@ const InnerDiv = styled.div`
   height: auto;
   display: inline-block;
   margin-top: 3%;
+  margin-left:0.2%;
+  margin-right:0.2%;
+
+  @media(max-width: 680px){
+    width: 50%; /* 50% della larghezza dello schermo */
+  }
 
 
 `;
