@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazyload';
+
 const DivItem = styled.div`
 display:flex;
 flex-direction: column;
@@ -24,6 +26,10 @@ width:100%;
 
 
 `;
+const LazyLoadWrapper = styled.div`
+opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+transition: opacity 1s ease-in-out;
+`;
 
 
 
@@ -36,6 +42,10 @@ height:100%;
 
 const Item = ({ item, width }) => {
   const navigate = useNavigate();
+  const [loaded, setLoaded] = React.useState(false);
+  const handleContentLoad = () => {
+    setLoaded(true);
+  };
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
@@ -53,6 +63,9 @@ const Item = ({ item, width }) => {
 
 
   return (
+    <LazyLoad once>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
     <DivItem >
       <DivImmagine
         position="relative"
@@ -94,6 +107,9 @@ const Item = ({ item, width }) => {
       </DivImmagine>
 
     </DivItem>
+
+    </LazyLoadWrapper>
+    </LazyLoad >
   );
 };
 

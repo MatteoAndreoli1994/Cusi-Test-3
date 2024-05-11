@@ -112,7 +112,7 @@ margin-top:1%;
 
 @media(max-width: 900px){
   width: 100%;
-  min-height: 45vh;
+  min-height: 42vh;
 }
 
 
@@ -343,6 +343,7 @@ align-items:center;
 
 
 `;
+
 
 
 const LazyLoadWrapper = styled.div`
