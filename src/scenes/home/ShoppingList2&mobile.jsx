@@ -92,7 +92,7 @@ margin-top:3%;
 }
 `;
 const ItemDivContenitore = styled.div`
-width: 100%;
+width: 85%;
 height: auto;
 
 
@@ -103,6 +103,10 @@ justify-content: center; // Aggiungi questa riga per centrare il div orizzontalm
 
 
 margin-top:1%;
+
+@media(max-width: 900px){
+  width: 100%;
+}
 
 
 `;
@@ -143,23 +147,6 @@ user-select: none;
 `;
 
 
-const DivImmaginiProdotti = styled.div`
-display:flex;
-width: 15%;
-height: 100%;
-
-
-margin-left:0.5%;
-margin-right:0.5%;
-margin-top:1%;
-margin-bottom:0%;
-
-
-
-
-
-`;
-
 
 const DivImmagineCategoria2 = styled.div`
 position: relative;
@@ -191,6 +178,7 @@ position: absolute;
 height: 8%;
 width: 40%;
 top: 85%;
+
 left: 6%;
 display: flex;
 background-color: black;
@@ -209,7 +197,7 @@ background-color: #333;
 @media(max-width: 1200px){
 
   height: 10%;
-  width: 40%;
+  width: 60%;
 
   }
 
@@ -368,15 +356,15 @@ const Containertest = styled.div`
 
 
 const InnerDiv = styled.div`
-  width: 33%; /* 50% della larghezza dello schermo */
+  width: 32%; /* 50% della larghezza dello schermo */
   height: auto;
   display: inline-block;
   margin-top: 3%;
-
+  margin-right:1.5%;
 
   @media(max-width: 680px){
-    width: 50%; /* 50% della larghezza dello schermo */
- 
+    width: 49%; /* 50% della larghezza dello schermo */
+    margin-right:1.5%;
   
   }
 
