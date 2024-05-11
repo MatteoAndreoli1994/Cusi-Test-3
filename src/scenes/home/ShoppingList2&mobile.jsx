@@ -62,7 +62,7 @@ width:140px;
 
 @media(max-width: 680px){
   width:20%;
-  padding: 6px 11.5%;
+  padding: 6px 11%;
 
   &:not(:last-child) {
     margin-right: 1.5%;
@@ -117,7 +117,7 @@ height:100%;
 width:95%;
 
 @media(max-width: 900px){
-  width:90%;
+  width:85%;
 }
 
 

@@ -296,7 +296,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction:column;
-width: 100%;
+width: 95%;
 }
 
 
@@ -333,7 +333,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction:column-reverse;
-width: 100%;
+width: 95%;
 
 
 }
@@ -353,7 +353,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction: column-reverse;
-width: 100%;
+width: 95%;
 
 }
 
