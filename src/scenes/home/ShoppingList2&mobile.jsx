@@ -94,7 +94,7 @@ margin-top:3%;
 const ItemDivContenitore = styled.div`
 width: 100%;
 height: auto;
-background-color:orange;
+
 
 display: flex; // Aggiungi questa riga per centrare il div verticalmente
 align-items: center; // Aggiungi questa riga per centrare il div verticalmente
