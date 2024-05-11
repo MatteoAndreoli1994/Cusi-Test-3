@@ -402,7 +402,7 @@ width:45%;
 
 @media(max-width: 680px){
 margin-top:9%;
-margin-bottom:8%;
+margin-bottom:0%;
 width:50%;
 
 }
