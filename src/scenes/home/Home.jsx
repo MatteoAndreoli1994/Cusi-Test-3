@@ -296,7 +296,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction:column;
-
+width: 100%;
 }
 
 
@@ -314,6 +314,7 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction:column;
+width: 100%;
 
 }
 
@@ -332,6 +333,8 @@ align-items:center;
 @media(max-width: 680px){
 
 flex-direction:column-reverse;
+width: 100%;
+
 
 }
 
@@ -366,7 +369,7 @@ margin-left:10%;
 margin-bottom:10%;
 
 @media(max-width:680px){
-width:100%;
+width:90%;
 align-items:center;
 margin-left:0%;
 margin-bottom:5%;
