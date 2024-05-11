@@ -364,7 +364,7 @@ const Containertest = styled.div`
   }
 
   @media(max-width:900px){
-    margin-top: 5%;
+
   }
 
 
@@ -554,8 +554,10 @@ const ShoppingList = () => {
   <>
     <LazyLoad once>
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+        
         {earringsItems.length > 0 ? (
           <Containertest>
+            
             <OrangeDiv>
               <DivImmagineCategoria2>
                 <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
