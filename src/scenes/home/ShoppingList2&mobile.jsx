@@ -62,7 +62,7 @@ width:140px;
 
 @media(max-width: 680px){
   width:20%;
-  padding: 8px 40px;
+  padding: 6px 11.5%;
 
   &:not(:last-child) {
     margin-right: 1.5%;
@@ -82,13 +82,13 @@ justify-content:center;
 
 margin-top:0.8%;
 
-width:100%;
+width:77%;
 user-select: none;
 
 
 @media(max-width: 900px){
 margin-bottom:0%;
-
+margin-top:3%;
 }
 `;
 const ItemDivContenitore = styled.div`
@@ -178,6 +178,7 @@ object-fit: cover;
 transition: transform 1s ease-in-out;
 transform-origin: center center;
 transform: scale(1.1);
+
 
 
 ${DivImmagineCategoria2}:hover & {
@@ -358,6 +359,10 @@ const Containertest = styled.div`
     display: none;
   }
 
+  @media(max-width:900px){
+    margin-top: 5%;
+  }
+
 
 `;
 
@@ -367,13 +372,12 @@ const InnerDiv = styled.div`
   height: auto;
   display: inline-block;
   margin-top: 3%;
-  margin-left:0.2%;
-  margin-right:0.2%;
+
 
   @media(max-width: 680px){
-    width: 85%; /* 50% della larghezza dello schermo */
-    margin-left:1%;
-    margin-right:1%;
+    width: 50%; /* 50% della larghezza dello schermo */
+ 
+  
   }
 
 
@@ -389,6 +393,7 @@ const OrangeDiv = styled(InnerDiv)`
 
 const GreenDiv = styled(InnerDiv)`
   background-color: green;
+
 
 
 `;
