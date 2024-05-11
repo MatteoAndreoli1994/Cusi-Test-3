@@ -40,7 +40,7 @@ width:100%;
 z-index: 99;
 
 
-margin-bottom:1%;
+
 
 
 `;

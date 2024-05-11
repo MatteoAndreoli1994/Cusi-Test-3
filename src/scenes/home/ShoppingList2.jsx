@@ -663,8 +663,7 @@ const ShoppingList = () => {
         {value === "earrings" && (
           <>
           <ContenitorePerInfo>
-          <LazyLoad once>
-            <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
 
             <ContenitoreDeiProdotti>
 
@@ -757,8 +756,7 @@ const ShoppingList = () => {
 
             </ContenitoreDeiProdotti>
 
-            </LazyLoadWrapper>
-           </LazyLoad>
+
 
           </ContenitorePerInfo>
           </>

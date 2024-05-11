@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import video2 from '../../assets/video2.mp4';
-import ShoppingList from './ShoppingList2';
+import ShoppingList from './ShoppingList2&mobile';
 import Modella2 from"../../assets/modellasmeraldo.avif";
 import Modella3 from"../../assets/modellazingara.avif";
 import Anello1 from"../../assets/modella2.avif";
@@ -323,7 +323,7 @@ const CollectionDivAbout = styled.div`
 display: flex;
 width: 85%;
 height:auto;
-
+margin-top:4%;
 align-items:center;
 
 
@@ -780,7 +780,7 @@ const Home = () => {
 
     {/* Iconic collection */}
         <IconicCollectionDiv>
-          <ABC>Our Iconic Collection</ABC>
+          <ABC>Our Iconic Collections</ABC>
           <GtaTitle>A meeting between tradition and innovation for real works of art to wear</GtaTitle>
           <CollectionDivBig>
             <Collection1DivIconic>
@@ -869,7 +869,7 @@ const Home = () => {
         
         <Immagine2 src={SelectedItem1White}/>
         <ABC24DUE>Collana Urania </ABC24DUE>
-        <GtaDescription2>Collana Oro Giallo <br/>
+        <GtaDescription2>Yellow Gold Necklace <br/>
         18 ct Urania.
         </GtaDescription2>
         <GtaRegular><HyperLink  onClick={ handleShopClickUrania} style={{ cursor: 'pointer' }} >SHOP NOW</HyperLink></GtaRegular>
