@@ -411,10 +411,11 @@ width:50%;
 const Immagine3 = styled.img`
 width:40%;
 min-height: 10vh;
+
 @media(max-width: 680px){
 margin-top:0%;
 margin-bottom:0%;
-width:55%;
+width:50%;
 
 }
 
