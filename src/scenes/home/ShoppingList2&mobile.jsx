@@ -404,7 +404,9 @@ const InnerDiv = styled.div`
   margin-right:0.2%;
 
   @media(max-width: 680px){
-    width: 50%; /* 50% della larghezza dello schermo */
+    width: 85%; /* 50% della larghezza dello schermo */
+    margin-left:1%;
+    margin-right:1%;
   }
 
 
