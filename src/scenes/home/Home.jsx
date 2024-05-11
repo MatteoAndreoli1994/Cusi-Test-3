@@ -654,7 +654,7 @@ display:none;
 @media(max-width: 680px){
 font-size: 12px; 
 display:flex;
-margin-top:10%;
+margin-top:7%;
 
 `;
 
