@@ -105,11 +105,7 @@ justify-content: center; // Aggiungi questa riga per centrare il div orizzontalm
 
 margin-top:1%;
 
-@media(max-width: 900px){
 
-width: 93%;
-
-}
 `;
 
 const ItemDiv = styled.div`
@@ -117,13 +113,7 @@ display:flex;
 height:100%;
 width:97%;
 
-@media(max-width: 900px){
-  width:87%;
-}
-@media(max-width: 680px){
-  width:82%;
 
-}
 
 `;
 
@@ -162,63 +152,11 @@ margin-top:1%;
 margin-bottom:0%;
 
 
-@media(max-width:900px){
-width: 50%;
-margin-left:0.5%;
-margin-right:0.5%;
-}
+
 
 
 `;
-const DivImmaginiProdottiDesktop = styled(LazyLoad)`
-display:flex;
-width: 30%;
-height: auto;
-margin-left:0.5%;
-margin-right:0.5%;
-margin-top:1%;
 
-
-
-@media(max-width:900px){
-display:none;
-}
-
-
-`;
-const DivInfoProdotti = styled.div`
-display:flex;
-width: 30%;
-min-height: 8vh;
-margin-left:0.5%;
-margin-right:0.5%;
-
-
-justify-content:center;
-
-@media(max-width:900px){
-width: 50%;
-}
-
-
-`;
-const DivInfoProdottiDesktop = styled.div`
-display:flex;
-width: 30%;
-min-height: 8vh;
-margin-left:0.5%;
-margin-right:0.5%;
-
-
-justify-content:center;
-
-
-@media(max-width:900px){
-display:none;
-}
-
-
-`;
 
 const DivImmagineCategoria2 = styled.div`
 position: relative;
@@ -273,20 +211,7 @@ background-color: #333;
 
 
 
-@media(max-width: 900px){
-top: 85%;
-height: 9%;
 
-
-}
-
-@media(max-width: 680px){
-  top: 85%;
-  height: 10%;
-  width: 60%;
-  
-  
-  }
 `;
 const Info = styled.div`
 position: absolute;
@@ -300,15 +225,7 @@ cursor: pointer;
 align-items: center;
 justify-content: center;
 
-@media (max-width: 900px){
-top: 75%;
-left: 7%;
-}
 
-@media (max-width: 680px){
-  top: 73%;
-  left: 7%;
-  }
 
 `;
 //FONT
@@ -332,9 +249,7 @@ margin-top:0.8%;
 text-align: center;
 
 
-@media (max-width: 900px){
-margin-bottom: 3%;
-}
+
 
 
 `;
@@ -378,81 +293,8 @@ font-size: 13px;
 `;
 
 
-const LeftArrow = styled.img`
-cursor: pointer;
-
-position: absolute;
-
-margin-right: 50px;
-margin-top:50px;
 
 
-
-`;
-const CircleBackground = styled.div`
-position: absolute;
-display: flex;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 50px; /* Dimensione maggiore del cerchio */
-height: 50px; /* Dimensione maggiore del cerchio */
-
-border-radius: 50%;
-z-index: -1; /* Imposta uno z-index inferiore rispetto alla freccia */
-
-@media (max-width: 1200px) {
-width: 200%; /* Dimensione maggiore del cerchio */
-height: 200%; /* Dimensione maggiore del cerchio */
-
-}
-`;
-
-
-const RightArrow = styled.img`
-cursor: pointer;
-position: absolute;
-
-margin-left: 50px;
-margin-top:50px;
-`;
-
-// Componente CircleContainer
-const CircleContainer = styled.div`
-position: absolute;
-top: 40%;
-left: 0%;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 9999; /* Imposta un valore z superiore */
-
-@media(max-width: 900px){
-left: 0%;
-top: -8%;
-display:none;
-
-}
-`;
-
-// Componente CircleContainer2
-const CircleContainer2 = styled.div`
-position: absolute;
-top: 40%;
-right: 0%;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 9999; /* Imposta un valore z superiore */
-
-@media(max-width: 900px){
-right: 0%;
-top: -8%;
-display:none;
-}
-`;
 
 const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
@@ -543,7 +385,7 @@ const Containertest = styled.div`
   width: 100%; /* 2 volte il 100% della larghezza dello schermo */
   white-space: nowrap; /* evita il wrapping dei figli */
   overflow-x: auto; /* barra di scorrimento orizzontale automatica */
-
+  background-color:orange;
   /* Nascondi la barra di scorrimento sui browser WebKit */
   &::-webkit-scrollbar {
     display: none;
@@ -554,21 +396,19 @@ const Containertest = styled.div`
 
 
 const InnerDiv = styled.div`
-  width: 31%; /* 50% della larghezza dello schermo */
+  width: 25%; /* 50% della larghezza dello schermo */
   height: auto;
   display: inline-block;
   margin-top: 3%;
 
-  @media(max-width: 900px){
-    width: 45%; /* 50% della larghezza dello schermo */
-  }
+
 `;
 
 const OrangeDiv = styled(InnerDiv)`
 
 
-  margin-right:1%;
-  margin-left:1%;
+
+
 
 `;
 
@@ -730,6 +570,43 @@ const ShoppingList = () => {
 {value === "earrings" && (
   <>
     <LazyLoad once>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+        {earringsItems.length > 0 ? (
+          <Containertest>
+            <OrangeDiv>
+              <DivImmagineCategoria2>
+                <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+                {/* Aggiungi il tuo div qui */}
+                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+              </DivImmagineCategoria2>
+            </OrangeDiv>
+            
+            {/* Renderizza solo i primi tre elementi di earringsItems */}
+            {earringsItems.slice(0, 4).map((item, index) => (
+              <React.Fragment key={index}>
+                <OrangeDiv>
+                  <Column>
+                    <Item item={item}/>
+                    <ItemInfo item={item}/>
+                  </Column>
+                </OrangeDiv>
+              </React.Fragment>
+            ))}
+          </Containertest>
+        ) : (
+          <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+        )}
+      </LazyLoadWrapper>
+    </LazyLoad>
+  </>
+)}
+
+
+
+{value === "bracelets" && (
+  <>
+    <LazyLoad once>
     <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
     {earringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
 
@@ -738,63 +615,7 @@ const ShoppingList = () => {
             <OrangeDiv>
             <DivImmagineCategoria2>
 
-              <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
-
-
-
-              {/* Aggiungi il tuo div qui */}
-              <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-              <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
-
-              </DivImmagineCategoria2>
-              
-              </OrangeDiv>                                  
-              
-
-
-            {/* Renderizza gli elementi solo se earringsItems contiene dati */}
-            {earringsItems.map((item, index) => (
-            <React.Fragment key={index}>
-
-              <OrangeDiv>
-              <Column>
-                <Item item={item}/>
-                <ItemInfo item={item}/>
-              </Column>
-              </OrangeDiv>
-              
-
-
-            </React.Fragment>
-            ))}
-          </Containertest>
-
-
-
-      
-
-      
-    ) : (
-      <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
-    )}
-              </LazyLoadWrapper>
-          </LazyLoad>
-  </>
-)}
-
-
-{value === "bracelets" && (
-  <>
-          <LazyLoad once>
-        <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-    {braceletsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
-
-          <Containertest>
-
-            <OrangeDiv>
-            <DivImmagineCategoria2>
-
-              <LazyLoadedCategory src={braceletsCategory} alt="Categoria bracelets" />
+              <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
 
 
 
@@ -833,12 +654,11 @@ const ShoppingList = () => {
     ) : (
       <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
     )}
-
-          </LazyLoadWrapper>
+              </LazyLoadWrapper>
           </LazyLoad>
   </>
-
 )}
+
 
 {value === "necklaces" && (
   <>
