@@ -124,6 +124,26 @@ const Image = styled.img`
 
   }
 `;
+const ImmagineQuadrataContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%; /* Altezza automatica per mantenere un aspect ratio quadrato */
+`;
+
+const ImmagineQuadrata = styled.img`
+  position: absolute;
+  top: 50%; /* Posiziona l'immagine al centro verticalmente */
+  left: 0;
+  transform: translateY(-50%); /* Sposta l'immagine verso l'alto del 50% della sua altezza */
+  width: 100%;
+  height: auto; /* Altezza automatica per mantenere l'aspect ratio */
+  object-fit: cover; /* Taglia l'immagine per riempire il contenitore */
+  object-position: center; /* Centra l'immagine sia verticalmente che orizzontalmente */
+`;
+
+
+
 
 const Image2 = styled.img`
 
@@ -696,10 +716,16 @@ const ItemDetails = () => {
 
             <ReactSlidy doAfterSlide={updateSlide} slide={actualSlide}>
               {SLIDES.map(src => (
-                <img alt="" key={src} src={src} />
+                <ImmagineQuadrataContainer>
+                  <ImmagineQuadrata alt="" key={src} src={src} />
+                </ImmagineQuadrataContainer>
+
               ))}
             </ReactSlidy>
 
+
+
+            </Image1DivMobile>
             <Dots className="Dots">
             {SLIDES.map((_, index) => {
           return (
@@ -713,8 +739,6 @@ const ItemDetails = () => {
           )
         })}
             </Dots>
-
-            </Image1DivMobile>
 
 
             <Image2Div>
