@@ -499,7 +499,8 @@ const createStyles = isActive => ({
   border: 0,
   color: isActive ? '#333' : '#ccc',
   cursor: 'pointer',
-  fontSize: '32px'
+  fontSize: '32px',
+  margin: 0
 })
 
 
