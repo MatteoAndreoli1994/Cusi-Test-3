@@ -543,6 +543,8 @@ const ItemDetails = () => {
   useEffect(() => {
     getItem();
     getItems();
+    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
+    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
 
 
 
@@ -551,6 +553,8 @@ const ItemDetails = () => {
 
   useEffect(() => {
     setAvailable(item?.attributes?.stripe);
+    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
+    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
 
   }, [item]);
 
@@ -591,8 +595,7 @@ const ItemDetails = () => {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
-    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
-    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
+
   }
 
   async function getItems() {
@@ -604,8 +607,7 @@ const ItemDetails = () => {
     );
     const itemsJson = await items.json();
     setItems(itemsJson.data);
-    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
-    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
+
 
   }
 
