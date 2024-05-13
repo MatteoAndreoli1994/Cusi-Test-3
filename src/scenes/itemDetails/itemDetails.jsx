@@ -29,7 +29,7 @@ const Container = styled.div`
   min-height: 100vh;
   margin-top:120px;
 
-  background-color:green;
+
   justify-content:center;
   display:flex;
 
@@ -38,7 +38,7 @@ const Container = styled.div`
   min-height: 100vh;
   margin-top:120px;
 
-  background-color:green;
+
   justify-content:center;
   display:flex;
   flex-direction:column;
@@ -100,18 +100,17 @@ color: inherit; /* Usa il colore del testo predefinito */
 `;
 
 const Image = styled.img`
-  width: 70%; /* Larghezza al 50% rispetto al container */
-  height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
-  object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
 
-  margin-bottom:5%;
 
   @media(max-width: 1200px){
     margin-bottom:10%;
 
+
+
   }
   @media(max-width: 1000px){
     margin-bottom:12%;
+    
 
   }
 
@@ -123,12 +122,35 @@ const Image = styled.img`
     object-position: center;
     margin-bottom:0%;
 
+
   }
 `;
 
 const Image2 = styled.img`
 
 `;
+const Image1Div = styled.div`
+width: 70%; /* Larghezza al 50% rispetto al container */
+height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
+object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
+margin-bottom:3%;
+
+  @media(max-width: 680px){
+    display: none;
+  }
+`;
+const Image1DivMobile = styled.div`
+width:90%; /* Larghezza al 50% rispetto al container */
+height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
+object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
+margin-bottom:3%;
+
+display: none;
+  @media(max-width: 680px){
+    display: block;
+  }
+`;
+
 const Image2Div = styled.div`
   width: 70%; /* Larghezza al 50% rispetto al container */
   height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
@@ -144,7 +166,7 @@ const Image2Div = styled.div`
 const ItemContainer = styled.div`
 
   display: flex;
-  width: 100%;
+  width: 95%;
   justify-content: center;
 
 
@@ -640,15 +662,30 @@ const ItemDetails = () => {
         <ItemContainer display="flex" flexWrap="wrap" columnGap="40px" >
           {/* IMAGES */}
           <ImageContainer>
+            <Image1Div>
+            <Image
+              alt={item?.name}
+              width="100%"
+              height="100%"
 
-        <Image
-          alt={item?.name}
-          width="100%"
-          height="100%"
-          src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-          style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
-          onLoad={handleImageLoad}
-        />
+              src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              style={{ objectFit: "contain", display: imageLoaded ? "block" : "none" }}
+              onLoad={handleImageLoad}
+            />
+            </Image1Div>
+
+            <Image1DivMobile>
+
+
+            <ReactSlidy fullHeight imageObjectFit="contain" useFullWidth={true} ArrowLeft={CustomArrowLeft} ArrowRight={CustomArrowRight} >
+
+            <img           src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>
+            <img           src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}/>
+            </ReactSlidy>
+
+            </Image1DivMobile>
+
+
             <Image2Div>
             <Image2
               alt={item?.name}
@@ -817,11 +854,9 @@ const ItemDetails = () => {
 
 
 
-<ReactSlidy fullHeight imageObjectFit="contain" useFullWidth={true} ArrowLeft={CustomArrowLeft} ArrowRight={CustomArrowRight} >
 
-  <img           src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>
-  <img           src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}/>
-</ReactSlidy>
+
+
 
 
     </LazyLoadWrapper>
