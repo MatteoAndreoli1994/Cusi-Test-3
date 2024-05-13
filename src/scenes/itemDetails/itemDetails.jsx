@@ -16,15 +16,32 @@ import LazyLoad from 'react-lazyload';
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+import ReactSlidy from 'react-slidy'
+import Immagine1 from "../../assets/carosello/1.png"
+import Immagine2 from "../../assets/carosello/2.png"
+
+
+
+
 
 
 const Container = styled.div`
   min-height: 100vh;
   margin-top:120px;
 
-
+  background-color:green;
   justify-content:center;
   display:flex;
+
+  `;
+  const Container2 = styled.div`
+  min-height: 100vh;
+  margin-top:120px;
+
+  background-color:green;
+  justify-content:center;
+  display:flex;
+  flex-direction:column;
 
   `;
   const StyledHashLink = styled(HashLink)`
@@ -425,10 +442,27 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
 
+const SLIDES = [Immagine1, Immagine2];
+
+const createStyles = isActive => ({
+  background: 'transparent',
+  border: 0,
+  color: isActive ? '#333' : '#ccc',
+  cursor: 'pointer',
+  fontSize: '32px'
+})
+
 
 
 
 const ItemDetails = () => {
+  const [actualSlide, setActualSlide] = useState(0)
+
+  const updateSlide = ({currentSlide}) => {
+    setActualSlide(currentSlide)
+  }
+  
+  
 
 
 
@@ -448,6 +482,8 @@ const ItemDetails = () => {
   const [items, setItems] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [available, setAvailable] = useState(null);
+
+
 
   const dropdownRef = useRef(null);
 
@@ -522,6 +558,7 @@ const ItemDetails = () => {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
+
   }
 
   async function getItems() {
@@ -533,6 +570,7 @@ const ItemDetails = () => {
     );
     const itemsJson = await items.json();
     setItems(itemsJson.data);
+
   }
 
 
@@ -559,6 +597,34 @@ const ItemDetails = () => {
     navigate('/boutiques#Book');
   };
 
+  const buttonStyle = {
+    background: 'transparent',
+    border: 0,
+    cursor: 'pointer',
+    fontSize: 72,
+    height: '30%',
+    margin: 'auto 10px',
+    padding: 15
+  }
+  
+  function CustomArrow({emoji, ...props}) {
+    return (
+      <button {...props} style={buttonStyle}>
+        <span role="img" aria-label="Arrow">
+          {emoji}
+        </span>
+      </button>
+    )
+  }
+  
+  function CustomArrowLeft(props) {
+    return <CustomArrow {...props} emoji="👈" />
+  }
+  
+  function CustomArrowRight(props) {
+    return <CustomArrow {...props} emoji="👉" />
+  }
+
 
 
   
@@ -567,6 +633,7 @@ const ItemDetails = () => {
   return (
     <LazyLoad once>
     <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+    <link rel="stylesheet" href="https://unpkg.com/react-slidy/lib/styles.css" />
 
       <Container width="100%" m="80px auto"        >
         
@@ -747,6 +814,15 @@ const ItemDetails = () => {
 
 
       </Container>
+
+
+
+<ReactSlidy fullHeight imageObjectFit="contain" useFullWidth={true} ArrowLeft={CustomArrowLeft} ArrowRight={CustomArrowRight} >
+
+  <img           src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>
+  <img           src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}/>
+</ReactSlidy>
+
 
     </LazyLoadWrapper>
     </LazyLoad >
