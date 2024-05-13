@@ -400,6 +400,13 @@ font-size: 16px;
 width:100%;
   
 `;
+const Dots = styled.div`
+
+width:100%;
+display:flex;
+justify-content:center;
+  
+`;
 //FONT
 const ABC = styled.p`
 font-family: 'ABCGaisyr-Book';
@@ -681,7 +688,21 @@ const ItemDetails = () => {
 
             <img           src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>
             <img           src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}/>
+
             </ReactSlidy>
+            <Dots className="Dots">
+              {SLIDES.map((_, index) => {
+                return (
+                  <button
+                    key={index}
+                    style={createStyles(index === actualSlide)}
+                    onClick={() => updateSlide({currentSlide: index})}
+                  >
+                    &bull;
+                  </button>
+                )
+              })}
+            </Dots>
 
             </Image1DivMobile>
 
