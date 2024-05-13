@@ -17,8 +17,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import ReactSlidy from 'react-slidy'
-import Immagine1 from "../../assets/carosello/1.png"
-import Immagine2 from "../../assets/carosello/2.png"
+
 
 
 
@@ -143,7 +142,7 @@ const Image1DivMobile = styled.div`
 width:90%; /* Larghezza al 50% rispetto al container */
 height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
 object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
-margin-bottom:3%;
+margin-bottom:0%;
 
 display: none;
   @media(max-width: 680px){
@@ -185,6 +184,7 @@ const ItemContainer = styled.div`
 
   @media(max-width: 680px){
     font-size:17.5px;
+    margin-top: 8%;
   }
   
   `;
@@ -274,6 +274,7 @@ const ButtonWhite = styled(Button)`
 
 
   width:50%;
+
 
 
   @media (max-width: 680px){
