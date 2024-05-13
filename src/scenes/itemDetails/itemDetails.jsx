@@ -471,7 +471,7 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
 
-const SLIDES = [Immagine1, Immagine2];
+
 
 const createStyles = isActive => ({
   background: 'transparent',
@@ -511,6 +511,10 @@ const ItemDetails = () => {
   const [items, setItems] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [available, setAvailable] = useState(null);
+
+  const [imageProduct1, setImageProduct1] = useState(null);
+  const [imageProduct2, setImageProduct2] = useState(null);
+  const SLIDES = [imageProduct1, imageProduct2];
 
 
 
@@ -587,7 +591,8 @@ const ItemDetails = () => {
     );
     const itemJson = await item.json();
     setItem(itemJson.data);
-
+    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
+    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
   }
 
   async function getItems() {
@@ -599,6 +604,8 @@ const ItemDetails = () => {
     );
     const itemsJson = await items.json();
     setItems(itemsJson.data);
+    setImageProduct1(item?.attributes?.image?.data?.attributes?.formats?.medium?.url);
+    setImageProduct2(item?.attributes?.image2?.data?.attributes?.formats?.medium?.url);
 
   }
 
@@ -684,24 +691,24 @@ const ItemDetails = () => {
             <Image1DivMobile>
 
 
-            <ReactSlidy fullHeight imageObjectFit="contain" useFullWidth={true} ArrowLeft={CustomArrowLeft} ArrowRight={CustomArrowRight} >
-
-            <img           src={`${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}/>
-            <img           src={`${item?.attributes?.image2?.data?.attributes?.formats?.medium?.url}`}/>
-
+            <ReactSlidy doAfterSlide={updateSlide} slide={actualSlide}>
+              {SLIDES.map(src => (
+                <img alt="" key={src} src={src} />
+              ))}
             </ReactSlidy>
+
             <Dots className="Dots">
-              {SLIDES.map((_, index) => {
-                return (
-                  <button
-                    key={index}
-                    style={createStyles(index === actualSlide)}
-                    onClick={() => updateSlide({currentSlide: index})}
-                  >
-                    &bull;
-                  </button>
-                )
-              })}
+            {SLIDES.map((_, index) => {
+          return (
+            <button
+              key={index}
+              style={createStyles(index === actualSlide)}
+              onClick={() => updateSlide({currentSlide: index})}
+            >
+              &bull;
+            </button>
+          )
+        })}
             </Dots>
 
             </Image1DivMobile>
