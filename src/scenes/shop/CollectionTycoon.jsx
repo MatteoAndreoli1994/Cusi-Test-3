@@ -795,7 +795,7 @@ const CollectionFleurie = () => {
           <ABC>Tycoon</ABC>
           <DivDescrizione>
             <GtaRegular>
-            Contemporaneity, perpetuated by imposing technologies, forges the man of the future in durable materials. Cusi seals this tacit synergy by capturing in the regality of geometric cuts the need to express energetic and authoritative values
+            Contemporaneity, energetic and authoritative values, forges the man of the future in durable materials
             </GtaRegular>
           </DivDescrizione>
         </DivInfo>
