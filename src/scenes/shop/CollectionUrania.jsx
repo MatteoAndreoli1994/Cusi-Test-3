@@ -17,8 +17,8 @@ import {
   removeFromCart,
   setIsCartOpen,
 } from "../../state";
-import ImmagineCollection from "../../assets/urania1.jpg"
-import ImmagineCollection2 from "../../assets/urania2.jpg"
+import ImmagineCollection from "../../assets/urania1.avif"
+import ImmagineCollection2 from "../../assets/urania2.avif"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
