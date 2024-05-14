@@ -127,7 +127,7 @@ text-align: center;
 const DivFiltri = styled.div`
 display: flex;
 
-
+margin-bottom:4%;
 width: 85%;
 justify-content: space-between;
 `;
@@ -149,7 +149,7 @@ justify-content:center;
 const StyledItem = styled.div`
 width: 100%;
 height: auto;
-margin-bottom: 5%;
+margin-bottom: 15%;
 position: relative;
 display: flex;
 justify-content: center;

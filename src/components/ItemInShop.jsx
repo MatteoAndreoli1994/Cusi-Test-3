@@ -39,7 +39,7 @@ margin-bottom: 0;
 
 
 @media(max-width: 1200px){
-  font-size: 17px; 
+  font-size: 13px; 
 }
 
 `;
@@ -50,7 +50,8 @@ margin-bottom: 0;
 margin-top:1%;
 
 @media(max-width: 1200px){
-  font-size: 15px; 
+  font-size: 13px; 
+  margin-top:2%;
 }
 
 
