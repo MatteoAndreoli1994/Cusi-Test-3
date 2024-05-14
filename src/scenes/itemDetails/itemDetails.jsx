@@ -508,12 +508,12 @@ const FaqDiv = styled.div`
 
   @media(max-width: 1200px){
     width:80%;
-    margin-right: 10%;
+    margin-top: 10%;
   }
 
   @media(max-width: 680px){
     width:90%;
-    margin-right: 0%;
+
   }
 `;
 const AccordionContent = styled.div`
