@@ -591,8 +591,7 @@ const ShoppingList = () => {
 
 {value === "bracelets" && (
   <>
-    <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
     {earringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
 
           <Containertest>
@@ -639,8 +638,7 @@ const ShoppingList = () => {
     ) : (
       <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
     )}
-              </LazyLoadWrapper>
-          </LazyLoad>
+
   </>
 )}
 
