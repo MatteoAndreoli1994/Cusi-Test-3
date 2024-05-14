@@ -492,7 +492,7 @@ const ABC24 = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 24px; 
 margin-bottom: 1.5%;
-margin-top:7%;
+margin-top:6%;
 
 @media(max-width: 1200px){
 font-size: 24px; 
@@ -856,7 +856,7 @@ const Home = () => {
             
             <Immagine src={Modella3} effect="blur"/>
             <ABC24>Zingara</ABC24>
-            <Gta>Elegant, natural gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
+            <Gta>Gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
             </Gta>
 
             </Collection2DivIconic>
