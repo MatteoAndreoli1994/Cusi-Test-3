@@ -504,6 +504,7 @@ transition: opacity 1s ease-in-out;
 const FaqDiv = styled.div`
   width: 70%;
   margin-top: 5%;
+  margin-bottom:30%;
 
   @media(max-width: 1200px){
     width:80%;
