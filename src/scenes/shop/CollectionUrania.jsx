@@ -35,27 +35,33 @@ const DivImmagini = styled.div`
 
 `;
 
+
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollectionStyle = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-right:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-right:2%;
 
-  @media(max-width: 680px){
-    display: none;
-  }
+@media(max-width: 680px){
+  display: none;
+}
 `;
 
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollection2Style = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-left:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
 
-  @media(max-width: 680px){
-    width: 100%;
-  }
+@media(max-width: 680px){
+  width: 100%;
+}
 `;
+
+
 
   
 const Container = styled.div`
@@ -67,6 +73,7 @@ margin-top:120px;
 align-items: center;
 margin-bot:1%;
 overflow:hidden;
+
 
 `;
 
@@ -84,14 +91,15 @@ z-index: 999; /* Sopra ogni cosa */
 
 const DivInfo = styled.div`
 display: flex;
-min-height: 200px;
+min-height: 100px;
 align-items: center;
 justify-content: flex-start;
 flex-direction: column;
 overflow: hidden;
 
+
 margin-bottom: 20px;
-margin-top:1%;
+margin-top:4%;
 transition: min-height 0.5s ease;
 width: 50%;
 
@@ -115,7 +123,7 @@ text-align: center;
 const DivFiltri = styled.div`
 display: flex;
 
-
+margin-bottom:4%;
 width: 85%;
 justify-content: space-between;
 `;
@@ -137,7 +145,7 @@ justify-content:center;
 const StyledItem = styled.div`
 width: 100%;
 height: auto;
-margin-bottom: 5%;
+margin-bottom: 15%;
 position: relative;
 display: flex;
 justify-content: center;
@@ -207,7 +215,6 @@ transition: left 0.5s ease;
 
 
 `;
-
 
 
 // Definisci i componenti styled
@@ -326,6 +333,15 @@ font-size: 40px;
 margin-bottom: 0;
 margin-top:2%;
 
+@media(max-width: 1200px){
+  font-size: 35px; 
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
+
 
 `;
 
@@ -344,6 +360,12 @@ const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
 margin-right:10px;
+
+`;
+
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
 
 `;
 
@@ -439,12 +461,6 @@ const ButtonWhite = styled(Button)`
 
     }
   }
-`;
-
-const GtaRegular12 = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 12px;
-
 `;
 
 
@@ -779,8 +795,7 @@ const CollectionFleurie = () => {
             <ABC>Urania</ABC>
             <DivDescrizione>
               <GtaRegular>
-              A luminous wave running through a translucent material with iridescent reflections.
-  At the center of this aquatic set, a betta fish swims through an opal sea.
+              The harmony of celestial orbits captured and impressed in the jewels of our master artisans
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>
