@@ -180,6 +180,8 @@ transform: scale(1.1);
 
 
 
+
+
 ${DivImmagineCategoria2}:hover & {
 transform: scale(1.2);
 }
@@ -348,7 +350,7 @@ align-items:center;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 1s ease-in-out;
+transition: opacity 0.5s ease-in-out;
 `;
 
 
@@ -552,8 +554,7 @@ const ShoppingList = () => {
 
 {value === "earrings" && (
   <>
-    <LazyLoad once>
-      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
         
         {earringsItems.length > 0 ? (
           <Containertest>
@@ -582,8 +583,7 @@ const ShoppingList = () => {
         ) : (
           <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
         )}
-      </LazyLoadWrapper>
-    </LazyLoad>
+
   </>
 )}
 
