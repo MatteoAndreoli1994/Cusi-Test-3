@@ -626,6 +626,25 @@ margin-top:4%;
 font-size: 14px;
 }
 `;
+const GtaDescription3 = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 16px;
+margin-bottom: 3.5%;
+margin-top:1%;
+text-align: center;
+width:60%;
+color:gray;
+
+
+@media(max-width: 1200px){
+font-size: 15px; 
+margin-top:2%;
+}
+
+@media(max-width: 680px){
+font-size: 14px;
+}
+`;
 const GtaRegular = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 12px;
@@ -922,10 +941,10 @@ const Home = () => {
         <Collection3Div>
         
         <Immagine2 src={SelectedItem1White}/>
-        <ABC24DUE>Collana Urania </ABC24DUE>
-        <GtaDescription2>Yellow Gold Necklace <br/>
+        <ABC24DUE> Urania Necklace</ABC24DUE>
+        <GtaDescription3>Yellow Gold Necklace <br/>
         18 ct Urania.
-        </GtaDescription2>
+        </GtaDescription3>
         <GtaRegular><HyperLink  onClick={ handleShopClickUrania} style={{ cursor: 'pointer' }} >SHOP NOW</HyperLink></GtaRegular>
 
         </Collection3Div>
