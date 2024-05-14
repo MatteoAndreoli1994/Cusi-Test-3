@@ -453,7 +453,7 @@ const HyperLink = styled.a`
 color: gray;
 position: relative;
 font-family: 'GTAmericaLight';
-font-size: 14px;
+
 
 &::after {
 content: '';
@@ -540,7 +540,7 @@ width:82%;
 }
 @media(max-width: 680px){
 font-size: 13px; 
-margin-bottom: 6%;
+margin-bottom: 8%;
 width:62%;
 }
 `;
@@ -644,8 +644,9 @@ margin-bottom:3%;
 
 @media(max-width: 1200px){
 font-size: 13px; 
-margin-top:0%;
+margin-top:1%;
 }
+
 @media(max-width: 680px){
 font-size: 12px; 
 }
