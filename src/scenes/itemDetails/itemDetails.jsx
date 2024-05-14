@@ -839,7 +839,7 @@ const ItemDetails = () => {
           </ImageContainer>
 
           {/* ACTIONS */}
-          <DescripionDiv>
+          <DescripionDiv               style={{  display: imageLoaded ? "flex" : "none" }}>
 
 
             <Info>
@@ -1040,6 +1040,9 @@ const ItemDetails = () => {
 
             
           </DescripionDiv>
+
+          
+
         </ItemContainer>
 
 
