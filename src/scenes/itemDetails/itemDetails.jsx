@@ -17,6 +17,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import ReactSlidy from 'react-slidy'
+import add from '../../assets/add.png';
+import close from '../../assets/meno.png';
 
 
 
@@ -33,16 +35,7 @@ const Container = styled.div`
   display:flex;
 
   `;
-  const Container2 = styled.div`
-  min-height: 100vh;
-  margin-top:120px;
 
-
-  justify-content:center;
-  display:flex;
-  flex-direction:column;
-
-  `;
   const StyledHashLink = styled(HashLink)`
   text-decoration: none; /* Rimuovi sottolineature */
   color: inherit; /* Usa il colore del testo predefinito */
@@ -60,18 +53,20 @@ color: inherit; /* Usa il colore del testo predefinito */
     display:flex;
     flex-direction:column;
 
-    margin-top:10%;
+    margin-top:15%;
 
     width:70%;
 
     @media(max-width: 1200px){
       width:80%;
       margin-right: 10%;
+      margin-top:12%;
     }
 
     @media(max-width: 680px){
       width:90%;
       margin-right: 0%;
+      margin-top:10%;
     }
 
   `;
@@ -149,10 +144,16 @@ const Image2 = styled.img`
 
 `;
 const Image1Div = styled.div`
-width: 70%; /* Larghezza al 50% rispetto al container */
+width: 80%; /* Larghezza al 50% rispetto al container */
 height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
 object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
 margin-bottom:3%;
+margin-top:5%;
+
+@media(max-width: 1200px){
+
+  width: 80%; /* Larghezza al 50% rispetto al container */
+}
 
   @media(max-width: 680px){
     display: none;
@@ -171,10 +172,15 @@ display: none;
 `;
 
 const Image2Div = styled.div`
-  width: 70%; /* Larghezza al 50% rispetto al container */
+  width: 80%; /* Larghezza al 50% rispetto al container */
   height: auto; /* Imposta l'altezza in base all'aspect ratio dell'immagine */
   object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
   margin-bottom:3%;
+  @media(max-width: 1200px){
+
+    width: 80%; /* Larghezza al 50% rispetto al container */
+  }
+
 
 
   @media(max-width: 680px){
@@ -307,6 +313,7 @@ const ButtonWhite = styled(Button)`
   display:flex;
   flex-direction:column;
   width:70%;
+  margin-top:8%;
 
 
 
@@ -322,7 +329,7 @@ const ButtonWhite = styled(Button)`
 
   const TypographyDescrizioneProdotto = styled.p`
   font-size:18px;
-  margin-top: 0;
+  margin-top: 1%;
   margin-bottom: 4%;
 
   @media(max-width: 680px){
@@ -492,6 +499,60 @@ opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
 
+
+
+const FaqDiv = styled.div`
+  width: 70%;
+  margin-top: 5%;
+
+  @media(max-width: 1200px){
+    width:80%;
+    margin-right: 10%;
+  }
+
+  @media(max-width: 680px){
+    width:90%;
+    margin-right: 0%;
+  }
+`;
+const AccordionContent = styled.div`
+  max-height: ${({ isOpen }) => (isOpen ? '100%' : '0')}; /* Imposta una max-height elevata quando è aperto */
+  overflow: hidden;
+  transition: max-height 1s ease; /* Aggiunta transizione per un effetto fluido */
+  border-bottom: 1px solid black;
+
+`;
+const FilterButton = styled.div`
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Aggiunto per separare gli elementi */
+
+
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none; /* Evita la selezione del testo */
+  width: 100%;
+
+
+`;
+const AccordionItem = styled.div`
+
+width: 100%;
+  padding: 5%;
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  padding-left: 0;
+  cursor: pointer;
+
+`;
+const FilterSign = styled.span`
+
+
+  display:flex;
+
+  align-items:center;
+`;
 
 
 const createStyles = isActive => ({
@@ -666,6 +727,26 @@ const ItemDetails = () => {
     margin: 'auto 10px',
     padding: 15
   }
+  const [accordionState, setAccordionState] = useState({
+    OurServices: false,
+    ProductCare: false,
+    Shippig: false,
+    Size: false,
+    Garanzia: false,
+    Privacy: false,
+    Faq: false,
+    Contact: false,
+
+
+    // Aggiungi altri elementi del tuo accordion qui...
+  });
+
+  const toggleAccordion = (item) => {
+    setAccordionState((prevState) => ({
+      ...prevState,
+      [item]: !prevState[item],
+    }));
+  };
   
   function CustomArrow({emoji, ...props}) {
     return (
@@ -723,23 +804,24 @@ const ItemDetails = () => {
 
               ))}
             </ReactSlidy>
+            <Dots className="Dots">
+                {SLIDES.map((_, index) => {
+              return (
+                <button
+                  key={index}
+                  style={createStyles(index === actualSlide)}
+                  onClick={() => updateSlide({currentSlide: index})}
+                >
+                  &bull;
+                </button>
+              )
+            })}
+            </Dots>
 
 
 
             </Image1DivMobile>
-            <Dots className="Dots">
-            {SLIDES.map((_, index) => {
-          return (
-            <button
-              key={index}
-              style={createStyles(index === actualSlide)}
-              onClick={() => updateSlide({currentSlide: index})}
-            >
-              &bull;
-            </button>
-          )
-        })}
-            </Dots>
+
 
 
             <Image2Div>
@@ -898,6 +980,62 @@ const ItemDetails = () => {
 
 
             </Bottoni>
+
+
+
+            <FaqDiv>
+{/* prima Linea nera */}
+        <AccordionContent></AccordionContent>
+
+{/* Prima Domanda */}
+          <FilterButton onClick={() => toggleAccordion('Details')}>
+            <AccordionItem >
+              DETAILS
+
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Details'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Details']}>
+          <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.shortDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+                <GtaLightLightInfo>
+                <br></br>
+                </GtaLightLightInfo>
+          </AccordionContent>
+
+{/* prima Linea nera */}
+
+
+{/* Prima Domanda */}
+          <FilterButton onClick={() => toggleAccordion('Shipping')}>
+            <AccordionItem >
+              SHIPPING & RETURNS
+
+            </AccordionItem>
+            <FilterSign>
+                {accordionState['Shipping'] ? (  // Se isOpen è true (l'accordion è aperto)
+                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                ) : (
+                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                )}
+            </FilterSign>
+          </FilterButton>
+
+
+          <AccordionContent isOpen={accordionState['Shipping']}>
+          <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+                <GtaLightLightInfo>
+                <br></br>
+                </GtaLightLightInfo>
+          </AccordionContent>
+            </FaqDiv>
 
             
           </DescripionDiv>
