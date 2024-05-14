@@ -95,14 +95,15 @@ z-index: 999; /* Sopra ogni cosa */
 
 const DivInfo = styled.div`
 display: flex;
-min-height: 200px;
+min-height: 100px;
 align-items: center;
 justify-content: flex-start;
 flex-direction: column;
 overflow: hidden;
 
+
 margin-bottom: 20px;
-margin-top:1%;
+margin-top:4%;
 transition: min-height 0.5s ease;
 width: 50%;
 
@@ -335,6 +336,15 @@ font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
 margin-bottom: 0;
 margin-top:2%;
+
+@media(max-width: 1200px){
+  font-size: 35px; 
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
 
 
 `;
@@ -790,8 +800,7 @@ const CollectionBollywood = () => {
             <ABC>Zingara</ABC>
             <DivDescrizione>
               <GtaRegular>
-              The Zingara collection represents the true fusion of modern style and elegance in the spirit of tradition.
-The natural softness of gold and the particular hammered work contribute creating a play of lights and reflections that is enhanced in movement.
+              The true fusion of modern style and elegance in the spirit of tradition.
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>
