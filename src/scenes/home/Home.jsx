@@ -619,6 +619,7 @@ color:gray;
 
 @media(max-width: 1200px){
 font-size: 15px; 
+margin-top:4%;
 }
 
 @media(max-width: 680px){
@@ -902,7 +903,7 @@ const Home = () => {
             </GtaDescription2>
 
 
-            <GtaRegular><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >DISCOVER EARRINGS</HyperLink></GtaRegular>
+            <GtaRegularMobile2><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >DISCOVER EARRINGS</HyperLink></GtaRegularMobile2>
             </Collection2Div>
 
           </CollectionDiv>

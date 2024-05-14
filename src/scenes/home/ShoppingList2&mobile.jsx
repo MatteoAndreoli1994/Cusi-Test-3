@@ -147,6 +147,16 @@ user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 
+@media(max-width: 1200px){
+  margin-bottom:8.5%;
+
+}
+@media(max-width: 680px){
+  margin-bottom:8.5%;
+margin-top:2%;
+
+
+}
 
 
 @media(max-width: 480px){
