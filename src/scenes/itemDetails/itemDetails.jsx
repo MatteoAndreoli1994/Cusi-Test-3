@@ -1006,7 +1006,7 @@ const ItemDetails = () => {
           <AccordionContent isOpen={accordionState['Details']}>
           <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.shortDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
                 <GtaLightLightInfo>
-                <br></br>
+
                 </GtaLightLightInfo>
           </AccordionContent>
 
@@ -1032,7 +1032,7 @@ const ItemDetails = () => {
           <AccordionContent isOpen={accordionState['Shipping']}>
           <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
                 <GtaLightLightInfo>
-                <br></br>
+
                 </GtaLightLightInfo>
           </AccordionContent>
             </FaqDiv>
