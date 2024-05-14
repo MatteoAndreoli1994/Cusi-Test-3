@@ -166,11 +166,15 @@ const FormContainer = styled.div`
 
 
   @media(max-width: 1200px){
-    width:75%;
+    width: 89%;
+
   }
 
   @media(max-width: 680px){
-    width:90%;
+    width:91%;
+  }
+  @media(max-width: 480px){
+    width:95%;
   }
 
 `;
