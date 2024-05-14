@@ -502,7 +502,7 @@ font-size: 24px;
 const ABC24DUE = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 20px; 
-margin-bottom: 0;
+margin-bottom: 2%;
 
 @media(max-width: 1200px){
 font-size: 23px; 
@@ -918,8 +918,8 @@ const Home = () => {
 
             <ABC24DUE>Madreperla</ABC24DUE>
 
-            <GtaDescription2>Elegance and shining harmony
-            </GtaDescription2>
+            <Gta>Elegance and shining harmony
+            </Gta>
 
 
             <GtaRegularMobile2><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >DISCOVER EARRINGS</HyperLink></GtaRegularMobile2>
