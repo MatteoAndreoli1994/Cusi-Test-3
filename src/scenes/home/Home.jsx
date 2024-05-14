@@ -466,7 +466,7 @@ background-color: gray;
 }
 
 @media(max-width:1200px){
-  font-size: 13px;
+  font-size: 12px;
 
 }
 `;
