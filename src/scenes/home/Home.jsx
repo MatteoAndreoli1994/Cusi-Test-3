@@ -453,7 +453,7 @@ const HyperLink = styled.a`
 color: gray;
 position: relative;
 font-family: 'GTAmericaLight';
-
+font-size: 14px;
 
 &::after {
 content: '';
@@ -463,6 +463,11 @@ bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
 width: 100%;
 height: 1px;
 background-color: gray;
+}
+
+@media(max-width:1200px){
+  font-size: 13px;
+
 }
 `;
 
@@ -635,6 +640,22 @@ font-size: 12px;
 }
 
 `;
+const GtaRegularMobile2 = styled.p`
+font-family: 'GTAmericaLight';
+font-size: 12px;
+
+margin-bottom:0;
+
+@media(max-width: 1200px){
+font-size: 13px; 
+margin-top:2%;
+}
+@media(max-width: 680px){
+font-size: 12px; 
+}
+
+`;
+
 const GtaRegularFleurie = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 12px;
@@ -644,7 +665,7 @@ margin-bottom:3%;
 
 @media(max-width: 1200px){
 font-size: 13px; 
-margin-top:1%;
+margin-top:2%;
 }
 
 @media(max-width: 680px){
@@ -851,7 +872,7 @@ const Home = () => {
 
             <Collection2DivIconic>
             <Collection2DivIconic_2>
-              <GtaRegular><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >SHOP ZINGARA</HyperLink></GtaRegular>
+              <GtaRegularMobile2><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >SHOP ZINGARA</HyperLink></GtaRegularMobile2>
               </Collection2DivIconic_2>
             </Collection2DivIconic>
 
