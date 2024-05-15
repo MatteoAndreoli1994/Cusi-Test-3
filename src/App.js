@@ -123,7 +123,7 @@ function App() {
           </Routes>
 
 
-          <Footer />
+  
           <CartMenu />
 
         </ApolloProvider>
