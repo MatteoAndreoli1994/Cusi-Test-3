@@ -133,6 +133,8 @@ const Checkout = () => {
     await stripe.redirectToCheckout({
       sessionId: session.id,
     });
+    // Scrolla verso l'alto quando si preme "Place Order"
+    window.scrollTo(0, 0);
 
     
   }
