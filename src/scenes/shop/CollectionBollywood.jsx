@@ -17,8 +17,8 @@ import {
   removeFromCart,
   setIsCartOpen,
 } from "../../state";
-import ImmagineCollection from "../../assets/bollywood1.jpg"
-import ImmagineCollection2 from "../../assets/immagine2.jpg"
+import ImmagineCollection from "../../assets/bollywood2.jpg"
+import ImmagineCollection2 from "../../assets/bollywood1.jpg"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
@@ -35,27 +35,33 @@ const DivImmagini = styled.div`
 
 `;
 
+
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollectionStyle = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-right:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-right:2%;
 
-  @media(max-width: 680px){
-    display: none;
-  }
+@media(max-width: 680px){
+  display: none;
+}
 `;
 
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollection2Style = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-left:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
 
-  @media(max-width: 680px){
-    width: 100%;
-  }
+@media(max-width: 680px){
+  width: 100%;
+}
 `;
+
+
 
   
 const Container = styled.div`
@@ -67,6 +73,7 @@ margin-top:120px;
 align-items: center;
 margin-bot:1%;
 overflow:hidden;
+
 
 `;
 
@@ -84,14 +91,15 @@ z-index: 999; /* Sopra ogni cosa */
 
 const DivInfo = styled.div`
 display: flex;
-min-height: 200px;
+min-height: 100px;
 align-items: center;
 justify-content: flex-start;
 flex-direction: column;
 overflow: hidden;
 
-margin-bottom: 0%;
-margin-top:1%;
+
+margin-bottom: 20px;
+margin-top:4%;
 transition: min-height 0.5s ease;
 width: 50%;
 
@@ -115,7 +123,7 @@ text-align: center;
 const DivFiltri = styled.div`
 display: flex;
 
-
+margin-bottom:4%;
 width: 85%;
 justify-content: space-between;
 `;
@@ -137,7 +145,7 @@ justify-content:center;
 const StyledItem = styled.div`
 width: 100%;
 height: auto;
-margin-bottom: 5%;
+margin-bottom: 15%;
 position: relative;
 display: flex;
 justify-content: center;
@@ -325,6 +333,15 @@ font-size: 40px;
 margin-bottom: 0;
 margin-top:2%;
 
+@media(max-width: 1200px){
+  font-size: 35px; 
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
+
 
 `;
 
@@ -345,10 +362,18 @@ font-size: 16px;
 margin-right:10px;
 
 `;
+
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
+
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 3s ease-in-out;
 `;
+
 const DivSettingButton = styled.div`
   width: 100%;
   height: 50px;
@@ -376,11 +401,7 @@ const DivSettingButtonCenter = styled.div`
 
   
 `;
-const GtaRegular12 = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 12px;
 
-`;
 
 // Definisci il componente ButtonBlack come variante di Button
 const ButtonBlack= styled(Button)`
@@ -441,6 +462,7 @@ const ButtonWhite = styled(Button)`
     }
   }
 `;
+
 
 const CollectionBollywood = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -779,7 +801,7 @@ const CollectionBollywood = () => {
           <DivImmagini>
 
           <ImmagineCollectionStyle src={ImmagineCollection}/>
-
+          <ImmagineCollection2Style src={ImmagineCollection2}/>
           </DivImmagini>
 
 
