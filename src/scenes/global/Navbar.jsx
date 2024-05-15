@@ -515,11 +515,19 @@ align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 
 margin-left: 5%;
-margin-bottom: 4%;
+
 
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
+
+
+
+
+`;
+const Margin = styled.div`
+
+margin-bottom: 4%;
 
 
 
@@ -932,17 +940,21 @@ useEffect(() => {
             <InfoContainer visible={showShopInfo}>
               <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegularMobile>
                 <HighJewellery  visible={showHighJewellery}>
+                  <Margin>
                   <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</GtaRegular> 
                   <GtaRegular onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>Earrings</GtaRegular> 
                   <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</GtaRegular> 
                   <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</GtaRegular> 
+                  </Margin>
                 </HighJewellery>
 
               <GtaRegularMobile onClick={() => setShowFineObject(prevState => !prevState)} >FINE OBJECTS</GtaRegularMobile>
               <HighJewellery visible={showFineObject}>
+                <Margin>
                   <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</GtaRegular> 
                   <GtaRegular onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</GtaRegular> 
                   <GtaRegular onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</GtaRegular> 
+                </Margin>
               </HighJewellery>
 
               <GtaRegularMobile>GIFTS</GtaRegularMobile>
