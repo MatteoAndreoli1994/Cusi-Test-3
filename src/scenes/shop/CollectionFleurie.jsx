@@ -39,16 +39,14 @@ const DivImmagini = styled.div`
 `;
 
 const ImmagineCollectionStyle = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-right:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
 
-  @media(max-width: 680px){
-    width: 80%;
-  }
-
-
+@media(max-width: 680px){
+  width: 100%;
+}
 `;
 
 const ImmagineCollection2Style = styled.img`
@@ -89,24 +87,23 @@ z-index: 999; /* Sopra ogni cosa */
 
 const DivInfo = styled.div`
 display: flex;
-min-height: 200px;
+min-height: 100px;
 align-items: center;
 justify-content: flex-start;
 flex-direction: column;
 overflow: hidden;
 
-margin-bottom: 0%;
-margin-top:1%;
+
+margin-bottom: 20px;
+margin-top:4%;
 transition: min-height 0.5s ease;
 width: 50%;
 
 @media(max-width:680px){
   width:80%;
-
 }
 
 `;
-
 const DivDescrizione = styled.div`
 display: flex;
 width: 100%;
@@ -332,6 +329,15 @@ font-size: 40px;
 margin-bottom: 0;
 margin-top:2%;
 
+@media(max-width: 1200px){
+  font-size: 35px; 
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
+
 
 `;
 
@@ -352,6 +358,7 @@ font-size: 16px;
 margin-right:10px;
 
 `;
+
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
@@ -477,7 +484,7 @@ const CollectionFleurie = () => {
 
   const dispatch = useDispatch();
   
-  const [value, setValue] = useState("fluerie");
+  const [value, setValue] = useState("fleurie");
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
@@ -514,7 +521,7 @@ const CollectionFleurie = () => {
 
 
   
-  const zingaraItems = items.filter((item) => {
+  const fleurieItems = items.filter((item) => {
     // Se sia selectedMaterials che selectedCollection sono vuoti, restituisci true per includere tutti gli elementi
     if (selectedMaterials.length === 0 && selectedCollection.length === 0 && selectedStone.length === 0) {
       return item.attributes.collection === "Fleurie";
@@ -522,7 +529,7 @@ const CollectionFleurie = () => {
   
     // Verifica la categoria, il materiale e la collezione
     return (
-      item.attributes.category === "fleurie" &&
+      item.attributes.collection === "Fleurie" &&
       (selectedMaterials.length === 0 || selectedMaterials.includes(item.attributes.material)) &&
       (selectedCollection.length === 0 || selectedCollection.includes(item.attributes.collection)) &&
       (selectedStone.length === 0 || selectedStone.includes(item.attributes.stone))
@@ -544,6 +551,7 @@ const CollectionFleurie = () => {
 
     }
   };
+
   const handleCheckboxChangeStone = (Stone) => {
     // Aggiorna lo stato delle opzioni selezionate in base alla checkbox
     if (selectedStone.includes(Stone)) {
@@ -675,9 +683,9 @@ const CollectionFleurie = () => {
                   checked={selectedCollection.includes("Urania")}
                 />
                 <Checkbox
-                  label="Zingara"
-                  onChange={() => handleCheckboxChangeCollection("Zingara")}
-                  checked={selectedCollection.includes("Zingara")}
+                  label="Fleurie"
+                  onChange={() => handleCheckboxChangeCollection("Fleurie")}
+                  checked={selectedCollection.includes("Fleurie")}
                 />
 
                 </InfoContainer>
@@ -793,8 +801,7 @@ const CollectionFleurie = () => {
           <ABC>Fleurie</ABC>
           <DivDescrizione>
             <GtaRegular>
-            A luminous wave running through a translucent material with iridescent reflections.
-At the center of this aquatic set, a betta fish swims through an opal sea.
+            Where natural elegance embraces the soul, transforming every woman into a precious, loved, and special flower.
             </GtaRegular>
           </DivDescrizione>
         </DivInfo>
@@ -827,7 +834,7 @@ At the center of this aquatic set, a betta fish swims through an opal sea.
         <DivProdotti>
           
           {value === "fleurie" &&
-            zingaraItems.map((item) => (
+            fleurieItems.map((item) => (
 
               <StyledItem key={`${item.id}`}>
                 <ItemInShop item={item} />
