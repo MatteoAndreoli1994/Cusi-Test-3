@@ -174,7 +174,7 @@ const Checkout = () => {
           <StepLabel>Billing</StepLabel>
         </Step>
         <Step>
-          <StepLabel>Payment</StepLabel>
+          <StepLabel>Contact Info</StepLabel>
         </Step>
       </Stepper>
       <Box>

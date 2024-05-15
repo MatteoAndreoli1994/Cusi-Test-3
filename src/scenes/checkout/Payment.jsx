@@ -1,7 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import { useEffect } from "react";
 
 const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
+  useEffect(() => {
+    // Verifica se la larghezza dello schermo è inferiore a 600px (un'approssimazione di uno schermo mobile)
+    if (window.innerWidth < 600) {
+      // Reimposta la posizione dello schermo all'inizio della pagina
+      window.scrollTo(0, 0);
+    }
+  }, []); // Questo effetto viene eseguito solo una volta quando il componente viene montato
+
   return (
     <Box m="30px 0">
       {/* CONTACT INFO */}
