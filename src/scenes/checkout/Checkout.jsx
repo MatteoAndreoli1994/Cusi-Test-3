@@ -32,11 +32,13 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-content:center;
+background-color:red;
 
 `;
 
 const stripePromise = loadStripe(
   "pk_test_51OVHbvKBum0tDq2rqETCthy3a1ctwYBrhKQZ8hffdT7u6FRVMy3umFP41HNKDeUEigbqzSKnSKELUS2i0J803Vry00p9sVRga4"
+  
 );
 
 const Checkout = () => {
