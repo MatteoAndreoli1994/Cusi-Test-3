@@ -36,14 +36,14 @@ const Boxstoryboard = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 80%;
+width: 85%;
 height: auto;
 
 margin-top: 6%;
 
 @media(max-width: 1000px){
 
-  width: 80%;
+  width: 85%;
 }
 
 @media(max-width: 680px){
@@ -60,7 +60,7 @@ const Boxstoryboard4 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 80%;
+width: 85%;
 
 margin-top:6%;
 
@@ -80,7 +80,7 @@ const Boxstoryboard2 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 80%;
+width: 85%;
 height:auto;
 
 margin-top:6%;
@@ -102,7 +102,7 @@ const Boxstoryboard3 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 80%;
+width: 85%;
 
 margin-top:6%;
 
@@ -124,7 +124,7 @@ const BoxFamiglia = styled.div`
 
 display: flex;
 flex-direction: column;
-width: 100%;
+width: 85%;
 
 
 
@@ -133,6 +133,10 @@ align-items:center;
 text-align: center; /* Centra il testo all'interno del div */
 margin-bottom:5%;
 margin-top:2%;
+
+@media(max-width: 680px){
+  width: 100%;
+}
 
 `;
 
@@ -154,7 +158,7 @@ justify-content:center;
 
 
 const Introduzione = styled.p`
-width:60%;
+width:80%;
 text-align: center;
 margin-top:1%;
 margin-bottom:3%;
@@ -194,7 +198,7 @@ margin-bottom:4%;
 }
 `;
 const ImmagineFamiglia = styled.img`
-width: 80vw;
+width: 100%;
 min-height: 30vh;
 
 
@@ -382,7 +386,7 @@ font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
 margin-bottom: 0;
 margin-top: 4%;
-width:60%;
+width:80%;
 font-weight: 200;
 
 @media(max-width: 1000px){
@@ -439,7 +443,7 @@ margin-bottom:4%;
 
 const ABC24Centered = styled.p`
 font-family: 'ABCGaisyr-Regular';
-font-size: 40px; 
+font-size: 35px; 
 margin-bottom: 0;
 margin-top: 7%;
 
@@ -551,8 +555,10 @@ margin-left:12.5%;
 `;
 const ImmagineStuarda2= styled.img`
 width:100%;
-height:100%;
+height:auto;
 min-height: 30vh;
+
+
 
 `;
 
