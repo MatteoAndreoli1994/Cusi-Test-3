@@ -105,7 +105,7 @@ height: auto;
 align-items: center;
 flex-direction: column;
 justify-content: flex-start;
-
+background-color:gray;
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
 @media(max-width:680px){
@@ -411,7 +411,7 @@ height: auto;
 
 const ImmagineAnello = styled.img`
 width:90%;
-min-height: 40vh;
+height: auto;
 `;
 const Immagine2 = styled.img`
 width:40%;
