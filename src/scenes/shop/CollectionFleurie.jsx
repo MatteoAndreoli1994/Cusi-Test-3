@@ -16,7 +16,7 @@ import {
   removeFromCart,
   setIsCartOpen,
 } from "../../state";
-import ImmagineCollection from "../../assets/Fleurie1.jpg"
+import ImmagineCollection from "../../assets/Fleurie1.avif"
 import ImmagineCollection2 from "../../assets/immagine2.jpg"
 import VideoCollection2Video from "../../assets/fleurieVideo1_1.mp4";
 import add from '../../assets/add.png';
