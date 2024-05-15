@@ -1002,9 +1002,10 @@ useEffect(() => {
             <GtaRegularMobile onClick={() => setShowHouseInfo(prevState => !prevState)}>THE HOUSE</GtaRegularMobile>
 
                 <HighJewellery  visible={showHouseInfo}>
+                  <Margin>
                   <GtaRegular onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</GtaRegular> 
                   <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Boutiques</GtaRegular> 
-
+                  </Margin>
                 </HighJewellery>
 
 
