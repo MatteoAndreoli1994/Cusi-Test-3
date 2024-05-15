@@ -10,6 +10,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import styled from 'styled-components';
 // Importa le seguenti funzioni da react-redux
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
 
 
 
@@ -46,7 +47,7 @@ const Checkout = () => {
       window.scrollTo(0, 0);
     }
   }, []); // Questo effetto viene eseguito solo una volta quando il componente viene montato
-  
+
   const [activeStep, setActiveStep] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
   const isFirstStep = activeStep === 0;
