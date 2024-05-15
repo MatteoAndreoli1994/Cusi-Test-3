@@ -136,6 +136,7 @@ margin-top:2%;
 
 @media(max-width: 680px){
   width: 100%;
+
 }
 
 `;
@@ -167,13 +168,13 @@ font-size:16px;
 
 @media(max-width: 1000px){
   font-size:14px; 
-  width:80%;
+  width:85%;
   margin-bottom:6%;
 }
 
 @media(max-width: 680px){
   font-size:14px; 
-  width:80%;
+  width:85%;
 
 }
 
@@ -210,7 +211,7 @@ min-height: 30vh;
 }
 
 @media(max-width: 680px){
-  width: 80%;
+  width: 85%;
 
 }
 
@@ -386,12 +387,12 @@ font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
 margin-bottom: 0;
 margin-top: 4%;
-width:80%;
+width:88%;
 font-weight: 200;
 
 @media(max-width: 1000px){
 
-  width:80%;
+  width:88%;
   
 }
 
@@ -399,7 +400,7 @@ font-weight: 200;
   font-size: 14px; 
 
   text-align:left;
-  width:80%;
+  width:85%;
   
 }
 
@@ -458,9 +459,9 @@ margin-top: 7%;
 }
 
 @media(max-width:680px){
-  font-size: 21px; 
+  font-size: 25px; 
 
-  width:80%;
+  width:88%;
   margin-bottom: 2%;
 
 }
