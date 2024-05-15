@@ -63,8 +63,7 @@ const Item = ({ item, width }) => {
 
 
   return (
-    <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
 
     <DivItem >
       <DivImmagine
@@ -108,8 +107,7 @@ const Item = ({ item, width }) => {
 
     </DivItem>
 
-    </LazyLoadWrapper>
-    </LazyLoad >
+
   );
 };
 
