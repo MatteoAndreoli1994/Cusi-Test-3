@@ -418,6 +418,7 @@ height: auto;
 const Immagine2 = styled.img`
 width:40%;
 min-height: 10vh;
+height:auto;
 
 @media(max-width: 1200px){
 width:45%;
@@ -448,6 +449,7 @@ width:50%;
 const ImmagineMaison = styled.img`
 width:90%;
 min-height: 40vh;
+height:auto;
 
 `;
 
