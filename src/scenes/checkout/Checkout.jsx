@@ -57,9 +57,9 @@ const Checkout = () => {
    // Usa useDispatch per ottenere la funzione dispatch
    const dispatch = useDispatch();
 
-  const handleFormSubmit = async (values, actions) => {
+   const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
-
+  
     // this copies the billing address onto shipping address
     if (isFirstStep && values.shippingAddress.isSameAddress) {
       actions.setFieldValue("shippingAddress", {
@@ -67,16 +67,17 @@ const Checkout = () => {
         isSameAddress: true,
       });
     }
-
+  
     if (isSecondStep) {
       makePayment(values);
-
-
-
     }
-
+  
     actions.setTouched({});
+  
+    // Scrolla verso l'alto quando si preme qualsiasi pulsante
+    window.scrollTo(0, 0);
   };
+  
 
   async function makePayment(values) {
     
