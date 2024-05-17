@@ -48,10 +48,11 @@ min-height:auto;
 const GifBoxSafari = styled.div`
 position: relative;
 
-display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
-min-height:auto;
+display: ${({ isSafari }) => (isSafari ? 'none' : 'flex')};
+min-height:100vh;
 justify-content:center;
-width:100vw;
+align-items:center;
+
 
 overflow: hidden;
 
@@ -737,8 +738,10 @@ height:auto;
 
 const VideoSafari = styled.img`
 
-width:100vw;
-height:auto;
+width: 100%;
+height: 90vh;
+object-fit: cover;
+object-position: center;
 
 
 `;
