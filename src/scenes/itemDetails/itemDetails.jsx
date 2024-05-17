@@ -430,8 +430,16 @@ width:100%;
   
 `;
 const Dots = styled.div`
+display: flex;
+justify-content: center; /* Centra i puntini orizzontalmente */
+align-items: center;    /* Centra i puntini verticalmente */
+gap: 4px; /* Usa questa proprietà per controllare la spaziatura */
+  
+`;
 
-width:100%;
+const ButtonCustom = styled.button`
+background-color:green;
+margin:1000px;
 display:flex;
 justify-content:center;
   
@@ -809,13 +817,14 @@ const ItemDetails = () => {
             <Dots className="Dots">
                 {SLIDES.map((_, index) => {
               return (
-                <button
+                <ButtonCustom
                   key={index}
                   style={createStyles(index === actualSlide)}
                   onClick={() => updateSlide({currentSlide: index})}
                 >
+                  
                   &bull;
-                </button>
+                </ButtonCustom>
               )
             })}
             </Dots>
