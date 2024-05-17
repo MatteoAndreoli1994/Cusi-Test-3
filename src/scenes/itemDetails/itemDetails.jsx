@@ -314,7 +314,7 @@ const ButtonWhite = styled(Button)`
   display:flex;
   flex-direction:column;
   width:70%;
-  margin-top:8%;
+  margin-top:6%;
 
 
 
