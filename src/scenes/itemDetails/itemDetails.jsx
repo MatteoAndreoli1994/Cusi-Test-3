@@ -433,7 +433,7 @@ const Dots = styled.div`
 display: flex;
 justify-content: center; /* Centra i puntini orizzontalmente */
 align-items: center;    /* Centra i puntini verticalmente */
-gap: 4px; /* Usa questa proprietà per controllare la spaziatura */
+gap: 15px; /* Usa questa proprietà per controllare la spaziatura */
   
 `;
 
@@ -444,7 +444,7 @@ const ButtonCustom = styled.button`
   background: none;
   cursor: pointer;
   font-size: 24px; /* Dimensione del puntino */
-  line-height: 1;
+  line-height: 1.5;
   
 `;
 //FONT
