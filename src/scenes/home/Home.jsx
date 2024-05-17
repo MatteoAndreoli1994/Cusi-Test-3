@@ -53,7 +53,7 @@ position: relative;
 display: ${({ isSafari }) => (isSafari ? 'none' : 'flex')};
 min-height:100vh;
 justify-content:center;
-align-items:center;
+
 
 
 overflow: hidden;
