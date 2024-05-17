@@ -21,6 +21,7 @@ import Anello1White from"../../assets/A2.png";
 
 import { useNavigate } from "react-router-dom";
 import LazyLoad from 'react-lazyload';
+import Footer from "../global/Footer";
 
 const Container = styled.div`
 display: flex;
@@ -992,6 +993,9 @@ const Home = () => {
 
     </IconicCollectionDiv>
       </Container>
+
+
+      <Footer/>
 
       </LazyLoadWrapper>
     </LazyLoad>  

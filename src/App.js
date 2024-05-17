@@ -120,11 +120,17 @@ function App() {
           <Routes>
             <Route path="checkout/Yy266huhcdhu78huwbi" element={<Confirmation/>} />
             <Route path="checkout/success" element={<Confirmation2 />} />
+
           </Routes>
 
 
-  
+
+
+
+
           <CartMenu />
+
+
 
         </ApolloProvider>
       </BrowserRouter>
