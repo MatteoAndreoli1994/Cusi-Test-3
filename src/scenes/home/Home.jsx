@@ -32,17 +32,19 @@ margin-top:120px;
 `;
 
 const GifBox = styled.div`
-display: ${({ isSafari }) => (isSafari ? 'none' : 'block')};
+position: relative;
 
-width:100vw;
-min-height:auto;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  overflow: hidden;
-  background-size: cover;
-  margin-bottom: 2%;
+display: ${({ isSafari }) => (isSafari ? 'none' : 'flex')};
+min-height:100vh;
+justify-content:center;
+
+
+
+overflow: hidden;
+
+background-size: cover;
+margin-bottom: 2%;
+
 `;
 
 const GifBoxSafari = styled.div`
@@ -730,8 +732,10 @@ margin-top:7%;
 
 const Video = styled.video`
 
-width:100vw;
-height:auto;
+width: 100%;
+height: 90vh;
+object-fit: cover;
+object-position: center;
 
 
 `;
