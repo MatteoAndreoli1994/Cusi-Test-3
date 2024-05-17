@@ -438,10 +438,13 @@ gap: 4px; /* Usa questa proprietà per controllare la spaziatura */
 `;
 
 const ButtonCustom = styled.button`
-background-color:green;
-margin:1000px;
-display:flex;
-justify-content:center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 24px; /* Dimensione del puntino */
+  line-height: 1;
   
 `;
 //FONT
