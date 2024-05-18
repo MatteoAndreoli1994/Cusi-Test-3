@@ -174,7 +174,7 @@ const DivImmagineCategoria2 = styled.div`
 position: relative;
 display: flex;
 width: auto;
-height: 100%;
+height: 600px;
 overflow: hidden;
 
 `;
@@ -740,7 +740,7 @@ const ShoppingList = () => {
               <DivImmagineCategoria2>
               <LazyLoad once>
                   <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-                  <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
+                <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
                   </LazyLoadWrapper>
                 </LazyLoad>  
 
