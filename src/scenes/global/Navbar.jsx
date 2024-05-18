@@ -213,7 +213,7 @@ const MenuItemImage = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-
+  margin:1%;
   align-items: flex-end; /* Modificato da justify-content a align-items */
 
 
@@ -224,6 +224,7 @@ const ImmagineHighJewellery = styled.img`
   height:100%;
   object-fit: contain;
   object-position: top ; /* Imposta l'immagine dall'alto */
+
 
 `;
 
@@ -1259,7 +1260,9 @@ useEffect(() => {
     <Menu open={isHoveredCollections}>
       <MenuContent>
         <MenuItem>
+        <DivCategoriaProdotti>
        <Typography2>ALL COLLECTIONS</Typography2> 
+       </DivCategoriaProdotti>
        <Typography3 onClick={handleShopClickBollywood} style={{ cursor: 'pointer' }}>Bollywood</Typography3> 
        <Typography3 onClick={handleShopClickFleurie} style={{ cursor: 'pointer' }}>Fleurie</Typography3> 
        <Typography3 onClick={handleShopClickTycoon} style={{ cursor: 'pointer' }}>Tycoon</Typography3> 
@@ -1289,14 +1292,18 @@ useEffect(() => {
     <Menu open={isHoveredAbout}>
       <MenuContent>
         <MenuItem>
+        <DivCategoriaProdotti>
        <Typography2>THE HOUSE</Typography2> 
+       </DivCategoriaProdotti>
        <Typography3 onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</Typography3> 
        <Typography3 onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Boutiques</Typography3> 
         </MenuItem>
 
 
         <MenuItem>
+        <DivCategoriaProdotti>
         <Typography2>EXPERTISE</Typography2>
+        </DivCategoriaProdotti>
         <Typography3 onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Book an appointment</Typography3> 
         <Typography3 onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</Typography3> 
         <Typography3 onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</Typography3> 
