@@ -182,7 +182,7 @@ background-color:gray;
 
 const LazyLoadedCategory = styled.img`
 width: 100%;
-height: 100%;
+height: 400px;
 object-fit: cover;
 transition: transform 1s ease-in-out;
 transform-origin: center center;
@@ -366,6 +366,7 @@ transition: opacity 0.5s ease-in-out;
 
 const Containertest = styled.div`
   width: 100%; /* 2 volte il 100% della larghezza dello schermo */
+
   white-space: nowrap; /* evita il wrapping dei figli */
   overflow-x: auto; /* barra di scorrimento orizzontale automatica */
 
@@ -554,210 +555,208 @@ const ShoppingList = () => {
 
 
     <ItemDivContenitore>
-      <ItemDiv
-
-      >
+      <ItemDiv>
 
 
 
 
 
-{value === "earrings" && (
-  <>
+      {value === "earrings" && (
+      <>
 
-        
-        {earringsItems.length > 0 ? (
-          <Containertest>
-            
-            <OrangeDiv>
+          
+          {earringsItems.length > 0 ? (
+            <Containertest>
+              
+              <OrangeDiv>
+                <DivImmagineCategoria2>
+                  <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+                  {/* Aggiungi il tuo div qui */}
+                  <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+                </DivImmagineCategoria2>
+              </OrangeDiv>
+              
+              {/* Renderizza solo i primi tre elementi di earringsItems */}
+              {earringsItems.slice(0, 4).map((item, index) => (
+                <React.Fragment key={index}>
+                  <OrangeDiv>
+                    <Column>
+                      <Item item={item}/>
+                      <ItemInfo item={item}/>
+                    </Column>
+                  </OrangeDiv>
+                </React.Fragment>
+              ))}
+            </Containertest>
+          ) : (
+            <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+          )}
+
+      </>
+      )}
+
+
+
+      {value === "bracelets" && (
+      <>
+
+      {earringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
+
+            <Containertest>
+
+              <OrangeDiv>
               <DivImmagineCategoria2>
-                <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+
+                <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+
+
+
                 {/* Aggiungi il tuo div qui */}
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
-              </DivImmagineCategoria2>
-            </OrangeDiv>
-            
-            {/* Renderizza solo i primi tre elementi di earringsItems */}
-            {earringsItems.slice(0, 4).map((item, index) => (
+
+                </DivImmagineCategoria2>
+                
+                </OrangeDiv>                                  
+                
+
+
+              {/* Renderizza gli elementi solo se earringsItems contiene dati */}
+              {braceletsItems.map((item, index) => (
               <React.Fragment key={index}>
+
                 <OrangeDiv>
-                  <Column>
-                    <Item item={item}/>
-                    <ItemInfo item={item}/>
-                  </Column>
+                <Column>
+                  <Item item={item}/>
+                  <ItemInfo item={item}/>
+                </Column>
                 </OrangeDiv>
+                
+
+
               </React.Fragment>
-            ))}
-          </Containertest>
-        ) : (
-          <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
-        )}
-
-  </>
-)}
+              ))}
+            </Containertest>
 
 
 
-{value === "bracelets" && (
-  <>
+        
 
-    {earringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
+        
+      ) : (
+        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+      )}
 
-          <Containertest>
-
-            <OrangeDiv>
-            <DivImmagineCategoria2>
-
-              <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+      </>
+      )}
 
 
+      {value === "necklaces" && (
+      <>
 
-              {/* Aggiungi il tuo div qui */}
-              <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-              <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+      {necklacesItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
 
-              </DivImmagineCategoria2>
-              
-              </OrangeDiv>                                  
-              
-
-
-            {/* Renderizza gli elementi solo se earringsItems contiene dati */}
-            {braceletsItems.map((item, index) => (
-            <React.Fragment key={index}>
+            <Containertest>
 
               <OrangeDiv>
-              <Column>
-                <Item item={item}/>
-                <ItemInfo item={item}/>
-              </Column>
-              </OrangeDiv>
-              
+              <DivImmagineCategoria2>
 
-
-            </React.Fragment>
-            ))}
-          </Containertest>
+                <LazyLoadedCategory src={necklacesCategory} alt="Categoria bracelets" />
 
 
 
-      
+                {/* Aggiungi il tuo div qui */}
+                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP NECKLACES </GtaRegular2></ShopButton>
 
-      
-    ) : (
-      <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
-    )}
-
-  </>
-)}
-
-
-{value === "necklaces" && (
-  <>
-
-    {necklacesItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
-
-          <Containertest>
-
-            <OrangeDiv>
-            <DivImmagineCategoria2>
-
-              <LazyLoadedCategory src={necklacesCategory} alt="Categoria bracelets" />
+                </DivImmagineCategoria2>
+                
+                </OrangeDiv>                                  
+                
 
 
+              {/* Renderizza gli elementi solo se earringsItems contiene dati */}
+              {necklacesItems.map((item, index) => (
+              <React.Fragment key={index}>
 
-              {/* Aggiungi il tuo div qui */}
-              <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-              <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP NECKLACES </GtaRegular2></ShopButton>
-
-              </DivImmagineCategoria2>
-              
-              </OrangeDiv>                                  
-              
-
-
-            {/* Renderizza gli elementi solo se earringsItems contiene dati */}
-            {necklacesItems.map((item, index) => (
-            <React.Fragment key={index}>
-
-              <OrangeDiv>
-              <Column>
-                <Item item={item}/>
-                <ItemInfo item={item}/>
-              </Column>
-              </OrangeDiv>
-              
+                <OrangeDiv>
+                <Column>
+                  <Item item={item}/>
+                  <ItemInfo item={item}/>
+                </Column>
+                </OrangeDiv>
+                
 
 
-            </React.Fragment>
-            ))}
-          </Containertest>
+              </React.Fragment>
+              ))}
+            </Containertest>
 
 
 
-      
+        
 
-      
-    ) : (
-      <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
-    )}
+        
+      ) : (
+        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+      )}
 
-  </>
-)}
+      </>
+      )}
 
-{value === "rings" && (
-  <>
+      {value === "rings" && (
+      <>
 
-    {ringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
+      {ringsItems.length > 0 ? ( // Verifica se earringsItems contiene elementi
 
-          <Containertest>
-
-            <OrangeDiv>
-            <DivImmagineCategoria2>
-
-              <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
-
-
-
-              {/* Aggiungi il tuo div qui */}
-              <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-              <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP RINGS </GtaRegular2></ShopButton>
-
-              </DivImmagineCategoria2>
-              
-              </OrangeDiv>                                  
-              
-
-
-            {/* Renderizza gli elementi solo se earringsItems contiene dati */}
-            {ringsItems.map((item, index) => (
-            <React.Fragment key={index}>
+            <Containertest>
 
               <OrangeDiv>
-              <Column>
-                <Item item={item}/>
-                <ItemInfo item={item}/>
-              </Column>
-              </OrangeDiv>
-              
+              <DivImmagineCategoria2>
 
-
-            </React.Fragment>
-            ))}
-          </Containertest>
+                <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
 
 
 
-      
+                {/* Aggiungi il tuo div qui */}
+                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP RINGS </GtaRegular2></ShopButton>
 
-      
-    ) : (
-      <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
-    )}
+                </DivImmagineCategoria2>
+                
+                </OrangeDiv>                                  
+                
 
-  </>
-)}
+
+              {/* Renderizza gli elementi solo se earringsItems contiene dati */}
+              {ringsItems.map((item, index) => (
+              <React.Fragment key={index}>
+
+                <OrangeDiv>
+                <Column>
+                  <Item item={item}/>
+                  <ItemInfo item={item}/>
+                </Column>
+                </OrangeDiv>
+                
+
+
+              </React.Fragment>
+              ))}
+            </Containertest>
+
+
+
+        
+
+        
+      ) : (
+        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+      )}
+
+      </>
+      )}
 
 
 
