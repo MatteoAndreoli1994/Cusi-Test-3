@@ -176,7 +176,7 @@ display: flex;
 width: auto;
 height: 100%;
 overflow: hidden;
-background-color:gray;
+
 `;
 
 
@@ -360,7 +360,7 @@ align-items:center;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 0.5s ease-in-out;
+transition: opacity 1s ease-in-out;
 `;
 
 
@@ -385,7 +385,7 @@ const Containertest = styled.div`
 const Test = styled.div`
   width: 100px; /* 2 volte il 100% della larghezza dello schermo */
   height: 100px;
-  background-color:gray;
+
 
 `;
 
@@ -578,7 +578,12 @@ const ShoppingList = () => {
               
               <OrangeDiv>
                 <DivImmagineCategoria2>
-                  <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+                <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+                  </LazyLoadWrapper>
+                </LazyLoad>  
+
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
@@ -616,8 +621,13 @@ const ShoppingList = () => {
 
               <OrangeDiv>
               <DivImmagineCategoria2>
+              <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+                  <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+                  </LazyLoadWrapper>
+                </LazyLoad>  
 
-                <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+
 
 
 
@@ -670,8 +680,13 @@ const ShoppingList = () => {
 
               <OrangeDiv>
               <DivImmagineCategoria2>
+              <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+                  <LazyLoadedCategory src={necklacesCategory} alt="Categoria bracelets" />
+                  </LazyLoadWrapper>
+                </LazyLoad>  
 
-                <LazyLoadedCategory src={necklacesCategory} alt="Categoria bracelets" />
+
 
 
 
@@ -723,8 +738,12 @@ const ShoppingList = () => {
 
               <OrangeDiv>
               <DivImmagineCategoria2>
+              <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+                  <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
+                  </LazyLoadWrapper>
+                </LazyLoad>  
 
-                <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
 
 
 
