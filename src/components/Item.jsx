@@ -30,9 +30,7 @@ width:auto;
 @media(max-width: 680px){
   height: 200px;
 }
-@media(max-width: 400px){
-  height: 100px;
-}
+
 
 
 

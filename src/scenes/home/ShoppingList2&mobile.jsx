@@ -127,6 +127,19 @@ width:95%;
   width:85%;
 }
 
+@media(max-width: 1200px){
+  height: 500px;
+}
+@media(max-width: 900px){
+  height: 390px;
+}
+@media(max-width: 680px){
+  height: 290px;
+}
+@media(max-width: 500px){
+  height: 270px;
+}
+
 
 
 `;
@@ -186,9 +199,7 @@ overflow: hidden;
 @media(max-width: 680px){
   height: 200px;
 }
-@media(max-width: 400px){
-  height: 100px;
-}
+
 
 `;
 
@@ -211,9 +222,7 @@ transform: scale(1.1);
 @media(max-width: 680px){
   height: 200px;
 }
-@media(max-width: 400px){
-  height: 100px;
-}
+
 
 
 
