@@ -177,6 +177,19 @@ width: auto;
 height: 600px;
 overflow: hidden;
 
+@media(max-width: 1200px){
+  height: 400px;
+}
+@media(max-width: 900px){
+  height: 300px;
+}
+@media(max-width: 680px){
+  height: 200px;
+}
+@media(max-width: 400px){
+  height: 100px;
+}
+
 `;
 
 
@@ -187,6 +200,20 @@ object-fit: cover;
 transition: transform 1s ease-in-out;
 transform-origin: center center;
 transform: scale(1.1);
+
+
+@media(max-width: 1200px){
+  height: 400px;
+}
+@media(max-width: 900px){
+  height: 300px;
+}
+@media(max-width: 680px){
+  height: 200px;
+}
+@media(max-width: 400px){
+  height: 100px;
+}
 
 
 
@@ -400,7 +427,7 @@ const InnerDiv = styled.div`
 
 
   @media(max-width: 680px){
-    width: 49%; /* 50% della larghezza dello schermo */
+    width: auto; /* 50% della larghezza dello schermo */
     margin-right:1.5%;
   
   }
