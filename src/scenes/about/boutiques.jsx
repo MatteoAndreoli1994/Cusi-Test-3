@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import { BarLoader, ClipLoader } from 'react-spinners';
 import LazyLoad from 'react-lazyload';
 import { HashLink } from 'react-router-hash-link';
+import Footer from "../global/FooterNoSubscribe"
 
 const StyledHashLink = styled(HashLink)`
 text-decoration: none; /* Rimuovi sottolineature */
@@ -850,6 +851,8 @@ and on Saturdays from 9 am to 5 pm.
 
 
 </Container>
+
+<Footer/>
 
 </LazyLoadWrapper>
 </LazyLoad>

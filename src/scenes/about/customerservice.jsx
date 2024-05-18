@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import { useNavigate } from "react-router-dom";
+import Footer from "../global/FooterNoSubscribe"
 
 const Container = styled.div`
   display: flex;
@@ -362,6 +363,7 @@ const CustomerService = () => {
   
 
   return (
+    <>
     <Container>
       <CustomerServiceDiv>
         <Menu>
@@ -683,6 +685,8 @@ const CustomerService = () => {
 
 
     </Container>
+    <Footer/>
+    </>
   );
 };
 

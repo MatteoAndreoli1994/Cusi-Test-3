@@ -9,6 +9,7 @@ import RobertoCusi from "../../assets/about6.avif";
 import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
+import Footer from "../global/FooterNoSubscribe"
 
 const Container = styled.div`
   margin-top:120px;
@@ -791,6 +792,8 @@ This brief retrospective tells the story, the evolution of the concept of jewelr
 
     
 </Container>
+
+<Footer/>
 
         </LazyLoadWrapper>
   </LazyLoad>

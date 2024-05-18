@@ -30,6 +30,7 @@ import SearchImage from "../../assets/search.png";
 import ShoppingBag from "../../assets/shopping-bag.png";
 
 const Container = styled.div`
+
   display: flex;
   align-items: center;
   width: 100%;
@@ -45,11 +46,15 @@ const Container = styled.div`
 `;
 
 const NavBarDiv = styled.div`
-width: 85%;
+width: 80%;
 margin: auto;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media(max-width:1200px){
+  width: 85%;
+}
 
 
 `;
@@ -82,6 +87,8 @@ const BoxSinistra = styled.div`
 
   display: flex; /* Aggiunto display: flex; qui */
   width:50%;
+  align-items:center;
+  justify-content:center;
 
   li {
     margin-right: 10%;
@@ -137,7 +144,7 @@ const Menu = styled.div`
   top: ${({ open }) => (open ? '120px' : '-100%')};
   position: absolute;
 
-
+  
   width: 100%;
   height: 62%;
   background-color: white;
@@ -146,6 +153,7 @@ const Menu = styled.div`
   z-index: 99;
   align-items:center;
   transition: left 1s ease;
+  
 
 
   &:hover {
@@ -179,11 +187,13 @@ const MenuContent = styled.div`
   justify-content: space-between;
   align-items: center; /* Aggiunto per centrare verticalmente il contenuto */
   height: 85%;
-  width: 85%;
+  width: 80%;
   margin-left: auto; /* Aggiunto per centrare orizzontalmente */
   margin-right:auto;
   margin-top:0;
   border: 1px;
+
+  margin-top:2%;
 
 
 
@@ -225,13 +235,14 @@ const Typography2 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
 font-weight: normal;
-margin-top:0;
+
 `;
 const Typography3 = styled.p`
   font-family: 'GTAmericaRegular';
   font-size: 20px;
   font-weight: normal;
   margin-bottom: 0;
+  margin:3%;
   cursor: pointer;
   color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
   transition:  margin-left 0.2s;
@@ -308,6 +319,10 @@ display: none;
   
 }
 `;
+const DivCategoriaProdotti = styled.div`
+margin-bottom:5%;
+`;
+
 
 
 //CONTENUTO MENU LATERALE
@@ -319,7 +334,8 @@ const DivCarrello =  styled(Box)`
   bottom: 0;
   width: 80%;
   height: 100%;
-  background-color: white;
+  background-color:white;
+
 
 
 
@@ -362,6 +378,7 @@ const ContainerFiltri = styled.div`
 
 min-height:80%;
 height:auto;
+
 
 `;
 const FilterButtonText = styled.span`
@@ -1201,7 +1218,10 @@ useEffect(() => {
     <Menu open={isHovered}>
       <MenuContent>
         <MenuItem>
-       <Typography2>HIGH JEWELLEY</Typography2> 
+        <DivCategoriaProdotti>
+        <Typography2>HIGH JEWELLEY</Typography2> 
+        </DivCategoriaProdotti>
+
        <Typography3 onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</Typography3> 
        <Typography3 onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>Earrings</Typography3> 
        <Typography3 onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</Typography3> 
@@ -1210,7 +1230,9 @@ useEffect(() => {
 
 
         <MenuItem>
+        <DivCategoriaProdotti>
         <Typography2>FINE OBJECTS</Typography2>
+        </DivCategoriaProdotti>
         <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</Typography3> 
         <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</Typography3> 
         <Typography3 onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</Typography3> 
@@ -1218,7 +1240,9 @@ useEffect(() => {
 
         </MenuItem>
         <MenuItem>
+        <DivCategoriaProdotti>
         <Typography2>GIFTS</Typography2>
+        </DivCategoriaProdotti>
         <Typography3>For Her</Typography3> 
         <Typography3>For Him</Typography3> 
 
