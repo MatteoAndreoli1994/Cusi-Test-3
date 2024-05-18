@@ -40,7 +40,7 @@ const Container = styled.div`
   position: fixed;
   top: ${props => props.top}px;
   left: 0;
-  z-index: 99;
+  z-index: 2;
   overflow: hidden;
   transition: top 1s;
 
@@ -171,7 +171,7 @@ const MenuSearch = styled.div`
   height: auto;
 
   position: fixed;
-  z-index: 2; // Assicurati che il div sovrapponga il contenuto della home page
+  z-index: 1;
 
   align-items:center;
   transition: top 1s ease;

@@ -71,7 +71,7 @@ const Content = styled.div`
   flex: 1;
   padding: 20px;
 
-  margin-top:3%;
+  margin-top:0%;
 `;
 
 const Mobile = styled.div`
@@ -121,7 +121,7 @@ text-align:center;
 const GtaRegular16 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
-margin-top:4%;
+margin-top:65px;
 margin-bottom:3%;
 
 `;

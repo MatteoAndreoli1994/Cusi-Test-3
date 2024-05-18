@@ -78,6 +78,9 @@ const ColumnMobile = styled.div`
     display:block;
   }
 `;
+const RawMobile = styled.div`
+  display:flex;
+`;
 
 const ColumnLogo = styled.div`
   flex: 1;
@@ -158,11 +161,16 @@ const DivLingua = styled.div`
   color: black;
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 40%;
   align-items: center;
   padding: 10px;
 
   margin-right:1.5%;
+
+  @media(max-width:900px){
+    width: 50%;
+
+  }
 `;
 
 const Logo = styled.div`
@@ -234,11 +242,17 @@ const GtaRegularLegalPol = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 cursor: pointer;
+margin-right:2%;
 `;
 
 const GtaLight = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 14px;
+
+`;
+const Collegamento = styled.a`
+
+margin-right:4%;
 
 `;
 
@@ -320,13 +334,13 @@ function Footer() {
 
         <DivLingua>
 
-        <a href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Privacy Policy</GtaRegular>
-        </a>
+        </Collegamento>
 
-        <a href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
-        </a>
+        </Collegamento>
 
 
           <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
@@ -337,12 +351,37 @@ function Footer() {
 
           <GtaRegular>IT/€</GtaRegular>
           <GtaRegular>English</GtaRegular>
+
         </DivLingua>
+
+
+
+
+
+
+
+
+
       </CopyrightContainer>
 
       <CopyrightContainerMobile>
         
-      <ColumnMobile><GtaRegular>© 2024 Cusi. All rights reserved </GtaRegular></ColumnMobile>
+      <ColumnMobile>
+
+      <GtaRegular>© 2024 Cusi. All rights reserved </GtaRegular>
+      
+      
+      
+      </ColumnMobile>
+
+
+      <DivLingua>
+      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
+      <GtaRegular>IT/€</GtaRegular>
+      <GtaRegular>English</GtaRegular>
+
+      </DivLingua>
+
 
 
       
