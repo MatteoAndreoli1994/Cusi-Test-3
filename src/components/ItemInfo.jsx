@@ -36,7 +36,7 @@ const Item = ({ item, width }) => {
   
   height:100%;
   
-  max-width:100px;
+  width:auto;
   
   position:relative;
   
