@@ -64,7 +64,7 @@ color: inherit; /* Usa il colore del testo predefinito */
       margin-top:12%;
     }
 
-    @media(max-width: 680px){
+    @media(max-width: 900px){
       width:90%;
       margin-right: 0%;
       margin-top:10%;
@@ -88,7 +88,7 @@ color: inherit; /* Usa il colore del testo predefinito */
 
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     width: 100%;
 
   }
@@ -109,7 +109,7 @@ const Image = styled.img`
 
   }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     margin-top: 2%;
     width: 90%;
     height: auto;
@@ -156,7 +156,7 @@ margin-top:5%;
   width: 80%; /* Larghezza al 50% rispetto al container */
 }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     display: none;
   }
 `;
@@ -167,7 +167,8 @@ object-fit: contain; /* Mantieni l'aspect ratio e riempi l'area disponibile */
 margin-bottom:0%;
 
 display: none;
-  @media(max-width: 680px){
+
+  @media(max-width: 900px){
     display: block;
   }
 `;
@@ -184,7 +185,7 @@ const Image2Div = styled.div`
 
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     display: none;
   }
 `;
@@ -196,7 +197,7 @@ const ItemContainer = styled.div`
   justify-content: center;
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     flex-direction: column;
   }
 `;
@@ -209,7 +210,7 @@ const ItemContainer = styled.div`
   margin-top: 20%;
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     font-size:17.5px;
     margin-top: 8%;
   }
@@ -244,7 +245,7 @@ const ButtonBlack = styled(Button)`
 
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     && {
       transition: background-color 0.3s ease;
       margin-bottom: 8px;
@@ -272,7 +273,7 @@ const ButtonWhite = styled(Button)`
   }
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     && {
       transition: background-color 0.3s ease;
       margin-bottom: 8px;
@@ -289,7 +290,7 @@ const ButtonWhite = styled(Button)`
   margin-bottom: 3%;
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     font-size:30px;
   }
   `;
@@ -304,7 +305,7 @@ const ButtonWhite = styled(Button)`
 
 
 
-  @media (max-width: 680px){
+  @media (max-width: 900px){
     width:100%;
   }
 
@@ -322,7 +323,7 @@ const ButtonWhite = styled(Button)`
     width: 90%;
   }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     width: 90%;
   }
 
@@ -514,17 +515,18 @@ transition: opacity 1s ease-in-out;
 
 
 const FaqDiv = styled.div`
-  width: 70%;
+  width: 100%;
   margin-top: 5%;
   margin-bottom:30%;
 
   @media(max-width: 1200px){
-    width:80%;
+    width:100%;
     margin-top: 10%;
+
   }
 
-  @media(max-width: 680px){
-    width:90%;
+  @media(max-width: 900px){
+    width:100%;
 
   }
 `;
@@ -992,64 +994,65 @@ const ItemDetails = () => {
               </ButtonWhite>
               </StyledHashLink>
 
+              <FaqDiv>
+      {/* prima Linea nera */}
+              <AccordionContent></AccordionContent>
+
+      {/* Prima Domanda */}
+                <FilterButton onClick={() => toggleAccordion('Details')}>
+                  <AccordionItem >
+                    DETAILS
+
+                  </AccordionItem>
+                  <FilterSign>
+                      {accordionState['Details'] ? (  // Se isOpen è true (l'accordion è aperto)
+                        <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                      ) : (
+                        <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                      )}
+                  </FilterSign>
+                </FilterButton>
+
+
+                <AccordionContent isOpen={accordionState['Details']}>
+                <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.shortDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+                      <GtaLightLightInfo>
+
+                      </GtaLightLightInfo>
+                </AccordionContent>
+
+      {/* prima Linea nera */}
+
+
+      {/* Prima Domanda */}
+                <FilterButton onClick={() => toggleAccordion('Shipping')}>
+                  <AccordionItem >
+                    SHIPPING & RETURNS
+
+                  </AccordionItem>
+                  <FilterSign>
+                      {accordionState['Shipping'] ? (  // Se isOpen è true (l'accordion è aperto)
+                        <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+                      ) : (
+                        <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+                      )}
+                  </FilterSign>
+                </FilterButton>
+
+
+                <AccordionContent isOpen={accordionState['Shipping']}>
+                <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+                      <GtaLightLightInfo>
+
+                      </GtaLightLightInfo>
+                </AccordionContent>
+              </FaqDiv>
 
             </Bottoni>
 
 
 
-            <FaqDiv>
-{/* prima Linea nera */}
-        <AccordionContent></AccordionContent>
 
-{/* Prima Domanda */}
-          <FilterButton onClick={() => toggleAccordion('Details')}>
-            <AccordionItem >
-              DETAILS
-
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Details'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Details']}>
-          <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.shortDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
-                <GtaLightLightInfo>
-
-                </GtaLightLightInfo>
-          </AccordionContent>
-
-{/* prima Linea nera */}
-
-
-{/* Prima Domanda */}
-          <FilterButton onClick={() => toggleAccordion('Shipping')}>
-            <AccordionItem >
-              SHIPPING & RETURNS
-
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Shipping'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Shipping']}>
-          <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
-                <GtaLightLightInfo>
-
-                </GtaLightLightInfo>
-          </AccordionContent>
-            </FaqDiv>
 
             
           </DescripionDiv>
