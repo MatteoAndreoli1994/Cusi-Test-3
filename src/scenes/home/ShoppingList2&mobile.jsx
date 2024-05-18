@@ -120,7 +120,7 @@ margin-top:1%;
 
 const ItemDiv = styled.div`
 display:flex;
-height:100%;
+height:730px;
 width:95%;
 
 @media(max-width: 900px){
@@ -624,7 +624,7 @@ const ShoppingList = () => {
                     <Column>
       
                       <Item item={item}/>
-                      <ItemInfo item={item}/>
+            
                     </Column>
                   </OrangeDiv>
                 </React.Fragment>
@@ -675,7 +675,7 @@ const ShoppingList = () => {
                 <OrangeDiv>
                 <Column>
                   <Item item={item}/>
-                  <ItemInfo item={item}/>
+     
                 </Column>
                 </OrangeDiv>
                 
@@ -734,7 +734,7 @@ const ShoppingList = () => {
                 <OrangeDiv>
                 <Column>
                   <Item item={item}/>
-                  <ItemInfo item={item}/>
+    
                 </Column>
                 </OrangeDiv>
                 
@@ -791,7 +791,7 @@ const ShoppingList = () => {
                 <OrangeDiv>
                 <Column>
                   <Item item={item}/>
-                  <ItemInfo item={item}/>
+
                 </Column>
                 </OrangeDiv>
                 

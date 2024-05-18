@@ -48,10 +48,54 @@ const DivImmagine = styled.div`
 height:100%;
 
 `;
+const InfoProdotto = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aggiornato da "flex-align" a "flex-start" */
+  text-align:center;
+
+
+`;
+
+
+
+const ABC20 = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 20px; 
+margin: 0%;
+
+font-weight: lighter;
+
+@media (max-width: 1200px) {
+  font-size: 14px; 
+}
+@media(max-width: 680px){
+  font-size: 13px; 
+}
+
+`;
+const ABC16 = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 16px; 
+margin-top: 2%;
+text-align: center;
+font-weight: lighter;
+
+@media(max-width: 680px){
+  font-size: 14px;
+  margin-top: 0; 
+}
+`;
 
 
 
 const Item = ({ item, width }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+    // Funzione per formattare il prezzo
+    const formatPrice = (price) => {
+      return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
+    };
   const navigate = useNavigate();
   const [loaded, setLoaded] = React.useState(false);
   const handleContentLoad = () => {
@@ -70,6 +114,11 @@ const Item = ({ item, width }) => {
         attributes: { url },
     },
 } = image;
+
+const handleImageLoad = () => {
+  setImageLoaded(true);
+};
+
 
 
 
@@ -91,6 +140,7 @@ const Item = ({ item, width }) => {
           src={`${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
+          onLoad={handleImageLoad}
 
         />
 
@@ -117,6 +167,11 @@ const Item = ({ item, width }) => {
         </Box>
         
       </DivImmagine>
+      <InfoProdotto  style={{  display: imageLoaded ? "flex" : "none" }}>
+
+      <ABC20>{name}</ABC20>
+      <ABC16 fontWeight="bold">{formatPrice(price) }</ABC16>
+      </InfoProdotto>
 
     </DivItem>
     </LazyLoadWrapper>
