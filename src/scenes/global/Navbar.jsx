@@ -40,17 +40,19 @@ const Container = styled.div`
   position: fixed;
   top: ${props => props.top}px;
   left: 0;
-  z-index: 3;
+  z-index: 99;
   overflow: hidden;
   transition: top 1s;
+
 `;
 
 const NavBarDiv = styled.div`
-width: 80%;
+width: 85%;
 margin: auto;
 display: flex;
 justify-content: center;
 align-items: center;
+
 
 @media(max-width:1200px){
   width: 85%;
@@ -170,9 +172,9 @@ const MenuSearch = styled.div`
 
   position: fixed;
   z-index: 2; // Assicurati che il div sovrapponga il contenuto della home page
-  z-index: 99;
+
   align-items:center;
-  transition: left 1s ease;
+  transition: top 1s ease;
 
 background-color:white;
 
@@ -187,7 +189,7 @@ const MenuContent = styled.div`
   justify-content: space-between;
   align-items: center; /* Aggiunto per centrare verticalmente il contenuto */
   height: 85%;
-  width: 80%;
+  width: 85%;
   margin-left: auto; /* Aggiunto per centrare orizzontalmente */
   margin-right:auto;
   margin-top:0;
@@ -1366,9 +1368,9 @@ useEffect(() => {
 
     <BoxMenuGrayOutSearch 
         display={isHoveredSearch ? "flex" : "none"}
-        backgroundColor="rgba(0, 0, 0, 0.4)"
+        backgroundColor="rgba(0, 0, 0, 0)"
         position="fixed"
-        zIndex={10}
+        zIndex={0}
         width="100%"  // Cambiato da 100% a 70%
         height="100%"
         right="0"    // Cambiato da left a right
