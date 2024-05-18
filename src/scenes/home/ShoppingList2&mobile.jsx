@@ -186,20 +186,20 @@ margin-top:2%;
 const DivImmagineCategoria2 = styled.div`
 position: relative;
 display: flex;
-min-width: 150px;
+min-width: 200px;
 height: 600px;
 overflow: hidden;
 
 @media(max-width: 1200px){
-  min-width: 133px;
+  min-width: 333px;
   height: 400px;
 }
 @media(max-width: 900px){
-  min-width: 100px;
+  min-width: 200px;
   height: 300px;
 }
 @media(max-width: 680px){
-  min-width: 80px;
+  min-width: 100px;
   height: 200px;
 }
 
