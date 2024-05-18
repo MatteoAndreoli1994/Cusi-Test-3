@@ -608,12 +608,14 @@ const ShoppingList = () => {
                 <LazyLoad once>
                   <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+
+                  </LazyLoadWrapper>
+                </LazyLoad>  
                 </DivImmagineCategoria2>
               </OrangeDiv>
               
@@ -651,8 +653,7 @@ const ShoppingList = () => {
               <LazyLoad once>
                   <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
                   <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+
 
 
 
@@ -661,6 +662,9 @@ const ShoppingList = () => {
                 {/* Aggiungi il tuo div qui */}
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+
+                </LazyLoadWrapper>
+                </LazyLoad>  
 
                 </DivImmagineCategoria2>
                 
@@ -710,8 +714,7 @@ const ShoppingList = () => {
               <LazyLoad once>
                   <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
                   <LazyLoadedCategory src={necklacesCategory} alt="Categoria bracelets" />
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+
 
 
 
@@ -720,6 +723,9 @@ const ShoppingList = () => {
                 {/* Aggiungi il tuo div qui */}
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP NECKLACES </GtaRegular2></ShopButton>
+
+                </LazyLoadWrapper>
+                </LazyLoad>  
 
                 </DivImmagineCategoria2>
                 
@@ -768,8 +774,7 @@ const ShoppingList = () => {
               <LazyLoad once>
                   <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
                 <LazyLoadedCategory src={ringsCategory} alt="Categoria bracelets" />
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+
 
 
 
@@ -777,6 +782,9 @@ const ShoppingList = () => {
                 {/* Aggiungi il tuo div qui */}
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP RINGS </GtaRegular2></ShopButton>
+
+                </LazyLoadWrapper>
+                </LazyLoad>  
 
                 </DivImmagineCategoria2>
                 
