@@ -16,9 +16,9 @@ display:flex;
 flex-direction: column;
 align-items: center;
 
-height:500px;
+height:600px;
 
-width:100%;
+width:auto;
 
 
 
@@ -73,7 +73,7 @@ const Item = ({ item, width }) => {
       >
         <img
           alt={item.name}
-          width="100%"
+
           height="100%"
           src={`${url}`}
           onClick={() => navigate(`/item/${item.id}`)}

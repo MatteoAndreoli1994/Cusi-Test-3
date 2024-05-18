@@ -173,7 +173,7 @@ margin-top:2%;
 const DivImmagineCategoria2 = styled.div`
 position: relative;
 display: flex;
-width: 100%;
+width: auto;
 height: 100%;
 overflow: hidden;
 background-color:gray;
@@ -181,8 +181,8 @@ background-color:gray;
 
 
 const LazyLoadedCategory = styled.img`
-width: 100%;
-height: 400px;
+width: auto;
+height: 600px;
 object-fit: cover;
 transition: transform 1s ease-in-out;
 transform-origin: center center;
@@ -382,14 +382,22 @@ const Containertest = styled.div`
 
 
 `;
+const Test = styled.div`
+  width: 100px; /* 2 volte il 100% della larghezza dello schermo */
+  height: 100px;
+  background-color:gray;
+
+`;
+
 
 
 const InnerDiv = styled.div`
-  width: 32%; /* 50% della larghezza dello schermo */
+  width: auto; /* 50% della larghezza dello schermo */
   height: auto;
   display: inline-block;
   margin-top: 3%;
   margin-right:1.5%;
+
 
   @media(max-width: 680px){
     width: 49%; /* 50% della larghezza dello schermo */
@@ -582,6 +590,7 @@ const ShoppingList = () => {
                 <React.Fragment key={index}>
                   <OrangeDiv>
                     <Column>
+      
                       <Item item={item}/>
                       <ItemInfo item={item}/>
                     </Column>
