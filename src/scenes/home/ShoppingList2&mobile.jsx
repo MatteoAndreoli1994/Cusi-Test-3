@@ -210,6 +210,7 @@ overflow: hidden;
 const LazyLoadedCategory = styled.img`
 width: auto;
 height: 600px;
+min-width: 514.98px;
 object-fit: cover;
 
 transform-origin: center center;
@@ -218,12 +219,15 @@ transition: opacity 1s ease-in;
 
 @media(max-width: 1200px){
   height: 400px;
+  min-width: 343.32px;
 }
 @media(max-width: 900px){
   height: 300px;
+  min-width: 257.49px;
 }
 @media(max-width: 680px){
   height: 200px;
+  min-width: 171.66px;
 }
 
 
