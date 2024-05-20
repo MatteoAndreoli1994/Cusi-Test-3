@@ -627,7 +627,7 @@ const ShoppingList = () => {
 
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
                               style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
-                              transition: "opacity 5s ease-in-out",
+                              transition: "opacity 1s ease-in-out",
                               cursor: "pointer" }}
                               onLoad={handleImageLoad}
                     

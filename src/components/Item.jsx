@@ -18,17 +18,20 @@ align-items: center;
 
 height:600px;
 
-width:auto;
+min-width:480px;
 
 
 @media(max-width: 1200px){
   height: 400px;
+  min-width:320px;
 }
 @media(max-width: 900px){
   height: 300px;
+  min-width:240px;
 }
 @media(max-width: 680px){
   height: 200px;
+  min-width:160px;
 }
 
 
