@@ -464,6 +464,7 @@ const GreenDiv = styled(InnerDiv)`
 
 const ShoppingList = () => {
   const dispatch = useDispatch();
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [value, setValue] = useState("earrings");
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
@@ -542,7 +543,9 @@ const ShoppingList = () => {
   const handleShopClickBracelets = () => {
     navigate('/shopBracelets');
   };
-
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
    
 
 
@@ -617,17 +620,21 @@ const ShoppingList = () => {
               
               <OrangeDiv>
                 <DivImmagineCategoria2>
-                <LazyLoad once>
-                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" />
+
+                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
+                              style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
+                              transition: "opacity 1s ease-in-out",
+                              cursor: "pointer" }}
+                              onLoad={handleImageLoad}
+                    
+                    />
 
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
 
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+ 
                 </DivImmagineCategoria2>
               </OrangeDiv>
               
