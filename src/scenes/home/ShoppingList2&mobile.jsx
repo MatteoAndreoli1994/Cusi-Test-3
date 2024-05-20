@@ -625,6 +625,9 @@ const ShoppingList = () => {
               <OrangeDiv>
                 <DivImmagineCategoria2>
 
+                <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
                               style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
                               transition: "opacity 1s ease-in-out, transform 0.5s ease-in-out",
@@ -637,7 +640,8 @@ const ShoppingList = () => {
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
-
+                  </LazyLoadWrapper>
+                </LazyLoad>  
  
                 </DivImmagineCategoria2>
               </OrangeDiv>
