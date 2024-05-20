@@ -94,7 +94,7 @@ margin-bottom:1%;
 `;
 const ItemDivContenitore = styled.div`
 width: 85%;
-min-height: 70vh;
+height: auto;
 
 
 display: flex; // Aggiungi questa riga per centrare il div verticalmente
@@ -107,12 +107,12 @@ margin-top:1%;
 
 @media(max-width: 1200px){
   width: 90%;
-  min-height: 50vh;
+  height: auto;
 }
 
 @media(max-width: 900px){
   width: 100%;
-  min-height: 42vh;
+  height: auto;
 }
 
 
@@ -215,7 +215,7 @@ object-fit: cover;
 
 transform-origin: center center;
 transform: scale(1.1);
-transition: opacity 1s ease-in;
+transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Aggiunta della transizione graduale per il transform */
 
 @media(max-width: 1200px){
   height: 400px;
@@ -627,7 +627,7 @@ const ShoppingList = () => {
 
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
                               style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
-                              transition: "opacity 1s ease-in-out",
+                              transition: "opacity 1s ease-in-out, transform 0.5s ease-in-out",
                               cursor: "pointer" }}
                               onLoad={handleImageLoad}
                     
@@ -673,12 +673,13 @@ const ShoppingList = () => {
 
               <OrangeDiv>
               <DivImmagineCategoria2>
+              <LazyLoad once>
+                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+                
 
                   <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" 
-                  style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
-                  transition: "opacity 5s ease-in-out",
+                  style={{ objectFit: "contain",
                   cursor: "pointer" }}
-                  onLoad={handleImageLoad}
                   />
 
 
@@ -690,7 +691,8 @@ const ShoppingList = () => {
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
 
-
+                </LazyLoadWrapper>
+                </LazyLoad>  
                 </DivImmagineCategoria2>
                 
                 </OrangeDiv>                                  
