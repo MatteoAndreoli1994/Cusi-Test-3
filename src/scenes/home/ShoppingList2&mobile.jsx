@@ -165,7 +165,7 @@ user-select: none;
 
 }
 @media(max-width: 680px){
-  margin-bottom:8.5%;
+  margin-bottom:6.5%;
 margin-top:2%;
 
 
@@ -173,7 +173,7 @@ margin-top:2%;
 
 
 @media(max-width: 480px){
-  margin-bottom:8.5%;
+  margin-bottom:5.5%;
 }
 
 
