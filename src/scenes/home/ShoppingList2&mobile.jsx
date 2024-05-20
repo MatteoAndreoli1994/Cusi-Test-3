@@ -328,6 +328,9 @@ font-size: 13px;
 @media(max-width: 680px){
   font-size: 10px;
   }
+  @media(max-width: 350px){
+    font-size: 8px;
+    }
 
 
 `;
