@@ -53,7 +53,7 @@ position: relative;
 display: ${({ isSafari }) => (isSafari ? 'none' : 'flex')};
 min-height:80vh;
 justify-content:center;
-background-color:red;
+
 
 
 overflow: hidden;
@@ -377,7 +377,7 @@ align-items:center;
   }
 
 @media(max-width: 680px){
-
+margin-top:6%;
 flex-direction: column-reverse;
 width: 95%;
 

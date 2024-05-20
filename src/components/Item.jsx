@@ -16,9 +16,9 @@ display:flex;
 flex-direction: column;
 align-items: center;
 
-height:600px;
+height:500px;
 
-min-width:480px;
+min-width:400px;
 
 
 @media(max-width: 1200px){

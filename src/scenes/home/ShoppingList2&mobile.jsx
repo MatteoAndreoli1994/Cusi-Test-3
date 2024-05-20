@@ -120,7 +120,7 @@ margin-top:1%;
 
 const ItemDiv = styled.div`
 display:flex;
-height:730px;
+height:630px;
 width:95%;
 
 @media(max-width: 900px){
@@ -186,8 +186,8 @@ margin-top:2%;
 const DivImmagineCategoria2 = styled.div`
 position: relative;
 display: flex;
-min-width: 200px;
-height: 600px;
+min-width: 400px;
+height: 500px;
 overflow: hidden;
 
 @media(max-width: 1200px){
@@ -209,8 +209,8 @@ overflow: hidden;
 
 const LazyLoadedCategory = styled.img`
 width: auto;
-height: 600px;
-min-width: 514.98px;
+height: 500px;
+min-width: auto;
 object-fit: cover;
 
 transform-origin: center center;
@@ -460,7 +460,7 @@ const OrangeDiv = styled(InnerDiv)`
 `;
 
 const GreenDiv = styled(InnerDiv)`
-  background-color: green;
+
 
 
 
