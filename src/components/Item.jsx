@@ -35,6 +35,15 @@ width:auto;
 
 
 `;
+const ImmagineProdotto = styled.img`
+  object-fit: contain;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+
+  transition: opacity 1s ease-in;
+`;
+
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
@@ -121,8 +130,7 @@ const handleImageLoad = () => {
 
 
   return (
-    <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
 
 
     <DivItem >
@@ -131,14 +139,18 @@ const handleImageLoad = () => {
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
-        <img
+        <ImmagineProdotto
           alt={item.name}
 
           height="100%"
           src={`${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
-          style={{ cursor: "pointer" }}
+          style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
+          transition: "opacity 1s ease-in-out",
+          cursor: "pointer" }}
           onLoad={handleImageLoad}
+
+          
 
         />
 
@@ -165,15 +177,15 @@ const handleImageLoad = () => {
         </Box>
         
       </DivImmagine>
-      <InfoProdotto  style={{  display: imageLoaded ? "flex" : "none" }}>
+      <InfoProdotto            style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
+          transition: "opacity 1s ease-in-out"}}>
 
       <ABC20>{name}</ABC20>
       <ABC16 fontWeight="bold">{formatPrice(price) }</ABC16>
       </InfoProdotto>
 
     </DivItem>
-    </LazyLoadWrapper>
-    </LazyLoad>  
+
 
 
   );
