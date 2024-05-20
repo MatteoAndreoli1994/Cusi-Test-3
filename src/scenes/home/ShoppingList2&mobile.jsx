@@ -211,10 +211,10 @@ const LazyLoadedCategory = styled.img`
 width: auto;
 height: 600px;
 object-fit: cover;
-transition: transform 1s ease-in-out;
+
 transform-origin: center center;
 transform: scale(1.1);
-
+transition: opacity 1s ease-in;
 
 @media(max-width: 1200px){
   height: 400px;
@@ -623,7 +623,7 @@ const ShoppingList = () => {
 
                     <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
                               style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
-                              transition: "opacity 1s ease-in-out",
+                              transition: "opacity 5s ease-in-out",
                               cursor: "pointer" }}
                               onLoad={handleImageLoad}
                     
@@ -669,9 +669,13 @@ const ShoppingList = () => {
 
               <OrangeDiv>
               <DivImmagineCategoria2>
-              <LazyLoad once>
-                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-                  <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" />
+
+                  <LazyLoadedCategory src={braceletsCategory} alt="Categoria earrings" 
+                  style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
+                  transition: "opacity 5s ease-in-out",
+                  cursor: "pointer" }}
+                  onLoad={handleImageLoad}
+                  />
 
 
 
@@ -682,8 +686,6 @@ const ShoppingList = () => {
                 <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
 
-                </LazyLoadWrapper>
-                </LazyLoad>  
 
                 </DivImmagineCategoria2>
                 
