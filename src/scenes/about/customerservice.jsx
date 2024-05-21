@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import { useNavigate } from "react-router-dom";
 import Footer from "../global/FooterNoSubscribe"
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -30,41 +31,50 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-margin-right: auto;
-margin-bottom: 5%;
+  margin-right: auto;
+  margin-bottom: 5%;
+  display: flex;
 
-display: flex; /* Aggiunto display: flex; qui */
+  li {
+    list-style: none;
+    margin-right: 100px;
+    position: relative;
+    cursor: pointer;
 
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        animation: lineAnimation 0.3s linear forwards;
+      }
+    }
 
-li {
-  list-style: none; 
-  margin-right: 100px;
-  position: relative;
-  cursor: pointer;
-
-  &:hover {
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 1px;
-      background-color: black;
-      animation: lineAnimation 0.3s linear forwards;
+    &.selected {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: black;
+      }
     }
   }
-}
 
-@keyframes lineAnimation {
-  from {
-    width: 0;
+  @keyframes lineAnimation {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
-  to {
-    width: 100%;
-  }
-}
-
 `;
 
 const Content = styled.div`
@@ -200,10 +210,23 @@ const GrayClickableLink = styled.a`
 
 const CustomerService = () => {
   const [selectedItem, setSelectedItem] = useState('Our Services');
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const category = searchParams.get('category');
+
+  useEffect(() => {
+    if (category) {
+      setSelectedItem(category);
+      console.log(category);
+      console.log(selectedItem);
+    }
+  }, [category]);
+
   const navigate = useNavigate();
 
   const handleMenuItemClick = (item) => {
     setSelectedItem(item);
+    navigate(`/customerservice?category=${item}`);
   };
 
   const getContent = () => {
@@ -244,7 +267,7 @@ const CustomerService = () => {
             </GtaLightLightInfo>
           </>
         );
-      case 'Shopping & Returns':
+      case 'Shipping':
         return (
           <>
             <div>
@@ -381,8 +404,8 @@ const CustomerService = () => {
             <li><GtaRegular16Category> Product Care </GtaRegular16Category></li>
           </MenuItem>
           <MenuItem
-            className={selectedItem === 'Shopping & Returns' ? 'selected' : ''}
-            onClick={() => handleMenuItemClick('Shopping & Returns')}
+            className={selectedItem === 'Shipping' ? 'selected' : ''}
+            onClick={() => handleMenuItemClick('Shipping')}
           >
             <li> <GtaRegular16Category> Shipping & Returns </GtaRegular16Category></li>
           </MenuItem>

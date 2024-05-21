@@ -528,6 +528,8 @@ const Boutiques = () => {
   const searchParams = new URLSearchParams(location.search);
   const message = searchParams.get('message');
 
+  
+
   // Verifica se il messaggio è presente nell'URL
   if (message) {
     // Trova l'elemento con ID 'Book'

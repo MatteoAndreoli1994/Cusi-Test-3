@@ -251,25 +251,22 @@ font-size: 14px;
 
 `;
 const Collegamento = styled.a`
-
-margin-right:4%;
-
+  margin-right: 4%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
+
 
 function Footer() {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "https://cdn.iubenda.com/iubenda.js";
-      script.async = true;
-      document.body.appendChild(script);
-  
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, []);
+
   
     
 
@@ -303,9 +300,66 @@ function Footer() {
         
         </ColumnLogo>
 
-        <Column><GtaRegular>CUSTOMER SERVICE</GtaRegular><GtaRegular>Our services</GtaRegular><GtaRegular>Product care</GtaRegular><GtaRegular>Shopping & Returns</GtaRegular><GtaRegular>Size Chart</GtaRegular><GtaRegular>FAQ</GtaRegular></Column>
-        <Column><GtaRegular>CONTACT</GtaRegular><GtaRegular>Contact Us</GtaRegular><GtaRegular>Book An Appointment</GtaRegular><GtaRegular>Boutiques</GtaRegular></Column>
-        <ColumnSocial><GtaRegular>SOCIAL</GtaRegular><GtaRegular>Facebook</GtaRegular><GtaRegular>Instagram</GtaRegular><GtaRegular>Youtube</GtaRegular></ColumnSocial>
+        <Column>
+          <GtaRegular>CUSTOMER SERVICE</GtaRegular>
+          
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Our Services")}>
+              Our Services
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Product Care")}>
+              Product Care
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Shipping")}>
+              Shipping & Returns
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Size Chart")}>
+              Size Chart
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=FAQ")}>
+              FAQ
+            </Collegamento>
+          </GtaRegular>
+        
+        </Column>
+        <Column>
+         <GtaRegular>CONTACT</GtaRegular>
+
+         <GtaRegular><Collegamento  onClick={() => navigate("/contactus")}>Contact Us</Collegamento></GtaRegular>
+
+         <GtaRegular>
+          <Collegamento href="/boutiques#Book">
+            Book An Appointment
+          </Collegamento>
+        </GtaRegular>
+
+        <GtaRegular>
+          <Collegamento href="/boutiques">
+            Boutiques
+          </Collegamento>
+        </GtaRegular>
+        
+        </Column>
+        <ColumnSocial>
+        
+          <GtaRegular>SOCIAL</GtaRegular>
+          
+          <GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular>
+
+          
+        </ColumnSocial>
 
         <LastColumn>
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaRegular>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaRegular>
@@ -320,7 +374,7 @@ function Footer() {
       </RowContainer>
       
       <RowContainer>
-      <ColumnMobile><GtaRegular>SOCIAL</GtaRegular><GtaRegular>Instagram</GtaRegular><GtaRegular>Facebook</GtaRegular></ColumnMobile>
+      <ColumnMobile><GtaRegular>SOCIAL</GtaRegular><GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular><GtaRegular>Facebook</GtaRegular></ColumnMobile>
 
       </RowContainer>
       
