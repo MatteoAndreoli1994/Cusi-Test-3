@@ -239,6 +239,37 @@ ${DivImmagineCategoria2}:hover & {
 transform: scale(1.2);
 }
 `;
+const LazyLoadedCategory2 = styled.img`
+width: auto;
+height: 500px;
+min-width: 400px;
+object-fit: cover;
+
+transform-origin: center center;
+
+
+@media(max-width: 1200px){
+  height: 400px;
+  min-width: 343.32px;
+}
+@media(max-width: 900px){
+  height: 300px;
+  min-width: 257.49px;
+}
+@media(max-width: 680px){
+  height: 200px;
+  min-width: 171.66px;
+}
+
+
+
+
+
+
+${DivImmagineCategoria2}:hover & {
+transform: scale(1.2);
+}
+`;
 
 const ShopButton = styled.button`
 position: absolute;
@@ -628,23 +659,16 @@ const ShoppingList = () => {
               <OrangeDiv>
                 <DivImmagineCategoria2>
 
-                <LazyLoad once>
-                  <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
-                    <LazyLoadedCategory src={earringsCategory} alt="Categoria earrings" 
-                              style={{ objectFit: "contain", opacity: imageLoaded ? "1" : "0",
-                              transition: "opacity 1s ease-in-out, transform 0.5s ease-in-out",
-                              cursor: "pointer" }}
-                              onLoad={handleImageLoad}
-                    
+
+                    <LazyLoadedCategory2 src={earringsCategory} alt="Categoria earrings"                     
                     />
 
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
-                  </LazyLoadWrapper>
-                </LazyLoad>  
+
  
                 </DivImmagineCategoria2>
               </OrangeDiv>
