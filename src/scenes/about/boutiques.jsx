@@ -38,15 +38,18 @@ const SubscribeButton = styled.button`
 
 
 const Container = styled.div`
-  margin-top:120px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  margin-bottom:120px;
+display: flex;
+flex-direction: column;
+width: 100%;
+min-height: 200vh;
+margin-top:120px;
+align-items: center;
+margin-bot:1%;
+overflow:hidden;
 
 
 `;
+
   const Box = styled.div`
 
 display: flex;
@@ -61,7 +64,7 @@ align-items:center;
 margin-top:3%;
 
 
-@media(max-width:680px){
+@media(max-width:900px){
   flex-direction: column;
   align-items:flex-start;
 
@@ -81,7 +84,7 @@ justify-content:center;
 
 
 
-@media(max-width:680px){
+@media(max-width:900px){
   width:100%;
 }
 `;
@@ -122,11 +125,10 @@ align-items:center;
 justify-content:center;
 
 
-
 display:flex;
 flex-direction: column;
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   width: 100%;
 }
 
@@ -139,7 +141,7 @@ flex-direction: column;
 const Maison2Img = styled.img`
 width:100%;
 min-height:50vh;
-@media(max-width:680px){
+@media(max-width:900px){
 
 }
 `;
@@ -171,7 +173,7 @@ const FormContainer = styled.div`
 
   }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     width:91%;
   }
   @media(max-width: 480px){
@@ -265,7 +267,7 @@ const Checkbox2 = styled.input`
     }
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: 900px) {
     width: 2em;
     height: 2em;
   }
@@ -317,10 +319,27 @@ const DivInserimento = styled.div`
   height:100%;
   flex-direction:column;
 
-  margin-left:23%;
 
 
-  @media(max-width: 680px){
+@media(max-width: 1200px){
+  width:70%;
+  margin-left:0;
+}
+
+@media(max-width: 900px){
+  width:75%;
+  margin-left:0;
+
+}
+@media(max-width: 800px){
+  width:75%;
+  margin-left:0;
+
+
+}
+
+
+  @media(max-width: 900px){
     width:100%;
     margin-left:0;
   }
@@ -333,13 +352,13 @@ const Subtitle = styled.div`
   width:36%;
   height:100%;
   flex-direction:column;
-
+  margin-top:1%;
   align-items:center;
   tex-align:center;
   justify-content:center;
 
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     width:80%;
 
   }
@@ -424,11 +443,17 @@ const InputSelect = styled.select`
 const ABC = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
-margin-bottom: 0;
+margin-bottom: 0%;
+margin-top:4%;
 
-@media(max-width:680px){
+@media(max-width: 1200px){
   font-size: 35px; 
-}
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
 
 
 `;
@@ -447,26 +472,18 @@ margin-bottom: 0;
 const GtaRegular = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
-width:33%;
-text-align: center;
-margin-top:2px;
+margin-left:10px;
+width:85%;
 
-@media(max-width: 1200px){
-  width:50%;
-}
-
-@media(max-width: 680px){
+@media(max-width:680px){
   font-size: 14px;
-  width:80%;
-
 }
-
-
 
 `;
 const GtaRegular16 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
+
 
 @media(max-width:680px){
   font-size: 14px; 
@@ -520,6 +537,36 @@ margin-bottom:0;
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 3s ease-in-out;
+`;
+
+const DivInfo2 = styled.div`
+display: flex;
+min-height: 100px;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+overflow: hidden;
+
+
+margin-bottom: 20px;
+margin-top:4%;
+transition: min-height 0.5s ease;
+width: 50%;
+
+@media(max-width:680px){
+  width:80%;
+}
+
+`;
+const DivDescrizione = styled.div`
+display: flex;
+width: 100%;
+
+margin-bottom: 2%;
+align-items: flex-start;
+justify-content: center;
+text-align: center;
+
 `;
 
 
@@ -630,9 +677,15 @@ const handleSubmit = (e) => {
 
 
   <ABC>Boutiques</ABC>
-  <GtaRegular>We would be delighted to welcome you so that you may discover 
-  and try on your favorite creations.
-  </GtaRegular>
+  <DivDescrizione>
+    <GtaRegular>We would be delighted to welcome you so that you may discover 
+    and try on your favorite creations.
+    </GtaRegular>
+  </DivDescrizione>
+
+
+
+
   <Box>
     <DivImmagine>
       <Maison2Img src={Maison2}/>
@@ -687,11 +740,13 @@ const handleSubmit = (e) => {
 
   </Box>
 
+
   <ABC id="Book">Book an appointment</ABC>
   <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
 and on Saturdays from 9 am to 5 pm. 
   </GtaLightCenter>
 </Subtitle>
+
 
 
 
