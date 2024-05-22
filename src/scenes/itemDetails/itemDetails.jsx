@@ -35,6 +35,16 @@ const Container = styled.div`
   justify-content:center;
   display:flex;
 
+  @media(max-width:900px){
+
+    min-height: 230vh;
+  }
+
+  @media(max-width:680px){
+
+    min-height: 200vh;
+  }
+
   `;
 
   const StyledHashLink = styled(HashLink)`
