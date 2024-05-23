@@ -28,7 +28,7 @@ import Footer from "../global/FooterNoSubscribe"
 
 
 const Container = styled.div`
-  min-height: 100vh;
+  min-height: 170vh;
   margin-top:120px;
 
 
@@ -37,12 +37,16 @@ const Container = styled.div`
 
   @media(max-width:900px){
 
-    min-height: 230vh;
+    min-height: 200vh;
   }
 
   @media(max-width:680px){
 
-    min-height: 200vh;
+    min-height: 210vh;
+  }
+  @media(max-width:350px){
+
+    min-height: 250vh;
   }
 
   `;
@@ -529,7 +533,7 @@ transition: opacity 0.5s ease-in-out;
 const FaqDiv = styled.div`
   width: 100%;
   margin-top: 5%;
-  margin-bottom:30%;
+
 
   postion: relative;
 
