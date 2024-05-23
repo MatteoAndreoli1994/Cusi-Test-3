@@ -379,7 +379,7 @@ font-size: 12px;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 3s ease-in-out;
+transition: opacity 0.6s ease-in-out;
 `;
 
 const DivSettingButton = styled.div`
