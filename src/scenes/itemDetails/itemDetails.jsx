@@ -179,6 +179,7 @@ margin-bottom:0%;
 display: none;
 
   @media(max-width: 900px){
+    margin-top:4%;
     display: block;
   }
 `;
@@ -208,6 +209,7 @@ const ItemContainer = styled.div`
 
 
   @media(max-width: 900px){
+    justify-content: flex-start;
     flex-direction: column;
   }
 `;
@@ -308,7 +310,6 @@ const ButtonWhite = styled(Button)`
   display:flex;
   flex-direction:column;
   align-items:center;
-
 
 
   width:50%;
@@ -528,6 +529,8 @@ const FaqDiv = styled.div`
   width: 100%;
   margin-top: 5%;
   margin-bottom:30%;
+
+  postion: relative;
 
   @media(max-width: 1200px){
     width:100%;
