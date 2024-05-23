@@ -332,6 +332,7 @@ const ButtonWhite = styled(Button)`
 
   @media(max-width: 1200px){
     width: 90%;
+    margin-top:0%;
   }
 
   @media(max-width: 900px){
