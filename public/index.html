@@ -5,44 +5,70 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" sizes="128x137" href="%PUBLIC_URL%/logo192.png">
 
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <!-- Manifest file -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+    <!-- Iubenda scripts -->
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {
+        "enableFadp": true,
+        "enableLgpd": true,
+        "enableUspr": true,
+        "fadpApplies": true,
+        "floatingPreferencesButtonCaptionColor": "#000000",
+        "floatingPreferencesButtonColor": "#FFFFFF",
+        "floatingPreferencesButtonDisplay": "bottom-left",
+        "lang": "en",
+        "perPurposeConsent": true,
+        "preferenceCookie": {"expireAfter": 180},
+        "siteId": 3623574,
+        "usprApplies": true,
+        "whitelabel": false,
+        "cookiePolicyId": 26885513,
+        "banner": {
+          "acceptButtonColor": "#000000",
+          "acceptButtonDisplay": true,
+          "backgroundColor": "#FFFFFF",
+          "closeButtonDisplay": false,
+          "customizeButtonCaptionColor": "#000000",
+          "customizeButtonColor": "#FFFFFF",
+          "customizeButtonDisplay": true,
+          "explicitWithdrawal": true,
+          "listPurposes": true,
+          "logo": null,
+          "linksColor": "#000000",
+          "ownerName": "https://cusiecommerce.netlify.app",
+          "position": "bottom",
+          "rejectButtonCaptionColor": "#000000",
+          "rejectButtonColor": "#F0EEEE",
+          "rejectButtonDisplay": true,
+          "showPurposesToggles": true,
+          "showTitle": false,
+          "showTotalNumberOfProviders": true,
+          "textColor": "#000000"
+        }
+      };
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3623574.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
     <title>Maison Cusi</title>
-
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-   
-
-          <!-- Inserisci il CSS qui -->
+    
+    <!-- Inserisci il CSS qui -->
     <style>
       .iub__us-widget {
           display: none;
       }
-  </style>
+    </style>
+
     <div id="root"></div>
-
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-
   </body>
 </html>

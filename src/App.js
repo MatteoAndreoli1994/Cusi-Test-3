@@ -37,6 +37,8 @@ import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
 
 
+
+
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
