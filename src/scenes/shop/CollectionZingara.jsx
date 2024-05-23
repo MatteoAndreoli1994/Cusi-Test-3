@@ -37,6 +37,10 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
+
+@media(max-width: 900px){
+  min-height: 40vh;
+}
 `;
 
 
