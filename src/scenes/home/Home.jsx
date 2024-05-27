@@ -29,6 +29,9 @@ flex-direction: column;
 width: 100%;
 margin-top:120px;
 
+
+
+
 `;
 
 const GifBox = styled.div`
@@ -92,7 +95,7 @@ const MarginDiv = styled.div`
 position:relative;
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 margin-bottom:10%;
 }
 
@@ -112,7 +115,7 @@ justify-content: flex-start;
 
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 margin-bottom:1%;
@@ -128,7 +131,7 @@ justify-content: flex-start;
 display:none;
 align-self: flex-start; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 
@@ -145,7 +148,7 @@ justify-content: center;
 
 align-self: center;
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 
@@ -163,7 +166,7 @@ flex-direction: column;
 
 
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 
@@ -180,7 +183,7 @@ justify-content: center;
 
 align-self: center; /* Aggiungi questa riga per allineare l'altezza al massimo tra i due div */
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 margin-bottom:1%;
@@ -194,7 +197,7 @@ align-items: center;
 flex-direction: column;
 
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 margin-bottom:1%;
@@ -212,7 +215,7 @@ flex-direction:column;
 
 justify-content:center;
 
-@media(max-width:680px){
+@media(max-width:800px){
 
 width:100%;
 margin-bottom:5%;
@@ -228,7 +231,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 width: 100%;
 
@@ -247,7 +250,7 @@ height:auto;
 align-items:center;
 flex-direction:column;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 width: 100%;
 
@@ -273,7 +276,7 @@ flex-direction:column;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 width: 100%;
 
@@ -303,7 +306,7 @@ align-items:center;
   width: 90%;
   }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 flex-direction:column;
 width: 95%;
@@ -327,7 +330,7 @@ align-items:center;
   
   }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 flex-direction:column;
 width: 95%;
@@ -351,7 +354,7 @@ align-items:center;
   
   }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 
 flex-direction:column-reverse;
 width: 95%;
@@ -376,7 +379,7 @@ align-items:center;
   
   }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 margin-top:6%;
 flex-direction: column-reverse;
 width: 95%;
@@ -394,7 +397,7 @@ margin-left:10%;
 
 margin-bottom:10%;
 
-@media(max-width:680px){
+@media(max-width:800px){
 width:90%;
 align-items:center;
 margin-left:0%;
@@ -429,7 +432,7 @@ width:45%;
 
 }
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 margin-top:9%;
 margin-bottom:0%;
 width:50%;
@@ -441,7 +444,7 @@ const Immagine3 = styled.img`
 width:40%;
 min-height: 10vh;
 
-@media(max-width: 680px){
+@media(max-width: 800px){
 margin-top:0%;
 margin-bottom:0%;
 width:50%;
@@ -710,7 +713,7 @@ margin-top:5%;
 margin-bottom:0;
 color:gray;
 
-@media(max-width: 680px){
+@media(max-width: 900px){
 font-size: 13px; 
 display:none;
 `;
@@ -723,7 +726,7 @@ margin-bottom:0;
 color:gray;
 display:none;
 
-@media(max-width: 680px){
+@media(max-width: 900px){
 font-size: 12px; 
 display:flex;
 margin-top:7%;
