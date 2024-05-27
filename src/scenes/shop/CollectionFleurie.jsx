@@ -506,6 +506,12 @@ const CollectionFleurie = () => {
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [showStoneInfo, setshowStoneInfo] = useState(false);
   const [selectedStone, setSelectedStone] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
 
 
 
@@ -806,7 +812,7 @@ const CollectionFleurie = () => {
 
       </Box>
 
-      <Container>
+      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
         <DivInfo>
           <ABC>Fleurie</ABC>
           <DivDescrizione>
@@ -818,7 +824,7 @@ const CollectionFleurie = () => {
 
         <DivImmagini>
 
-        <ImmagineCollectionStyle src={ImmagineCollection}/>
+        <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
         
         <Video autoPlay loop muted playsInline style={{ objectFit: 'cover', marginLeft: '2%', width: '50%', height: 'auto' }}>
           <source src={VideoCollection2Video} type="video/mp4" />

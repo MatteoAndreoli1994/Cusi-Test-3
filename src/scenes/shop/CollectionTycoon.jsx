@@ -495,6 +495,12 @@ const CollectionFleurie = () => {
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [showStoneInfo, setshowStoneInfo] = useState(false);
   const [selectedStone, setSelectedStone] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
 
 
 
@@ -795,7 +801,7 @@ const CollectionFleurie = () => {
 
       </Box>
 
-      <Container>
+      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
         <DivInfo>
           <ABC>Tycoon</ABC>
           <DivDescrizione>
@@ -807,7 +813,7 @@ const CollectionFleurie = () => {
 
         <DivImmagini>
 
-        <ImmagineCollectionStyle src={ImmagineCollection}/>
+        <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
         <ImmagineCollection2Style src={ImmagineCollection2}/>
         </DivImmagini>
 
