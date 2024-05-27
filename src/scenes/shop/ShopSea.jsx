@@ -466,6 +466,12 @@ const Sea = () => {
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [selectedStone, setSelectedStone] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
 
 
 
@@ -783,7 +789,7 @@ const Sea = () => {
 
       </Box>
 
-      <Container>
+      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
 
         <DivInfo>
           <ABC>Sea</ABC>
@@ -797,7 +803,7 @@ const Sea = () => {
         <DivImmagini>
 
           <ImmagineCollectionStyle src={ImmagineCollection}/>
-          <ImmagineCollection2Style src={ImmagineCollection2}/>
+          <ImmagineCollection2Style src={ImmagineCollection2} onLoad={handleImageLoad}/>
         </DivImmagini>
 
 

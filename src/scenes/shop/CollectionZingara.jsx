@@ -496,7 +496,7 @@ const blurhash2 = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
 
 
 const CollectionBollywood = () => {
-  const [loaded, setLoaded] = useState({ img1: false, img2: false });
+
 
   const [loadedAll, setLoadedAll] = React.useState(false);
 

@@ -24,17 +24,6 @@ import LazyLoad from 'react-lazyload';
 import ImmagineCollection from "../../assets/enamelledChains/a.avif"
 import ImmagineCollection2 from "../../assets/enamelledChains/b.avif"
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 200vh;
-  margin-top:120px;
-  align-items: center;
-  margin-bot:1%;
-  overflow:hidden;
-
-`;
 
 const DivImmagini = styled.div`
   width: 85%;
@@ -46,7 +35,13 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
+
+@media(max-width: 900px){
+  min-height: 40vh;
+}
 `;
+
+
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollectionStyle = styled.img`
@@ -73,92 +68,108 @@ margin-left:2%;
 `;
 
 
+
+  
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+min-height: 200vh;
+margin-top:120px;
+align-items: center;
+margin-bot:1%;
+overflow:hidden;
+
+
+`;
+
 const FilterOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 30%; /* Larghezza metà dello schermo */
-  height: 100%;
-  background-color: white;
-  z-index: 999; /* Sopra ogni cosa */
+position: fixed;
+top: 0;
+left: 0;
+width: 30%; /* Larghezza metà dello schermo */
+height: 100%;
+background-color: white;
+z-index: 999; /* Sopra ogni cosa */
 `;
 
 
 
 const DivInfo = styled.div`
-  display: flex;
-  min-height: 200px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  overflow: hidden;
+display: flex;
+min-height: 100px;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+overflow: hidden;
 
-  margin-bottom: 20px;
-  margin-top:1%;
-  transition: min-height 0.5s ease;
-  width: 50%;
 
-  @media(max-width:680px){
-    width:80%;
-  }
+margin-bottom: 20px;
+margin-top:4%;
+transition: min-height 0.5s ease;
+width: 50%;
+
+@media(max-width:680px){
+  width:80%;
+}
 
 `;
 
 const DivDescrizione = styled.div`
-  display: flex;
-  width: 100%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: center;
+display: flex;
+width: 100%;
+margin-top: 1%;
+margin-bottom: 1%;
+align-items: flex-start;
+justify-content: center;
+text-align: center;
 
 `;
 
 const DivFiltri = styled.div`
-  display: flex;
+display: flex;
 
-
-  width: 85%;
-  justify-content: space-between;
+margin-bottom:4%;
+width: 85%;
+justify-content: space-between;
 `;
 
 const CustomButton = styled.button`
 
-  border: none;
+border: none;
 
-  cursor: pointer;
-  display:flex;
+cursor: pointer;
+display:flex;
 
-  background-color: ${(props) => props.backgroundColor || "gray"};
-  color: black;
-  align-items:center;
-  justify-content:center;
-  
+background-color: ${(props) => props.backgroundColor || "gray"};
+color: black;
+align-items:center;
+justify-content:center;
+
 `;
 
 const StyledItem = styled.div`
 width: 100%;
 height: auto;
-margin-bottom: 5%;
+margin-bottom: 15%;
 position: relative;
 display: flex;
 justify-content: center;
 
 
 &:nth-child(3n + 1) {
-  margin-left: 0;
-  margin-right: auto;
+margin-left: 0;
+margin-right: auto;
 }
 
 &:nth-child(3n + 2) {
-  margin-left: auto;
-  margin-right: auto;
+margin-left: auto;
+margin-right: auto;
 }
 
 &:nth-child(3n + 3) {
-  margin-left: auto;
-  margin-right: 0;
+margin-left: auto;
+margin-right: 0;
 }
 `;
 
@@ -172,16 +183,16 @@ margin: 0 auto;
 margin-top: 1%;
 
 @media(max-width:680px){
-  grid-template-columns: repeat(2, 1fr); /* Tre colonne per riga */
+grid-template-columns: repeat(2, 1fr); /* Tre colonne per riga */
 
 }
 
 `;
 
 const Div = styled.div`
-  display: flex;
+display: flex;
 
-  width: 30px;
+width: 30px;
 `;
 
 const DivCarrello =  styled(Box)`
@@ -212,7 +223,6 @@ transition: left 0.5s ease;
 `;
 
 
-
 // Definisci i componenti styled
 const ContainerFiltri = styled.div`
 display: flex;
@@ -228,17 +238,16 @@ margin-top:10%;
 
 `;
 
-
 const FilterButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;  /* Aggiunto per separare gli elementi */
-  margin: 5px;
-  padding: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  user-select: none; /* Evita la selezione del testo */
-  width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;  /* Aggiunto per separare gli elementi */
+margin: 5px;
+padding: 8px;
+font-size: 16px;
+cursor: pointer;
+user-select: none; /* Evita la selezione del testo */
+width: 100%;
 `;
 
 const FilterButtonText = styled.span`
@@ -254,12 +263,12 @@ font-size: 24px;
 `;
 
 const FilterSign = styled.span`
-  margin-left: 14px;
-  font-size: 30px;
+margin-left: 14px;
+font-size: 30px;
 `;
 
 const InfoContainer = styled.div`
-max-height: ${({ visible }) => (visible ? '600px' : '0')}; /* Imposta una max-height elevata quando è aperto */
+max-height: ${({ visible }) => (visible ? '400px' : '0px')}; /* Imposta una max-height elevata quando è aperto */
 overflow: hidden;
 transition: max-height 0.8s ease; /* Aggiunta transizione per un effetto fluido */
 
@@ -270,7 +279,7 @@ width:100%;
 align-items: center;
 justify-content: space-between;  /* Aggiunto per separare gli elementi */
 margin: 5px;
-margin-left: 12px;
+margin-left: 5%;
 font-size: 16px;
 user-select: none; /* Evita la selezione del testo */
 width: 100%;
@@ -296,8 +305,8 @@ outline: none;
 cursor: pointer;
 
 &:checked {
-  background-color: black;
-  border-color: black;
+background-color: black;
+border-color: black;
 }
 `;
 
@@ -330,6 +339,15 @@ font-size: 40px;
 margin-bottom: 0;
 margin-top:2%;
 
+@media(max-width: 1200px){
+  font-size: 35px; 
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
+
 
 `;
 
@@ -339,9 +357,9 @@ font-size: 16px;
 margin-left:10px;
 
 
-  @media(max-width:680px){
-    font-size: 14px;
-  }
+@media(max-width:680px){
+  font-size: 14px;
+}
 
 `;
 const GtaRegular2 = styled.p`
@@ -350,10 +368,18 @@ font-size: 16px;
 margin-right:10px;
 
 `;
+
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
+
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 3s ease-in-out;
+transition: opacity 0.6s ease-in-out;
 `;
+
 const DivSettingButton = styled.div`
   width: 100%;
   height: 50px;
@@ -368,6 +394,7 @@ const DivSettingButton = styled.div`
 
 
 `;
+
 const DivSettingButtonCenter = styled.div`
   width: 80%;
   height: 120px;
@@ -380,6 +407,8 @@ const DivSettingButtonCenter = styled.div`
 
   
 `;
+
+
 // Definisci il componente ButtonBlack come variante di Button
 const ButtonBlack= styled(Button)`
 
@@ -440,12 +469,6 @@ const ButtonWhite = styled(Button)`
   }
 `;
 
-const GtaRegular12 = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 12px;
-
-`;
-
 
 const EnamelledChains = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -471,6 +494,12 @@ const EnamelledChains = () => {
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [selectedStone, setSelectedStone] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
 
 
 
@@ -786,7 +815,7 @@ const EnamelledChains = () => {
 
       </Box>
 
-      <Container>
+      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
 
         <DivInfo>
           <ABC>Enamelled Chains</ABC>
@@ -800,8 +829,8 @@ const EnamelledChains = () => {
 
         <DivImmagini>
 
-          <ImmagineCollectionStyle src={ImmagineCollection}/>
-          <ImmagineCollection2Style src={ImmagineCollection2}/>
+          <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
+          <ImmagineCollection2Style src={ImmagineCollection2}    />
         </DivImmagini>
 
 
