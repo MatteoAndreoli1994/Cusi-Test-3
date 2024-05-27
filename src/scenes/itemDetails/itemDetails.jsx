@@ -806,7 +806,7 @@ const ItemDetails = () => {
 
   return (
     <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad} >
     <link rel="stylesheet" href="https://unpkg.com/react-slidy/lib/styles.css" />
 
       <Container width="100%" m="80px auto"        >
@@ -837,7 +837,7 @@ const ItemDetails = () => {
 
               ))}
             </ReactSlidy>
-            <Dots className="Dots">
+            <Dots className="Dots"              style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
                 {SLIDES.map((_, index) => {
               return (
                 <ButtonCustom
