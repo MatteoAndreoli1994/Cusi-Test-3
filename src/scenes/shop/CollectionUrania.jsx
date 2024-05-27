@@ -23,6 +23,7 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 
+
 const DivImmagini = styled.div`
   width: 85%;
   min-height: 50vh;
@@ -33,6 +34,10 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
+
+@media(max-width: 900px){
+  min-height: 40vh;
+}
 `;
 
 
@@ -371,7 +376,7 @@ font-size: 12px;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 3s ease-in-out;
+transition: opacity 0.6s ease-in-out;
 `;
 
 const DivSettingButton = styled.div`
@@ -462,7 +467,6 @@ const ButtonWhite = styled(Button)`
     }
   }
 `;
-
 
 const CollectionFleurie = () => {
   const [loaded, setLoaded] = React.useState(false);

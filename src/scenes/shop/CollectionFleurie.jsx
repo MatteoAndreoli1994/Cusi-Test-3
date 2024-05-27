@@ -23,6 +23,7 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 
+
 const DivImmagini = styled.div`
   width: 85%;
   min-height: 50vh;
@@ -33,11 +34,15 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
-  @media(max-width: 680px){
 
-  }
+@media(max-width: 900px){
+  min-height: 40vh;
+}
 `;
 
+
+
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollectionStyle = styled.img`
 width: 50%;
 height: auto;
@@ -49,16 +54,19 @@ margin-left:2%;
 }
 `;
 
+// Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollection2Style = styled.img`
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  margin-left:2%;
+width: 50%;
+height: auto;
+object-fit: cover;
+margin-left:2%;
 
-  @media(max-width: 680px){
-    width: 100%;
-  }
+@media(max-width: 680px){
+  width: 100%;
+}
 `;
+
+
 
   
 const Container = styled.div`
@@ -70,6 +78,7 @@ margin-top:120px;
 align-items: center;
 margin-bot:1%;
 overflow:hidden;
+
 
 `;
 
@@ -104,6 +113,7 @@ width: 50%;
 }
 
 `;
+
 const DivDescrizione = styled.div`
 display: flex;
 width: 100%;
@@ -118,7 +128,7 @@ text-align: center;
 const DivFiltri = styled.div`
 display: flex;
 
-
+margin-bottom:4%;
 width: 85%;
 justify-content: space-between;
 `;
@@ -140,7 +150,7 @@ justify-content:center;
 const StyledItem = styled.div`
 width: 100%;
 height: auto;
-margin-bottom: 5%;
+margin-bottom: 15%;
 position: relative;
 display: flex;
 justify-content: center;
@@ -210,7 +220,6 @@ transition: left 0.5s ease;
 
 
 `;
-
 
 
 // Definisci i componenti styled
@@ -359,20 +368,17 @@ margin-right:10px;
 
 `;
 
+const GtaRegular12 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 12px;
+
+`;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 3s ease-in-out;
+transition: opacity 0.6s ease-in-out;
 `;
 
-const Video = styled.video`
-
-
-@media(max-width: 680px){
-  display: none;
-}
-
-`;
 const DivSettingButton = styled.div`
   width: 100%;
   height: 50px;
@@ -462,9 +468,13 @@ const ButtonWhite = styled(Button)`
   }
 `;
 
-const GtaRegular12 = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 12px;
+
+const Video = styled.video`
+
+
+@media(max-width: 680px){
+  display: none;
+}
 
 `;
 
