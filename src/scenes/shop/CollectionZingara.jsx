@@ -24,6 +24,7 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 import { blue } from '@mui/material/colors';
+import { Blurhash } from 'react-blurhash';
 
 
 
@@ -472,10 +473,36 @@ const ButtonWhite = styled(Button)`
 `;
 
 
+
+const BlurhashPlaceholder = ({ hash, width, height }) => {
+  return (
+    <div style={{ width, height, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5' }}>
+      <Blurhash
+        hash={hash}
+        width={width}
+        height={height}
+        resolutionX={32}
+        resolutionY={32}
+        punch={1}
+      />
+    </div>
+  );
+};
+
+const blurhash1 = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
+const blurhash2 = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
+
+
+
+
 const CollectionBollywood = () => {
-  const [loaded, setLoaded] = React.useState(false);
+  const [loaded, setLoaded] = useState({ img1: false, img2: false });
+
+  const [loadedAll, setLoadedAll] = React.useState(false);
+
+  
   const handleContentLoad = () => {
-    setLoaded(true);
+    setLoadedAll(true);
   };
 
 
@@ -497,6 +524,11 @@ const CollectionBollywood = () => {
   const [selectedMaterials, setSelectedMaterials] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [selectedStone, setSelectedStone] = useState([]);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
 
 
@@ -604,7 +636,7 @@ const CollectionBollywood = () => {
     <>
 
       <LazyLoad once>
-      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+      <LazyLoadWrapper loaded={loadedAll} onLoad={handleContentLoad}>
       
       <DivCarrello open={isFilterVisible}>
               <ContainerFiltri>
@@ -799,7 +831,7 @@ const CollectionBollywood = () => {
 
         </Box>
 
-        <Container>
+        <Container       style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
           <DivInfo>
             <ABC>Zingara</ABC>
             <DivDescrizione>
@@ -811,8 +843,14 @@ const CollectionBollywood = () => {
 
           <DivImmagini>
 
-          <ImmagineCollectionStyle src={ImmagineCollection}/>
+          <ImmagineCollectionStyle src={ImmagineCollection}         onLoad={handleImageLoad}/>
+          
+          
+
+
           <ImmagineCollection2Style src={ImmagineCollection2}/>
+
+
           </DivImmagini>
 
 
