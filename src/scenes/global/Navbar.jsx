@@ -140,6 +140,17 @@ position:absolute;
 
 const ImmagineLogo = styled.img`
 width: 65px;
+
+@media(max-width: 1200px){
+  width: 55px;
+}
+
+@media(max-width: 900px){
+  width: 50px;
+}
+@media(max-width: 680px){
+  width: 47px;
+}
 `;
 const Menu = styled.div`
   // Stili del div aggiuntivo
