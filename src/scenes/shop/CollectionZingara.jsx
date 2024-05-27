@@ -843,12 +843,12 @@ const CollectionBollywood = () => {
 
           <DivImmagini>
 
-          <ImmagineCollectionStyle src={ImmagineCollection}         onLoad={handleImageLoad}/>
+          <ImmagineCollectionStyle src={ImmagineCollection}       />
           
           
 
 
-          <ImmagineCollection2Style src={ImmagineCollection2}/>
+          <ImmagineCollection2Style src={ImmagineCollection2}   onLoad={handleImageLoad}/>
 
 
           </DivImmagini>
