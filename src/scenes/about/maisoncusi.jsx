@@ -290,11 +290,17 @@ overflow:hidden;
 const ABC = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 40px; 
-margin-bottom: 0;
+margin-bottom: 0%;
+margin-top:4%;
 
-@media(max-width:1200px){
+@media(max-width: 1200px){
   font-size: 35px; 
-}
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
 
 
 `;
