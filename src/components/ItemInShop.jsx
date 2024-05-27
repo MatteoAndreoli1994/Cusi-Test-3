@@ -6,14 +6,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../theme";
 import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
 import LazyLoad from 'react-lazyload';
 
 const DivItem = styled.div`
 display:flex;
 flex-direction: column;
 align-items: center;
-    
+
 
 width:100%;
 
@@ -60,6 +61,24 @@ const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 transition: opacity 1s ease-in-out;
 `;
+// Definizione dell'animazione delle fasce diagonali
+const loadingAnimation = keyframes`
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+`;
+
+const Placeholder = styled.div`
+  width: 25vw;
+  height: 100px;
+  background: linear-gradient(45deg, #f0f0f0 25%, #ffffff 25%, #ffffff 50%, #f0f0f0 50%, #f0f0f0 75%, #ffffff 75%, #ffffff 100%);
+  background-size: 50px 50px;
+  animation: ${loadingAnimation} 4s linear infinite;
+`;
+
 
 const Item = ({ item, width }) => {
   const [loaded, setLoaded] = React.useState(false);
@@ -82,6 +101,12 @@ const Item = ({ item, width }) => {
     },
 } = image;
 
+const [imageLoaded, setImageLoaded] = useState(false);
+
+const handleImageLoad = () => {
+  setImageLoaded(true);
+};
+
   // Funzione per formattare il prezzo
   const formatPrice = (price) => {
     return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(price);
@@ -100,15 +125,16 @@ const Item = ({ item, width }) => {
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
-        <img
-          alt={item.name}
-          width="100%"
-          height="100%"
-          src={`${url}`}
-          onClick={() => navigate(`/item/${item.id}`)}
-          style={{ cursor: "pointer" }}
-
-        />
+            {!imageLoaded && <Placeholder />}
+            <img
+              alt={item.name}
+              width="100%"
+              height="100%"
+              src={`${url}`}
+              onClick={() => navigate(`/item/${item.id}`)}
+              style={{ cursor: "pointer", display: imageLoaded ? 'block' : 'none' }}
+             onLoad={handleImageLoad}
+            />
         
         <Box
           display={isHovered ? "block" : "none"}
