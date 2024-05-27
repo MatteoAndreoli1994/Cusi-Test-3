@@ -810,7 +810,7 @@ const ShopRings = () => {
 
       </Box>
 
-      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
+      <Container >
 
         <DivInfo>
           <ABC>Rings</ABC>

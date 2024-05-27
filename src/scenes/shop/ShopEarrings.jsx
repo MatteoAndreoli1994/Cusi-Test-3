@@ -816,7 +816,7 @@ const ShopEarrings = () => {
 
 
       </Box>
-      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
+      <Container>
 
 
         <DivInfo>

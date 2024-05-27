@@ -813,7 +813,7 @@ const ShopNecklaces = () => {
 
       </Box>
 
-      <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
+      <Container>
 
         <DivInfo>
           <ABC>Necklaces</ABC>
