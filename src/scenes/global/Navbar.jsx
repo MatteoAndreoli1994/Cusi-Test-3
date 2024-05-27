@@ -142,11 +142,11 @@ const ImmagineLogo = styled.img`
 width: 65px;
 
 @media(max-width: 1200px){
-  width: 55px;
+  width: 60px;
 }
 
 @media(max-width: 900px){
-  width: 50px;
+  width: 55px;
 }
 
 `;
