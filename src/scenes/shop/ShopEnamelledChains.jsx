@@ -829,8 +829,8 @@ const EnamelledChains = () => {
 
         <DivImmagini>
 
-          <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
-          <ImmagineCollection2Style src={ImmagineCollection2}    />
+          <ImmagineCollectionStyle src={ImmagineCollection} />
+          <ImmagineCollection2Style src={ImmagineCollection2}  onLoad={handleImageLoad}  />
         </DivImmagini>
 
 
