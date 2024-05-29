@@ -42,11 +42,15 @@ const Container = styled.div`
 
   @media(max-width:680px){
 
-    min-height: 210vh;
+    min-height: 200vh;
   }
-  @media(max-width:350px){
+  @media(max-width:600px){
 
-    min-height: 250vh;
+    min-height: 200vh;
+  }
+  @media(max-width:450px){
+
+    min-height: 210vh;
   }
 
   `;
