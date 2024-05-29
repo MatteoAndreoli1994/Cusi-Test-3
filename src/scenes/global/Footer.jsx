@@ -21,6 +21,8 @@ const Container = styled.div`
 
 
 
+
+
 `;
 
 const RowContainer = styled.div`
@@ -30,7 +32,14 @@ const RowContainer = styled.div`
   height:auto;
 
   @media(max-width:800px){
-    width: 95%;
+    width: 92%;
+  }
+
+
+  @media(max-width:680px){
+    display:flex;
+
+    width:95%;
   }
 
 `;
@@ -118,6 +127,12 @@ const LastColumnMobile = styled.div`
 
 
   @media(max-width:800px){
+    display:flex;
+    flex-direction:column;
+    width:92%;
+  }
+
+  @media(max-width:680px){
     display:flex;
     flex-direction:column;
     width:95%;
@@ -259,7 +274,7 @@ const TextBox = styled.input`
 const SubscribeButton = styled.button`
   background-color: black;
   color: white;
-
+  
   border: 1px solid #000;
   width:40%;
   cursor: pointer;
@@ -274,6 +289,7 @@ const SubscribeButton = styled.button`
   @media(max-width:680px){
     font-size: 14px;
     margin-top:1.5%;
+    
   }
   
 `;
