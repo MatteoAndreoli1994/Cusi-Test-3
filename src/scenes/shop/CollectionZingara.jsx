@@ -185,6 +185,7 @@ justify-content: center; /* Centra le colonne nella griglia */
 width: 85%;
 margin: 0 auto;
 margin-top: 1%;
+min-height: 50vh;
 
 @media(max-width:680px){
 grid-template-columns: repeat(2, 1fr); /* Tre colonne per riga */
