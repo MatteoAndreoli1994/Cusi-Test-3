@@ -30,7 +30,7 @@ const SubscribeButton = styled.button`
   display: flex; /* Use flex container */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
-  height: 30px;
+  height: 50px;
 
   text-align: center;
 
@@ -487,11 +487,11 @@ width:85%;
 
 `;
 const GtaRegular16 = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 16px;
+
+font-size: 14px;
 
 
-@media(max-width:680px){
+@media(max-width:800px){
   font-size: 14px; 
 }
 

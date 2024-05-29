@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Modella from "../../assets/modella1.avif";
 import LazyLoad from 'react-lazyload';
-import Footer from "../global/FooterNoSubscribe"
+import Footer from "../global/Footer"
 
 const Container = styled.div`
   display: flex;
