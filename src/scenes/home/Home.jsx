@@ -589,7 +589,9 @@ width:100%;
 font-size: 15px; 
 
 }
-
+@media(max-width: 800px){
+  text-align: center;
+}
 @media(max-width: 680px){
 text-align: center;
 width:95%;
