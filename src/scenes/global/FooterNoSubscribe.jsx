@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 // Importa il componente Link da react-router-dom
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Se usi React Router
 
 const Container = styled.div`
     display: flex;
@@ -29,7 +29,7 @@ const RowContainer = styled.div`
 
   height:auto;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     width: 95%;
   }
 
@@ -57,7 +57,7 @@ const ColumnSocial = styled.div`
 
   min-width:15%;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
   }
 
@@ -74,9 +74,13 @@ const ColumnMobile = styled.div`
   min-width:15%;
   display:none;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:block;
+
   }
+`;
+const RawMobile = styled.div`
+  display:flex;
 `;
 
 const ColumnLogo = styled.div`
@@ -90,7 +94,7 @@ const ColumnLogo = styled.div`
 
   min-width:15%;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
   }
 
@@ -101,7 +105,7 @@ const LastColumn = styled.div`
   padding: 20px;
   text-align: left;
 
-    @media(max-width:680px){
+    @media(max-width:800px){
       display:none;
     }
 
@@ -113,7 +117,7 @@ const LastColumnMobile = styled.div`
   display:none;
 
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:flex;
     flex-direction:column;
     width:95%;
@@ -132,24 +136,19 @@ const CopyrightContainer = styled.div`
   margin-top: auto; /* Imposta il margin-top a auto per spingere il div in basso */
   color:black;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
+
   }
 
 `;
 const CopyrightContainerMobile = styled.div`
 
-  color: black;
-  justify-content: space-between;
-  display: flex;
-  width: 95%;
-  align-items: center;
-  margin-top: auto; /* Imposta il margin-top a auto per spingere il div in basso */
-  color:black;
   display:none;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:flex;
+    flex-direction: column;
 
   }
 `;
@@ -158,11 +157,51 @@ const DivLingua = styled.div`
   color: black;
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 40%;
   align-items: center;
   padding: 10px;
 
   margin-right:1.5%;
+
+  @media(max-width:900px){
+    width: 50%;
+
+  }
+  @media(max-width:800px){
+    width: 100%;
+    background-color:red;
+    padding: 0px;
+    align-items: flex-start;
+
+
+  }
+`;
+
+const DivLinguaMobile = styled.div`
+
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+  padding: 10px;
+
+  margin-right:1.5%;
+
+  @media(max-width:900px){
+    width: 50%;
+
+  }
+  @media(max-width:800px){
+    width: 100%;
+
+    padding: 0px;
+    align-items: flex-start;
+
+
+
+
+  }
 `;
 
 const Logo = styled.div`
@@ -188,7 +227,9 @@ const SubscribeContainer = styled.div`
   display: flex;
   width: 100%;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
-  height: 50px;
+  height: 20%;
+
+
 
   
 `;
@@ -199,6 +240,13 @@ const TextBox = styled.input`
   border: 1px solid #000;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
   border-radius: 0;
+
+  @media(max-width: 800px){
+
+    margin-top: 1.5%;
+  
+  }
+
   @media(max-width: 680px){
     font-size: 14px;
     margin-top: 1.5%;
@@ -218,6 +266,11 @@ const SubscribeButton = styled.button`
   font-size: 13px;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
+  @media(max-width:800px){
+
+    margin-top:1.5%;
+  }
+
   @media(max-width:680px){
     font-size: 13px;
     margin-top:1.5%;
@@ -229,11 +282,29 @@ const GtaRegular = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 
+
+
 `;
-const GtaRegularLegalPol = styled.p`
+const GtaRegularCopy = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 14px;
+
+@media(max-width: 800px){
+  margin:0;
+  margin-bottom:15px;
+}
+
+
+`;
+
+
+const GtaRegularLegalPol = styled.a`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 cursor: pointer;
+margin-right:2%;
+
+
 `;
 
 const GtaLight = styled.p`
@@ -241,21 +312,25 @@ font-family: 'GTAmericaLight';
 font-size: 14px;
 
 `;
+const Collegamento = styled.a`
+  margin-right: 4%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+`;
+
 
 function Footer() {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "https://cdn.iubenda.com/iubenda.js";
-      script.async = true;
-      document.body.appendChild(script);
-  
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, []);
+
   
     
 
@@ -263,6 +338,16 @@ function Footer() {
     <Container>
 
 
+
+        <LastColumnMobile>
+        <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaLight>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaLight>
+        
+        <SubscribeContainer>
+            <TextBox type="text" placeholder="E-mail" />
+            <SubscribeButton>SUBSCRIBE</SubscribeButton>
+        </SubscribeContainer>
+        
+        </LastColumnMobile>
 
 
       <RowContainer>
@@ -279,9 +364,69 @@ function Footer() {
         
         </ColumnLogo>
 
-        <Column><GtaRegular>CUSTOMER SERVICE</GtaRegular><GtaRegular>Our services</GtaRegular><GtaRegular>Product care</GtaRegular><GtaRegular>Shopping & Returns</GtaRegular><GtaRegular>Size Chart</GtaRegular><GtaRegular>FAQ</GtaRegular></Column>
-        <Column><GtaRegular>CONTACT</GtaRegular><GtaRegular>Contact Us</GtaRegular><GtaRegular>Book An Appointment</GtaRegular><GtaRegular>Boutiques</GtaRegular></Column>
-        <ColumnSocial><GtaRegular>SOCIAL</GtaRegular><GtaRegular>Facebook</GtaRegular><GtaRegular>Instagram</GtaRegular><GtaRegular>Youtube</GtaRegular></ColumnSocial>
+        <Column>
+          <GtaRegular>CUSTOMER SERVICE</GtaRegular>
+          
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Our Services")}>
+              Our Services
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Product Care")}>
+              Product Care
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Shipping")}>
+              Shipping & Returns
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=Size Chart")}>
+              Size Chart
+            </Collegamento>
+          </GtaRegular>
+
+          <GtaRegular>
+            <Collegamento onClick={() => navigate("/customerservice?category=FAQ")}>
+              FAQ
+            </Collegamento>
+          </GtaRegular>
+        
+        </Column>
+        <Column>
+         <GtaRegular>CONTACT</GtaRegular>
+
+         <GtaRegular><Collegamento  onClick={() => navigate("/contactus")}>Contact Us</Collegamento></GtaRegular>
+
+         <GtaRegular>
+          <Collegamento href="/boutiques#Book">
+            Book An Appointment
+          </Collegamento>
+        </GtaRegular>
+
+        <GtaRegular>
+          <Collegamento href="/boutiques" >
+
+              Boutiques
+
+
+          </Collegamento>
+        </GtaRegular>
+        
+        </Column>
+        <ColumnSocial>
+        
+          <GtaRegular>SOCIAL</GtaRegular>
+          
+          <GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular>
+
+          
+        </ColumnSocial>
 
         <LastColumn>
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaRegular>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaRegular>
@@ -289,14 +434,14 @@ function Footer() {
         <SubscribeContainer>
             <TextBox type="text" placeholder="Your email" />
             <SubscribeButton>SUBSCRIBE</SubscribeButton>
-          </SubscribeContainer>
+        </SubscribeContainer>
         
         </LastColumn>
         
       </RowContainer>
       
       <RowContainer>
-      <ColumnMobile><GtaRegular>SOCIAL</GtaRegular><GtaRegular>Instagram</GtaRegular><GtaRegular>Facebook</GtaRegular></ColumnMobile>
+      <ColumnMobile><GtaRegular>SOCIAL</GtaRegular><GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular><GtaRegular>Facebook</GtaRegular></ColumnMobile>
 
       </RowContainer>
       
@@ -310,13 +455,13 @@ function Footer() {
 
         <DivLingua>
 
-        <a href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Privacy Policy</GtaRegular>
-        </a>
+        </Collegamento>
 
-        <a href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
-        </a>
+        </Collegamento>
 
 
           <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
@@ -327,12 +472,41 @@ function Footer() {
 
           <GtaRegular>IT/€</GtaRegular>
           <GtaRegular>English</GtaRegular>
+
         </DivLingua>
+
+
+
+
+
+
+
+
+
       </CopyrightContainer>
+      
 
       <CopyrightContainerMobile>
+
+      <DivLinguaMobile>
+      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
+      <GtaRegularCopy>IT/€</GtaRegularCopy>
+      <GtaRegularCopy>English</GtaRegularCopy>
+
+      </DivLinguaMobile>
+
+      <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
         
-      <ColumnMobile><GtaRegular>© 2024 Cusi. All rights reserved </GtaRegular></ColumnMobile>
+
+
+ 
+      
+      
+
+
+
+
+
 
 
       
