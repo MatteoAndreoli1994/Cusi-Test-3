@@ -76,6 +76,7 @@ const ColumnMobile = styled.div`
 
   @media(max-width:800px){
     display:block;
+
   }
 `;
 const RawMobile = styled.div`
@@ -137,22 +138,17 @@ const CopyrightContainer = styled.div`
 
   @media(max-width:800px){
     display:none;
+
   }
 
 `;
 const CopyrightContainerMobile = styled.div`
 
-  color: black;
-  justify-content: space-between;
-  display: flex;
-  width: 95%;
-  align-items: center;
-  margin-top: auto; /* Imposta il margin-top a auto per spingere il div in basso */
-  color:black;
   display:none;
 
   @media(max-width:800px){
     display:flex;
+    flex-direction: column;
 
   }
 `;
@@ -169,6 +165,41 @@ const DivLingua = styled.div`
 
   @media(max-width:900px){
     width: 50%;
+
+  }
+  @media(max-width:800px){
+    width: 100%;
+    background-color:red;
+    padding: 0px;
+    align-items: flex-start;
+
+
+  }
+`;
+
+const DivLinguaMobile = styled.div`
+
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+  padding: 10px;
+
+  margin-right:1.5%;
+
+  @media(max-width:900px){
+    width: 50%;
+
+  }
+  @media(max-width:800px){
+    width: 100%;
+
+    padding: 5px;
+    align-items: flex-start;
+
+
+
 
   }
 `;
@@ -249,12 +280,28 @@ const GtaRegular = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 
+
+
 `;
-const GtaRegularLegalPol = styled.p`
+const GtaRegularCopy = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 14px;
+
+@media(max-width: 800px){
+  margin:0;
+}
+
+
+`;
+
+
+const GtaRegularLegalPol = styled.a`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 cursor: pointer;
 margin-right:2%;
+
+
 `;
 
 const GtaLight = styled.p`
@@ -271,6 +318,8 @@ const Collegamento = styled.a`
     text-decoration: none;
     color: inherit;
   }
+
+
 `;
 
 
@@ -432,24 +481,25 @@ function Footer() {
 
 
       </CopyrightContainer>
+      
 
       <CopyrightContainerMobile>
+      <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
         
-      <ColumnMobile>
-
-      <GtaRegular>© 2024 Cusi. All rights reserved </GtaRegular>
-      
-      
-      
-      </ColumnMobile>
 
 
-      <DivLingua>
+ 
+      
+      
+
+
+
+      <DivLinguaMobile>
       <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-      <GtaRegular>IT/€</GtaRegular>
-      <GtaRegular>English</GtaRegular>
+      <GtaRegularCopy>IT/€</GtaRegularCopy>
+      <GtaRegularCopy>English</GtaRegularCopy>
 
-      </DivLingua>
+      </DivLinguaMobile>
 
 
 
