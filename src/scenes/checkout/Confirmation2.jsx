@@ -4,6 +4,8 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { useDispatch } from 'react-redux';
 import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
+import Footer from "../global/Footer"
+
 
 
 
@@ -23,6 +25,7 @@ const Confirmation2 =  () => {
         You have successfully made an Order —{" "}
         <strong>Congrats on Making your Purchase</strong>
       </Alert>
+      <Footer/>
     </Box>
   );
 };
