@@ -663,6 +663,18 @@ const SearchInput = styled.input`
 const Placeholder = styled.span`
   color: #999;
 `;
+const Collegamento = styled.a`
+  margin-right: 4%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+`;
 
 
 function Navbar() {
@@ -903,6 +915,11 @@ useEffect(() => {
     setIsFilterVisible(false)
     navigate('/boutiques');
   };
+  const handleBook = () => {
+    setIsHoveredAbout(false)
+    setIsFilterVisible(false)
+    navigate('/boutiques#Book');
+  };
   const handleCustomerService = () => {
     setIsHoveredAbout(false)
     setIsFilterVisible(false)
@@ -1041,7 +1058,7 @@ useEffect(() => {
               <GtaRegularMobile onClick={() => setShowExpertiseInfo(prevState => !prevState)}>EXPERTISE</GtaRegularMobile>
 
               <HighJewellery  visible={showExpertiseInfo}>
-                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Book an appointment</GtaRegular> 
+                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">Book an appointment</Collegamento></GtaRegular> 
                   <GtaRegular onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</GtaRegular> 
                   <GtaRegular onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</GtaRegular> 
                 </HighJewellery>
@@ -1315,7 +1332,7 @@ useEffect(() => {
         <DivCategoriaProdotti>
         <Typography2>EXPERTISE</Typography2>
         </DivCategoriaProdotti>
-        <Typography3 onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Book an appointment</Typography3> 
+        <Typography3 onClick={handleBook} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">Book an appointment</Collegamento></Typography3> 
         <Typography3 onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</Typography3> 
         <Typography3 onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</Typography3> 
 
