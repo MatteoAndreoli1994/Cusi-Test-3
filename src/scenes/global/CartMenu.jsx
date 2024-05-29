@@ -230,6 +230,10 @@ const CloseIcon2 = styled.img`
 
 
 
+
+
+
+
 const CartMenu = () => {
 
 

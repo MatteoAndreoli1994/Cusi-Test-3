@@ -372,6 +372,10 @@ font-family: 'GTAmericaRegular';
 font-size: 16px;
 margin-right:10px;
 
+@media(max-width:680px){
+  font-size: 14px;
+}
+
 `;
 
 const GtaRegular12 = styled.p`

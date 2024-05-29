@@ -155,7 +155,7 @@ text-align:center;
 }
 
 @media(max-width: 680px){
-  width:70%;
+  width:75%;
   font-size: 14px; 
 }
 

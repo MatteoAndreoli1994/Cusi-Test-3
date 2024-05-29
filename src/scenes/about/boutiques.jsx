@@ -21,7 +21,7 @@ const SubscribeButton = styled.button`
   color: white;
   padding: 18px;
   border: 1px solid #000;
-  width: 120px;
+  width: 160px;
 
   cursor: pointer;
   font-size: 13px;
@@ -112,7 +112,7 @@ const TitoloStoryBoard = styled.p`
   margin-bottom:1%;
 
   @media(max-width:680px){
-    font-size: 31.5px;
+    font-size: 30px;
 
   }
 `;

@@ -95,6 +95,7 @@ flex-direction:column;
 
 @media(max-width:680px){
   display:flex;
+  width:95%;
 }
 `;
 
@@ -161,7 +162,7 @@ margin-top:0;
 const AccordionItem = styled.div`
 
 width: 100%;
-  padding: 3%;
+  padding: 4%;
   font-family: 'GTAmericaRegular';
   font-size: 16px;
   padding-left: 0;
@@ -179,7 +180,7 @@ const AccordionContent = styled.div`
 
 const FaqDiv = styled.div`
   width: 90%;
-
+  margin-top:6%;
 `;
 const FilterSign = styled.span`
 

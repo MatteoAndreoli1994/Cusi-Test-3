@@ -388,7 +388,7 @@ const ContainerFiltri = styled.div`
   margin: 20px;
   margin-top: 10vh;
 
-min-height:80%;
+min-height:85%;
 height:auto;
 
 
@@ -469,6 +469,7 @@ const FilterButton = styled.div`
 `;
 const FilterButtonContainer = styled.div`
   margin-top: auto; /* Spinge il contenuto verso l'alto per far spazio al div rosso in fondo */
+
 `;
 
 const FilterButton2 = styled.div`
@@ -1069,8 +1070,8 @@ useEffect(() => {
                 <FilterButtonContainer>
 
                 <FilterButton2>
-              <Typography3>EUR/IT</Typography3> 
-            </FilterButton2>
+                 <Typography3>EUR/IT</Typography3> 
+                </FilterButton2>
                 </FilterButtonContainer>
 
 
