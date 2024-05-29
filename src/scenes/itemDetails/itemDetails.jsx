@@ -994,7 +994,7 @@ const ItemDetails = () => {
 
 
               </Telefonata>
-              <StyledHashLink to={`/boutiques?message=${encodeURIComponent(message)}`}>
+              <StyledHashLink to={`/boutiques?message=${encodeURIComponent(message)}#Book`}>
               <ButtonWhite
                 sx={{
                   backgroundColor: "white",
