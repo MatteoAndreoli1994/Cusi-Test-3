@@ -29,7 +29,7 @@ const RowContainer = styled.div`
 
   height:auto;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     width: 95%;
   }
 
@@ -57,7 +57,7 @@ const ColumnSocial = styled.div`
 
   min-width:15%;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
   }
 
@@ -74,7 +74,7 @@ const ColumnMobile = styled.div`
   min-width:15%;
   display:none;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:block;
   }
 `;
@@ -93,7 +93,7 @@ const ColumnLogo = styled.div`
 
   min-width:15%;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
   }
 
@@ -104,7 +104,7 @@ const LastColumn = styled.div`
   padding: 20px;
   text-align: left;
 
-    @media(max-width:680px){
+    @media(max-width:800px){
       display:none;
     }
 
@@ -116,7 +116,7 @@ const LastColumnMobile = styled.div`
   display:none;
 
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:flex;
     flex-direction:column;
     width:95%;
@@ -135,7 +135,7 @@ const CopyrightContainer = styled.div`
   margin-top: auto; /* Imposta il margin-top a auto per spingere il div in basso */
   color:black;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:none;
   }
 
@@ -151,7 +151,7 @@ const CopyrightContainerMobile = styled.div`
   color:black;
   display:none;
 
-  @media(max-width:680px){
+  @media(max-width:800px){
     display:flex;
 
   }
@@ -207,6 +207,13 @@ const TextBox = styled.input`
   border: 1px solid #000;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
   border-radius: 0;
+
+  @media(max-width: 800px){
+
+    margin-top: 1.5%;
+  
+  }
+
   @media(max-width: 680px){
     font-size: 14px;
     margin-top: 1.5%;
@@ -225,6 +232,11 @@ const SubscribeButton = styled.button`
   cursor: pointer;
   font-size: 13px;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
+  
+  @media(max-width:800px){
+
+    margin-top:1.5%;
+  }
 
   @media(max-width:680px){
     font-size: 13px;
