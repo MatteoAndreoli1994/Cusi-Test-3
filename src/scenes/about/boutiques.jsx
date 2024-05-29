@@ -198,8 +198,8 @@ const CheckboxContainer = styled.div`
 
   
   @media(max-width: 680px){
-    margin-top:6%;
-    margin-bottom:6%;
+    margin-top:4%;
+    margin-bottom:2%;
 
   }
 `;
@@ -288,6 +288,12 @@ const CheckboxLabel2 = styled.label`
   width: 100%;
 
   height:100%;
+
+  @media(max-width: 800px){
+    margin-top:4%;
+  }
+
+
 
 
 
@@ -635,7 +641,7 @@ const Boutiques = () => {
 
   };
   
-  const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(false);
 const [sent, setSent] = useState(false);
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -653,6 +659,25 @@ const handleSubmit = (e) => {
   }, 2000); // 2000 millisecondi = 2 secondi
 };
 
+useEffect(() => {
+  const handleHashChange = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  handleHashChange(); // Scroll on initial load
+  window.addEventListener('hashchange', handleHashChange); // Scroll on hash change
+
+  return () => {
+    window.removeEventListener('hashchange', handleHashChange);
+  };
+}, []);
+
 
   
   
@@ -669,8 +694,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-          <LazyLoad once>
-      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
         
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 <Container>
@@ -911,8 +935,7 @@ and on Saturdays from 9 am to 5 pm.
 
 <Footer/>
 
-</LazyLoadWrapper>
-</LazyLoad>
+
 
     </>
   );

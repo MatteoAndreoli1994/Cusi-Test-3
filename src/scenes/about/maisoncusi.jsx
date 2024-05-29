@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import AnnibaleCusi from "../../assets/about2.avif";
 import SpillaDelPozzo from "../../assets/about.avif";
@@ -591,6 +591,7 @@ const MaisonCusi = () => {
 
 
 
+
 const [loaded, setLoaded] = React.useState(false);
 const handleContentLoad = () => {
   setLoaded(true);
@@ -782,7 +783,7 @@ const handleContentLoad = () => {
         The historic jewelry store founded in 1886 by Annibale Cusi marked the beginning of an era that has lasted for five generations; over these 131 years, Cusi has become one of the most prestigious names among Italian jewelers.
         </Introduzione>
 
-        <ImmagineFamiglia src={GiorgioCusi}  effect="blur"/>
+        <ImmagineFamiglia src={GiorgioCusi}  effect="blur" />
 
         <Description2>
 Today, the family tradition continues thanks to the commitment and passion of Giorgio Nicola Cusi, his wife Roberta Cusi, and their children Alessia and Alessandro. Cusi is not just a name: it's passion, professionalism, security, tradition—it's something familiar; our goal is to make our customers feel at home.

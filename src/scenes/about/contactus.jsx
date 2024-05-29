@@ -143,8 +143,15 @@ text-align:center;
   font-size: 14px; 
 }
 
+@media(max-width: 800px){
+  width:60%;
+  backgroud-color:blue;
+  font-size: 16px; 
+}
+
 @media(max-width: 680px){
   width:70%;
+  font-size: 14px; 
 }
 
 
@@ -156,6 +163,12 @@ font-size: 14px;
 @media(max-width: 1200px){
   font-size: 13px; 
 }
+@media(max-width: 800px){
+  font-size: 14px; 
+}
+@media(max-width: 680px){
+  font-size: 13px; 
+}
 `;
 
 const GtaLightLightInfo = styled.p`
@@ -163,6 +176,12 @@ font-family: 'GTAmericaLight';
 font-size: 16px;
 
 @media(max-width: 1200px){
+  font-size: 14px; 
+}
+@media(max-width: 800px){
+  font-size: 16px; 
+}
+@media(max-width: 680px){
   font-size: 14px; 
 }
 `;

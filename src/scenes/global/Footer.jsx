@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 // Importa il componente Link da react-router-dom
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Se usi React Router
 
 const Container = styled.div`
     display: flex;
@@ -232,7 +232,7 @@ const SubscribeButton = styled.button`
   cursor: pointer;
   font-size: 13px;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
-  
+
   @media(max-width:800px){
 
     margin-top:1.5%;
@@ -358,8 +358,11 @@ function Footer() {
         </GtaRegular>
 
         <GtaRegular>
-          <Collegamento href="/boutiques">
-            Boutiques
+          <Collegamento href="/boutiques" >
+
+              Boutiques
+
+
           </Collegamento>
         </GtaRegular>
         
