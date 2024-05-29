@@ -114,6 +114,11 @@ margin-top:1%;
   width: 100%;
   height: auto;
 }
+@media(max-width: 680px){
+  width: 100%;
+  height: auto;
+  margin-top:4%;
+}
 
 
 `;
