@@ -22,6 +22,7 @@ import ImmagineCollection2 from "../../assets/bollywood1.avif"
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
+import Footer from "../global/Footer"
 
 
 const DivImmagini = styled.div`
@@ -850,6 +851,9 @@ const CollectionBollywood = () => {
           </DivProdotti>
 
         </Container>
+
+
+        <Footer/>
 
       </LazyLoadWrapper>
       </LazyLoad>

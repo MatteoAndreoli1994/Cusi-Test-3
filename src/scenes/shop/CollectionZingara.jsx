@@ -25,6 +25,7 @@ import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 import { blue } from '@mui/material/colors';
 import { Blurhash } from 'react-blurhash';
+import Footer from "../global/Footer"
 
 
 
@@ -889,6 +890,8 @@ const CollectionBollywood = () => {
           </DivProdotti>
 
         </Container>
+
+        <Footer/>
 
       </LazyLoadWrapper>
       </LazyLoad>

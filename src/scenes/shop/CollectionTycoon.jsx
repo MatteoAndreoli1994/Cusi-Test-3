@@ -23,6 +23,7 @@ import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import Footer from "../global/Footer"
 
 
 const DivImmagini = styled.div`
@@ -853,6 +854,9 @@ const CollectionFleurie = () => {
         </DivProdotti>
 
       </Container>
+
+      <Footer/>
+      
       </LazyLoadWrapper>
       </LazyLoad>
       

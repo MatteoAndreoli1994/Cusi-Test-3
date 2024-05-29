@@ -22,6 +22,7 @@ import VideoCollection2Video from "../../assets/fleurieVideo1_1.mp4";
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import LazyLoad from 'react-lazyload';
+import Footer from "../global/Footer"
 
 
 const DivImmagini = styled.div`
@@ -868,6 +869,8 @@ const CollectionFleurie = () => {
         </DivProdotti>
 
       </Container>
+
+      <Footer/>
 
       </LazyLoadWrapper>
       </LazyLoad>

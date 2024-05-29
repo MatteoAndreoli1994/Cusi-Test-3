@@ -9,7 +9,7 @@ import RobertoCusi from "../../assets/about6.avif";
 import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
-import Footer from "../global/FooterNoSubscribe"
+import Footer from "../global/Footer"
 
 const Container = styled.div`
   margin-top:120px;
