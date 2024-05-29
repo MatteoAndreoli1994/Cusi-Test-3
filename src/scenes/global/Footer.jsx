@@ -195,7 +195,7 @@ const DivLinguaMobile = styled.div`
   @media(max-width:800px){
     width: 100%;
 
-    padding: 5px;
+    padding: 0px;
     align-items: flex-start;
 
 
@@ -289,6 +289,7 @@ font-size: 14px;
 
 @media(max-width: 800px){
   margin:0;
+  margin-bottom:15px;
 }
 
 
@@ -484,6 +485,14 @@ function Footer() {
       
 
       <CopyrightContainerMobile>
+
+      <DivLinguaMobile>
+      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
+      <GtaRegularCopy>IT/€</GtaRegularCopy>
+      <GtaRegularCopy>English</GtaRegularCopy>
+
+      </DivLinguaMobile>
+
       <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
         
 
@@ -494,12 +503,7 @@ function Footer() {
 
 
 
-      <DivLinguaMobile>
-      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-      <GtaRegularCopy>IT/€</GtaRegularCopy>
-      <GtaRegularCopy>English</GtaRegularCopy>
 
-      </DivLinguaMobile>
 
 
 
