@@ -227,7 +227,9 @@ const SubscribeContainer = styled.div`
   display: flex;
   width: 100%;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
-  height: 50px;
+  height: 20%;
+
+
 
   
 `;
@@ -343,7 +345,7 @@ function Footer() {
         <SubscribeContainer>
             <TextBox type="text" placeholder="E-mail" />
             <SubscribeButton>SUBSCRIBE</SubscribeButton>
-          </SubscribeContainer>
+        </SubscribeContainer>
         
         </LastColumnMobile>
 
@@ -432,7 +434,7 @@ function Footer() {
         <SubscribeContainer>
             <TextBox type="text" placeholder="Your email" />
             <SubscribeButton>SUBSCRIBE</SubscribeButton>
-          </SubscribeContainer>
+        </SubscribeContainer>
         
         </LastColumn>
         
