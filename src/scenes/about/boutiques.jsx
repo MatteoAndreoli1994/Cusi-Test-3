@@ -26,7 +26,7 @@ const SubscribeButton = styled.button`
   cursor: pointer;
   font-size: 13px;
 
-  margin: 5% auto 0;
+  margin: 10% auto 0;
   display: flex; /* Use flex container */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
