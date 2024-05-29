@@ -22,6 +22,7 @@ import LazyLoad from 'react-lazyload';
 
 import ImmagineCollection from "../../assets/animals/b.avif"
 import ImmagineCollection2 from "../../assets/animals/b.avif"
+import Footer from "../global/Footer"
 
 
 const DivImmagini = styled.div`
@@ -73,7 +74,7 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-min-height: 200vh;
+min-height: 100vh;
 margin-top:120px;
 align-items: center;
 margin-bot:1%;
@@ -180,6 +181,7 @@ justify-content: center; /* Centra le colonne nella griglia */
 width: 85%;
 margin: 0 auto;
 margin-top: 1%;
+min-height: 50vh;
 
 @media(max-width:680px){
 grid-template-columns: repeat(2, 1fr); /* Tre colonne per riga */
@@ -365,6 +367,10 @@ const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
 margin-right:10px;
+
+@media(max-width:680px){
+  font-size: 14px;
+}
 
 `;
 
@@ -867,7 +873,7 @@ const Animals = () => {
 
             
         </DivProdotti>
-
+        <Footer/>
       </Container>
 
 

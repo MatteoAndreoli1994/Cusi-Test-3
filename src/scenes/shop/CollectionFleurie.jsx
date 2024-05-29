@@ -74,7 +74,7 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-min-height: 200vh;
+min-height: 100vh;
 margin-top:120px;
 align-items: center;
 margin-bot:1%;
@@ -368,6 +368,10 @@ const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
 margin-right:10px;
+
+@media(max-width:680px){
+  font-size: 14px;
+}
 
 `;
 

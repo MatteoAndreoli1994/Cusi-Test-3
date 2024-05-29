@@ -31,7 +31,7 @@ const RowContainer = styled.div`
 
   height:auto;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     width: 91%;
   }
 
@@ -66,7 +66,7 @@ const ColumnSocial = styled.div`
 
   min-width:15%;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:none;
   }
 
@@ -83,7 +83,7 @@ const ColumnMobile = styled.div`
   min-width:15%;
   display:none;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:block;
 
   }
@@ -103,7 +103,7 @@ const ColumnLogo = styled.div`
 
   min-width:15%;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:none;
   }
 
@@ -114,7 +114,7 @@ const LastColumn = styled.div`
   padding: 20px;
   text-align: left;
 
-    @media(max-width:800px){
+    @media(max-width:900px){
       display:none;
     }
 
@@ -126,7 +126,7 @@ const LastColumnMobile = styled.div`
   display:none;
 
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:flex;
     flex-direction:column;
     width:91%;
@@ -151,7 +151,7 @@ const CopyrightContainer = styled.div`
   margin-top: auto; /* Imposta il margin-top a auto per spingere il div in basso */
   color:black;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:none;
 
   }
@@ -161,7 +161,7 @@ const CopyrightContainerMobile = styled.div`
 
   display:none;
 
-  @media(max-width:800px){
+  @media(max-width:900px){
     display:flex;
     flex-direction: column;
 
@@ -182,7 +182,7 @@ const DivLingua = styled.div`
     width: 50%;
 
   }
-  @media(max-width:800px){
+  @media(max-width:900px){
     width: 100%;
     background-color:red;
     padding: 0px;
@@ -207,7 +207,7 @@ const DivLinguaMobile = styled.div`
     width: 50%;
 
   }
-  @media(max-width:800px){
+  @media(max-width:900px){
     width: 100%;
 
     padding: 0px;
@@ -256,7 +256,7 @@ const TextBox = styled.input`
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
   border-radius: 0;
 
-  @media(max-width: 800px){
+  @media(max-width: 900px){
 
     margin-top: 1.5%;
   
@@ -281,9 +281,15 @@ const SubscribeButton = styled.button`
   font-size: 14px;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
-  @media(max-width:800px){
+  @media(max-width:1200px){
+    font-size: 11px;
 
+  }
+
+  @media(max-width:900px){
+    font-size: 12px;
     margin-top:1.5%;
+
   }
 
   @media(max-width:680px){
@@ -305,7 +311,7 @@ const GtaRegularCopy = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 
-@media(max-width: 800px){
+@media(max-width: 900px){
   margin:0;
   margin-bottom:15px;
 }

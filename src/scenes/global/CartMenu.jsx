@@ -343,7 +343,7 @@ const CartMenu = () => {
 
                 </FlexBoxTop>
 
-                <FlexBoxBot m="15px 0">
+                <FlexBoxBot m="5px 0">
 
                   <DivQuantità>
 
@@ -365,7 +365,7 @@ const CartMenu = () => {
                   </DivQuantità>
 
                     
-                    <GtaRegular14 onClick={() =>
+                  <GtaRegular14 onClick={() =>
                               dispatch(removeFromCart({ id: item.id }))
                             }>
                               Remove

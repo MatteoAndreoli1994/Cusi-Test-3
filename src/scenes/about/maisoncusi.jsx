@@ -40,14 +40,14 @@ flex-direction: row;
 width: 85%;
 height: auto;
 
-margin-top: 6%;
+margin-top: 10%;
 
 @media(max-width: 1000px){
 
   width: 85%;
 }
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   flex-direction: column;
 
 
@@ -63,11 +63,11 @@ display: flex;
 flex-direction: row;
 width: 85%;
 
-margin-top:6%;
+margin-top:10%;
 
 
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   flex-direction: column-reverse;
 
 
@@ -87,7 +87,8 @@ height:auto;
 margin-top:6%;
 
 
-@media(max-width: 680px){
+
+@media(max-width: 900px){
   flex-direction: column;
 
 
@@ -105,10 +106,10 @@ display: flex;
 flex-direction: row;
 width: 85%;
 
-margin-top:6%;
+margin-top:8%;
 
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   flex-direction: column-reverse;
 
 
@@ -135,7 +136,7 @@ text-align: center; /* Centra il testo all'interno del div */
 margin-bottom:5%;
 margin-top:2%;
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   width: 100%;
 
 }
@@ -171,6 +172,11 @@ font-size:16px;
   font-size:14px; 
   width:85%;
   margin-bottom:6%;
+}
+@media(max-width: 900px){
+
+  width:85%;
+
 }
 
 @media(max-width: 680px){
@@ -211,7 +217,7 @@ min-height: 30vh;
   margin-bottom:4%;
 }
 
-@media(max-width: 680px){
+@media(max-width: 900px){
   width: 85%;
 
 }
@@ -297,6 +303,7 @@ margin-top:4%;
   font-size: 35px; 
   
   }
+
   @media(max-width: 680px){
     font-size: 30px; 
     
@@ -317,6 +324,12 @@ width:75%;
 
 }
 
+@media(max-width:900px){
+
+
+  width:100%;
+}
+
 @media(max-width:680px){
   font-size: 21px; 
 
@@ -331,6 +344,11 @@ margin-bottom: 0;
 margin-top: 0;
 width:100%;
 
+@media(max-width:900px){
+ 
+
+  width:100%;
+}
 
 @media(max-width:680px){
   font-size: 21px; 
@@ -352,6 +370,11 @@ font-weight: 200;
   width:75%;
 }
 
+@media(max-width:900px){
+
+  width:100%;
+}
+
 @media(max-width:680px){
   font-size: 14px; 
   width:100%;
@@ -369,6 +392,10 @@ font-weight: 200;
   font-size: 14px; 
 
 }
+@media(max-width:900px){
+
+  width:100%;
+}
 
 @media(max-width:680px){
   font-size: 14px; 
@@ -383,6 +410,11 @@ margin-bottom: 0;
 width:75%;
 font-weight: 200;
 
+@media(max-width: 900px){
+  display:none;
+  width:90%;
+}
+
 @media(max-width:680px){
   display:none;
   width:90%;
@@ -396,10 +428,19 @@ margin-bottom: 0;
 margin-top: 4%;
 width:88%;
 font-weight: 200;
+text-align:left;
 
 @media(max-width: 1000px){
 
   width:88%;
+  
+}
+
+@media(max-width:900px){
+ 
+
+  text-align:left;
+  width:85%;
   
 }
 
@@ -421,6 +462,11 @@ text-align: center;
 margin-bottom:4%;
 margin-top:3%;
 
+@media(max-width: 900px){
+  width:80%;
+
+}
+
 @media(max-width: 680px){
   width:80%;
   font-size: 17px; 
@@ -439,6 +485,12 @@ margin-bottom:4%;
 @media(max-width:1000px){
   width: 85%;
 
+}
+
+@media(max-width:900px){
+  width:80%;
+
+  margin-bottom:8%;
 }
 
 @media(max-width:680px){
@@ -465,6 +517,14 @@ margin-top: 7%;
 
 }
 
+@media(max-width:900px){
+
+  width:88%;
+  margin-bottom: 2%;
+
+}
+
+
 @media(max-width:680px){
   font-size: 25px; 
 
@@ -475,7 +535,7 @@ margin-top: 7%;
 `;
 
 const ImmagineAnnibaleCusi = styled.img`
-width: 100%;
+width: 80%;
 height: auto;
 min-height: 30vh;
 
@@ -494,7 +554,7 @@ min-height: 30vh;
 }
 `;
 const ImmagineStuarda= styled.img`
-width: 100%;
+width: 80%;
 min-height: 30vh;
 
 
@@ -516,10 +576,10 @@ min-height: 30vh;
 `;
 
 const CollieImg = styled.img`
-width: 100%;
+width: 75%;
 height: auto;
 min-height: 30vh;
-margin-left:15%;
+margin-left:13%;
 
 
 @media(max-width:1000px){
@@ -530,7 +590,7 @@ margin-left:15%;
 
 }
 
-@media(max-width:680px){
+@media(max-width:900px){
 
   margin-left:0%;
   width:100%;
@@ -553,7 +613,7 @@ margin-left:12.5%;
 
 }
 
-@media(max-width:680px){
+@media(max-width:900px){
 
   margin-left:0%;
   width:100%;
@@ -562,9 +622,13 @@ margin-left:12.5%;
 
 `;
 const ImmagineStuarda2= styled.img`
-width:100%;
+width:80%;
 height:auto;
 min-height: 30vh;
+
+@media(max-width: 1200px){
+  width:100%;
+}
 
 
 
