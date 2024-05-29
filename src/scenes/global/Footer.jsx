@@ -32,14 +32,14 @@ const RowContainer = styled.div`
   height:auto;
 
   @media(max-width:800px){
-    width: 92%;
+    width: 91%;
   }
 
 
   @media(max-width:680px){
     display:flex;
 
-    width:95%;
+    width:94%;
   }
 
 `;
@@ -129,13 +129,13 @@ const LastColumnMobile = styled.div`
   @media(max-width:800px){
     display:flex;
     flex-direction:column;
-    width:92%;
+    width:91%;
   }
 
   @media(max-width:680px){
     display:flex;
     flex-direction:column;
-    width:95%;
+    width:94%;
   }
 
 
