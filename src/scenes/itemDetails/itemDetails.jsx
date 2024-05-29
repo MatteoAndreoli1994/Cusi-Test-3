@@ -50,7 +50,7 @@ const Container = styled.div`
   }
   @media(max-width:450px){
 
-    min-height: 210vh;
+    min-height: 200vh;
   }
 
   `;
