@@ -121,9 +121,14 @@ font-size: 40px;
 margin-bottom: 0;
 
 
-@media(max-width:1200px){
+@media(max-width: 1200px){
   font-size: 35px; 
-}
+  
+  }
+  @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
 
 
 `;

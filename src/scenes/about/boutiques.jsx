@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 import { BarLoader, ClipLoader } from 'react-spinners';
 import LazyLoad from 'react-lazyload';
 import { HashLink } from 'react-router-hash-link';
-import Footer from "../global/FooterNoSubscribe"
+import Footer from "../global/Footer"
 
 const StyledHashLink = styled(HashLink)`
 text-decoration: none; /* Rimuovi sottolineature */
