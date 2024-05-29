@@ -227,7 +227,7 @@ const Checkout = () => {
                   setFieldValue={setFieldValue}
                 />
               )}
-              <Box display="flex" justifyContent="space-between" gap="50px" marginTop="20px">
+              <Box display="flex" justifyContent="space-between" gap="50px" marginTop="20px" marginBottom="20px">
                 {!isFirstStep && (
                   <Button
                     fullWidth
