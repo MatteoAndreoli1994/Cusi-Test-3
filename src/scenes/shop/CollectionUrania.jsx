@@ -850,10 +850,10 @@ const CollectionFleurie = () => {
 
               
           </DivProdotti>
-
+          <Footer/>
         </Container>
 
-        <Footer/>
+
 
       </LazyLoadWrapper>
       </LazyLoad>

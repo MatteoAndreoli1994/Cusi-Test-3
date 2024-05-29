@@ -888,10 +888,11 @@ const CollectionBollywood = () => {
 
               
           </DivProdotti>
+          <Footer/>
 
         </Container>
 
-        <Footer/>
+
 
       </LazyLoadWrapper>
       </LazyLoad>
