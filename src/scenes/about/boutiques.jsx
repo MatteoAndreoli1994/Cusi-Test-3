@@ -26,7 +26,7 @@ const SubscribeButton = styled.button`
   cursor: pointer;
   font-size: 13px;
 
-  margin: 10% auto 0;
+  margin: 6% auto 0;
   display: flex; /* Use flex container */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
@@ -190,7 +190,7 @@ const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px; /* Aumenta la distanza tra le checkbox */
-  margin-top:2%;
+  margin-top:4%;
 
   width:100%;
   height:100%;
@@ -913,7 +913,7 @@ and on Saturdays from 9 am to 5 pm.
         {loading ? (
           <ClipLoader color={'#fff'} loading={loading} size={20} />
         ) : sent ? (
-          <GtaRegular16> SENT </GtaRegular16>
+          <GtaRegular16> ✓ </GtaRegular16>
         ) : (
           <GtaRegular16> BOOK </GtaRegular16>
         )}
