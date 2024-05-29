@@ -200,7 +200,7 @@ overflow: hidden;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 257.49px;
+  min-width: 200px;
 }
 
 
@@ -219,17 +219,16 @@ transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Aggiunta dell
 
 @media(max-width: 1200px){
   height: 400px;
-  min-width: 343.32px;
+  min-width:320px;
 }
 @media(max-width: 900px){
   height: 300px;
-  min-width: 257.49px;
+  min-width:240px;
 }
 @media(max-width: 680px){
-  height: 200px;
-  min-width: 171.66px;
+  height: 300px;
+  min-width: 250.49px;
 }
-
 
 
 
@@ -258,7 +257,7 @@ transform-origin: center center;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 250.49px;
+  min-width: 200px;
 }
 
 

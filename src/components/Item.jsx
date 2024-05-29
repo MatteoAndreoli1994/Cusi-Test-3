@@ -31,7 +31,7 @@ min-width:400px;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 257.49px;
+  min-width: 240px;
 }
 
 
