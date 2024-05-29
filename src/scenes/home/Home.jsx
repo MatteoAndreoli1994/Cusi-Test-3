@@ -433,6 +433,13 @@ width:45%;
 }
 
 @media(max-width: 800px){
+  margin-top:5%;
+  margin-bottom:0%;
+  width:40%;
+  
+  }
+
+@media(max-width: 680px){
 margin-top:9%;
 margin-bottom:0%;
 width:50%;
@@ -447,9 +454,16 @@ min-height: 10vh;
 @media(max-width: 800px){
 margin-top:0%;
 margin-bottom:0%;
-width:50%;
+width:40%;
 
 }
+
+@media(max-width: 680px){
+  margin-top:0%;
+  margin-bottom:0%;
+  width:50%;
+  
+  }
 
 `;
 
@@ -493,6 +507,11 @@ margin-bottom: 0;
 font-size: 35px; 
 
 }
+@media(max-width: 800px){
+  font-size: 40px; 
+  
+  }
+
 @media(max-width: 680px){
   font-size: 30px; 
   
@@ -516,8 +535,15 @@ font-size: 20px;
 margin-bottom: 2%;
 
 @media(max-width: 1200px){
-font-size: 23px; 
-}
+  font-size: 23px; 
+  }
+
+@media(max-width: 800px){
+  font-size: 23px; 
+  }
+
+
+
 
 `;
 const Gta = styled.p`
@@ -534,6 +560,12 @@ font-size: 13px;
 margin-bottom: 6%;
 width:82%;
 }
+@media(max-width: 800px){
+  font-size: 16px; 
+  margin-bottom: 2%;
+  width:82%;
+  }
+
 @media(max-width: 680px){
 font-size: 13px; 
 margin-bottom: 2%;
@@ -554,30 +586,20 @@ font-size: 13px;
 margin-bottom: 6%;
 width:82%;
 }
-@media(max-width: 680px){
-font-size: 13px; 
+
+@media(max-width: 800px){
+font-size: 15px; 
 margin-bottom: 8%;
 width:62%;
 }
-`;
-const Gta2 = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:70%;
 
-@media(max-width: 1200px){
-font-size: 15px; 
-}
 @media(max-width: 680px){
-font-size: 15px; 
-width:80%;
-margin-bottom: 0%;
-margin-top: 0%;
-}
+  font-size: 13px; 
+  margin-bottom: 8%;
+  width:62%;
+  }
 `;
+
 const GtaLeft = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 16px;
@@ -591,6 +613,7 @@ font-size: 15px;
 }
 @media(max-width: 800px){
   text-align: center;
+  font-size: 16px;
 }
 @media(max-width: 680px){
 text-align: center;
@@ -598,47 +621,8 @@ width:95%;
 font-size: 13px;
 }
 `;
-const GtaDescription = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:60%;
-
-@media(max-width: 1200px){
-font-size: 15px; 
-}
-
-@media(max-width: 680px){
-font-size: 15px; 
-margin-top:5%;
-margin-bottom: 7%;
-width:100%;
-
-}
 
 
-`;
-const GtaDescription2 = styled.p`
-font-family: 'GTAmericaLight';
-font-size: 16px;
-margin-bottom: 3.5%;
-margin-top:1%;
-text-align: center;
-width:60%;
-color:gray;
-
-
-@media(max-width: 1200px){
-font-size: 15px; 
-margin-top:4%;
-}
-
-@media(max-width: 680px){
-font-size: 14px;
-}
-`;
 const GtaDescription3 = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 16px;
@@ -700,6 +684,8 @@ margin-bottom:3%;
 font-size: 13px; 
 margin-top:2%;
 }
+
+
 
 @media(max-width: 680px){
 font-size: 12px; 
