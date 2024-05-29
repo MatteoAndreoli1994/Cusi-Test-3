@@ -137,7 +137,7 @@ width:95%;
   height: 290px;
 }
 @media(max-width: 500px){
-  height: 270px;
+  height: 370px;
 }
 
 
@@ -191,16 +191,16 @@ height: 500px;
 overflow: hidden;
 
 @media(max-width: 1200px){
-  min-width: 333px;
   height: 400px;
+  min-width:320px;
 }
 @media(max-width: 900px){
-  min-width: 200px;
   height: 300px;
+  min-width:240px;
 }
 @media(max-width: 680px){
-  min-width: 100px;
-  height: 200px;
+  height: 300px;
+  min-width: 257.49px;
 }
 
 
@@ -250,16 +250,17 @@ transform-origin: center center;
 
 @media(max-width: 1200px){
   height: 400px;
-  min-width: 343.32px;
+  min-width:320px;
 }
 @media(max-width: 900px){
   height: 300px;
-  min-width: 257.49px;
+  min-width:240px;
 }
 @media(max-width: 680px){
-  height: 200px;
-  min-width: 171.66px;
+  height: 300px;
+  min-width: 250.49px;
 }
+
 
 
 
@@ -667,7 +668,7 @@ const ShoppingList = () => {
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP EARRINGS </GtaRegular2></ShopButton>
 
  
                 </DivImmagineCategoria2>
@@ -687,7 +688,7 @@ const ShoppingList = () => {
               ))}
             </Containertest>
           ) : (
-            <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+   <></> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
           )}
 
       </>
@@ -753,7 +754,7 @@ const ShoppingList = () => {
 
         
       ) : (
-        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+        <></> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
       )}
 
       </>
@@ -814,7 +815,7 @@ const ShoppingList = () => {
 
         
       ) : (
-        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+        <></> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
       )}
 
       </>
@@ -873,7 +874,7 @@ const ShoppingList = () => {
 
         
       ) : (
-        <p>Nessun elemento trovato</p> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
+        <></> // Messaggio di avviso nel caso in cui earringsItems sia vuoto
       )}
 
       </>
