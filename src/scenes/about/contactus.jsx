@@ -24,16 +24,16 @@ const ContactSection = styled.div`
   margin-top: 20px;
   backgroud-color:blue;
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
   width: 85%;
-    flex-direction:column;
+  flex-direction:column;
   }
 
 `;
 
 const ModelImage = styled.div`
   flex: 1;
-  margin-right: 20px;
+
   img {
     width: 100%;
     height: auto;
@@ -49,6 +49,9 @@ const InfoSection = styled.div`
 
 
   justify-content: center;
+
+
+
 
 `;
 
@@ -73,7 +76,7 @@ const ContactInfo = styled.div`
 
   }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     width: 100%;
     gap: 0px;
 
@@ -84,7 +87,7 @@ const ContactInfo = styled.div`
 const DivCustomerService = styled.div`
   display: flex;
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     margin-top: 8%;
 
     flex-direction:column;
@@ -105,7 +108,7 @@ const Box = styled.div`
 
   }
 
-  @media(max-width: 680px){
+  @media(max-width: 900px){
     margin-bottom: 1%;
     width: 90%;
   }

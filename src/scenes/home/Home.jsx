@@ -713,7 +713,7 @@ margin-top:5%;
 margin-bottom:0;
 color:gray;
 
-@media(max-width: 900px){
+@media(max-width: 800px){
 font-size: 13px; 
 display:none;
 `;
@@ -726,7 +726,7 @@ margin-bottom:0;
 color:gray;
 display:none;
 
-@media(max-width: 900px){
+@media(max-width: 800px){
 font-size: 12px; 
 display:flex;
 margin-top:7%;
