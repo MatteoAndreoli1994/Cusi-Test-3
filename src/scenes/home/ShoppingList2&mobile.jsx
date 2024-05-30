@@ -140,7 +140,7 @@ width:95%;
   height: 500px;
 }
 @media(max-width: 680px){
-  height: 290px;
+  height: 380px;
 }
 @media(max-width: 500px){
   height: 370px;
