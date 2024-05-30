@@ -100,7 +100,7 @@ height: auto;
 display: flex; // Aggiungi questa riga per centrare il div verticalmente
 align-items: center; // Aggiungi questa riga per centrare il div verticalmente
 justify-content: center; // Aggiungi questa riga per centrare il div orizzontalmente
-
+overflow-y: hidden;
 
 
 margin-top:1%;
@@ -128,6 +128,7 @@ display:flex;
 height:630px;
 width:95%;
 
+
 @media(max-width: 900px){
   width:85%;
 }
@@ -136,7 +137,7 @@ width:95%;
   height: 500px;
 }
 @media(max-width: 900px){
-  height: 390px;
+  height: 500px;
 }
 @media(max-width: 680px){
   height: 290px;
@@ -200,13 +201,14 @@ overflow: hidden;
   min-width:320px;
 }
 @media(max-width: 900px){
-  height: 300px;
-  min-width:240px;
+  height: 400px;
+  min-width:320px;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 200px;
+  min-width: 240px;
 }
+
 
 
 `;
@@ -227,13 +229,14 @@ transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Aggiunta dell
   min-width:320px;
 }
 @media(max-width: 900px){
-  height: 300px;
-  min-width:240px;
+  height: 400px;
+  min-width:320px;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 250.49px;
+  min-width: 240px;
 }
+
 
 
 
@@ -257,13 +260,14 @@ transform-origin: center center;
   min-width:320px;
 }
 @media(max-width: 900px){
-  height: 300px;
-  min-width:240px;
+  height: 400px;
+  min-width:320px;
 }
 @media(max-width: 680px){
   height: 300px;
-  min-width: 200px;
+  min-width: 240px;
 }
+
 
 
 

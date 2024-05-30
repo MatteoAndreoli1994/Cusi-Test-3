@@ -26,8 +26,8 @@ min-width:400px;
   min-width:320px;
 }
 @media(max-width: 900px){
-  height: 300px;
-  min-width:240px;
+  height: 400px;
+  min-width:320px;
 }
 @media(max-width: 680px){
   height: 300px;
@@ -78,9 +78,15 @@ margin: 0%;
 font-weight: lighter;
 
 @media (max-width: 1200px) {
-  font-size: 14px; 
+  font-size: 19px; 
 }
+@media (max-width: 900px) {
+  margin-top: 4%;
+  font-size: 18px; 
+}
+
 @media(max-width: 680px){
+  margin-top: 4%;
   font-size: 13px; 
 }
 
