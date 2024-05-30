@@ -18,6 +18,7 @@ import ShopNecklaces from "./scenes/shop/ShopNecklaces";
 import ShopEnamelledChains from "./scenes/shop/ShopEnamelledChains";
 import ShopAnimals from "./scenes/shop/ShopAnimals";
 import ShopSea from "./scenes/shop/ShopSea";
+import { gsap } from "gsap";
 
 
 
