@@ -509,10 +509,12 @@ function Footer() {
 
         <DivLingua>
 
-        <Collegamento>
 
-          <li><a  id="privacyPolicyLink">Privacy Policy</a></li>
+
+        <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
+          <GtaRegular>Privacy Policy</GtaRegular>
         </Collegamento>
+
 
         <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
