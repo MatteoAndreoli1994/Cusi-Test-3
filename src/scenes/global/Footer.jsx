@@ -513,8 +513,7 @@ function Footer() {
 
           <li><a  id="privacyPolicyLink">Privacy Policy</a></li>
         </Collegamento>
-
-        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento id="privacyPolicyLink" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
         </Collegamento>
 
