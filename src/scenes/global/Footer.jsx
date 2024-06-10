@@ -378,8 +378,43 @@ function Footer() {
         privacyPolicyLink.removeEventListener('click', openConsentPopup);
       }
     };
+
+
   }, []);
 
+
+  useEffect(() => {
+    // Funzione per aprire il popup di consenso
+    const openConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay.cky-hide');
+      const popup = document.querySelector('.cky-modal.cky-sidebar-left');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper.cky-revisit-bottom-left');
+
+      if (overlay && popup && revisitButton) {
+        overlay.classList.remove('cky-hide');
+  
+        popup.classList.add('cky-modal-open');
+        revisitButton.classList.add('cky-revisit-hide');
+      } else {
+        console.error('Consent popup elements not found');
+      }
+    };
+
+    // Aggiungi l'event listener alla voce Privacy Policy
+    const cookiePolicyLink = document.getElementById('cookiePolicyLink');
+    if (cookiePolicyLink) {
+      cookiePolicyLink.addEventListener('click', openConsentPopup);
+    }
+
+    // Cleanup function
+    return () => {
+      if (cookiePolicyLink) {
+        cookiePolicyLink.removeEventListener('click', openConsentPopup);
+      }
+    };
+
+    
+  }, []);
 
 
     const navigate = useNavigate();
@@ -512,11 +547,11 @@ function Footer() {
 
 
         <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
-          <GtaRegular>Cookie Policy</GtaRegular>
+          <GtaRegular>Privacy Policy</GtaRegular>
         </Collegamento>
 
 
-        <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento id="cookiePolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
         </Collegamento>
 
