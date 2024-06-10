@@ -389,11 +389,11 @@ font-size: 13px;
   }
 
 @media(max-width: 680px){
-  font-size: 11px;
+  font-size: 13px;
   }
 
   @media(max-width: 414px){
-    font-size: 10px;
+    font-size: 13px;
     }
 `;
 
@@ -422,7 +422,7 @@ font-size: 13px;
   font-size: 11px;
   }
   @media(max-width: 350px){
-    font-size: 8px;
+    font-size: 9px;
     }
 
 `;
