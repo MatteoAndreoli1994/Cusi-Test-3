@@ -354,13 +354,13 @@ function Footer() {
     const openConsentPopup = () => {
       const overlay = document.querySelector('.cky-overlay');
       const popup = document.querySelector('.cky-modal.cky-sidebar-left');
-      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper.cky-revisit-hide');
 
       if (overlay && popup && revisitButton) {
         overlay.classList.remove('cky-hide');
 
         popup.classList.add('cky-modal-open');
-        revisitButton.classList.add('cky-revisit-hide');
+
       } else {
         console.error('Consent popup elements not found');
       }
