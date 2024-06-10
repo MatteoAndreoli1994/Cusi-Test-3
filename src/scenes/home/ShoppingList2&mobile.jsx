@@ -419,7 +419,7 @@ font-size: 13px;
   }
 
 @media(max-width: 414px){
-  font-size: 9px;
+  font-size: 11px;
   }
   @media(max-width: 350px){
     font-size: 8px;
