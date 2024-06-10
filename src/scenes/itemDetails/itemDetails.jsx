@@ -19,7 +19,7 @@ import { HashLink } from 'react-router-hash-link';
 import ReactSlidy from 'react-slidy'
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
-import Footer from "../global/FooterNoSubscribe"
+import Footer from "../global/Footer"
 
 
 

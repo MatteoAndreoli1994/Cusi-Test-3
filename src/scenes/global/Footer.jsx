@@ -349,6 +349,36 @@ const Collegamento = styled.a`
 
 
 function Footer() {
+  useEffect(() => {
+    // Funzione per aprire il popup di consenso
+    const openConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay');
+      const popup = document.querySelector('.cky-consent');
+      if (overlay) {
+        overlay.classList.remove('cky-hide');
+      }
+      if (popup) {
+        popup.classList.remove('cky-hide');
+      } else {
+        console.error('Consent popup not found');
+      }
+    };
+
+    // Aggiungi l'event listener alla voce Privacy Policy
+    const privacyPolicyLink = document.getElementById('privacyPolicyLink');
+    if (privacyPolicyLink) {
+      privacyPolicyLink.addEventListener('click', openConsentPopup);
+    }
+
+    // Cleanup function
+    return () => {
+      if (privacyPolicyLink) {
+        privacyPolicyLink.removeEventListener('click', openConsentPopup);
+      }
+    };
+  }, []);
+
+
 
     const navigate = useNavigate();
 
@@ -479,6 +509,7 @@ function Footer() {
 
         <Collegamento href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Privacy Policy</GtaRegular>
+          <li><a href="#" id="privacyPolicyLink">Privacy Policy</a></li>
         </Collegamento>
 
         <Collegamento href="https://www.iubenda.com/privacy-policy/26885513/cookie-policy" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
