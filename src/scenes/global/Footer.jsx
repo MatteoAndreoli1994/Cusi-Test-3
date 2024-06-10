@@ -165,13 +165,14 @@ const CopyrightContainerMobile = styled.div`
   align-items:center;
   
   @media(max-width:900px){
+        margin-top:10%;
     display:flex;
     flex-direction: column;
   align-items:center;
     width:80%;
   }
       @media(max-width:680px){
-      margin-top:10%;
+
     display:flex;
     flex-direction: column;
   align-items:center;
@@ -386,6 +387,7 @@ const Collegamento = styled.a`
 
 
 function Footer() {
+  //Privacy Policy
   useEffect(() => {
     // Funzione per aprire il popup di consenso
     const openConsentPopup = () => {
@@ -419,7 +421,7 @@ function Footer() {
 
   }, []);
 
-
+  //Cookie Policy
   useEffect(() => {
     // Funzione per aprire il popup di consenso
     const openConsentPopup = () => {
@@ -452,6 +454,75 @@ function Footer() {
 
     
   }, []);
+
+  //Privacy Policy Mobile
+  useEffect(() => {
+    // Funzione per aprire il popup di consenso
+    const openConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay.cky-hide');
+      const popup = document.querySelector('.cky-modal.cky-sidebar-left');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper.cky-revisit-bottom-left');
+
+      if (overlay && popup && revisitButton) {
+        overlay.classList.remove('cky-hide');
+  
+        popup.classList.add('cky-modal-open');
+        revisitButton.classList.add('cky-revisit-hide');
+      } else {
+        console.error('Consent popup elements not found');
+      }
+    };
+
+    // Aggiungi l'event listener alla voce Privacy Policy
+    const privacyPolicyLinkMobile = document.getElementById('privacyPolicyLink');
+    if (privacyPolicyLinkMobile) {
+      privacyPolicyLinkMobile.addEventListener('click', openConsentPopup);
+    }
+
+    // Cleanup function
+    return () => {
+      if (privacyPolicyLinkMobile) {
+        privacyPolicyLinkMobile.removeEventListener('click', openConsentPopup);
+      }
+    };
+
+
+  }, []);
+
+  //Cookie Policy Mobile
+  useEffect(() => {
+    // Funzione per aprire il popup di consenso
+    const openConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay.cky-hide');
+      const popup = document.querySelector('.cky-modal.cky-sidebar-left');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper.cky-revisit-bottom-left');
+
+      if (overlay && popup && revisitButton) {
+        overlay.classList.remove('cky-hide');
+  
+        popup.classList.add('cky-modal-open');
+        revisitButton.classList.add('cky-revisit-hide');
+      } else {
+        console.error('Consent popup elements not found');
+      }
+    };
+
+    // Aggiungi l'event listener alla voce Privacy Policy
+    const cookiePolicyLinkMobile = document.getElementById('cookiePolicyLink');
+    if (cookiePolicyLinkMobile) {
+      cookiePolicyLinkMobile.addEventListener('click', openConsentPopup);
+    }
+
+    // Cleanup function
+    return () => {
+      if (cookiePolicyLinkMobile) {
+        cookiePolicyLinkMobile.removeEventListener('click', openConsentPopup);
+      }
+    };
+
+    
+  }, []);
+
 
 
     const navigate = useNavigate();
@@ -621,8 +692,8 @@ function Footer() {
 
       <DivLinguaMobile2>
       <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-      <GtaRegularLegalPol id="privacyPolicyLink">Privacy Policy</GtaRegularLegalPol>
-      <GtaRegularLegalPol id="cookiePolicyLink">Cookie Policy</GtaRegularLegalPol>
+      <GtaRegularLegalPol id="privacyPolicyLinkMobile">Privacy Policy</GtaRegularLegalPol>
+      <GtaRegularLegalPol id="cookiePolicyLinkMobile">Cookie Policy</GtaRegularLegalPol>
       <GtaRegularCopy>IT/€</GtaRegularCopy>
       <GtaRegularCopy>English</GtaRegularCopy>
 
