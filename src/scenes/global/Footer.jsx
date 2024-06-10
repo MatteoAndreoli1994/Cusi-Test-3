@@ -512,7 +512,7 @@ function Footer() {
 
 
         <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
-          <GtaRegular>Privacy Policy</GtaRegular>
+          <GtaRegular>Cookie Policy</GtaRegular>
         </Collegamento>
 
 
