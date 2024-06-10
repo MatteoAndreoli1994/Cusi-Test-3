@@ -355,7 +355,7 @@ function Footer() {
       const overlay = document.querySelector('.cky-overlay');
       const popup = document.querySelector('.cky-modal');
       const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
-
+  
       if (overlay && popup && revisitButton) {
         overlay.classList.remove('cky-hide');
         popup.classList.remove('cky-sidebar-left');
@@ -365,20 +365,46 @@ function Footer() {
         console.error('Consent popup elements not found');
       }
     };
-
+  
+    // Funzione per chiudere il popup di consenso e ripristinare lo stato originale
+    const closeConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay');
+      const popup = document.querySelector('.cky-modal');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
+  
+      if (overlay && popup && revisitButton) {
+        overlay.classList.add('cky-hide');
+        popup.classList.add('cky-sidebar-left');
+        popup.classList.remove('cky-modal-open');
+        revisitButton.classList.remove('cky-revisit-hide');
+      } else {
+        console.error('Consent popup elements not found');
+      }
+    };
+  
     // Aggiungi l'event listener alla voce Privacy Policy
     const privacyPolicyLink = document.getElementById('privacyPolicyLink');
     if (privacyPolicyLink) {
       privacyPolicyLink.addEventListener('click', openConsentPopup);
     }
-
+  
+    // Aggiungi l'event listener al pulsante di chiusura
+    const closeButton = document.querySelector('.cky-btn-close');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeConsentPopup);
+    }
+  
     // Cleanup function
     return () => {
       if (privacyPolicyLink) {
         privacyPolicyLink.removeEventListener('click', openConsentPopup);
       }
+      if (closeButton) {
+        closeButton.removeEventListener('click', closeConsentPopup);
+      }
     };
   }, []);
+  
 
 
 
