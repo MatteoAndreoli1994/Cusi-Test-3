@@ -195,19 +195,24 @@ display: flex;
 min-width: 400px;
 height: 500px;
 overflow: hidden;
+margin-right: 10px;
 
 @media(max-width: 1200px){
   height: 400px;
   min-width:320px;
+  margin-right: 8px;
+  background-color:red;
 }
 @media(max-width: 900px){
   height: 400px;
-  min-width:340px;
-    margin-right: 10px;
+  min-width:320px;
+    margin-right: 8px;
+
 }
 @media(max-width: 680px){
   height: 300px;
   min-width: 240px;
+  margin-right: 10px;
 
 }
 
@@ -255,6 +260,8 @@ min-width: 400px;
 object-fit: cover;
 
 transform-origin: center center;
+transform: scale(1.1);
+transition: opacity 1s ease-in-out, transform 0.5s ease-in-out; /* Aggiunta della transizione graduale per il transform */
 
 
 @media(max-width: 1200px){

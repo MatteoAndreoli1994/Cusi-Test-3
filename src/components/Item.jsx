@@ -18,17 +18,17 @@ align-items: center;
 
 height:500px;
 
-min-width:400px;
+min-width:420px;
 
 
 
 @media(max-width: 1200px){
   height: 400px;
-  min-width:320px;
+  min-width:340px;
 }
 @media(max-width: 900px){
   height: 400px;
-  min-width:360px;
+  min-width:335px;
 }
 @media(max-width: 680px){
   height: 300px;
