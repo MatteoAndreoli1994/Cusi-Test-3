@@ -474,7 +474,7 @@ function Footer() {
     };
 
     // Aggiungi l'event listener alla voce Privacy Policy
-    const privacyPolicyLinkMobile = document.getElementById('privacyPolicyLink');
+    const privacyPolicyLinkMobile = document.getElementById('privacyPolicyLinkMobile');
     if (privacyPolicyLinkMobile) {
       privacyPolicyLinkMobile.addEventListener('click', openConsentPopup);
     }
@@ -508,7 +508,7 @@ function Footer() {
     };
 
     // Aggiungi l'event listener alla voce Privacy Policy
-    const cookiePolicyLinkMobile = document.getElementById('cookiePolicyLink');
+    const cookiePolicyLinkMobile = document.getElementById('cookiePolicyLinkMobile');
     if (cookiePolicyLinkMobile) {
       cookiePolicyLinkMobile.addEventListener('click', openConsentPopup);
     }
@@ -698,6 +698,8 @@ function Footer() {
 
 
       <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Cookie Policy</GtaRegularLegalPol>
+
+
       <GtaRegularCopy>IT/€</GtaRegularCopy>
       <GtaRegularCopy>English</GtaRegularCopy>
 
