@@ -353,14 +353,16 @@ function Footer() {
     // Funzione per aprire il popup di consenso
     const openConsentPopup = () => {
       const overlay = document.querySelector('.cky-overlay');
-      const popup = document.querySelector('.cky-consent');
-      if (overlay) {
+      const popup = document.querySelector('.cky-modal');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
+
+      if (overlay && popup && revisitButton) {
         overlay.classList.remove('cky-hide');
-      }
-      if (popup) {
-        popup.classList.remove('cky-hide');
+        popup.classList.remove('cky-sidebar-left');
+        popup.classList.add('cky-modal-open');
+        revisitButton.classList.add('cky-revisit-hide');
       } else {
-        console.error('Consent popup not found');
+        console.error('Consent popup elements not found');
       }
     };
 
