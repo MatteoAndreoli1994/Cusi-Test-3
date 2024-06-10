@@ -509,8 +509,8 @@ function Footer() {
 
         <DivLingua>
 
-        <Collegamento href="https://www.iubenda.com/privacy-policy/26885513" className="custom-link privacy-policy-link" title="Privacy Policy" style={{ textDecoration: 'none', color: 'black' }}>
-          <GtaRegular>Privacy Policy</GtaRegular>
+        <Collegamento>
+
           <li><a  id="privacyPolicyLink">Privacy Policy</a></li>
         </Collegamento>
 
