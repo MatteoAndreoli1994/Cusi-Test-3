@@ -513,7 +513,8 @@ function Footer() {
 
           <li><a  id="privacyPolicyLink">Privacy Policy</a></li>
         </Collegamento>
-        <Collegamento id="privacyPolicyLink" className="custom-link cookie-policy-link" title="Cookie Policy" style={{ textDecoration: 'none', color: 'black' }}>
+
+        <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Cookie Policy</GtaRegular>
         </Collegamento>
 
