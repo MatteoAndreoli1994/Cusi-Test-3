@@ -201,7 +201,7 @@ margin-right: 10px;
   height: 400px;
   min-width:320px;
   margin-right: 8px;
-  background-color:red;
+
 }
 @media(max-width: 900px){
   height: 400px;
