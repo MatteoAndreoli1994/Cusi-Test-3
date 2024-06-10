@@ -161,10 +161,21 @@ const CopyrightContainerMobile = styled.div`
 
   display:none;
 
+  width:70%;
+  align-items:center;
+  
   @media(max-width:900px){
     display:flex;
     flex-direction: column;
-
+  align-items:center;
+    width:80%;
+  }
+      @media(max-width:680px){
+      margin-top:10%;
+    display:flex;
+    flex-direction: column;
+  align-items:center;
+    width:83%;
   }
 `;
 const DivLingua = styled.div`
@@ -193,6 +204,32 @@ const DivLingua = styled.div`
 `;
 
 const DivLinguaMobile = styled.div`
+
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+  padding: 10px;
+
+  margin-right:1.5%;
+
+  @media(max-width:900px){
+    width: 50%;
+
+  }
+  @media(max-width:900px){
+    width: 100%;
+
+    padding: 0px;
+    align-items: flex-start;
+
+
+
+
+  }
+`;
+const DivLinguaMobile2 = styled.div`
 
   color: black;
   display: flex;
@@ -580,12 +617,16 @@ function Footer() {
 
       <CopyrightContainerMobile>
 
-      <DivLinguaMobile>
+
+
+      <DivLinguaMobile2>
       <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
+      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Privacy Policy</GtaRegularLegalPol>
+      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Cookie Policy</GtaRegularLegalPol>
       <GtaRegularCopy>IT/€</GtaRegularCopy>
       <GtaRegularCopy>English</GtaRegularCopy>
 
-      </DivLinguaMobile>
+      </DivLinguaMobile2>
 
       <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
         
