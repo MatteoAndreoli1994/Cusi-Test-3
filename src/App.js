@@ -37,6 +37,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
 
+import CookieBanner from './CookieBanner'; // new
 
 
 
@@ -84,6 +85,7 @@ function App() {
 
 
       <BrowserRouter>
+      
         <ApolloProvider client={client}>
           <Navbar />
           <ScrollToTop />
@@ -140,6 +142,7 @@ function App() {
 
         </ApolloProvider>
       </BrowserRouter>
+
 
       
     </div>
