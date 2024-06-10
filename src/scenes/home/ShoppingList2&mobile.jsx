@@ -202,11 +202,13 @@ overflow: hidden;
 }
 @media(max-width: 900px){
   height: 400px;
-  min-width:320px;
+  min-width:340px;
+    margin-right: 10px;
 }
 @media(max-width: 680px){
   height: 300px;
   min-width: 240px;
+
 }
 
 
@@ -389,11 +391,11 @@ font-size: 13px;
   }
 
 @media(max-width: 680px){
-  font-size: 13px;
+  font-size: 12px;
   }
 
   @media(max-width: 414px){
-    font-size: 13px;
+    font-size: 11px;
     }
 `;
 
@@ -415,14 +417,14 @@ font-size: 13px;
 }
 
 @media(max-width: 680px){
-  font-size: 11px;
+  font-size: 12px;
   }
 
 @media(max-width: 414px){
-  font-size: 11px;
+  font-size: 11.5px;
   }
   @media(max-width: 350px){
-    font-size: 9px;
+    font-size: 11px;
     }
 
 `;
