@@ -692,8 +692,12 @@ function Footer() {
 
       <DivLinguaMobile2>
       <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-      <GtaRegularLegalPol id="privacyPolicyLinkMobile">Privacy Policy</GtaRegularLegalPol>
-      <GtaRegularLegalPol id="cookiePolicyLinkMobile">Cookie Policy</GtaRegularLegalPol>
+
+
+      <GtaRegularLegalPol id="privacyPolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Privacy Policy</GtaRegularLegalPol>
+
+
+      <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Cookie Policy</GtaRegularLegalPol>
       <GtaRegularCopy>IT/€</GtaRegularCopy>
       <GtaRegularCopy>English</GtaRegularCopy>
 
