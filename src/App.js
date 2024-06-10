@@ -36,7 +36,7 @@ import Footer from "./scenes/global/Footer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
-import Iubenda from './Iubenda';
+
 
 
 
@@ -141,7 +141,7 @@ function App() {
         </ApolloProvider>
       </BrowserRouter>
 
-      <Iubenda />
+      
     </div>
   );
 }

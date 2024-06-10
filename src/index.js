@@ -8,6 +8,14 @@ import { theme } from "./theme";
 import { Provider } from 'react-redux';
 import {configureStore} from "@reduxjs/toolkit";
 import cartReducer from "./state";
+import posthog from 'posthog-js'
+
+posthog.init('phc_sPEILFY6dLVqX8dKF3Eo2XsVwjYXSmGNU3tYEeltvdp',
+    {
+        api_host: 'https://eu.i.posthog.com',
+        person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
+    }
+)
 
 const store = configureStore({
   reducer: { cart: cartReducer},
