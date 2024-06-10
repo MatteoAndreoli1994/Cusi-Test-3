@@ -50,7 +50,7 @@ const Container = styled.div`
   }
   @media(max-width:450px){
 
-    min-height: 180vh;
+    min-height: 200vh;
   }
 
   `;
@@ -894,9 +894,10 @@ const ItemDetails = () => {
           {/* END:INFO PRODOTTO */}
 
           {/* SIZE E QUANTITY */}
-
-              <TypographyDescrizioneProdotto>
-              <GtaRegular>Quantity</GtaRegular>
+            {available &&(
+              <>
+                            <TypographyDescrizioneProdotto>
+              <GtaRegular>Select Quantity</GtaRegular>
 
               </TypographyDescrizioneProdotto>
 
@@ -928,6 +929,12 @@ const ItemDetails = () => {
                 </DropdownContent>
 
               </DropdownContainer>
+              
+              </>
+            )
+            
+            }
+
 
 
 
@@ -951,7 +958,7 @@ const ItemDetails = () => {
 
 
 
-            {available && (
+  
                 <ButtonBlack
                   sx={{
                     backgroundColor: "black",
@@ -961,11 +968,11 @@ const ItemDetails = () => {
                     padding: "20px 40px",
                   }}
                   onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-                  disabled={item?.attributes?.quantity === "0"}
+                  disabled={item?.attributes?.quantity === "0"|| !available}
                 >
                   <GtaRegular>ADD TO SHOPPING BAG</GtaRegular>
                 </ButtonBlack>
-              )}
+      
 
 
               <Telefonata href="tel:+123456789">
@@ -983,7 +990,7 @@ const ItemDetails = () => {
                   <GtaRegular>ORDER BY PHONE</GtaRegular>
                 </ButtonWhite>
               ) : (
-                <ButtonBlack
+                <ButtonWhite
                   sx={{
                     backgroundColor: "black",
                     color: "white",
@@ -993,7 +1000,7 @@ const ItemDetails = () => {
                   }}
                 >
                   <GtaRegular>ORDER BY PHONE</GtaRegular>
-                </ButtonBlack>
+                </ButtonWhite>
               )}
 
 
