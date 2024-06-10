@@ -358,7 +358,7 @@ function Footer() {
 
       if (overlay && popup && revisitButton) {
         overlay.classList.remove('cky-hide');
-        popup.classList.remove('cky-sidebar-left');
+
         popup.classList.add('cky-modal-open');
         revisitButton.classList.add('cky-revisit-hide');
       } else {
