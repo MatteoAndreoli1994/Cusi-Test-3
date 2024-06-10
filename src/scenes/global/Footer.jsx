@@ -352,13 +352,13 @@ function Footer() {
   useEffect(() => {
     // Funzione per aprire il popup di consenso
     const openConsentPopup = () => {
-      const overlay = document.querySelector('.cky-overlay');
+      const overlay = document.querySelector('.cky-overlay.cky-hide');
       const popup = document.querySelector('.cky-modal.cky-sidebar-left');
-      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
+      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper.cky-revisit-bottom-left');
 
       if (overlay && popup && revisitButton) {
         overlay.classList.remove('cky-hide');
-        popup.classList.remove('cky-sidebar-left');
+  
         popup.classList.add('cky-modal-open');
         revisitButton.classList.add('cky-revisit-hide');
       } else {
