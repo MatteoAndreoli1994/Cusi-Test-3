@@ -353,33 +353,50 @@ function Footer() {
     // Funzione per aprire il popup di consenso
     const openConsentPopup = () => {
       const overlay = document.querySelector('.cky-overlay');
-      const popup = document.querySelector('.cky-modal');
-      const revisitButton = document.querySelector('.cky-btn-revisit-wrapper');
-
-      if (overlay && popup && revisitButton) {
+      const popup = document.querySelector('.cky-consent');
+      if (overlay && popup) {
         overlay.classList.remove('cky-hide');
-        popup.classList.remove('cky-sidebar-left');
-        popup.classList.add('cky-modal-open');
-        revisitButton.classList.add('cky-revisit-hide');
+        popup.classList.remove('cky-hide');
       } else {
-        console.error('Consent popup elements not found');
+        console.error('Consent popup not found');
       }
     };
-
+  
+    // Funzione per chiudere il popup di consenso e ripristinare lo stato originale
+    const closeConsentPopup = () => {
+      const overlay = document.querySelector('.cky-overlay');
+      const popup = document.querySelector('.cky-consent');
+      if (overlay && popup) {
+        overlay.classList.add('cky-hide');
+        popup.classList.add('cky-hide');
+      } else {
+        console.error('Consent popup not found');
+      }
+    };
+  
     // Aggiungi l'event listener alla voce Privacy Policy
     const privacyPolicyLink = document.getElementById('privacyPolicyLink');
     if (privacyPolicyLink) {
       privacyPolicyLink.addEventListener('click', openConsentPopup);
     }
-
+  
+    // Aggiungi l'event listener al pulsante di chiusura
+    const closeButton = document.querySelector('.cky-btn-close');
+    if (closeButton) {
+      closeButton.addEventListener('click', closeConsentPopup);
+    }
+  
     // Cleanup function
     return () => {
       if (privacyPolicyLink) {
         privacyPolicyLink.removeEventListener('click', openConsentPopup);
       }
+      if (closeButton) {
+        closeButton.removeEventListener('click', closeConsentPopup);
+      }
     };
   }, []);
-
+  
 
 
     const navigate = useNavigate();
