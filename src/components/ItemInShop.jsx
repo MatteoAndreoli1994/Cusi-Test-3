@@ -135,8 +135,7 @@ const handleImageLoad = () => {
 
 
   return (
-    <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
 
     <DivItem >
       <Box
@@ -183,8 +182,7 @@ const handleImageLoad = () => {
         <ABC16 fontWeight="bold">{formatPrice(price)}</ABC16>
       </InfoProdotto>
     </DivItem>
-    </LazyLoadWrapper>
-    </LazyLoad>  
+
   );
 };
 
