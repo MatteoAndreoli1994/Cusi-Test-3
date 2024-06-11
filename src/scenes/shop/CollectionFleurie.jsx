@@ -555,7 +555,7 @@ const CollectionFleurie = () => {
 
   async function getItems() {
     const items = await fetch(
-      "https://cusi-strapi-3690cb0bf021.herokuapp.com/api/items?populate=image",
+      "https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image",
       { method: "GET" }
     );
     const itemsJson = await items.json();
