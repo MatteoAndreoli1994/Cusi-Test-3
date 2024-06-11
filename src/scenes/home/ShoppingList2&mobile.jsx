@@ -678,7 +678,7 @@ const ShoppingList = () => {
                 <DivImmagineCategoria2>
 
 
-
+                <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
                     <LazyLoadedCategory2 src={earringsCategory} alt="Categoria earrings"                     
                     />
 
@@ -687,7 +687,7 @@ const ShoppingList = () => {
                   <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP EARRINGS </GtaRegular2></ShopButton>
 
- 
+                </LazyLoadWrapper>
                 </DivImmagineCategoria2>
               </OrangeDiv>
               
