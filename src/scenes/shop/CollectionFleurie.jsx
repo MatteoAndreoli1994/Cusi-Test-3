@@ -25,6 +25,9 @@ import LazyLoad from 'react-lazyload';
 import Footer from "../global/Footer"
 
 
+import VideoSource from '../../assets/fleurieVideo1_1.mp4';
+
+
 const DivImmagini = styled.div`
   width: 85%;
   min-height: 50vh;
@@ -488,6 +491,27 @@ const Video = styled.video`
 
 
 
+// Styled Component per il video
+const VideoWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; // Mantieni il rapporto di aspetto 16:9
+  overflow: hidden;
+  background: black;
+`;
+
+const StyledVideo = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Riempi il contenitore mantenendo le proporzioni
+`;
+
+
+
 const CollectionFleurie = () => {
   const [loaded, setLoaded] = React.useState(false);
   const handleContentLoad = () => {
@@ -833,10 +857,16 @@ const CollectionFleurie = () => {
 
         <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
         
-        <Video autoPlay loop muted playsInline style={{ objectFit: 'cover', marginLeft: '2%', width: '50%', height: 'auto' }}>
-          <source src={VideoCollection2Video} type="video/mp4" />
-          Il tuo browser non supporta la riproduzione di video MOV.
-        </Video>
+        <VideoWrapper>
+      <StyledVideo
+        src={VideoSource}
+        preload="auto"
+        autoPlay
+        loop
+        muted
+      />
+    </VideoWrapper>
+
         </DivImmagini>
 
 
