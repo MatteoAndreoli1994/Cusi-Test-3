@@ -708,7 +708,7 @@ const ItemDetails = () => {
 
   async function getItem() {
     const item = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items/${itemId}?populate=image,image2`,
+      `https://cusi-strapi-3690cb0bf021.herokuapp.com/api/items/${itemId}?populate=image,image2`,
       {
         method: "GET",
       }
@@ -720,7 +720,7 @@ const ItemDetails = () => {
 
   async function getItems() {
     const items = await fetch(
-      `https://prized-horses-45ff95e916.strapiapp.com/api/items?populate=image,image2`,
+      `https://cusi-strapi-3690cb0bf021.herokuapp.com/api/items?populate=image,image2`,
       {
         method: "GET",
       }
