@@ -38,25 +38,25 @@ const DivImmagini = styled.div`
   overflow: hidden;
   margin-bottom: 5%;
 
-
-@media(max-width: 900px){
-  min-height: 40vh;
-}
+  @media(max-width: 900px){
+    min-height: 40vh;
+  }
 `;
-
-
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollectionStyle = styled.img`
-width: 50%;
-height: auto;
-object-fit: cover;
-margin-left:2%;
+  width: 48%;
+  height: auto;
+  object-fit: cover;
+  margin-right:1%;
 
-@media(max-width: 680px){
-  width: 100%;
-}
+
+  @media(max-width: 680px){
+    width: 100%;
+    margin-right: 0; // Rimuovi il margine a destra per dispositivi mobili
+  }
 `;
+
 
 // Definisci il componente StyledLazyLoadImage utilizzando styled-components
 const ImmagineCollection2Style = styled.img`
@@ -494,9 +494,10 @@ const Video = styled.video`
 // Styled Component per il video
 const VideoWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 48%;
   height: 0;
-  padding-bottom: 56.25%; // Mantieni il rapporto di aspetto 16:9
+  margin-left:1%;
+  padding-bottom: 48%; // Mantieni il rapporto di aspetto 16:9
   overflow: hidden;
   background: black;
 `;
@@ -858,14 +859,14 @@ const CollectionFleurie = () => {
         <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
         
         <VideoWrapper>
-      <StyledVideo
-        src={VideoSource}
-        preload="auto"
-        autoPlay
-        loop
-        muted
-      />
-    </VideoWrapper>
+          <StyledVideo
+            src={VideoSource}
+            preload="auto"
+            autoPlay
+            loop
+            muted
+          />
+        </VideoWrapper>
 
         </DivImmagini>
 
