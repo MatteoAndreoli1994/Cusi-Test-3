@@ -765,7 +765,7 @@ const Home = () => {
         quantity: 5,
     };
   
-    const response = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/items/2", {
+    const response = await fetch("https://cusi-strapi-3690cb0bf021.herokuapp.com/api/items/2", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ data: requestBody }), // Includi un oggetto "data" nel corpo della richiesta

@@ -110,7 +110,7 @@ const Checkout = () => {
 
     console.log("post: "+JSON.stringify(requestBody));
 
-    const response = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/orders", {
+    const response = await fetch("https://cusi-strapi-3690cb0bf021.herokuapp.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
@@ -153,7 +153,7 @@ const Checkout = () => {
     let testtestsResponse;
 
     try {
-        testtestsResponse = await fetch("https://prized-horses-45ff95e916.strapiapp.com/api/testtests", {
+        testtestsResponse = await fetch("https://cusi-strapi-3690cb0bf021.herokuapp.com/api/testtests", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

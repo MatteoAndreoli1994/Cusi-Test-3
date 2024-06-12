@@ -56,7 +56,7 @@ const cartData = useSelector(state => state.cart);
 
     const itemId = ids[i]; // ID dell'elemento corrente
 
-    const testtestsResponse = await fetch(`https://prized-horses-45ff95e916.strapiapp.com/api/Items/${itemId}`, {
+    const testtestsResponse = await fetch(`https://cusi-strapi-3690cb0bf021.herokuapp.com/api/Items/${itemId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

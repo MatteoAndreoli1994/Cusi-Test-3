@@ -50,7 +50,7 @@ transition: opacity 1s ease-in-out;
 
 // apollo client
 const client = new ApolloClient({
-  uri: 'https://prized-horses-45ff95e916.strapiapp.com/graphql',
+  uri: 'https://cusi-strapi-3690cb0bf021.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
 
