@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Box, Button, IconButton, Typography } from "@mui/material";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { shades } from "../../theme";
@@ -131,12 +131,44 @@ text-align: center;
 `;
 
 const DivFiltri = styled.div`
-display: flex;
-
-margin-bottom:4%;
-width: 85%;
-justify-content: space-between;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  position: relative; /* Aggiunto per fare in modo che Sort sia posizionato rispetto a DivFiltri */
+  margin-bottom: 4%;
 `;
+const FilterOptionsBox = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+`;
+const Option = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor:pointer;
+
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+const Sort = styled.div`
+  display: flex;
+  margin-bottom: 4%;
+  width: 85%;
+  height: 100px;
+  justify-content: space-between;
+  background-color: red;
+  position: absolute; /* Cambiato da relative a absolute */
+  top: 100%; /* Posiziona Sort subito sotto DivFiltri */
+  z-index: 3;
+`;
+
 
 const CustomButton = styled.button`
 
@@ -377,6 +409,21 @@ margin-right:10px;
 }
 
 `;
+const GtaRegular3 = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin: 0;
+  line-height: 1; /* Azzerare la distanza tra le righe */
+  color: ${({ selected }) => (selected ? 'black' : '#666')}; /* Colore di default tendente al grigio */
+
+  @media (max-width: 680px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    color: black; /* Cambia il colore del testo a nero al passaggio del mouse */
+  }
+`;
 
 const GtaRegular12 = styled.p`
 font-family: 'GTAmericaRegular';
@@ -477,6 +524,20 @@ const ButtonWhite = styled(Button)`
     }
   }
 `;
+const Dot = styled.span`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: ${({ selected }) => (selected ? 'black' : 'transparent')};
+  margin-right: 10px;
+`;
+
+
+const SortImage2 = styled.img`
+  width: 20px;
+  transform: ${({ showOptions }) => (showOptions ? 'rotate(180deg)' : 'rotate(0deg)')};
+  transition: transform 0.3s ease;
+`;
 
 
 
@@ -502,6 +563,17 @@ const blurhash2 = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
 
 
 const CollectionBollywood = () => {
+  const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
+  
+
+  const [showFilterOptions, setShowFilterOptions] = useState(false);
+
+  const handleFilterClick2 = () => {
+    setShowFilterOptions(!showFilterOptions);
+  };
+
+
+
 
 
   const [loadedAll, setLoadedAll] = React.useState(false);
@@ -531,6 +603,9 @@ const CollectionBollywood = () => {
   const [selectedCollection, setSelectedCollection] = useState([]);
   const [selectedStone, setSelectedStone] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('Featured');
+
+  
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -542,6 +617,11 @@ const CollectionBollywood = () => {
 
   const handleFilterClick = () => {
     setIsFilterVisible(!isFilterVisible);
+  };
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setShowFilterOptions(false); // Chiudi il box delle opzioni filtrate
   };
 
   async function getItems() {
@@ -634,6 +714,28 @@ const CollectionBollywood = () => {
       <CheckboxText>{label}</CheckboxText>
     </CheckboxContainer>
   );
+
+  useEffect(() => {
+    // Funzione per gestire il clic al di fuori di FilterOptionsBox
+    const handleClickOutside = (event) => {
+      // Verifica se l'elemento cliccato non è il bottone di sorting
+      if (
+        filterOptionsRef.current &&
+        !filterOptionsRef.current.contains(event.target) &&
+        !event.target.closest(".sort-button") // Escludi il bottone di sorting
+      ) {
+        setShowFilterOptions(false);
+      }
+    };
+  
+    // Aggiungi un listener per il clic all'intero documento
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    // Pulisci il listener all'unmount del componente
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   
   
  
@@ -837,7 +939,7 @@ const CollectionBollywood = () => {
 
         </Box>
 
-        <Container       style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
+        <Container       style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}  >
           <DivInfo>
             <ABC>Zingara</ABC>
             <DivDescrizione>
@@ -866,12 +968,38 @@ const CollectionBollywood = () => {
             <GtaRegular>Filter</GtaRegular>
 
             </CustomButton>
-            <CustomButton backgroundColor="white" onClick={handleFilterClick}>
 
-            <GtaRegular2>Sort By</GtaRegular2>
-            <img src={SortImage} alt="Filter" style={{ width: '20px' }} />
+            <CustomButton backgroundColor="white" onClick={handleFilterClick2} className="sort-button">
+              <GtaRegular2>Sort By</GtaRegular2>
+              <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
             </CustomButton>
+
+
+
+            {showFilterOptions && (
+        <FilterOptionsBox ref={filterOptionsRef}>
+          <Option onClick={() => handleOptionClick('Featured')}>
+            {selectedOption === 'Featured' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Featured'}>Featured</GtaRegular3>
+          </Option>
+          <Option onClick={() => handleOptionClick('Price Descending')}>
+            {selectedOption === 'Price Descending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Price Descending'}>Price Descending</GtaRegular3>
+          </Option>
+          <Option onClick={() => handleOptionClick('Price Ascending')}>
+            {selectedOption === 'Price Ascending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>Price Ascending</GtaRegular3>
+          </Option>
+        </FilterOptionsBox>
+      )}
+            
           </DivFiltri>
+
+
+
+          
+
+
 
           
           <DivProdotti>
