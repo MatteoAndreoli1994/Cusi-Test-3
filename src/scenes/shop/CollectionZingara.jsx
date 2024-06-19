@@ -604,6 +604,17 @@ const CollectionBollywood = () => {
   const [selectedStone, setSelectedStone] = useState([]);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Featured');
+  const sortItems = (items, option) => {
+    switch (option) {
+      case 'Price Descending':
+        return [...items].sort((a, b) => b.attributes.price - a.attributes.price);
+      case 'Price Ascending':
+        return [...items].sort((a, b) => a.attributes.price - b.attributes.price);
+      case 'Featured':
+      default:
+        return items;
+    }
+  };
 
   
 
@@ -738,7 +749,7 @@ const CollectionBollywood = () => {
   }, []);
   
   
- 
+  const filteredItems = sortItems(zingaraItems, selectedOption);
 
   return (
     <>
@@ -1003,24 +1014,13 @@ const CollectionBollywood = () => {
 
           
           <DivProdotti>
-            
-            {value === "zingara" &&
-              zingaraItems.map((item) => (
-
-                <StyledItem key={`${item.id}`}>
-                  <ItemInShop item={item} />
-                </StyledItem>
-              ))}
-
-
-
-
-              
-
-              
-
-              
-          </DivProdotti>
+    {value === "zingara" &&
+      filteredItems.map((item) => (
+        <StyledItem key={`${item.id}`}>
+          <ItemInShop item={item} />
+        </StyledItem>
+      ))}
+  </DivProdotti>
           <Footer/>
 
         </Container>
