@@ -19,14 +19,18 @@ const Confirmation2 =  () => {
   
 
   return (
-    <Box m="120px auto" width="80%" height="100vh">
+    <>
+    <Box m="120px auto" width="85%" height="50vh">
       <Alert>
         <AlertTitle>Success</AlertTitle>
         You have successfully made an Order —{" "}
         <strong>Congrats on Making your Purchase</strong>
       </Alert>
-      <Footer/>
+
     </Box>
+
+<Footer/>
+</>
   );
 };
 
