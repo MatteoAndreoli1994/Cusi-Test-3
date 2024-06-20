@@ -13,19 +13,25 @@ const FullScreenBox = styled(Box)`
 const ContentBox = styled(Box)`
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;  // Align items at the start of the flex container (top)
   align-items: center;
+  width: 100%;  // Ensure the ContentBox takes the full width
+`;
+
+const StyledAlert = styled(Alert)`
+  width: 100%;  // Ensure the Alert takes the full width
+  margin-top: 20px;  // Add some margin at the top to give some spacing from the top of the screen
 `;
 
 const Confirmation2 = () => {
   return (
     <FullScreenBox>
       <ContentBox>
-        <Alert>
+        <StyledAlert severity="success">
           <AlertTitle>Success</AlertTitle>
           You have successfully made an Order —{" "}
           <strong>Congrats on Making your Purchase</strong>
-        </Alert>
+        </StyledAlert>
       </ContentBox>
       <Footer />
     </FullScreenBox>
