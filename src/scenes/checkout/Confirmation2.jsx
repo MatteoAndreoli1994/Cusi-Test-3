@@ -1,32 +1,34 @@
 import { Box } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
-import { useDispatch } from 'react-redux';
-import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
-import Footer from "../global/Footer"
+import Footer from "../global/Footer";
 
+const FullScreenBox = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  // Altezza minima pari all'altezza della viewport
+`;
 
+const ContentBox = styled(Box)`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-
-
-
-
-
-
-const Confirmation2 =  () => {
-  
-  
-
+const Confirmation2 = () => {
   return (
-    <Box m="120px auto" width="80%" height="50vh">
-      <Alert>
-        <AlertTitle>Success</AlertTitle>
-        You have successfully made an Order —{" "}
-        <strong>Congrats on Making your Purchase</strong>
-      </Alert>
-      <Footer/>
-    </Box>
+    <FullScreenBox>
+      <ContentBox>
+        <Alert>
+          <AlertTitle>Success</AlertTitle>
+          You have successfully made an Order —{" "}
+          <strong>Congrats on Making your Purchase</strong>
+        </Alert>
+      </ContentBox>
+      <Footer />
+    </FullScreenBox>
   );
 };
 
