@@ -247,14 +247,15 @@ const Checkbox2 = styled.input`
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
-  padding: 0; /* Rimuovi il padding */
-  margin-top: 13px; /* Rimuovi il margin */
-  border-radius: 0; /* Rimuovi i bordi arrotondati */
-
-  margin-right:10px;
-  margin-left:0px;
+  padding: 0;
+  margin-right: 10px;
+  border-radius: 0;
 
   &:checked {
+    background-color: black; /* Cambia il colore di sfondo quando è selezionato */
+    border-color: black; /* Cambia il colore del bordo quando è selezionato */
+    color: white; /* Cambia il colore del testo quando è selezionato */
+
     &::before {
       content: '✔';
       display: flex;
@@ -263,13 +264,8 @@ const Checkbox2 = styled.input`
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 1.2em;
-      color: black;
+      color: white; /* Cambia il colore del testo dell'icona di spunta quando è selezionato */
     }
-  }
-
-  @media (max-width: 900px) {
-    width: 2em;
-    height: 2em;
   }
 `;
 
@@ -598,10 +594,14 @@ const Boutiques = () => {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedOptionNewsletter, setSelectedOptionNewsletter] = useState(null);
+  const [acceptedPrivacyPolicy, setAcceptedPrivacyPolicy] = useState(false);
+
   const [selectedBoutique, setSelectedBoutique] = useState('');
   const [loaded, setLoaded] = React.useState(false);
-  const handleContentLoad = () => {
-    setLoaded(true);
+
+
+  const handleCheckboxChangePrivacyPolicy = (checked) => {
+    setAcceptedPrivacyPolicy(checked);
   };
 
 
@@ -611,23 +611,26 @@ const Boutiques = () => {
 
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+
+  const handleSubmit = (e) => {
+        // Verifica che l'utente abbia accettato la privacy policy
+
+        
+    e.preventDefault(); // Impedisce il comportamento predefinito del form
+
+    setLoading(true);
 
     emailjs
-      .sendForm(
-        "service_i20lvko",
-        "template_d5ye4wj",
-        form.current,
-        "rvcubz2OA8D2-5HVf"
-      )
+      .sendForm('service_i20lvko', 'template_d5ye4wj', form.current, 'rvcubz2OA8D2-5HVf')
       .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
+        () => {
+          console.log('SUCCESS!');
+          setLoading(false);
+          setSent(true);
         },
         (error) => {
-          console.log(error.text);
+          console.log('FAILED...', error.text);
+          setLoading(false);
         }
       );
   };
@@ -643,21 +646,8 @@ const Boutiques = () => {
   
 const [loading, setLoading] = useState(false);
 const [sent, setSent] = useState(false);
-const handleSubmit = (e) => {
-  e.preventDefault();
 
-  // Imposta lo stato di caricamento su true
-  setLoading(true);
 
-  // Simula una richiesta asincrona
-  setTimeout(() => {
-    // Imposta lo stato di caricamento su false
-    setLoading(false);
-
-    // Imposta lo stato "sent" su true
-    setSent(true);
-  }, 2000); // 2000 millisecondi = 2 secondi
-};
 
 useEffect(() => {
   const handleHashChange = () => {
@@ -776,7 +766,7 @@ and on Saturdays from 9 am to 5 pm.
 
 
   <FormContainer >
-  <form ref={form} onSubmit={sendEmail}>
+  <form ref={form} onSubmit={handleSubmit}>
       <span><GtaLight > Title*</GtaLight></span>
 
       <CheckboxContainer >
@@ -870,9 +860,9 @@ and on Saturdays from 9 am to 5 pm.
           <span ><GtaLight> Product* </GtaLight></span>
           <Input
                 type="text"
-                name="product"
+                name="user_product"
                 value={message}
-                readOnly={message} // Imposta readOnly a true se non c'è un messaggio nell'URL
+       
                 
               />
         </InputLabelSolo>
@@ -909,7 +899,35 @@ and on Saturdays from 9 am to 5 pm.
 
       </CheckboxContainer>
 
-      <SubscribeButton type="submit" onClick={handleSubmit} disabled={loading}>
+ {/* Checkbox per accettare la privacy policy */}
+ <CheckboxContainer>
+        <CheckboxLabel2>
+          <DivCheckBox>
+          <Checkbox2
+            type="checkbox"
+            checked={acceptedPrivacyPolicy}
+            onChange={(event) => handleCheckboxChangePrivacyPolicy(event.target.checked)}
+            required  // Rende la checkbox obbligatoria
+          />
+          </DivCheckBox>
+          <span>
+            <GtaLightCentered>
+            By submitting this form, I agree to the Privacy Policy.
+            </GtaLightCentered>
+          </span>
+          <Input type="hidden" name="user_privacy_accepted" value={acceptedPrivacyPolicy} />
+        </CheckboxLabel2>
+      </CheckboxContainer>
+
+
+
+
+
+
+
+
+
+      <SubscribeButton type="submit" value="Send" disabled={loading}>
         {loading ? (
           <ClipLoader color={'#fff'} loading={loading} size={20} />
         ) : sent ? (
@@ -923,8 +941,10 @@ and on Saturdays from 9 am to 5 pm.
 
 
 
-
     </form>
+
+
+    
     </FormContainer>
 
 
