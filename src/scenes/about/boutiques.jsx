@@ -34,6 +34,12 @@ const SubscribeButton = styled.button`
 
   text-align: center;
 
+    /* Stili aggiuntivi quando disabilitato */
+  &:disabled {
+ cursor: auto;
+  
+  }
+
 `;
 
 
@@ -927,16 +933,15 @@ and on Saturdays from 9 am to 5 pm.
 
 
 
-      <SubscribeButton type="submit" value="Send" disabled={loading}>
-        {loading ? (
-          <ClipLoader color={'#fff'} loading={loading} size={20} />
-        ) : sent ? (
-          <GtaRegular16> ✓ </GtaRegular16>
-        ) : (
-          <GtaRegular16> BOOK </GtaRegular16>
-        )}
-      </SubscribeButton>
-
+      <SubscribeButton type="submit" value="Send" disabled={loading || sent}>
+  {loading ? (
+    <ClipLoader color={'#fff'} loading={loading} size={20} />
+  ) : sent ? (
+    <GtaRegular16> ✓ </GtaRegular16>
+  ) : (
+    <GtaRegular16> BOOK </GtaRegular16>
+  )}
+</SubscribeButton>
 
 
 
