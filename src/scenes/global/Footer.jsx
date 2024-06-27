@@ -576,12 +576,20 @@ function Footer() {
         <LastColumnMobile>
 
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaLight>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaLight>
-        
+       
+        <form onSubmit={handleSubmit}>
         <SubscribeContainer>
-            <TextBox type="text" placeholder="E-mail" />
-            <SubscribeButton>SUBSCRIBE</SubscribeButton>
+          <TextBox
+            type="email"
+            name="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <SubscribeButton type="submit">SUBSCRIBE</SubscribeButton>
         </SubscribeContainer>
-        
+        </form>
         </LastColumnMobile>
 
 
@@ -683,7 +691,7 @@ function Footer() {
           />
           <SubscribeButton type="submit">SUBSCRIBE</SubscribeButton>
         </SubscribeContainer>
-      </form>
+        </form>
         
         </LastColumn>
         
