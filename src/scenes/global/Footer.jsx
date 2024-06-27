@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 // Importa il componente Link da react-router-dom
 import { Link } from 'react-router-dom'; // Se usi React Router
+import Newsletter from "@strapi-newsletter/react";
+import { subscribeUser } from "@strapi-newsletter/react";
+
+
 
 const Container = styled.div`
     display: flex;
@@ -384,9 +388,42 @@ const Collegamento = styled.a`
 
 
 `;
+const handleUserSubscribe = async (email) => {
+  try {
+    await subscribeUser(email, 'https://cusi-strapi-3690cb0bf021.herokuapp.com');
+    alert('Successfully subscribed!');
+  } catch (error) {
+    console.error('Failed to subscribe:', error);
+    alert('Failed to subscribe. Please try again later.');
+  }
+};
+
 
 
 function Footer() {
+
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+
+    if (!email) {
+      alert('Please enter your email.');
+      return;
+    }
+
+    try {
+      await handleUserSubscribe(email);
+      setEmail(''); // Pulisce il campo email dopo la sottoscrizione
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      alert('Failed to subscribe. Please try again later.');
+    }
+  };
+
+  
+  
   //Privacy Policy
   useEffect(() => {
     // Funzione per aprire il popup di consenso
@@ -537,6 +574,7 @@ function Footer() {
 
 
         <LastColumnMobile>
+
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaLight>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaLight>
         
         <SubscribeContainer>
@@ -626,12 +664,26 @@ function Footer() {
         </ColumnSocial>
 
         <LastColumn>
+
+
+
         <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaRegular>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaRegular>
         
+
+
+        <form onSubmit={handleSubmit}>
         <SubscribeContainer>
-            <TextBox type="text" placeholder="Your email" />
-            <SubscribeButton>SUBSCRIBE</SubscribeButton>
+          <TextBox
+            type="email"
+            name="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <SubscribeButton type="submit">SUBSCRIBE</SubscribeButton>
         </SubscribeContainer>
+      </form>
         
         </LastColumn>
         
@@ -704,6 +756,8 @@ function Footer() {
       <GtaRegularCopy>English</GtaRegularCopy>
 
       </DivLinguaMobile2>
+
+
 
       <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
         

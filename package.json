@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.15.2",
     "@mui/material": "^5.15.2",
     "@reduxjs/toolkit": "^2.0.1",
+    "@strapi-newsletter/react": "^1.0.0",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.4.0",
     "@testing-library/jest-dom": "^5.17.0",
