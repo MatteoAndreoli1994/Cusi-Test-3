@@ -714,7 +714,7 @@ function Footer() {
 
 
 
-        <Collegamento id="privacyPolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
+        <Collegamento onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>
           <GtaRegular>Privacy Policy</GtaRegular>
         </Collegamento>
 
