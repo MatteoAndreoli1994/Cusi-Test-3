@@ -754,7 +754,7 @@ function Footer() {
       <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
 
 
-      <GtaRegularLegalPol id="privacyPolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Privacy Policy</GtaRegularLegalPol>
+      <GtaRegularLegalPol onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>Privacy Policy</GtaRegularLegalPol>
 
 
       <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Cookie Policy</GtaRegularLegalPol>
