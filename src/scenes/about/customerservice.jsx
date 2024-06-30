@@ -31,50 +31,82 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
-  margin-right: auto;
-  margin-bottom: 5%;
-  display: flex;
+margin-right: auto;
+margin-bottom: 5%;
 
-  li {
+display: flex; /* Aggiunto display: flex; qui */
+
+    &.selected {
+
+ li {
     list-style: none;
     margin-right: 100px;
     position: relative;
     cursor: pointer;
+    text-decoration: none; /* Rimuovi il sottolineato predefinito */
 
-    &:hover {
-      &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 100%;
-        height: 1px;
-        background-color: black;
-        animation: lineAnimation 0.3s linear forwards;
-      }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: ${({ isSelected }) => (isSelected ? '100%' : '0')}; /* Mostra solo se è selezionato */
+      height: 1px;
+      background-color: black;
+      animation: ${({ isSelected }) => (isSelected ? 'none' : 'lineAnimation 0.3s linear forwards')};
+    }
+
+    &:hover:after {
+      width: ${({ isSelected }) => (isSelected ? '0' : '100%')}; /* Mostra solo se non è selezionato */
+      background-color: ${({ isSelected }) => (isSelected ? 'red' : 'black')}; /* Cambia colore in base allo stato */
+      animation: ${({ isSelected }) => (isSelected ? 'none' : 'lineAnimation 0.3s linear forwards')};
     }
 
     &.selected {
+      /* Testo sottolineato con bordo di 1px sotto il testo */
+      border-bottom: 1px solid black;
+      padding-bottom: 1px; /* Sposta il bordo inferiore di 1 pixel più in basso */
       &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 100%;
-        height: 1px;
-        background-color: black;
+        width: 0; /* Rimuovi la linea sotto il testo selezionato */
       }
     }
   }
 
-  @keyframes lineAnimation {
-    from {
-      width: 0;
+    
+
     }
-    to {
+
+
+
+li {
+  list-style: none; 
+  margin-right: 100px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
       width: 100%;
+      height: 1px;
+      background-color: black;
+      animation: lineAnimation 0.3s linear forwards;
     }
   }
+}
+
+@keyframes lineAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 `;
 
 const Content = styled.div`
