@@ -591,7 +591,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
 
                   {/* Aggiungi il tuo div qui */}
                   <Info><GtaRegularShadow>Rare diamonds & gemstones <br></br>with  unique settings.</GtaRegularShadow></Info>
-                  <ShopButton><GtaRegular2> SHOP EARRINGS </GtaRegular2></ShopButton>
+                  <ShopButton><GtaRegular2> RRINGS </GtaRegular2></ShopButton>
 
                   </DivImmagineCategoria2>
                   </Container2>

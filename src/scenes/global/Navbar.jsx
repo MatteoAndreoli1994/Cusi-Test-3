@@ -19,7 +19,7 @@ import menu from '../../assets/Menu.png';
 import { debounce } from 'lodash'; // Importa la funzione debounce da lodash
 
 import anello_navbar from '../../assets/anello_navbar.jpg';
-import braccialetto_navbar from '../../assets/braccialetto_navbar.jpg';
+import braccialetto_navbar from '../../assets/braccialetto_navbar2.jpg';
 import collana_navbar from '../../assets/collana_navbar.jpg';
 import collana2_navbar from '../../assets/collana2_navbar.jpg';
 import orecchini_navbar from '../../assets/orecchini_navbar.jpg';

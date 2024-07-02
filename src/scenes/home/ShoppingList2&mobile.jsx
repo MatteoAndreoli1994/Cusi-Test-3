@@ -684,7 +684,7 @@ const ShoppingList = () => {
 
 
                   {/* Aggiungi il tuo div qui */}
-                  <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                  <Info><GtaRegularShadow> Artisanal Gold Earrings, <br></br>Uniquely Crafted. </GtaRegularShadow></Info>
                   <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP EARRINGS </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
@@ -737,7 +737,7 @@ const ShoppingList = () => {
 
 
                 {/* Aggiungi il tuo div qui */}
-                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                <Info><GtaRegularShadow> Handcrafted Gold Bracelets  <br></br>with Timeless Elegance.</GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
@@ -856,7 +856,7 @@ const ShoppingList = () => {
 
 
                 {/* Aggiungi il tuo div qui */}
-                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
+                <Info><GtaRegularShadow> Unique Luxury Rings <br></br>with Rare Elegance. </GtaRegularShadow></Info>
                 <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP RINGS </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
