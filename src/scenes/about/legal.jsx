@@ -4,6 +4,7 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Footer from "../global/Footer"
 
 const Container = styled.div`
   display: flex;
@@ -635,6 +636,7 @@ const location = useLocation();
   
 
   return (
+    <>
     <Container>
       <CustomerServiceDiv>
         <Menu>
@@ -698,11 +700,10 @@ const location = useLocation();
 
           <AccordionContent isOpen={accordionState['Terms & Conditions']}>
           <>
-          <GtaRegular16>TERMS & CONDITIONS</GtaRegular16>
+          <GtaRegular16>Terms & Conditions</GtaRegular16>
             <div>
             <GtaRegular16></GtaRegular16>
               <GtaLightLightInfo>
-                Cusi Termini di utilizzo
                 Ultimo aggiornamento: Maggio 2024<br/><br/>
               </GtaLightLightInfo>
             </div>
@@ -796,6 +797,7 @@ const location = useLocation();
                 I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale.
               </GtaLightLightInfo>
             </div>
+            <GtaRegular16></GtaRegular16>
           </>
           </AccordionContent>
 {/* Fine Prima Domanda */}
@@ -817,7 +819,7 @@ const location = useLocation();
           <AccordionContent isOpen={accordionState['Conditions Of Sales']}>
 
           <>
-          <GtaRegular16>CONDITIONS OF SALES</GtaRegular16>
+          <GtaRegular16>Conditions Of Sales</GtaRegular16>
             <div>
               <GtaRegular16></GtaRegular16>
               <GtaLightLightInfo>
@@ -915,6 +917,7 @@ const location = useLocation();
                 I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale.
               </GtaLightLightInfo>
             </div>
+            <GtaRegular16></GtaRegular16>
           </>
 
           </AccordionContent>
@@ -938,7 +941,7 @@ const location = useLocation();
           <AccordionContent isOpen={accordionState['Privacy Policy']}>
             <>
   <div>
-    <GtaRegular16>PRIVACY AND WEBSITE BROWSING INFORMATION</GtaRegular16>
+    <GtaRegular16>Privacy Policy</GtaRegular16>
     <GtaLightLightInfo>
       This Information broadly describes the practices we have adopted. 
       <br/><br/>
@@ -1055,6 +1058,7 @@ const location = useLocation();
       The transmission of such data is regulated by a specific agreement between the Company and Google Inc. For more information on Google's data protection policies, you can consult the following link: https://policies.google.com/privacy?hl=en.
     </GtaLightLightInfo>
   </div>
+  <GtaRegular16></GtaRegular16>
             </>
           </AccordionContent>
 
@@ -1071,8 +1075,12 @@ const location = useLocation();
         </FaqDiv>
       </Mobile>
 
+      
+
 
     </Container>
+        <Footer/>
+        </>
   );
 };
 
