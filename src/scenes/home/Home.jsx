@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import video2 from '../../assets/video2.mp4';
 import ShoppingList from './ShoppingList2&mobile';
-import Modella2 from"../../assets/modellasmeraldo.avif";
+import Modella2 from"../../assets/modellasmeraldo.jpg";
 import Modella3 from"../../assets/modellazingara.avif";
 import Anello1 from"../../assets/modella2.avif";
 import SelectedItem1White from"../../assets/A58.avif";
