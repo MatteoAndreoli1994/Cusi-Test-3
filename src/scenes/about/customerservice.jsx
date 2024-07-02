@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../global/FooterNoSubscribe"
 import { useLocation } from 'react-router-dom';
 
+
 const Container = styled.div`
   display: flex;
   margin-top: 120px;
@@ -246,6 +247,34 @@ const CustomerService = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const category = searchParams.get('category');
+
+    // Funzione per leggere i parametri della query string
+    const getQueryParams = (search) => {
+      return new URLSearchParams(search);
+    };
+  
+    useEffect(() => {
+      const params = getQueryParams(location.search);
+      const category = params.get('category');
+      
+      const sections = {
+        'Our Services': 'OurServices',
+        'Product Care': 'ProductCare',
+        'Shipping': 'Shipping',
+        'Size Chart': 'Size',
+        'Garanzia': 'Garanzia',
+        'Privacy Policy': 'Privacy',
+        'FAQ': 'FAQ'
+      };
+      
+      if (category && sections[category]) {
+        setAccordionState(prevState => ({
+          ...prevState,
+          [sections[category]]: true,
+        }));
+      }
+    }, [location.search]);
+  
 
   useEffect(() => {
     if (category) {
@@ -664,12 +693,12 @@ const CustomerService = () => {
 
 {/* Fine Prima Domanda */}
 
-<FilterButton onClick={() => toggleAccordion('Faq')}>
+<FilterButton onClick={() => toggleAccordion('FAQ')}>
             <AccordionItem >
                Faq
             </AccordionItem>
             <FilterSign>
-                {accordionState['Faq'] ? (  // Se isOpen è true (l'accordion è aperto)
+                {accordionState['FAQ'] ? (  // Se isOpen è true (l'accordion è aperto)
                   <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
                 ) : (
                   <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
@@ -678,7 +707,7 @@ const CustomerService = () => {
           </FilterButton>
 
 
-          <AccordionContent isOpen={accordionState['Faq']}>
+          <AccordionContent isOpen={accordionState['FAQ']}>
           <GtaLightLightInfo>
                       Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
                       to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
