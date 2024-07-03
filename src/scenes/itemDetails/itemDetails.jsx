@@ -890,7 +890,13 @@ const ItemDetails = () => {
 
               </TypographyDescrizioneProdotto>
 
-              <TypographyPrice><ABC24>  {formatPrice(item?.attributes?.price)} </ABC24></TypographyPrice>
+              <TypographyPrice>
+                <ABC24>
+                  {formatPrice(item?.attributes?.price)} 
+                  <GtaRegular style={{ color: 'gray' }}> Tax Included</GtaRegular>
+                </ABC24>
+              </TypographyPrice>
+
           {/* END:INFO PRODOTTO */}
 
           {/* SIZE E QUANTITY */}
@@ -1070,7 +1076,11 @@ const ItemDetails = () => {
 
 
                 <AccordionContent isOpen={accordionState['Shipping']}>
-                <GtaLight>{JSON.parse(JSON.stringify(item?.attributes?.longDescription) ?? "[]")[0]?.children[0]?.text}</GtaLight>  
+                <GtaLight>Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques.
+
+We invite you to call our personal advisors to coordinate the services.
+
+Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.</GtaLight>  
                       <GtaLightLightInfo>
 
                       </GtaLightLightInfo>

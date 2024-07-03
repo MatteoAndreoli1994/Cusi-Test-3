@@ -955,7 +955,7 @@ const CollectionBollywood = () => {
             <ABC>Zingara</ABC>
             <DivDescrizione>
               <GtaRegular>
-              The true fusion of modern style and elegance in the spirit of tradition.
+              Gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>
