@@ -350,12 +350,7 @@ const CustomerService = () => {
             <div>
               <GtaRegular16>Returns</GtaRegular16>
               <GtaLightLightInfo>
-                While we hope you adore your purchase, we understand that preferences may change. Our return policy
-                ensures a hassle-free process for returns and exchanges.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                If, for any reason, you wish to return or exchange an item, please contact our customer service team
-                within 14 days of receiving your order. We are dedicated to ensuring your satisfaction.
+              Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.
               </GtaLightLightInfo>
             </div>
           </>
@@ -550,15 +545,16 @@ const CustomerService = () => {
 
           <AccordionContent isOpen={accordionState['ProductCare']}>
           <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
+          Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations, follow these product care guidelines:
+          <ul>
+              <GtaLightLightInfoLi>Store your jewelry in a soft pouch or box to prevent scratches.</GtaLightLightInfoLi>
+              <GtaLightLightInfoLi>Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.</GtaLightLightInfoLi>
+              <GtaLightLightInfoLi>Clean your jewelry gently with a soft, lint-free cloth.</GtaLightLightInfoLi>
+              <GtaLightLightInfoLi>For specific care instructions, refer to the care guide provided with each item.</GtaLightLightInfoLi>
+          </ul>
+          Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.
                     </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
+
                     <GtaLightLightInfo>
                     <br></br>
                     </GtaLightLightInfo>
@@ -580,11 +576,28 @@ const CustomerService = () => {
 
 
           <AccordionContent isOpen={accordionState['Shipping']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
+          <>
+            <div>
+              <GtaLightLightInfo>
+                Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the
+                comfort of your home.
+              </GtaLightLightInfo>
+              <GtaLightLightInfo>
+                All orders are shipped with the utmost care and attention to detail. You will receive a shipping
+                confirmation email with a tracking link to monitor the journey of your precious purchase.
+              </GtaLightLightInfo>
+              <GtaLightLightInfo>
+                Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons,
+                please allow for additional delivery time.
+              </GtaLightLightInfo>
+            </div>
+            <div>
+              <br></br>
+              <GtaLightLightInfo>
+              Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.
+              </GtaLightLightInfo>
+            </div>
+          </>
                     <GtaLightLightInfo>
                       Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
                       to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
@@ -612,116 +625,21 @@ const CustomerService = () => {
 
 
           <AccordionContent isOpen={accordionState['Size']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
+          <>
+
+            <GtaLightLightInfo>
+              Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your
+              selected piece complements your style and comfort.
+            </GtaLightLightInfo>
+            <GtaLightLightInfo>
+              If you have any questions about sizing or need assistance, our customer service team is here to help. Reach
+              out to us for personalized guidance.
+            </GtaLightLightInfo>
+            <br></br>
+          </>
           </AccordionContent>
 
-{/* Fine Prima Domanda */}
 
-<FilterButton onClick={() => toggleAccordion('Garanzia')}>
-            <AccordionItem >
-                Garanzia
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Garanzia'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Garanzia']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
-          </AccordionContent>
-
-{/* Fine Prima Domanda */}
-
-<FilterButton onClick={() => toggleAccordion('Privacy')}>
-            <AccordionItem >
-                Privacy Policy
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Privacy'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Privacy']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
-          </AccordionContent>
-
-{/* Fine Prima Domanda */}
-
-<FilterButton onClick={() => toggleAccordion('FAQ')}>
-            <AccordionItem >
-               Faq
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['FAQ'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['FAQ']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
-          </AccordionContent>
 
 {/* Fine Prima Domanda */}
 
@@ -740,19 +658,18 @@ const CustomerService = () => {
 
 
           <AccordionContent isOpen={accordionState['Contact']}>
-          <GtaLightLightInfo>
-                      Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                      to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                      timeless beauty and sophistication you deserve.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
+          <>
+
+            <GtaLightLightInfo>
+              Our customer service team is <GrayClickableLink onClick={() => navigate("/contactus")}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized
+              assistance, please don't hesitate to contact us.
+            </GtaLightLightInfo>
+            <GtaLightLightInfo>
+              You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond
+              promptly and ensure your experience with us is seamless.
+            </GtaLightLightInfo>
+            <br></br>
+          </>
           </AccordionContent>
 
 {/* Fine Prima Domanda */}
