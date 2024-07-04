@@ -118,6 +118,7 @@ const LastColumn = styled.div`
   padding: 20px;
   text-align: left;
 
+
     @media(max-width:900px){
       display:none;
     }
@@ -259,6 +260,10 @@ const DivLinguaMobile2 = styled.div`
 
 
   }
+
+  @media(max-width:390px){
+
+  }
 `;
 
 const Logo = styled.div`
@@ -288,6 +293,7 @@ const SubscribeContainer = styled.div`
 
 
 
+
   
 `;
 
@@ -298,6 +304,8 @@ const TextBox = styled.input`
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
   border-radius: 0;
 
+
+
   @media(max-width: 900px){
 
     margin-top: 1.5%;
@@ -307,6 +315,14 @@ const TextBox = styled.input`
   @media(max-width: 680px){
     font-size: 14px;
     margin-top: 1.5%;
+  
+  }
+
+    @media(max-width: 360px){
+    padding: 8px;
+    font-size: 12px;
+
+
   
   }
   
@@ -339,6 +355,14 @@ const SubscribeButton = styled.button`
     margin-top:1.5%;
     
   }
+
+      @media(max-width: 360px){
+    padding: 8px;
+    font-size: 12px;
+
+
+  
+  }
   
 `;
 
@@ -346,6 +370,18 @@ const GtaRegular = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 
+  @media(max-width:390px){
+
+  font-size: 13px;
+
+  }
+
+
+  @media(max-width:350px){
+
+  font-size: 11.3px;
+
+  }
 
 
 `;
@@ -356,6 +392,16 @@ font-size: 14px;
 @media(max-width: 900px){
   margin:0;
   margin-bottom:15px;
+}
+
+@media(max-width:390px){
+
+font-size: 13px;
+}
+
+@media(max-width:350px){
+
+font-size: 11.5px;
 }
 
 
@@ -369,11 +415,35 @@ cursor: pointer;
 margin-right:2%;
 
 
+  @media(max-width:390px){
+
+    font-size: 13px;
+  }
+
+  @media(max-width:350px){
+
+font-size: 11.5px;
+}
+
+
 `;
 
 const GtaLight = styled.p`
 font-family: 'GTAmericaLight';
 font-size: 14px;
+
+  @media(max-width:390px){
+
+  font-size: 13px;
+
+  }
+
+
+  @media(max-width:350px){
+
+  font-size: 11.3px;
+
+  }
 
 `;
 const Collegamento = styled.a`
