@@ -101,6 +101,30 @@ margin-top:15px;
 
 
 `;
+
+const Add = styled(Box)`
+margin-left:15px;
+margin-right:0px;
+
+
+@media(max-width: 350px){
+
+margin-left:7px;
+margin-right:0px;
+}
+`;
+const Remove = styled(Box)`
+margin-left:0;
+margin-right:15px;
+
+
+@media(max-width: 350px){
+
+margin-left:0;
+margin-right:7px;
+}
+`;
+
 const BoxProdotti = styled.div`
   display: flex;
   flex-direction: column;
@@ -213,6 +237,16 @@ const DivImmagine = styled.div`
   @media(max-width: 680px){
     width: 110px;
     height: 110px;
+  }
+
+    @media(max-width: 380px){
+    width: 100px;
+    height: 100px;
+  }
+
+      @media(max-width: 350px){
+    width: 85px;
+    height: 85px;
   }
 
 `;
@@ -347,21 +381,21 @@ const CartMenu = () => {
 
                   <DivQuantità>
 
-                    <Box style={{ cursor: 'pointer' }} display="flex" alignItems="center" marginLeft={0} marginRight={2} onClick={() =>
+                    <Remove style={{ cursor: 'pointer' }} display="flex" alignItems="center" onClick={() =>
                         dispatch(decreaseCount({ id: item.id }))
                       }>
                       <GtaRegular14normal style={{ color: 'gray'}}>-</GtaRegular14normal>
-                    </Box>
+                    </Remove>
 
                     <GtaRegular14normal >{item.count}</GtaRegular14normal>
 
 
-                    <Box style={{ cursor: 'pointer' }} display="flex" alignItems="center" marginRight={0} marginLeft={2} onClick={() =>
+                    <Add style={{ cursor: 'pointer' }} display="flex" alignItems="center"  onClick={() =>
                         dispatch(increaseCount({ id: item.id }))
                       
                       }>
                     <GtaRegular14normal style={{ color: 'gray'}}>+</GtaRegular14normal> 
-                    </Box>
+                    </Add>
                   </DivQuantità>
 
                     
