@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
@@ -128,11 +128,11 @@ text-align: center;
 `;
 
 const DivFiltri = styled.div`
-display: flex;
-
-margin-bottom:4%;
-width: 85%;
-justify-content: space-between;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  position: relative; /* Aggiunto per fare in modo che Sort sia posizionato rispetto a DivFiltri */
+  margin-bottom: 4%;
 `;
 
 const CustomButton = styled.button`
@@ -474,6 +474,54 @@ const ButtonWhite = styled(Button)`
     }
   }
 `;
+//aggiunta
+const SortImage2 = styled.img`
+  width: 20px;
+  transform: ${({ showOptions }) => (showOptions ? 'rotate(180deg)' : 'rotate(0deg)')};
+  transition: transform 0.3s ease;
+`;
+const FilterOptionsBox = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+`;
+const Option = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor:pointer;
+
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+const Dot = styled.span`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: ${({ selected }) => (selected ? 'black' : 'transparent')};
+  margin-right: 10px;
+`;
+const GtaRegular3 = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin: 0;
+  line-height: 1; /* Azzerare la distanza tra le righe */
+  color: ${({ selected }) => (selected ? 'black' : '#666')}; /* Colore di default tendente al grigio */
+
+  @media (max-width: 680px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    color: black; /* Cambia il colore del testo a nero al passaggio del mouse */
+  }
+`;
 
 
 const EnamelledChains = () => {
@@ -483,7 +531,32 @@ const EnamelledChains = () => {
   };
 
 
+//aggiunta
+const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
+  const [showFilterOptions, setShowFilterOptions] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('Featured');
 
+  const sortItems = (items, option) => {
+    switch (option) {
+      case 'Price Descending':
+        return [...items].sort((a, b) => b.attributes.price - a.attributes.price);
+      case 'Price Ascending':
+        return [...items].sort((a, b) => a.attributes.price - b.attributes.price);
+      case 'Featured':
+      default:
+        return items;
+    }
+  };
+
+
+
+  const handleFilterClick2 = () => {
+    setShowFilterOptions(!showFilterOptions);
+  };
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setShowFilterOptions(false); // Chiudi il box delle opzioni filtrate
+  };
 
 
 
@@ -610,8 +683,28 @@ const EnamelledChains = () => {
       <CheckboxText>{label}</CheckboxText>
     </CheckboxContainer>
   );
+  useEffect(() => {
+    // Funzione per gestire il clic al di fuori di FilterOptionsBox
+    const handleClickOutside = (event) => {
+      // Verifica se l'elemento cliccato non è il bottone di sorting
+      if (
+        filterOptionsRef.current &&
+        !filterOptionsRef.current.contains(event.target) &&
+        !event.target.closest(".sort-button") // Escludi il bottone di sorting
+      ) {
+        setShowFilterOptions(false);
+      }
+    };
   
+    // Aggiungi un listener per il clic all'intero documento
+    document.addEventListener("mousedown", handleClickOutside);
   
+    // Pulisci il listener all'unmount del componente
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  const filteredItems = sortItems(enamelledChainsItems, selectedOption);
 
   return (
     <>
@@ -842,38 +935,47 @@ const EnamelledChains = () => {
 
 
         <DivFiltri>
-          <CustomButton backgroundColor="white" onClick={handleFilterClick}>
-          <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
-          <GtaRegular>Filter</GtaRegular>
+            <CustomButton backgroundColor="white" onClick={handleFilterClick}>
+            <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
+            <GtaRegular>Filter</GtaRegular>
 
-          </CustomButton>
-          <CustomButton backgroundColor="white" onClick={handleFilterClick}>
+            </CustomButton>
 
-          <GtaRegular2>Sort By</GtaRegular2>
-          <img src={SortImage} alt="Filter" style={{ width: '20px' }} />
-          </CustomButton>
-        </DivFiltri>
+            <CustomButton backgroundColor="white" onClick={handleFilterClick2} className="sort-button">
+              <GtaRegular2>Sort By</GtaRegular2>
+              <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
+            </CustomButton>
+
+
+
+            {showFilterOptions && (
+        <FilterOptionsBox ref={filterOptionsRef}>
+          <Option onClick={() => handleOptionClick('Featured')}>
+            {selectedOption === 'Featured' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Featured'}>Featured</GtaRegular3>
+          </Option>
+          <Option onClick={() => handleOptionClick('Price Descending')}>
+            {selectedOption === 'Price Descending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Price Descending'}>Price Descending</GtaRegular3>
+          </Option>
+          <Option onClick={() => handleOptionClick('Price Ascending')}>
+            {selectedOption === 'Price Ascending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
+            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>Price Ascending</GtaRegular3>
+          </Option>
+        </FilterOptionsBox>
+             )}
+            
+          </DivFiltri>
 
         
-        <DivProdotti>
-          
-          {value === "enamelledChains" &&
-            enamelledChainsItems.map((item) => (
-
-              <StyledItem key={`${item.id}`}>
-                <ItemInShop item={item} />
-              </StyledItem>
-            ))}
-
-
-
-
-            
-
-            
-
-            
-        </DivProdotti>
+          <DivProdotti>
+            {value === "enamelledChains" &&
+              filteredItems.map((item) => (
+                <StyledItem key={`${item.id}`}>
+                  <ItemInShop item={item} />
+                </StyledItem>
+              ))}
+          </DivProdotti>
         <Footer/>
 
       </Container>

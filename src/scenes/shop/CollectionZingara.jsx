@@ -1014,13 +1014,13 @@ const CollectionBollywood = () => {
 
           
           <DivProdotti>
-    {value === "zingara" &&
-      filteredItems.map((item) => (
-        <StyledItem key={`${item.id}`}>
-          <ItemInShop item={item} />
-        </StyledItem>
-      ))}
-  </DivProdotti>
+          {value === "zingara" &&
+            filteredItems.map((item) => (
+              <StyledItem key={`${item.id}`}>
+                <ItemInShop item={item} />
+              </StyledItem>
+            ))}
+        </DivProdotti>
           <Footer/>
 
         </Container>

@@ -568,13 +568,14 @@ const CollectionFleurie = () => {
   const handleContentLoad = () => {
     setLoaded(true);
   };
-  const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
+
 
 
 
 
 
 //aggiunta
+const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
   const [showFilterOptions, setShowFilterOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Featured');
 
