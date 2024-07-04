@@ -47,10 +47,13 @@ margin-bottom: 0;
 }
 
 @media(max-width: 680px){
-  font-size: 13px; 
+  font-size: 15px; 
+}
+  @media(max-width: 390px){
+  font-size: 14px; 
 }
 @media(max-width: 350px){
-  font-size: 11px; 
+  font-size: 13px; 
 }
 
 `;
@@ -68,10 +71,15 @@ margin-top:1%;
 }
 
 @media(max-width: 680px){
-  font-size: 12px; 
+  font-size: 14px; 
 }
+@media(max-width: 390px){
+  font-size: 13px; 
+}
+
 @media(max-width: 350px){
-  font-size: 10px; 
+  font-size: 12px; 
+  background-color:blue;
 }
 
 
