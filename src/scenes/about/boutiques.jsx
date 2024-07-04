@@ -463,6 +463,40 @@ margin-top:4%;
     
     }
 
+      @media(max-width: 680px){
+    font-size: 30px; 
+    
+    }
+
+
+`;
+const ABC2 = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 40px; 
+margin-bottom: 0%;
+margin-top:4%;
+
+@media(max-width: 1200px){
+  font-size: 35px; 
+  margin-top:7%;
+}
+
+@media(max-width: 680px){
+  font-size: 30px; 
+  margin-top:9%;
+}
+
+@media(max-width: 680px){
+  font-size: 30px; 
+
+}
+
+@media(max-width: 390px){
+  font-size: 27px; 
+  margin-top:12%;
+
+}
+
 
 `;
 const AbcGrassetto = styled.p`
@@ -506,8 +540,14 @@ font-size: 16px;
 margin-top:1%;
 margin-bottom:2%;
 
+
 @media(max-width:680px){
   font-size: 14px; 
+}
+
+
+@media(max-width:350px){
+  font-size: 12px; 
 }
 
 
@@ -761,7 +801,7 @@ useEffect(() => {
   </Box>
 
 
-  <ABC id="Book">Book an appointment</ABC>
+  <ABC2 id="Book">Book an appointment</ABC2>
   <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
 and on Saturdays from 9 am to 5 pm. 
   </GtaLightCenter>
