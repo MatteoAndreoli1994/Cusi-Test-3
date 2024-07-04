@@ -11,13 +11,14 @@ import styled from 'styled-components';
 // Importa le seguenti funzioni da react-redux
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
+import Footer from "../global/Footer";
 
 
 
 
 const Container = styled.div`
   margin-top: 130px;
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -265,7 +266,11 @@ const Checkout = () => {
           )}
         </Formik>
       </Box>
+
+
     </Container>
+    
+    <Footer/>
     </ContainerContainer>
   );
 };
