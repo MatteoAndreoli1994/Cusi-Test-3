@@ -32,12 +32,21 @@ const SubscribeButton = styled.button`
   justify-content: center; /* Center horizontally */
   height: 50px;
 
+
+
   text-align: center;
+
+
 
     /* Stili aggiuntivi quando disabilitato */
   &:disabled {
  cursor: auto;
   
+  }
+
+
+  @media(max-width: 900px){
+    margin-top: 10%;
   }
 
 `;
@@ -310,6 +319,8 @@ const DivCheckBox = styled.div`
   display: flex;
   align-items: center; /* Centra verticalmente */
   justify-content: left; /* Centra orizzontalmente */
+
+
 
 `;
 
@@ -974,14 +985,14 @@ and on Saturdays from 9 am to 5 pm.
 
 
       <SubscribeButton type="submit" value="Send" disabled={loading || sent}>
-  {loading ? (
-    <ClipLoader color={'#fff'} loading={loading} size={20} />
-  ) : sent ? (
-    <GtaRegular16> ✓ </GtaRegular16>
-  ) : (
-    <GtaRegular16> BOOK </GtaRegular16>
-  )}
-</SubscribeButton>
+      {loading ? (
+        <ClipLoader color={'#fff'} loading={loading} size={20} />
+      ) : sent ? (
+        <GtaRegular16> ✓ </GtaRegular16>
+      ) : (
+        <GtaRegular16> BOOK </GtaRegular16>
+      )}
+    </SubscribeButton>
 
 
 
