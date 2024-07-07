@@ -958,7 +958,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
       <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
         <DivInfo>
-          <ABC>Fleurie</ABC>
+          <ABC>Fleuriee</ABC>
           <DivDescrizione>
             <GtaRegular>
             Where natural elegance embraces the soul, transforming every woman into a precious, loved, and special flower.
