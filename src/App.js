@@ -19,6 +19,7 @@ import ShopEnamelledChains from "./scenes/shop/ShopEnamelledChains";
 import ShopAnimals from "./scenes/shop/ShopAnimals";
 import ShopSea from "./scenes/shop/ShopSea";
 import { gsap } from "gsap";
+import axios from 'axios';
 
 
 
@@ -38,6 +39,8 @@ import styled from 'styled-components';
 import LazyLoad from 'react-lazyload';
 
 import CookieBanner from './CookieBanner'; // new
+
+import MaintenancePage from './scenes/home/MaintenancePage';
 
 
 
@@ -71,6 +74,31 @@ const ScrollToTop = () => {
 function App() {
   const [loaded, setLoaded] = React.useState(false);
 
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
+
+  useEffect(() => {
+    const fetchConfiguration = async () => {
+      try {
+        const response = await axios.get('https://cusi-strapi-3690cb0bf021.herokuapp.com/api/configurations');
+        if (response.data && response.data.data && response.data.data.length > 0) {
+          const configuration = response.data.data[0].attributes;
+          setIsMaintenanceMode(configuration.maintenanceMode);
+        } else {
+          console.error('Nessun dato di configurazione trovato');
+          setIsMaintenanceMode(true); // Imposta la modalità manutenzione se non ci sono dati
+        }
+      } catch (error) {
+        console.error('Errore nel recuperare la configurazione:', error.message);
+        setIsMaintenanceMode(true); // Gestione errore: impostare la modalità manutenzione
+      }
+    };
+
+    fetchConfiguration();
+  }, []);
+
+  if (isMaintenanceMode === null) {
+    return <div>Caricamento...</div>;
+  }
 
 
   const handleContentLoad = () => {
@@ -86,14 +114,28 @@ function App() {
 
       <BrowserRouter>
       
+
+
+
+        {isMaintenanceMode ? (
+        <>
+        <ApolloProvider client={client}>
+        <Routes><Route path="*" element={<MaintenancePage />} /></Routes>
+        </ApolloProvider>
+          </>
+
+        ) : (
+          <>
         <ApolloProvider client={client}>
           <Navbar />
+          
           <ScrollToTop />
 
             <LazyLoad once>
             <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
 
               <Routes>
+   
                 <Route path="/" element={<Home />} />
                 <Route path="item/:itemId" element={<ItemDetails />} />
                 <Route path="checkout" element={<Checkout />} />
@@ -141,7 +183,13 @@ function App() {
 
 
         </ApolloProvider>
+          </>
+        )}
+
+        
       </BrowserRouter>
+
+      
 
 
       
