@@ -337,12 +337,11 @@ const TextBox = styled.input`
 
 const SubscribeButton = styled.button`
   background-color: white;
-  color: white;
-  font-family: 'GTAmericaRegular';
+
   border: 1px solid #000;
   width:40%;
   cursor: pointer;
-  font-size: 14px;
+
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
   @media(max-width:1200px){
@@ -351,20 +350,20 @@ const SubscribeButton = styled.button`
   }
 
   @media(max-width:900px){
-    font-size: 12px;
+
     margin-top:1.5%;
 
   }
 
   @media(max-width:680px){
-    font-size: 14px;
+
     margin-top:1.5%;
     
   }
 
       @media(max-width: 360px){
     padding: 8px;
-    font-size: 12px;
+
 
 
   
@@ -394,7 +393,7 @@ font-size: 14px;
 const GtaRegularSubscribe = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
-color:black;
+
 
     @media(max-width:1200px){
     font-size: 11px;
