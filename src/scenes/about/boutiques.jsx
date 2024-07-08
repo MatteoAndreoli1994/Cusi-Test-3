@@ -9,6 +9,7 @@ import { BarLoader, ClipLoader } from 'react-spinners';
 import LazyLoad from 'react-lazyload';
 import { HashLink } from 'react-router-hash-link';
 import Footer from "../global/Footer"
+import { useTranslation } from 'react-i18next';
 
 const StyledHashLink = styled(HashLink)`
 text-decoration: none; /* Rimuovi sottolineature */
@@ -300,6 +301,7 @@ const CheckboxLabel2 = styled.label`
 
   height:100%;
 
+  align-items:center;
   @media(max-width: 800px){
     margin-top:4%;
   }
@@ -314,7 +316,7 @@ const CheckboxLabel2 = styled.label`
 `;
 const DivCheckBox = styled.div`
 
-  height: 20px; /* Altezza desiderata */
+  height: 100%; /* Altezza desiderata */
   width:40px;
   display: flex;
   align-items: center; /* Centra verticalmente */
@@ -553,12 +555,12 @@ margin-bottom:2%;
 
 
 @media(max-width:680px){
-  font-size: 14px; 
+  font-size: 12px; 
 }
 
 
 @media(max-width:350px){
-  font-size: 12px; 
+  font-size: 10px; 
 }
 
 
@@ -586,6 +588,13 @@ margin-bottom:0;
 
 
 @media(max-width:680px){
+  font-size: 13px; 
+  margin-top:0;
+  width:100%;
+  
+}
+
+@media(max-width:450px){
   font-size: 11px; 
   margin-top:0;
   width:100%;
@@ -738,283 +747,200 @@ useEffect(() => {
 
 
 
-
-  return (
-    <>
-
-        
+const { t } = useTranslation();
+return (
+  <>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-<Container>
+    <Container>
+      <ABC>{t('maison.boutiques')}</ABC>
+      <DivDescrizione>
+        <GtaRegular>{t('maison.welcomeMessage')}</GtaRegular>
+      </DivDescrizione>
 
+      <Box>
+        <DivImmagine>
+          <Maison2Img src={Maison2} />
+        </DivImmagine>
 
-  <ABC>Boutiques</ABC>
-  <DivDescrizione>
-    <GtaRegular>We would be delighted to welcome you so that you may discover 
-    and try on your favorite creations.
-    </GtaRegular>
-  </DivDescrizione>
+        <DivInfo>
+          <DivInserimento>
+            <TitoloStoryBoard>{t('maison.milano')}</TitoloStoryBoard>
+            <Descrizione>{t('maison.viaMontenapoleone')}</Descrizione>
+            <AbcGrassetto>{t('maison.mondayToSaturday')}</AbcGrassetto>
+            <Descrizione>{t('maison.openingHours1')}</Descrizione>
+            <Descrizione>{t('maison.openingHours2')}</Descrizione>
+            <AbcGrassetto>{t('maison.contactUs')}</AbcGrassetto>
+            <Descrizione>{t('maison.milanoPhoneNumber')}</Descrizione>
+          </DivInserimento>
+        </DivInfo>
+      </Box>
 
+      <Box>
+        <DivImmagine>
+          <Maison2Img src={Maison1} />
+        </DivImmagine>
 
+        <DivInfo>
+          <DivInserimento>
+            <TitoloStoryBoard>{t('maison.portofino')}</TitoloStoryBoard>
+            <Descrizione>{t('maison.calataMarconi')}</Descrizione>
+            <AbcGrassetto>{t('maison.mondayToSaturday')}</AbcGrassetto>
+            <Descrizione>{t('maison.openingHours1')}</Descrizione>
+            <Descrizione>{t('maison.openingHours2')}</Descrizione>
+            <AbcGrassetto>{t('maison.contactUs')}</AbcGrassetto>
+            <Descrizione>{t('maison.portofinoPhoneNumber')}</Descrizione>
+          </DivInserimento>
+        </DivInfo>
+      </Box>
 
+      <ABC2 id="Book">{t('maison.bookAppointment')}</ABC2>
+      <Subtitle>
+        <GtaLightCenter>{t('maison.staffResponse')}</GtaLightCenter>
+      </Subtitle>
 
-  <Box>
-    <DivImmagine>
-      <Maison2Img src={Maison2}/>
+      <FormContainer>
+        <form ref={form} onSubmit={handleSubmit}>
+          <span><GtaLight>{t('maison.title')}</GtaLight></span>
 
-    </DivImmagine>
+          <CheckboxContainer>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                checked={selectedOption === t('maison.mr')}
+                onChange={() => handleCheckboxChange(t('maison.mr'))}
+              />
+              <span><GtaLight>{t('maison.mr')}</GtaLight></span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                checked={selectedOption === t('maison.miss')}
+                onChange={() => handleCheckboxChange(t('maison.miss'))}
+              />
+              <span><GtaLight>{t('maison.miss')}</GtaLight></span>
+            </CheckboxLabel>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                checked={selectedOption === t('maison.notSay')}
+                onChange={() => handleCheckboxChange(t('maison.notSay'))}
+              />
+              <span><GtaLight>{t('maison.notSay')}</GtaLight></span>
+            </CheckboxLabel>
 
-    <DivInfo>
-      <DivInserimento>
+            <Input type="hidden" name="user_title" value={selectedOption} />
+          </CheckboxContainer>
 
-        <TitoloStoryBoard>Milano</TitoloStoryBoard>
-        <Descrizione>Via Montenapoleone 21/A, 20121, Italy</Descrizione>
-        <Descrizione></Descrizione>    <Descrizione></Descrizione>
-        <AbcGrassetto>Monday - Saturday</AbcGrassetto>
-        <Descrizione>10:30-13:30</Descrizione>
-        <Descrizione>15:00-19:00</Descrizione>
-        <Descrizione></Descrizione>    <Descrizione></Descrizione>
-        <AbcGrassetto>Contact Us</AbcGrassetto>
-        <Descrizione>(+39) 0276014323 </Descrizione>
+          <FlexContainer>
+            <InputLabel>
+              <span><GtaLight>{t('maison.firstName')}</GtaLight></span>
+              <Input type="text" name="user_name" />
+            </InputLabel>
+            <InputLabel>
+              <span><GtaLight>{t('maison.lastName')}</GtaLight></span>
+              <Input type="text" name="user_lastname"/>
+            </InputLabel>
+          </FlexContainer>
 
-      </DivInserimento>
+          <FlexContainer>
+            <InputLabel>
+              <span><GtaLight>{t('maison.email')}</GtaLight></span>
+              <Input type="email" name="user_email" />
+            </InputLabel>
+            <InputLabel>
+              <span><GtaLight>{t('maison.phoneNumber')}</GtaLight></span>
+              <Input type="tel" name="user_phonenumber"/>
+            </InputLabel>
+          </FlexContainer>
 
+          <FlexContainer>
+            <InputLabelSolo>
+              <span><GtaLight>{t('maison.selectBoutique')}</GtaLight></span>
+              <InputSelect
+                type="text"
+                name="user_boutiques"
+                value={selectedBoutique}
+                onChange={handleBoutiqueChange}
+              >
+                <option value="Cusi Montenapoleone">{t('maison.cusiMontenapoleone')}</option>
+                <option value="Cusi Portofino">{t('maison.cusiPortofino')}</option>
+              </InputSelect>
+            </InputLabelSolo>
+          </FlexContainer>
 
+          <FlexContainer>
+            <InputLabel>
+              <span><GtaLight>{t('maison.appointmentDate')}</GtaLight></span>
+              <Input type="date" name="user_date"/>
+            </InputLabel>
+            <InputLabel>
+              <span><GtaLight>{t('maison.time')}</GtaLight></span>
+              <Input type="time" name="user_dateh"/>
+            </InputLabel>
+          </FlexContainer>
 
-        
-
-    </DivInfo>
-
-  </Box>
-
-  <Box>
-    <DivImmagine>
-      <Maison2Img src={Maison1}/>
-
-    </DivImmagine>
-
-    <DivInfo>
-    <DivInserimento>
-      <TitoloStoryBoard>Portofino</TitoloStoryBoard>
-      <Descrizione>Calata Marconi 14, 16034 Italy</Descrizione>
-      <Descrizione></Descrizione>    <Descrizione></Descrizione>
-      <AbcGrassetto>Monday - Saturday</AbcGrassetto>
-      <Descrizione>10:30-13:30</Descrizione>
-      <Descrizione>15:00-19:00</Descrizione>
-      <Descrizione></Descrizione>    <Descrizione></Descrizione>
-      <AbcGrassetto>Contact Us</AbcGrassetto>
-      <Descrizione>(+39) 0373214621 </Descrizione>
-    </DivInserimento>
-
-        
-
-    </DivInfo>
-
-  </Box>
-
-
-  <ABC2 id="Book">Book an appointment</ABC2>
-  <Subtitle>  <GtaLightCenter>Our staff will respond from Monday to Friday from 9 am to 7 pm 
-and on Saturdays from 9 am to 5 pm. 
-  </GtaLightCenter>
-</Subtitle>
-
-
-
-
-
-  <FormContainer >
-  <form ref={form} onSubmit={handleSubmit}>
-      <span><GtaLight > Title*</GtaLight></span>
-
-      <CheckboxContainer >
-        <CheckboxLabel>
-          <Checkbox
-            type="checkbox"
-            checked={selectedOption === 'Mr.'}
-            onChange={() => handleCheckboxChange('Mr.')}
-          />
-
-
-          <span><GtaLight>Mr.</GtaLight></span>
-        </CheckboxLabel>
-        <CheckboxLabel>
-          <Checkbox
-            type="checkbox"
-            checked={selectedOption === 'Miss, Mrs, Ms'}
-            onChange={() => handleCheckboxChange('Miss, Mrs, Ms')}
-          />
-
-          <span><GtaLight> Miss</GtaLight></span>
-        </CheckboxLabel>
-        <CheckboxLabel>
-          <Checkbox
-            type="checkbox"
-            checked={selectedOption === "I'd rather not say"}
-            onChange={() => handleCheckboxChange("I'd rather not say")}
-          />
-
-          <span><GtaLight> I'd rather not say </GtaLight></span>
-        </CheckboxLabel>
-
-        <Input type="hidden" name="user_title" value={selectedOption} />
-      </CheckboxContainer>
-
-
-      {/* Altre parti del form possono essere aggiunte qui */}
-
-      <FlexContainer>
-        <InputLabel>
-          <span><GtaLight> First Name* </GtaLight></span>
-          <Input type="text" name="user_name" />
-        </InputLabel>
-        <InputLabel>
-          <span><GtaLight> Last Name* </GtaLight></span>
-          <Input type="text" name="user_lastname"/>
-        </InputLabel>
-      </FlexContainer>
-
-      <FlexContainer >
-        <InputLabel>
-          <span> <GtaLight> E-mail* </GtaLight></span>
-          <Input type="email" name="user_email" />
-        </InputLabel>
-        <InputLabel>
-          <span> <GtaLight> Phone Number* </GtaLight></span>
-          <Input type="tel" name="user_phonenumber"/>
-        </InputLabel>
-      </FlexContainer>
-
-      <FlexContainer>
-        <InputLabelSolo>
-          <span><GtaLight> Select Boutique* </GtaLight></span>
-          <InputSelect
-            type="text"
-            name="user_boutiques"
-            value={selectedBoutique}
-            onChange={handleBoutiqueChange}
-          >
-            <option value="Cusi Montenapoleone"><GtaLight>Cusi Montenapoleone</GtaLight></option>
-
-            <option value="Cusi Portofino"><GtaLight>Cusi Portofino </GtaLight></option>
-          </InputSelect>
-        </InputLabelSolo>
-
-      </FlexContainer>
-
-      <FlexContainer >
-        <InputLabel>
-          <span><GtaLight> Appointment Date* </GtaLight></span>
-          <Input type="date" name="user_date"/>
-        </InputLabel>
-        <InputLabel>
-          <span> <GtaLight>Time*</GtaLight></span>
-          <Input type="time" name="user_dateh"/>
-        </InputLabel>
-      </FlexContainer>
-
-            <FlexContainer >
-        <InputLabelSolo>
-          <span ><GtaLight> Product* </GtaLight></span>
-          <Input
+          <FlexContainer>
+            <InputLabelSolo>
+              <span><GtaLight>{t('maison.product')}</GtaLight></span>
+              <Input
                 type="text"
                 name="user_product"
                 value={message}
-       
-                
               />
-        </InputLabelSolo>
+            </InputLabelSolo>
+          </FlexContainer>
 
-      </FlexContainer>
+          <FlexContainer>
+            <InputLabelSolo>
+              <span><GtaLight>{t('maison.message')}</GtaLight></span>
+              <Input type="text" name="message" />
+            </InputLabelSolo>
+          </FlexContainer>
 
-      <FlexContainer >
-        <InputLabelSolo>
-          <span ><GtaLight> Message* </GtaLight></span>
-          <Input type="text" name="message" />
-        </InputLabelSolo>
+          <CheckboxContainer>
+            <CheckboxLabel2>
+              <DivCheckBox>
+                <Checkbox2
+                  type="checkbox"
+                  checked={selectedOptionNewsletter}
+                  onChange={(event) => handleCheckboxChangeNewsletter(event.target.checked)}
+                />
+              </DivCheckBox>
+              <span><GtaLightCentered>{t('maison.newsletter')}</GtaLightCentered></span>
+              <Input type="hidden" name="user_newsletter" value={selectedOptionNewsletter} />
+            </CheckboxLabel2>
+          </CheckboxContainer>
 
-      </FlexContainer>
+          <CheckboxContainer>
+            <CheckboxLabel2>
+              <DivCheckBox>
+                <Checkbox2
+                  type="checkbox"
+                  checked={acceptedPrivacyPolicy}
+                  onChange={(event) => handleCheckboxChangePrivacyPolicy(event.target.checked)}
+                  required  // Rende la checkbox obbligatoria
+                />
+              </DivCheckBox>
+              <span><GtaLightCentered>{t('maison.privacyPolicy')}</GtaLightCentered></span>
+              <Input type="hidden" name="user_privacy_accepted" value={acceptedPrivacyPolicy} />
+            </CheckboxLabel2>
+          </CheckboxContainer>
 
-
-
-      
-
-      <CheckboxContainer>
-        <CheckboxLabel2>
-        <DivCheckBox>
-          <Checkbox2
-          type="checkbox"
-          checked={selectedOptionNewsletter === true}
-          onChange={(event) => handleCheckboxChangeNewsletter(event.target.checked)}
-          />
-        </DivCheckBox>
-
-
-
-          <span> <GtaLightCentered> Be the first to hear about new arrivals from our special events, and other news from the world of Cusi. </GtaLightCentered></span>
-          <Input type="hidden" name="user_newsletter" value={selectedOptionNewsletter} />
-        </CheckboxLabel2>
-
-      </CheckboxContainer>
-
- {/* Checkbox per accettare la privacy policy */}
- <CheckboxContainer>
-        <CheckboxLabel2>
-          <DivCheckBox>
-          <Checkbox2
-            type="checkbox"
-            checked={acceptedPrivacyPolicy}
-            onChange={(event) => handleCheckboxChangePrivacyPolicy(event.target.checked)}
-            required  // Rende la checkbox obbligatoria
-          />
-          </DivCheckBox>
-          <span>
-            <GtaLightCentered>
-            By submitting this form, I agree to the Privacy Policy.
-            </GtaLightCentered>
-          </span>
-          <Input type="hidden" name="user_privacy_accepted" value={acceptedPrivacyPolicy} />
-        </CheckboxLabel2>
-      </CheckboxContainer>
-
-
-
-
-
-
-
-
-
-      <SubscribeButton type="submit" value="Send" disabled={loading || sent}>
-      {loading ? (
-        <ClipLoader color={'#fff'} loading={loading} size={20} />
-      ) : sent ? (
-        <GtaRegular16> ✓ </GtaRegular16>
-      ) : (
-        <GtaRegular16> BOOK </GtaRegular16>
-      )}
-    </SubscribeButton>
-
-
-
-
-    </form>
-
-
-    
-    </FormContainer>
-
-
-
-
-
-</Container>
-
-<Footer/>
-
-
-
-    </>
-  );
+          <SubscribeButton type="submit" value="Send" disabled={loading || sent}>
+            {loading ? (
+              <ClipLoader color={'#fff'} loading={loading} size={20} />
+            ) : sent ? (
+              <GtaRegular16>✓</GtaRegular16>
+            ) : (
+              <GtaRegular16>{t('maison.book')}</GtaRegular16>
+            )}
+          </SubscribeButton>
+        </form>
+      </FormContainer>
+    </Container>
+    <Footer />
+  </>
+);
 };
 
 export default Boutiques;
