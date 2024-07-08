@@ -900,7 +900,7 @@ function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <SubscribeButton type="submit">{t('footer.subscribe')}</SubscribeButton>
+                <SubscribeButton type="submit"><GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe></SubscribeButton>
               </SubscribeContainer>
             </form>
           </LastColumn>
