@@ -820,6 +820,7 @@ function Footer() {
               />
               <SubscribeButton type="submit"><GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe></SubscribeButton>
             </SubscribeContainer>
+            <GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe>
           </form>
         </LastColumnMobile>
     
