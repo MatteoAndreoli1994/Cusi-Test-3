@@ -391,6 +391,38 @@ font-size: 14px;
 
 
 `;
+const GtaRegularSubscribe = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+
+
+    @media(max-width:1200px){
+    font-size: 11px;
+
+  }
+
+  @media(max-width:900px){
+    font-size: 12px;
+
+
+  }
+
+  @media(max-width:680px){
+    font-size: 14px;
+
+    
+  }
+
+      @media(max-width: 360px){
+
+    font-size: 12px;
+
+
+  
+  }
+
+
+`;
 const GtaRegular2 = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
@@ -786,7 +818,7 @@ function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <SubscribeButton type="submit">{t('footer.subscribe')}</SubscribeButton>
+              <SubscribeButton type="submit"><GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe></SubscribeButton>
             </SubscribeContainer>
           </form>
         </LastColumnMobile>
