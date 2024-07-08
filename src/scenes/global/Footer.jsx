@@ -336,32 +336,42 @@ const TextBox = styled.input`
 `;
 
 const SubscribeButton = styled.button`
+all: unset; /* Azzeramento di tutte le impostazioni predefinite */
   background-color: black;
+
   border: 1px solid #000;
-  width: 40%;
+  width:40%;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+justify-content:center;
+align-items:center;
+text-align:center;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
-  font-family: 'GTAmericaRegular', Arial, sans-serif; /* Usa 'GTAmericaRegular' o il tuo font desiderato */
 
-  @media (max-width: 1200px) {
-    font-size: 14px; /* Adatta la dimensione del font come desiderato */
+  @media(max-width:1200px){
+    font-size: 11px;
+
   }
 
-  @media (max-width: 900px) {
-    font-size: 10px;
-    color: blue; /* Cambia il colore del testo se necessario */
+  @media(max-width:900px){
+
+    margin-top:1.5%;
+
   }
 
-  @media (max-width: 680px) {
-    font-size: 14px; /* Adatta la dimensione del font come desiderato */
+  @media(max-width:680px){
+
+    margin-top:1.5%;
+    
   }
 
-  @media (max-width: 360px) {
-    font-size: 12px; /* Adatta la dimensione del font come desiderato */
+      @media(max-width: 360px){
+
+
+
+
+  
   }
+  
 `;
 
 const GtaRegular = styled.p`
