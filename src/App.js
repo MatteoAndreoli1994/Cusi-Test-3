@@ -20,7 +20,7 @@ import ShopAnimals from "./scenes/shop/ShopAnimals";
 import ShopSea from "./scenes/shop/ShopSea";
 import { gsap } from "gsap";
 import axios from 'axios';
-
+import { I18nextProvider } from 'react-i18next';
 
 
 import CollectionBollywood from "./scenes/shop/CollectionBollywood";
@@ -41,7 +41,7 @@ import LazyLoad from 'react-lazyload';
 import CookieBanner from './CookieBanner'; // new
 
 import MaintenancePage from './scenes/home/MaintenancePage';
-
+import i18n from "./config/i18n"
 
 
 
@@ -72,9 +72,8 @@ const ScrollToTop = () => {
 
 
 function App() {
-  const [loaded, setLoaded] = React.useState(false);
-
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(null); // Impostato su null inizialmente
 
   useEffect(() => {
     const fetchConfiguration = async () => {
@@ -96,8 +95,9 @@ function App() {
     fetchConfiguration();
   }, []);
 
+  // Aggiungi un messaggio di caricamento fino a quando isMaintenanceMode non è stato determinato
   if (isMaintenanceMode === null) {
-    return <div>Caricamento...</div>;
+    return <div></div>;
   }
 
 
@@ -133,7 +133,7 @@ function App() {
 
             <LazyLoad once>
             <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-
+            <I18nextProvider i18n={i18n}>
               <Routes>
    
                 <Route path="/" element={<Home />} />
@@ -162,7 +162,7 @@ function App() {
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/contactus" element={<ContactUs />} />
               </Routes>
-
+            </I18nextProvider>
             </LazyLoadWrapper>
             </LazyLoad>  
 

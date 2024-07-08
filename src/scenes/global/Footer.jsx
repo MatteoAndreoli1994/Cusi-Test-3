@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/logo.png';
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import { shades } from "../../theme";
 import { Link } from 'react-router-dom'; // Se usi React Router
 import Newsletter from "@strapi-newsletter/react";
 import { subscribeUser } from "@strapi-newsletter/react";
+import SortImage from "../../assets/down.png";
 
 
 
@@ -182,6 +183,7 @@ const CopyrightContainerMobile = styled.div`
     flex-direction: column;
   align-items:center;
     width:83%;
+
   }
 `;
 const DivLingua = styled.div`
@@ -201,7 +203,7 @@ const DivLingua = styled.div`
   }
   @media(max-width:900px){
     width: 100%;
-    background-color:red;
+    background-color:blue;
     padding: 0px;
     align-items: flex-start;
 
@@ -242,19 +244,21 @@ const DivLinguaMobile2 = styled.div`
   justify-content: space-between;
   width: 40%;
   align-items: center;
-  padding: 10px;
+
+  margin-bottom:5%;
 
   margin-right:1.5%;
 
+
   @media(max-width:900px){
-    width: 50%;
+    width: 100%;
 
   }
   @media(max-width:900px){
     width: 100%;
 
-    padding: 0px;
-    align-items: flex-start;
+
+
 
 
 
@@ -385,6 +389,26 @@ font-size: 14px;
 
 
 `;
+const GtaRegular2 = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+margin:0;
+font-size: 14px;
+
+  @media(max-width:390px){
+
+  font-size: 13px;
+
+  }
+
+
+  @media(max-width:350px){
+
+  font-size: 11.3px;
+
+  }
+
+`;
 const GtaRegularCopy = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
@@ -412,7 +436,26 @@ const GtaRegularLegalPol = styled.a`
 font-family: 'GTAmericaRegular';
 font-size: 14px;
 cursor: pointer;
-margin-right:2%;
+
+
+
+  @media(max-width:390px){
+
+    font-size: 13px;
+  }
+
+  @media(max-width:350px){
+
+font-size: 11.5px;
+}
+
+
+`;
+const GtaRegularSort = styled.a`
+font-family: 'GTAmericaRegular';
+font-size: 14px;
+cursor: pointer;
+
 
 
   @media(max-width:390px){
@@ -458,6 +501,75 @@ const Collegamento = styled.a`
 
 
 `;
+const CustomButton = styled.button`
+
+border: none;
+background-color:white;
+cursor: pointer;
+display:flex;
+
+color: black;
+align-items:center;
+justify-content:center;
+
+`;
+const CustomButton2 = styled.button`
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Allinea gli elementi a sinistra */
+  color: black;
+  height: 100%;
+  padding: 0; /* Rimuove il padding interno */
+
+`;
+
+const SortImage2 = styled.img`
+  width: 20px;
+  transform: ${({ showOptions }) => (showOptions ? 'rotate(180deg)' : 'rotate(0deg)')};
+  transition: transform 0.3s ease;
+  margin-left:10%;
+
+
+  @media(max-width: 900px){
+  width: 17px;
+
+  }
+
+    @media(max-width: 450px){
+  width: 15px;
+
+  }
+`;
+const Option = styled.div`
+position: absolute;
+bottom:15px;
+margin-left:3%;
+  cursor: pointer;
+
+  &:hover {
+
+  }
+
+
+@media(max-width: 900px){
+bottom:10px;
+
+margin-left:2.8%;
+}
+`;
+const FilterOptionsBox = styled.div`
+  position: relative;
+ bottom:5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+
 const handleUserSubscribe = async (email) => {
   try {
     await subscribeUser(email, 'https://cusi-strapi-3690cb0bf021.herokuapp.com');
@@ -634,9 +746,26 @@ function Footer() {
 
     const navigate = useNavigate();
 
+    const [selectedLanguage, setSelectedLanguage] = useState("English");
+
+    const changeLanguage = (language) => {
+      setSelectedLanguage(language);
+      navigate(`/${language}`); // Naviga alla home page con il parametro della lingua
+    };
+
+    const [showFilterOptions, setShowFilterOptions] = useState(false);
+    const handleFilterClick2 = () => {
+      setShowFilterOptions(!showFilterOptions);
+    };
+    const filterOptionsRef = useRef(null);
+    const handleLanguageChange = (language) => {
+      setSelectedLanguage(language);
+      setShowFilterOptions(false);
+    };
+  
 
   
-    
+
 
   return (
     <Container>
@@ -800,8 +929,23 @@ function Footer() {
 
 
 
-          <GtaRegular>IT/€</GtaRegular>
-          <GtaRegular>English</GtaRegular>
+
+      
+          <div>
+          <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
+        {selectedLanguage !== "English" && <Option onClick={() => handleLanguageChange('English')}><GtaRegular2>English</GtaRegular2></Option>}
+        {selectedLanguage !== "Italiano" && <Option onClick={() => handleLanguageChange('Italiano')}><GtaRegular2>Italiano</GtaRegular2></Option>}
+      </FilterOptionsBox>
+      <CustomButton onClick={handleFilterClick2} >
+        <GtaRegular2>{selectedLanguage}</GtaRegular2>
+        <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
+      </CustomButton>
+
+        </div>
+
+
+
+
 
         </DivLingua>
 
@@ -830,8 +974,19 @@ function Footer() {
       <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Cookie Policy</GtaRegularLegalPol>
 
 
-      <GtaRegularCopy>IT/€</GtaRegularCopy>
-      <GtaRegularCopy>English</GtaRegularCopy>
+      <div>
+          <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
+        {selectedLanguage !== "English" && <Option onClick={() => handleLanguageChange('English')}><GtaRegularLegalPol>English</GtaRegularLegalPol></Option>}
+        {selectedLanguage !== "Italiano" && <Option onClick={() => handleLanguageChange('Italiano')}><GtaRegularLegalPol>Italiano</GtaRegularLegalPol></Option>}
+      </FilterOptionsBox>
+      
+      <CustomButton2 onClick={handleFilterClick2} >
+        <GtaRegularLegalPol>{selectedLanguage}</GtaRegularLegalPol>
+        <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
+      </CustomButton2>
+
+        </div>
+
 
       </DivLinguaMobile2>
 

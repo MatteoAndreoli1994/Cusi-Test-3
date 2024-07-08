@@ -14,6 +14,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useEffect } from "react";
 import { isSafari } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
 
 
 import Anello1White from"../../assets/A2.png";
@@ -750,7 +751,7 @@ const Home = () => {
   const handleContentLoad = () => {
     setLoaded(true);
   };
-
+  const { t } = useTranslation();
 
   const [item, setItem] = useState(null);
   const navigate = useNavigate();
@@ -856,7 +857,7 @@ const Home = () => {
 
     {/* Iconic collection */}
         <IconicCollectionDiv>
-          <ABC>Our Iconic Collections</ABC>
+          <ABC>{t('home.iconicCollections')}</ABC>
           <GtaTitle>A meeting between tradition and innovation for real works of art to wear</GtaTitle>
           <CollectionDivBig>
             <Collection1DivIconic>
@@ -971,6 +972,7 @@ const Home = () => {
       <Collection1Div>
           <ImmagineMaison src={Maison}/>
           <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >BOOK AN APPOINTMENT</HyperLink></GtaRegular14grayMobile>
+
         </Collection1Div>
 
         <Collection2Div2>

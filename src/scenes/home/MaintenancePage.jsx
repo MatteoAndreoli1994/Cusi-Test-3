@@ -50,7 +50,7 @@ const MaintenanceContainer = styled.div`
 
 const Logo = styled.img`
   height: 80px; /* Adjust the size as needed */
-  animation: ${smoothShrinkFlip} 2s linear infinite;
+
 `;
 
 const Title = styled.h1`
