@@ -336,12 +336,14 @@ const TextBox = styled.input`
 `;
 
 const SubscribeButton = styled.div`
-  background-color: white;
+  background-color: black;
 
   border: 1px solid #000;
   width:40%;
   cursor: pointer;
-
+justify-content:center;
+align-items:center;
+text-align:center;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
   @media(max-width:1200px){
@@ -393,7 +395,7 @@ font-size: 14px;
 const GtaRegularSubscribe = styled.p`
 font-family: 'GTAmericaRegular';
 font-size: 16px;
-
+color:white;
 
     @media(max-width:1200px){
     font-size: 11px;
