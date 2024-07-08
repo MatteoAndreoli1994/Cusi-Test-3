@@ -335,7 +335,7 @@ const TextBox = styled.input`
   
 `;
 
-const SubscribeButton = styled.div`
+const SubscribeButton = styled.button`
   background-color: black;
 
   border: 1px solid #000;
