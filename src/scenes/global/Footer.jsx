@@ -10,7 +10,7 @@ import { subscribeUser } from "@strapi-newsletter/react";
 import SortImage from "../../assets/down.png";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSelectedLanguage } from '../../state/languageSlice';
-
+import { useTranslation } from 'react-i18next';
 
 
 const Container = styled.div`
@@ -767,255 +767,168 @@ function Footer() {
       
     };
   
-
+    const { t } = useTranslation();
   
 
 
-  return (
-    <Container>
-
-
-
+    return (
+      <Container>
         <LastColumnMobile>
-
-        <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaLight>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaLight>
-       
-        <form onSubmit={handleSubmit}>
-        <SubscribeContainer>
-          <TextBox
-            type="email"
-            name="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <SubscribeButton type="submit">SUBSCRIBE</SubscribeButton>
-        </SubscribeContainer>
-        </form>
+          <GtaRegular>{t('footer.signUpToOurNewsletter')}</GtaRegular>
+          <GtaLight>{t('footer.beTheFirstToHear')}</GtaLight>
+          <form onSubmit={handleSubmit}>
+            <SubscribeContainer>
+              <TextBox
+                type="email"
+                name="email"
+                placeholder={t('footer.yourEmail')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <SubscribeButton type="submit">{t('footer.subscribe')}</SubscribeButton>
+            </SubscribeContainer>
+          </form>
         </LastColumnMobile>
+    
+        <RowContainer>
+          <ColumnLogo>
+            <Logo
+              onClick={() => navigate("/")}
+              sx={{ "&:hover": { cursor: "pointer" } }}
+              color={shades.secondary[500]}
+            >
+              <ImmagineLogo src={logo} />
+            </Logo>
+          </ColumnLogo>
+    
+          <Column>
+            <GtaRegular>{t('footer.customerService')}</GtaRegular>
+            <GtaRegular>
+              <Collegamento onClick={() => navigate("/customerservice?category=Our Services")}>
+                {t('footer.ourServices')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>
+              <Collegamento onClick={() => navigate("/customerservice?category=Product Care")}>
+                {t('footer.productCare')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>
+              <Collegamento onClick={() => navigate("/customerservice?category=Shipping")}>
+                {t('footer.shippingReturns')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>
+              <Collegamento onClick={() => navigate("/customerservice?category=Size Chart")}>
+                {t('footer.sizeChart')}
+              </Collegamento>
+            </GtaRegular>
 
-
-      <RowContainer>
-        <ColumnLogo>
-        
-        <Logo
-          onClick={() => navigate("/")}
-          sx={{ "&:hover": { cursor: "pointer" } }}
-          color={shades.secondary[500]}
-
-        >
-          <ImmagineLogo src={logo}/>
-        </Logo>
-        
-        </ColumnLogo>
-
-        <Column>
-          <GtaRegular>CUSTOMER SERVICE</GtaRegular>
-          
-          <GtaRegular>
-            <Collegamento onClick={() => navigate("/customerservice?category=Our Services")}>
-              Our Services
+          </Column>
+    
+          <Column>
+            <GtaRegular>{t('footer.contact')}</GtaRegular>
+            <GtaRegular>
+              <Collegamento onClick={() => navigate("/contactus")}>
+                {t('footer.contact2')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>
+              <Collegamento href="/boutiques#Book">
+                {t('footer.bookAnAppointment')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>
+              <Collegamento href="/boutiques">
+                {t('footer.boutiques')}
+              </Collegamento>
+            </GtaRegular>
+          </Column>
+    
+          <ColumnSocial>
+            <GtaRegular>{t('footer.social')}</GtaRegular>
+            <GtaRegular>
+              <Collegamento href="https://www.instagram.com/cusimontenapoleone/">
+                {t('footer.instagram')}
+              </Collegamento>
+            </GtaRegular>
+          </ColumnSocial>
+    
+          <LastColumn>
+            <GtaRegular>{t('footer.signUpToOurNewsletter')}</GtaRegular>
+            <GtaRegular>{t('footer.beTheFirstToHear')}</GtaRegular>
+            <form onSubmit={handleSubmit}>
+              <SubscribeContainer>
+                <TextBox
+                  type="email"
+                  name="email"
+                  placeholder={t('footer.yourEmail')}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <SubscribeButton type="submit">{t('footer.subscribe')}</SubscribeButton>
+              </SubscribeContainer>
+            </form>
+          </LastColumn>
+        </RowContainer>
+    
+        <RowContainer>
+          <ColumnMobile>
+            <GtaRegular>{t('footer.social')}</GtaRegular>
+            <GtaRegular>
+              <Collegamento href="https://www.instagram.com/cusimontenapoleone/">
+                {t('footer.instagram')}
+              </Collegamento>
+            </GtaRegular>
+            <GtaRegular>{t('footer.facebook')}</GtaRegular>
+          </ColumnMobile>
+        </RowContainer>
+    
+        <CopyrightContainer>
+          <GtaRegular>{t('footer.copyright')}</GtaRegular>
+          <DivLingua>
+            <Collegamento onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>
+              <GtaRegular>{t('footer.privacyPolicy')}</GtaRegular>
             </Collegamento>
-          </GtaRegular>
-
-          <GtaRegular>
-            <Collegamento onClick={() => navigate("/customerservice?category=Product Care")}>
-              Product Care
+            <Collegamento id="cookiePolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
+              <GtaRegular>{t('footer.cookiePolicy')}</GtaRegular>
             </Collegamento>
-          </GtaRegular>
-
-          <GtaRegular>
-            <Collegamento onClick={() => navigate("/customerservice?category=Shipping")}>
-              Shipping & Returns
-            </Collegamento>
-          </GtaRegular>
-
-          <GtaRegular>
-            <Collegamento onClick={() => navigate("/customerservice?category=Size Chart")}>
-              Size Chart
-            </Collegamento>
-          </GtaRegular>
-
-          <GtaRegular>
-            <Collegamento onClick={() => navigate("/customerservice?category=FAQ")}>
-              FAQ
-            </Collegamento>
-          </GtaRegular>
-        
-        </Column>
-        <Column>
-         <GtaRegular>CONTACT</GtaRegular>
-
-         <GtaRegular><Collegamento  onClick={() => navigate("/contactus")}>Contact Us</Collegamento></GtaRegular>
-
-         <GtaRegular>
-          <Collegamento href="/boutiques#Book">
-            Book An Appointment
-          </Collegamento>
-        </GtaRegular>
-
-        <GtaRegular>
-          <Collegamento href="/boutiques" >
-
-              Boutiques
-
-
-          </Collegamento>
-        </GtaRegular>
-        
-        </Column>
-        <ColumnSocial>
-        
-          <GtaRegular>SOCIAL</GtaRegular>
-          
-          <GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular>
-
-          
-        </ColumnSocial>
-
-        <LastColumn>
-
-
-
-        <GtaRegular>SIGN UP TO OUR NEWSLATTER</GtaRegular> <GtaRegular>Be the first to hear about new arrivals from our extraordinary and other news from the world of Cusi.</GtaRegular>
-        
-
-
-        <form onSubmit={handleSubmit}>
-        <SubscribeContainer>
-          <TextBox
-            type="email"
-            name="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <SubscribeButton type="submit">SUBSCRIBE</SubscribeButton>
-        </SubscribeContainer>
-        </form>
-        
-        </LastColumn>
-        
-      </RowContainer>
-      
-      <RowContainer>
-      <ColumnMobile><GtaRegular>SOCIAL</GtaRegular><GtaRegular><Collegamento href="https://www.instagram.com/cusimontenapoleone/">Instagram</Collegamento></GtaRegular><GtaRegular>Facebook</GtaRegular></ColumnMobile>
-
-      </RowContainer>
-      
-
-      
-      <CopyrightContainer>
-        <GtaRegular>Copyright © 2024 Your Company. All rights reserved.         
-
-        </GtaRegular>
-
-
-        <DivLingua>
-
-
-
-        <Collegamento onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>
-          <GtaRegular>Privacy Policy</GtaRegular>
-        </Collegamento>
-
-
-        <Collegamento id="cookiePolicyLink" style={{ textDecoration: 'none', color: 'black' }}>
-          <GtaRegular>Cookie Policy</GtaRegular>
-        </Collegamento>
-
-
-          <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-
-
-
-
-
-
-      
-          <div>
-          <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
-        {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegular2>EN</GtaRegular2></Option>}
-        {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegular2>IT</GtaRegular2></Option>}
-      </FilterOptionsBox>
-      <CustomButton onClick={handleFilterClick2} >
-        <GtaRegular2>{selectedLanguage}</GtaRegular2>
-        <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
-      </CustomButton>
-
-        </div>
-
-
-
-
-
-        </DivLingua>
-
-
-
-
-
-
-
-
-
-      </CopyrightContainer>
-      
-
-      <CopyrightContainerMobile>
-
-
-
-      <DivLinguaMobile2>
-      <GtaRegularLegalPol onClick={() => navigate("/legal")}>Legal</GtaRegularLegalPol>
-
-
-      <GtaRegularLegalPol onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>Privacy Policy</GtaRegularLegalPol>
-
-
-      <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>Cookie Policy</GtaRegularLegalPol>
-
-
-      <div>
-          <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
-        {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegularLegalPol>EN</GtaRegularLegalPol></Option>}
-        {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegularLegalPol>IT</GtaRegularLegalPol></Option>}
-      </FilterOptionsBox>
-      
-      <CustomButton2 onClick={handleFilterClick2} >
-        <GtaRegularLegalPol>{selectedLanguage}</GtaRegularLegalPol>
-        <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
-      </CustomButton2>
-
-        </div>
-
-
-      </DivLinguaMobile2>
-
-
-
-      <GtaRegularCopy>© 2024 Cusi. All rights reserved </GtaRegularCopy>
-        
-
-
- 
-      
-      
-
-
-
-
-
-
-
-      
-
-      </CopyrightContainerMobile>
-      
-    </Container>
-  );
+            <GtaRegularLegalPol onClick={() => navigate("/legal")}>{t('footer.legal')}</GtaRegularLegalPol>
+            <div>
+              <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
+                {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegular2>EN</GtaRegular2></Option>}
+                {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegular2>IT</GtaRegular2></Option>}
+              </FilterOptionsBox>
+              <CustomButton onClick={handleFilterClick2}>
+                <GtaRegular2>{selectedLanguage}</GtaRegular2>
+                <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
+              </CustomButton>
+            </div>
+          </DivLingua>
+        </CopyrightContainer>
+    
+        <CopyrightContainerMobile>
+          <DivLinguaMobile2>
+            <GtaRegularLegalPol onClick={() => navigate("/legal")}>{t('footer.legal')}</GtaRegularLegalPol>
+            <GtaRegularLegalPol onClick={() => navigate("/legal?item=privacy_policy")} style={{ textDecoration: 'none', color: 'black' }}>{t('footer.privacyPolicy')}</GtaRegularLegalPol>
+            <GtaRegularLegalPol id="cookiePolicyLinkMobile" style={{ textDecoration: 'none', color: 'black' }}>{t('footer.cookiePolicy')}</GtaRegularLegalPol>
+            <div>
+              <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
+                {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegularLegalPol>EN</GtaRegularLegalPol></Option>}
+                {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegularLegalPol>IT</GtaRegularLegalPol></Option>}
+              </FilterOptionsBox>
+              <CustomButton2 onClick={handleFilterClick2}>
+                <GtaRegularLegalPol>{selectedLanguage}</GtaRegularLegalPol>
+                <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
+              </CustomButton2>
+            </div>
+          </DivLinguaMobile2>
+          <GtaRegularCopy>© 2024 Cusi. All rights reserved</GtaRegularCopy>
+        </CopyrightContainerMobile>
+      </Container>
+    );
 }
 
 export default Footer;

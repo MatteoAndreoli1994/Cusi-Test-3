@@ -34,5 +34,35 @@
     "shopNecklaces": "ACQUISTA COLLANE",
     "uniqueLuxuryRings": "Anelli di Lusso Unici<br> con Eleganza Rara.",
     "shopRings": "ACQUISTA ANELLI"
-  }
+  },
+"footer": {
+  "signUpToOurNewsletter": "ISCRIVITI ALLA NOSTRA NEWSLETTER",
+  "beTheFirstToHear": "Scopri i nuovi arrivi e altre straordinarie novità dal mondo di Cusi.",
+  "customerService": "SERVIZIO CLIENTI",
+  "ourServices": "I Nostri Servizi",
+  "productCare": "Cura del Prodotto",
+  "shippingReturns": "Spedizione e Resi",
+  "sizeChart": "Tabella delle Taglie",
+  "faq": "Domande frequenti",
+  "subscribe": "ISCRIVITI",
+  "yourEmail": "La tua e-mail",
+  "contact": "CONTATTACI",
+  "contact2": "Contattaci",
+  "bookAnAppointment": "Prenota un Appuntamento",
+  "boutiques": "Boutiques",
+  "social": "SOCIAL",
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+  "copyright": "Copyright © 2024 CUSI. Tutti i diritti riservati.",
+  "privacyPolicy": "Privacy Policy",
+  "cookiePolicy": "Cookie Policy",
+  "legal": "Note Legali"
+}
+
+
+
+
+
+
+
 }
