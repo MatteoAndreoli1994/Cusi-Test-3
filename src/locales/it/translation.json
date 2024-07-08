@@ -1,20 +1,38 @@
 {
-    "home": {
-      "iconicCollections": "Le nostre collezioni iconiche",
-      "fleurie": "Fleurie",
-      "shopFleurie": "Acquista Fleurie",
-      "zingara": "Zingara",
-      "shopZingara": "Acquista Zingara",
-      "ourIconicCollections": "Le nostre collezioni iconiche",
-      "meetingTraditionInnovation": "Un incontro tra tradizione e innovazione per vere opere d'arte da indossare",
-      "madreperla": "Madreperla",
-      "eleganceShiningHarmony": "Eleganza e armonia luminosa",
-      "discoverEarrings": "Scopri gli orecchini",
-      "uraniaNecklace": "Collana Urania",
-      "shopNow": "Compra ora",
-      "comeVisitUs": "Vieni a trovarci",
-      "welcomeYou": "Saremmo lieti di accoglierti per farti scoprire e provare le tue creazioni preferite.",
-      "bookAnAppointment": "Prenota un appuntamento"
-    }
+  "home": {
+    "iconicCollections": "Collezioni iconiche",
+    "fleurie": "Fleurie",
+    "fleurieDescrizioni": "Pietre preziose, tagli raffinati, incarnano l'eleganza",
+    "shopFleurie": "ACQUISTA FLEURIE",
+    "zingaraDescrizioni": "La purezza dell'oro e la finitura martellata in un'affascinante gioco di luce e movimento",
+    "zingara": "Zingara",
+    "shopZingara": "ACQUISTA ZINGARA",
+    "ourIconicCollections": "Collezioni iconiche",
+    "meetingTraditionInnovation": "Un incontro tra tradizione e innovazione, incredibili opere d'arte da indossare",
+    "madreperla": "Madreperla",
+    "eleganceShiningHarmony": "Eleganza e brillante armonia",
+    "discoverEarrings": "SCOPRI",
+    "uraniaNecklace": "Collana Urania",
+    "uraniaDescrizione": "Collana d'oro giallo",
+    "shopNow": "SCOPRI",
+    "comeVisitUs": "Vieni a trovarci",
+    "welcomeYou": "Saremo lieti di accoglierti per farti scoprire e provare le nostre creazioni preferite.",
+    "bookAnAppointment": "PRENOTA UN APPUNTAMENTO"
+  },
+  "shoppinglist": {
+    "earrings": "ORECCHINI",
+    "bracelets": "BRACCIALETTI",
+    "necklaces": "COLLANE",
+    "rings": "ANELLI",
+    "curatedPieces": "Selezione Esclusiva",
+    "soonToBeStaples": "Scopri le nostre preziose creazioni",
+    "artisanalGoldEarrings": "Orecchini in Oro Artigianali,<br> Unicamente Realizzati.",
+    "shopEarrings": "ACQUISTA ORECCHINI",
+    "handcraftedGoldBracelets": "Braccialetti dalle <br> eleganti forme uniche",
+    "shopBracelets": "ACQUISTA BRACCIALETTI",
+    "rareDiamondsGemstones": "Diamanti e Pietre Preziose <br> con Montature Uniche.",
+    "shopNecklaces": "ACQUISTA COLLANE",
+    "uniqueLuxuryRings": "Anelli di Lusso Unici<br> con Eleganza Rara.",
+    "shopRings": "ACQUISTA ANELLI"
   }
-  
+}

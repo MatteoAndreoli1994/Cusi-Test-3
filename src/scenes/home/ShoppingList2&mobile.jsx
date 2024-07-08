@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
+import { useTranslation } from 'react-i18next';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import LazyLoad from 'react-lazyload';
@@ -358,6 +359,8 @@ font-size: 16px;
 margin-bottom: 3%;
 margin-top:0.8%;
 text-align: center;
+max-width:80%;
+
 
 
 
@@ -375,11 +378,15 @@ font-size: 13px;
 }
 
 @media(max-width: 680px){
-  font-size: 11px;
-  }
-  @media(max-width: 350px){
-    font-size: 9px;
-    }
+  font-size: 10px;
+}
+  @media(max-width: 400px){
+  font-size: 9px;
+}
+
+@media(max-width: 350px){
+  font-size: 7.5px;
+}
 
 
 `;
@@ -428,7 +435,7 @@ font-size: 13px;
   }
 
 @media(max-width: 414px){
-  font-size: 11.5px;
+  font-size: 11px;
   }
   @media(max-width: 350px){
     font-size: 11px;
@@ -604,7 +611,7 @@ const ShoppingList = () => {
   };
    
 
-
+  const { t } = useTranslation();
 
 
 
@@ -613,9 +620,10 @@ const ShoppingList = () => {
 
     >
       <ABC  textAlign="center">
-        Curated Pieces
+      {t('shoppinglist.curatedPieces')}
       </ABC>
-      <Gta>Soon-to-be staples in your rotation</Gta>
+      <Gta> {t('shoppinglist.soonToBeStaples')}</Gta>
+      
 
 
 
@@ -626,7 +634,7 @@ const ShoppingList = () => {
           selected={value === 'earrings'}
           onClick={(event) => handleChange(event, 'earrings')}
         >
-         <GtaRegular>EARRINGS</GtaRegular> 
+         <GtaRegular>{t('shoppinglist.earrings')}</GtaRegular> 
         </ButtonCarousel>
 
         <ButtonCarousel
@@ -635,7 +643,7 @@ const ShoppingList = () => {
           selected={value === 'bracelets'}
           onClick={(event) => handleChange(event, 'bracelets')}
         >
-          <GtaRegular>BRACELETS</GtaRegular> 
+          <GtaRegular>{t('shoppinglist.bracelets')}</GtaRegular> 
         </ButtonCarousel>
 
         <ButtonCarousel
@@ -644,7 +652,7 @@ const ShoppingList = () => {
           selected={value === 'necklaces'}
           onClick={(event) => handleChange(event, 'necklaces')}
         >
-         <GtaRegular>NECKLACES</GtaRegular> 
+         <GtaRegular>{t('shoppinglist.necklaces')}</GtaRegular> 
         </ButtonCarousel>
 
         <ButtonCarousel
@@ -653,7 +661,7 @@ const ShoppingList = () => {
           selected={value === 'rings'}
           onClick={(event) => handleChange(event, 'rings')}
         >
-         <GtaRegular>RINGS</GtaRegular> 
+         <GtaRegular>{t('shoppinglist.rings')}</GtaRegular> 
         </ButtonCarousel>
 
     </DivFilter>
@@ -684,8 +692,8 @@ const ShoppingList = () => {
 
 
                   {/* Aggiungi il tuo div qui */}
-                  <Info><GtaRegularShadow> Artisanal Gold Earrings, <br></br>Uniquely Crafted. </GtaRegularShadow></Info>
-                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP EARRINGS </GtaRegular2></ShopButton>
+                  <Info> <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.artisanalGoldEarrings') }} /></Info>
+                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> {t('shoppinglist.shopEarrings')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </DivImmagineCategoria2>
@@ -737,8 +745,8 @@ const ShoppingList = () => {
 
 
                 {/* Aggiungi il tuo div qui */}
-                <Info><GtaRegularShadow> Handcrafted Gold Bracelets  <br></br>with Timeless Elegance.</GtaRegularShadow></Info>
-                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP BRACELETS </GtaRegular2></ShopButton>
+                <Info><GtaRegularShadow>     <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.handcraftedGoldBracelets') }} /></GtaRegularShadow></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> {t('shoppinglist.shopBracelets')} </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </LazyLoad>  
@@ -797,8 +805,8 @@ const ShoppingList = () => {
 
 
                 {/* Aggiungi il tuo div qui */}
-                <Info><GtaRegularShadow> Rare diamonds & gemstones <br></br>with  unique settings. </GtaRegularShadow></Info>
-                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP NECKLACES </GtaRegular2></ShopButton>
+                <Info>    <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.rareDiamondsGemstones') }} /></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> {t('shoppinglist.shopNecklaces')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </LazyLoad>  
@@ -856,8 +864,8 @@ const ShoppingList = () => {
 
 
                 {/* Aggiungi il tuo div qui */}
-                <Info><GtaRegularShadow> Unique Luxury Rings <br></br>with Rare Elegance. </GtaRegularShadow></Info>
-                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> SHOP RINGS </GtaRegular2></ShopButton>
+                <Info> <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.uniqueLuxuryRings') }} /></Info>
+                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}>  {t('shoppinglist.shopRings')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </LazyLoad>  

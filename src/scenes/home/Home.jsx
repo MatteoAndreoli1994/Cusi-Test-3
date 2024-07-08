@@ -858,7 +858,7 @@ const Home = () => {
     {/* Iconic collection */}
         <IconicCollectionDiv>
           <ABC>{t('home.iconicCollections')}</ABC>
-          <GtaTitle>A meeting between tradition and innovation for real works of art to wear</GtaTitle>
+          <GtaTitle>{t('home.meetingTraditionInnovation')}</GtaTitle>
           <CollectionDivBig>
             <Collection1DivIconic>
 
@@ -866,13 +866,13 @@ const Home = () => {
             <Immagine src={Modella2}   effect="blur"/>
 
             <ABC24>Fleurie</ABC24>
-            <Gta>Exquisite gemstones and refined cuts, embodying elegance and sophistication</Gta>
+            <Gta>{t('home.fleurieDescrizioni')}</Gta>
 
             
           </Collection1DivIconic>
 
             <Collection1DivIconic2Mobile>
-              <GtaRegularFleurie><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegularFleurie>
+              <GtaRegularFleurie><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>{t('home.shopFleurie')}</HyperLink></GtaRegularFleurie>
             </Collection1DivIconic2Mobile>
             <MarginDiv></MarginDiv>
 
@@ -880,7 +880,7 @@ const Home = () => {
             
             <Immagine src={Modella3} effect="blur"/>
             <ABC24>Zingara</ABC24>
-            <Gta>Gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
+            <Gta>{t('home.zingaraDescrizioni')}
             </Gta>
 
             </Collection2DivIconic>
@@ -890,13 +890,13 @@ const Home = () => {
           <CollectionDiv>
             <Collection1DivIconic2>
               <Collection1DivIconic2_2>
-             <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>SHOP FLEURIE</HyperLink></GtaRegular>
+             <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>{t('home.shopFleurie')}</HyperLink></GtaRegular>
              </Collection1DivIconic2_2>
             </Collection1DivIconic2>
 
             <Collection2DivIconic>
             <Collection2DivIconic_2>
-              <GtaRegularMobile2><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >SHOP ZINGARA</HyperLink></GtaRegularMobile2>
+              <GtaRegularMobile2><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >{t('home.shopZingara')}</HyperLink></GtaRegularMobile2>
               </Collection2DivIconic_2>
             </Collection2DivIconic>
 
@@ -922,11 +922,11 @@ const Home = () => {
 
             <ABC24DUE>Madreperla</ABC24DUE>
 
-            <Gta>Elegance and shining harmony
+            <Gta>{t('home.eleganceShiningHarmony')}
             </Gta>
 
 
-            <GtaRegularMobile2><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >DISCOVER EARRINGS</HyperLink></GtaRegularMobile2>
+            <GtaRegularMobile2><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >{t('home.discoverEarrings')}</HyperLink></GtaRegularMobile2>
             </Collection2Div>
 
           </CollectionDiv>
@@ -945,11 +945,11 @@ const Home = () => {
         <Collection3Div>
         
         <Immagine2 src={SelectedItem1White}/>
-        <ABC24DUE> Urania Necklace</ABC24DUE>
-        <GtaDescription3>Yellow Gold Necklace <br/>
+        <ABC24DUE> {t('home.uraniaNecklace')}</ABC24DUE>
+        <GtaDescription3> {t('home.uraniaDescrizione')} <br/>
         18 ct Urania.
         </GtaDescription3>
-        <GtaRegular><HyperLink  onClick={ handleShopClickUrania} style={{ cursor: 'pointer' }} >SHOP NOW</HyperLink></GtaRegular>
+        <GtaRegular><HyperLink  onClick={ handleShopClickUrania} style={{ cursor: 'pointer' }} >{t('home.shopNow')}</HyperLink></GtaRegular>
 
         </Collection3Div>
 
@@ -971,19 +971,18 @@ const Home = () => {
       <CollectionDivAbout>
       <Collection1Div>
           <ImmagineMaison src={Maison}/>
-          <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >BOOK AN APPOINTMENT</HyperLink></GtaRegular14grayMobile>
+          <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14grayMobile>
 
         </Collection1Div>
 
         <Collection2Div2>
         
           <Text>
-          <ABC>Come visit us</ABC>
-          <GtaLeft>We would be delighted to welcome you so that 
-          you may discover and try on your favorite creations.
+          <ABC>{t('home.comeVisitUs')}</ABC>
+          <GtaLeft>{t('home.welcomeYou')}
           </GtaLeft>
 
-          <GtaRegular14gray><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >BOOK AN APPOINTMENT</HyperLink></GtaRegular14gray>
+          <GtaRegular14gray><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14gray>
           </Text>
         </Collection2Div2>
 

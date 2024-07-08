@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'; // Se usi React Router
 import Newsletter from "@strapi-newsletter/react";
 import { subscribeUser } from "@strapi-newsletter/react";
 import SortImage from "../../assets/down.png";
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedLanguage } from '../../state/languageSlice';
 
 
 
@@ -546,7 +548,7 @@ const SortImage2 = styled.img`
 const Option = styled.div`
 position: absolute;
 bottom:15px;
-margin-left:3%;
+margin-left:13%;
   cursor: pointer;
 
   &:hover {
@@ -746,7 +748,7 @@ function Footer() {
 
     const navigate = useNavigate();
 
-    const [selectedLanguage, setSelectedLanguage] = useState("English");
+    const [selectedLanguage, setSelectedLanguage] = useState("IT");
 
     const changeLanguage = (language) => {
       setSelectedLanguage(language);
@@ -758,9 +760,11 @@ function Footer() {
       setShowFilterOptions(!showFilterOptions);
     };
     const filterOptionsRef = useRef(null);
+
     const handleLanguageChange = (language) => {
       setSelectedLanguage(language);
       setShowFilterOptions(false);
+      
     };
   
 
@@ -933,8 +937,8 @@ function Footer() {
       
           <div>
           <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
-        {selectedLanguage !== "English" && <Option onClick={() => handleLanguageChange('English')}><GtaRegular2>English</GtaRegular2></Option>}
-        {selectedLanguage !== "Italiano" && <Option onClick={() => handleLanguageChange('Italiano')}><GtaRegular2>Italiano</GtaRegular2></Option>}
+        {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegular2>EN</GtaRegular2></Option>}
+        {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegular2>IT</GtaRegular2></Option>}
       </FilterOptionsBox>
       <CustomButton onClick={handleFilterClick2} >
         <GtaRegular2>{selectedLanguage}</GtaRegular2>
@@ -976,8 +980,8 @@ function Footer() {
 
       <div>
           <FilterOptionsBox ref={filterOptionsRef} show={showFilterOptions}>
-        {selectedLanguage !== "English" && <Option onClick={() => handleLanguageChange('English')}><GtaRegularLegalPol>English</GtaRegularLegalPol></Option>}
-        {selectedLanguage !== "Italiano" && <Option onClick={() => handleLanguageChange('Italiano')}><GtaRegularLegalPol>Italiano</GtaRegularLegalPol></Option>}
+        {selectedLanguage !== "EN" && <Option onClick={() => handleLanguageChange('EN')}><GtaRegularLegalPol>EN</GtaRegularLegalPol></Option>}
+        {selectedLanguage !== "IT" && <Option onClick={() => handleLanguageChange('IT')}><GtaRegularLegalPol>IT</GtaRegularLegalPol></Option>}
       </FilterOptionsBox>
       
       <CustomButton2 onClick={handleFilterClick2} >

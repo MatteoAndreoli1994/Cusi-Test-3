@@ -16,6 +16,7 @@ import earringsCategory from "../../assets/earringsCategory2.avif";
 
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
+import { useTranslation } from 'react-i18next';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -31,6 +32,7 @@ const ShoppingList = () => {
   };
 
   async function getItems() {
+    const { t } = useTranslation();
     const items = await fetch(
       "https://cusi-strapi-3690cb0bf021.herokuapp.com/api/items?populate=image",
       { method: "GET" }
@@ -529,7 +531,7 @@ z-index: 1; // Imposta un indice z superiore rispetto al ContenitoreDeiProdotti
           selected={value === 'earrings'}
           onClick={(event) => handleChange(event, 'earrings')}
         >
-         <GtaRegular>EARRINGS</GtaRegular> 
+         <GtaRegular>{t('earrings')}</GtaRegular> 
         </ButtonCarousel>
 
         <ButtonCarousel
