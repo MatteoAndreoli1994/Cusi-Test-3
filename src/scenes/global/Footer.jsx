@@ -335,8 +335,39 @@ const TextBox = styled.input`
   
 `;
 
-const SubscribeButton = styled.button`
+const SubscribeButton = styled.div`
+  background-color: white;
 
+  border: 1px solid #000;
+  width:40%;
+  cursor: pointer;
+
+  margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
+
+  @media(max-width:1200px){
+    font-size: 11px;
+
+  }
+
+  @media(max-width:900px){
+
+    margin-top:1.5%;
+
+  }
+
+  @media(max-width:680px){
+
+    margin-top:1.5%;
+    
+  }
+
+      @media(max-width: 360px){
+    padding: 8px;
+
+
+
+  
+  }
   
 `;
 
