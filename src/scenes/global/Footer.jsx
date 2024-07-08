@@ -364,7 +364,7 @@ text-align:center;
   }
 
       @media(max-width: 360px){
-    padding: 8px;
+
 
 
 
@@ -398,14 +398,29 @@ font-size: 16px;
 color:white;
 
     @media(max-width:1200px){
-    font-size: 11px;
+    font-size: 14px;
 
   }
 
+
+
+
+`;
+const GtaRegularSubscribeMobile = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+color:white;
+
+    @media(max-width:1200px){
+    font-size: 14px;
+  margin-left:30px;
+    margin-right:30px;
+  }
+
   @media(max-width:900px){
-    font-size: 12px;
+    font-size: 10px;
 
-
+    color:blue;
   }
 
   @media(max-width:680px){
@@ -821,7 +836,7 @@ function Footer() {
               />
               <SubscribeButton type="submit"><GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe></SubscribeButton>
             </SubscribeContainer>
-            <GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe>
+
           </form>
         </LastColumnMobile>
     
@@ -902,7 +917,7 @@ function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <SubscribeButton type="submit"><GtaRegularSubscribe>{t('footer.subscribe')}</GtaRegularSubscribe></SubscribeButton>
+           <SubscribeButton type="submit"><GtaRegularSubscribeMobile>{t('footer.subscribe')}</GtaRegularSubscribeMobile></SubscribeButton>
               </SubscribeContainer>
             </form>
           </LastColumn>
