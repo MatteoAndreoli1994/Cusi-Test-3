@@ -338,7 +338,7 @@ const TextBox = styled.input`
 const SubscribeButton = styled.button`
   background-color: black;
   color: white;
-  
+  font-family: 'GTAmericaRegular';
   border: 1px solid #000;
   width:40%;
   cursor: pointer;
@@ -925,7 +925,7 @@ function Footer() {
               </CustomButton2>
             </div>
           </DivLinguaMobile2>
-          <GtaRegularCopy>© 2024 Cusi. All rights reserved</GtaRegularCopy>
+          <GtaRegularCopy>{t('footer.copyright2')}</GtaRegularCopy>
         </CopyrightContainerMobile>
       </Container>
     );
