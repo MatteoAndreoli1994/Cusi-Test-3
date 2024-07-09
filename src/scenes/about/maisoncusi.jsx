@@ -729,7 +729,9 @@ return (
             <DivInfo>
               <ABC24Sinistra>1895-1979</ABC24Sinistra>
               <ABC24Sinistra>{t('story.rinaldoCusiTitle')}</ABC24Sinistra>
-              <DescriptionSinistra>{t('story.rinaldoCusiDescription')}</DescriptionSinistra>
+              <DescriptionSinistra               dangerouslySetInnerHTML={{
+                __html: t('story.rinaldoCusiDescription').replace(/\n/g, '<br />'),
+              }}/>
             </DivInfo>
             <DivImmagine>
               <RinaldoCusiImg src={RinaldoCusi} effect="blur" />
