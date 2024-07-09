@@ -378,14 +378,14 @@ font-size: 13px;
 }
 
 @media(max-width: 680px){
-  font-size: 10px;
+  font-size: 12px;
 }
   @media(max-width: 400px){
-  font-size: 9px;
+  font-size: 10px;
 }
 
 @media(max-width: 350px){
-  font-size: 7.5px;
+  font-size: 9px;
 }
 
 

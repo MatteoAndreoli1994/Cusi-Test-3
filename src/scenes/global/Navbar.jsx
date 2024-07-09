@@ -1,28 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Badge, Box, IconButton, Typography } from "@mui/material";
-import {
-  PersonOutline,
-  ShoppingBagOutlined,
-  MenuOutlined,
-  SearchOutlined,
-} from "@mui/icons-material";
+import { Badge, Box, IconButton } from "@mui/material";
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import logo from '../../assets/logo.png';
-import anelloimage from '../../assets/anello 1.jpg';
+
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
-import menu from '../../assets/Menu.png';
+
 import { debounce } from 'lodash'; // Importa la funzione debounce da lodash
 
-import anello_navbar from '../../assets/anello_navbar.jpg';
 import braccialetto_navbar from '../../assets/braccialetto_navbar2.jpg';
 import collana_navbar from '../../assets/collana_navbar.jpg';
 import collana2_navbar from '../../assets/collana2_navbar.jpg';
-import orecchini_navbar from '../../assets/orecchini_navbar.jpg';
 import maison_navbar from '../../assets/maison2.jpg';
 import { setItems } from "../../state";
 import ItemSearch from "../../components/ItemSearch";
@@ -962,7 +955,7 @@ useEffect(() => {
 
 
 
-
+  const { t } = useTranslation();
 
   return (
     <>
@@ -979,7 +972,7 @@ useEffect(() => {
           <ContainerFiltri>
 
           <FilterButton onClick={handleShowShopInfo}>
-            <FilterButtonText>Shop</FilterButtonText>
+            <FilterButtonText>{t('navbar.shop')}</FilterButtonText>
             <FilterSign>
               {showShopInfo ? (
                 <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
@@ -1123,17 +1116,17 @@ useEffect(() => {
                 
             <li  onMouseEnter={() => { setIsHoveredSearch(false); setIsHovered(true); setIsHoveredCollections(false); setIsHoveredAbout(false);}}>    
                 <Typography2 >
-                    Shop
+                {t('navbar.shop')}
                 </Typography2>
             </li>
             <li onMouseEnter={() => { setIsHoveredSearch(false); setIsHoveredCollections(true); setIsHovered(false); setIsHoveredAbout(false);}}>    
                 <Typography2 >
-                    Collections
+                {t('navbar.collections')}
                 </Typography2>
             </li>
             <li onMouseEnter={() => {setIsHoveredSearch(false); setIsHoveredAbout(true); setIsHoveredCollections(false); setIsHovered(false); } }>    
                 <Typography2 >
-                    About
+                {t('navbar.about')}
                 </Typography2>
             </li>
             </Ul>     
@@ -1256,19 +1249,19 @@ useEffect(() => {
       <MenuContent>
         <MenuItem>
         <DivCategoriaProdotti>
-        <Typography2>HIGH JEWELLEY</Typography2> 
+        <Typography2>{t('navbar.highjewellery')}</Typography2> 
         </DivCategoriaProdotti>
 
-       <Typography3 onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</Typography3> 
-       <Typography3 onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>Earrings</Typography3> 
-       <Typography3 onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</Typography3> 
-       <Typography3 onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</Typography3> 
+       <Typography3 onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>    {t('navbar.bracelets')}</Typography3> 
+       <Typography3 onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>    {t('navbar.earrings')}</Typography3> 
+       <Typography3 onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>    {t('navbar.necklaces')}</Typography3> 
+       <Typography3 onClick={handleShopClick} style={{ cursor: 'pointer' }}>    {t('navbar.rings')}</Typography3> 
         </MenuItem>
 
 
         <MenuItem>
         <DivCategoriaProdotti>
-        <Typography2>FINE OBJECTS</Typography2>
+        <Typography2>{t('navbar.fineobject')}</Typography2>
         </DivCategoriaProdotti>
         <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</Typography3> 
         <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</Typography3> 
@@ -1278,7 +1271,7 @@ useEffect(() => {
         </MenuItem>
         <MenuItem>
         <DivCategoriaProdotti>
-        <Typography2>GIFTS</Typography2>
+        <Typography2>{t('navbar.gifts')}</Typography2>
         </DivCategoriaProdotti>
         <Typography3>For Her</Typography3> 
         <Typography3>For Him</Typography3> 

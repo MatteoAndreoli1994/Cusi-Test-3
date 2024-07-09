@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Modella from "../../assets/modella1.avif";
 import LazyLoad from 'react-lazyload';
 import Footer from "../global/Footer"
-
+import { useTranslation } from 'react-i18next';
 const Container = styled.div`
   display: flex;
   margin-top: 120px;
@@ -197,6 +197,7 @@ transition: opacity 3s ease-in-out;
 `;
 
 const ContactUs = () => {
+  const { t } = useTranslation();
   const [loaded, setLoaded] = React.useState(false);
   const handleContentLoad = () => {
     setLoaded(true);
@@ -204,57 +205,52 @@ const ContactUs = () => {
 
   return (
     <LazyLoad once>
-    <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-    <Container>
-      <ABC>Contact Us</ABC>
-      <GtaLight>Our personal advisors are available to answer any questions from Monday to Friday from 9 am to 7 pm and on Saturdays from 9 am to 5 pm.</GtaLight>
-      <ContactSection>
-        
-        <ModelImage>
-          <img src={Modella} alt="Model" />
-        </ModelImage>
-
-        <InfoSection>
-          <ContactInfo>
-            <DivCustomerService>
-              <Box><GtaLightRegular> CUSTOMER SERVICE </GtaLightRegular></Box>
-              <Box>
-                <GtaLightLightInfo>gioielleriacusiecommerce@gmail.com</GtaLightLightInfo>
-                <GtaLightLightInfo>(+39) 0266019768</GtaLightLightInfo>
-              </Box>
-            </DivCustomerService>
-            <DivCustomerService>
-              <Box><GtaLightRegular> PRESS INQUIRES </GtaLightRegular></Box>
-              <Box>
-                <GtaLightLightInfo>gioielleriacusiecommerce@gmail.com</GtaLightLightInfo>
-                <GtaLightLightInfo>(+39) 0266019768</GtaLightLightInfo>
-              </Box>
-            </DivCustomerService>
-            <DivCustomerService>
-              <Box><GtaLightRegular> BOOK AN APPOINTMENT </GtaLightRegular></Box>
-              <Box>
-               <GtaLightRegular> Cusi Milano </GtaLightRegular>
-               <GtaLightLightInfo>(+39) 0266019768</GtaLightLightInfo>
-               <GtaLightRegular style={{ marginTop: '15px' }}> Cusi Portofino </GtaLightRegular>
-               <GtaLightLightInfo>(+39) 0266019768</GtaLightLightInfo>
-               <GtaLightLightInfo style={{ marginTop: '15px' }}> Click here to book an appointment online </GtaLightLightInfo>
-
-              </Box>
-            </DivCustomerService>
-            <DivCustomerService>
-              <Box><GtaLightRegular> LIVE CHAT </GtaLightRegular></Box> <Box><GtaLightLightInfo>Click here to talk in real time to an expert</GtaLightLightInfo></Box>
-            </DivCustomerService>
-            {/* Aggiungi altre informazioni come indirizzi dei negozi fisici, orari di apertura, ecc. */}
-          </ContactInfo>
-        </InfoSection>
-      </ContactSection>
-    </Container>
-
-
-    <Footer/>
-
-    </LazyLoadWrapper>
-      </LazyLoad>
+      <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+        <Container>
+          <ABC>{t('contactus.contactUs')}</ABC>
+          <GtaLight>{t('contactus.availability')}</GtaLight>
+          <ContactSection>
+            <ModelImage>
+              <img src={Modella} alt="Model" />
+            </ModelImage>
+            <InfoSection>
+              <ContactInfo>
+                <DivCustomerService>
+                  <Box><GtaLightRegular>{t('contactus.customerService')}</GtaLightRegular></Box>
+                  <Box>
+                    <GtaLightLightInfo>{t('contactus.email')}</GtaLightLightInfo>
+                    <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
+                  </Box>
+                </DivCustomerService>
+                <DivCustomerService>
+                  <Box><GtaLightRegular>{t('contactus.pressInquiries')}</GtaLightRegular></Box>
+                  <Box>
+                    <GtaLightLightInfo>{t('contactus.email')}</GtaLightLightInfo>
+                    <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
+                  </Box>
+                </DivCustomerService>
+                <DivCustomerService>
+                  <Box><GtaLightRegular>{t('contactus.bookAppointment')}</GtaLightRegular></Box>
+                  <Box>
+                    <GtaLightRegular>{t('contactus.cusiMilano')}</GtaLightRegular>
+                    <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
+                    <GtaLightRegular style={{ marginTop: '15px' }}>{t('contactus.cusiPortofino')}</GtaLightRegular>
+                    <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
+                    <GtaLightLightInfo style={{ marginTop: '15px' }}>{t('contactus.bookOnline')}</GtaLightLightInfo>
+                  </Box>
+                </DivCustomerService>
+                <DivCustomerService>
+                  <Box><GtaLightRegular>{t('contactus.liveChat')}</GtaLightRegular></Box>
+                  <Box><GtaLightLightInfo>{t('contactus.liveChatInfo')}</GtaLightLightInfo></Box>
+                </DivCustomerService>
+                {/* Aggiungi altre informazioni come indirizzi dei negozi fisici, orari di apertura, ecc. */}
+              </ContactInfo>
+            </InfoSection>
+          </ContactSection>
+        </Container>
+        <Footer />
+      </LazyLoadWrapper>
+    </LazyLoad>
   );
 };
 
