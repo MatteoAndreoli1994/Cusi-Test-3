@@ -985,26 +985,26 @@ useEffect(() => {
 
 
             <InfoContainer visible={showShopInfo}>
-              <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>HIGH JEWELLERY</GtaRegularMobile>
+              <GtaRegularMobile onClick={() => setShowHighJewellery(prevState => !prevState)}>{t('navbar.highjewellery')}</GtaRegularMobile>
                 <HighJewellery  visible={showHighJewellery}>
                   <Margin>
-                  <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>Bracelets</GtaRegular> 
-                  <GtaRegular onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>Earrings</GtaRegular> 
-                  <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>Necklaces</GtaRegular> 
-                  <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>Rings</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>{t('navbar.bracelets')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>{t('navbar.earrings')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>{t('navbar.necklaces')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>{t('navbar.rings')}</GtaRegular> 
                   </Margin>
                 </HighJewellery>
 
-              <GtaRegularMobile onClick={() => setShowFineObject(prevState => !prevState)} >FINE OBJECTS</GtaRegularMobile>
+              <GtaRegularMobile onClick={() => setShowFineObject(prevState => !prevState)} >{t('navbar.fineobject')}</GtaRegularMobile>
               <HighJewellery visible={showFineObject}>
                 <Margin>
-                  <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</GtaRegular> 
-                  <GtaRegular onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</GtaRegular> 
-                  <GtaRegular onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>{t('navbar.animals')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>{t('navbar.sea')}</GtaRegular> 
                 </Margin>
               </HighJewellery>
 
-              <GtaRegularMobile>GIFTS</GtaRegularMobile>
+              <GtaRegularMobile>{t('navbar.gifts')}</GtaRegularMobile>
               <HighJewellery>
                 test
               </HighJewellery>
@@ -1035,7 +1035,7 @@ useEffect(() => {
             </InfoContainer>
 
             <FilterButton onClick={handleShowAboutInfo}>
-              <FilterButtonText>About</FilterButtonText>
+              <FilterButtonText>{t('navbar.about')}</FilterButtonText>
               <FilterSign>
                 {showAboutInfo ? (
                   <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
@@ -1046,22 +1046,22 @@ useEffect(() => {
             </FilterButton>
 
             <InfoContainer visible={showAboutInfo}>
-            <GtaRegularMobile onClick={() => setShowHouseInfo(prevState => !prevState)}>THE HOUSE</GtaRegularMobile>
+            <GtaRegularMobile onClick={() => setShowHouseInfo(prevState => !prevState)}>{t('navbar.thehouse')}</GtaRegularMobile>
 
                 <HighJewellery  visible={showHouseInfo}>
                   <Margin>
-                  <GtaRegular onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</GtaRegular> 
+                  <GtaRegular onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>{t('navbar.story')}</GtaRegular> 
                   <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Boutiques</GtaRegular> 
                   </Margin>
                 </HighJewellery>
 
 
-              <GtaRegularMobile onClick={() => setShowExpertiseInfo(prevState => !prevState)}>EXPERTISE</GtaRegularMobile>
+              <GtaRegularMobile onClick={() => setShowExpertiseInfo(prevState => !prevState)}>{t('navbar.expertise')}</GtaRegularMobile>
 
               <HighJewellery  visible={showExpertiseInfo}>
-                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">Book an appointment</Collegamento></GtaRegular> 
-                  <GtaRegular onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</GtaRegular> 
-                  <GtaRegular onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</GtaRegular> 
+                  <GtaRegular onClick={handleBoutiques} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">{t('navbar.bookanappointment')}</Collegamento></GtaRegular> 
+                  <GtaRegular onClick={handleCustomerService} style={{ cursor: 'pointer' }}>{t('navbar.customerservice')}</GtaRegular> 
+                  <GtaRegular onClick={handleContactUs} style={{ cursor: 'pointer' }}>{t('navbar.contactus')}</GtaRegular> 
                 </HighJewellery>
 
             </InfoContainer>
@@ -1263,9 +1263,9 @@ useEffect(() => {
         <DivCategoriaProdotti>
         <Typography2>{t('navbar.fineobject')}</Typography2>
         </DivCategoriaProdotti>
-        <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>Enamelled Chains</Typography3> 
-        <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>Animals</Typography3> 
-        <Typography3 onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>Sea</Typography3> 
+        <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</Typography3> 
+        <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>{t('navbar.animals')}</Typography3> 
+        <Typography3 onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>{t('navbar.sea')}</Typography3> 
 
 
         </MenuItem>
@@ -1273,8 +1273,8 @@ useEffect(() => {
         <DivCategoriaProdotti>
         <Typography2>{t('navbar.gifts')}</Typography2>
         </DivCategoriaProdotti>
-        <Typography3>For Her</Typography3> 
-        <Typography3>For Him</Typography3> 
+        <Typography3>{t('navbar.forher')}</Typography3> 
+        <Typography3>{t('navbar.forhim')}</Typography3> 
 
 
         </MenuItem>

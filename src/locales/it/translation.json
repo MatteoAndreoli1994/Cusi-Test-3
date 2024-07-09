@@ -29,7 +29,18 @@
      "bracelets":"Bracciali",
      "rings":"Anelli",
      "necklaces":"Collane",
-     "earrings":"Orecchini"
+     "earrings":"Orecchini",
+     "enamelledchains":"Catene Smaltate",
+     "animals":"Animali",
+     "sea":"Mare",
+     "forher":"Per Lei",
+     "forhim":"Per Lui",
+     "thehouse":"LA MAISON",
+     "story":"Maison Cusi",
+     "expertise":"CONTATTI",
+     "bookanappointment":"Prenota un Appuntamento",
+     "customerservice":"Servizio Clienti",
+     "contactus":"Contatti"
     },
   "shoppinglist": {
     "earrings": "ORECCHINI",
