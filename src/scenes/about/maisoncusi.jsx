@@ -10,6 +10,7 @@ import GiorgioCusi from "../../assets/about7.avif";
 import BachecaAvif from "../../assets/bacheca.avif"
 import LazyLoad from 'react-lazyload';
 import Footer from "../global/Footer"
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.div`
   margin-top:120px;
@@ -528,7 +529,7 @@ margin-top: 7%;
 @media(max-width:680px){
   font-size: 25px; 
 
-  width:88%;
+  width:85%;
   margin-bottom: 2%;
 
 }
@@ -663,213 +664,105 @@ const handleContentLoad = () => {
 
 
 
-
-  return (
-    <>
-      <LazyLoad once>
+const { t } = useTranslation();
+return (
+  <>
+    <LazyLoad once>
       <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
-
-<Container>
-    <DivBacheca>
-
-        <ABC>Maison Cusi</ABC>
-        <Light16>The historic jewelry store founded in 1886 by Annibale Cusi marked the beginning of an era that has lasted for five generations. Over these 131 years, Cusi has become one of the most prestigious names among Italian jewelers.
-        </Light16>
-
-
-        
-        <ImmagineDelay
-          src={BachecaAvif}
-
-          effect="blur" // Aggiungi l'effetto di sfocatura
-        />
-
-
-
-    </DivBacheca>
-
-
-    <Boxstoryboard>
-        <DivImmagine>
-        <ImmagineAnnibaleCusi src={AnnibaleCusi} effect="blur"/>
-
-        </DivImmagine>
-
-        <DivInfo>
-        <ABC24>1886</ABC24>
-        <ABC24>Birth of the Cusi brand</ABC24>
-        <Description>Annibale CUSI (September 18, 1863 – October 28, 1930), the eleventh child of Pietro CUSI and Giuseppina Villa, began working at a very young age as an apprentice in a workshop. Back then, the craft was taught by practicing from early childhood, working closely with goldsmith artisans. For Annibale, it was no different; he started at just 9 years old and soon gained considerable experience, standing out for his artistic talents and craftsmanship skills.
-        </Description>
-        <Description>
-        The long period spent behind the goldsmith's benches allowed the young Annibale to make the trade his own, also developing within himself the courage and entrepreneurial skills that, at the age of 23, precisely in 1886, led him to leave the workshop and open his own laboratory in Via della Farine in the heart of Milan, just a few steps from the Duomo and Teatro alla Scala. Thus, the CUSI brand was born.
-        </Description>
-
-            
-
-        </DivInfo>
-
-    </Boxstoryboard>
-
-
-    <Quote>        
-        <Cit>"Each jewel has its own story, and represents today's luxury 
-        and with it the time we dedicate to ourselves,
-        whatever object you choose, it will be yours, unique and unrepeatable, as is your life."
-        </Cit>
-    </Quote>
-
-    <Boxstoryboard2>
-    <DivImmagine >
-    <ImmagineStuarda2 src={SpillaDelPozzo}  effect="blur"/>
-    </DivImmagine>
-
-
-        <DivInfo>
-
-        <Description>In his Atelier on Via delle Farine, number 8, young Annibale laid the foundations that would lead him in a few years to make the Cusi brand one of the most appreciated brands by the aristocracy and nobility of Milan. </Description>
-
-        <Description>
-        The fervent arrival of Art Nouveau at the end of the 19th century revitalized the art of jewelry, referring to nature as the main inspirational subject. In Europe, it was a true revolution in art, and in Milan, the Liberty style was eagerly embraced. During those years of beauty, Cusi created unique and extraordinary jewelry collections, using innovative materials and rare colored gems.
-        </Description>
-        <DescriptionLight>
-        On the left, the famous Platinum and Diamond Well Brooch, along with its design, created by Annibale and still affectionately preserved by the Cusi family.
-        </DescriptionLight>
-
-            
-
-        </DivInfo>
-
-    </Boxstoryboard2>
-
-    <Boxstoryboard3>
-
-        <DivInfo>
-        <ABC24Sinistra>1906</ABC24Sinistra> 
-        <ABC24Sinistra>The Necklace of Mary Stuart</ABC24Sinistra>
-        <DescriptionSinistra>
-        In 1906, Milan was the protagonist of the International Exposition, a true success. Forty states participated, and the city was visited by almost 5 million people, a record for the time. In the Decorative Arts section, Cusi exhibited its jewelry and won the Grand Prize thanks to a masterpiece of goldsmith art, the necklace called "Mary Stuart", a work that required two years of work by the workshop artisans, who made it in "Platiuralium," a special alloy invented by Cusi consisting of platinum, gold, silver, and aluminum with unique lightweight characteristics. The "Collar" was studded with about 15,000 diamonds, pearls, and rubies. The architecture was complex as all parts were articulated, allowing for articulated movements. Those who wrote about it described it as, despite its grandeur, light as lace.
-        </DescriptionSinistra>
-
-            
-
-        </DivInfo>
-
-        <DivImmagine>
-        <CollieImg src={CollierMariaStuarda} effect="blur"/>
-
-        </DivImmagine>
-
-    </Boxstoryboard3>
-
-    <Boxstoryboard>
-        <DivImmagine>
-        <ImmagineStuarda src={ViaClerici} effect="blur"/>
-
-        </DivImmagine>
-
-        <DivInfo>
-        <ABC24>1921</ABC24> 
-        <ABC24>Via Clerici, 1</ABC24>
-        <Description>
-        After the painful period of the Great War 1915-18, Annibale CUSI, now an internationally renowned expert in precious stones and pearls, resumed his activity with renewed energy, and soon expansion was necessary. So, in 1922, Annibale and his twenty-seven-year-old son Rinaldo had the elegant Palazzo CUSI built at Via Clerici 1, the family's own headquarters, sales atelier, and production laboratories. In 1921, Annibale was proclaimed Knight of Labor.
-        </Description>
-
-            
-
-        </DivInfo>
-
-
-
-    </Boxstoryboard>
-
-    <Boxstoryboard4>
-
-
-        <DivInfo>
-        <ABC24Sinistra>1895-1979</ABC24Sinistra> 
-        <ABC24Sinistra>
-          Rinaldo Cusi
-        </ABC24Sinistra>
-
-        <DescriptionSinistra>
-        In the twentieth century, the CUSI brand was appreciated not only by the most important families of Milanese aristocracy but also by the Italian Royal Family, boasting numerous collaborations for King Vittorio Emanuele III, with S.A.R. Vittorio Emanuele the Count of Turin and the Duke of Aosta Amedeo di Savoia. The three royal emblems in those years adorned the letterhead and logo of Gioielleria Cusi. With great skill and charisma, Rinaldo exported our style abroad, where the international market responded with wide consensus. Always a great expert and collector of jewelry, precious gems, but above all of pearls, he handed over the helm of the company to his son Roberto CUSI in his old age.
-
-        </DescriptionSinistra>
-
-            
-
-        </DivInfo>
-
-
-        <DivImmagine>
-        <RinaldoCusiImg src={RinaldoCusi} effect="blur"/>
-
-        </DivImmagine>
-
-
-    </Boxstoryboard4>
-
-    <Boxstoryboard>
-
-        <DivImmagine>
-        <ImmagineStuarda src={RobertoCusi} effect="blur"/>
-
-        </DivImmagine>
-
-
-          <DivInfo>
-            <ABC24>1926-1996</ABC24> 
-            <ABC24>
-              Roberto Cusi
-            </ABC24>
-
-            <Description>
-            With Roberto CUSI (1926 – 1996), the company consolidated, and in 1964, the exclusive headquarters in Portofino was inaugurated, and after only two years, also the current headquarters in Milan at Via Montenapoleone, 21, a symbolic location for excellence in fashion and luxury worldwide. Subsequently, in 2004, at the Portofino branch, CUSI became an official ROLEX dealer, and in 2013, it dedicated an entire Atelier next to its jewelry store.
-
-            </Description>
-
-              
-
-          </DivInfo>
-
-
-
-
-
-
-
-    </Boxstoryboard>
-
-
-    <BoxFamiglia>
-        <ABC24Centered>The Cusi tradition continues with the new generations.</ABC24Centered>
-        <Introduzione>
-        The historic jewelry store founded in 1886 by Annibale Cusi marked the beginning of an era that has lasted for five generations; over these 131 years, Cusi has become one of the most prestigious names among Italian jewelers.
-        </Introduzione>
-
-        <ImmagineFamiglia src={GiorgioCusi}  effect="blur" />
-
-        <Description2>
-Today, the family tradition continues thanks to the commitment and passion of Giorgio Nicola Cusi, his wife Roberta Cusi, and their children Alessia and Alessandro. Cusi is not just a name: it's passion, professionalism, security, tradition—it's something familiar; our goal is to make our customers feel at home.
-<br/><br/>
-This brief retrospective tells the story, the evolution of the concept of jewelry, and how we are tied to tradition, maintaining the quality of the past while gradually introducing a perspective of modernity and design. Italian high jewelry, based on tradition and innovation, which can be admired at the locations on Via Montenapoleone and in Portofino, combines the highest expressions of art such as design, craftsmanship, attention to detail, and the search for rare gems from the most remote corners of the earth. It is with this philosophy that the Cusi family wants to pass on the tradition to the new generations.
-
-        </Description2>
-
-
-
-
-    </BoxFamiglia>
-
-    
-</Container>
-
-<Footer/>
-
-        </LazyLoadWrapper>
-  </LazyLoad>
-    </>
-  );
+        <Container>
+          <DivBacheca>
+            <ABC>{t('story.maisonCusi')}</ABC>
+            <Light16>{t('story.intro')}</Light16>
+            <ImmagineDelay src={BachecaAvif} effect="blur" />
+          </DivBacheca>
+
+          <Boxstoryboard>
+            <DivImmagine>
+              <ImmagineAnnibaleCusi src={AnnibaleCusi} effect="blur" />
+            </DivImmagine>
+            <DivInfo>
+              <ABC24>1886</ABC24>
+              <ABC24>{t('story.birth')}</ABC24>
+              <Description>{t('story.birthDescription1')}</Description>
+              <Description>{t('story.birthDescription2')}</Description>
+            </DivInfo>
+          </Boxstoryboard>
+
+          <Quote>
+            <Cit>{t('story.quote')}</Cit>
+          </Quote>
+
+          <Boxstoryboard2>
+            <DivImmagine>
+              <ImmagineStuarda2 src={SpillaDelPozzo} effect="blur" />
+            </DivImmagine>
+            <DivInfo>
+              <Description>{t('story.wellBroochDescription1')}</Description>
+              <Description>{t('story.wellBroochDescription2')}</Description>
+              <DescriptionLight>{t('story.wellBroochLight')}</DescriptionLight>
+            </DivInfo>
+          </Boxstoryboard2>
+
+          <Boxstoryboard3>
+            <DivInfo>
+              <ABC24Sinistra>1906</ABC24Sinistra>
+              <ABC24Sinistra>{t('story.maryStuartNecklaceTitle')}</ABC24Sinistra>
+              <DescriptionSinistra>{t('story.maryStuartNecklaceDescription')}</DescriptionSinistra>
+            </DivInfo>
+            <DivImmagine>
+              <CollieImg src={CollierMariaStuarda} effect="blur" />
+            </DivImmagine>
+          </Boxstoryboard3>
+
+          <Boxstoryboard>
+            <DivImmagine>
+              <ImmagineStuarda src={ViaClerici} effect="blur" />
+            </DivImmagine>
+            <DivInfo>
+              <ABC24>1921</ABC24>
+              <ABC24>{t('story.viaClericiTitle')}</ABC24>
+              <Description>{t('story.viaClericiDescription')}</Description>
+            </DivInfo>
+          </Boxstoryboard>
+
+          <Boxstoryboard4>
+            <DivInfo>
+              <ABC24Sinistra>1895-1979</ABC24Sinistra>
+              <ABC24Sinistra>{t('story.rinaldoCusiTitle')}</ABC24Sinistra>
+              <DescriptionSinistra>{t('story.rinaldoCusiDescription')}</DescriptionSinistra>
+            </DivInfo>
+            <DivImmagine>
+              <RinaldoCusiImg src={RinaldoCusi} effect="blur" />
+            </DivImmagine>
+          </Boxstoryboard4>
+
+          <Boxstoryboard>
+            <DivImmagine>
+              <ImmagineStuarda src={RobertoCusi} effect="blur" />
+            </DivImmagine>
+            <DivInfo>
+              <ABC24>1926-1996</ABC24>
+              <ABC24>{t('story.robertoCusiTitle')}</ABC24>
+              <Description>{t('story.robertoCusiDescription')}</Description>
+            </DivInfo>
+          </Boxstoryboard>
+
+          <BoxFamiglia>
+            <ABC24Centered>{t('story.familyTitle')}</ABC24Centered>
+            <Introduzione>{t('story.familyIntro')}</Introduzione>
+            <ImmagineFamiglia src={GiorgioCusi} effect="blur" />
+            <Description2
+              dangerouslySetInnerHTML={{
+                __html: t('story.familyDescription').replace(/\n/g, '<br />'),
+              }}
+            />
+          </BoxFamiglia>
+        </Container>
+        <Footer />
+      </LazyLoadWrapper>
+    </LazyLoad>
+  </>
+);
 };
 
 export default MaisonCusi;
