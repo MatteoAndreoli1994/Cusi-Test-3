@@ -682,7 +682,31 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
       />
       <CheckboxText>{label}</CheckboxText>
     </CheckboxContainer>
+
+
   );
+
+  useEffect(() => {
+    // Funzione per gestire il clic al di fuori di FilterOptionsBox
+    const handleClickOutside = (event) => {
+      // Verifica se l'elemento cliccato non è il bottone di sorting
+      if (
+        filterOptionsRef.current &&
+        !filterOptionsRef.current.contains(event.target) &&
+        !event.target.closest(".sort-button") // Escludi il bottone di sorting
+      ) {
+        setShowFilterOptions(false);
+      }
+    };
+  
+    // Aggiungi un listener per il clic all'intero documento
+    document.addEventListener("mousedown", handleClickOutside);
+  
+    // Pulisci il listener all'unmount del componente
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   
   const { t } = useTranslation();
   const filteredItems = sortItems(animalsItems, selectedOption);

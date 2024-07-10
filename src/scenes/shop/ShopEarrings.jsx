@@ -919,11 +919,10 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
 
         <DivInfo>
-          <ABC>Earrings</ABC>
+          <ABC>{t('prodotti.earrings')}</ABC>
           <DivDescrizione>
             <GtaRegular>
-            Twice as nice. From classic studs to modern hoops, our earrings are expertly made with 
-the world’s best lab diamonds and exceptional attention to every detail.
+            {t('prodotti.earrings_description')}
             </GtaRegular>
           </DivDescrizione>
         </DivInfo>
@@ -931,12 +930,12 @@ the world’s best lab diamonds and exceptional attention to every detail.
         <DivFiltri>
             <CustomButton backgroundColor="white" onClick={handleFilterClick}>
             <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
-            <GtaRegular>Filter</GtaRegular>
+            <GtaRegular>{t('prodotti.filter')}</GtaRegular>
 
             </CustomButton>
 
             <CustomButton backgroundColor="white" onClick={handleFilterClick2} className="sort-button">
-              <GtaRegular2>Sort By</GtaRegular2>
+              <GtaRegular2>{t('prodotti.sortby')}</GtaRegular2>
               <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
             </CustomButton>
 
@@ -946,15 +945,15 @@ the world’s best lab diamonds and exceptional attention to every detail.
         <FilterOptionsBox ref={filterOptionsRef}>
           <Option onClick={() => handleOptionClick('Featured')}>
             {selectedOption === 'Featured' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Featured'}>Featured</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Featured'}>{t('prodotti.featured')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Descending')}>
             {selectedOption === 'Price Descending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Descending'}>Price Descending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Descending'}>{t('prodotti.pricedescending')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Ascending')}>
             {selectedOption === 'Price Ascending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>Price Ascending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>{t('prodotti.priceascending')}</GtaRegular3>
           </Option>
         </FilterOptionsBox>
              )}
