@@ -20,6 +20,7 @@ import ReactSlidy from 'react-slidy'
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import Footer from "../global/Footer"
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -807,7 +808,7 @@ const ItemDetails = () => {
 
   
   
-
+  const { t } = useTranslation();
   return (
     <LazyLoad once>
     <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad} >
@@ -893,7 +894,7 @@ const ItemDetails = () => {
               <TypographyPrice>
                 <ABC24>
                   {formatPrice(item?.attributes?.price)} 
-                  <GtaRegular style={{ color: 'gray' }}> Tax Included</GtaRegular>
+                  <GtaRegular style={{ color: 'gray' }}>{t('itemdetails.tax')}</GtaRegular>
                 </ABC24>
               </TypographyPrice>
 
@@ -903,7 +904,7 @@ const ItemDetails = () => {
             {available &&(
               <>
                             <TypographyDescrizioneProdotto>
-              <GtaRegular>Select Quantity</GtaRegular>
+              <GtaRegular>{t('itemdetails.selectquantity')}</GtaRegular>
 
               </TypographyDescrizioneProdotto>
 
@@ -976,7 +977,7 @@ const ItemDetails = () => {
                   onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
                   disabled={item?.attributes?.quantity === "0"|| !available}
                 >
-                  <GtaRegular>ADD TO SHOPPING BAG</GtaRegular>
+                  <GtaRegular>{t('itemdetails.addtoshoppingbag')}</GtaRegular>
                 </ButtonBlack>
       
 
@@ -993,7 +994,7 @@ const ItemDetails = () => {
                     padding: "20px 40px",
                   }}
                 >
-                  <GtaRegular>ORDER BY PHONE</GtaRegular>
+                  <GtaRegular>{t('itemdetails.orderbyphone')}</GtaRegular>
                 </ButtonWhite>
               ) : (
                 <ButtonWhite
@@ -1005,7 +1006,7 @@ const ItemDetails = () => {
                     padding: "20px 40px",
                   }}
                 >
-                  <GtaRegular>ORDER BY PHONE</GtaRegular>
+                  <GtaRegular>{t('itemdetails.orderbyphone')}</GtaRegular>
                 </ButtonWhite>
               )}
 
@@ -1024,7 +1025,7 @@ const ItemDetails = () => {
 
               >
 
-                <GtaRegular> BOOK AN APPOINTMENT </GtaRegular>
+                <GtaRegular> {t('itemdetails.bookanappointment')}</GtaRegular>
 
               </ButtonWhite>
               </StyledHashLink>
@@ -1036,7 +1037,7 @@ const ItemDetails = () => {
       {/* Prima Domanda */}
                 <FilterButton onClick={() => toggleAccordion('Details')}>
                   <AccordionItem >
-                    DETAILS
+                    {t('itemdetails.details')}
 
                   </AccordionItem>
                   <FilterSign>
@@ -1062,7 +1063,7 @@ const ItemDetails = () => {
       {/* Prima Domanda */}
                 <FilterButton onClick={() => toggleAccordion('Shipping')}>
                   <AccordionItem >
-                    SHIPPING & RETURNS
+                   {t('itemdetails.shipping&returns')}
 
                   </AccordionItem>
                   <FilterSign>
@@ -1076,11 +1077,7 @@ const ItemDetails = () => {
 
 
                 <AccordionContent isOpen={accordionState['Shipping']}>
-                <GtaLight>Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques.
-
-We invite you to call our personal advisors to coordinate the services.
-
-Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.</GtaLight>  
+                <GtaLight>{t('itemdetails.shipping&returns_descriptions')}</GtaLight>  
                       <GtaLightLightInfo>
 
                       </GtaLightLightInfo>

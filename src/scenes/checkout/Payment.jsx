@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
   useEffect(() => {
@@ -10,13 +11,13 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
       window.scrollTo(0, 0);
     }
   }, []); // Questo effetto viene eseguito solo una volta quando il componente viene montato
-
+  const { t } = useTranslation();
   return (
     <Box m="30px 0">
       {/* CONTACT INFO */}
       <Box>
         <Typography sx={{ mb: "15px" }} fontSize="18px">
-          Contact Info
+        {t('checkout.contactinfo')}
         </Typography>
         <TextField
           fullWidth
@@ -33,7 +34,7 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
         <TextField
           fullWidth
           type="text"
-          label="Phone Number"
+          label=          {t('checkout.phonenumber')}
           onBlur={handleBlur}
           onChange={handleChange}
           value={values.phoneNumber}

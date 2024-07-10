@@ -2,7 +2,7 @@ import { getIn } from "formik";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import { useTranslation } from 'react-i18next';
 const AddressForm = ({
   type,
   values,
@@ -24,7 +24,7 @@ const AddressForm = ({
 
   const formattedHelper = (field) =>
     getIn(touched, formattedName(field)) && getIn(errors, formattedName(field));
-
+  const { t } = useTranslation();
   return (
     <Box
       display="grid"
@@ -37,7 +37,7 @@ const AddressForm = ({
       <TextField
         fullWidth
         type="text"
-        label="First Name"
+        label={t('checkout.firstname')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.firstName}
@@ -49,7 +49,7 @@ const AddressForm = ({
       <TextField
         fullWidth
         type="text"
-        label="Last Name"
+        label={t('checkout.lastname')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.lastName}
@@ -61,7 +61,7 @@ const AddressForm = ({
       <TextField
         fullWidth
         type="text"
-        label="Country"
+        label={t('checkout.country')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.country}
@@ -73,7 +73,7 @@ const AddressForm = ({
       <TextField
         fullWidth
         type="text"
-        label="Street Address"
+        label={t('checkout.streetaddress')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.street1}
@@ -82,22 +82,11 @@ const AddressForm = ({
         helperText={formattedHelper("street1")}
         sx={{ gridColumn: "span 2" }}
       />
+
       <TextField
         fullWidth
         type="text"
-        label="Street Address 2 (optional)"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.street2}
-        name={formattedName("street2")}
-        error={formattedError("street2")}
-        helperText={formattedHelper("street2")}
-        sx={{ gridColumn: "span 2" }}
-      />
-      <TextField
-        fullWidth
-        type="text"
-        label="City"
+        label={t('checkout.city')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.city}
@@ -109,26 +98,26 @@ const AddressForm = ({
       <TextField
         fullWidth
         type="text"
-        label="State"
+        label={t('checkout.state')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.state}
         name={formattedName("state")}
         error={formattedError("state")}
         helperText={formattedHelper("state")}
-        sx={{ gridColumn: "1fr" }}
+        sx={{ gridColumn: "span 2" }}
       />
       <TextField
         fullWidth
         type="text"
-        label="Zip Code"
+        label={t('checkout.zipcode')}
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.zipCode}
         name={formattedName("zipCode")}
         error={formattedError("zipCode")}
         helperText={formattedHelper("zipCode")}
-        sx={{ gridColumn: "1fr" }}
+        sx={{ gridColumn: "span 2" }}
       />
     </Box>
   );

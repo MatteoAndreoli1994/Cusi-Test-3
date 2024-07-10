@@ -761,7 +761,7 @@ const CollectionBollywood = () => {
               <ContainerFiltri>
 
                 <FilterButton onClick={() =>  {setshowStoneInfo(!showStoneInfo); setshowMaterialInfo(false); setshowCollectionInfo(false);  } }>
-                  <FilterButtonText>Stones</FilterButtonText>            
+                  <FilterButtonText>  {t('prodotti.stones')}</FilterButtonText>            
                   
                   <FilterSign>
                   {showStoneInfo ? (
@@ -779,32 +779,32 @@ const CollectionBollywood = () => {
                 <InfoContainer visible={showStoneInfo}>
                   {/* Inserisci qui le informazioni per le donne */}
                   <Checkbox
-                  label="Diamond"
+                  label={t('prodotti.diamond')}
                   onChange={() => handleCheckboxChangeStone("Diamond")}
                   checked={selectedStone.includes("Diamond")}
                 /> 
                   <Checkbox
-                  label="Malachite"
+                  label={t('prodotti.malachite')}
                   onChange={() => handleCheckboxChangeStone("Malachite")}
                   checked={selectedStone.includes("Malachite")}
                 /> 
                   <Checkbox
-                  label="Nacre"
+                  label={t('prodotti.nacre')}
                   onChange={() => handleCheckboxChangeStone("Nacre")}
                   checked={selectedStone.includes("Nacre")}
                 /> 
                   <Checkbox
-                  label="Sapphire"
+                  label={t('prodotti.sapphire')}
                   onChange={() => handleCheckboxChangeStone("Sapphire")}
                   checked={selectedStone.includes("Sapphire")}
                 /> 
                   <Checkbox
-                  label="Ruby"
+                  label={t('prodotti.ruby')}
                   onChange={() => handleCheckboxChangeStone("Ruby")}
                   checked={selectedStone.includes("Ruby")}
                 /> 
                   <Checkbox
-                  label="Emerald"
+                  label={t('prodotti.emerald')}
                   onChange={() => handleCheckboxChangeStone("Emerald")}
                   checked={selectedStone.includes("Emerald")}
                 /> 
@@ -845,7 +845,7 @@ const CollectionBollywood = () => {
                 </InfoContainer>
 
                 <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
-                  <FilterButtonText>Material</FilterButtonText>
+                  <FilterButtonText>  {t('prodotti.materials')}</FilterButtonText>
 
                   <FilterSign>
                     {showMaterialInfo ? (
@@ -861,27 +861,27 @@ const CollectionBollywood = () => {
 
 
                 <Checkbox
-                  label="Yellow Gold"
+                  label={t('prodotti.yellowgold')}
                   onChange={() => handleCheckboxChange("Yellow Gold")}
                   checked={selectedMaterials.includes("Yellow Gold")}
                 />
                 <Checkbox
-                  label="White Gold"
+                  label={t('prodotti.whitegold')}
                   onChange={() => handleCheckboxChange("White Gold")}
                   checked={selectedMaterials.includes("White Gold")}
                 />
                 <Checkbox
-                  label="Pink Gold"
+                  label={t('prodotti.pinkgold')}
                   onChange={() => handleCheckboxChange("Pink Gold")}
                   checked={selectedMaterials.includes("Pink Gold")}
                 />
                 <Checkbox
-                  label="Black Gold"
+                  label={t('prodotti.blackgold')}
                   onChange={() => handleCheckboxChange("Black Gold")}
                   checked={selectedMaterials.includes("Black Gold")}
                 />
                 <Checkbox
-                  label="Platinum"
+                  label={t('prodotti.platinum')}
                   onChange={() => handleCheckboxChange("Platinum")}
                   checked={selectedMaterials.includes("Platinum")}
                 />
@@ -909,7 +909,7 @@ const CollectionBollywood = () => {
 
                     }}           onClick={handleFilterClick}
                   >
-                     <GtaRegular12>APPLY</GtaRegular12>  
+                     <GtaRegular12>  {t('prodotti.apply')}</GtaRegular12>  
                   </ButtonBlack>
                   <ButtonWhite
                     sx={{
@@ -921,7 +921,7 @@ const CollectionBollywood = () => {
 
                     }}   onClick={handleResetClick}
                   >
-                      <GtaRegular12>RESET </GtaRegular12>
+                      <GtaRegular12>  {t('prodotti.reset')} </GtaRegular12>
                   </ButtonWhite>
 
 
@@ -955,7 +955,7 @@ const CollectionBollywood = () => {
             <ABC>Zingara</ABC>
             <DivDescrizione>
               <GtaRegular>
-              Gold softness and a unique hammered finish, resulting in a captivating interplay of light and movement
+                {t('prodotti.zingara_description')}
               </GtaRegular>
             </DivDescrizione>
           </DivInfo>
@@ -976,12 +976,12 @@ const CollectionBollywood = () => {
           <DivFiltri>
             <CustomButton backgroundColor="white" onClick={handleFilterClick}>
             <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
-            <GtaRegular>Filter</GtaRegular>
+            <GtaRegular>  {t('prodotti.filter')}</GtaRegular>
 
             </CustomButton>
 
             <CustomButton backgroundColor="white" onClick={handleFilterClick2} className="sort-button">
-              <GtaRegular2>Sort By</GtaRegular2>
+              <GtaRegular2>  {t('prodotti.sortby')}</GtaRegular2>
               <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
             </CustomButton>
 
@@ -991,18 +991,18 @@ const CollectionBollywood = () => {
         <FilterOptionsBox ref={filterOptionsRef}>
           <Option onClick={() => handleOptionClick('Featured')}>
             {selectedOption === 'Featured' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Featured'}>Featured</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Featured'}>  {t('prodotti.featured')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Descending')}>
             {selectedOption === 'Price Descending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Descending'}>Price Descending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Descending'}>  {t('prodotti.pricedescending')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Ascending')}>
             {selectedOption === 'Price Ascending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>Price Ascending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>  {t('prodotti.priceascending')}</GtaRegular3>
           </Option>
         </FilterOptionsBox>
-      )}
+             )}
             
           </DivFiltri>
 

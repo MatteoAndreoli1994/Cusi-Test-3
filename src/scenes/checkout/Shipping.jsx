@@ -1,7 +1,7 @@
 import { Box, Checkbox, FormControlLabel, Typography } from "@mui/material";
 import AddressForm from "./AddressForm";
 import styled from 'styled-components';
-
+import { useTranslation } from 'react-i18next';
 
 
 const Container = styled.div`
@@ -9,6 +9,7 @@ margin-top:20px;
 
 
 `;
+
 
 const Shipping = ({
   values,
@@ -18,12 +19,13 @@ const Shipping = ({
   handleBlur,
   setFieldValue,
 }) => {
+  const { t } = useTranslation();
   return (
     <Container m="30px auto">
       {/* BILLING FORM */}
       <Box>
         <Typography sx={{ mb: "15px" }} fontSize="18px">
-          Billing Information
+          {t('checkout.billinginformation')}
         </Typography>
         <AddressForm
           type="billingAddress"
