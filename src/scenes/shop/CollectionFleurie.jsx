@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import ItemInShop from "../../components/ItemInShop";
-
+import { useTranslation } from 'react-i18next';
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -756,7 +756,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
   }, []);
   
   const filteredItems = sortItems(fleurieItems, selectedOption);
-  
+  const { t } = useTranslation();
   return (
     <>
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useEffect, useState, useRef } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-
+import { useTranslation } from 'react-i18next';
 import ItemInShop from "../../components/ItemInShop";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import FilterImage from "../../assets/filter.png";
@@ -707,7 +707,7 @@ const CollectionFleurie = () => {
   const filteredItems = sortItems(tycoonItems, selectedOption);
   
  
-
+  const { t } = useTranslation();
   return (
     <>
           <LazyLoad once>

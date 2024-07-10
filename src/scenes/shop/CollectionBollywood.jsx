@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Box, Button, IconButton, Typography } from "@mui/material";
-
+import { useTranslation } from 'react-i18next';
 import ItemInShop from "../../components/ItemInShop";
 
 import FilterImage from "../../assets/filter.png";
@@ -704,7 +704,7 @@ const CollectionBollywood = () => {
   }, []);
 
   const filteredItems = sortItems(bollywoodItems, selectedOption);
-
+  const { t } = useTranslation();
   return (
     <>
       <LazyLoad once>

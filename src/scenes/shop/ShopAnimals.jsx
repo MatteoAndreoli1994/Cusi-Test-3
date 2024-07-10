@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useEffect, useState, useRef } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-
+import { useTranslation } from 'react-i18next';
 import ItemInShop from "../../components/ItemInShop";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -684,7 +684,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
     </CheckboxContainer>
   );
   
-  
+  const { t } = useTranslation();
   const filteredItems = sortItems(animalsItems, selectedOption);
   return (
     <>
@@ -695,7 +695,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
               <ContainerFiltri>
 
                 <FilterButton onClick={() =>  {setshowStoneInfo(!showStoneInfo); setshowMaterialInfo(false); setshowCollectionInfo(false);  } }>
-                  <FilterButtonText>Stones</FilterButtonText>            
+                  <FilterButtonText>{t('prodotti.stones')}</FilterButtonText>            
                   
                   <FilterSign>
                   {showStoneInfo ? (
@@ -713,32 +713,32 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
                 <InfoContainer visible={showStoneInfo}>
                   {/* Inserisci qui le informazioni per le donne */}
                   <Checkbox
-                  label="Diamond"
+                  label={t('prodotti.diamond')}
                   onChange={() => handleCheckboxChangeStone("Diamond")}
                   checked={selectedStone.includes("Diamond")}
                 /> 
                   <Checkbox
-                  label="Malachite"
+                  label={t('prodotti.malachite')}
                   onChange={() => handleCheckboxChangeStone("Malachite")}
                   checked={selectedStone.includes("Malachite")}
                 /> 
                   <Checkbox
-                  label="Nacre"
+                  label={t('prodotti.nacre')}
                   onChange={() => handleCheckboxChangeStone("Nacre")}
                   checked={selectedStone.includes("Nacre")}
                 /> 
                   <Checkbox
-                  label="Sapphire"
+                  label={t('prodotti.sapphire')}
                   onChange={() => handleCheckboxChangeStone("Sapphire")}
                   checked={selectedStone.includes("Sapphire")}
                 /> 
                   <Checkbox
-                  label="Ruby"
+                  label={t('prodotti.ruby')}
                   onChange={() => handleCheckboxChangeStone("Ruby")}
                   checked={selectedStone.includes("Ruby")}
                 /> 
                   <Checkbox
-                  label="Emerald"
+                  label={t('prodotti.emerald')}
                   onChange={() => handleCheckboxChangeStone("Emerald")}
                   checked={selectedStone.includes("Emerald")}
                 /> 
@@ -746,7 +746,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
 
                 <FilterButton onClick={() => {setshowCollectionInfo(!showCollectionInfo);   setshowStoneInfo(false); setshowMaterialInfo(false)       }       }>
-                  <FilterButtonText>Collection</FilterButtonText>
+                  <FilterButtonText>{t('prodotti.collections')}</FilterButtonText>
 
                   <FilterSign>
                     {showCollectionInfo ? (
@@ -789,7 +789,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
                 </InfoContainer>
 
                 <FilterButton onClick={() => {setshowMaterialInfo(!showMaterialInfo); setshowCollectionInfo(false);   setshowStoneInfo(false);}}>
-                  <FilterButtonText>Material</FilterButtonText>
+                  <FilterButtonText>{t('prodotti.materials')}</FilterButtonText>
 
                   <FilterSign>
                     {showMaterialInfo ? (
@@ -805,27 +805,27 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
 
                 <Checkbox
-                  label="Yellow Gold"
+                  label={t('prodotti.yellowgold')}
                   onChange={() => handleCheckboxChange("Yellow Gold")}
                   checked={selectedMaterials.includes("Yellow Gold")}
                 />
                 <Checkbox
-                  label="White Gold"
+                  label={t('prodotti.whitegold')}
                   onChange={() => handleCheckboxChange("White Gold")}
                   checked={selectedMaterials.includes("White Gold")}
                 />
                 <Checkbox
-                  label="Pink Gold"
+                  label={t('prodotti.pinkgold')}
                   onChange={() => handleCheckboxChange("Pink Gold")}
                   checked={selectedMaterials.includes("Pink Gold")}
                 />
                 <Checkbox
-                  label="Black Gold"
+                  label={t('prodotti.blackgold')}
                   onChange={() => handleCheckboxChange("Black Gold")}
                   checked={selectedMaterials.includes("Black Gold")}
                 />
                 <Checkbox
-                  label="Platinum"
+                  label={t('prodotti.platinum')}
                   onChange={() => handleCheckboxChange("Platinum")}
                   checked={selectedMaterials.includes("Platinum")}
                 />
@@ -853,7 +853,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
                     }}           onClick={handleFilterClick}
                   >
-                     <GtaRegular12>APPLY</GtaRegular12>  
+                     <GtaRegular12>{t('prodotti.apply')}</GtaRegular12>  
                   </ButtonBlack>
                   <ButtonWhite
                     sx={{
@@ -865,7 +865,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
                     }}   onClick={handleResetClick}
                   >
-                      <GtaRegular12>RESET </GtaRegular12>
+                      <GtaRegular12>{t('prodotti.reset')} </GtaRegular12>
                   </ButtonWhite>
 
 
@@ -897,10 +897,10 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
       <Container  style={{ objectFit: "contain", display: imageLoaded ? "flex" : "none" }}>
 
         <DivInfo>
-          <ABC>Animals</ABC>
+          <ABC>{t('prodotti.animals')}</ABC>
           <DivDescrizione>
             <GtaRegular>
-            Twice as nice. From classic studs to modern hoops, our earrings are expertly made with the world’s best lab diamonds and exceptional attention to every detail.
+            {t('prodotti.animals_description')}
             </GtaRegular>
           </DivDescrizione>
         </DivInfo>
@@ -916,12 +916,12 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
         <DivFiltri>
             <CustomButton backgroundColor="white" onClick={handleFilterClick}>
             <img src={FilterImage} alt="Filter" style={{ width: '20px' }} />
-            <GtaRegular>Filter</GtaRegular>
+            <GtaRegular>{t('prodotti.filter')}</GtaRegular>
 
             </CustomButton>
 
             <CustomButton backgroundColor="white" onClick={handleFilterClick2} className="sort-button">
-              <GtaRegular2>Sort By</GtaRegular2>
+              <GtaRegular2>{t('prodotti.sortby')}</GtaRegular2>
               <SortImage2 src={SortImage} alt="Filter" showOptions={showFilterOptions} />
             </CustomButton>
 
@@ -931,15 +931,15 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
         <FilterOptionsBox ref={filterOptionsRef}>
           <Option onClick={() => handleOptionClick('Featured')}>
             {selectedOption === 'Featured' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Featured'}>Featured</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Featured'}>{t('prodotti.featured')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Descending')}>
             {selectedOption === 'Price Descending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Descending'}>Price Descending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Descending'}>{t('prodotti.pricedescending')}</GtaRegular3>
           </Option>
           <Option onClick={() => handleOptionClick('Price Ascending')}>
             {selectedOption === 'Price Ascending' ? <Dot selected /> : <div style={{ width: '6px', marginRight: '10px' }} />}
-            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>Price Ascending</GtaRegular3>
+            <GtaRegular3 selected={selectedOption === 'Price Ascending'}>{t('prodotti.priceascending')}</GtaRegular3>
           </Option>
         </FilterOptionsBox>
              )}

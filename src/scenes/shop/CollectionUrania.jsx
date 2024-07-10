@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import ItemInShop from "../../components/ItemInShop";
-
+import { useTranslation } from 'react-i18next';
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -703,7 +703,7 @@ const handleOptionClick = (option) => {
     };
   }, []);
   const filteredItems = sortItems(uraniaItems, selectedOption);
-
+  const { t } = useTranslation();
   return (
     <>
       <LazyLoad once>

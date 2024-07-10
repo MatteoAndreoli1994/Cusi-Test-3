@@ -6,7 +6,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { shades } from "../../theme";
 import ItemInShop from "../../components/ItemInShop";
-
+import { useTranslation } from 'react-i18next';
 import FilterImage from "../../assets/filter.png";
 import SortImage from "../../assets/down.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -750,7 +750,7 @@ const CollectionBollywood = () => {
   
   
   const filteredItems = sortItems(zingaraItems, selectedOption);
-
+  const { t } = useTranslation();
   return (
     <>
 

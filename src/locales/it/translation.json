@@ -20,9 +20,9 @@
     "bookAnAppointment": "PRENOTA UN APPUNTAMENTO"
   },
     "navbar": {
-     "shop": "Negozio",
+     "shop": "Gioielli",
      "collections": "Collezioni",
-     "about": "Chi Siamo",
+     "about": "La Maison",
      "highjewellery": "ALTA GIOIELLERIA",
      "fineobject":"ARGENTI",
      "gifts":"REGALI",
@@ -42,6 +42,50 @@
      "customerservice":"Servizio Clienti",
      "contactus":"Contatti"
     },
+    "prodotti":{
+     "bracelets":"Bracciali",
+     "bracelets_description":"Dai classici bracciali ai modelli moderni, i nostri bracciali sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "rings":"Anelli",
+     "rings_description":"Dai classici anelli ai modelli moderni, i nostri anelli sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "necklaces":"Collane",
+     "necklaces_description":"Dalle classiche collane ai modelli moderni, le nostre collane sono realizzate con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "earrings":"Orecchini",
+     "earrings_description":"Dai classici orecchini ai modelli moderni, i nostri orecchini sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "enamelledchains":"Catene Smaltate",
+     "enamelledchains_description":"Le nostre catene smaltate sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "animals":"Animali",
+     "animals_description":"I nostri oggetti preziosi sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "sea":"Mare",
+     "sea_description":"I nostri oggetti preziosi sono realizzati con i migliori diamanti di laboratorio del mondo e un'eccezionale attenzione ad ogni dettaglio.",
+     "filter":"Filtri",
+     "sortby":"Ordina",
+     "featured":"Tendenza",
+     "pricedescending":"Prezzo Decrescente",
+     "priceascending":"Prezzo Crescente",
+     "stones":"Pietre",
+     "diamond":"Diamante",
+     "malachite":"Malachite",
+     "nacre":"Madreperla",
+     "sapphire":"Zaffiro",
+     "ruby":"Rubino",
+     "emerald":"Smeraldo",
+     "collections":"Collezioni",
+     "materials":"Materiali",
+     "yellowgold":"Oro Giallo",
+     "whitegold":"Oro Bianco",
+     "pinkgold":"Oro Rosa",
+     "blackgold":"Oro Nero",
+     "platinum":"Platino",
+     "apply":"APPLICA",
+     "reset":"REIMPOSTA"
+    },
+
+
+
+
+
+
+
   "shoppinglist": {
     "earrings": "ORECCHINI",
     "bracelets": "BRACCIALI",

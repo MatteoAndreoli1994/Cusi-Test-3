@@ -1322,20 +1322,20 @@ useEffect(() => {
       <MenuContent>
         <MenuItem>
         <DivCategoriaProdotti>
-       <Typography2>THE HOUSE</Typography2> 
+       <Typography2>{t('navbar.thehouse')}</Typography2> 
        </DivCategoriaProdotti>
-       <Typography3 onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>Maison Cusi</Typography3> 
+       <Typography3 onClick={handleMaisonCusi} style={{ cursor: 'pointer' }}>{t('navbar.story')}</Typography3> 
        <Typography3 onClick={handleBoutiques} style={{ cursor: 'pointer' }}>Boutiques</Typography3> 
         </MenuItem>
 
 
         <MenuItem>
         <DivCategoriaProdotti>
-        <Typography2>EXPERTISE</Typography2>
+        <Typography2>{t('navbar.expertise')}</Typography2>
         </DivCategoriaProdotti>
-        <Typography3 onClick={handleBook} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">Book an appointment</Collegamento></Typography3> 
-        <Typography3 onClick={handleCustomerService} style={{ cursor: 'pointer' }}>Customer Service</Typography3> 
-        <Typography3 onClick={handleContactUs} style={{ cursor: 'pointer' }}>Contact Us</Typography3> 
+        <Typography3 onClick={handleBook} style={{ cursor: 'pointer' }}><Collegamento href="/boutiques#Book">{t('navbar.bookanappointment')}</Collegamento></Typography3> 
+        <Typography3 onClick={handleCustomerService} style={{ cursor: 'pointer' }}>{t('navbar.customerservice')}</Typography3> 
+        <Typography3 onClick={handleContactUs} style={{ cursor: 'pointer' }}>{t('navbar.contactus')}</Typography3> 
 
         </MenuItem>
         <MenuItem>
