@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { clearCartAfterConfirmation } from '../../state/index.js';  // Assicurati di importare l'azione corretta
 import styled from 'styled-components';
 import Footer from "../global/Footer"
-
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -17,14 +17,14 @@ import Footer from "../global/Footer"
 const Confirmation2 =  () => {
   
   
-
+  const { t } = useTranslation();
   return (
     <>
     <Box m="120px auto" width="85%" height="50vh">
       <Alert>
-        <AlertTitle>Success</AlertTitle>
-        You have successfully made an Order —{" "}
-        <strong>Congrats on Making your Purchase</strong>
+        <AlertTitle>{t('confirmation.success')}</AlertTitle>
+        {t('confirmation.messaggio1')}{" "}
+        <strong>{t('confirmation.messaggio2')}</strong>
       </Alert>
 
     </Box>

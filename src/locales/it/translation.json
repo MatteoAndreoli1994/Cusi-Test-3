@@ -227,6 +227,16 @@
     "bookOnline": "Clicca qui per prenotare un appuntamento online",
     "email": "gioielleriacusiecommerce@gmail.com",
     "phone": "(+39) 0266019768"
+  },
+  "cartmenu": {
+    "yourbag":"Shopping Bag",
+    "yourbag_description":"La tua shopping bag è vuota",
+    "remove":"Rimuovi"
+  },
+  "confirmation": {
+    "success":"Acquisto Effettuato",
+    "messaggio1":"Hai effettuato un ordine con successo —",
+    "messaggio2":"Congratulazioni per il tuo acquisto"
   }
 
   }

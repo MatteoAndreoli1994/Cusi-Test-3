@@ -13,6 +13,7 @@ import {
 } from "../../state";
 import { useNavigate } from "react-router-dom";
 import CloseIconImage from "../../assets/closeicon.png";
+import { useTranslation } from 'react-i18next';
 
 const DivCarrello = styled(Box)`
     position: fixed;
@@ -314,7 +315,7 @@ const CartMenu = () => {
   
 
 
-    
+  const { t } = useTranslation();
   return (
     <> 
     <DivCarrello open={isCartOpen}>
@@ -325,7 +326,7 @@ const CartMenu = () => {
       <FlexBox  marginRight={0}>
         {cart.length==0 ?
         (<>
-        <GtaRegular24>Your Bag</GtaRegular24>
+        <GtaRegular24>{t('cartmenu.yourbag')}</GtaRegular24>
 
         <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
           <CloseIcon2 src={CloseIconImage}/>
@@ -335,7 +336,7 @@ const CartMenu = () => {
         
         (<>
 
-        <GtaRegular24>Your Bag ({cart.length})</GtaRegular24>
+        <GtaRegular24>{t('cartmenu.yourbag')} ({cart.length})</GtaRegular24>
         <IconButton onClick={() => dispatch(setIsCartOpen({}))}>
           <CloseIcon2 src={CloseIconImage}/>
         </IconButton>
@@ -402,7 +403,7 @@ const CartMenu = () => {
                   <GtaRegular14 onClick={() =>
                               dispatch(removeFromCart({ id: item.id }))
                             }>
-                              Remove
+                              {t('cartmenu.remove')}
 
                   </GtaRegular14>
 
@@ -424,7 +425,7 @@ const CartMenu = () => {
 
       {cart.length==0 ?
         (<>
-         <GtaRegular16normal>Your shopping bag is empty at the moment.</GtaRegular16normal> 
+         <GtaRegular16normal>{t('cartmenu.yourbag_description')}</GtaRegular16normal> 
 
 
         {/*
