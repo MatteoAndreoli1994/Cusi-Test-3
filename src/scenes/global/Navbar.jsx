@@ -1013,7 +1013,7 @@ useEffect(() => {
 
 
             <FilterButton onClick={handleShowCollection}>
-              <FilterButtonText>Collection</FilterButtonText>
+              <FilterButtonText>{t('navbar.collections')}</FilterButtonText>
               <FilterSign>
                 {showCollectionInfo ? (
                   <img src={close} alt="Add" style={{ width: '20px', height: '20px' }} />
@@ -1365,7 +1365,7 @@ useEffect(() => {
           type="text"
           value={query}
           onChange={handleChange}
-          placeholder="Search..."
+          placeholder={t('search.search')}
           style={{ fontFamily: 'Arial' }}
           
         />
@@ -1377,7 +1377,7 @@ useEffect(() => {
     <ContenitoreRicerca>
     <ContenitoreRicerca2 onClick={() => setIsHoveredSearch(false)}>
         {searchedItems.length === 0 ? (
-          <ABC16>No products found with this name</ABC16>
+          <ABC16>{t('search.result1')}</ABC16>
         ) : (
           searchedItems.slice(0, 3).map((item, index) => (
             <DivItems key={index}>

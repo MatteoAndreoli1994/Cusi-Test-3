@@ -20,7 +20,7 @@
     "bookAnAppointment": "PRENOTA UN APPUNTAMENTO"
   },
   "navbar": {
-    "shop": "Gioielli",
+    "shop": "Shop",
     "collections": "Collezioni",
     "about": "La Maison",
     "highjewellery": "ALTA GIOIELLERIA",
@@ -237,6 +237,10 @@
     "success":"Acquisto Effettuato",
     "messaggio1":"Hai effettuato un ordine con successo —",
     "messaggio2":"Congratulazioni per il tuo acquisto"
+  },
+  "search": {
+    "search":"Cerca ...",
+    "result1":"Nessun prodotto trovato con questo nome"
   }
 
   }
