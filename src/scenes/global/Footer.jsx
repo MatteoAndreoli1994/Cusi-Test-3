@@ -11,6 +11,7 @@ import SortImage from "../../assets/down.png";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSelectedLanguage } from '../../state/languageSlice';
 import { useTranslation } from 'react-i18next';
+import { changeLanguage as i18nChangeLanguage } from '../../config/i18n.js'; // Assicurati di importare correttamente la funzione changeLanguage
 
 
 const Container = styled.div`
@@ -812,8 +813,8 @@ function Footer() {
 
     const handleLanguageChange = (language) => {
       setSelectedLanguage(language);
+      i18nChangeLanguage(language.toLowerCase()); // Cambia la lingua utilizzando i18next
       setShowFilterOptions(false);
-      
     };
   
     const { t } = useTranslation();
