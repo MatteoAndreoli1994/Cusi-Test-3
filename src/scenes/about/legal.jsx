@@ -609,11 +609,11 @@ const location = useLocation();
             </div>
       
             <div>
-              <GtaRegular16>{t('Privacy Policy.section11.title')}</GtaRegular16>
-              <GtaLightLightInfo
-                dangerouslySetInnerHTML={{ __html: t('Privacy Policy.section11.content') }}
-              />
-            </div>
+      <GtaRegular16>{t('Privacy Policy.section11.title')}</GtaRegular16>
+      <GtaLightLightInfo
+        dangerouslySetInnerHTML={{ __html: t('Privacy Policy.section11.content') }}
+      />
+    </div>
           </>
           </AccordionContent>
 
