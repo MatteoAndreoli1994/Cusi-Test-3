@@ -320,169 +320,168 @@
 
 
 "Terms & Conditions": {
-  "notelegali": "Note Legali",
-  "title": "Termini di utilizzo",
-  "lastUpdated": "Maggio 2024",
+  "notelegali": "Legal Notice",
+  "title": "Terms of Use",
+  "lastUpdated": "May 2024",
   "sections": [
     {
-      "title": "Informazioni su Cusi e i presenti Termini di utilizzo",
-      "content": "Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale rappresentante p.t. della società: \n\nCUSI MONTENAPOLEONE S.r.l.\nsede legale: Milano (MI), Via Montenapoleone, 21/A\nP.Iva 01932840182\nmail: info@cusimontenapoleone.com\n\nI presenti termini di utilizzo (\"Termini di utilizzo\") regolano l'utilizzo delle Piattaforme di Cusi. Con l'accesso e l'utilizzo delle Piattaforme, manifestate il vostro consenso e accettazione dei presenti Termini di utilizzo. In caso di disaccordo con tali Termini, non siete autorizzati a utilizzare le Piattaforme."
-    }
-    ,
-    {
-      "title": "Aggiornamenti ai presenti Termini di utilizzo",
-      "content": "Periodicamente, potremmo apportare modifiche ai presenti Termini di utilizzo. Vi invitiamo a controllare regolarmente per restare aggiornati. L'ultima versione sarà sempre disponibile sulle Piattaforme e diventerà efficace immediatamente dopo la pubblicazione. L'utilizzo continuato delle Piattaforme costituirà l'accettazione di tali modifiche."
+      "title": "About Cusi and These Terms of Use",
+      "content": "This site is managed by the Data Controller, identified in the person of the owner and legal representative of the company: \n\nCUSI MONTENAPOLEONE S.r.l.\nregistered office: Milano (MI), Via Montenapoleone, 21/A\nVAT No. 01932840182\nemail: info@cusimontenapoleone.com\n\nThese terms of use (\"Terms of Use\") govern the use of Cusi's Platforms. By accessing and using the Platforms, you indicate your consent and acceptance of these Terms of Use. If you disagree with these Terms, you are not authorized to use the Platforms."
     },
     {
-      "title": "Informazioni sui nostri servizi di hosting",
-      "content": "I servizi di hosting per il sito web di Cusi sono forniti da Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107."
+      "title": "Updates to These Terms of Use",
+      "content": "Periodically, we may make changes to these Terms of Use. We invite you to check regularly to stay updated. The latest version will always be available on the Platforms and will become effective immediately after publication. Continued use of the Platforms will constitute acceptance of such changes."
     },
     {
-      "title": "La nostra informativa sulla privacy",
-      "content": "La nostra prassi di raccolta dei dati all’interno della piattaforma eCommerce Cusi è disciplinata dai termine della nostra Informativa sulla privacy resa disponibile da Iubenda. Vi invitiamo a leggerla per comprendere come trattiamo i vostri dati."
+      "title": "Information About Our Hosting Services",
+      "content": "The hosting services for Cusi's website are provided by Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107."
     },
     {
-      "title": "e-Commerce di Cusi – Condizioni di vendita",
-      "content": "I clienti che effettuano acquisti online attraverso il nostro e-commerce devono consultare le Condizioni di vendita, che regolano i termini e le condizioni di tali transazioni."
+      "title": "Our Privacy Policy",
+      "content": "Our data collection practices within the Cusi eCommerce platform are governed by the terms of our Privacy Policy made available by Iubenda. We invite you to read it to understand how we handle your data."
     },
     {
-      "title": "Utilizzo dei contenuti sulle Piattaforme",
-      "content": "Cusi offre informazioni sui propri prodotti e servizi attraverso tale piattaforma per uso personale dei visitatori. Le rappresentazioni visive dei prodotti sono accuratamente create, tuttavia, possono verificarsi lievi variazioni nei colori o nel design. Si consiglia di visitare i nostri punti vendita o contattarci direttamente per maggiori informazioni prima di effettuare un acquisto. Potete scaricare o stampare i contenuti dalle Piattaforme esclusivamente per uso personale, non commerciale, a condizione che vengano mantenuti intatti i diritti di proprietà intellettuale e non vengano alterate le note relative ai diritti."
+      "title": "Cusi e-Commerce – Terms of Sale",
+      "content": "Customers who make purchases online through our e-commerce should consult the Terms of Sale, which govern the terms and conditions of such transactions."
     },
     {
-      "title": "Comunicazioni e feedback",
-      "content": "Accogliamo con favore i vostri feedback e suggerimenti. Si prega di inviarli a info@cusimontenapoleone.com. Tutte le comunicazioni inviate a Cusi saranno trattate in conformità con la nostra Informativa sulla privacy."
+      "title": "Use of Content on the Platforms",
+      "content": "Cusi provides information about its products and services through this platform for the personal use of visitors. Visual representations of products are carefully created; however, there may be slight variations in color or design. We recommend visiting our stores or contacting us directly for more information before making a purchase. You may download or print content from the Platforms for personal, non-commercial use, provided that intellectual property rights are maintained intact and rights notices are not altered."
     },
     {
-      "title": "Limitazione di responsabilità",
-      "content": "Cusi si impegna a fornire informazioni precise e complete attraverso tale piattaforma, tuttavia, non può garantire la completezza o l'accuratezza dei contenuti. Inoltre, non assumiamo responsabilità per eventuali danni derivanti dall'utilizzo delle Piattaforme o dall'accesso ai contenuti. Non garantiamo che gli aspetti funzionali e/o tecnici delle Piattaforme o del nostro materiale saranno privi di errori, né che i server che rendono disponibili le Piattaforme saranno esenti da virus o altri componenti dannosi. Nel caso in cui l'utilizzo delle Piattaforme causasse la necessità di assistenza o la sostituzione di beni o dati, Cusi non sarà responsabile di tali costi."
+      "title": "Communications and Feedback",
+      "content": "We welcome your feedback and suggestions. Please send them to info@cusimontenapoleone.com. All communications sent to Cusi will be handled in accordance with our Privacy Policy."
     },
     {
-      "title": "Nota sui marchi e il diritto d'autore",
-      "content": "Tutti i marchi e i contenuti presenti sulle Piattaforme sono di proprietà di Cusi o utilizzati con autorizzazione. È severamente vietato utilizzare tali marchi o contenuti senza il nostro consenso scritto."
+      "title": "Limitation of Liability",
+      "content": "Cusi strives to provide accurate and complete information through this platform; however, it cannot guarantee the completeness or accuracy of the contents. Additionally, we do not assume responsibility for any damages resulting from the use of the Platforms or access to the contents. We do not guarantee that the functional and/or technical aspects of the Platforms or our material will be error-free, nor that the servers that make the Platforms available will be free of viruses or other harmful components. Should the use of the Platforms cause the need for assistance or the replacement of goods or data, Cusi will not be responsible for such costs."
     },
     {
-      "title": "Link e collegamenti",
-      "content": "Le Piattaforme possono contenere collegamenti a siti web di terze parti. Cusi non è responsabile dei contenuti o delle pratiche di privacy di tali siti. L'accesso a tali siti avviene a proprio rischio."
+      "title": "Notice on Trademarks and Copyright",
+      "content": "All trademarks and content present on the Platforms are the property of Cusi or used with authorization. It is strictly forbidden to use such trademarks or content without our written consent."
     },
     {
-      "title": "Risoluzione e sospensione",
-      "content": "Cusi si riserva il diritto di terminare o sospendere l'accesso alla Piattaforma per violazioni dei presenti Termini di utilizzo o per altri motivi a nostra discrezione."
+      "title": "Links and Connections",
+      "content": "The Platforms may contain links to third-party websites. Cusi is not responsible for the contents or privacy practices of such sites. Access to such sites is at your own risk."
     },
     {
-      "title": "Disposizioni generali",
-      "content": "I presenti Termini di utilizzo costituiscono l'accordo completo tra voi e Cusi per l'utilizzo delle Piattaforme. Qualsiasi modifica o rinuncia deve essere effettuata per iscritto e firmata da entrambe le parti."
+      "title": "Termination and Suspension",
+      "content": "Cusi reserves the right to terminate or suspend access to the Platform for violations of these Terms of Use or for other reasons at our discretion."
     },
     {
-      "title": "Legge applicabile e foro competente",
-      "content": "I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale."
+      "title": "General Provisions",
+      "content": "These Terms of Use constitute the entire agreement between you and Cusi for the use of the Platforms. Any changes or waivers must be made in writing and signed by both parties."
+    },
+    {
+      "title": "Applicable Law and Jurisdiction",
+      "content": "These Terms of Use are governed and interpreted according to Italian law without reference to conflict of laws provisions. Any disputes will be resolved in court."
     }
   ]
 },
 
 "Conditions Of Sales": {
-  "title": "Condizioni di vendita di Cusi",
-  "lastUpdated": "Gennaio 2024",
-  "sections": [
-    {
-      "title": "Informazioni su Cusi e i presenti Termini di utilizzo",
-      "content": "Questo sito è gestito dal Titolare del trattamento, identificato nella persona del titolare e legale rappresentante p.t. della società: CUSI MONTENAPOLEONE S.r.l. sede legale: Milano (MI), Via Montenapoleone, 21/A P.Iva 01932840182 mail: info@cusimontenapoleone.com I presenti termini di utilizzo (\"Termini di utilizzo\") regolano l'utilizzo delle Piattaforme di Cusi. Con l'accesso e l'utilizzo delle Piattaforme, manifestate il vostro consenso e accettazione dei presenti Termini di utilizzo. In caso di disaccordo con tali Termini, non siete autorizzati a utilizzare le Piattaforme."
-    },
-    {
-      "title": "Aggiornamenti ai presenti Termini di utilizzo",
-      "content": "Periodicamente, potremmo apportare modifiche ai presenti Termini di utilizzo. Vi invitiamo a controllare regolarmente per restare aggiornati. L'ultima versione sarà sempre disponibile sulle Piattaforme e diventerà efficace immediatamente dopo la pubblicazione. L'utilizzo continuato delle Piattaforme costituirà l'accettazione di tali modifiche."
-    },
-    {
-      "title": "Informazioni sui nostri servizi di hosting",
-      "content": "I servizi di hosting per il sito web di Cusi sono forniti da Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107."
-    },
-    {
-      "title": "La nostra informativa sulla privacy",
-      "content": "La nostra prassi di raccolta dei dati all’interno della piattaforma eCommerce Cusi è disciplinata dai termine della nostra Informativa sulla privacy resa disponibile da Iubenda. Vi invitiamo a leggerla per comprendere come trattiamo i vostri dati."
-    },
-    {
-      "title": "e-Commerce di Cusi – Condizioni di vendita",
-      "content": "I clienti che effettuano acquisti online attraverso il nostro e-commerce devono consultare le Condizioni di vendita, che regolano i termini e le condizioni di tali transazioni."
-    },
-    {
-      "title": "Utilizzo dei contenuti sulle Piattaforme",
-      "content": "Cusi offre informazioni sui propri prodotti e servizi attraverso tale piattaforma per uso personale dei visitatori. Le rappresentazioni visive dei prodotti sono accuratamente create, tuttavia, possono verificarsi lievi variazioni nei colori o nel design. Si consiglia di visitare i nostri punti vendita o contattarci direttamente per maggiori informazioni prima di effettuare un acquisto. Potete scaricare o stampare i contenuti dalle Piattaforme esclusivamente per uso personale, non commerciale, a condizione che vengano mantenuti intatti i diritti di proprietà intellettuale e non vengano alterate le note relative ai diritti."
-    },
-    {
-      "title": "Comunicazioni e feedback",
-      "content": "Accogliamo con favore i vostri feedback e suggerimenti. Si prega di inviarli a info@cusimontenapoleone.com. Tutte le comunicazioni inviate a Cusi saranno trattate in conformità con la nostra Informativa sulla privacy."
-    },
-    {
-      "title": "Limitazione di responsabilità",
-      "content": "Cusi si impegna a fornire informazioni precise e complete attraverso tale piattaforma, tuttavia, non può garantire la completezza o l'accuratezza dei contenuti. Inoltre, non assumiamo responsabilità per eventuali danni derivanti dall'utilizzo delle Piattaforme o dall'accesso ai contenuti. Non garantiamo che gli aspetti funzionali e/o tecnici delle Piattaforme o del nostro materiale saranno privi di errori, né che i server che rendono disponibili le Piattaforme saranno esenti da virus o altri componenti dannosi. Nel caso in cui l'utilizzo delle Piattaforme causasse la necessità di assistenza o la sostituzione di beni o dati, Cusi non sarà responsabile di tali costi."
-    },
-    {
-      "title": "Nota sui marchi e il diritto d'autore",
-      "content": "Tutti i marchi e i contenuti presenti sulle Piattaforme sono di proprietà di Cusi o utilizzati con autorizzazione. È severamente vietato utilizzare tali marchi o contenuti senza il nostro consenso scritto."
-    },
-    {
-      "title": "Link e collegamenti",
-      "content": "Le Piattaforme possono contenere collegamenti a siti web di terze parti. Cusi non è responsabile dei contenuti o delle pratiche di privacy di tali siti. L'accesso a tali siti avviene a proprio rischio."
-    },
-    {
-      "title": "Risoluzione e sospensione",
-      "content": "Cusi si riserva il diritto di terminare o sospendere l'accesso alla Piattaforma per violazioni dei presenti Termini di utilizzo o per altri motivi a nostra discrezione."
-    },
-    {
-      "title": "Disposizioni generali",
-      "content": "I presenti Termini di utilizzo costituiscono l'accordo completo tra voi e Cusi per l'utilizzo delle Piattaforme. Qualsiasi modifica o rinuncia deve essere effettuata per iscritto e firmata da entrambe le parti."
-    },
-    {
-      "title": "Legge applicabile e foro competente",
-      "content": "I presenti Termini di utilizzo sono disciplinati e interpretati in base alla legge Italiana senza riferimento a disposizioni sui conflitti di legge. Eventuali controversie saranno risolte in Tribunale."
-    }
-  ]
-},
+    "title": "Cusi's Conditions of Sale",
+    "lastUpdated": "January 2024",
+    "sections": [
+      {
+        "title": "About Cusi and These Terms of Use",
+        "content": "This site is managed by the Data Controller, identified in the person of the owner and legal representative of the company: CUSI MONTENAPOLEONE S.r.l. registered office: Milano (MI), Via Montenapoleone, 21/A VAT No. 01932840182 email: info@cusimontenapoleone.com These terms of use (\"Terms of Use\") govern the use of Cusi's Platforms. By accessing and using the Platforms, you indicate your consent and acceptance of these Terms of Use. If you disagree with these Terms, you are not authorized to use the Platforms."
+      },
+      {
+        "title": "Updates to These Terms of Use",
+        "content": "Periodically, we may make changes to these Terms of Use. We invite you to check regularly to stay updated. The latest version will always be available on the Platforms and will become effective immediately after publication. Continued use of the Platforms will constitute acceptance of such changes."
+      },
+      {
+        "title": "Information About Our Hosting Services",
+        "content": "The hosting services for Cusi's website are provided by Netlify, Inc. located at 512 2nd Street, Suite 200 San Francisco, CA 94107."
+      },
+      {
+        "title": "Our Privacy Policy",
+        "content": "Our data collection practices within the Cusi eCommerce platform are governed by the terms of our Privacy Policy made available by Iubenda. We invite you to read it to understand how we handle your data."
+      },
+      {
+        "title": "Cusi e-Commerce – Conditions of Sale",
+        "content": "Customers who make purchases online through our e-commerce should consult the Conditions of Sale, which govern the terms and conditions of such transactions."
+      },
+      {
+        "title": "Use of Content on the Platforms",
+        "content": "Cusi provides information about its products and services through this platform for the personal use of visitors. Visual representations of products are carefully created; however, there may be slight variations in color or design. We recommend visiting our stores or contacting us directly for more information before making a purchase. You may download or print content from the Platforms for personal, non-commercial use, provided that intellectual property rights are maintained intact and rights notices are not altered."
+      },
+      {
+        "title": "Communications and Feedback",
+        "content": "We welcome your feedback and suggestions. Please send them to info@cusimontenapoleone.com. All communications sent to Cusi will be handled in accordance with our Privacy Policy."
+      },
+      {
+        "title": "Limitation of Liability",
+        "content": "Cusi strives to provide accurate and complete information through this platform; however, it cannot guarantee the completeness or accuracy of the contents. Additionally, we do not assume responsibility for any damages resulting from the use of the Platforms or access to the contents. We do not guarantee that the functional and/or technical aspects of the Platforms or our material will be error-free, nor that the servers that make the Platforms available will be free of viruses or other harmful components. Should the use of the Platforms cause the need for assistance or the replacement of goods or data, Cusi will not be responsible for such costs."
+      },
+      {
+        "title": "Notice on Trademarks and Copyright",
+        "content": "All trademarks and content present on the Platforms are the property of Cusi or used with authorization. It is strictly forbidden to use such trademarks or content without our written consent."
+      },
+      {
+        "title": "Links and Connections",
+        "content": "The Platforms may contain links to third-party websites. Cusi is not responsible for the contents or privacy practices of such sites. Access to such sites is at your own risk."
+      },
+      {
+        "title": "Termination and Suspension",
+        "content": "Cusi reserves the right to terminate or suspend access to the Platform for violations of these Terms of Use or for other reasons at our discretion."
+      },
+      {
+        "title": "General Provisions",
+        "content": "These Terms of Use constitute the entire agreement between you and Cusi for the use of the Platforms. Any changes or waivers must be made in writing and signed by both parties."
+      },
+      {
+        "title": "Applicable Law and Jurisdiction",
+        "content": "These Terms of Use are governed and interpreted according to Italian law without reference to conflict of laws provisions. Any disputes will be resolved in court."
+      }
+    ]
+  },
 
 "Privacy Policy": {
   "section1": {
-    "title": "INFORMAZIONI SULLA PRIVACY E SULL'UTILIZZO DEL SITO WEB",
-    "content": "Queste informazioni descrivono ampiamente le pratiche che abbiamo adottato. <br/><br/> Questa pagina descrive i metodi di gestione del sito con riferimento al trattamento dei dati personali degli utenti che lo consultano. Il trattamento è sempre basato sui principi di liceità e correttezza nel rispetto di tutte le normative vigenti e sono adottate adeguate misure di sicurezza per proteggere i dati. Questa informativa sulla privacy è anche fornita come informativa breve ai sensi dell'art. 13 del Decreto Legislativo 196/2003 e ai sensi dell'art. 13 del GDPR 679/2016 Regolamento europeo sulla privacy, nonché ai sensi della disposizione sui cookie n. 229 dell'8 maggio 2014, desideriamo informare i visitatori del sito sull'uso dei dati inseriti e sui cookie utilizzati dal sito stesso. Le informazioni sono fornite anche ai sensi della Raccomandazione n. 2/2001 adottata dal gruppo di lavoro istituito dall'art. 29 della direttiva n. 95/46/CE per coloro che interagiscono con i servizi web di questo sito, per la protezione dei dati personali, accessibili elettronicamente all'indirizzo: Utilizzando uno qualsiasi dei nostri servizi e/o accettando queste informazioni, ad esempio nell'ambito della registrazione per uno dei nostri servizi, acconsenti alla raccolta e all'uso delle informazioni personali come descritto in queste informazioni."
+    "title": "PRIVACY INFORMATION AND WEBSITE USE",
+    "content": "This information broadly describes the practices we have adopted. <br/><br/> This page describes the methods of managing the website concerning the processing of personal data of users who browse it. The processing is always based on principles of lawfulness and fairness in compliance with all current regulations, and adequate security measures are adopted to protect the data. This privacy notice is also provided as a brief notice pursuant to Art. 13 of Legislative Decree 196/2003 and pursuant to Art. 13 of GDPR 679/2016 European Privacy Regulation, as well as pursuant to the cookie provision No. 229 of May 8, 2014. We wish to inform site visitors about the use of the entered data and the cookies used by the site itself. The information is also provided pursuant to Recommendation No. 2/2001 adopted by the working group established by Art. 29 of Directive No. 95/46/EC for those who interact with the web services of this site, for the protection of personal data, accessible electronically at the address: By using any of our services and/or accepting this information, for example within the registration for one of our services, you consent to the collection and use of personal information as described in this notice."
   },
   "section2": {
-    "title": "INFORMAZIONI PERSONALI CHE RACCOGLIAMO",
-    "content": "In ogni occasione di contatto o interazione con l'ospite e in tutti gli altri aspetti del nostro lavoro, possiamo raccogliere informazioni personali. Queste informazioni personali possono includere: le tue informazioni di contatto; caratteristiche personali, nazionalità, documenti di identità, informazioni di pagamento, nonché dettagli di fatturazione e dettagli del conto relativi alla fatturazione elettronica; preferenze, con il tuo consenso scritto, riguardo al marketing e alla comunicazione, e possiamo inviarti informazioni commerciali con il tuo esplicito consenso."
+    "title": "PERSONAL INFORMATION WE COLLECT",
+    "content": "In every occasion of contact or interaction with the guest and in all other aspects of our work, we may collect personal information. This personal information may include: your contact details; personal characteristics, nationality, identity documents, payment information, as well as billing and account details related to electronic invoicing; preferences, with your written consent, regarding marketing and communication, and we may send you commercial information with your explicit consent."
   },
   "section3": {
-    "title": "SCOPO DEL TRATTAMENTO",
-    "content": "Il trattamento dei dati è finalizzato ai seguenti scopi: <br/><br/> per la gestione delle relazioni con i clienti (emissione di fatture, preventivi), per adempiere a eventuali obbligazioni contrattuali, per gestire le controversie, nonché per rispettare gli obblighi normativi, in particolare quelli contabili e fiscali; <br/><br/> 2a) Relativi al servizio: <br/><br/> per inviare (con il tuo consenso scritto) offerte promozionali sui nostri servizi e offerte nonché auguri via posta ordinaria o via fax o email; Richieste tecniche per adattare, completare, modificare o riparare gioielli secondo il gusto del cliente e secondo il loro ordine, per telefono, posta, fax <br/><br/> 2b) Programma di ricevuta elettronica: <br/><br/> possiamo iscriverti automaticamente al nostro programma di ricevute elettroniche e utilizzare il tuo indirizzo email per inviarti fatture o ricevute fiscali, o documenti relativi al tuo acquisto. È tua responsabilità assicurarti che l'indirizzo email che abbiamo sia corretto (e preferito). Possiamo utilizzare il tuo indirizzo email per inviarti, con il tuo consenso scritto, le nostre newsletter, i nostri auguri di vacanza. <br/><br/> Scopi aggiuntivi <br/><br/> I sistemi informatici e le procedure software utilizzate per il funzionamento di questo sito web acquisiscono, durante il loro normale esercizio, alcuni dati personali la cui trasmissione è implicita nell'uso dei protocolli di comunicazione di Internet. Queste informazioni non sono raccolte per essere associate a soggetti identificati, ma che per loro natura potrebbero, attraverso elaborazioni ed associazioni con dati detenuti da terzi, permettere di identificare gli utenti. Questa categoria di dati include gli indirizzi IP o i nomi a dominio dei computer utilizzati dagli utenti che si connettono al sito, gli indirizzi URI (Uniform Resource Identifier) delle risorse richieste, l'orario della richiesta, il metodo utilizzato nel sottoporre la richiesta al server, la dimensione del file ottenuto in risposta, il codice numerico indicante lo stato della risposta data dal server (buon fine, errore, ecc.), ed altri parametri relativi al sistema operativo e all'ambiente informatico dell'utente. Questi dati vengono utilizzati solo per ottenere informazioni statistiche anonime sull'uso del sito e per controllarne il corretto funzionamento e vengono cancellati immediatamente dopo l'elaborazione. I dati potrebbero inoltre essere utilizzati per l'accertamento di responsabilità in caso di ipotetici reati informatici ai danni del sito."
+    "title": "PURPOSE OF PROCESSING",
+    "content": "The data processing is aimed at the following purposes: <br/><br/> for managing customer relations (issuing invoices, quotes), to fulfill any contractual obligations, to handle disputes, and to comply with regulatory obligations, particularly those of accounting and taxation; <br/><br/> 2a) Related to the service: <br/><br/> to send (with your written consent) promotional offers on our services and offers as well as greetings via regular mail or fax or email; Technical requests to adapt, complete, modify, or repair jewelry according to the customer's taste and their order, by phone, mail, fax <br/><br/> 2b) Electronic receipt program: <br/><br/> we may automatically enroll you in our electronic receipt program and use your email address to send you invoices or fiscal receipts, or documents related to your purchase. It is your responsibility to ensure that the email address we have is correct (and preferred). We may use your email address to send you, with your written consent, our newsletters, our holiday greetings. <br/><br/> Additional purposes <br/><br/> The computer systems and software procedures used to operate this website acquire, during their normal operation, some personal data whose transmission is implicit in the use of Internet communication protocols. These data are not collected to be associated with identified subjects, but by their very nature could, through processing and associations with data held by third parties, allow users to be identified. This category of data includes the IP addresses or domain names of the computers used by users who connect to the site, the URI (Uniform Resource Identifier) addresses of the requested resources, the time of the request, the method used to submit the request to the server, the size of the file obtained in response, the numeric code indicating the status of the response given by the server (successful, error, etc.), and other parameters related to the user's operating system and computer environment. These data are used only to obtain anonymous statistical information on the use of the site and to check its correct functioning and are deleted immediately after processing. The data could also be used to ascertain responsibility in case of hypothetical computer crimes against the site."
   },
   "section4": {
-    "title": "IDENTITÀ DEL TITOLARE DEL TRATTAMENTO",
-    "content": "Questo sito è gestito dal Titolare del trattamento dei dati, identificato nella persona del proprietario attuale e rappresentante legale dell'azienda: <br/><br/> CUSI MONTENAPOLEONE S.r.l. <br/> sede legale: Milano (MI), Via Montenapoleone, 21/A <br/> Partita IVA 01932840182 <br/> email: info@cusimontenapoleone.com; <br/><br/> Il Titolare del trattamento garantisce la sicurezza, la riservatezza e la protezione dei dati che detiene, in qualsiasi fase del processo di trattamento. I dati raccolti sono utilizzati nel rispetto delle normative sulla privacy vigenti (Decreto Legislativo 196/2003 e GDPR 679/2016)."
+    "title": "IDENTITY OF THE DATA CONTROLLER",
+    "content": "This site is managed by the Data Controller, identified as the current owner and legal representative of the company: <br/><br/> CUSI MONTENAPOLEONE S.r.l. <br/> registered office: Milan (MI), Via Montenapoleone, 21/A <br/> VAT number 01932840182 <br/> email: info@cusimontenapoleone.com; <br/><br/> The Data Controller guarantees the security, confidentiality, and protection of the data it holds, at any stage of the processing. The data collected are used in compliance with current privacy regulations (Legislative Decree 196/2003 and GDPR 679/2016)."
   },
   "section5": {
-    "title": "LUOGO DI TRATTAMENTO",
-    "content": "I dati saranno trattati dal titolare del trattamento presso la sede legale e operativa."
+    "title": "PLACE OF PROCESSING",
+    "content": "The data will be processed by the data controller at the registered and operational office."
   },
   "section6": {
-    "title": "NATURA DELLA FORNITURA DEI DATI",
-    "content": "Ai fini di cui al punto 2, la fornitura dei dati è obbligatoria e il mancato conferimento può rendere impossibile ottenere quanto richiesto. Ai fini di cui ai punti 2a) e 2b), la fornitura dei dati è facoltativa e non preclude la prestazione del servizio richiesto."
+    "title": "NATURE OF DATA PROVISION",
+    "content": "For the purposes referred to in point 2, the provision of data is mandatory and failure to provide them may make it impossible to obtain what is requested. For the purposes referred to in points 2a) and 2b), the provision of data is optional and does not preclude the provision of the requested service."
   },
   "section7": {
-    "title": "RIFIUTO DI FORNIRE I DATI",
-    "content": "L'interessato può rifiutare di fornire i propri dati di navigazione al Titolare del trattamento. A tal fine, deve disabilitare i cookie seguendo le istruzioni fornite dal browser in uso. La disabilitazione dei cookie potrebbe compromettere la funzionalità di navigazione del sito."
+    "title": "REFUSAL TO PROVIDE DATA",
+    "content": "The data subject can refuse to provide their browsing data to the Data Controller. To do so, they must disable cookies by following the instructions provided by the browser in use. Disabling cookies may impair the navigation functionality of the site."
   },
   "section8": {
-    "title": "DESTINATARI DEI DATI",
-    "content": "Nessun dato derivante dal servizio web (quindi dati di navigazione specificati sopra e cookie) è comunicato o diffuso (ad eccezione della comunicazione ad autorità giudiziarie o di polizia se necessario). I dati sono trattati da personale appositamente incaricato per iscritto di trattare i dati (personale amministrativo e personale di relazioni pubbliche, compreso quello esterno all'azienda, personale di gestione dei sistemi informatici, compreso quello esterno all'azienda che può svolgere anche funzioni di amministratore di sistema e che in questo caso è nominato come tale ai sensi della disposizione del Garante per la protezione della privacy e successive modifiche, stagisti, nostri consulenti e persone incaricate della gestione specifica dei sistemi informatici, compreso quello esterno all'azienda) solo se il trattamento è necessario per l'esecuzione dei loro compiti, svolgendo solo le operazioni necessarie per l'esecuzione dei loro compiti."
+    "title": "DATA RECIPIENTS",
+    "content": "No data deriving from the web service (therefore the navigation data specified above and cookies) are communicated or disseminated (except for communication to judicial or police authorities if necessary). The data are processed by personnel specifically appointed in writing to process the data (administrative and public relations staff, including external to the company, IT system management staff, including external to the company who may also perform system administrator functions and who in this case are appointed as such pursuant to the provision of the Privacy Guarantor and subsequent amendments, interns, our consultants and persons in charge of the specific management of IT systems, including external to the company) only if the processing is necessary for the performance of their duties, performing only the operations necessary for the performance of their duties."
   },
   "section9": {
-    "title": "DIRITTI DEGLI INTERESSATI",
-    "content": "Ai sensi dell'art. 7 del Codice della Privacy e degli artt. 15 (diritto di accesso), 16 (diritto di rettifica), 17 (diritto alla cancellazione), 18 (diritto di limitazione di trattamento), 20 (diritto alla portabilità dei dati), 21 (diritto di opposizione) e 22 (diritto di non essere sottoposti a decisioni automatizzate) del GDPR 679/2016, l'interessato eserciterà i propri diritti scrivendo al Titolare del trattamento all'indirizzo indicato sopra o via email all'indirizzo info@cusimontenapoleone.com, e avrà il diritto di ottenere senza ritardo, dal Titolare del trattamento, informazioni sull'esistenza del trattamento di dati personali che lo riguardano, sugli scopi, sulle modalità di trattamento, sulla logica applicata in caso di trattamento effettuato con l'ausilio di strumenti elettronici, sui dettagli identificativi del Titolare del trattamento e dei responsabili, sui soggetti o categorie di soggetti ai quali i dati personali possono essere comunicati o che possono venirne a conoscenza in qualità di responsabili o incaricati. <br/><br/> L'interessato ha il diritto di ottenere l'aggiornamento, la rettifica o, quando vi ha interesse, l'integrazione dei dati, la cancellazione, l'anonimizzazione o il blocco dei dati trattati in violazione di legge, compresi quelli di cui non è necessaria la conservazione in relazione agli scopi per i quali i dati sono stati raccolti o successivamente trattati, la certificazione che le operazioni di cui alle lettere a) e b) sono state portate a conoscenza, anche per quanto riguarda il loro contenuto, di coloro ai quali i dati sono stati comunicati o diffusi, eccetto il caso in cui tale adempimento si rivela impossibile o comporta un impiego di mezzi manifestamente sproporzionato rispetto al diritto tutelato. <br/><br/> L'interessato ha il diritto di opporsi, in tutto o in parte: <br/><br/> a) per motivi legittimi al trattamento dei dati personali che lo riguardano, ancorché pertinenti allo scopo della raccolta; <br/><br/> b) al trattamento di dati personali che lo riguardano a fini di invio di materiale pubblicitario o di vendita diretta o per il compimento di ricerche di mercato o di comunicazione commerciale."
+    "title": "DATA SUBJECTS' RIGHTS",
+    "content": "Pursuant to Art. 7 of the Privacy Code and Arts. 15 (right of access), 16 (right to rectification), 17 (right to erasure), 18 (right to restriction of processing), 20 (right to data portability), 21 (right to object) and 22 (right not to be subject to automated decision-making) of GDPR 679/2016, the data subject will exercise their rights by writing to the Data Controller at the address indicated above or by email to info@cusimontenapoleone.com, and will have the right to obtain without delay, from the Data Controller, information on the existence of personal data processing concerning them, on the purposes, on the methods of processing, on the logic applied in case of processing carried out with the aid of electronic instruments, on the identification details of the Data Controller and the data processors, on the subjects or categories of subjects to whom personal data may be communicated or who may become aware of them as data processors or persons in charge. <br/><br/> The data subject has the right to obtain the updating, rectification or, when interested, the integration of data, the erasure, anonymization or blocking of data processed unlawfully, including data whose retention is unnecessary for the purposes for which the data were collected or subsequently processed, the certification that the operations referred to in letters a) and b) have been brought to the attention, also as regards their content, of those to whom the data have been communicated or disseminated, except where this fulfillment proves impossible or involves a disproportionate use of means compared to the protected right. <br/><br/> The data subject has the right to object, in whole or in part: <br/><br/> a) for legitimate reasons to the processing of personal data concerning them, even if pertinent to the purpose of the collection; <br/><br/> b) to the processing of personal data concerning them for the purpose of sending advertising material or direct sales or for carrying out market research or commercial communication."
   },
   "section10": {
-    "title": "COOKIE",
-    "content": "I cookie sono piccoli file di testo che vengono inviati al tuo computer. Questo sito utilizza i seguenti cookie tecnici di terze parti: Google Analytics. Questo sito non utilizza cookie di profilazione. I sistemi informatici e le procedure software utilizzate per il funzionamento di questo sito web acquisiscono, durante il loro normale funzionamento, alcuni dati personali la cui trasmissione è implicita nell'uso dei protocolli di comunicazione di Internet. Queste informazioni non sono raccolte per essere associate a soggetti identificati, ma che per loro natura potrebbero, attraverso elaborazioni ed associazioni con dati detenuti da terzi, permettere di identificare gli utenti."
+    "title": "COOKIES",
+    "content": "Cookies are small text files that are sent to your computer. This site uses the following third-party technical cookies: Google Analytics. This site does not use profiling cookies. The computer systems and software procedures used to operate this website acquire, during their normal operation, some personal data whose transmission is implicit in the use of Internet communication protocols. These data are not collected to be associated with identified subjects, but by their very nature could, through processing and associations with data held by third parties, allow users to be identified."
   },
   "section11": {
     "title": "Google Analytics",
-    "content": "Il nostro sito utilizza Google Analytics di Google, Inc. (di seguito 'Google') per generare statistiche sull'utilizzo del sito web; Google Analytics utilizza cookie (non di terze parti) che non memorizzano dati personali. Le informazioni ottenute dai cookie sull'uso del sito web da parte degli utenti (compresi gli indirizzi IP) saranno trasmesse dal browser dell'utente a Google, ubicato al 1600 Amphitheatre Parkway, Mountain View, CA 94043, Stati Uniti, e memorizzate sui server dell'azienda. <br/><br/> In conformità alle condizioni di servizio vigenti, Google utilizzerà queste informazioni, in qualità di responsabile autonomo del trattamento, per tracciare ed esaminare l'uso del sito web, compilare report sulle attività del sito web per gli operatori del sito, e fornire altri servizi relativi alle attività del sito web, ai metodi di connessione (mobile, PC, browser utilizzati, ecc.), e ai metodi di ricerca e raggiungimento delle pagine del sito web. Google potrebbe anche trasferire queste informazioni a terzi ove richiesto dalla legge o laddove tali terzi trattino le suddette informazioni per conto di Google. Google non assocerà gli indirizzi IP degli utenti a nessun altro dato posseduto da Google. Utilizzando questo sito, l'utente acconsente al trattamento dei propri dati da parte di Google per i metodi e le finalità indicati sopra. <br/><br/> In base a un accordo specifico (DPA), Google Analytics è stato impostato per anonimizzare gli indirizzi IP degli utenti che visitano il nostro sito web. L'anonimizzazione comporta la mascheratura dell'ultima parte dell'indirizzo IP del visitatore, rendendolo impossibile da ricondurre al singolo utente. <br/><br/> La trasmissione di tali dati è disciplinata da un accordo specifico tra l'azienda e Google Inc. Per ulteriori informazioni sulle politiche di protezione dei dati di Google, è possibile consultare il seguente link: <a href='https://policies.google.com/privacy?hl=it' target='_blank'>https://policies.google.com/privacy?hl=it</a>."
+    "content": "Our site uses Google Analytics from Google, Inc. (hereinafter 'Google') to generate statistics on website usage; Google Analytics uses cookies (not third-party cookies) that do not store personal data. The information obtained from cookies on the website usage by users (including IP addresses) will be transmitted by the user's browser to Google, located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States, and stored on the company's servers. <br/><br/> In accordance with the current service conditions, Google will use this information, as an independent data controller, to track and examine website usage, compile reports on website activities for site operators, and provide other services related to website activities, connection methods (mobile, PC, browsers used, etc.), and methods of searching and reaching website pages. Google may also transfer this information to third parties where required by law or where such third parties process the information on Google's behalf. Google will not associate users' IP addresses with any other data held by Google. By using this site, the user consents to the processing of their data by Google in the manner and for the purposes indicated above. <br/><br/> Under a specific agreement (DPA), Google Analytics has been set to anonymize the IP addresses of users visiting our website. Anonymization involves masking the last part of the visitor's IP address, making it impossible to trace the individual user. <br/><br/> The transmission of such data is governed by a specific agreement between the company and Google Inc. For more information on Google's data protection policies, you can consult the following link: https://policies.google.com/privacy?hl=it.<br/><br/> "
   }
 }
 

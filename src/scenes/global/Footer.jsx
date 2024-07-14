@@ -798,7 +798,9 @@ function Footer() {
 
     const navigate = useNavigate();
 
-    const [selectedLanguage, setSelectedLanguage] = useState("IT");
+    const [selectedLanguage, setSelectedLanguage] = useState(
+      (localStorage.getItem('selectedLanguage') || 'IT').toUpperCase()
+    );
 
     const changeLanguage = (language) => {
       setSelectedLanguage(language);
