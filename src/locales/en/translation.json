@@ -245,7 +245,81 @@
 "search": {
     "search": "Search ...",
     "result1": "No products found with this name"
+},
+"customerservice": {
+  "customerservice": "Customer Service",
+  "ourservices": "Our Services",
+  "ourservices_description": [
+    "Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the timeless beauty and sophistication you deserve.",
+    "Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and style."
+  ],
+  "productcare": "Product Care",
+  "productcare_description": "Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations, follow these product care guidelines:",
+  "productcare_guide": [
+    "Store your jewelry in a soft pouch or box to prevent scratches.",
+    "Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.",
+    "Clean your jewelry gently with a soft, lint-free cloth.",
+    "For specific care instructions, refer to the care guide provided with each item."
+  ],
+  "productcare_description2": "Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.",
+  "shipping": "Shipping",
+  "shipping&returns": "Shipping & Returns",
+  "shipping_description": [
+    "Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the comfort of your home.",
+    "All orders are shipped with the utmost care and attention to detail. You will receive a shipping confirmation email with a tracking link to monitor the journey of your precious purchase.",
+    "Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons, please allow for additional delivery time."
+  ],
+  "returns": "Returns",
+  "returns_description": "Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.",
+  "sizechart": "Size Chart",
+  "sizechart_description": [
+    "Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your selected piece complements your style and comfort.",
+    "If you have any questions about sizing or need assistance, our customer service team is here to help. Reach out to us for personalized guidance."
+  ],
+  "garanzia": "Garanzia",
+  "garanzia_description": [
+    "La nostra garanzia testimonia l'impegno nella qualità e nell'eccellenza. Tutti i nostri gioielli sono coperti da una garanzia che attesta la genuinità dei materiali e la maestria artigianale impiegata nella creazione di ciascun pezzo.",
+    "Per maggiori dettagli sulla garanzia e i suoi termini, contatta il nostro servizio clienti. Siamo qui per garantire la tua completa soddisfazione."
+  ],
+  "faq": "FAQ",
+  "faq_description": [
+    "Explore our frequently asked questions to find answers to common queries. Whether it's about our products, shipping, or returns, you'll likely find the information you need here.",
+    "If your question isn't covered in our FAQ section, please don't hesitate to reach out to our customer service team. We're here to assist you."
+  ],
+  "contact": "Contact",
+  "contact_description": [
+    "Our customer service team is <GrayClickableLink onClick={() => navigate('/contactus')}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized assistance, please don't hesitate to contact us.",
+    "You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond promptly and ensure your experience with us is seamless."
+  ]
+},
+
+"customerservicemobile": {
+  "customerservice": "Customer Service",
+  "ourservices": "Our Services",
+  "ourservices_description_1": "Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the timeless beauty and sophistication you deserve.",
+  "ourservices_description_2": "Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and style.",
+  "productcare": "Product Care",
+  "productcare_description": "Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations, follow these product care guidelines:",
+  "productcare_guide_1": "Store your jewelry in a soft pouch or box to prevent scratches.",
+  "productcare_guide_2": "Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.",
+  "productcare_guide_3": "Clean your jewelry gently with a soft, lint-free cloth.",
+  "productcare_guide_4": "For specific care instructions, refer to the care guide provided with each item.",
+  "productcare_description2": "Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.",
+  "shipping": "Shipping & Returns",
+  "shipping_description_1": "Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the comfort of your home.",
+  "shipping_description_2": "All orders are shipped with the utmost care and attention to detail. You will receive a shipping confirmation email with a tracking link to monitor the journey of your precious purchase.",
+  "shipping_description_3": "Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons, please allow for additional delivery time.",
+  "returns_description": "Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.",
+  "sizechart": "Size Chart",
+  "sizechart_description_1": "Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your selected piece complements your style and comfort.",
+  "sizechart_description_2": "If you have any questions about sizing or need assistance, our customer service team is here to help. Reach out to us for personalized guidance.",
+  "contact": "Contact",
+  "contact_description_1": "Our customer service team is",
+  "contact_description_2": "to assist you. If you have any questions, concerns, or need personalized assistance, please don't hesitate to contact us. You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond promptly and ensure your experience with us is seamless."
 }
+
+
+
 
   }
 

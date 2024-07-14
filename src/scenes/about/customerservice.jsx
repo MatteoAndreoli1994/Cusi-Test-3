@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import { useNavigate } from "react-router-dom";
-import Footer from "../global/FooterNoSubscribe"
+import Footer from "../global/Footer"
 import { useLocation } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.div`
   display: flex;
@@ -296,120 +296,82 @@ const CustomerService = () => {
       case 'Our Services':
         return (
           <>
-            <GtaRegular16>Our Services</GtaRegular16>
-
-            <GtaLightLightInfo>
-              Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-              to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-              timeless beauty and sophistication you deserve.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-              to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-              style.
-            </GtaLightLightInfo>
+            <GtaRegular16>{t('customerservice.ourservices')}</GtaRegular16>
+            {t('customerservice.ourservices_description', { returnObjects: true }).map((paragraph, index) => (
+              <GtaLightLightInfo key={index}>{paragraph}</GtaLightLightInfo>
+            ))}
           </>
         );
       case 'Product Care':
         return (
           <>
-            <GtaRegular16>Product Care</GtaRegular16>
-            <GtaLightLightInfo>
-              Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations,
-              follow these product care guidelines:
-            </GtaLightLightInfo>
+            <GtaRegular16>{t('customerservice.productcare')}</GtaRegular16>
+            <GtaLightLightInfo>{t('customerservice.productcare_description')}</GtaLightLightInfo>
             <ul>
-              <GtaLightLightInfoLi>Store your jewelry in a soft pouch or box to prevent scratches.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Clean your jewelry gently with a soft, lint-free cloth.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>For specific care instructions, refer to the care guide provided with each item.</GtaLightLightInfoLi>
+              {t('customerservice.productcare_guide', { returnObjects: true }).map((guide, index) => (
+                <GtaLightLightInfoLi key={index}>{guide}</GtaLightLightInfoLi>
+              ))}
             </ul>
-            <GtaLightLightInfo>
-              Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.
-            </GtaLightLightInfo>
+            <GtaLightLightInfo>{t('customerservice.productcare_description2')}</GtaLightLightInfo>
           </>
         );
       case 'Shipping':
         return (
           <>
             <div>
-              <GtaRegular16>Shipping</GtaRegular16>
-              <GtaLightLightInfo>
-                Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the
-                comfort of your home.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                All orders are shipped with the utmost care and attention to detail. You will receive a shipping
-                confirmation email with a tracking link to monitor the journey of your precious purchase.
-              </GtaLightLightInfo>
-              <GtaLightLightInfo>
-                Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons,
-                please allow for additional delivery time.
-              </GtaLightLightInfo>
+              <GtaRegular16>{t('customerservice.shipping')}</GtaRegular16>
+              {t('customerservice.shipping_description', { returnObjects: true }).map((paragraph, index) => (
+                <GtaLightLightInfo key={index}>{paragraph}</GtaLightLightInfo>
+              ))}
             </div>
             <div>
-              <GtaRegular16>Returns</GtaRegular16>
-              <GtaLightLightInfo>
-              Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.
-              </GtaLightLightInfo>
+              <GtaRegular16>{t('customerservice.returns')}</GtaRegular16>
+              <GtaLightLightInfo>{t('customerservice.returns_description')}</GtaLightLightInfo>
             </div>
           </>
         );
       case 'Size Chart':
         return (
           <>
-            <GtaRegular16>Size Chart</GtaRegular16>
-            <GtaLightLightInfo>
-              Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your
-              selected piece complements your style and comfort.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              If you have any questions about sizing or need assistance, our customer service team is here to help. Reach
-              out to us for personalized guidance.
-            </GtaLightLightInfo>
+            <GtaRegular16>{t('customerservice.sizechart')}</GtaRegular16>
+            {t('customerservice.sizechart_description', { returnObjects: true }).map((paragraph, index) => (
+              <GtaLightLightInfo key={index}>{paragraph}</GtaLightLightInfo>
+            ))}
           </>
         );
       case 'Garanzia':
         return (
           <>
-            <GtaRegular16>Garanzia</GtaRegular16>
-            <GtaLightLightInfo>
-              La nostra garanzia testimonia l'impegno nella qualità e nell'eccellenza. Tutti i nostri gioielli sono
-              coperti da una garanzia che attesta la genuinità dei materiali e la maestria artigianale impiegata nella
-              creazione di ciascun pezzo.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              Per maggiori dettagli sulla garanzia e i suoi termini, contatta il nostro servizio clienti. Siamo qui per
-              garantire la tua completa soddisfazione.
-            </GtaLightLightInfo>
+            <GtaRegular16>{t('customerservice.garanzia')}</GtaRegular16>
+            {t('customerservice.garanzia_description', { returnObjects: true }).map((paragraph, index) => (
+              <GtaLightLightInfo key={index}>{paragraph}</GtaLightLightInfo>
+            ))}
           </>
         );
       case 'FAQ':
         return (
           <>
             <GtaRegular16>FAQ</GtaRegular16>
-            <GtaLightLightInfo>
-              Explore our frequently asked questions to find answers to common queries. Whether it's about our products,
-              shipping, or returns, you'll likely find the information you need here.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              If your question isn't covered in our FAQ section, please don't hesitate to reach out to our customer
-              service team. We're here to assist you.
-            </GtaLightLightInfo>
+            {t('customerservice.faq_description', { returnObjects: true }).map((paragraph, index) => (
+              <GtaLightLightInfo key={index}>{paragraph}</GtaLightLightInfo>
+            ))}
           </>
         );
       case 'Contact':
         return (
           <>
-            <GtaRegular16>Contact</GtaRegular16>
-            <GtaLightLightInfo>
-              Our customer service team is <GrayClickableLink onClick={() => navigate("/contactus")}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized
-              assistance, please don't hesitate to contact us.
-            </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond
-              promptly and ensure your experience with us is seamless.
-            </GtaLightLightInfo>
+            <GtaRegular16>{t('customerservice.contact')}</GtaRegular16>
+            {t('customerservice.contact_description', { returnObjects: true }).map((paragraph, index) => (
+              <GtaLightLightInfo key={index}>
+                {index === 0 ? (
+                  <>
+                    Our customer service team is <GrayClickableLink onClick={() => navigate("/contactus")}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized assistance, please don't hesitate to contact us.
+                  </>
+                ) : (
+                  paragraph
+                )}
+              </GtaLightLightInfo>
+            ))}
           </>
         );
       // Aggiungi altri casi per le voci rimanenti
@@ -441,43 +403,43 @@ const CustomerService = () => {
   
   
   
-
+  const { t } = useTranslation();
   return (
     <>
     <Container>
       <CustomerServiceDiv>
         <Menu>
-          <GtaRegular>Customer Service</GtaRegular>
+          <GtaRegular>{t('customerservice.customerservice')}</GtaRegular>
           <MenuItem
             className={selectedItem === 'Our Services' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Our Services')}
           >
-           <li><GtaRegular16Category>Our Services</GtaRegular16Category></li> 
+           <li><GtaRegular16Category>{t('customerservice.ourservices')}</GtaRegular16Category></li> 
           </MenuItem>
           <MenuItem
             className={selectedItem === 'Product Care' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Product Care')}
           >
-            <li><GtaRegular16Category> Product Care </GtaRegular16Category></li>
+            <li><GtaRegular16Category> {t('customerservice.productcare')} </GtaRegular16Category></li>
           </MenuItem>
           <MenuItem
             className={selectedItem === 'Shipping' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Shipping')}
           >
-            <li> <GtaRegular16Category> Shipping & Returns </GtaRegular16Category></li>
+            <li> <GtaRegular16Category> {t('customerservice.shipping&returns')}</GtaRegular16Category></li>
           </MenuItem>
           <MenuItem
             className={selectedItem === 'Size Chart' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Size Chart')}
           >
-            <li> <GtaRegular16Category> Size Chart </GtaRegular16Category></li>
+            <li> <GtaRegular16Category> {t('customerservice.sizechart')} </GtaRegular16Category></li>
           </MenuItem>
 
           <MenuItem
             className={selectedItem === 'Contact' ? 'selected' : ''}
             onClick={() => handleMenuItemClick('Contact')}
           >
-            <li><GtaRegular16Category> Contact </GtaRegular16Category></li>
+            <li><GtaRegular16Category> {t('customerservice.contact')} </GtaRegular16Category></li>
           </MenuItem>
         </Menu>
         <Content>{getContent()}</Content>
@@ -490,200 +452,150 @@ const CustomerService = () => {
 
 
       <Mobile>
-        <GtaRegular>Customer Service</GtaRegular>
+      <GtaRegular>{t('customerservicemobile.customerservice')}</GtaRegular>
 
-        <FaqDiv>
-{/* prima Linea nera */}
+      <FaqDiv>
+        {/* Prima Linea nera */}
         <AccordionContent></AccordionContent>
 
-{/* Prima Domanda */}
-          <FilterButton onClick={() => toggleAccordion('OurServices')}>
-            <AccordionItem >
-              Our Services
+        {/* Prima Domanda */}
+        <FilterButton onClick={() => toggleAccordion('OurServices')}>
+          <AccordionItem>{t('customerservicemobile.ourservices')}</AccordionItem>
+          <FilterSign>
+            {accordionState['OurServices'] ? (
+              <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+        </FilterButton>
 
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['OurServices'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['OurServices']}>
-                <GtaLightLightInfo>
-                  Welcome to our luxury jewelry boutique, where elegance meets craftsmanship. Our dedicated team is committed
-                  to providing you with an exceptional shopping experience, ensuring each piece of jewelry reflects the
-                  timeless beauty and sophistication you deserve.
-                </GtaLightLightInfo>
-                <GtaLightLightInfo>
-                  Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                  to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                  style.
-                </GtaLightLightInfo>
-                <GtaLightLightInfo>
-                <br></br>
-                </GtaLightLightInfo>
-          </AccordionContent>
-{/* Fine Prima Domanda */}
-
-          <FilterButton onClick={() => toggleAccordion('ProductCare')}>
-            <AccordionItem >
-                Product Care
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['ProductCare'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['ProductCare']}>
+        <AccordionContent isOpen={accordionState['OurServices']}>
           <GtaLightLightInfo>
-          Our luxurious jewelry pieces are crafted with precision and care. To preserve their beauty for generations, follow these product care guidelines:
+            {t('customerservicemobile.ourservices_description_1')}
+          </GtaLightLightInfo>
+          <GtaLightLightInfo>
+            {t('customerservicemobile.ourservices_description_2')}
+          </GtaLightLightInfo>
+          <GtaLightLightInfo><br /></GtaLightLightInfo>
+        </AccordionContent>
+        {/* Fine Prima Domanda */}
+
+        <FilterButton onClick={() => toggleAccordion('ProductCare')}>
+          <AccordionItem>{t('customerservicemobile.productcare')}</AccordionItem>
+          <FilterSign>
+            {accordionState['ProductCare'] ? (
+              <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+        </FilterButton>
+
+        <AccordionContent isOpen={accordionState['ProductCare']}>
+          <GtaLightLightInfo>
+            {t('customerservicemobile.productcare_description')}
+          </GtaLightLightInfo>
           <ul>
-              <GtaLightLightInfoLi>Store your jewelry in a soft pouch or box to prevent scratches.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Avoid exposing your jewelry to chemicals, perfumes, and cosmetics.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>Clean your jewelry gently with a soft, lint-free cloth.</GtaLightLightInfoLi>
-              <GtaLightLightInfoLi>For specific care instructions, refer to the care guide provided with each item.</GtaLightLightInfoLi>
+            <GtaLightLightInfoLi>{t('customerservicemobile.productcare_guide_1')}</GtaLightLightInfoLi>
+            <GtaLightLightInfoLi>{t('customerservicemobile.productcare_guide_2')}</GtaLightLightInfoLi>
+            <GtaLightLightInfoLi>{t('customerservicemobile.productcare_guide_3')}</GtaLightLightInfoLi>
+            <GtaLightLightInfoLi>{t('customerservicemobile.productcare_guide_4')}</GtaLightLightInfoLi>
           </ul>
-          Investing in the proper care of your jewelry ensures that it remains a timeless treasure for years to come.
-                    </GtaLightLightInfo>
+          <GtaLightLightInfo>
+            {t('customerservicemobile.productcare_description2')}
+          </GtaLightLightInfo>
+          <GtaLightLightInfo><br /></GtaLightLightInfo>
+        </AccordionContent>
 
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
-          </AccordionContent>
+        <FilterButton onClick={() => toggleAccordion('Shipping')}>
+          <AccordionItem>{t('customerservicemobile.shipping')}</AccordionItem>
+          <FilterSign>
+            {accordionState['Shipping'] ? (
+              <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+        </FilterButton>
 
-
-<FilterButton onClick={() => toggleAccordion('Shipping')}>
-            <AccordionItem >
-                Shipping & returns
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Shipping'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Shipping']}>
+        <AccordionContent isOpen={accordionState['Shipping']}>
           <>
             <div>
               <GtaLightLightInfo>
-                Immerse yourself in the luxury of our online boutique. Discover and shop our exquisite collection from the
-                comfort of your home.
+                {t('customerservicemobile.shipping_description_1')}
               </GtaLightLightInfo>
               <GtaLightLightInfo>
-                All orders are shipped with the utmost care and attention to detail. You will receive a shipping
-                confirmation email with a tracking link to monitor the journey of your precious purchase.
+                {t('customerservicemobile.shipping_description_2')}
               </GtaLightLightInfo>
               <GtaLightLightInfo>
-                Delivery times may vary, but rest assured, we strive to deliver your order promptly. During peak seasons,
-                please allow for additional delivery time.
+                {t('customerservicemobile.shipping_description_3')}
               </GtaLightLightInfo>
             </div>
             <div>
-              <br></br>
+              <GtaLightLightInfo><br /></GtaLightLightInfo>
               <GtaLightLightInfo>
-              Returns and exchanges are free for orders placed online, if requested within 30 days of the delivery date. It is possible to make returns and exchanges in person at one of the Maison's selected boutiques. We invite you to call our personal advisors to coordinate the services. Customized, engraved, or damaged creations cannot be returned. After receiving the return, the Maison will conduct a quality check. You will receive further information throughout the entire process, and the refund will be processed within 14 days.
+                {t('customerservicemobile.returns_description')}
               </GtaLightLightInfo>
             </div>
+            <GtaLightLightInfo>
+              Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
+              to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
+              style.
+            </GtaLightLightInfo>
+            <GtaLightLightInfo><br /></GtaLightLightInfo>
           </>
-                    <GtaLightLightInfo>
-                      Explore our curated collection of exquisite jewelry, handcrafted with the finest materials and attention
-                      to detail. From dazzling diamonds to rare gemstones, each piece tells a story of unparalleled luxury and
-                      style.
-                    </GtaLightLightInfo>
-                    <GtaLightLightInfo>
-                    <br></br>
-                    </GtaLightLightInfo>
-          </AccordionContent>
+        </AccordionContent>
+        {/* Fine Prima Domanda */}
 
-{/* Fine Prima Domanda */}
+        <FilterButton onClick={() => toggleAccordion('Size')}>
+          <AccordionItem>{t('customerservicemobile.sizechart')}</AccordionItem>
+          <FilterSign>
+            {accordionState['Size'] ? (
+              <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+        </FilterButton>
 
-<FilterButton onClick={() => toggleAccordion('Size')}>
-            <AccordionItem >
-                Size Chart
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Size'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Size']}>
+        <AccordionContent isOpen={accordionState['Size']}>
           <>
-
             <GtaLightLightInfo>
-              Finding the perfect fit is essential when it comes to jewelry. Refer to our size chart to ensure your
-              selected piece complements your style and comfort.
+              {t('customerservicemobile.sizechart_description_1')}
             </GtaLightLightInfo>
             <GtaLightLightInfo>
-              If you have any questions about sizing or need assistance, our customer service team is here to help. Reach
-              out to us for personalized guidance.
+              {t('customerservicemobile.sizechart_description_2')}
             </GtaLightLightInfo>
-            <br></br>
+            <GtaLightLightInfo><br /></GtaLightLightInfo>
           </>
-          </AccordionContent>
+        </AccordionContent>
+        {/* Fine Prima Domanda */}
 
+        <FilterButton onClick={() => toggleAccordion('Contact')}>
+          <AccordionItem>{t('customerservicemobile.contact')}</AccordionItem>
+          <FilterSign>
+            {accordionState['Contact'] ? (
+              <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
+            ) : (
+              <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
+            )}
+          </FilterSign>
+        </FilterButton>
 
-
-{/* Fine Prima Domanda */}
-
-<FilterButton onClick={() => toggleAccordion('Contact')}>
-            <AccordionItem >
-                Contact
-            </AccordionItem>
-            <FilterSign>
-                {accordionState['Contact'] ? (  // Se isOpen è true (l'accordion è aperto)
-                  <img src={close} alt="Close" style={{ width: '20px', height: '20px' }} />
-                ) : (
-                  <img src={add} alt="Open" style={{ width: '20px', height: '20px' }} />
-                )}
-            </FilterSign>
-          </FilterButton>
-
-
-          <AccordionContent isOpen={accordionState['Contact']}>
+        <AccordionContent isOpen={accordionState['Contact']}>
           <>
-
             <GtaLightLightInfo>
-              Our customer service team is <GrayClickableLink onClick={() => navigate("/contactus")}>here</GrayClickableLink> to assist you. If you have any questions, concerns, or need personalized
-              assistance, please don't hesitate to contact us.
+              {t('customerservicemobile.contact_description_1')}
+              <GrayClickableLink onClick={() => navigate("/contactus")}> here </GrayClickableLink>
+              {t('customerservicemobile.contact_description_2')}
             </GtaLightLightInfo>
-            <GtaLightLightInfo>
-              You can reach us via email, phone, or by filling out the contact form on our website. We aim to respond
-              promptly and ensure your experience with us is seamless.
-            </GtaLightLightInfo>
-            <br></br>
+            <GtaLightLightInfo><br /></GtaLightLightInfo>
           </>
-          </AccordionContent>
-
-{/* Fine Prima Domanda */}
-
-
-
-
-
-
-         
-
-      
-        </FaqDiv>
-      </Mobile>
+        </AccordionContent>
+        {/* Fine Prima Domanda */}
+      </FaqDiv>
+    </Mobile>
 
 
     </Container>

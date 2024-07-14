@@ -140,7 +140,7 @@
     "ourServices": "I Nostri Servizi",
     "productCare": "Cura del Prodotto",
     "shippingReturns": "Spedizione e Resi",
-    "sizeChart": "Tabella delle Taglie",
+    "sizeChart": "Taglie",
     "faq": "Domande frequenti",
     "subscribe": "ISCRIVITI",
     "yourEmail": "La tua e-mail",
@@ -241,7 +241,84 @@
   "search": {
     "search":"Cerca ...",
     "result1":"Nessun prodotto trovato con questo nome"
-  }
+  },
+
+"customerservice": {
+  "customerservice": "Servizio Clienti",
+  "ourservices": "I Nostri Servizi",
+  "ourservices_description": [
+    "Benvenuti nella nostra boutique di gioielli di lusso, dove l'eleganza si unisce all'artigianato. Il nostro team dedicato è impegnato a fornirti un'esperienza di acquisto eccezionale, garantendo che ogni gioiello rifletta la bellezza senza tempo e la raffinatezza che meriti.",
+    "Esplora la nostra collezione curata di gioielli esclusivi, realizzati a mano con i materiali più pregiati e attenzione ai dettagli. Dai diamanti sfavillanti alle gemme rare, ogni pezzo racconta una storia di lusso e stile senza pari."
+  ],
+  "productcare": "Cura del Prodotto",
+  "productcare_description": "I nostri gioielli di lusso sono realizzati con precisione e cura. Per preservarne la bellezza per generazioni, segui queste linee guida per la cura del prodotto:",
+  "productcare_guide": [
+    "Conserva i tuoi gioielli in una custodia morbida o in una scatola per evitare graffi.",
+    "Evita di esporre i tuoi gioielli a sostanze chimiche, profumi e cosmetici.",
+    "Pulisci i tuoi gioielli delicatamente con un panno morbido e senza pelucchi.",
+    "Per istruzioni specifiche di cura, consulta la guida fornita con ogni articolo."
+  ],
+  "productcare_description2": "Investire nella corretta cura dei tuoi gioielli assicura che rimangano un tesoro senza tempo per gli anni a venire.",
+  "shipping": "Spedizione",
+  "shipping&returns": "Spedizione & Resi",
+  "shipping_description": [
+    "Immergiti nel lusso della nostra boutique online. Scopri e acquista la nostra esclusiva collezione comodamente da casa tua.",
+    "Tutti gli ordini sono spediti con la massima cura e attenzione ai dettagli. Riceverai una email di conferma della spedizione con un link per monitorare il percorso del tuo prezioso acquisto.",
+    "I tempi di consegna possono variare, ma siamo impegnati a consegnare il tuo ordine tempestivamente. Durante i periodi di picco, ti preghiamo di considerare tempi di consegna aggiuntivi."
+  ],
+  "returns": "Resi",
+  "returns_description": "I resi e gli scambi sono gratuiti per gli ordini effettuati online, se richiesti entro 30 giorni dalla data di consegna. È possibile effettuare resi e scambi di persona presso una delle boutique selezionate della Maison. Ti invitiamo a contattare i nostri consulenti personali per coordinare i servizi. Le creazioni personalizzate, incise o danneggiate non possono essere restituite. Dopo aver ricevuto il reso, la Maison effettuerà un controllo di qualità. Riceverai ulteriori informazioni durante l'intero processo e il rimborso verrà elaborato entro 14 giorni.",
+  "sizechart": "Taglie",
+  "sizechart_description": [
+    "Trovare la misura perfetta è essenziale quando si tratta di gioielli. Consulta la nostra tabella delle taglie per assicurarti che il pezzo selezionato sia adatto al tuo stile e comfort.",
+    "Se hai domande sulla misura o hai bisogno di assistenza, il nostro team di assistenza clienti è qui per aiutarti. Contattaci per assistenza personalizzata."
+  ],
+  "garanzia": "Garanzia",
+  "garanzia_description": [
+    "La nostra garanzia testimonia l'impegno nella qualità e nell'eccellenza. Tutti i nostri gioielli sono coperti da una garanzia che attesta la genuinità dei materiali e la maestria artigianale impiegata nella creazione di ciascun pezzo.",
+    "Per maggiori dettagli sulla garanzia e i suoi termini, contatta il nostro servizio clienti. Siamo qui per garantire la tua completa soddisfazione."
+  ],
+  "faq": "Domande Frequenti",
+  "faq_description": [
+    "Esplora le nostre domande frequenti per trovare risposte alle domande più comuni. Che si tratti dei nostri prodotti, della spedizione o dei resi, è probabile che troverai le informazioni di cui hai bisogno qui.",
+    "Se la tua domanda non è trattata nella nostra sezione FAQ, non esitare a contattare il nostro team di assistenza clienti. Siamo qui per aiutarti."
+  ],
+  "contact": "Contatti",
+  "contact_description": [
+    "Il nostro team di servizio clienti è <GrayClickableLink onClick={() => navigate('/contactus')}>qui</GrayClickableLink> per assisterti. Se hai domande, preoccupazioni o hai bisogno di assistenza personalizzata, non esitare a contattarci.",
+    "Puoi raggiungerci via email, telefono o compilando il modulo di contatto sul nostro sito web. Ci impegniamo a rispondere tempestivamente e garantire che la tua esperienza con noi sia senza intoppi."
+  ]
+}
+,
+
+"customerservicemobile": {
+  "customerservice": "Servizio Clienti",
+  "ourservices": "I Nostri Servizi",
+  "ourservices_description_1": "Benvenuti nella nostra boutique di gioielli di lusso, dove l'eleganza si unisce all'artigianato. Il nostro team dedicato è impegnato a fornirti un'esperienza di acquisto eccezionale, garantendo che ogni gioiello rifletta la bellezza senza tempo e la raffinatezza che meriti.",
+  "ourservices_description_2": "Esplora la nostra collezione curata di gioielli esclusivi, realizzati a mano con i materiali più pregiati e attenzione ai dettagli. Dai diamanti sfavillanti alle gemme rare, ogni pezzo racconta una storia di lusso e stile senza pari.",
+  "productcare": "Cura del Prodotto",
+  "productcare_description": "I nostri gioielli di lusso sono realizzati con precisione e cura. Per preservarne la bellezza per generazioni, segui queste linee guida per la cura del prodotto:",
+  "productcare_guide_1": "Conserva i tuoi gioielli in una custodia morbida o in una scatola per evitare graffi.",
+  "productcare_guide_2": "Evita di esporre i tuoi gioielli a sostanze chimiche, profumi e cosmetici.",
+  "productcare_guide_3": "Pulisci i tuoi gioielli delicatamente con un panno morbido e senza pelucchi.",
+  "productcare_guide_4": "Per istruzioni specifiche di cura, consulta la guida fornita con ogni articolo.",
+  "productcare_description2": "Investire nella corretta cura dei tuoi gioielli assicura che rimangano un tesoro senza tempo per gli anni a venire.",
+  "shipping": "Spedizione e Resi",
+  "shipping_description_1": "Immergiti nel lusso della nostra boutique online. Scopri e acquista la nostra esclusiva collezione comodamente da casa tua.",
+  "shipping_description_2": "Tutti gli ordini sono spediti con la massima cura e attenzione ai dettagli. Riceverai una email di conferma della spedizione con un link per monitorare il percorso del tuo prezioso acquisto.",
+  "shipping_description_3": "I tempi di consegna possono variare, ma siamo impegnati a consegnare il tuo ordine tempestivamente. Durante i periodi di picco, ti preghiamo di considerare tempi di consegna aggiuntivi.",
+  "returns_description": "I resi e gli scambi sono gratuiti per gli ordini effettuati online, se richiesti entro 30 giorni dalla data di consegna. È possibile effettuare resi e scambi di persona presso una delle boutique selezionate della Maison. Ti invitiamo a contattare i nostri consulenti personali per coordinare i servizi. Le creazioni personalizzate, incise o danneggiate non possono essere restituite. Dopo aver ricevuto il reso, la Maison effettuerà un controllo di qualità. Riceverai ulteriori informazioni durante l'intero processo e il rimborso verrà elaborato entro 14 giorni.",
+  "sizechart": "Taglie",
+  "sizechart_description_1": "Trovare la misura perfetta è essenziale quando si tratta di gioielli. Consulta la nostra tabella delle taglie per assicurarti che il pezzo selezionato sia adatto al tuo stile e comfort.",
+  "sizechart_description_2": "Se hai domande sulla misura o hai bisogno di assistenza, il nostro team di assistenza clienti è qui per aiutarti. Contattaci per assistenza personalizzata.",
+  "contact": "Contatti",
+  "contact_description_1": "Il nostro team di servizio clienti è",
+  "contact_description_2": "per assisterti. Se hai domande, preoccupazioni o hai bisogno di assistenza personalizzata, non esitare a contattarci. Puoi raggiungerci via email, telefono o compilando il modulo di contatto sul nostro sito web. Ci impegniamo a rispondere tempestivamente e garantire che la tua esperienza con noi sia senza intoppi."
+}
+
+    
+
+
 
   }
 
