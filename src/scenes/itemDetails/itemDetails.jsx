@@ -21,7 +21,7 @@ import add from '../../assets/add.png';
 import close from '../../assets/meno.png';
 import Footer from "../global/Footer"
 import { useTranslation } from 'react-i18next';
-
+import { setIsCartOpen } from '../../state/index.js'; 
 
 
 
@@ -694,17 +694,8 @@ const ItemDetails = () => {
   };
 
   const handleAddToCart = () => {
-    // Verifica se l'elemento è già presente nel carrello
-    const isItemInCart = items.some(cartItem => cartItem.id === item.id);
-
-    if (!isItemInCart) {
-      // Se l'elemento non è presente nel carrello, aggiungilo
-      dispatch(addToCart({ item: { ...item, count } }));
-    } else {
-      // Se l'elemento è già presente nel carrello, gestisci l'azione di conseguenza
-      console.log('L\'elemento è già presente nel carrello.');
-      // Puoi mostrare un messaggio all'utente o eseguire altre azioni necessarie.
-    }
+    dispatch(addToCart({ item: { ...item, count } }));
+    dispatch(setIsCartOpen());
   };
 
   async function getItem() {
@@ -974,7 +965,7 @@ const ItemDetails = () => {
                     minWidth: "100%",
                     padding: "20px 40px",
                   }}
-                  onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+                  onClick={handleAddToCart}
                   disabled={item?.attributes?.quantity === "0"|| !available}
                 >
                   <GtaRegular>{t('itemdetails.addtoshoppingbag')}</GtaRegular>
