@@ -693,7 +693,7 @@ const ShoppingList = () => {
 
                   {/* Aggiungi il tuo div qui */}
                   <Info> <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.artisanalGoldEarrings') }} /></Info>
-                  <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> {t('shoppinglist.shopEarrings')}  </GtaRegular2></ShopButton>
+                  <ShopButton><GtaRegular2 onClick={handleShopClickEarrings}> {t('shoppinglist.shopEarrings')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </DivImmagineCategoria2>
@@ -806,7 +806,7 @@ const ShoppingList = () => {
 
                 {/* Aggiungi il tuo div qui */}
                 <Info>    <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.rareDiamondsGemstones') }} /></Info>
-                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}> {t('shoppinglist.shopNecklaces')}  </GtaRegular2></ShopButton>
+                <ShopButton><GtaRegular2 onClick={handleShopClickNecklaces}> {t('shoppinglist.shopNecklaces')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </LazyLoad>  
@@ -865,7 +865,7 @@ const ShoppingList = () => {
 
                 {/* Aggiungi il tuo div qui */}
                 <Info> <GtaRegularShadow dangerouslySetInnerHTML={{ __html: t('shoppinglist.uniqueLuxuryRings') }} /></Info>
-                <ShopButton><GtaRegular2 onClick={handleShopClickBracelets}>  {t('shoppinglist.shopRings')}  </GtaRegular2></ShopButton>
+                <ShopButton><GtaRegular2 onClick={handleShopClick}>  {t('shoppinglist.shopRings')}  </GtaRegular2></ShopButton>
 
                 </LazyLoadWrapper>
                 </LazyLoad>  
