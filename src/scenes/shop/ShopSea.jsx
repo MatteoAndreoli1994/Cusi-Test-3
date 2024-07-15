@@ -86,32 +86,33 @@ const FilterOverlay = styled.div`
 
 
 const DivInfo = styled.div`
-  display: flex;
-  min-height: 200px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  overflow: hidden;
+display: flex;
+min-height: 100px;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+overflow: hidden;
 
-  margin-bottom: 20px;
-  margin-top:1%;
-  transition: min-height 0.5s ease;
-  width: 50%;
 
-  @media(max-width:680px){
-    width:80%;
-  }
+margin-bottom: 20px;
+margin-top:4%;
+transition: min-height 0.5s ease;
+width: 85%;
+
+@media(max-width:680px){
+  width:85%;
+}
 
 `;
 
 const DivDescrizione = styled.div`
-  display: flex;
-  width: 100%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: center;
+display: flex;
+width: 100%;
+margin-top: 1%;
+margin-bottom: 1%;
+align-items: flex-start;
+justify-content: center;
+text-align: center;
 
 `;
 

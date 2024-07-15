@@ -108,10 +108,10 @@ overflow: hidden;
 margin-bottom: 20px;
 margin-top:4%;
 transition: min-height 0.5s ease;
-width: 50%;
+width: 85%;
 
 @media(max-width:680px){
-  width:80%;
+  width:85%;
 }
 
 `;
