@@ -22,40 +22,49 @@ all: unset; /* Azzeramento di tutte le impostazioni predefinite */
   background-color: black;
 
   border: 1px solid #000;
-  width:40%;
+  width:25%;
   cursor: pointer;
 justify-content:center;
 align-items:center;
 text-align:center;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
-  margin-left:30%;
 
+    margin-top:6%;
   @media(max-width:1200px){
     font-size: 11px;
-
+  width:30%;
   }
 
   @media(max-width:900px){
 
-    margin-top:10%;
-
+    margin-top:8%;
+    width:38%;
   }
 
   @media(max-width:680px){
 
-    margin-top:10%;
+    margin-top:8%;
+        width:40%;
     
   }
 
       @media(max-width: 360px){
 
-
+        width:41%;
 
 
   
   }
   
+`;
+
+const ButtonCenterDiv = styled.div`
+
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
 `;
 const GtaRegularSubscribe = styled.p`
 font-family: 'GTAmericaRegular';
@@ -946,6 +955,7 @@ return (
             </CheckboxLabel2>
           </CheckboxContainer>
 
+          <ButtonCenterDiv>
           <SubscribeButton type="submit" value="Send" disabled={loading || sent}>
             {loading ? (
               <ClipLoader color={'#fff'} loading={loading} size={20} />
@@ -955,6 +965,9 @@ return (
               <GtaRegularSubscribe>{t('maison.book')}</GtaRegularSubscribe>
             )}
           </SubscribeButton>
+
+          </ButtonCenterDiv>
+
         </form>
       </FormContainer>
     </Container>
