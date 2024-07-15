@@ -18,45 +18,38 @@ color: inherit; /* Usa il colore del testo predefinito */
 `;
 
 const SubscribeButton = styled.button`
-all: unset; /* Azzeramento di tutte le impostazioni predefinite */
+  all: unset; /* Azzeramento di tutte le impostazioni predefinite */
   background-color: black;
-
   border: 1px solid #000;
-  width:25%;
+  width: 25%;
   cursor: pointer;
-justify-content:center;
-align-items:center;
-text-align:center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
-
-
-    margin-top:6%;
-  @media(max-width:1200px){
+  margin-top: 6%;
+  height: 65px; /* Imposta un'altezza minima per mantenere il pulsante costante */
+  
+  @media(max-width: 1200px){
     font-size: 11px;
-  width:30%;
+    width: 30%;
+      height: 50px; /* Imposta un'altezza minima per mantenere il pulsante costante */
   }
 
-  @media(max-width:900px){
-
-    margin-top:8%;
-    width:38%;
+  @media(max-width: 900px){
+    margin-top: 8%;
+    width: 38%;
+          height: 50px; /* Imposta un'altezza minima per mantenere il pulsante costante */
   }
 
-  @media(max-width:680px){
-
-    margin-top:8%;
-        width:40%;
-    
+  @media(max-width: 680px){
+    margin-top: 8%;
+    width: 40%;
   }
 
-      @media(max-width: 360px){
-
-        width:41%;
-
-
-  
+  @media(max-width: 360px){
+    width: 41%;
   }
-  
 `;
 
 const ButtonCenterDiv = styled.div`
