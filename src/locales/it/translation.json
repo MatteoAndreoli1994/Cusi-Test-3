@@ -100,6 +100,9 @@
     "shipping&returns_descriptions":"I resi e gli scambi sono gratuiti per gli ordini effettuati online, se richiesti entro 30 giorni dalla data di consegna. È possibile effettuare resi e scambi di persona presso una delle boutique selezionate della Maison. Vi invitiamo a chiamare i nostri consulenti personali per coordinare i servizi. Le creazioni personalizzate, incise o danneggiate non possono essere restituite. Dopo aver ricevuto il reso, la Maison effettuerà un controllo di qualità. Riceverai ulteriori informazioni durante tutto il processo e il rimborso sarà elaborato entro 14 giorni."
   },
   "checkout": {
+  "free":"Gratuita",
+  "total":"Totale Stimato",
+  "shipping":"Consegna Express",
   "billinginformation":"Informazioni di Fatturazione",
   "firstname":"Nome",
   "lastname":"Cognome",

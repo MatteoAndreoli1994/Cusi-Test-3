@@ -474,15 +474,15 @@ const CartMenu = () => {
 
         </FlexBox>
         <FlexBox m="20px 0">
-          <GtaRegular16normal fontWeight="bold">Consegna Express</GtaRegular16normal>
+          <GtaRegular16normal fontWeight="bold">{t('checkout.shipping')}</GtaRegular16normal>
 
-          <ABC16 >GRATUITA</ABC16>
+          <ABC16 >{t('checkout.free')}</ABC16>
 
 
         </FlexBox>
 
         <FlexBox m="20px 0">
-          <GtaRegular16normalTotale fontWeight="bold">Totale Stimato</GtaRegular16normalTotale>
+          <GtaRegular16normalTotale fontWeight="bold">{t('checkout.total')}</GtaRegular16normalTotale>
 
           <ABC16Totale >{formatPrice(totalPrice)}</ABC16Totale >
 

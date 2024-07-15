@@ -102,6 +102,9 @@
 }
 ,
 "checkout": {
+    "total":"Total",
+    "free":"Free",
+    "shipping":"Express Shipping",
     "billinginformation": "Billing Information",
     "firstname": "First Name",
     "lastname": "Last Name",
