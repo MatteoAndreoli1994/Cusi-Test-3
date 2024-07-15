@@ -167,7 +167,7 @@ const CollectionBollywood = () => {
   transition: min-height 0.5s ease;
   width: 50%;
   
-  @media(max-width:900px){
+  @media(max-width:1200px){
     width:80%;
   }
   
