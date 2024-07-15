@@ -104,10 +104,10 @@ overflow: hidden;
 margin-bottom: 20px;
 margin-top:4%;
 transition: min-height 0.5s ease;
-width: 85%;
+width: 50%;
 
-@media(max-width:680px){
-  width:85%;
+@media(max-width:900px){
+  width:80%;
 }
 
 `;
@@ -122,7 +122,6 @@ justify-content: center;
 text-align: center;
 
 `;
-
 const DivFiltri = styled.div`
   display: flex;
   width: 85%;

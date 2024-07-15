@@ -154,20 +154,34 @@ const CollectionBollywood = () => {
   `;
 
   const DivInfo = styled.div`
-    display: flex;
-    height: 10%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+  
+  
+  margin-bottom: 20px;
+  margin-top:4%;
+  transition: min-height 0.5s ease;
+  width: 50%;
+  
+  @media(max-width:900px){
+    width:80%;
+  }
+  
   `;
-
+  
   const DivDescrizione = styled.div`
-    display: flex;
-    width: 60%;
-    background-color: yellow;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  
   `;
 
   const DivFiltri = styled.div`

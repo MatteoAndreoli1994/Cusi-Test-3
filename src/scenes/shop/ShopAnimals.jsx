@@ -109,7 +109,7 @@ margin-top:4%;
 transition: min-height 0.5s ease;
 width: 50%;
 
-@media(max-width:680px){
+@media(max-width:900px){
   width:80%;
 }
 
