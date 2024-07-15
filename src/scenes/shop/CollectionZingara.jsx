@@ -538,6 +538,25 @@ const SortImage2 = styled.img`
   transform: ${({ showOptions }) => (showOptions ? 'rotate(180deg)' : 'rotate(0deg)')};
   transition: transform 0.3s ease;
 `;
+const DivAvviso = styled.div`
+
+display:flex;
+width:85%;
+min-height:40vh;
+
+justify-content:center;
+`;
+const GtaRegular2Gray = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin-right: 10px;
+  color: gray;
+  text-align: center;
+
+  @media (max-width: 680px) {
+    font-size: 14px;
+  }
+`;
 
 
 
@@ -751,6 +770,7 @@ const CollectionBollywood = () => {
   
   const filteredItems = sortItems(zingaraItems, selectedOption);
   const { t } = useTranslation();
+  const hasProducts = filteredItems.length > 0;
   return (
     <>
 
@@ -1013,14 +1033,23 @@ const CollectionBollywood = () => {
 
 
           
-          <DivProdotti>
+          {!hasProducts && (
+        <DivAvviso>
+          <GtaRegular2Gray>
+          {t('prodotti.avviso')}
+          </GtaRegular2Gray>
+        </DivAvviso>
+      )}
+      {hasProducts && (
+        <DivProdotti>
           {value === "zingara" &&
             filteredItems.map((item) => (
-              <StyledItem key={`${item.id}`}>
+              <StyledItem key={item.id}>
                 <ItemInShop item={item} />
               </StyledItem>
             ))}
         </DivProdotti>
+      )}
           <Footer/>
 
         </Container>

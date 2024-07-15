@@ -522,6 +522,25 @@ const GtaRegular3 = styled.p`
     color: black; /* Cambia il colore del testo a nero al passaggio del mouse */
   }
 `;
+const DivAvviso = styled.div`
+
+display:flex;
+width:85%;
+min-height:40vh;
+
+justify-content:center;
+`;
+const GtaRegular2Gray = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin-right: 10px;
+  color: gray;
+  text-align: center;
+
+  @media (max-width: 680px) {
+    font-size: 14px;
+  }
+`;
 
 const CollectionBollywood = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -705,6 +724,7 @@ const CollectionBollywood = () => {
 
   const filteredItems = sortItems(bollywoodItems, selectedOption);
   const { t } = useTranslation();
+  const hasProducts = filteredItems.length > 0;
   return (
     <>
       <LazyLoad once>
@@ -954,14 +974,23 @@ const CollectionBollywood = () => {
           </DivFiltri>
 
           
-          <DivProdotti>
-            {value === "bollywood" &&
-              filteredItems.map((item) => (
-                <StyledItem key={`${item.id}`}>
-                  <ItemInShop item={item} />
-                </StyledItem>
-              ))}
-          </DivProdotti>
+          {!hasProducts && (
+        <DivAvviso>
+          <GtaRegular2Gray>
+          {t('prodotti.avviso')}
+          </GtaRegular2Gray>
+        </DivAvviso>
+      )}
+      {hasProducts && (
+        <DivProdotti>
+          {value === "bollywood" &&
+            filteredItems.map((item) => (
+              <StyledItem key={item.id}>
+                <ItemInShop item={item} />
+              </StyledItem>
+            ))}
+        </DivProdotti>
+      )}
 
           <Footer/>
 

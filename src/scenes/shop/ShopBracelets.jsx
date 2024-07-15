@@ -977,7 +977,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
           {!hasProducts && (
         <DivAvviso>
           <GtaRegular2Gray>
-            Attualmente non ci sono prodotti in questa sezione. Tornate presto per scoprire le novità in arrivo!
+            {t('prodotti.avviso')}
           </GtaRegular2Gray>
         </DivAvviso>
       )}
