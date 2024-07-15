@@ -536,7 +536,7 @@ width:85%;
 
 `;
 const GtaRegular16 = styled.p`
-
+font-family: 'GTAmericaRegular';
 font-size: 14px;
 
 
