@@ -18,37 +18,57 @@ color: inherit; /* Usa il colore del testo predefinito */
 `;
 
 const SubscribeButton = styled.button`
+all: unset; /* Azzeramento di tutte le impostazioni predefinite */
   background-color: black;
-  color: white;
-  padding: 18px;
+
   border: 1px solid #000;
-  width: 160px;
-
+  width:40%;
   cursor: pointer;
-  font-size: 13px;
+justify-content:center;
+align-items:center;
+text-align:center;
+  margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
 
-  margin: 6% auto 0;
-  display: flex; /* Use flex container */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  height: 50px;
+  margin-left:30%;
+
+  @media(max-width:1200px){
+    font-size: 11px;
+
+  }
+
+  @media(max-width:900px){
+
+    margin-top:10%;
+
+  }
+
+  @media(max-width:680px){
+
+    margin-top:10%;
+    
+  }
+
+      @media(max-width: 360px){
 
 
 
-  text-align: center;
 
-
-
-    /* Stili aggiuntivi quando disabilitato */
-  &:disabled {
- cursor: auto;
   
   }
+  
+`;
+const GtaRegularSubscribe = styled.p`
+font-family: 'GTAmericaRegular';
+font-size: 16px;
+color:white;
 
+    @media(max-width:1200px){
+    font-size: 14px;
 
-  @media(max-width: 900px){
-    margin-top: 10%;
   }
+
+
+
 
 `;
 
@@ -930,9 +950,9 @@ return (
             {loading ? (
               <ClipLoader color={'#fff'} loading={loading} size={20} />
             ) : sent ? (
-              <GtaRegular16>✓</GtaRegular16>
+              <GtaRegularSubscribe>✓</GtaRegularSubscribe>
             ) : (
-              <GtaRegular16>{t('maison.book')}</GtaRegular16>
+              <GtaRegularSubscribe>{t('maison.book')}</GtaRegularSubscribe>
             )}
           </SubscribeButton>
         </form>
