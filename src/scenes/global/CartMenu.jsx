@@ -191,6 +191,17 @@ const GtaRegular16normal = styled.p`
       font-size: 14px;
     }
 `;
+const GtaRegular16normalTotale = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 17px;
+  margin: 0;
+  color: gray;
+
+
+  @media(max-width: 680px) {
+    font-size: 14px;
+  }
+`;
 const GtaRegular16normalW = styled.p`
   font-family: 'GTAmericaRegular';
   font-size: 16px;
@@ -208,6 +219,17 @@ font-size: 16px;
 margin-bottom: 0;
 margin-top:1%;
 
+@media(max-width: 680px){
+  font-size: 14px; 
+}
+`;
+const ABC16Totale = styled.p`
+font-family: 'ABCGaisyr-Book';
+font-size: 16px; 
+margin-bottom: 0;
+margin-top:1%;
+
+  
 @media(max-width: 680px){
   font-size: 14px; 
 }
@@ -445,9 +467,28 @@ const CartMenu = () => {
         (<>
       <Box m="20px 0">
         <FlexBox m="20px 0">
-          <GtaRegular16normal fontWeight="bold">Subtotal</GtaRegular16normal>
+          <GtaRegular16normal fontWeight="bold">{t('checkout.subtotal')}</GtaRegular16normal>
+
           <ABC16 >{formatPrice(totalPrice)}</ABC16>
+
+
         </FlexBox>
+        <FlexBox m="20px 0">
+          <GtaRegular16normal fontWeight="bold">Consegna Express</GtaRegular16normal>
+
+          <ABC16 >GRATUITA</ABC16>
+
+
+        </FlexBox>
+        <Divider />
+        <FlexBox m="20px 0">
+          <GtaRegular16normalTotale fontWeight="bold">Totale Stimato</GtaRegular16normalTotale>
+
+          <ABC16Totale >{formatPrice(totalPrice)}</ABC16Totale >
+
+
+        </FlexBox>
+
         <Checkout
           sx={{
             backgroundColor: "black",

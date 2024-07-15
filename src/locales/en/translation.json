@@ -59,7 +59,7 @@
     "animals_description": "Detailed and fascinating animal sculptures by Cusi bring a touch of nature and craftsmanship mastery to any environment. Perfect for those who love art and the beauty of the animal kingdom.",
     "sea": "Sea",
     "sea_description": "Cusi sea-inspired jewelry, evoking the beauty of oceans, enchant with the waves' charm and the serenity of coasts. Ideal for those who wish to carry a piece of the sea wherever they go.",
-
+    "avviso":"There are currently no products in this section. Come back soon to find out what's new!",
     "zingara_description": "The softness of gold and hammered finish bring to life a fascinating play of light and movement.",
     "tycoon_description": "Elegance and boldness blend in Cusi's Tycoon collection. Jewelry with innovative design and made from high-quality materials, designed for those who wish to express confidence and sophistication on every occasion.",
     "bollywood_description": "Whether you're looking for a red carpet necklace or a ring that captures the festive spirit of Bollywood, every piece in the collection allows you to express your individuality with unparalleled grace.",
@@ -116,7 +116,8 @@
     "contactinfo": "Contact Information",
     "placeorder": "PLACE ORDER",
     "required": "required",
-    "phonenumber": "Phone Number"
+    "phonenumber": "Phone Number",
+    "subtotal":"Subtotal"
 }
 ,
 "shoppinglist": {

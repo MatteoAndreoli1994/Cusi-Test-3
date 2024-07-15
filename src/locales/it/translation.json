@@ -114,7 +114,8 @@
   "contactinfo":"Informazioni di Contatto",
   "placeorder": "PAGAMENTO",
   "required":"obbligatorio",
-  "phonenumber":"Numero di Telefono"
+  "phonenumber":"Numero di Telefono",
+  "subtotal":"Subtotale"
 
 
   },
