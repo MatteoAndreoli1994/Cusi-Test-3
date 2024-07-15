@@ -378,7 +378,7 @@ font-size: 13px;
 }
 
 @media(max-width: 680px){
-  font-size: 12px;
+  font-size: 11px;
 }
   @media(max-width: 400px){
   font-size: 10px;
