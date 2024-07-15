@@ -480,7 +480,7 @@ const CartMenu = () => {
 
 
         </FlexBox>
-        <Divider />
+
         <FlexBox m="20px 0">
           <GtaRegular16normalTotale fontWeight="bold">Totale Stimato</GtaRegular16normalTotale>
 
