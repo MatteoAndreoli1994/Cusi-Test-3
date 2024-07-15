@@ -370,6 +370,18 @@ margin-right:10px;
 }
 
 `;
+const GtaRegular2Gray = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin-right: 10px;
+  color: gray;
+  text-align: center;
+
+  @media (max-width: 680px) {
+    font-size: 14px;
+  }
+`;
+
 
 const GtaRegular12 = styled.p`
 font-family: 'GTAmericaRegular';
@@ -495,6 +507,14 @@ const Option = styled.div`
   &:last-child {
     border-bottom: none;
   }
+`;
+const DivAvviso = styled.div`
+
+display:flex;
+width:85%;
+min-height:40vh;
+
+justify-content:center;
 `;
 const Dot = styled.span`
   width: 6px;
@@ -701,6 +721,7 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
 
   const filteredItems = sortItems(braceletsItems, selectedOption);
+  const hasProducts = filteredItems.length > 0;
   const { t } = useTranslation();
   return (
     <>
@@ -953,15 +974,25 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
             
           </DivFiltri>
 
-        
-          <DivProdotti>
-            {value === "bracelets" &&
-              filteredItems.map((item) => (
-                <StyledItem key={`${item.id}`}>
-                  <ItemInShop item={item} />
-                </StyledItem>
-              ))}
-          </DivProdotti>
+          {!hasProducts && (
+        <DivAvviso>
+          <GtaRegular2Gray>
+            Attualmente non ci sono prodotti in questa sezione. Tornate presto per scoprire le novità in arrivo!
+          </GtaRegular2Gray>
+        </DivAvviso>
+      )}
+      {hasProducts && (
+        <DivProdotti>
+          {value === "bracelets" &&
+            filteredItems.map((item) => (
+              <StyledItem key={item.id}>
+                <ItemInShop item={item} />
+              </StyledItem>
+            ))}
+        </DivProdotti>
+      )}
+
+
         <Footer/>
 
       </Container>
