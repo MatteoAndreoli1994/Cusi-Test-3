@@ -50,6 +50,11 @@ const SubscribeButton = styled.button`
   @media(max-width: 360px){
     width: 41%;
   }
+
+    /* Stili aggiuntivi quando disabilitato */
+  &:disabled {
+ cursor: auto;
+  
 `;
 
 const ButtonCenterDiv = styled.div`
