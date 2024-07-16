@@ -637,7 +637,7 @@ min-height: 30vh;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-transition: opacity 3s ease-in-out;
+transition: opacity 1s ease-in-out;
 `;
 const ImmagineDelay = styled.img`
 width:100%;
