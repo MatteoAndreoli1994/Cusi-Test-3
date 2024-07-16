@@ -38,14 +38,16 @@ const Boxstoryboard = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 85%;
+width: 90%;
 height: auto;
 
 margin-top: 10%;
+align-items:center;
+
 
 @media(max-width: 1000px){
 
-  width: 85%;
+  width: 90%;
 }
 
 @media(max-width: 900px){
@@ -62,9 +64,10 @@ const Boxstoryboard4 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 85%;
+width: 90%;
 
 margin-top:10%;
+align-items:center;
 
 
 
@@ -82,9 +85,9 @@ const Boxstoryboard2 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 85%;
+width: 90%;
 height:auto;
-
+align-items:center;
 margin-top:6%;
 
 
@@ -105,9 +108,9 @@ const Boxstoryboard3 = styled.div`
 
 display: flex;
 flex-direction: row;
-width: 85%;
-
-margin-top:8%;
+width: 90%;
+align-items:center;
+margin-top:10%;
 
 
 @media(max-width: 900px){
@@ -127,7 +130,7 @@ const BoxFamiglia = styled.div`
 
 display: flex;
 flex-direction: column;
-width: 85%;
+width: 79%;
 
 
 
@@ -136,6 +139,11 @@ align-items:center;
 text-align: center; /* Centra il testo all'interno del div */
 margin-bottom:5%;
 margin-top:2%;
+
+@media(max-width: 1000px){
+  width: 85%;
+
+}
 
 @media(max-width: 900px){
   width: 100%;
@@ -150,8 +158,8 @@ display: flex;
 flex-direction: column;
 width: 100%;
 
-margin-top:2%;
-
+margin-top:7%;
+margin-bottom:1%;
 
 
 align-items:center;
@@ -208,7 +216,7 @@ margin-bottom:4%;
 `;
 const ImmagineFamiglia = styled.img`
 width: 100%;
-min-height: 30vh;
+
 
 
 
@@ -232,30 +240,27 @@ height:100%;
 
 display:flex;
 align-items:center;
-justify-content: flex-start;
+justify-content: center;
 
 
 
 
 @media(max-width:1000px){
-  width:100%;
+  width:90%;
+  height:auto;
+  margin-bottom: 4%;
+}
+  @media(max-width:900px){
+  width:95%;
   height:auto;
   margin-bottom: 4%;
 }
 
 
-`;
-const DivImmagine2 = styled.div`
-
-width:50%;
-height:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-
 
 
 `;
+
 const ContenitoreDivInfo = styled.div`
 
 height:100%;
@@ -285,7 +290,13 @@ overflow:hidden;
 @media(max-width: 1000px){
   width:100%;
   height:auto;
-  margin-top:4%;
+
+
+}
+
+@media(max-width: 900px){
+
+  width:95%;
 
 }
 
@@ -343,9 +354,15 @@ font-family: 'ABCGaisyr-Regular';
 font-size: 24px; 
 margin-bottom: 0;
 margin-top: 0;
-width:100%;
+width:75%;
 
-@media(max-width:900px){
+
+@media(max-width:1000px){
+ 
+
+  width:90%;
+}
+  @media(max-width:900px){
  
 
   width:100%;
@@ -365,6 +382,7 @@ font-size: 16px;
 margin-bottom: 0;
 width:75%;
 font-weight: 200;
+
 
 @media(max-width:1200px){
   font-size: 14px; 
@@ -386,13 +404,20 @@ const DescriptionSinistra = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
 margin-bottom: 0;
-width:100%;
+width:75%;
 font-weight: 200;
+
+
 
 @media(max-width:1200px){
   font-size: 14px; 
 
 }
+@media(max-width:1000px){
+
+  width:90%;
+}
+
 @media(max-width:900px){
 
   width:100%;
@@ -426,7 +451,8 @@ const Description2 = styled.p`
 font-family: 'ABCGaisyr-Book';
 font-size: 16px; 
 margin-bottom: 0;
-margin-top: 4%;
+margin-top: 6%;
+margin-bottom: 6%;
 width:88%;
 font-weight: 200;
 text-align:left;
@@ -460,8 +486,8 @@ font-family: 'ABCGaisyr-Book';
 font-size: 24px; 
 width:70%;
 text-align: center;
-margin-bottom:4%;
-margin-top:3%;
+
+
 
 @media(max-width: 900px){
   width:80%;
@@ -536,11 +562,18 @@ margin-top: 7%;
 `;
 
 const ImmagineAnnibaleCusi = styled.img`
-width: 80%;
+width: 75%;
 height: auto;
-min-height: 30vh;
+
 
 @media(max-width:1000px){
+
+
+  width:90%;
+
+}
+
+@media(max-width:900px){
 
 
   width:100%;
@@ -555,11 +588,19 @@ min-height: 30vh;
 }
 `;
 const ImmagineStuarda= styled.img`
-width: 80%;
-min-height: 30vh;
+width: 75%;
+
 
 
 @media(max-width:1000px){
+
+  margin-top:8%;
+
+  width:90%;
+
+}
+
+@media(max-width:900px){
 
   margin-top:8%;
 
@@ -579,15 +620,15 @@ min-height: 30vh;
 const CollieImg = styled.img`
 width: 75%;
 height: auto;
-min-height: 30vh;
-margin-left:13%;
+
+
 
 
 @media(max-width:1000px){
 
   margin-top:8%;
 
-  width:100%;
+  width:90%;
 
 }
 
@@ -600,17 +641,17 @@ margin-left:13%;
 
 `;
 const RinaldoCusiImg = styled.img`
-width: 90%;
+width: 75%;
 height: auto;
-min-height: 30vh;
-margin-left:12.5%;
+
+
 
 
 @media(max-width:1000px){
 
   margin-top:8%;
 
-  width:100%;
+  width:90%;
 
 }
 
@@ -623,12 +664,12 @@ margin-left:12.5%;
 
 `;
 const ImmagineStuarda2= styled.img`
-width:80%;
+width:75%;
 height:auto;
-min-height: 30vh;
+
 
 @media(max-width: 1200px){
-  width:100%;
+
 }
 
 
