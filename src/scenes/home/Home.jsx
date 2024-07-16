@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import video2 from '../../assets/video2.mp4';
 import ShoppingList from './ShoppingList2&mobile';
-import Modella2 from"../../assets/modellasmeraldo.jpg";
-import Modella3 from"../../assets/modellazingara.jpg";
-import Anello1 from"../../assets/modella2.png";
+import Modella2 from"../../assets/modellasmeraldo.avif";
+import Modella3 from"../../assets/modellazingara.avif";
+import Anello1 from"../../assets/modella2.avif";
 import SelectedItem1White from"../../assets/A58.avif";
 import SelectedItem1Model from"../../assets/urania.avif";
 import Maison from"../../assets/maison1.avif";
@@ -17,7 +17,7 @@ import { isSafari } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
 
-import Anello1White from"../../assets/A2.png";
+import Anello1White from"../../assets/A2.avif";
 
 
 import { useNavigate } from "react-router-dom";
