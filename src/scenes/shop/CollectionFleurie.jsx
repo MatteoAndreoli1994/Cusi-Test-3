@@ -500,7 +500,7 @@ const VideoWrapper = styled.div`
   margin-left:1%;
   padding-bottom: 48%; // Mantieni il rapporto di aspetto 16:9
   overflow: hidden;
-  background: black;
+  background: white;
 `;
 
 const StyledVideo = styled.img`
