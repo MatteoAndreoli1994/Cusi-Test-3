@@ -476,26 +476,27 @@ height:auto;
 `;
 
 const HyperLink = styled.a`
-color: gray;
-position: relative;
-font-family: 'GTAmericaLight';
-font-size: 14px;
+  color: gray;
+  position: relative;
+  font-family: 'GTAmericaLight';
+  font-size: 14px;
+  text-decoration: none;  // Rimuove la sottolineatura predefinita del link
 
-&::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
-width: 100%;
-height: 1px;
-background-color: gray;
-}
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px; /* Sposta la linea della sottolineatura di 2px in basso */
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+  }
 
-@media(max-width:1200px){
-  font-size: 13px;
-
-}
+  @media(max-width:1200px){
+    font-size: 13px;
+  }
 `;
+
 
 
 //FONT
@@ -890,7 +891,15 @@ const Home = () => {
           <CollectionDiv>
             <Collection1DivIconic2>
               <Collection1DivIconic2_2>
-             <GtaRegular><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>{t('home.shopFleurie')}</HyperLink></GtaRegular>
+              <GtaRegularFleurie>
+                <HyperLink 
+                  href="/shopFleurie" 
+                  onClick={handleShopClickFleurie} 
+                  style={{ cursor: 'pointer' }}
+                >
+                  {t('home.shopFleurie')}
+                </HyperLink>
+              </GtaRegularFleurie>
              </Collection1DivIconic2_2>
             </Collection1DivIconic2>
 
