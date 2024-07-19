@@ -131,8 +131,7 @@ function App() {
           
           <ScrollToTop />
 
-            <LazyLoad once>
-            <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad}>
+
             <I18nextProvider i18n={i18n}>
               <Routes>
    
@@ -163,8 +162,7 @@ function App() {
                 <Route path="/contactus" element={<ContactUs />} />
               </Routes>
             </I18nextProvider>
-            </LazyLoadWrapper>
-            </LazyLoad>  
+
 
                       {/* Renderizza direttamente le route checkout/success e checkout/conf */}
           <Routes>

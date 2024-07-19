@@ -1,0 +1,18 @@
+/* Imposta il video a schermo intero */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: red; /* Colore di sfondo in caso il video non venga caricato */
+  }
+  
+  .fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantieni il video proporzionato per riempire il contenitore */
+  }
+  

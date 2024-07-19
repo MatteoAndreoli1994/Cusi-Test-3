@@ -26,6 +26,7 @@ import Footer from "../global/Footer"
 
 
 import VideoSource from '../../assets/fleurieVideo1_1.mp4';
+import { isSafari } from 'react-device-detect';
 
 
 const DivImmagini = styled.div`
@@ -502,7 +503,15 @@ const VideoWrapper = styled.div`
   background: black;
 `;
 
-const StyledVideo = styled.video`
+const StyledVideo = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Riempi il contenitore mantenendo le proporzioni
+`;
+const StyledVideo2 = styled.video`
   position: absolute;
   top: 0;
   left: 0;
@@ -578,6 +587,40 @@ const GtaRegular2Gray = styled.p`
   @media (max-width: 680px) {
     font-size: 14px;
   }
+`;
+
+
+
+
+
+const GifBoxSafari = styled.div`
+position: relative;
+
+display: ${({ isSafari }) => (isSafari ? 'none' : 'flex')};
+min-height:80vh;
+justify-content:center;
+
+
+
+overflow: hidden;
+
+background-size: cover;
+margin-bottom: 2%;
+
+
+@media(max-width:680px){
+  
+}
+`;
+
+const VideoSafari = styled.img`
+
+width: 100%;
+height: 90vh;
+object-fit: cover;
+object-position: center;
+
+
 `;
 
 
@@ -990,15 +1033,32 @@ const filterOptionsRef = useRef(null); // Riferimento al FilterOptionsBox
 
         <ImmagineCollectionStyle src={ImmagineCollection} onLoad={handleImageLoad}/>
         
-        <VideoWrapper>
-          <StyledVideo
-            src={VideoSource}
-            preload="auto"
-            autoPlay
-            loop
-            muted
-          />
-        </VideoWrapper>
+
+
+
+        {isSafari ? (
+              <VideoWrapper >
+                                 <StyledVideo src={VideoSource}></StyledVideo>
+
+              </VideoWrapper>
+            ) : null}
+
+          {/* Condizionalmente renderizza il componente per i browser diversi da Safari */}
+          {!isSafari ? (
+              <VideoWrapper >
+
+
+                                                
+                <StyledVideo2 autoPlay loop muted playsInline >              
+                  <source src={VideoSource} type="video/mp4" />
+                  Il tuo browser non supporta la riproduzione di video MP4.
+                </StyledVideo2>
+                                  
+                                  
+                                  
+
+              </VideoWrapper>
+            ) : null}
 
         </DivImmagini>
 

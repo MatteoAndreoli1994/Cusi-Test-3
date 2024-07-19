@@ -786,11 +786,11 @@ const Home = () => {
   };
   const handleShopClickFleurie = () => {
 
-    navigate('/shopFleurie');
+
   };
   const handleShopClickEarrings = () => {
 
-    navigate('/shopEarrings');
+
   };
 
   const handleBoutiques = () => {
@@ -873,7 +873,7 @@ const Home = () => {
           </Collection1DivIconic>
 
             <Collection1DivIconic2Mobile>
-              <GtaRegularFleurie><HyperLink onClick={ handleShopClickFleurie} style={{ cursor: 'pointer' }}>{t('home.shopFleurie')}</HyperLink></GtaRegularFleurie>
+              <GtaRegularFleurie><HyperLink href="/shopFleurie"  style={{ cursor: 'pointer' }}>{t('home.shopFleurie')}</HyperLink></GtaRegularFleurie>
             </Collection1DivIconic2Mobile>
             <MarginDiv></MarginDiv>
 
@@ -894,7 +894,7 @@ const Home = () => {
               <GtaRegularFleurie>
                 <HyperLink 
                   href="/shopFleurie" 
-                  onClick={handleShopClickFleurie} 
+
                   style={{ cursor: 'pointer' }}
                 >
                   {t('home.shopFleurie')}
@@ -905,7 +905,7 @@ const Home = () => {
 
             <Collection2DivIconic>
             <Collection2DivIconic_2>
-              <GtaRegularMobile2><HyperLink  onClick={ handleShopClickZingara} style={{ cursor: 'pointer' }} >{t('home.shopZingara')}</HyperLink></GtaRegularMobile2>
+              <GtaRegularMobile2><HyperLink href="/shopZingara" style={{ cursor: 'pointer' }} >{t('home.shopZingara')}</HyperLink></GtaRegularMobile2>
               </Collection2DivIconic_2>
             </Collection2DivIconic>
 
@@ -935,7 +935,7 @@ const Home = () => {
             </Gta>
 
 
-            <GtaRegularMobile2><HyperLink  onClick={ handleShopClickEarrings} style={{ cursor: 'pointer' }} >{t('home.discoverEarrings')}</HyperLink></GtaRegularMobile2>
+            <GtaRegularMobile2><HyperLink   href='/shopEarrings' style={{ cursor: 'pointer' }} >{t('home.discoverEarrings')}</HyperLink></GtaRegularMobile2>
             </Collection2Div>
 
           </CollectionDiv>
@@ -958,7 +958,7 @@ const Home = () => {
         <GtaDescription3> {t('home.uraniaDescrizione')} <br/>
         18 ct Urania.
         </GtaDescription3>
-        <GtaRegular><HyperLink  onClick={ handleShopClickUrania} style={{ cursor: 'pointer' }} >{t('home.shopNow')}</HyperLink></GtaRegular>
+        <GtaRegular><HyperLink  href="/shopUrania" style={{ cursor: 'pointer' }} >{t('home.shopNow')}</HyperLink></GtaRegular>
 
         </Collection3Div>
 
@@ -980,7 +980,7 @@ const Home = () => {
       <CollectionDivAbout>
       <Collection1Div>
           <ImmagineMaison src={Maison}/>
-          <GtaRegular14grayMobile><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14grayMobile>
+          <GtaRegular14grayMobile><HyperLink  href="/boutiques" style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14grayMobile>
 
         </Collection1Div>
 
@@ -991,7 +991,7 @@ const Home = () => {
           <GtaLeft>{t('home.welcomeYou')}
           </GtaLeft>
 
-          <GtaRegular14gray><HyperLink  onClick={ handleBoutiques} style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14gray>
+          <GtaRegular14gray><HyperLink href="/boutiques" style={{ cursor: 'pointer' }} >{t('home.bookAnAppointment')}</HyperLink></GtaRegular14gray>
           </Text>
         </Collection2Div2>
 
