@@ -251,7 +251,7 @@ const Typography3 = styled.p`
   cursor: pointer;
   color: ${(props) => (props.isHovered ? 'gray' : 'inherit')};
   transition:  margin-left 0.2s;
-
+  color:black;
   &:hover {
     color: gray;
     margin-left: 5px;
@@ -633,6 +633,11 @@ display:none;
 
 `;
 
+const HyperLink = styled.a`
+  color:black;
+  text-decoration: none;  // Rimuove la sottolineatura predefinita del link
+
+`;
 
 const SearchBox = styled.div`
   display: flex;
@@ -1025,11 +1030,11 @@ useEffect(() => {
 
             <InfoContainer visible={showCollectionInfo}>
             <HighJewellery visible={showCollectionInfo}>
-              <GtaRegular onClick={handleShopClickZingara}>Zingara</GtaRegular>
-              <GtaRegular onClick={handleShopClickUrania}>Urania</GtaRegular>
-              <GtaRegular onClick={handleShopClickTycoon}>Tycoon</GtaRegular>
-              <GtaRegular onClick={handleShopClickFleurie}>Fleurie</GtaRegular>
-              <GtaRegular onClick={handleShopClickBollywood}>Bollywood</GtaRegular>
+            <HyperLink href="/shopZingara" ><GtaRegular>Zingara</GtaRegular></HyperLink> 
+              <HyperLink href="/shopUrania" ><GtaRegular>Urania</GtaRegular></HyperLink> 
+              <HyperLink href="/shopTycoon" ><GtaRegular>Tycoon</GtaRegular></HyperLink> 
+              <HyperLink href="/shopFleurie" ><GtaRegular>Fleurie</GtaRegular></HyperLink> 
+              <HyperLink href="/shopBollywood" ><GtaRegular>Bollywood</GtaRegular></HyperLink> 
             </HighJewellery>
 
             </InfoContainer>
@@ -1292,11 +1297,11 @@ useEffect(() => {
         <DivCategoriaProdotti>
        <Typography2>ALL COLLECTIONS</Typography2> 
        </DivCategoriaProdotti>
-       <Typography3 onClick={handleShopClickBollywood} style={{ cursor: 'pointer' }}>Bollywood</Typography3> 
-       <Typography3 onClick={handleShopClickFleurie} style={{ cursor: 'pointer' }}>Fleurie</Typography3> 
-       <Typography3 onClick={handleShopClickTycoon} style={{ cursor: 'pointer' }}>Tycoon</Typography3> 
-       <Typography3 onClick={handleShopClickUrania} style={{ cursor: 'pointer' }}>Urania</Typography3> 
-       <Typography3 onClick={handleShopClickZingara} style={{ cursor: 'pointer' }}>Zingara</Typography3> 
+       <HyperLink href="/shopBollywood" ><Typography3>Bollywood</Typography3></HyperLink> 
+       <HyperLink href="/shopFleurie" ><Typography3>Fleurie</Typography3></HyperLink> 
+       <HyperLink href="/shopTycoon" ><Typography3>Tycoon</Typography3></HyperLink> 
+       <HyperLink href="/shopUrania" ><Typography3>Urania</Typography3></HyperLink> 
+       <HyperLink href="/shopZingara" ><Typography3>Zingara</Typography3></HyperLink> 
         </MenuItem>
 
 

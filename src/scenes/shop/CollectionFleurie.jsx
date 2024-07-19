@@ -492,6 +492,7 @@ const Video = styled.video`
 
 
 
+
 // Styled Component per il video
 const VideoWrapper = styled.div`
   position: relative;
