@@ -39,7 +39,7 @@ align-content:center;
 `;
 
 const stripePromise = loadStripe(
-  "pk_test_51OVHbvKBum0tDq2rqETCthy3a1ctwYBrhKQZ8hffdT7u6FRVMy3umFP41HNKDeUEigbqzSKnSKELUS2i0J803Vry00p9sVRga4"
+  "pk_test_51PhXi1RsEZFQK4LPJD2VGLCuJhVf3IJa5B0hNMf2VzInIW70o7k8xtgdE1kX9vqtl54RPk9RM0gq5bhkhI9p1aBa00ZKT9Gnne"
   
 );
 

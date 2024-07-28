@@ -997,13 +997,14 @@ useEffect(() => {
                   <GtaRegular onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>{t('navbar.earrings')}</GtaRegular> 
                   <GtaRegular onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>{t('navbar.necklaces')}</GtaRegular> 
                   <GtaRegular onClick={handleShopClick} style={{ cursor: 'pointer' }}>{t('navbar.rings')}</GtaRegular> 
+                  <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</GtaRegular> 
                   </Margin>
                 </HighJewellery>
 
               <GtaRegularMobile onClick={() => setShowFineObject(prevState => !prevState)} >{t('navbar.fineobject')}</GtaRegularMobile>
               <HighJewellery visible={showFineObject}>
                 <Margin>
-                  <GtaRegular onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</GtaRegular> 
+
                   <GtaRegular onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>{t('navbar.animals')}</GtaRegular> 
                   <GtaRegular onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>{t('navbar.sea')}</GtaRegular> 
                 </Margin>
@@ -1260,7 +1261,8 @@ useEffect(() => {
        <Typography3 onClick={handleShopClickBracelets} style={{ cursor: 'pointer' }}>    {t('navbar.bracelets')}</Typography3> 
        <Typography3 onClick={handleShopClickEarrings} style={{ cursor: 'pointer' }}>    {t('navbar.earrings')}</Typography3> 
        <Typography3 onClick={handleShopClickNecklaces} style={{ cursor: 'pointer' }}>    {t('navbar.necklaces')}</Typography3> 
-       <Typography3 onClick={handleShopClick} style={{ cursor: 'pointer' }}>    {t('navbar.rings')}</Typography3> 
+       <Typography3 onClick={handleShopClick} style={{ cursor: 'pointer' }}>    {t('navbar.rings')}</Typography3>
+       <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</Typography3>  
         </MenuItem>
 
 
@@ -1268,7 +1270,7 @@ useEffect(() => {
         <DivCategoriaProdotti>
         <Typography2>{t('navbar.fineobject')}</Typography2>
         </DivCategoriaProdotti>
-        <Typography3 onClick={handleShopClickEnamelledChains} style={{ cursor: 'pointer' }}>{t('navbar.enamelledchains')}</Typography3> 
+
         <Typography3 onClick={handleShopClickAnimals} style={{ cursor: 'pointer' }}>{t('navbar.animals')}</Typography3> 
         <Typography3 onClick={handleShopClickSea} style={{ cursor: 'pointer' }}>{t('navbar.sea')}</Typography3> 
 
