@@ -30,8 +30,8 @@ import { setIsCartOpen } from '../../state/index.js';
 
 const Container = styled.div`
   min-height: 170vh;
-  margin-top:120px;
-
+  margin-top:100px;
+  margin-bottom:100px;
 
   justify-content:center;
   display:flex;
@@ -805,7 +805,7 @@ const ItemDetails = () => {
     <LazyLoadWrapper loaded={loaded} onLoad={handleContentLoad} >
     <link rel="stylesheet" href="https://unpkg.com/react-slidy/lib/styles.css" />
 
-      <Container width="100%" m="80px auto"        >
+      <Container      >
         
         <ItemContainer display="flex" flexWrap="wrap" columnGap="40px" >
           {/* IMAGES */}
