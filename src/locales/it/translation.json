@@ -229,7 +229,9 @@
     "cusiPortofino": "Cusi Portofino",
     "liveChat": "CHAT DAL VIVO",
     "liveChatInfo": "Live chat attualmente non disponibile",
-    "bookOnline": "Clicca qui per prenotare un appuntamento online",
+    "bookOnline1": "Clicca",
+    "bookOnline2": " qui",
+    "bookOnline3": "per prenotare un appuntamento online",
     "email": "gioielleriacusiecommerce@gmail.com",
     "phone": "(+39) 02.76014323"
   },

@@ -190,6 +190,18 @@ font-size: 16px;
   font-size: 14px; 
 }
 `;
+const Collegamento = styled.a`
+
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+`;
 
 const LazyLoadWrapper = styled.div`
 opacity: ${({ loaded }) => (loaded ? 1 : 0)};
@@ -230,13 +242,17 @@ const ContactUs = () => {
                   </Box>
                 </DivCustomerService>
                 <DivCustomerService>
-                  <Box><GtaLightRegular>{t('contactus.bookAppointment')}</GtaLightRegular></Box>
+                  <Box><GtaLightRegular>{t('contactus.bookAppointment')} </GtaLightRegular></Box>
                   <Box>
                     <GtaLightRegular>{t('contactus.cusiMilano')}</GtaLightRegular>
                     <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
                     <GtaLightRegular style={{ marginTop: '15px' }}>{t('contactus.cusiPortofino')}</GtaLightRegular>
                     <GtaLightLightInfo>{t('contactus.phone')}</GtaLightLightInfo>
-                    <GtaLightLightInfo style={{ marginTop: '15px' }}>{t('contactus.bookOnline')}</GtaLightLightInfo>
+                    <GtaLightLightInfo style={{ marginTop: '15px' }}>
+                      {t('contactus.bookOnline1')} 
+                      <Collegamento href="/boutiques#Book">{t('contactus.bookOnline2')} </Collegamento> 
+                      {t('contactus.bookOnline3')} 
+                    </GtaLightLightInfo>
                   </Box>
                 </DivCustomerService>
                 <DivCustomerService>
