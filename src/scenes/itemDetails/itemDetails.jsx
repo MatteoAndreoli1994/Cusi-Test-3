@@ -42,7 +42,7 @@ const Container = styled.div`
   }
 
   @media(max-width:680px){
-
+  margin-bottom:20px;
     min-height: 200vh;
   }
   @media(max-width:600px){
