@@ -973,7 +973,7 @@ const ItemDetails = () => {
       
 
 
-              <Telefonata href="tel:+123456789">
+              <Telefonata href="tel:+390276014323">
 
               {available ? (
                 <ButtonWhite
