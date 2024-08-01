@@ -310,7 +310,7 @@ const TextBox = styled.input`
   border: 1px solid #000;
   margin: 0; /* Rimuovi eventuali margini impostati precedentemente */
   border-radius: 0;
-
+    font-size: 12px;
 
 
   @media(max-width: 900px){
