@@ -170,7 +170,7 @@ const MenuSearch = styled.div`
   position: absolute;
 
   width: 100%;
-  height: auto;
+
 
   position: fixed;
   z-index: 1;
@@ -680,11 +680,6 @@ function Navbar() {
 
 
 
-
-
-
-
-    
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [containerTop, setContainerTop] = useState(0);
 
@@ -733,11 +728,6 @@ useEffect(() => {
 
 
 
-
-
-
-
-
   const [query, setQuery] = useState('');
 
 
@@ -748,6 +738,7 @@ useEffect(() => {
   const handleChange = (event) => {
     const cleanedQuery = event.target.value.replace(/[^a-zA-Z]/g, '').toLowerCase();
     setQuery(cleanedQuery);
+ 
   };
   
   
@@ -938,28 +929,15 @@ useEffect(() => {
   };
 
   const searchedItems = items.filter(item => {
-    const collectionMatch = item.attributes.collection.toLowerCase() === query;
-    const categoryMatch = item.attributes.category.toLowerCase() === query;
-    return collectionMatch || categoryMatch;
+    if (query === "") {
+      return false;
+    }
+    return item.attributes.collection.toLowerCase().includes(query) || 
+           item.attributes.category.toLowerCase().includes(query);
   });
 
 
   
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
   const { t } = useTranslation();
 
   return (

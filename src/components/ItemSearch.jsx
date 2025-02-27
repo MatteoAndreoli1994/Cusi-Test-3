@@ -1,87 +1,82 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { shades } from "../theme";
-import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const DivItem = styled.div`
-display:flex;
-
-align-items: center;
-justify-content: center;
-height:100%;
-
-width:100%;
-
-
-
-
-
-`;
-
-const InfoProdotto = styled.div`
-
-
   display: flex;
   flex-direction: column;
-  align-items: center; /* Aggiornato da "flex-align" a "flex-start" */
-  justify-content: flex-end; /* Aggiunto per centrare verticalmente */
-
-`;
-
-
-const DivImmagine = styled.div`
-height:100%;
-
-`;
-
-const GTA = styled.p`
-font-family: 'GTAmericaRegular';
-font-size: 16px;
-
-  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.5); /* Cambia il colore del testo quando si passa sopra con il mouse */
+    background-color: rgba(0, 0, 0, 0.02);
   }
 `;
 
+const InfoProdotto = styled.div`
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
+`;
+
+const DivImmagine = styled.div`
+  width: 200px;
+  height: auto;
+  overflow: hidden;
+  
+  .lazy-load-image-background {
+    width: 100%;
+    height: 100%;
+  }
 
 
-const ItemSearch = ({ item, width }) => {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+`;
+
+const ProductName = styled.p`
+  font-family: 'GTAmericaRegular';
+  font-size: 16px;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+`;
+
+const ItemSearch = ({ item }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
-  const {
-    palette: { neutral },
-  } = useTheme();
-
-  const { category, price, name, image } = item.attributes;
+  const { name, image } = item.attributes;
   const {
     data: {
-        attributes: { url },
+      attributes: { url },
     },
-} = image;
-
-
+  } = image;
 
   return (
-    <DivItem >
-    
-    
-    <InfoProdotto           style={{ cursor: "pointer" }} onClick={() => navigate(`/item/${item.id}`)}>
-
-    <GTA>{name}</GTA>
-
-   </InfoProdotto>
-
+    <DivItem onClick={() => navigate(`/item/${item.id}`)} style={{ cursor: "pointer" }}>
+      <InfoProdotto>
+        <ProductName>{name}</ProductName>
+      </InfoProdotto>
+      
+      <DivImmagine>
+        <LazyLoadImage
+          src={url}
+          alt={name}
+          effect="blur"
+        />
+      </DivImmagine>
     </DivItem>
   );
 };
