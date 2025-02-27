@@ -16,12 +16,20 @@ const DivItem = styled.div`
   &:hover {
     background-color: rgba(0, 0, 0, 0.02);
   }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const InfoProdotto = styled.div`
   width: 100%;
   margin-bottom: 15px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 8px;
+  }
 `;
 
 const DivImmagine = styled.div`
@@ -34,12 +42,19 @@ const DivImmagine = styled.div`
     height: 100%;
   }
 
-
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    width: 120px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
   }
 `;
 
@@ -52,6 +67,14 @@ const ProductName = styled.p`
   
   &:hover {
     color: rgba(0, 0, 0, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
